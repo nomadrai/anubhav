@@ -1,0 +1,27 @@
+# Explicit sessions are mandatory; no holiday or weekday assumptions are made.
+expectedDates:
+  - 2024-01-02
+  - 2024-01-03
+  - 2024-01-04
+  - 2024-01-05
+  - 2024-01-06
+  - 2024-01-07
+  - 2024-01-08
+  - 2024-01-09
+  - 2024-01-10
+  - 2024-01-11
+
+intradayAvailable: false
+isPlaceholder: true
+provenance:
+  sourceName: Synthetic choppy teaching fixture (invented values, not market data)
+  sourceUrl: synthetic://phase1/choppy-synthetic.csv
+  retrievedOn: 2024-01-11
+  licenceNote: Synthetic teaching fixture; not market data and not licensed market data.
+reveal:
+  periodText:
+    en: A synthetic ten-session teaching example (placeholder).
+    hi: दस सत्रों का एक कृत्रिम शिक्षण उदाहरण (प्लेसहोल्डर)।
+  whatHappenedText:
+    en: The synthetic path moved up and down with no clear direction.
+    hi: कृत्रिम रास्ता ऊपर-नीचे चलता रहा, कोई साफ़ दिशा नहीं थी।

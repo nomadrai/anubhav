@@ -37,9 +37,20 @@ for (const file of files) {
 }
 const parityTargets = ['ui.json', 'debrief.json', 'glossary.json', 'narration.json'];
 function shape(value) { if (Array.isArray(value)) return value.map((item) => item && typeof item === 'object' ? item.id ?? item.termId ?? shape(item) : typeof item); if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, child]) => [key, shape(child)])); return typeof value; }
+// Collect {namedPlaceholders} from every string in a content document.
+function placeholders(value, found = new Set(), prefix = '') {
+  if (typeof value === 'string') { for (const match of value.matchAll(/\{([A-Za-z][A-Za-z0-9]*)\}/g)) found.add(`${prefix}:${match[1]}`); }
+  else if (Array.isArray(value)) value.forEach((item, index) => placeholders(item, found, `${prefix}[${index}]`));
+  else if (value && typeof value === 'object') for (const [key, child] of Object.entries(value)) placeholders(child, found, `${prefix}.${key}`);
+  return found;
+}
 if (languages.includes('en') && languages.includes('hi')) for (const target of parityTargets) {
   const en = readJson(path.join(contentRoot, 'en', target)); const hi = readJson(path.join(contentRoot, 'hi', target));
   if (JSON.stringify(shape(en)) !== JSON.stringify(shape(hi))) failures.push(`i18n parity mismatch: ${target}`);
+  // Placeholder names must match per key across languages, or interpolation would break one language.
+  const enPlaceholders = placeholders(en); const hiPlaceholders = placeholders(hi);
+  for (const entry of enPlaceholders) if (!hiPlaceholders.has(entry)) failures.push(`placeholder mismatch in ${target}: ${entry} exists in en but not hi`);
+  for (const entry of hiPlaceholders) if (!enPlaceholders.has(entry)) failures.push(`placeholder mismatch in ${target}: ${entry} exists in hi but not en`);
 }
 const manifestFile = path.join(root, 'public/audio/manifest.json');
 const ids = readJson(path.join(contentRoot, 'en/narration.json')).map((item) => item.id);

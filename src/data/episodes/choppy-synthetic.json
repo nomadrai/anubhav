@@ -1,0 +1,71 @@
+{
+  "id": "choppy-synthetic",
+  "label": "Episode A",
+  "bars": [
+    {
+      "date": "2024-01-02",
+      "close": 100.0
+    },
+    {
+      "date": "2024-01-03",
+      "close": 101.5
+    },
+    {
+      "date": "2024-01-04",
+      "close": 99.5
+    },
+    {
+      "date": "2024-01-05",
+      "close": 101.0
+    },
+    {
+      "date": "2024-01-06",
+      "close": 98.5
+    },
+    {
+      "date": "2024-01-07",
+      "close": 100.5
+    },
+    {
+      "date": "2024-01-08",
+      "close": 99.0
+    },
+    {
+      "date": "2024-01-09",
+      "close": 100.0
+    },
+    {
+      "date": "2024-01-10",
+      "close": 98.5
+    },
+    {
+      "date": "2024-01-11",
+      "close": 99.5
+    }
+  ],
+  "intradayAvailable": false,
+  "reveal": {
+    "periodText": {
+      "en": "A synthetic ten-session teaching example (placeholder).",
+      "hi": "दस सत्रों का एक कृत्रिम शिक्षण उदाहरण (प्लेसहोल्डर)।"
+    },
+    "whatHappenedText": {
+      "en": "The synthetic path moved up and down with no clear direction.",
+      "hi": "कृत्रिम रास्ता ऊपर-नीचे चलता रहा, कोई साफ़ दिशा नहीं थी।"
+    }
+  },
+  "stats": {
+    "maxDrawdown": -0.029556650246305383,
+    "barCount": 10,
+    "totalChange": -0.0050000000000000044,
+    "worstSingleDayFall": -0.024752475247524774
+  },
+  "provenance": {
+    "sourceName": "Synthetic choppy teaching fixture (invented values, not market data)",
+    "sourceUrl": "synthetic://phase1/choppy-synthetic.csv",
+    "retrievedOn": "2024-01-11",
+    "licenceNote": "Synthetic teaching fixture; not market data and not licensed market data.",
+    "inputSha256": "0ecd016de74268657f11d0243b2caca5003e80b70174c0cf487e03fcfe4c902f"
+  },
+  "isPlaceholder": true
+}

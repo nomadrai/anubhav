@@ -5,3 +5,5 @@ export * from './position';
 export * from './events';
 export * from './simulate';
 export * from './stats';
+export * from './compare';
+export * from './debrief';

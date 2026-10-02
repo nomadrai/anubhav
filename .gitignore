@@ -1,13 +1,45 @@
+# Node and build output
 node_modules/
 dist/
+.vite/
+.vite-temp/
+coverage/
+.eslintcache
+*.tsbuildinfo
+
+# Local configuration and generated audio
 .env*
 public/audio/manifest.json
 public/audio/**/*.opus
 !.gitkeep
-.vite/
-coverage/
-__pycache__/
-*.pyc
-__agent__/
 
-*.tsbuildinfo
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches and test output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+*.egg-info/
+
+# Logs and local editor/OS artifacts
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Agent workspace
+__agent__/

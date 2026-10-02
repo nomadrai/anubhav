@@ -1,0 +1,101 @@
+{
+  "id": "crash-synthetic",
+  "label": "Episode A",
+  "bars": [
+    {
+      "date": "2024-01-02",
+      "close": 100.5,
+      "open": 100.0,
+      "high": 102.0,
+      "low": 99.0
+    },
+    {
+      "date": "2024-01-03",
+      "close": 96.5,
+      "open": 100.5,
+      "high": 101.0,
+      "low": 96.0
+    },
+    {
+      "date": "2024-01-04",
+      "close": 91.0,
+      "open": 96.5,
+      "high": 97.0,
+      "low": 90.0
+    },
+    {
+      "date": "2024-01-05",
+      "close": 85.0,
+      "open": 91.0,
+      "high": 92.0,
+      "low": 84.0
+    },
+    {
+      "date": "2024-01-06",
+      "close": 79.0,
+      "open": 85.0,
+      "high": 86.0,
+      "low": 78.0
+    },
+    {
+      "date": "2024-01-07",
+      "close": 74.0,
+      "open": 79.0,
+      "high": 81.0,
+      "low": 72.0
+    },
+    {
+      "date": "2024-01-08",
+      "close": 73.0,
+      "open": 74.0,
+      "high": 76.0,
+      "low": 69.0
+    },
+    {
+      "date": "2024-01-09",
+      "close": 77.5,
+      "open": 73.0,
+      "high": 78.0,
+      "low": 72.0
+    },
+    {
+      "date": "2024-01-10",
+      "close": 74.0,
+      "open": 77.5,
+      "high": 78.0,
+      "low": 73.0
+    },
+    {
+      "date": "2024-01-11",
+      "close": 75.5,
+      "open": 74.0,
+      "high": 76.0,
+      "low": 73.0
+    }
+  ],
+  "intradayAvailable": true,
+  "reveal": {
+    "periodText": {
+      "en": "A synthetic ten-session teaching example (placeholder).",
+      "hi": "दस सत्रों का एक कृत्रिम शिक्षण उदाहरण (प्लेसहोल्डर)।"
+    },
+    "whatHappenedText": {
+      "en": "The synthetic path fell steeply, then recovered only part of the fall.",
+      "hi": "कृत्रिम रास्ता तेज़ी से गिरा, फिर गिरावट का केवल कुछ हिस्सा ही संभला।"
+    }
+  },
+  "stats": {
+    "maxDrawdown": -0.2736318407960199,
+    "barCount": 10,
+    "totalChange": -0.24875621890547261,
+    "worstSingleDayFall": -0.07058823529411762
+  },
+  "provenance": {
+    "sourceName": "Synthetic crash teaching fixture (invented values, not market data)",
+    "sourceUrl": "synthetic://phase1/crash-synthetic.csv",
+    "retrievedOn": "2024-01-11",
+    "licenceNote": "Synthetic teaching fixture; not market data and not licensed market data.",
+    "inputSha256": "3949e70acf475ad3abec43b6ae2323d3d7fad96e5559d0cc88e47abed2b0729c"
+  },
+  "isPlaceholder": true
+}
