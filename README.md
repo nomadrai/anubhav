@@ -64,4 +64,4 @@ npm run release
 
 ## Truthfulness rule
 
-No command has been run in this task. Declared dependencies and source/configuration files exist, but installed package metadata, model/dataset licences, and performance measurements have not been verified here. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.
+The Phase 0 checks were run locally; see the report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.
