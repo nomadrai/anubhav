@@ -2,13 +2,29 @@
 
 ## Current status
 
-The repository declares the fixed stack—Vite, React, strict TypeScript, Tailwind, Vitest, ESLint, Prettier, `vite-plugin-pwa`, and Python 3.10+ scripts—but `node_modules` is not present and installed package metadata has not been inspected. No model, dataset, font, audio asset, or licence has been approved. Stack names describe the requested dependencies, not licence conclusions.
+The fixed stack is installed for local checks. Package metadata below was read from the installed lockfile/package manifests, but human licence/notice review is still pending. No model, dataset, font, audio asset, or runtime external service has been approved. A package SPDX field is recorded as evidence, not as a substitute for legal review.
 
 Before release, inspect installed package metadata and lockfiles, including transitive dependencies, and record exact versions and licence evidence. Mark every unknown as **pending**; do not infer a licence from a package name or a registry summary. `TODO(human): complete package metadata review after installation.`
 
-## Required inventory
+## Direct dependency inventory (human review pending)
 
-For every runtime and build dependency, record package/version, direct or transitive status, licence identifier and source, copyright/notice obligations, security review status, bundle contribution, and whether it creates a runtime request. For future models, voices, datasets, icons, and fonts also record weights/assets, training or source-data terms where available, redistribution, attribution, privacy, and language restrictions.
+| Package | Installed version | Declared licence | Purpose / location | Runtime request? | Review |
+|---|---:|---|---|---|---|
+| React / React DOM | 19.3.0 | MIT | UI runtime, `src/` | no | TODO(human): review notice |
+| Vite | 8.3.2 | MIT | dev server/build | no | TODO(human): review notice |
+| `@vitejs/plugin-react` | 6.1.1 | MIT | Vite JSX transform | no | TODO(human): review notice |
+| `vite-plugin-pwa` | 1.3.0 | MIT | disabled PWA stub, `vite.config.ts` | no in Phase 0 | TODO(human): review notice |
+| Tailwind CSS / `@tailwindcss/postcss` | 4.3.3 | MIT | CSS build | no | TODO(human): review notice |
+| TypeScript | 6.0.3 | Apache-2.0 | type checking | no | TODO(human): review notice |
+| Vitest | 5.0.3 | MIT | tests | no | TODO(human): review notice |
+| ESLint | 10.11.0 | MIT | lint | no | TODO(human): review notice |
+| Prettier | 3.9.9 | MIT | formatting contract | no | TODO(human): review notice |
+| PostCSS / Autoprefixer | 8.5.28 / 10.6.1 | MIT / MIT | CSS processing | no | TODO(human): review notice |
+| `PyYAML` | >=6.0 (Python environment) | TODO(human) | metadata parsing in `scripts/prepare_episode.py` | no | verify installed version and licence |
+| Indic Parler model/voice | not selected | TODO(human) | future `scripts/providers/indic_parler.py` | no | do not add until terms reviewed |
+| Market dataset | none | TODO(human) | future prepared episodes | no | no real data in Phase 0 |
+
+For every transitive dependency, future models, voices, datasets, icons, and fonts record direct/transitive status, licence source, notice obligations, security status, bundle contribution, runtime request, redistribution, attribution, privacy, and language restrictions.
 
 No runtime model, dataset, external font, remote icon, analytics library, or telemetry provider is approved for Phase 0. Future audio-model investigation is described in [`AUDIO_PIPELINE.md`](AUDIO_PIPELINE.md) and is not a selection.
 

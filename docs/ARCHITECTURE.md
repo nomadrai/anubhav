@@ -2,7 +2,7 @@
 
 ## Phase 0 shape
 
-The fixed implementation target is a Vite React application in strict TypeScript, styled with Tailwind, tested with Vitest, linted with ESLint, formatted with Prettier, and packaged with `vite-plugin-pwa`. Python 3.10+ scripts handle offline preparation tasks. The repository has configuration, bilingual content, and a preparation-script scaffold, but no interactive screen or engine implementation; this remains an intended contract rather than a complete module graph.
+The fixed implementation target is a Vite React application in strict TypeScript, styled with Tailwind, tested with Vitest, linted with ESLint, formatted with Prettier, and packaged with `vite-plugin-pwa`. Python 3.10+ scripts handle offline preparation tasks. Phase 0 includes a clickable bilingual journey, typed engine contracts, a deterministic synthetic path generator, and a preparation/audio CLI scaffold; simulation, charting, audio playback, PWA registration, and real episodes remain unimplemented.
 
 The product name has one source of truth: `src/config/app.ts`. Components may import that value; docs and participant-facing copy say **the app** rather than duplicating it.
 
