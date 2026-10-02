@@ -11,9 +11,9 @@ from pathlib import Path
 from typing import Any, Iterable
 
 try:  # Works both as `python scripts/generate_audio.py` and as a module.
-    from .audio.stub import StubProvider
+    from .providers.stub import StubProvider
 except ImportError:  # pragma: no cover - direct script execution path
-    from audio.stub import StubProvider
+    from providers.stub import StubProvider
 
 
 class AudioCliError(ValueError):
