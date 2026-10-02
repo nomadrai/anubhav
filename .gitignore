@@ -8,5 +8,6 @@ public/audio/**/*.opus
 coverage/
 __pycache__/
 *.pyc
+__agent__/
 
 *.tsbuildinfo
