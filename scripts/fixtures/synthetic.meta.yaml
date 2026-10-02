@@ -1,0 +1,21 @@
+# Explicit sessions are mandatory; no holiday or weekday assumptions are made.
+expectedDates:
+  - 2024-01-02
+  - 2024-01-03
+  - 2024-01-04
+  - 2024-01-05
+
+intradayAvailable: false
+isPlaceholder: true
+provenance:
+  sourceName: Synthetic Phase 0 fixture
+  sourceUrl: synthetic://phase0/synthetic.csv
+  retrievedOn: 2024-01-05
+  licenceNote: Synthetic fixture only; not market data and not licensed market data.
+reveal:
+  periodText:
+    en: A four-session synthetic example.
+    hi: चार सत्रों का एक कृत्रिम उदाहरण।
+  whatHappenedText:
+    en: The synthetic close dipped once and then recovered.
+    hi: कृत्रिम क्लोज़ एक बार गिरा और फिर संभल गया।

@@ -1,0 +1,22 @@
+[
+ {"id":"language.greeting","displayText":"Welcome. Choose a language to begin.","spokenText":"Welcome. Choose a language to begin.","trigger":"LanguageSelect","status":"reviewed"},
+ {"id":"intro.main","displayText":"This is practice with virtual money. Nothing is real. Nothing is saved or sent anywhere.","spokenText":"This is practice with virtual money. Nothing is real. Nothing is saved or sent anywhere.","trigger":"Intro","status":"reviewed"},
+ {"id":"setup.main","displayText":"A forwarded message promises to double money using borrowed exposure. It is only a teaching example.","spokenText":"A forwarded message promises to double money using borrowed exposure. It is only a teaching example.","trigger":"Setup","status":"reviewed"},
+ {"id":"prediction.main","displayText":"What do you think will happen? There is no right answer.","spokenText":"What do you think will happen? There is no right answer.","trigger":"Prediction","status":"reviewed"},
+ {"id":"run.main","displayText":"Watch the path. This preview is not yet the simulation.","spokenText":"Watch the path. This preview is not yet the simulation.","trigger":"Run","status":"reviewed"},
+ {"id":"result.main","displayText":"Here is the leveraged result. The full result is not yet implemented.","spokenText":"Here is the leveraged result. The full result is not yet implemented.","trigger":"Result","status":"reviewed"},
+ {"id":"replay.main","displayText":"The same path without leverage will make the contrast visible.","spokenText":"The same path without leverage will make the contrast visible.","trigger":"Replay","status":"reviewed"},
+ {"id":"reveal.main","displayText":"Later, the episode will use real history. One episode does not predict the future.","spokenText":"Later, the episode will use real history. One episode does not predict the future.","trigger":"Reveal","status":"reviewed"},
+ {"id":"debrief.main","displayText":"Leverage changes how quickly a price move affects virtual money.","spokenText":"Leverage changes how quickly a price move affects virtual money.","trigger":"Debrief","status":"reviewed"},
+ {"id":"postcheck.main","displayText":"Answer the question again. This is reflection, not a score.","spokenText":"Answer the question again. This is reflection, not a score.","trigger":"PostCheck","status":"reviewed"},
+ {"id":"nextsteps.main","displayText":"Verified protective resources will be added only after a human checks them.","spokenText":"Verified protective resources will be added only after a human checks them.","trigger":"NextSteps","status":"reviewed"},
+ {"id":"ENTRY","displayText":"The practice begins at the first value.","spokenText":"The practice begins at the first value.","trigger":"ENTRY","status":"reviewed"},
+ {"id":"DRAWDOWN_5","displayText":"The path is five percent below its start.","spokenText":"The path is five percent below its start.","trigger":"DRAWDOWN_5","status":"reviewed"},
+ {"id":"DRAWDOWN_10","displayText":"The path is ten percent below its start.","spokenText":"The path is ten percent below its start.","trigger":"DRAWDOWN_10","status":"reviewed"},
+ {"id":"DRAWDOWN_20","displayText":"The path is twenty percent below its start.","spokenText":"The path is twenty percent below its start.","trigger":"DRAWDOWN_20","status":"reviewed"},
+ {"id":"MARGIN_WARNING","displayText":"The virtual position is near its teaching margin level.","spokenText":"The virtual position is near its teaching margin level.","trigger":"MARGIN_WARNING","status":"reviewed"},
+ {"id":"FORCED_EXIT","displayText":"The teaching rule closes this leveraged position.","spokenText":"The teaching rule closes this leveraged position.","trigger":"FORCED_EXIT","status":"reviewed"},
+ {"id":"USER_EXIT","displayText":"The position was closed by the user's choice.","spokenText":"The position was closed by the user's choice.","trigger":"USER_EXIT","status":"reviewed"},
+ {"id":"EPISODE_END","displayText":"The path has reached its end.","spokenText":"The path has reached its end.","trigger":"EPISODE_END","status":"reviewed"},
+ {"id":"UNLEVERAGED_SURVIVED","displayText":"Without leverage, this teaching path remains open.","spokenText":"Without leverage, this teaching path remains open.","trigger":"UNLEVERAGED_SURVIVED","status":"reviewed"}
+]

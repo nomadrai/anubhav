@@ -1,0 +1,6 @@
+{
+  "id":"episode-synthetic-placeholder","label":"Episode A","bars":[{"close":100},{"close":102},{"close":98},{"close":95},{"close":97},{"close":93},{"close":96}],"intradayAvailable":false,
+  "reveal":{"periodText":{"en":"Synthetic placeholder; no historical period selected.","hi":"नकली उदाहरण; कोई ऐतिहासिक अवधि नहीं चुनी गई।"},"whatHappenedText":{"en":"A seeded teaching path moves up and down.","hi":"बीज से बना अभ्यास वाला रास्ता ऊपर-नीचे होता है।"}},
+  "stats":{"maxDrawdown":0.0882352941,"barCount":7,"totalChange":-0.04,"worstSingleDayFall":-0.0408163265},
+  "provenance":{"sourceName":"Synthetic seeded path","sourceUrl":"TODO(human): replace with verified data provenance","retrievedOn":"TODO(human)","licenceNote":"Synthetic placeholder; not market data."},"isPlaceholder":true
+}

@@ -6,5 +6,7 @@ public/audio/**/*.opus
 !.gitkeep
 .vite/
 coverage/
+__pycache__/
+*.pyc
 
 *.tsbuildinfo

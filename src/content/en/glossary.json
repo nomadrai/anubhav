@@ -1,0 +1,13 @@
+[
+ {"termId":"leverage","term":"Leverage","short":"Using borrowed exposure makes each price move affect more virtual money.","analogy":"A small push can move a longer seesaw arm more.","spokenText":"Leverage means borrowed exposure. Each price move affects more virtual money.","status":"reviewed"},
+ {"termId":"margin","term":"Margin","short":"The teaching amount kept aside for a leveraged position.","analogy":"It is like a deposit kept while borrowing for a shop purchase.","spokenText":"Margin is the teaching amount kept aside for a leveraged position.","status":"reviewed"},
+ {"termId":"forcedExit","term":"Forced exit","short":"A teaching rule closes the position when its equity falls to a set level.","analogy":"A lender may close a deal when the deposit is no longer enough.","spokenText":"A forced exit is when a rule closes the position at a set level.","status":"reviewed"},
+ {"termId":"volatility","term":"Volatility","short":"How much and how quickly values move up and down.","analogy":"Like a bus ride on a bumpy road.","spokenText":"Volatility describes how much and how quickly values move.","status":"reviewed"},
+ {"termId":"drawdown","term":"Drawdown","short":"The fall from a previous high to a later low.","analogy":"Like water level falling from its highest mark.","spokenText":"Drawdown is the fall from a previous high to a later low.","status":"reviewed"},
+ {"termId":"recovery","term":"Recovery maths","short":"A loss needs a larger percentage gain to return to the start.","analogy":"After losing half a sack, filling the missing half needs another full sack from what remains.","spokenText":"Recovery maths shows why a loss needs a larger gain to return to the start.","status":"reviewed"},
+ {"termId":"diversification","term":"Diversification","short":"planned","analogy":"planned","spokenText":"planned","status":"planned"},
+ {"termId":"NAV","term":"NAV","short":"planned","analogy":"planned","spokenText":"planned","status":"planned"},
+ {"termId":"compounding","term":"Compounding","short":"planned","analogy":"planned","spokenText":"planned","status":"planned"},
+ {"termId":"fees","term":"Fees","short":"planned","analogy":"planned","spokenText":"planned","status":"planned"},
+ {"termId":"nomination","term":"Nomination","short":"planned","analogy":"planned","spokenText":"planned","status":"planned"}
+]

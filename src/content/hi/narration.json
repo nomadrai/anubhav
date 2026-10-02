@@ -1,0 +1,22 @@
+[
+ {"id":"language.greeting","displayText":"स्वागत है। शुरू करने के लिए भाषा चुनें।","spokenText":"स्वागत है। शुरू करने के लिए भाषा चुनें।","trigger":"LanguageSelect","status":"draft"},
+ {"id":"intro.main","displayText":"यह आभासी पैसे का अभ्यास है। कुछ भी असली नहीं है। कुछ भी सेव या कहीं भेजा नहीं जाता।","spokenText":"यह आभासी पैसे का अभ्यास है। कुछ भी असली नहीं है। कुछ भी सेव या कहीं भेजा नहीं जाता।","trigger":"Intro","status":"draft"},
+ {"id":"setup.main","displayText":"एक भेजा संदेश उधार की ताकत से पैसा दोगुना करने का वादा करता है। यह केवल सीखने का उदाहरण है।","spokenText":"एक भेजा संदेश उधार की ताकत से पैसा दोगुना करने का वादा करता है। यह केवल सीखने का उदाहरण है।","trigger":"Setup","status":"draft"},
+ {"id":"prediction.main","displayText":"आपको क्या लगता है, क्या होगा? कोई सही जवाब नहीं है।","spokenText":"आपको क्या लगता है, क्या होगा? कोई सही जवाब नहीं है।","trigger":"Prediction","status":"draft"},
+ {"id":"run.main","displayText":"रास्ता देखें। यह झलक अभी सिमुलेशन नहीं है।","spokenText":"रास्ता देखें। यह झलक अभी सिमुलेशन नहीं है।","trigger":"Run","status":"draft"},
+ {"id":"result.main","displayText":"यह उधार की ताकत वाला नतीजा है। पूरा नतीजा अभी नहीं बना है।","spokenText":"यह उधार की ताकत वाला नतीजा है। पूरा नतीजा अभी नहीं बना है।","trigger":"Result","status":"draft"},
+ {"id":"replay.main","displayText":"बिना उधार वही रास्ता देखने से अंतर साफ़ होगा।","spokenText":"बिना उधार वही रास्ता देखने से अंतर साफ़ होगा।","trigger":"Replay","status":"draft"},
+ {"id":"reveal.main","displayText":"बाद में एपिसोड असली इतिहास से होगा। एक एपिसोड भविष्य नहीं बताता।","spokenText":"बाद में एपिसोड असली इतिहास से होगा। एक एपिसोड भविष्य नहीं बताता।","trigger":"Reveal","status":"draft"},
+ {"id":"debrief.main","displayText":"उधार की ताकत से कीमत का असर आभासी पैसे पर जल्दी पड़ता है।","spokenText":"उधार की ताकत से कीमत का असर आभासी पैसे पर जल्दी पड़ता है।","trigger":"Debrief","status":"draft"},
+ {"id":"postcheck.main","displayText":"सवाल का फिर जवाब दें। यह सोचने के लिए है, अंक के लिए नहीं।","spokenText":"सवाल का फिर जवाब दें। यह सोचने के लिए है, अंक के लिए नहीं।","trigger":"PostCheck","status":"draft"},
+ {"id":"nextsteps.main","displayText":"सुरक्षात्मक संसाधन मानव की जाँच के बाद ही जोड़े जाएँगे।","spokenText":"सुरक्षात्मक संसाधन मानव की जाँच के बाद ही जोड़े जाएँगे।","trigger":"NextSteps","status":"draft"},
+ {"id":"ENTRY","displayText":"अभ्यास पहली कीमत से शुरू होता है।","spokenText":"अभ्यास पहली कीमत से शुरू होता है।","trigger":"ENTRY","status":"draft"},
+ {"id":"DRAWDOWN_5","displayText":"रास्ता शुरुआत से पाँच प्रतिशत नीचे है।","spokenText":"रास्ता शुरुआत से पाँच प्रतिशत नीचे है।","trigger":"DRAWDOWN_5","status":"draft"},
+ {"id":"DRAWDOWN_10","displayText":"रास्ता शुरुआत से दस प्रतिशत नीचे है।","spokenText":"रास्ता शुरुआत से दस प्रतिशत नीचे है।","trigger":"DRAWDOWN_10","status":"draft"},
+ {"id":"DRAWDOWN_20","displayText":"रास्ता शुरुआत से बीस प्रतिशत नीचे है।","spokenText":"रास्ता शुरुआत से बीस प्रतिशत नीचे है।","trigger":"DRAWDOWN_20","status":"draft"},
+ {"id":"MARGIN_WARNING","displayText":"आभासी स्थिति अभ्यास की जमा रकम वाली सीमा के पास है।","spokenText":"आभासी स्थिति अभ्यास की जमा रकम वाली सीमा के पास है।","trigger":"MARGIN_WARNING","status":"draft"},
+ {"id":"FORCED_EXIT","displayText":"अभ्यास का नियम इस उधार वाली स्थिति को बंद करता है।","spokenText":"अभ्यास का नियम इस उधार वाली स्थिति को बंद करता है।","trigger":"FORCED_EXIT","status":"draft"},
+ {"id":"USER_EXIT","displayText":"स्थिति आपकी पसंद से बंद हुई।","spokenText":"स्थिति आपकी पसंद से बंद हुई।","trigger":"USER_EXIT","status":"draft"},
+ {"id":"EPISODE_END","displayText":"रास्ता अपने अंत तक पहुँच गया है।","spokenText":"रास्ता अपने अंत तक पहुँच गया है।","trigger":"EPISODE_END","status":"draft"},
+ {"id":"UNLEVERAGED_SURVIVED","displayText":"बिना उधार यह अभ्यास वाला रास्ता खुला रहता है।","spokenText":"बिना उधार यह अभ्यास वाला रास्ता खुला रहता है।","trigger":"UNLEVERAGED_SURVIVED","status":"draft"}
+]
