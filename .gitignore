@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env*
+public/audio/manifest.json
+public/audio/**/*.opus
+!.gitkeep
+.vite/
+coverage/
+
+*.tsbuildinfo
