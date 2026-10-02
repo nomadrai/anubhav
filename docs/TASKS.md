@@ -2,14 +2,25 @@
 
 Priority meanings: **P1 impact** = directly improves learner safety/outcome; **P2 Bharat** = bilingual/local-context reach; **P3 trust** = evidence, privacy, accessibility, and honest claims; **P4 tech** = maintainability and implementation quality; **P5 feasibility** = smallest practical delivery step. Each task has a primary owner: **agent** for implementation support, **human** for judgment/sign-off.
 
-## Phase 1 — Safe scaffold (P1/P4/P5)
+## Phase 0 — Scaffold and documentation (complete)
 
-- **P1 / agent:** implement the route-like screen stubs: language, intro, setup, prediction, run, result, replay, reveal, debrief, postcheck, nextsteps, and `pilot=1` local summary.
-- **P1 / human:** approve safety wording, hidden-period behavior, and no-advice boundaries.
-- **P4 / agent:** add strict typed config with the sole app-name constant, content schema, and placeholder-state tests.
-- **P3 / human:** run keyboard and screen-reader review at 360×640 and record evidence.
+- **P1/P2/P3/P4/P5 / agent:** create the bilingual clickable skeleton, content dictionaries, guardrail checks, typed contracts, documentation, and intentionally red release gate.
+- **P3 / human:** review safety wording, draft Hindi, accessibility, licences, and release blockers.
 
-## Phase 2 — Bilingual content (P1/P2/P3)
+## Phase 1 — Deterministic engine and episode pipeline (implemented; real data pending)
+
+- **P1/P4 / agent:** implement pure deterministic simulation, leverage/equity identity, intrabar lows, warning-once/event ordering, forced-exit simplification, user exit, recovery maths, summary statistics, and same-path unleveraged replay.
+- **P4 / agent:** validate runtime episode documents and maintain TypeScript/Python statistics parity tests.
+- **P5 / agent:** implement explicit-session CSV preparation, provenance/hash output, and synthetic crash/choppy fixtures.
+- **P1/P3 / human:** review the teaching margin rule, worked 10× example, and supply/licence real episodes. Release remains blocked until this is done.
+
+## Phase 2 — Real journey UI (next)
+
+- **P1 / agent:** connect the reducer journey to simulation playback, decision pauses, chart, equity/margin meters, replay contrast, reveal, debrief, post-check, and verified-resource filtering.
+- **P1/P2/P3 / human:** approve safety wording, hidden-period behavior, Hindi meaning, accessibility, and no-advice boundaries.
+
+## Phase 3 — Bilingual content and audio (next)
+
 
 - **P2 / agent:** implement English-first strings, separate spoken-number fields, draft-Hindi labels, and content-limit checks.
 - **P2 / human:** review Hindi meaning, naturalness, cultural clarity, glossary, and analogies.

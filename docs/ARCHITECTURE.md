@@ -1,8 +1,8 @@
 # Architecture
 
-## Phase 0 shape
+## Phase 1 shape
 
-The fixed implementation target is a Vite React application in strict TypeScript, styled with Tailwind, tested with Vitest, linted with ESLint, formatted with Prettier, and packaged with `vite-plugin-pwa`. Python 3.10+ scripts handle offline preparation tasks. Phase 0 includes a clickable bilingual journey, typed engine contracts, a deterministic synthetic path generator, and a preparation/audio CLI scaffold; simulation, charting, audio playback, PWA registration, and real episodes remain unimplemented.
+The fixed implementation target is a Vite React application in strict TypeScript, styled with Tailwind, tested with Vitest, linted with ESLint, formatted with Prettier, and packaged with `vite-plugin-pwa`. Python 3.10+ scripts handle offline preparation tasks. Phase 1 includes a clickable bilingual journey, a pure deterministic simulation engine, runtime episode validation, a deterministic synthetic path generator, and an explicit-session preparation CLI. Chart integration, audio playback, PWA registration, and verified real episodes remain unimplemented.
 
 The product name has one source of truth: `src/config/app.ts`. Components may import that value; docs and participant-facing copy say **the app** rather than duplicating it.
 
@@ -10,7 +10,7 @@ The product name has one source of truth: `src/config/app.ts`. Components may im
 
 - **Presentation:** route-like stub states, language/text-size controls, explicit placeholder labels, keyboard and screen-reader semantics.
 - **Content:** versioned English strings followed by draft Hindi, glossary terms, content validation, and release blockers.
-- **Engine boundary:** typed API stubs for seed, path, exposure, equity, warnings, forced exit, recovery, and summary statistics. Phase 0 may return fixtures; it must not claim to run a simulation.
+- **Engine boundary:** pure TypeScript functions for seed, path, exposure, equity, warnings, forced exit, recovery, summary statistics, and same-path replay. The engine accepts no I/O or DOM dependencies; synthetic fixtures are not market data.
 - **Synthetic data:** seeded `mulberry32` values and a geometric path fixture. It is deterministic test input, never a source of real data.
 - **Preparation tools:** Python CSV preparation and silent audio CLI contracts. They do not fetch data, generate sound, or invent calendar facts.
 - **Build/release:** content, type, test, bundle-budget, and release checks. Release intentionally blocks unresolved placeholders and unverified resources.
@@ -44,7 +44,7 @@ flowchart TD
 
 ## Data flow and storage
 
-A participant selection is held in memory during the flow. Only language and text-size preference may be persisted locally. No financial value, prediction, response, or pilot answer is persisted by the product in Phase 0. Static assets are same-origin; no runtime API or telemetry endpoint is allowed.
+A participant selection is held in memory during the flow. Only language and text-size preference may be persisted locally. No financial value, prediction, response, or pilot answer is persisted by the product. Phase 1 episode preparation runs offline and writes explicit JSON artifacts; the browser still loads checked-in static fixtures only. Static assets are same-origin; no runtime API or telemetry endpoint is allowed.
 
 ## API stub contract
 

@@ -1,6 +1,6 @@
 {
-  "id":"episode-synthetic-placeholder","label":"Episode A","bars":[{"close":100},{"close":99.850962},{"close":100.078505},{"close":99.490358},{"close":98.842339},{"close":99.200095},{"close":100.059172}],"intradayAvailable":false,"syntheticSeed":2025,
+  "id":"episode-synthetic-placeholder","label":"Episode A","bars":[{"close":100},{"close":99.851072585},{"close":100.078875701},{"close":99.492451691},{"close":98.846524509},{"close":99.204944331},{"close":100.067794271}],"intradayAvailable":false,"syntheticSeed":2025,
   "reveal":{"periodText":{"en":"Synthetic placeholder; no historical period selected.","hi":"नकली उदाहरण; कोई ऐतिहासिक अवधि नहीं चुनी गई।"},"whatHappenedText":{"en":"A seeded teaching path moves up and down.","hi":"बीज से बना अभ्यास वाला रास्ता ऊपर-नीचे होता है।"}},
-  "stats":{"maxDrawdown":-0.0123519631,"barCount":7,"totalChange":0.00059172,"worstSingleDayFall":-0.0065133849},
+  "stats":{"maxDrawdown":-0.0123137993,"barCount":7,"totalChange":0.0006779427,"worstSingleDayFall":-0.006492223},
   "provenance":{"sourceName":"Synthetic seeded path","sourceUrl":"TODO(human): replace with verified data provenance","retrievedOn":"TODO(human)","licenceNote":"Synthetic placeholder; not market data."},"isPlaceholder":true
 }

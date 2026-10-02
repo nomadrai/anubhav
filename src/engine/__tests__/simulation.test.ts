@@ -134,6 +134,11 @@ describe('equity and stats', () => {
     expect(stats.totalChange).toBeCloseTo(0.05, 12);
     expect(stats.barCount).toBe(5);
   });
+  it('uses close equity for warnings but low equity for forced exits', () => {
+    const result = runSimulation({ series: [{ close: 100 }, { close: 93.5, low: 93 }], capital: 10_000, leverage: 10, config: CONFIG });
+    expect(result.events.map((event) => event.id)).toContain('MARGIN_WARNING');
+    expect(result.events.map((event) => event.id)).not.toContain('FORCED_EXIT');
+  });
   it('reports intradayAvailable=false only when lows are missing', () => {
     expect(run([10_000, 9_000], 2).intradayAvailable).toBe(false);
     const withLows = runSimulation({
@@ -179,9 +184,9 @@ describe('compare and replay', () => {
   it('replays the identical series object at leverage 1', () => {
     const series = path([10_000, 9_500, 9_800]);
     const config = CONFIG;
-    const leveraged = runSimulation({ series, capital: 10_000, leverage: 5, config });
     const unleveraged = replayUnleveraged(series, 10_000, config);
     expect(unleveraged.final.outcome).toBe('ran_to_end');
+    expect(unleveraged.events.map((event) => event.id)).toContain('UNLEVERAGED_SURVIVED');
     expect(unleveraged.timeline).toHaveLength(series.length);
   });
   it('reports final equities, difference, and required recovery', () => {
@@ -238,8 +243,8 @@ describe('selectDebrief', () => {
     const deepSeries = path([10_000, 8_900, 9_600]);
     const leveragedForced = runSimulation({ series: deepSeries, capital: 10_000, leverage: 5, config: harsh });
     const unleveragedForced = runSimulation({ series: deepSeries, capital: 10_000, leverage: 1, config: harsh });
-    expect(unleveragedForced.final.outcome).toBe('forced_exit');
-    expect(selectDebrief(leveragedForced, unleveragedForced, 'smallLoss')).not.toContain('unleveragedSurvived');
+    expect(unleveragedForced.final.outcome).toBe('ran_to_end');
+    expect(selectDebrief(leveragedForced, unleveragedForced, 'smallLoss')).toContain('unleveragedSurvived');
   });
 });
 
@@ -256,8 +261,18 @@ describe('error cases', () => {
   it('throws SeriesError for a non-positive optional low', () => {
     expect(() => runSimulation({ series: [{ close: 10_000 }, { close: 9_000, low: 0 }], capital: 10_000, leverage: 2, config: CONFIG })).toThrow(SeriesError);
   });
-  it('throws SeriesError for non-positive capital', () => {
+  it('throws SeriesError for non-positive or non-finite capital', () => {
     expect(() => runSimulation({ series: path([100, 101]), capital: 0, leverage: 2, config: CONFIG })).toThrow(SeriesError);
+    expect(() => runSimulation({ series: path([100, 101]), capital: Number.NaN, leverage: 2, config: CONFIG })).toThrow(SeriesError);
+  });
+  it('never force-exits unleveraged runs, even when the teaching threshold is high', () => {
+    const result = runSimulation({ series: path([100, 89]), capital: 10_000, leverage: 1, config: { ...CONFIG, maintenanceFraction: 0.9 } });
+    expect(result.final.outcome).toBe('ran_to_end');
+    expect(result.events.map((event) => event.id)).not.toContain('FORCED_EXIT');
+  });
+  it('rejects invalid exit indexes and contradictory OHLC bars', () => {
+    expect(() => runSimulation({ series: path([100, 101]), capital: 10_000, leverage: 2, exitAtIndex: 0, config: CONFIG })).toThrow(SeriesError);
+    expect(() => runSimulation({ series: [{ close: 100 }, { close: 99, low: 101 }], capital: 10_000, leverage: 2, config: CONFIG })).toThrow(SeriesError);
   });
   it('same seed gives the same path and the same engine output', () => {
     const left = generatePath({ seed: 2025, length: 20 });

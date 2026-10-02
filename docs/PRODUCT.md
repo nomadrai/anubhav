@@ -22,9 +22,9 @@ After a short, guided interaction, a participant should be able to:
 
 The outcome is recognition, not prediction skill or a profitable strategy.
 
-## Phase 0 acceptance boundary
+## Phase boundaries
 
-Phase 0 implements only bilingual clickable stubs, deterministic seeded synthetic-path plumbing, engine API stubs, content/release/bundle script contracts, a CSV-preparation CLI contract, and a silent audio CLI stub. It does not implement actual simulation, charts, audio playback, offline behavior, or pilot UI beyond a scaffold.
+Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 now implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. The current app still does not connect these engine results to production charts, audio playback, offline behavior, or a polished pilot flow; those remain later phases.
 
 Every screen must have a keyboard-reachable primary action, a visible placeholder state where work is not implemented, and a language label. The journey is:
 

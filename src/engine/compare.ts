@@ -7,7 +7,11 @@ import type { Bar, RunComparison, SimConfig, SimResult } from './types';
  * contrast is attributable to exposure alone, not to a different path.
  */
 export function replayUnleveraged(series: Bar[], capital: number, config: SimConfig): SimResult {
-  return runSimulation({ series, capital, leverage: 1, config });
+  const result = runSimulation({ series, capital, leverage: 1, config });
+  if (result.final.outcome === 'ran_to_end') {
+    result.events.push({ id: 'UNLEVERAGED_SURVIVED', index: result.timeline.length - 1 });
+  }
+  return result;
 }
 
 /**

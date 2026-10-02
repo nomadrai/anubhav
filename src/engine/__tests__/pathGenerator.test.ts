@@ -7,6 +7,6 @@ describe('generatePath', () => {
   });
   it('applies a scripted shock at its index', () => {
     const path = generatePath({ seed: 1, length: 3, startPrice: 100, volatility: 0, shock: { atIndex: 1, sizePct: -0.1 } });
-    expect(path[1].close).toBe(90);
+    expect(path[1].close).toBeCloseTo(100 * Math.exp(-0.1), 12);
   });
 });

@@ -1,18 +1,18 @@
 # Investor-protection learning scaffold
 
-This repository is documentation-first Phase 0 for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
+This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
 
-## What Phase 0 is
+## Current status: Phase 1 engine and data plumbing
 
-Phase 0 defines a bilingual, clickable scaffold for learning and reflection. It includes the contracts for:
+Phase 0’s bilingual clickable scaffold is now joined by Phase 1 deterministic engine plumbing:
 
-- English-first, draft-Hindi content and a language toggle;
-- a deterministic seeded `mulberry32` geometric synthetic path;
-- engine API stubs and a CSV-preparation CLI contract;
-- content, bundle, and release checks;
-- a no-sound audio CLI stub.
+- validated pure TypeScript simulation with long exposure, intrabar-low forced-exit teaching rule, warning/event ordering, user exit, stats, recovery maths, and same-path unleveraged replay;
+- seeded `mulberry32` geometric synthetic path generation;
+- runtime episode schema validation and Python CSV preparation with explicit session calendars, OHLC checks, provenance, SHA-256 input hashes, and computed stats;
+- synthetic crash/choppy fixtures for tests only, clearly marked `isPlaceholder: true`;
+- regression tests for formula identity, leverage ordering, low-based exits, event uniqueness, stats parity, and episode fixtures.
 
-The scaffold is **not** a trading simulator, adviser, charting product, broker, market-data product, or audio player. It has no actual simulation, charts, audio playback, offline support, or pilot UI beyond the scaffold. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
+The journey UI remains a clickable skeleton. Charts, production audio playback, real supplied market episodes, PWA registration, and polished replay screens remain later-phase work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
 
 ## Screen contract
 
@@ -28,7 +28,7 @@ There are no recommendations, brands, real instruments, monetisation, profit gam
 
 ## Intended stack and checks
 
-The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a clickable bilingual journey scaffold, typed engine contracts, deterministic path generator, content/release/bundle checks, and preparation/audio CLI stubs. The simulation engine, charts, audio playback, PWA registration, real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Phase 0 has been run with `python3` (the checkout has no `python` executable):
+The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a clickable bilingual journey scaffold, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and preparation/audio CLI stubs. Charts, audio playback, PWA registration, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
 
 ```sh
 npm install
@@ -42,11 +42,11 @@ npm run check:bundle
 npm run release
 ```
 
-`release` is deliberately expected to fail while the placeholder episode, draft Hindi content, TODOs, or unverified candidate resources remain. Do not turn that failure into a green check by weakening the gate. `check:content` warns about the not-yet-generated audio manifest in Phase 0. The preparation-script contract is documented in [`scripts/README.md`](scripts/README.md) and [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md); the audio stub contract is documented in [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md).
+`release` is deliberately expected to fail while the placeholder episode, draft Hindi content, TODOs, or unverified candidate resources remain. Do not turn that failure into a green check by weakening the gate. `check:content` warns about the not-yet-generated audio manifest because audio remains a later phase. The preparation-script contract is documented in [`scripts/README.md`](scripts/README.md) and [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md); the audio stub contract is documented in [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md).
 
 ## Documentation map
 
-- [`docs/PRODUCT.md`](docs/PRODUCT.md) — audience, outcome, and Phase 0 acceptance boundary.
+- [`docs/PRODUCT.md`](docs/PRODUCT.md) — audience, outcome, and phase boundaries.
 - [`docs/GUARDRAILS.md`](docs/GUARDRAILS.md) — prohibited claims and release safety rules.
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — layers, routes, data flow, and Mermaid diagram.
 - [`docs/SIMULATION_SPEC.md`](docs/SIMULATION_SPEC.md) — future deterministic math and API contracts.
@@ -64,4 +64,4 @@ npm run release
 
 ## Truthfulness rule
 
-The Phase 0 checks were run locally; see the report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.
+The Phase 0 and Phase 1 checks are run locally; see the task report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.

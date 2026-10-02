@@ -10,7 +10,7 @@ export function generatePath({ seed, length, startPrice = 100, volatility = 0.01
     const previous = bars[index - 1].close;
     const drift = (random() - 0.5) * 2 * volatility;
     const shockMove = shock?.atIndex === index ? shock.sizePct : 0;
-    bars.push({ close: previous * (1 + drift + shockMove) });
+    bars.push({ close: previous * Math.exp(drift + shockMove) });
   }
   return bars;
 }

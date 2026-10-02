@@ -45,7 +45,10 @@ function validateBar(id: string, value: unknown, index: number): Bar {
     if (bar.open !== undefined && bar.open < bar.low) fail(id, `bars[${index}]: open must be >= low`);
   }
   if (value.date !== undefined) {
-    if (!isNonEmptyString(value.date)) fail(id, `bars[${index}].date must be a non-empty string when present`);
+    const dateMatch = typeof value.date === 'string' ? /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.date) : null;
+    const parsedDate = dateMatch ? new Date(Date.UTC(Number(dateMatch[1]), Number(dateMatch[2]) - 1, Number(dateMatch[3]))) : undefined;
+    const validDate = dateMatch && parsedDate && parsedDate.getUTCFullYear() === Number(dateMatch[1]) && parsedDate.getUTCMonth() === Number(dateMatch[2]) - 1 && parsedDate.getUTCDate() === Number(dateMatch[3]);
+    if (!isNonEmptyString(value.date) || !validDate) fail(id, `bars[${index}].date must be a valid YYYY-MM-DD date when present`);
     bar.date = value.date;
   }
   return bar;
@@ -75,6 +78,10 @@ export function validateEpisode(value: unknown): Episode {
     }
   }
   if (typeof value.intradayAvailable !== 'boolean') fail(id, 'intradayAvailable must be a boolean');
+  const hasAnyLow = bars.some((bar) => bar.low !== undefined);
+  const hasEveryLow = bars.every((bar) => bar.low !== undefined);
+  if (hasAnyLow !== hasEveryLow) fail(id, 'low must be present on every bar or no bar');
+  if (value.intradayAvailable !== hasEveryLow) fail(id, 'intradayAvailable must match whether every bar has a low');
   if (typeof value.isPlaceholder !== 'boolean') fail(id, 'isPlaceholder must be a boolean');
 
   if (!isObject(value.reveal)) fail(id, 'reveal must be an object');

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a dated OHLC CSV and build a Phase 0 episode JSON document.
+"""Validate a dated OHLC CSV and build a Phase 1 episode JSON document.
 
 The metadata schema is documented in scripts/README.md.  This module has no
 market-calendar knowledge: every expected session must be listed explicitly in
@@ -29,14 +29,27 @@ class EpisodeError(ValueError):
     """A user-correctable input or metadata error."""
 
 
+NEUTRAL_LABEL = "Episode A"
+_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+
+
 def _error(message: str) -> EpisodeError:
     return EpisodeError(message)
 
 
+def _validate_episode_id(value: Any) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise _error("--id must be a non-empty string")
+    episode_id = value.strip()
+    if not _ID_PATTERN.fullmatch(episode_id):
+        raise _error("--id must be a stable identifier using letters, digits, '.', '_' or '-'")
+    return episode_id
+
+
 def _parse_date(value: Any, field: str) -> date:
-    # PyYAML turns an unquoted ISO YAML scalar into datetime.date. Accepting it
-    # is safe because it is still an explicit date, not an inferred session.
-    if isinstance(value, date):
+    # PyYAML turns an unquoted ISO YAML scalar into datetime.date. Do not accept
+    # datetime values: they would silently introduce a time into a session key.
+    if type(value) is date:
         return value
     if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value.strip()):
         raise _error(f"{field} must be an ISO date in YYYY-MM-DD form; got {value!r}")
@@ -67,15 +80,16 @@ def _as_expected_dates(meta: dict[str, Any]) -> list[date]:
         raw = meta["expectedDates"]
     else:
         raw = meta["calendar"]
-        if isinstance(raw, dict):
-            # `dates` is the documented spelling; the aliases make migration
-            # less surprising while still requiring an explicit date list.
-            for key in ("dates", "expectedDates", "sessions"):
-                if key in raw:
-                    raw = raw[key]
-                    break
-            else:
-                raise _error("metadata calendar must contain an explicit dates list")
+        if not isinstance(raw, dict):
+            raise _error("metadata calendar must be an object with an explicit dates list")
+        # `dates` is the documented spelling; the aliases make migration less
+        # surprising while still requiring an explicit date list.
+        for key in ("dates", "expectedDates", "sessions"):
+            if key in raw:
+                raw = raw[key]
+                break
+        else:
+            raise _error("metadata calendar must contain an explicit dates list")
     if not isinstance(raw, list) or not raw:
         raise _error("expectedDates/calendar dates must be a non-empty list")
 
@@ -104,8 +118,8 @@ def _validate_metadata(meta: Any) -> tuple[list[date], dict[str, Any], bool, dic
     clean_provenance: dict[str, str] = {}
     for field in ("sourceName", "sourceUrl", "retrievedOn", "licenceNote"):
         value = provenance.get(field)
-        if field == "retrievedOn" and isinstance(value, date):
-            clean_provenance[field] = value.isoformat()
+        if field == "retrievedOn":
+            clean_provenance[field] = _parse_date(value, "provenance.retrievedOn").isoformat()
         else:
             clean_provenance[field] = _nonempty_string(value, f"provenance.{field}")
 
@@ -150,7 +164,7 @@ def _read_bars(csv_path: Path, start: date, end: date) -> tuple[list[dict[str, f
         raise _error(f"CSV must be UTF-8: {exc}") from exc
 
     try:
-        reader = csv.DictReader(text.splitlines())
+        reader = csv.DictReader(text.splitlines(), strict=True)
         raw_fields = reader.fieldnames
     except csv.Error as exc:
         raise _error(f"cannot parse CSV header: {exc}") from exc
@@ -170,45 +184,51 @@ def _read_bars(csv_path: Path, start: date, end: date) -> tuple[list[dict[str, f
 
     bars: list[dict[str, float | str]] = []
     seen: set[date] = set()
-    for row_number, row in enumerate(reader, start=2):
-        if None in row and any(str(value).strip() for value in row[None] or []):
-            raise _error(f"CSV row {row_number}: too many columns")
-        for field in raw_fields:
-            if row.get(field) is None or not str(row.get(field)).strip():
-                raise _error(f"CSV row {row_number}: {field} is missing")
-        date_raw = row.get(names["date"])
-        if date_raw is None or not str(date_raw).strip():
-            raise _error(f"CSV row {row_number}: date is missing")
-        row_date = _parse_date(str(date_raw).strip(), f"CSV row {row_number} date")
-        if row_date < start or row_date > end:
-            raise _error(f"CSV row {row_number}: date {row_date} is outside requested range {start}..{end}")
-        if row_date in seen:
-            raise _error(f"CSV row {row_number}: duplicate date {row_date}")
-        seen.add(row_date)
-        bar: dict[str, float | str] = {"date": row_date.isoformat(), "close": _read_number(row.get(names["close"]), "close", row_number)}
-        for field in optional:
-            bar[field] = _read_number(row.get(names[field]), field, row_number)
+    try:
+        rows = enumerate(reader, start=2)
+        for row_number, row in rows:
+            if None in row and any(str(value).strip() for value in row[None] or []):
+                raise _error(f"CSV row {row_number}: too many columns")
+            for field in raw_fields:
+                if row.get(field) is None or not str(row.get(field)).strip():
+                    raise _error(f"CSV row {row_number}: {field} is missing")
+            date_raw = row.get(names["date"])
+            if date_raw is None or not str(date_raw).strip():
+                raise _error(f"CSV row {row_number}: date is missing")
+            row_date = _parse_date(str(date_raw).strip(), f"CSV row {row_number} date")
+            if row_date < start or row_date > end:
+                raise _error(f"CSV row {row_number}: date {row_date} is outside requested range {start}..{end}")
+            if row_date in seen:
+                raise _error(f"CSV row {row_number}: duplicate date {row_date}")
+            seen.add(row_date)
+            bar: dict[str, float | str] = {"date": row_date.isoformat(), "close": _read_number(row.get(names["close"]), "close", row_number)}
+            for field in optional:
+                bar[field] = _read_number(row.get(names[field]), field, row_number)
 
-        close = float(bar["close"])
-        opening = float(bar["open"]) if "open" in bar else None
-        high = float(bar["high"]) if "high" in bar else None
-        low = float(bar["low"]) if "low" in bar else None
-        if high is not None and high < close:
-            raise _error(f"CSV row {row_number}: high must be >= close")
-        if low is not None and low > close:
-            raise _error(f"CSV row {row_number}: low must be <= close")
-        if high is not None and low is not None and high < low:
-            raise _error(f"CSV row {row_number}: high must be >= low")
-        if opening is not None:
-            if high is not None and opening > high:
-                raise _error(f"CSV row {row_number}: open must be <= high")
-            if low is not None and opening < low:
-                raise _error(f"CSV row {row_number}: open must be >= low")
-        bars.append(bar)
+            close = float(bar["close"])
+            opening = float(bar["open"]) if "open" in bar else None
+            high = float(bar["high"]) if "high" in bar else None
+            low = float(bar["low"]) if "low" in bar else None
+            if high is not None and high < close:
+                raise _error(f"CSV row {row_number}: high must be >= close")
+            if low is not None and low > close:
+                raise _error(f"CSV row {row_number}: low must be <= close")
+            if high is not None and low is not None and high < low:
+                raise _error(f"CSV row {row_number}: high must be >= low")
+            if opening is not None:
+                if high is not None and opening > high:
+                    raise _error(f"CSV row {row_number}: open must be <= high")
+                if low is not None and opening < low:
+                    raise _error(f"CSV row {row_number}: open must be >= low")
+            bars.append(bar)
+    except csv.Error as exc:
+        raise _error(f"cannot parse CSV row: {exc}") from exc
     return sorted(bars, key=lambda bar: str(bar["date"])), digest
 
 
 def _stats(bars: list[dict[str, float | str]]) -> dict[str, float | int]:
+    if len(bars) < 2:
+        raise _error("episode must contain at least two bars")
     closes = [float(bar["close"]) for bar in bars]
     first = closes[0]
     peak = first
@@ -219,15 +239,19 @@ def _stats(bars: list[dict[str, float | str]]) -> dict[str, float | int]:
         worst_day = min(worst_day, daily_change)
         peak = max(peak, current)
         max_drawdown = min(max_drawdown, current / peak - 1.0)
-    return {
+    stats: dict[str, float | int] = {
         "maxDrawdown": max_drawdown,
         "barCount": len(closes),
         "totalChange": closes[-1] / first - 1.0,
         "worstSingleDayFall": worst_day,
     }
+    if any(not math.isfinite(float(value)) for value in stats.values()):
+        raise _error("episode price ratios produce non-finite statistics; use a safer numeric range")
+    return stats
 
 
 def build_episode(csv_path: Path, episode_id: str, start: date, end: date, meta_path: Path) -> dict[str, Any]:
+    episode_id = _validate_episode_id(episode_id)
     if start > end:
         raise _error(f"start date {start} must not be after end date {end}")
     try:
@@ -252,12 +276,22 @@ def build_episode(csv_path: Path, episode_id: str, start: date, end: date, meta_
         raise _error("CSV contains date(s) not listed as expected sessions: " + ", ".join(item.isoformat() for item in unexpected))
     if not bars:
         raise _error("CSV contains no bars in requested range")
+    if len(bars) < 2:
+        raise _error(f"episode must contain at least two bars; found {len(bars)}")
+
+    has_low = all("low" in bar for bar in bars)
+    if intraday != has_low:
+        expected = "true when every bar has a low" if intraday else "false when no bar has a low"
+        raise _error(
+            "metadata intradayAvailable does not match CSV low-column presence "
+            f"(intradayAvailable={str(intraday).lower()}, {expected})"
+        )
 
     output_provenance = {key: provenance[key] for key in ("sourceName", "sourceUrl", "retrievedOn", "licenceNote")}
     output_provenance["inputSha256"] = input_sha256
     return {
         "id": episode_id,
-        "label": "Episode A",
+        "label": NEUTRAL_LABEL,
         "bars": bars,
         "intradayAvailable": intraday,
         "reveal": reveal,
@@ -268,7 +302,7 @@ def build_episode(csv_path: Path, episode_id: str, start: date, end: date, meta_
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Validate an explicit-session OHLC CSV and prepare a Phase 0 episode JSON.")
+    parser = argparse.ArgumentParser(description="Validate an explicit-session OHLC CSV and prepare a Phase 1 episode JSON.")
     parser.add_argument("--csv", required=True, type=Path, help="input UTF-8 CSV")
     parser.add_argument("--id", required=True, help="episode identifier")
     parser.add_argument("--start", required=True, help="inclusive start date (YYYY-MM-DD)")
@@ -284,11 +318,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     try:
         start = _parse_date(args.start, "--start")
         end = _parse_date(args.end, "--end")
-        episode_id = args.id.strip()
-        if not episode_id:
-            raise _error("--id must be non-empty")
-        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", episode_id):
-            raise _error("--id must be a stable identifier using letters, digits, '.', '_' or '-'")
+        episode_id = _validate_episode_id(args.id)
         episode = build_episode(args.csv, episode_id, start, end, args.meta)
         rendered = json.dumps(episode, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
         if args.output:

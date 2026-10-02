@@ -9,7 +9,7 @@ function load(id: string, value: unknown): Episode {
     return validateEpisode(value);
   } catch (error) {
     // Readable in dev: name the file, not just the validation failure.
-    throw new Error(`Invalid episode file ${id}.json: ${error instanceof Error ? error.message : String(error)}`);
+    throw new Error(`Invalid episode file ${id}.json: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
   }
 }
 

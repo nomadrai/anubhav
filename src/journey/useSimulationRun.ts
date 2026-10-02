@@ -35,7 +35,9 @@ export function useSimulationRun({ episode, capital, leverage, config, onFinish 
   const [exited, setExited] = useState(false);
   const finishedRef = useRef(false);
   const onFinishRef = useRef(onFinish);
-  onFinishRef.current = onFinish;
+  useEffect(() => {
+    onFinishRef.current = onFinish;
+  }, [onFinish]);
 
   const warnings = useMemo(() => new Set(leveraged.events.filter((event) => event.id === 'MARGIN_WARNING').map((event) => event.index)), [leveraged]);
   const pauses = useMemo(() => new Set(decisionIndexes(leveraged.timeline.length)), [leveraged]);
@@ -47,10 +49,12 @@ export function useSimulationRun({ episode, capital, leverage, config, onFinish 
       : leveraged.timeline.length - 1;
 
   useEffect(() => {
+    // Reset the playback state when a new episode or setup is selected.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPlayedCount(1);
     setExited(false);
     finishedRef.current = false;
-  }, [episode, capital, leverage]);
+  }, [episode, capital, leverage, config]);
 
   useEffect(() => {
     if (exited) return;

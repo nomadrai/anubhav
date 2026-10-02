@@ -28,15 +28,17 @@ def write_csv(text: str, directory: str, name: str = "input.csv") -> Path:
 
 class PrepareEpisodeTests(unittest.TestCase):
     def test_fixture_is_sorted_and_statistics_are_fractions(self):
-        episode = build_episode(FIXTURE_CSV, "fixture", date(2024, 1, 2), date(2024, 1, 5), FIXTURE_META)
+        episode = build_episode(CRASH_CSV, "fixture", *RANGE, CRASH_META)
         self.assertEqual(episode["label"], "Episode A")
         self.assertEqual([bar["date"] for bar in episode["bars"]], [
-            "2024-01-02", "2024-01-03", "2024-01-04", "2024-01-05"
+            "2024-01-02", "2024-01-03", "2024-01-04", "2024-01-05",
+            "2024-01-06", "2024-01-07", "2024-01-08", "2024-01-09",
+            "2024-01-10", "2024-01-11",
         ])
-        self.assertEqual(episode["stats"]["barCount"], 4)
-        self.assertAlmostEqual(episode["stats"]["totalChange"], 108 / 104 - 1)
-        self.assertAlmostEqual(episode["stats"]["maxDrawdown"], 103 / 104 - 1)
-        self.assertAlmostEqual(episode["stats"]["worstSingleDayFall"], 103 / 104 - 1)
+        self.assertEqual(episode["stats"]["barCount"], 10)
+        self.assertAlmostEqual(episode["stats"]["totalChange"], 75.5 / 100.5 - 1)
+        self.assertAlmostEqual(episode["stats"]["maxDrawdown"], 73 / 100.5 - 1)
+        self.assertAlmostEqual(episode["stats"]["worstSingleDayFall"], 79 / 85 - 1)
         self.assertTrue(episode["isPlaceholder"])
         self.assertEqual(len(episode["provenance"]["inputSha256"]), 64)
 
@@ -92,6 +94,7 @@ class PrepareEpisodeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             for text in (
                 "date,close\n2024-01-02,100\n2024-01-03,nan\n",
+                "date,close\n2024-01-02,100\n2024-01-03,inf\n",
                 "date,close\n2024-01-02,100\n2024-01-03,0\n",
                 "date,close\n2024-01-02,100\n2024-01-03,-5\n",
             ):
@@ -145,14 +148,14 @@ class PrepareEpisodeTests(unittest.TestCase):
     def test_cli_output_is_json(self):
         # Exercise the same builder's output contract without depending on a
         # subprocess working directory.
-        episode = build_episode(FIXTURE_CSV, "cli-like", date(2024, 1, 2), date(2024, 1, 5), FIXTURE_META)
+        episode = build_episode(CHOPPY_CSV, "cli-like", *RANGE, CHOPPY_META)
         self.assertEqual(json.loads(json.dumps(episode))["id"], "cli-like")
 
     def test_main_writes_output_file_and_exit_codes_are_clean(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "episode.json"
-            code = main(["--csv", str(FIXTURE_CSV), "--id", "file-write", "--start", "2024-01-02",
-                         "--end", "2024-01-05", "--meta", str(FIXTURE_META), "--output", str(output)])
+            code = main(["--csv", str(CHOPPY_CSV), "--id", "file-write", "--start", "2024-01-02",
+                         "--end", "2024-01-11", "--meta", str(CHOPPY_META), "--output", str(output)])
             self.assertEqual(code, 0)
             payload = json.loads(output.read_text(encoding="utf-8"))
             self.assertEqual(payload["id"], "file-write")
@@ -173,6 +176,84 @@ class PrepareEpisodeTests(unittest.TestCase):
         rendered = json.dumps(episode, allow_nan=False)
         self.assertIn("maxDrawdown", rendered)
         self.assertEqual(set(episode["stats"]), {"maxDrawdown", "barCount", "totalChange", "worstSingleDayFall"})
+
+    def test_metadata_requires_both_reveal_languages_and_all_provenance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = write_csv("date,close\n2024-01-02,100\n2024-01-03,101\n", directory)
+            for metadata, message in (
+                ("reveal: {periodText: {en: p}, whatHappenedText: {en: q, hi: r}}\n", "reveal.periodText.hi"),
+                ("provenance: {sourceName: s, sourceUrl: u, retrievedOn: 2024-01-03}\n", "provenance.licenceNote"),
+            ):
+                meta_path = Path(directory) / f"{len(message)}.yaml"
+                base = (
+                    "expectedDates: [2024-01-02, 2024-01-03]\nintradayAvailable: false\n"
+                    "isPlaceholder: true\nprovenance: {sourceName: s, sourceUrl: u, retrievedOn: 2024-01-03, licenceNote: l}\n"
+                    "reveal: {periodText: {en: p, hi: q}, whatHappenedText: {en: p, hi: q}}\n"
+                )
+                if metadata.startswith("reveal:"):
+                    rendered = base.replace(
+                        "reveal: {periodText: {en: p, hi: q}, whatHappenedText: {en: p, hi: q}}\n", metadata
+                    )
+                else:
+                    rendered = base.replace(
+                        "provenance: {sourceName: s, sourceUrl: u, retrievedOn: 2024-01-03, licenceNote: l}\n", metadata
+                    )
+                meta_path.write_text(rendered, encoding="utf-8")
+                with self.subTest(message=message), self.assertRaisesRegex(EpisodeError, message):
+                    build_episode(path, "metadata-check", date(2024, 1, 2), date(2024, 1, 3), meta_path)
+
+    def test_intraday_metadata_must_match_low_presence(self):
+        with self.assertRaisesRegex(EpisodeError, "intradayAvailable.*low-column presence"):
+            build_episode(CHOPPY_CSV, "mismatch", *RANGE, CRASH_META)
+        with self.assertRaisesRegex(EpisodeError, "intradayAvailable.*low-column presence"):
+            build_episode(CRASH_CSV, "mismatch", *RANGE, CHOPPY_META)
+
+    def test_single_bar_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = write_csv("date,close\n2024-01-02,100\n", directory)
+            meta_path = Path(directory) / "meta.yaml"
+            meta_path.write_text(
+                "expectedDates: [2024-01-02]\nintradayAvailable: false\nisPlaceholder: true\n"
+                "provenance: {sourceName: s, sourceUrl: u, retrievedOn: 2024-01-02, licenceNote: l}\n"
+                "reveal: {periodText: {en: p, hi: q}, whatHappenedText: {en: p, hi: q}}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(EpisodeError, "at least two bars"):
+                build_episode(path, "one-bar", date(2024, 1, 2), date(2024, 1, 2), meta_path)
+
+    def test_invalid_id_is_rejected_by_builder(self):
+        with self.assertRaisesRegex(EpisodeError, "stable identifier"):
+            build_episode(CHOPPY_CSV, "not neutral/id", *RANGE, CHOPPY_META)
+
+    def test_cli_regenerates_committed_synthetic_fixtures_in_temp(self):
+        expected_files = ((CRASH_CSV, CRASH_META, "crash-synthetic.json"),
+                          (CHOPPY_CSV, CHOPPY_META, "choppy-synthetic.json"))
+        for csv_path, meta_path, expected_name in expected_files:
+            with self.subTest(expected_name=expected_name), tempfile.TemporaryDirectory() as directory:
+                output = Path(directory) / expected_name
+                completed = subprocess.run(
+                    [sys.executable, str(ROOT / "prepare_episode.py"), "--csv", str(csv_path),
+                     "--id", expected_name.removesuffix(".json"), "--start", "2024-01-02",
+                     "--end", "2024-01-11", "--meta", str(meta_path), "--output", str(output)],
+                    capture_output=True, text=True, check=False,
+                )
+                self.assertEqual(completed.returncode, 0, completed.stderr)
+                committed = ROOT.parent / "src/data/episodes" / expected_name
+                self.assertEqual(json.loads(output.read_text(encoding="utf-8")),
+                                 json.loads(committed.read_text(encoding="utf-8")))
+
+    def test_cli_output_is_deterministic_for_same_input(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = Path(directory) / "first.json"
+            second = Path(directory) / "second.json"
+            command = [sys.executable, str(ROOT / "prepare_episode.py"), "--csv", str(CHOPPY_CSV),
+                       "--id", "stable", "--start", "2024-01-02", "--end", "2024-01-11",
+                       "--meta", str(CHOPPY_META)]
+            first_run = subprocess.run(command + ["--output", str(first)], capture_output=True, text=True)
+            second_run = subprocess.run(command + ["--output", str(second)], capture_output=True, text=True)
+            self.assertEqual(first_run.returncode, 0, first_run.stderr)
+            self.assertEqual(second_run.returncode, 0, second_run.stderr)
+            self.assertEqual(first.read_bytes(), second.read_bytes())
 
 
 if __name__ == "__main__":
