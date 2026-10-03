@@ -1,7 +1,7 @@
 {
-  "forcedExit": {"title":"A forced exit","body":"On step {stepNumber} the position's virtual money touched the teaching maintenance level ({levelAmount}), so the teaching rule closed it at {settledAmount}. The rest of the path is shown for context only — those later prices were not recoverable."},
-  "survivedButHurt": {"title":"The position survived","body":"The position stayed open to the end, but the same path moved its virtual money {lossPct} at its worst point. Survival was not comfort: the swings were far larger than without borrowed exposure."},
-  "userExitedEarly": {"title":"You exited","body":"You closed the position on step {stepNumber} at {finalAmount}. An early exit changes the path you experience afterwards. It does not make one episode a forecast."},
+  "forcedExit": {"title":"A forced exit","body":"On step {stepNumber}, virtual money reached the teaching maintenance level ({levelAmount}). The rule closed the position at {settledAmount}. Later prices are context only; the closed position cannot benefit from them."},
+  "survivedButHurt": {"title":"The position survived","body":"The position stayed open to the end. At its worst point, its virtual money was {lossPct} below the starting amount. Staying open did not remove the larger swings caused by borrowed exposure."},
+  "userExitedEarly": {"title":"You exited","body":"You closed the position on step {stepNumber} at {finalAmount}. After your exit, later price changes no longer affect this position. It does not make one episode a forecast."},
   "unleveragedSurvived": {"title":"The unleveraged replay stayed open","body":"Without borrowed exposure the identical path never reached the teaching maintenance level. The position stayed open to the end."},
   "recoveryMaths": {"title":"Recovery maths","body":"This run ended at {finalAmount} from {startAmount}. Getting back to the starting amount from here needs a {requiredGainPct} gain, because the gain applies to a smaller base. A {lossPct} loss needs more than a {lossPct} gain. This is arithmetic, not a prediction."}
 }

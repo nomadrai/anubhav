@@ -435,7 +435,15 @@
       "checkedOn": "2026-10-03",
       "evidence": "docs/DATA_REVIEW.md",
       "humanApproved": false,
-      "nativeSpeakerReviewed": false
+      "nativeSpeakerReviewed": false,
+      "contentSha256": {
+        "reveal.periodText.en": "5a5b0673088b428c8b73b0b3142d4e8a9dde49e35d96b2f86246a750e04b874b",
+        "reveal.periodText.hi": "f92a6e897bdc1633dffb07e58fd15fbeb5f0a5539288cbffe7ced9b29abafc83",
+        "reveal.whatHappenedText.en": "455ff3aabe6b03d2b384c68d1009fd33c1fea5576bcdb22aeaac98d412a2075b",
+        "reveal.whatHappenedText.hi": "bdeb82aa02dedf487e41e33956cd8796e109e9a89a044f12195b8fd4b26ef9ad",
+        "sourceLabel.en": "49121abe0f6c8b27edff47c23000b6368a01c84f96f9bc1eeb5c1737bb294555",
+        "sourceLabel.hi": "c19f7a23ca89c39836ebf1552f23a3d8799498e46907ff45e21b23210ed1a81b"
+      }
     },
     "validation": {
       "barCount": 76,

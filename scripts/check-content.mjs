@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { checkAudio, sha256 } from './check-audio.mjs';
 
 const CONTENT_FILES = ['ui.json', 'debrief.json', 'glossary.json', 'narration.json'];
-const CONTENT_STATUSES = new Set(['draft', 'reviewed', 'planned']);
+const CONTENT_STATUSES = new Set(['draft', 'agent-checked', 'reviewed', 'planned']);
 const PLACEHOLDER_PATTERN = /\{([A-Za-z][A-Za-z0-9]*)\}/g;
 const BANNED_PATTERNS = [
   ['buy', /\bbuy\b/i],
@@ -55,7 +56,7 @@ function sentenceParts(text) {
 }
 
 function isUserFacingFile(file) {
-  return /src\/content\/(?:en|hi)\/(?:ui|debrief|glossary|narration)\.json$/u.test(file);
+  return /src\/content\/(?:en|hi)\/[^/]+\.json$/u.test(file);
 }
 
 function isUserFacingField(file, key) {
@@ -109,7 +110,7 @@ function identityShape(value) {
   return null;
 }
 
-function validateEntryCollection(value, file, language, failures) {
+function validateEntryCollection(value, file, failures) {
   const basename = path.basename(file);
   const required = basename === 'narration.json'
     ? ['id', 'displayText', 'spokenText', 'trigger', 'status']
@@ -134,8 +135,7 @@ function validateEntryCollection(value, file, language, failures) {
     }
     if (typeof entry.status === 'string') {
       if (!CONTENT_STATUSES.has(entry.status)) failures.push(`${file}[${index}]: invalid status ${entry.status}`);
-      if (language === 'en' && entry.status === 'draft') failures.push(`${file}[${index}]: English content cannot be draft`);
-      if (language === 'hi' && entry.status === 'reviewed') failures.push(`${file}[${index}]: Hindi content must remain draft until native-speaker review`);
+      if (['draft', 'planned'].includes(entry.status)) failures.push(`${file}[${index}]: ${entry.status} content is not shippable`);
     }
   });
 }
@@ -143,7 +143,7 @@ function validateEntryCollection(value, file, language, failures) {
 function validateUserFacingLimits(value, file, failures, latinAllowed) {
   collectStrings(value, (text, location) => {
     const key = location.split('.').at(-1)?.replace(/\].*$/u, '') ?? '';
-    if (!isUserFacingField(file, key)) return;
+    if (!isUserFacingField(file, key) || location.startsWith('$._meta.')) return;
     for (const sentence of sentenceParts(text)) {
       if (wordCount(sentence) > 25) failures.push(`${file} ${location}: sentence exceeds 25 words`);
     }
@@ -199,7 +199,23 @@ export function checkContent(root = process.cwd()) {
   const languageDirectories = fs.readdirSync(contentRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name);
   for (const language of ['en', 'hi']) if (!languageDirectories.includes(language)) failures.push(`src/content/${language}: required language directory is missing`);
   const languages = languageDirectories.filter((language) => ['en', 'hi'].includes(language));
-  const files = walk(contentRoot).filter((file) => file.endsWith('.json') && !file.endsWith('lint-allowlist.json'));
+  const files = walk(contentRoot).filter((file) => file.endsWith('.json') && !file.endsWith('lint-allowlist.json') && !file.endsWith('review-status.json'));
+  const registry = readJson(path.join(contentRoot, 'review-status.json'));
+  if (!isPlainObject(registry) || registry.schemaVersion !== 1 || !isPlainObject(registry.languages)) failures.push('src/content/review-status.json: invalid review registry');
+  const seenRegistry = new Set();
+  const checkStatus = (status, label) => {
+    if (!['draft', 'agent-checked', 'reviewed'].includes(status)) failures.push(`${label}: missing or invalid review status`);
+    else if (status === 'draft') failures.push(`${label}: draft content is not shippable`);
+    else if (status === 'agent-checked') warnings.push(`AGENT-CHECKED STRING (not human/native-reviewed): ${label}`);
+  };
+
+  const checkLeaf = (text, language, filename, id, label, declaredStatus) => {
+    const review = registry?.languages?.[language]?.[filename]?.[id];
+    seenRegistry.add(`${language}/${filename}/${id}`);
+    checkStatus(review?.status, label);
+    if (review?.contentSha256 !== sha256(text)) failures.push(`${label}: missing or stale review contentSha256`);
+    if (declaredStatus !== undefined && declaredStatus !== review?.status) failures.push(`${label}: entry and registry review status mismatch`);
+  };
 
   for (const file of files) {
     const value = readJson(file);
@@ -207,21 +223,66 @@ export function checkContent(root = process.cwd()) {
     const fileRelative = relative(root, file);
     const source = JSON.stringify(value);
     const textValues = [];
-    collectStrings(value, (text) => textValues.push(text));
+    // Resources render only bilingual labels. Source/evidence quotations are not UI copy;
+    // they may describe prohibited claims critically, and are not a broad lint exemption.
+    if (path.basename(file) === 'resources.json' && Array.isArray(value)) {
+      for (const resource of value) {
+        for (const language of ['en', 'hi']) {
+          const label = resource?.label?.[language];
+          if (typeof label !== 'string' || !label.trim()) failures.push(`${fileRelative} id=${resource?.id}: missing ${language} label`);
+          else {
+            textValues.push(label);
+            const labelLocation = `${fileRelative} $.label.${language} id=${resource.id} language=${language}`;
+            checkStatus(resource.status, labelLocation);
+            checkLeaf(label, language, 'resources.json', `${resource.id}.label`, labelLocation, resource.status);
+            for (const sentence of sentenceParts(label)) if (wordCount(sentence) > 25) failures.push(`${fileRelative} id=${resource.id}: label exceeds 25 words`);
+          }
+        }
+      }
+    } else collectStrings(value, (text) => textValues.push(text));
     const textSource = textValues.join(' ');
     for (const [name, pattern] of BANNED_PATTERNS) {
       if (pattern.test(textSource) && !allowed(name, file)) failures.push(`${fileRelative}: banned pattern ${name}`);
     }
     for (const match of source.matchAll(/https?:\/\/[^"\\\s]+/gu)) if (!file.endsWith('resources.json')) failures.push(`${fileRelative}: URL must live in resources.json (${match[0]})`);
-    collectStrings(value, (text, location) => { if (!text.trim()) failures.push(`${fileRelative} ${location}: empty string`); });
+    collectStrings(value, (text, location) => {
+      if (!text.trim()) failures.push(`${fileRelative} ${location}: empty string`);
+      if (text.includes('TODO(human)')) failures.push(`${fileRelative} ${location}: unresolved TODO(human)`);
+    });
     if (isUserFacingFile(fileRelative)) {
       validateUserFacingLimits(value, fileRelative, failures, allowed('Latin spoken script', file));
       const language = fileRelative.split('/')[2];
-      if (fileRelative.endsWith('narration.json') || fileRelative.endsWith('glossary.json')) validateEntryCollection(value, fileRelative, language, failures);
+      const filename = path.basename(file);
+      if (['narration.json', 'glossary.json'].includes(filename)) {
+        validateEntryCollection(value, fileRelative, failures);
+        if (Array.isArray(value)) value.forEach((entry, index) => {
+          if (!isPlainObject(entry) || entry.status === 'planned') return;
+          collectStrings(entry, (text, location) => {
+            const key = location.split('.').at(-1);
+            if (['id', 'termId', 'trigger', 'status'].includes(key)) return;
+            const label = `${fileRelative} $[${index}]${location.slice(1)} id=${entry.id ?? entry.termId} language=${language}`;
+            checkLeaf(text, language, filename, `${entry.id ?? entry.termId}.${location.slice(2)}`, label, entry.status);
+          });
+        });
+      } else {
+        collectStrings(value, (text, location) => {
+          if (location.startsWith('$._meta.')) return;
+          const id = location.slice(2);
+          const label = `${fileRelative} ${location} id=${id} language=${language}`;
+          if (filename === 'features.json' && !['draft', 'agent-checked', 'reviewed'].includes(value?._meta?.status)) failures.push(`${label}: missing or invalid feature review status`);
+          checkLeaf(text, language, filename, id, label, value?._meta?.status);
+        });
+      }
     }
   }
 
-  for (const target of CONTENT_FILES) {
+  for (const [language, languageFiles] of Object.entries(registry?.languages ?? {})) {
+    for (const [filename, leaves] of Object.entries(languageFiles ?? {})) {
+      for (const id of Object.keys(leaves ?? {})) if (!seenRegistry.has(`${language}/${filename}/${id}`)) failures.push(`src/content/review-status.json: stale registry leaf ${language}/${filename}/${id}`);
+    }
+  }
+  const targets = new Set([...CONTENT_FILES, ...files.filter((file) => isUserFacingFile(relative(root, file))).map((file) => path.basename(file))]);
+  for (const target of targets) {
     const enFile = path.join(contentRoot, 'en', target);
     const hiFile = path.join(contentRoot, 'hi', target);
     const en = readJson(enFile);
@@ -239,14 +300,10 @@ export function checkContent(root = process.cwd()) {
 
   const enNarration = readJson(path.join(contentRoot, 'en/narration.json'));
   const ids = Array.isArray(enNarration) ? enNarration.map((item) => item?.id).filter((id) => typeof id === 'string') : [];
-  const manifestFile = path.join(root, 'public/audio/manifest.json');
-  if (!fs.existsSync(manifestFile)) warnings.push(`audio manifest missing: ${ids.length} narration entries have no generated audio (optional Phase 3 asset build not run)`);
-  else {
-    const manifest = readJson(manifestFile);
-    if (manifest !== undefined && !isPlainObject(manifest)) failures.push('public/audio/manifest.json: expected an object');
-    if (manifest !== undefined && isPlainObject(manifest)) for (const id of ids) if (!manifest[id]) failures.push(`audio manifest missing narration id ${id}`);
-  }
-  return { failures, warnings, languages, narrationCount: ids.length };
+  const audio = checkAudio(root);
+  failures.push(...audio.failures);
+  warnings.push(...audio.warnings);
+  return { failures: [...new Set(failures)], warnings: [...new Set(warnings)], languages, narrationCount: ids.length };
 }
 
 const invokedFile = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : '';

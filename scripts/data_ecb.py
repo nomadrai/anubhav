@@ -210,7 +210,10 @@ def prepare(raw_root: Path, output_root: Path) -> list[dict[str, Any]]:
             "observationTiming": "Publisher currently describes daily central-bank concertation normally around 14:10 CET and publication around 16:00 CET. XML supplies dates, not timestamps; historical per-row time is not asserted.",
             "calendar": {"basis": "Exactly the observed XML date keys; not an independently verified session calendar", "dates": [day for day, _ in rows]},
             "selection": "Retrospectively selected contrasting teaching windows, not representative/random samples. crash/choppy are internal teaching labels, not publisher classifications. Not equity prices or an Indian market sample.",
-            "review": {"status": "agent-checked", "checkedOn": "2026-10-03", "evidence": "docs/DATA_REVIEW.md", "humanApproved": False, "nativeSpeakerReviewed": False},
+            "review": {"status": "agent-checked", "checkedOn": "2026-10-03", "evidence": "docs/DATA_REVIEW.md", "humanApproved": False, "nativeSpeakerReviewed": False,
+                "contentSha256": {f"{field}.{language}": digest(text.encode())
+                    for field, values in (("reveal.periodText", reveal["periodText"]), ("reveal.whatHappenedText", reveal["whatHappenedText"]), ("sourceLabel", SOURCE_LABEL))
+                    for language, text in values.items()}},
             "validation": summary,
         })
         write_json(episode_path, episode)

@@ -92,7 +92,9 @@ series identifier and denomination remain in machine provenance.
 | choppy `reveal.whatHappenedText` | Last 0.17% above first; largest fall from an earlier high 2.38%; selected past path, not forecast. | “The final recorded value was 0.17% above the first. The biggest fall from a previous high value was 2.38%. This chosen old path is not an estimate of the future.” The small positive endpoint is not described as a reward or safe result. |
 | Both `sourceLabel.en/hi` | Source: European Central Bank. Relative changes calculated for this lesson. | “Source: European Central Bank. Relative change has been calculated for this lesson.” Institution attribution and modification disclosure retained, no instrument identity. |
 
-Result for these leaves: **agent-checked**, not `reviewed`. ISO date digits and
+Result for these leaves: **agent-checked**, not `reviewed`. Each exact UTF-8
+leaf hash is retained in `provenance.review.contentSha256`; release warns for
+all twelve production episode-copy leaves and rejects a changed/stale hash. ISO date digits and
 percentages are identical across the languages. `दैनिक दर्ज मान` is used for
 recorded observations rather than asserting executable prices. No audio was
 created or listened to in this data task; no native speaker or human listening

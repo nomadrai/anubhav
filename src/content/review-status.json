@@ -1,0 +1,2441 @@
+{
+  "schemaVersion": 1,
+  "languages": {
+    "en": {
+      "ui.json": {
+        "languageSelect.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "bba5b40bdd28c66e413c02fac811aab366d20aa19fe15348a8c907d46957ce77"
+        },
+        "languageSelect.title": {
+          "status": "agent-checked",
+          "contentSha256": "4720dd3a262343101c2e7db002532af60ee4e3a6c2a371b370cd58cdc3cabf0f"
+        },
+        "languageSelect.body": {
+          "status": "agent-checked",
+          "contentSha256": "2ab9a59e661fbf6cc0a066522778c5ad6401366dccb098e65f27e783d272d1d7"
+        },
+        "languageSelect.hindi": {
+          "status": "agent-checked",
+          "contentSha256": "9ddb12af8457d635ec15773f905ca8587772ef64d5ecbe24d9aa4eab27a2e79b"
+        },
+        "languageSelect.english": {
+          "status": "agent-checked",
+          "contentSha256": "ba118bf7fc9c1aedc1edb28a0aa86e0b43b681f222af6616e13c43be87815b06"
+        },
+        "languageSelect.continue": {
+          "status": "agent-checked",
+          "contentSha256": "4cbcbcb0705405fd54264814cd23fef73250f748685f91d3e608f291d2c470f2"
+        },
+        "intro.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "e4cdbc626cd3ca077f2753456c394053d3ed4acf992c81d96e38c55a32ed1238"
+        },
+        "intro.title": {
+          "status": "agent-checked",
+          "contentSha256": "ad4dfe93f78ff0939cd20cdad884288eb6cd0a1a22270a4b3bd32e44beb51a31"
+        },
+        "intro.body": {
+          "status": "agent-checked",
+          "contentSha256": "71edc4690f969ab90752d92be52510eee9226f7a0a7fb2f705c67275828eaec5"
+        },
+        "intro.continue": {
+          "status": "agent-checked",
+          "contentSha256": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8"
+        },
+        "setup.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "88fc5c11037993bc8047d5b293a5ef1f1c1510f87d4eb831933c46797c430a0d"
+        },
+        "setup.title": {
+          "status": "agent-checked",
+          "contentSha256": "0c941c5634e9860abafd16b07a0db4d25a5712c8512fb88830a3f6bec662329d"
+        },
+        "setup.body": {
+          "status": "agent-checked",
+          "contentSha256": "e8c1ce8235020f6efac94fe0d28733e4b283c2cb9bbf01bb68a0805f1827e358"
+        },
+        "setup.capital": {
+          "status": "agent-checked",
+          "contentSha256": "e3c271f8a8380bac5af98858f6e85c5162b4fe1bf64f79bd906200f2d352e97c"
+        },
+        "setup.stake": {
+          "status": "agent-checked",
+          "contentSha256": "eaed0473cc93222a7e0eb671bbbfbaa0eba559b5236836f19f7a35c9a3a26c93"
+        },
+        "setup.leverage": {
+          "status": "agent-checked",
+          "contentSha256": "773033624d4671b09da82d4551fb146dd6a8a82931d248d19336f278b218378c"
+        },
+        "setup.stake25": {
+          "status": "agent-checked",
+          "contentSha256": "72da55d317fd997b93138b8646a2238e806a4c4566d1e854277b5a583d8aef23"
+        },
+        "setup.stake50": {
+          "status": "agent-checked",
+          "contentSha256": "28fdae8deae31d6eafd18b70d878f6d8a3136f267ce273777c089a42ac590438"
+        },
+        "setup.stake100": {
+          "status": "agent-checked",
+          "contentSha256": "32e48995f98ce3b76f2d3f5e2d2acddfeff6650b7b18628cfa739bfef4a03312"
+        },
+        "setup.leverage2": {
+          "status": "agent-checked",
+          "contentSha256": "ed59daa308f5820c4eb406c7f8792ae848a5ebdc6d851f3ac5c87d520bd3e7a0"
+        },
+        "setup.leverage5": {
+          "status": "agent-checked",
+          "contentSha256": "e1c4735a25f48bb3dbfd81fd03495f4275e063ae69048e1eca607bc0c47f38c9"
+        },
+        "setup.leverage10": {
+          "status": "agent-checked",
+          "contentSha256": "3abec44081ace2d5ad5ef5b5a2276f0a070e647156fa1ef63406b1b4dac9e41f"
+        },
+        "setup.continue": {
+          "status": "agent-checked",
+          "contentSha256": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8"
+        },
+        "prediction.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "3623979ae107bc40645f5d09780527df06930bc93343d47ba0abb8e592a5a14a"
+        },
+        "prediction.title": {
+          "status": "agent-checked",
+          "contentSha256": "cc7c4602a64c1fa0e22e8b1acb9aa0c2294cdab37dfc186feb084108b5053a08"
+        },
+        "prediction.body": {
+          "status": "agent-checked",
+          "contentSha256": "3967e0d811b2325b35418eb4986092cb3ba908d7edd112c05f2c69bfb590b8b4"
+        },
+        "prediction.bigGain": {
+          "status": "agent-checked",
+          "contentSha256": "c4b1912753ed50ba3910b854f9a1c70cf10d8615be521acb5f22eb0c8f3177d5"
+        },
+        "prediction.smallGain": {
+          "status": "agent-checked",
+          "contentSha256": "4469765e6706fa10677a8af4f89469ba9bafe900e1763af7d0fb7677352da1c7"
+        },
+        "prediction.smallLoss": {
+          "status": "agent-checked",
+          "contentSha256": "cb821341baf05dd4b61726503ad8e16c135594a515031ed3b23a4218b0221785"
+        },
+        "prediction.almostEverything": {
+          "status": "agent-checked",
+          "contentSha256": "5f1472c3885a4c0a47bea2df3a7a17afb430166f96cf1cd6bcbad9d99fc1a235"
+        },
+        "prediction.continue": {
+          "status": "agent-checked",
+          "contentSha256": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8"
+        },
+        "run.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "f1938a49785b09a25cc5e124a520495e84656cab5662f981648b1b3149e01622"
+        },
+        "run.title": {
+          "status": "agent-checked",
+          "contentSha256": "7735ede7907ebf92e7cd984867b69cc9d22880dd4b4c51b89f1370d2fff05717"
+        },
+        "run.body": {
+          "status": "agent-checked",
+          "contentSha256": "c38ec32300dc6c78f6e74d039e0ee14b1df0ddb1dc9c2b79c30ac03b2c7a19f5"
+        },
+        "run.hold": {
+          "status": "agent-checked",
+          "contentSha256": "95261239f861978e813cd1c3d3b009b358fbc70be9f64f03d2cb740d5a9b671a"
+        },
+        "run.exit": {
+          "status": "agent-checked",
+          "contentSha256": "fcb6c530d58d30092253b5855d97145b11ff159bc5873a8bc7d3c18bde5a960b"
+        },
+        "run.decisionPoint": {
+          "status": "agent-checked",
+          "contentSha256": "c7bcbcd2081b3d4b77f80ffc293cf6103b53120b0e3454924143bf5db893f8cc"
+        },
+        "run.warningPoint": {
+          "status": "agent-checked",
+          "contentSha256": "7e4da73d4efcf9cfb55f914b57a2985912df608da528b21a9d60a9738ff30d06"
+        },
+        "run.resume": {
+          "status": "agent-checked",
+          "contentSha256": "81ebbe6c38c8c4a37e1a3b8a6d4d1b368725922a85afd328f2212d9e9b2c383a"
+        },
+        "run.playing": {
+          "status": "agent-checked",
+          "contentSha256": "59f3043ec18ecf838beebff195755d70d3eb95e8a54efaf1c32dfcdd9aceedbc"
+        },
+        "run.pauseBody": {
+          "status": "agent-checked",
+          "contentSha256": "ef9eb203f0867df14da7fe9a8b2e6267a640bcc3837b30afdbf78b7ccfb2ee84"
+        },
+        "run.stepStatus": {
+          "status": "agent-checked",
+          "contentSha256": "dc1249ded00f30f1b87fcf6f1dd6d62cdef491f6b0971e7571294a3db14722fc"
+        },
+        "run.startingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "d3849d242e716888cab7775a6ef505a1ccf0e7ba9c787c096e500da2e2a5fd0d"
+        },
+        "run.indexBase": {
+          "status": "agent-checked",
+          "contentSha256": "d88d7d0329b80518777a2142b648de80b06f222add7649d891be1666babd9ef5"
+        },
+        "run.lowEquity": {
+          "status": "agent-checked",
+          "contentSha256": "6fd3e155d25c8d75b8bcc9beb00ed4098cf193b6b40cfcf583d92398585ed7ce"
+        },
+        "run.maintenanceLevel": {
+          "status": "agent-checked",
+          "contentSha256": "e5190986dc7911b58ec0bd1c19b27d9392f70ad55d5fd9a0cc434422f473087b"
+        },
+        "run.warningLevel": {
+          "status": "agent-checked",
+          "contentSha256": "2b7cb88217f2e2b924eaf52ecd47e879d95980aba07f60e0deff4b32fca7b7c1"
+        },
+        "run.marginLabel": {
+          "status": "agent-checked",
+          "contentSha256": "e25b60e8a8cfe77930fc90e99be08c2e1a9f0eaa0078d4f905ee5c384773dbe8"
+        },
+        "run.invalid": {
+          "status": "agent-checked",
+          "contentSha256": "a1906778ad3083d6b4ec074a2c2e6dd0c1852a2a7efbf6af8d74382da3244077"
+        },
+        "run.exitedChoice": {
+          "status": "agent-checked",
+          "contentSha256": "48a36abaf2501653b0a2ba68cf7f2eedfe1fb855b7df053199900caefcffede1"
+        },
+        "run.priceLabel": {
+          "status": "agent-checked",
+          "contentSha256": "62fa5a5b0d3c318835a213e22a4b335c42515443d598741d0413e8c47f9ecf67"
+        },
+        "run.equityLabel": {
+          "status": "agent-checked",
+          "contentSha256": "589614f45f31444a9da097962373cf03983baf722662fcdc28493da37d515670"
+        },
+        "run.statusOpen": {
+          "status": "agent-checked",
+          "contentSha256": "383439c01020879a5c80ba198f32c22a928b49d6bf734684de8bd41bf4f269da"
+        },
+        "run.statusWarning": {
+          "status": "agent-checked",
+          "contentSha256": "30dc6d17a065843976457601d6df92d21d874009214ca5ef3dae883262a368f4"
+        },
+        "run.statusForced": {
+          "status": "agent-checked",
+          "contentSha256": "3d49b5443fec8cc2086c9310ecda263accd9e55b8ee535cd6ee73118bc50c712"
+        },
+        "run.statusExited": {
+          "status": "agent-checked",
+          "contentSha256": "71a7954bccdeecea79054b66c3bb71078d83ca061803231ff9e05c62111de035"
+        },
+        "run.continue": {
+          "status": "agent-checked",
+          "contentSha256": "f354093b945b81a1dc94e15f9fb8f19fbca4e822445eec6e853f82874a65e78e"
+        },
+        "result.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "546d3c51b7c7700d059b188f6a0ddd49be560a77954b96c514bc13490e9f4b1a"
+        },
+        "result.title": {
+          "status": "agent-checked",
+          "contentSha256": "e575840ea5eecb0f0816e2911ace4cdc77c1eab475bedec946ff59648a4629ef"
+        },
+        "result.body": {
+          "status": "agent-checked",
+          "contentSha256": "b74c99b9cadda01868165ce44b71d4ae40a4d6432c6d444d8800b799e91512f5"
+        },
+        "result.finalEquity": {
+          "status": "agent-checked",
+          "contentSha256": "053dace14a7cf3709a9c4ce2a90dc7eb9a686585a956531f26b29932d8d069b1"
+        },
+        "result.change": {
+          "status": "agent-checked",
+          "contentSha256": "afa43da475ccf30a884e8b4ea9c876385591fce1f1973c0664a0d870d478a8b7"
+        },
+        "result.forcedExitLine": {
+          "status": "agent-checked",
+          "contentSha256": "c0df95038cee3b56ce7b872c65e55e9c3f8ad32867650b6a11e3f834d3113a4a"
+        },
+        "result.survivedLine": {
+          "status": "agent-checked",
+          "contentSha256": "bbab6658a39858e62d15d8857ce489ec3235904251607fb658db0baace97b2dc"
+        },
+        "result.userExitLine": {
+          "status": "agent-checked",
+          "contentSha256": "f067521ef6fc3ce532d38b2ea66c448eeaa1b878749e6bb9dbfe8fe3881ca0cb"
+        },
+        "result.continue": {
+          "status": "agent-checked",
+          "contentSha256": "5f58e9c8bb4c8b27be86e4da4cb25f2ca0be74c1ace14507e9fc753acc0bc3ed"
+        },
+        "replay.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "90cda65185ddd102959c85998f6792cc246f4566d473d36d2d323878405886c3"
+        },
+        "replay.title": {
+          "status": "agent-checked",
+          "contentSha256": "72e6a974204a5bb62f4c4c01f0c34454d67d92965b6e1df29847971ab3c1225d"
+        },
+        "replay.body": {
+          "status": "agent-checked",
+          "contentSha256": "fa7281b4b053b7078b7cd81437a955d14ea9aecaed45776703e2179e5ecbd511"
+        },
+        "replay.leveragedLine": {
+          "status": "agent-checked",
+          "contentSha256": "90f85d5544beef1c3383b5df1055f6f6139f3101bb9c2c406a64e9b398265a1e"
+        },
+        "replay.unleveragedLine": {
+          "status": "agent-checked",
+          "contentSha256": "cde9c3f7e3f0fe36399c3f651152d9b2d9e053bb1c013b3ed9ae9c56d4144cbb"
+        },
+        "replay.chartDescription": {
+          "status": "agent-checked",
+          "contentSha256": "8c065f84537242ef2f9b0edc6fe7db87ef875ee2a2ec2200391ab7e64e8ca4c6"
+        },
+        "replay.closed": {
+          "status": "agent-checked",
+          "contentSha256": "c21ead0614e7e1b70edb3759e1d19ca1e12e6036980d10bfb73052fb1a018efa"
+        },
+        "replay.leveragedFinal": {
+          "status": "agent-checked",
+          "contentSha256": "005c4f09c76dc104e581ba3d3c9907675723a80988d2a9d05ffa9d58e431cd18"
+        },
+        "replay.unleveragedFinal": {
+          "status": "agent-checked",
+          "contentSha256": "14d6ee8771f1532053c28b4c4aea99cbe417dbbb64cdf952db5e6bbc1b1f13d4"
+        },
+        "replay.difference": {
+          "status": "agent-checked",
+          "contentSha256": "f993678e9bd481541491e23399659a6c88f9c166477b008309e720bf87de24ea"
+        },
+        "replay.requiredGain": {
+          "status": "agent-checked",
+          "contentSha256": "46a61ec744f0716fb38f555b240e7e1d0c589af0eb08b86ca55ee4903bb7ac58"
+        },
+        "replay.requiredGainNone": {
+          "status": "agent-checked",
+          "contentSha256": "74cb7ebfed52db14ee34d7a4faaa2bc098e8e3b1c25b45b03efdc368e3aa3e9f"
+        },
+        "replay.continue": {
+          "status": "agent-checked",
+          "contentSha256": "3ed0df4f3db3cd218fbe437b3bedfe1f13348eb571fb1f0e4b5205617ddb7cf9"
+        },
+        "reveal.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "c45cbcb397217ef0d705d1587cdaa1e1d7f4c329557c93d905e38435494014a2"
+        },
+        "reveal.title": {
+          "status": "agent-checked",
+          "contentSha256": "ee846b9a8264163491f8c4d9c4b22abaf1531cd29ae9cd18f5d99d29e22dda95"
+        },
+        "reveal.body": {
+          "status": "agent-checked",
+          "contentSha256": "c80d022e6b4fcb71a08dcba11f1bac1c2982ce8dc02c7053d6133bd2e4cae692"
+        },
+        "reveal.periodLabel": {
+          "status": "agent-checked",
+          "contentSha256": "6e795d4d3cc21c5ca8349ab5e917482197aa612d1a218f9e9411467db73242bb"
+        },
+        "reveal.whatHappenedLabel": {
+          "status": "agent-checked",
+          "contentSha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+        },
+        "reveal.sourceLabel": {
+          "status": "agent-checked",
+          "contentSha256": "548c5b4d99727c76519438c8f3ae4cdd9fce1c53f1e12fdc4705bfedc47a7a8b"
+        },
+        "reveal.placeholderNote": {
+          "status": "agent-checked",
+          "contentSha256": "b03938ec133f47485fb2c1b458e38999003f5af5792010d10a4a82dc42085f7d"
+        },
+        "reveal.oneEpisode": {
+          "status": "agent-checked",
+          "contentSha256": "7a2c64b15fc69d9bd6706607a30bd29a84784af86c0a0711100b021ef168bb45"
+        },
+        "reveal.statsLabel": {
+          "status": "agent-checked",
+          "contentSha256": "1e900b916666ee346d65807fd4b9e9b83f1a8de4f9702afb131b77be6eb752d5"
+        },
+        "reveal.statsMaxDrawdown": {
+          "status": "agent-checked",
+          "contentSha256": "b489aa834cce096cdfd6d77dd6295161a9d1a0807fc4f6e6854e00528bca77ea"
+        },
+        "reveal.statsWorstFall": {
+          "status": "agent-checked",
+          "contentSha256": "3a0b83911be9dbcc55d6d6ec5d54a52f3231dca189d277284c3e5b2dab3a0285"
+        },
+        "reveal.statsDownCloses": {
+          "status": "agent-checked",
+          "contentSha256": "69732ca6c88c5828da681f7e06768171ff51d4d90146ae5ba6709c3dda19086c"
+        },
+        "reveal.statsBarCount": {
+          "status": "agent-checked",
+          "contentSha256": "8cdd6dbc3a1beb4beb3acc9acaabda9a06301534156aa21c0fce17286f06c2b2"
+        },
+        "reveal.continue": {
+          "status": "agent-checked",
+          "contentSha256": "a84c4252164bc6cfc32b15b5768292bdb016cc53435a7edd4a9c765676ca470d"
+        },
+        "debrief.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "18c23c92a812f14453b250ad492bd406c1fa2052b089b4a7e55a360c65226a58"
+        },
+        "debrief.title": {
+          "status": "agent-checked",
+          "contentSha256": "757ccb89c5212029ed156c19b26c30323a5f85df8ea98af98ee44489a69af025"
+        },
+        "debrief.body": {
+          "status": "agent-checked",
+          "contentSha256": "09824a72a387fe5d35fc1d56f3a4844fc8efcd3f7883f48c9f0c1aa69b5c7b67"
+        },
+        "debrief.leverage": {
+          "status": "agent-checked",
+          "contentSha256": "c9968747d776fa3f31c41ef2a53f7f81e5ee0b862013152d71b27a5440111cd1"
+        },
+        "debrief.margin": {
+          "status": "agent-checked",
+          "contentSha256": "2bf63d817630601b992694bc0b0559715001b9a24e7fe0d741eea02dce9181af"
+        },
+        "debrief.forcedExit": {
+          "status": "agent-checked",
+          "contentSha256": "d0e51f16f918d21e4ffee3b47b33d0b6d8932189156ea0b48821cfc70ab8e46e"
+        },
+        "debrief.forcedExitBody": {
+          "status": "agent-checked",
+          "contentSha256": "80cde72f0a3332173a8ea4f46a26796199f085a8100d4f8d053e35f2f06dd91e"
+        },
+        "debrief.survivedButHurt": {
+          "status": "agent-checked",
+          "contentSha256": "27834db6ab984c8155cf9b2478657334819adb841d692c68e1f9dbaf45a3c1f9"
+        },
+        "debrief.survivedButHurtBody": {
+          "status": "agent-checked",
+          "contentSha256": "191827c5e7bdb7160ed6dc976fd39b28a34469d33d0dc9781a8be180a68023c3"
+        },
+        "debrief.userExitedEarly": {
+          "status": "agent-checked",
+          "contentSha256": "a4571295bf0a9e9161d491c3fabeda191a6d367c0dbf42fb2eb4d78e8bd5fd4c"
+        },
+        "debrief.userExitedEarlyBody": {
+          "status": "agent-checked",
+          "contentSha256": "8da68c7d820c2380ef8a78a5a445a7a9ab9296b71956f9433a650f7307efc356"
+        },
+        "debrief.unleveragedSurvived": {
+          "status": "agent-checked",
+          "contentSha256": "06dae6a31de6614ed50e3e359492ec2ae18354931d28969d89fd97dd0423618f"
+        },
+        "debrief.unleveragedSurvivedBody": {
+          "status": "agent-checked",
+          "contentSha256": "9704916695d990af5e9162e4547a23b862f515752830f45e4c8fd0dc575cf653"
+        },
+        "debrief.recoveryMaths": {
+          "status": "agent-checked",
+          "contentSha256": "ec7ba414f735bcbcb448219a274cac597fc80d17c4342a88581c5fa66ec54914"
+        },
+        "debrief.recoveryInterpolated": {
+          "status": "agent-checked",
+          "contentSha256": "a4f774739e2ec919c0a02625cea3ab8f7ca7cd4dc2c925d6c0f8df8813baf04c"
+        },
+        "debrief.recoveryNone": {
+          "status": "agent-checked",
+          "contentSha256": "43fca77351b29f3c7fce0bb2f0b30def2d92fd3861437925ea95ccbcd01ba4ee"
+        },
+        "debrief.volatility": {
+          "status": "agent-checked",
+          "contentSha256": "592a8ccafb8090c57734fcb7094f69ec380535c84523e979898a8e35dba94d79"
+        },
+        "debrief.drawdown": {
+          "status": "agent-checked",
+          "contentSha256": "4112bfc0eb4ed003f641387036490452bcd62b22f57148565a3684f7653e5458"
+        },
+        "debrief.recovery": {
+          "status": "agent-checked",
+          "contentSha256": "ec7ba414f735bcbcb448219a274cac597fc80d17c4342a88581c5fa66ec54914"
+        },
+        "debrief.continue": {
+          "status": "agent-checked",
+          "contentSha256": "898fb247f113cf7c25fa2cab62d4064c226c462fad8816aa4e2215e233e71e11"
+        },
+        "postCheck.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "c7dba326b89b25fa18dcc0a52ce234d08b370f5512d6354cee540dc17b709006"
+        },
+        "postCheck.title": {
+          "status": "agent-checked",
+          "contentSha256": "19d63c99d62f8bb06e1de3f225c68baee370e758fc38292944524f5c900f699e"
+        },
+        "postCheck.body": {
+          "status": "agent-checked",
+          "contentSha256": "49aa656070b16a75a607ce1d26a2aa88a4b7b4963428d4fea53cbd7412af1650"
+        },
+        "postCheck.same": {
+          "status": "agent-checked",
+          "contentSha256": "8cf0e32e72353790917b14e89f7c7ac8dca33c5bc6b0970e7bea1fc8ac3584a3"
+        },
+        "postCheck.wouldTake": {
+          "status": "agent-checked",
+          "contentSha256": "10dbc0e55fdc44898c5109c5eda4e31bce0bd1b641a601fb13c84180545251ea"
+        },
+        "postCheck.yes": {
+          "status": "agent-checked",
+          "contentSha256": "85a39ab345d672ff8ca9b9c6876f3adcacf45ee7c1e2dbd2408fd338bd55e07e"
+        },
+        "postCheck.no": {
+          "status": "agent-checked",
+          "contentSha256": "1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d"
+        },
+        "postCheck.notSure": {
+          "status": "agent-checked",
+          "contentSha256": "dca5fa430c12f9e10ee45fc05432ffd28c8e7007d283a6638ab11c08ac77d7ca"
+        },
+        "postCheck.changed": {
+          "status": "agent-checked",
+          "contentSha256": "421cade3e755b981af1d029a00fc6047ab0cdb95a702459400a5167ffac797df"
+        },
+        "postCheck.unchanged": {
+          "status": "agent-checked",
+          "contentSha256": "5b7d39c678ec3c60992d65123e640e80152dd8a89fff97709c0a0b3d1617dc36"
+        },
+        "postCheck.continue": {
+          "status": "agent-checked",
+          "contentSha256": "31fbef162594de01bab0cd525c51f74de7bcb15063029fa1a54b2cf5944c80d8"
+        },
+        "nextSteps.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "8e9443441266f90f2afb1f7c097906becc9852d6c32dd15122a76605736e6ec7"
+        },
+        "nextSteps.title": {
+          "status": "agent-checked",
+          "contentSha256": "7aaac354a3c97af440fe72ee8028c0fae1f2e759cc7323159858f7da3b905224"
+        },
+        "nextSteps.body": {
+          "status": "agent-checked",
+          "contentSha256": "f274b3f51bef0623faa84584f87c9b9e882042f58240efe5452948318cfbba0e"
+        },
+        "nextSteps.empty": {
+          "status": "agent-checked",
+          "contentSha256": "4693b30554f66bae5c550f5f5c0e03b4490a6329bb1dfcd3473c651080d03937"
+        },
+        "nextSteps.restart": {
+          "status": "agent-checked",
+          "contentSha256": "962e64b761961fe056e96cdc9641daaf786022d8c32cec531c6da20c71218c24"
+        },
+        "pilotSummary.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "10a87293ab2d10f015789836b7fddabe4c8ae298d9ae7e0708e329de77baf0e9"
+        },
+        "pilotSummary.title": {
+          "status": "agent-checked",
+          "contentSha256": "fa825a6e693e9e1331fabdf383148ae1b1b9c98a00d0f42f6fef9f6a1cfedee6"
+        },
+        "pilotSummary.body": {
+          "status": "agent-checked",
+          "contentSha256": "aff7d302b0a0c60abf5c20e2545a445071cb06d1a14b74928d4e12ae1153a8a0"
+        },
+        "pilotSummary.copy": {
+          "status": "agent-checked",
+          "contentSha256": "aefca882ae4b3217dc52ca8eb75966ea9d9ba34c54cc576115d0151181179a4b"
+        },
+        "pilotSummary.back": {
+          "status": "agent-checked",
+          "contentSha256": "391ba366bec9eb37894aaaf6dde6b9c4f61cc3d916720d951b6b2f282d20a563"
+        },
+        "common.caption": {
+          "status": "agent-checked",
+          "contentSha256": "87d296ec94898c86baf805dbcc47af48e618ec25df0441f7471c60a7d6b05b4e"
+        },
+        "common.audio": {
+          "status": "agent-checked",
+          "contentSha256": "bb524851d4dcffd429dfd3d6b177e078b8b8f67d37dded81929a4759cb8c0021"
+        },
+        "common.audioUnavailable": {
+          "status": "agent-checked",
+          "contentSha256": "8b2f678c947db926e0e148727257f7ca5666d5cbe2c428ecc555431d3eea4bb5"
+        },
+        "common.chartData": {
+          "status": "agent-checked",
+          "contentSha256": "96fa2b6893c3aa4dd06234b637c467a2506cc5c1dcc8faa9345229680d4ccce8"
+        },
+        "common.step": {
+          "status": "agent-checked",
+          "contentSha256": "8e6a6cca7aae1d1e781d3ee04849d6b00f7aaf48f7c642f35105e4bf990a8cb4"
+        },
+        "common.syntheticLabel": {
+          "status": "agent-checked",
+          "contentSha256": "7bdba819ae338932586fa0b0789260d104a3a38f29cbc27a2c6b11cbf2da3b19"
+        }
+      },
+      "debrief.json": {
+        "forcedExit.title": {
+          "status": "agent-checked",
+          "contentSha256": "36fa85705d2605ac497afecd66a4b9b02c5a845c268c073e2565bd91e28a6727"
+        },
+        "forcedExit.body": {
+          "status": "agent-checked",
+          "contentSha256": "a397dca24d03f6c1e313bcd84bfe6d00a6afe7f06a43cf5918a46dc21b2493f5"
+        },
+        "survivedButHurt.title": {
+          "status": "agent-checked",
+          "contentSha256": "eb985ceab9cc9c316f47e343b8e38b43cc285db3f75645d70b3c862448e7d2f7"
+        },
+        "survivedButHurt.body": {
+          "status": "agent-checked",
+          "contentSha256": "6b1485dd9622d0fb750c1e953175f38256f6a8985958a169e9220b29fb0b8e6f"
+        },
+        "userExitedEarly.title": {
+          "status": "agent-checked",
+          "contentSha256": "f2d55b46cce7fe401e4932ab8ab3e1ce90f42b43e43b4fdd2073db53928acdaf"
+        },
+        "userExitedEarly.body": {
+          "status": "agent-checked",
+          "contentSha256": "6d7de47476f9bb8ae15a1a857350ae45c1f5b349c9a65a66918ff53d8f801eee"
+        },
+        "unleveragedSurvived.title": {
+          "status": "agent-checked",
+          "contentSha256": "0547fdd124059f10cae14dc712b028512852f6e6218abb577968d217f9dacd34"
+        },
+        "unleveragedSurvived.body": {
+          "status": "agent-checked",
+          "contentSha256": "5ce370f250d92cd0389629bb3316f0421e3e85a97ac7bb869e37b73e21bdd614"
+        },
+        "recoveryMaths.title": {
+          "status": "agent-checked",
+          "contentSha256": "ec7ba414f735bcbcb448219a274cac597fc80d17c4342a88581c5fa66ec54914"
+        },
+        "recoveryMaths.body": {
+          "status": "agent-checked",
+          "contentSha256": "b16b597e730b44583c42f06f457c74afdbc2e60dbff39459c7751450194a9e8e"
+        }
+      },
+      "features.json": {
+        "preferences": {
+          "status": "agent-checked",
+          "contentSha256": "e52b25aa61b58577e69dcf536114f810999c62e266f66fb471ea54428d558077"
+        },
+        "language": {
+          "status": "agent-checked",
+          "contentSha256": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1"
+        },
+        "textSize": {
+          "status": "agent-checked",
+          "contentSha256": "d68761cc1eb296478531e007ff1fda9252fb7be5d24429a97eb05765211dafe5"
+        },
+        "standardText": {
+          "status": "agent-checked",
+          "contentSha256": "ef6691545d2c5523efed00424407cb261aeb0037d165ca5792f7f8bac3381362"
+        },
+        "largeText": {
+          "status": "agent-checked",
+          "contentSha256": "b05e2520a37fd56022ea0e5ed2e3f6c1c33962c562f90ca8fc99d923c313b9fe"
+        },
+        "skip": {
+          "status": "agent-checked",
+          "contentSha256": "adf0566468a2d14f048173323b883a96d5b29b67d9eaa341d4e5910444656d97"
+        },
+        "reviewNotice": {
+          "status": "agent-checked",
+          "contentSha256": "9a6082a1d669450ce3a7d9d7926caff0bfb272d3621adda95f3a0fe8e31eb6bd"
+        },
+        "privacy": {
+          "status": "agent-checked",
+          "contentSha256": "5ae9c6510fed7a3d04df5238ec1b09ed1eebad942d9d9278fb06dae3027bb78c"
+        },
+        "offline": {
+          "status": "agent-checked",
+          "contentSha256": "e0ce1d5357ff98dedeca6b36e3db75e0cc5aa1426c7deb3d1e960434a3231864"
+        },
+        "online": {
+          "status": "agent-checked",
+          "contentSha256": "d3a752e8a2fc6ffd7b4c10c826038a5be8a0f38a40f801a6f4ffc1d702c4b83e"
+        },
+        "disconnected": {
+          "status": "agent-checked",
+          "contentSha256": "db06d47be255a5f50b6c1188c0f37c05faa4c81b00d63c73cf16e904a575e2ae"
+        },
+        "audio": {
+          "status": "agent-checked",
+          "contentSha256": "67ae546a3c8902297f0c13124bd3486f24173e6caa37759271eb25fc26ba2b23"
+        },
+        "listen": {
+          "status": "agent-checked",
+          "contentSha256": "225d29f6201e1a635684a6dc0e7a65d164c7ffe48588a421fc27b067a55bb02e"
+        },
+        "pauseAudio": {
+          "status": "agent-checked",
+          "contentSha256": "5166868b28f7efd662bb88623af6847e0a998c8b65636a07a32019ac3507cc43"
+        },
+        "resumeAudio": {
+          "status": "agent-checked",
+          "contentSha256": "5ce3c496494aa30d5b0d5651a593bfc9a5f72b3c0ebbcd971a676ff5b61a9b5c"
+        },
+        "replayAudio": {
+          "status": "agent-checked",
+          "contentSha256": "ddcbf6f43a17cd4a2644330d2beac4f2d9c692b5f1a6b9802d2c6471ca41d9fc"
+        },
+        "muteAudio": {
+          "status": "agent-checked",
+          "contentSha256": "878553b131aff5f5088c69247b75df609035d90b81b562312b05476ce0154478"
+        },
+        "unmuteAudio": {
+          "status": "agent-checked",
+          "contentSha256": "971e064f62dccc0e7a130a3712cbabdb668f34ad9b3896bb7fb4ccd49e659952"
+        },
+        "audioSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "a399d4ccf75c57bfaa0a2835641b06f55d8a75a0e8a485ddde9db98036d975b8"
+        },
+        "normalSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "a7248eeb45eb1ce247f81693283e22e8b39e8a50890cecd22d02e75025547d90"
+        },
+        "slowSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "4eda52febad1700211d1bddf31ad4b45bf06727de5198aab945f2e59ecdb10eb"
+        },
+        "audioIdle": {
+          "status": "agent-checked",
+          "contentSha256": "2ad8d7ae85787a6d984465e8f3264a1836bb6b9b81edad5b26bc51d3bdf46809"
+        },
+        "audioLoading": {
+          "status": "agent-checked",
+          "contentSha256": "ba83cfdbdb68b9cec42a75f5bda0847d117419f73b1cf8d85272520ffd81b658"
+        },
+        "audioPlaying": {
+          "status": "agent-checked",
+          "contentSha256": "d8337f7a08e8a470b794c4a317ac030c2e11970b0be63948ae0916e0a68b0710"
+        },
+        "audioPaused": {
+          "status": "agent-checked",
+          "contentSha256": "ed38d01937a932debac723cf646b57c873541134a9543a09c6ed16f1e441ede7"
+        },
+        "audioEnded": {
+          "status": "agent-checked",
+          "contentSha256": "2ec9790d9d05da35e6d590aa41bacff751c3585099643658051af48542b7df8b"
+        },
+        "audioUnavailable": {
+          "status": "agent-checked",
+          "contentSha256": "a7cf3c09ac3bc1fd16868e1084239b396dbf4ba06a0031d1859061eef91d44bb"
+        },
+        "episodeChoice": {
+          "status": "agent-checked",
+          "contentSha256": "0917bee06e8be6bb7b7bbf683358665081b4885209753db1eedbc1c2608023d1"
+        },
+        "episode": {
+          "status": "agent-checked",
+          "contentSha256": "317a41ae9c632fe430a61a50734ad4bf36405b26acd12dc81fe672bd3299a95e"
+        },
+        "historical": {
+          "status": "agent-checked",
+          "contentSha256": "5a9b61dd4afff9347d39a32be1e8dfa8cf38d1fb693f2bee1f4c1b4d9f6cc9e0"
+        },
+        "introBody": {
+          "status": "agent-checked",
+          "contentSha256": "0ac35de3f51be2c66f9f74001a2b574c972b3acade2b779b0cd27ec1be1717c5"
+        },
+        "setupTitle": {
+          "status": "agent-checked",
+          "contentSha256": "7b25c7d8189d809ee9c9774158039ee39034e7a80384c2600b92946dbbe66ae5"
+        },
+        "setupBody": {
+          "status": "agent-checked",
+          "contentSha256": "d4a29a5d0e506e9bebd92e8c41cde309750fd549ce8ffcd44ed2404552e12897"
+        },
+        "predictionBody": {
+          "status": "agent-checked",
+          "contentSha256": "9a15130f04d8c87f1bd6d88e76327e564ac15b10266dcb11eb823b50d0e80176"
+        },
+        "postQuestion": {
+          "status": "agent-checked",
+          "contentSha256": "35780b4508ddd87f88f85b6c74a18894c5bc842efe7f10f74a8190754aaa93b6"
+        },
+        "settlement": {
+          "status": "agent-checked",
+          "contentSha256": "d88b5b07585445e1e35bf595764b4bc4873be59f787bfe505f05ed495365156f"
+        },
+        "comparisonLimit": {
+          "status": "agent-checked",
+          "contentSha256": "ee079501e4f38ee1f203bc7b26485c17f2f969fd9a7e61156472a1d817f5964c"
+        },
+        "pausePath": {
+          "status": "agent-checked",
+          "contentSha256": "34147728908a4395f70cf46f437a86bafab3a8923d8ced55232e05daf0490881"
+        },
+        "resumePath": {
+          "status": "agent-checked",
+          "contentSha256": "145ff2e41ded335fb2816de971e02477cefba26cea26b670a0f15e0d55e9927d"
+        },
+        "pausedPath": {
+          "status": "agent-checked",
+          "contentSha256": "9b3193e3c56ceadee086cf335c9f8aceb89fea9e07bcf2c72824b1f0a15b3548"
+        },
+        "glossary": {
+          "status": "agent-checked",
+          "contentSha256": "69684502a8f16597f4e968b80da563d3a6dba49df18c38f88850ca743b897607"
+        },
+        "glossaryClose": {
+          "status": "agent-checked",
+          "contentSha256": "e18d2dcfd81d669511691f83d0beb41c4b63bbbc71cfa78c75f71ffd6eaf11b2"
+        },
+        "sourceNote": {
+          "status": "agent-checked",
+          "contentSha256": "431cc3fb2d8518db29c3a49a3df151bf181d46b47fcfbafa3587e6a9eef2726d"
+        },
+        "revealNeutral": {
+          "status": "agent-checked",
+          "contentSha256": "364c36f967625f712b6b10ebc1b7c1bbdeb3a01d46f266b92d8f1526185b9426"
+        },
+        "nextBody": {
+          "status": "agent-checked",
+          "contentSha256": "919d9c9ad3af0bb8ab9ad61365e902e75e9a478194dc6c344677b54b1ab9132b"
+        },
+        "resourceFallback": {
+          "status": "agent-checked",
+          "contentSha256": "889d7490921491e62030bcc9e99d47d9ba7861ba71ea35632ea7cae09b420a5e"
+        },
+        "noResources": {
+          "status": "agent-checked",
+          "contentSha256": "6827f0c31e586f5c23dca7075b1ce7e51c349bb039bc4819f10594578c34417b"
+        },
+        "externalLink": {
+          "status": "agent-checked",
+          "contentSha256": "06fc41b47ce614976f0b893476d1f3d3cfec03cb4ecd097a2f79f068491bb59e"
+        },
+        "pilotOpen": {
+          "status": "agent-checked",
+          "contentSha256": "8816acd9deddaeb9cb83eef4ee6f491393bb9bfd1511c2a7da9dee766dcfd708"
+        },
+        "pilotTitle": {
+          "status": "agent-checked",
+          "contentSha256": "a9cffcfc4c449aa93fb44d2d6dd1d1a7decc5b41129f5a4cede2ff7f559ec396"
+        },
+        "pilotBody": {
+          "status": "agent-checked",
+          "contentSha256": "3c2c4b9a12d496332f3c4b6e70f53e2f771b53a31d0ef320214505a959edd586"
+        },
+        "pilotBefore": {
+          "status": "agent-checked",
+          "contentSha256": "5eb556590c936562abdbb2f660fb20ba60b4d07a55df8a36682d8b0e906d66d3"
+        },
+        "pilotAfter": {
+          "status": "agent-checked",
+          "contentSha256": "79a63db8205832c10cbecee5d5e73c211d0f3f341089fc32213a2fd86e5f4c47"
+        },
+        "pilotExplanation": {
+          "status": "agent-checked",
+          "contentSha256": "a45736fd9547ccee4e9b941b8429a29cae9b140e30ab2d3d1ce57829d79649fe"
+        },
+        "pilotExposure": {
+          "status": "agent-checked",
+          "contentSha256": "9753399e4e19bbd366a7771cf658c6546003ffa98554bf7b194a9a2f5505ea31"
+        },
+        "pilotOutcome": {
+          "status": "agent-checked",
+          "contentSha256": "634865f58df5d8344135564752d5e963bec5a5bb48d7b187beb1461dee9d8cc7"
+        },
+        "pilotCopy": {
+          "status": "agent-checked",
+          "contentSha256": "de84a3113adb15534235de009f7b68991380b8abe88b6a2f9f23192285cd29e2"
+        },
+        "pilotCopied": {
+          "status": "agent-checked",
+          "contentSha256": "316c22ed124d31d7c2de2ce2a0cf1550f3ae6f7ce963008f5c45d98516ba06f9"
+        },
+        "pilotCopyFailed": {
+          "status": "agent-checked",
+          "contentSha256": "0a489a67e216a3c3625c553ac09cb100611c80ae03e5d2baa0a5ca5096a2b495"
+        },
+        "pilotBack": {
+          "status": "agent-checked",
+          "contentSha256": "e874cfbb9589ee3fd90871130a1ae7f96e17632c5554a641a670155eebb716a0"
+        },
+        "pilotMissing": {
+          "status": "agent-checked",
+          "contentSha256": "1d4ffa2b34782393b95387ce5d785c317d0d1286db7d01b8d2abd4e1c9bba993"
+        },
+        "restart": {
+          "status": "agent-checked",
+          "contentSha256": "2954d846e6c189389688cdf252b04f1c54645ca5f425d09aa7b2f1edc1800cdb"
+        }
+      },
+      "narration.json": {
+        "language.greeting.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "5f387f78b765b50dba8480f3cc1020dd2ba6a3698f4fefc18bebb95b2bba1ee2"
+        },
+        "language.greeting.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "5f387f78b765b50dba8480f3cc1020dd2ba6a3698f4fefc18bebb95b2bba1ee2"
+        },
+        "intro.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "ef38893376975ddab590bf5abe9eed5efe5760cf3ec785fdd10dd9ac9884ab7e"
+        },
+        "intro.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "ef38893376975ddab590bf5abe9eed5efe5760cf3ec785fdd10dd9ac9884ab7e"
+        },
+        "setup.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "00ba8dbe8b9163eacaf9fedb2fd69ba42e811fe482a80137f29d0242bbae954c"
+        },
+        "setup.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "00ba8dbe8b9163eacaf9fedb2fd69ba42e811fe482a80137f29d0242bbae954c"
+        },
+        "prediction.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "666f7f72c12fc5b0bb2b52240683f67bb672e33599199dee4549b11186ae8895"
+        },
+        "prediction.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "666f7f72c12fc5b0bb2b52240683f67bb672e33599199dee4549b11186ae8895"
+        },
+        "run.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d98c44ee38ee897e50280afb79bfc2908ab07633e9809f5d97cf862f9bae1915"
+        },
+        "run.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d98c44ee38ee897e50280afb79bfc2908ab07633e9809f5d97cf862f9bae1915"
+        },
+        "result.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "7da2e4654223e46d25efc6d4975d463feb038567f3ef15b41112b21ee8ca97c2"
+        },
+        "result.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "7da2e4654223e46d25efc6d4975d463feb038567f3ef15b41112b21ee8ca97c2"
+        },
+        "replay.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "3e7c7328794e302400c172274ec7a69e7afbe3929192d20578bf7d81dc637bc5"
+        },
+        "replay.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "3e7c7328794e302400c172274ec7a69e7afbe3929192d20578bf7d81dc637bc5"
+        },
+        "reveal.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "c3a97d8484b99da00d4a62ba1871c4374d163e56a5d9dc2fa433bf1bc168685d"
+        },
+        "reveal.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "c3a97d8484b99da00d4a62ba1871c4374d163e56a5d9dc2fa433bf1bc168685d"
+        },
+        "debrief.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "5c527e24b279637092685b4fa535a1b862b09021c73a357ca6e5b5ecf637b238"
+        },
+        "debrief.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "5c527e24b279637092685b4fa535a1b862b09021c73a357ca6e5b5ecf637b238"
+        },
+        "postcheck.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "7cadc7d53460b746831c51ebface6a30eaaabac41ad583b48d00a90391161989"
+        },
+        "postcheck.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "7cadc7d53460b746831c51ebface6a30eaaabac41ad583b48d00a90391161989"
+        },
+        "nextsteps.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "51369f7dcb86765a76e24819f81aca6f389815af09759550ee7eecd0c4dc92e5"
+        },
+        "nextsteps.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "51369f7dcb86765a76e24819f81aca6f389815af09759550ee7eecd0c4dc92e5"
+        },
+        "ENTRY.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d0ea0fdc6cd982485f3d73617b39a5b3135a8750b83a24604d16a4d70768b3e6"
+        },
+        "ENTRY.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d0ea0fdc6cd982485f3d73617b39a5b3135a8750b83a24604d16a4d70768b3e6"
+        },
+        "DRAWDOWN_5.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "5ea72d1dee20aa4a36fc7f56fad5cc5ab404d00a1c60516889aca8c361c1ef48"
+        },
+        "DRAWDOWN_5.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "5ea72d1dee20aa4a36fc7f56fad5cc5ab404d00a1c60516889aca8c361c1ef48"
+        },
+        "DRAWDOWN_10.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "1bc63f3f41cbb8f8993400110e2ca42a8b79947549933eaad835123b53ddfad3"
+        },
+        "DRAWDOWN_10.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "1bc63f3f41cbb8f8993400110e2ca42a8b79947549933eaad835123b53ddfad3"
+        },
+        "DRAWDOWN_20.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "2765c70aa170e776c7273461b8d0c3330c3d2273d5016e79508b893952071b10"
+        },
+        "DRAWDOWN_20.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "2765c70aa170e776c7273461b8d0c3330c3d2273d5016e79508b893952071b10"
+        },
+        "MARGIN_WARNING.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "99c3a7ede57ec4d1908fb3bcd10481af9b56af4e34bc5caeef20d601001aa0fa"
+        },
+        "MARGIN_WARNING.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "99c3a7ede57ec4d1908fb3bcd10481af9b56af4e34bc5caeef20d601001aa0fa"
+        },
+        "FORCED_EXIT.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "2216a6221d3c091f3b51fc9b19dea89617cc44c164ba157115bbd149dfa211d8"
+        },
+        "FORCED_EXIT.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "2216a6221d3c091f3b51fc9b19dea89617cc44c164ba157115bbd149dfa211d8"
+        },
+        "USER_EXIT.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "39675f57a741ac212716b611e02f0bc343806f83f5aa7f823f33652844d27476"
+        },
+        "USER_EXIT.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "39675f57a741ac212716b611e02f0bc343806f83f5aa7f823f33652844d27476"
+        },
+        "EPISODE_END.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "90f97f27e94e767d8a2f26a943236770b766a5577443b361c3c20dec9995a69d"
+        },
+        "EPISODE_END.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "90f97f27e94e767d8a2f26a943236770b766a5577443b361c3c20dec9995a69d"
+        },
+        "UNLEVERAGED_SURVIVED.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "5af6d9c73a8788adca50b891abf64ef4c017276423b82b5b321348bc4f486e3f"
+        },
+        "UNLEVERAGED_SURVIVED.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "5af6d9c73a8788adca50b891abf64ef4c017276423b82b5b321348bc4f486e3f"
+        }
+      },
+      "glossary.json": {
+        "leverage.term": {
+          "status": "agent-checked",
+          "contentSha256": "c9968747d776fa3f31c41ef2a53f7f81e5ee0b862013152d71b27a5440111cd1"
+        },
+        "leverage.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "c9968747d776fa3f31c41ef2a53f7f81e5ee0b862013152d71b27a5440111cd1"
+        },
+        "leverage.short": {
+          "status": "agent-checked",
+          "contentSha256": "f01028c9e96a534a71a36e0fa8988b7130a3921d536e66ce00b75957a393fa88"
+        },
+        "leverage.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "72ea121f32eec7794671d2523c9b63e41eb2531859e019624610b6e1fe03443c"
+        },
+        "leverage.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "a7dff1082e53bd119d4ea529833ac315bbcc3ce7fe3bf9c5f40d3d4e95e69a44"
+        },
+        "margin.term": {
+          "status": "agent-checked",
+          "contentSha256": "2bf63d817630601b992694bc0b0559715001b9a24e7fe0d741eea02dce9181af"
+        },
+        "margin.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "2bf63d817630601b992694bc0b0559715001b9a24e7fe0d741eea02dce9181af"
+        },
+        "margin.short": {
+          "status": "agent-checked",
+          "contentSha256": "5747f07088c9e6b11a1c8d8342145d61992bd1d870fc0b99117f7aa6356be4cc"
+        },
+        "margin.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "aa92ce2013152129fadcf973a021ce9c5feb24826b8219a735c73503be3199a1"
+        },
+        "margin.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "1d8c05c780c5a7afc48544f1f8cca867dbaf5c4dd9c03d862b89f65320583cfc"
+        },
+        "forcedExit.term": {
+          "status": "agent-checked",
+          "contentSha256": "d0e51f16f918d21e4ffee3b47b33d0b6d8932189156ea0b48821cfc70ab8e46e"
+        },
+        "forcedExit.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d0e51f16f918d21e4ffee3b47b33d0b6d8932189156ea0b48821cfc70ab8e46e"
+        },
+        "forcedExit.short": {
+          "status": "agent-checked",
+          "contentSha256": "ab794fe404ecc34d04e3378d46d4d5d4e09bda4d6588ccfb617653786a87abfa"
+        },
+        "forcedExit.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "5a5637a9198c7205dcf5a43dfc433c24608fc8af9ee7b07df308633112ae42ce"
+        },
+        "forcedExit.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "a42cb4db74d9540135374d5d98585b4f11baac576e5f917a020795d258e478c1"
+        },
+        "volatility.term": {
+          "status": "agent-checked",
+          "contentSha256": "592a8ccafb8090c57734fcb7094f69ec380535c84523e979898a8e35dba94d79"
+        },
+        "volatility.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "592a8ccafb8090c57734fcb7094f69ec380535c84523e979898a8e35dba94d79"
+        },
+        "volatility.short": {
+          "status": "agent-checked",
+          "contentSha256": "e4335769df9a3d8c5335d3a7f46b7b4de7463e157c1ccd78d8b000d4f3e52a61"
+        },
+        "volatility.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "5c9d382113ae672607ae04141248287721d9b1afc11a25c2eb278f99720b9ec6"
+        },
+        "volatility.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d9cacc307b4335ca19e55f35cbba6e1eb7b0d963c8587d692e52525107ae41cd"
+        },
+        "drawdown.term": {
+          "status": "agent-checked",
+          "contentSha256": "4112bfc0eb4ed003f641387036490452bcd62b22f57148565a3684f7653e5458"
+        },
+        "drawdown.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "4112bfc0eb4ed003f641387036490452bcd62b22f57148565a3684f7653e5458"
+        },
+        "drawdown.short": {
+          "status": "agent-checked",
+          "contentSha256": "0897fe36959122301ddce49f350b9febdb9949e3abd396bcb948422e11cfbf74"
+        },
+        "drawdown.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "7256a8b39df26a7d6c47160af7352028b8cfa73471a8fe3f16e2a412be6f3b2b"
+        },
+        "drawdown.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "b2bfc9e2a8c57ef72a36f719e87e3da8c9ffd558f26b619e7b664cda6dbc324b"
+        },
+        "recovery.term": {
+          "status": "agent-checked",
+          "contentSha256": "ec7ba414f735bcbcb448219a274cac597fc80d17c4342a88581c5fa66ec54914"
+        },
+        "recovery.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "ec7ba414f735bcbcb448219a274cac597fc80d17c4342a88581c5fa66ec54914"
+        },
+        "recovery.short": {
+          "status": "agent-checked",
+          "contentSha256": "596631d0c7d9dd6623e2654933733fa6025c7ca2c84be7a3e1c9d18ce1cc5b7a"
+        },
+        "recovery.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "6285504348e754bbdf3dde61c038d591fdac4073c2f359371d2cfedb8d145541"
+        },
+        "recovery.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "9201275eab88b5fc89c2cb725bc816a1c2dd80eb1a1d75ff71ae46f5aef1b435"
+        },
+        "diversification.term": {
+          "status": "agent-checked",
+          "contentSha256": "70f51214079655c7f386f7ce5437f2f11f352c7ce1311a451f815469176ae0ea"
+        },
+        "diversification.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "70f51214079655c7f386f7ce5437f2f11f352c7ce1311a451f815469176ae0ea"
+        },
+        "diversification.short": {
+          "status": "agent-checked",
+          "contentSha256": "1f516a35fce0cbcf4bed9dc4b702ada9c614a23370b27f6d53ace377cbfff246"
+        },
+        "diversification.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "cf57b9eda403a20e1abd2f888eb7f792ef6261fd0ab124ad65cb2341eb97331a"
+        },
+        "diversification.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "e75c3f34083004bc1a216fa1cc1dd807ba885c128f889c90236eefc23cd04900"
+        },
+        "compounding.term": {
+          "status": "agent-checked",
+          "contentSha256": "f89c67a4fccbbe0ce7c88654c76a2cd84c659266a4db0a08e1bd6490386f3ef3"
+        },
+        "compounding.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "f89c67a4fccbbe0ce7c88654c76a2cd84c659266a4db0a08e1bd6490386f3ef3"
+        },
+        "compounding.short": {
+          "status": "agent-checked",
+          "contentSha256": "b680ac01ae7f3aab86788e0ade357c2e963e17a909b5b64fad6f191bb8148049"
+        },
+        "compounding.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "8d7f6de13bd0df3cafa5f272cb39162916258fd3d85690238a6cf3e30e1681fa"
+        },
+        "compounding.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "e0a0772fdb814eb4002f1e0ba2420e1121fdaf188df910225e4da0fb4580fc9a"
+        },
+        "fees.term": {
+          "status": "agent-checked",
+          "contentSha256": "6d80486cc33a915c7f4e37a813aaef90930f1ed89057b2716fd71cd80ee8c046"
+        },
+        "fees.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "6d80486cc33a915c7f4e37a813aaef90930f1ed89057b2716fd71cd80ee8c046"
+        },
+        "fees.short": {
+          "status": "agent-checked",
+          "contentSha256": "1f1db832c5bbfe4812919b9c6f1b85d852bdc0802e8fbfffb6c31c5fa09fc543"
+        },
+        "fees.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "fa598567b83f51a40d99ecde3005e3a1e293e02a9740dc9e564aa3bfc6098ca5"
+        },
+        "fees.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "a942dcb77bd557947c45de248c18a304c56f0e03ff3b9ce7c21e525518cb176d"
+        }
+      },
+      "resources.json": {
+        "sebi-scores.label": {
+          "status": "agent-checked",
+          "contentSha256": "5295e04ad150c09b700bb1f27a31043b9381a7206964073d193ad979c84a5368"
+        },
+        "sebi-investor-support.label": {
+          "status": "agent-checked",
+          "contentSha256": "2ed3bd3dd420e5d0273ba4d08096dd0cf5f272e80827b54f2300e9851be2ecd8"
+        },
+        "sebi-scam-warning-signs.label": {
+          "status": "agent-checked",
+          "contentSha256": "22e57809e832ca6c67af1be9aea3ebdcd01ae3bd3395b9e7d5466872c4435686"
+        },
+        "government-cybercrime-reporting.label": {
+          "status": "agent-checked",
+          "contentSha256": "765b693fef20707ff6b8b6248b4b32dc7feeb20b42d67e47f9294058e929fb44"
+        }
+      }
+    },
+    "hi": {
+      "ui.json": {
+        "languageSelect.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "9d2ff7f46150d9abce19a609407ee5e25d55683a548997fba113e5af3ad82531"
+        },
+        "languageSelect.title": {
+          "status": "agent-checked",
+          "contentSha256": "cf6c6d91cf592f08af4494e84a4764826793c0eadd1162daf3bb5690807779fc"
+        },
+        "languageSelect.body": {
+          "status": "agent-checked",
+          "contentSha256": "a62f39561a2b458d76711837808da75656f4af6eb0e3dabfeac6c3f63e0e6a66"
+        },
+        "languageSelect.hindi": {
+          "status": "agent-checked",
+          "contentSha256": "9ddb12af8457d635ec15773f905ca8587772ef64d5ecbe24d9aa4eab27a2e79b"
+        },
+        "languageSelect.english": {
+          "status": "agent-checked",
+          "contentSha256": "ba118bf7fc9c1aedc1edb28a0aa86e0b43b681f222af6616e13c43be87815b06"
+        },
+        "languageSelect.continue": {
+          "status": "agent-checked",
+          "contentSha256": "660c8c72d1108a26b776df9be0a2c9fb0733a54441b0b985dd33599d48145883"
+        },
+        "intro.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "3223632a4bdf7f62683da90f749f7d9d7996b7ba0837f9d512bde060f13ea3aa"
+        },
+        "intro.title": {
+          "status": "agent-checked",
+          "contentSha256": "4685c089443c3c0360fda32a3b3089d555ca3b6cabca8dba3e4cdbeb9459fb96"
+        },
+        "intro.body": {
+          "status": "agent-checked",
+          "contentSha256": "26dff9df465c0d210d00d401b0c2962fa060b601f811e330924040e336af7f41"
+        },
+        "intro.continue": {
+          "status": "agent-checked",
+          "contentSha256": "456ab02f9205d38441606b5e5751d78e24a59aa63732a6354038445b990a12ce"
+        },
+        "setup.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "80535cbefdfac2e0fc479a53661bf39835e364796d702782226074a132dd612b"
+        },
+        "setup.title": {
+          "status": "agent-checked",
+          "contentSha256": "2d2777b236295553a0151611314e75565d3aa820c4dce643d824577fa42244ea"
+        },
+        "setup.body": {
+          "status": "agent-checked",
+          "contentSha256": "79f12f3539d4757d7865e6e9d878069ba415a49e4cb430592ff9be4bcff281b0"
+        },
+        "setup.capital": {
+          "status": "agent-checked",
+          "contentSha256": "7defefb22dd71d27e7093111f0de543a35ce5b54605e02f6ab26afe8518175a8"
+        },
+        "setup.stake": {
+          "status": "agent-checked",
+          "contentSha256": "c32de7ca687dde20db4b252ba19f808efccb51d80850fb53246df23e8ed6c1f6"
+        },
+        "setup.leverage": {
+          "status": "agent-checked",
+          "contentSha256": "f60e6cb9da5406138cd6b53aa74a42a3b62f79c62da4c44797c836d58c35efa2"
+        },
+        "setup.stake25": {
+          "status": "agent-checked",
+          "contentSha256": "72da55d317fd997b93138b8646a2238e806a4c4566d1e854277b5a583d8aef23"
+        },
+        "setup.stake50": {
+          "status": "agent-checked",
+          "contentSha256": "28fdae8deae31d6eafd18b70d878f6d8a3136f267ce273777c089a42ac590438"
+        },
+        "setup.stake100": {
+          "status": "agent-checked",
+          "contentSha256": "32e48995f98ce3b76f2d3f5e2d2acddfeff6650b7b18628cfa739bfef4a03312"
+        },
+        "setup.leverage2": {
+          "status": "agent-checked",
+          "contentSha256": "9f4ae4555828627a1a209ec8d768162d1fcdf4305dac5bef7b5445836883936c"
+        },
+        "setup.leverage5": {
+          "status": "agent-checked",
+          "contentSha256": "e64e2d80ff0d118305b47c344c3e33fbbc79936c24c1ed864525753d9440bc1b"
+        },
+        "setup.leverage10": {
+          "status": "agent-checked",
+          "contentSha256": "dc2c0c828e93daf38ae42a0daa6932db9a80c2a4f27efecf5457430552cd8320"
+        },
+        "setup.continue": {
+          "status": "agent-checked",
+          "contentSha256": "456ab02f9205d38441606b5e5751d78e24a59aa63732a6354038445b990a12ce"
+        },
+        "prediction.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "b2c458e692cc8bab263914aff1870f6e942deb47cb49da268e20df1211f0dc9e"
+        },
+        "prediction.title": {
+          "status": "agent-checked",
+          "contentSha256": "5dd978e7b7d941ecd67a20d7032bfba015a2a27e462b4f6487c82e01cbf9d8ed"
+        },
+        "prediction.body": {
+          "status": "agent-checked",
+          "contentSha256": "dfeb8464f7b345c70c99a91c8fc20fe4c977fb0f0698fdeb5e715a18ff81fbc7"
+        },
+        "prediction.bigGain": {
+          "status": "agent-checked",
+          "contentSha256": "b02da1dc0ebeeb42a72f1460ff10fc62aa0eae0fffb887cdead54c4c3cbfab8a"
+        },
+        "prediction.smallGain": {
+          "status": "agent-checked",
+          "contentSha256": "6f169d05da21700baa0d7febf5a5d9034669e7273f8c6930ac16dcd494373429"
+        },
+        "prediction.smallLoss": {
+          "status": "agent-checked",
+          "contentSha256": "3ebc6614262fc00604444a94e179f89333c1281487f8ba920245cc86519d2e2e"
+        },
+        "prediction.almostEverything": {
+          "status": "agent-checked",
+          "contentSha256": "8aa1fb9672465be59fa0df998a97d44e0ffdc1d31f246a1f5ae8a39dd01d34f7"
+        },
+        "prediction.continue": {
+          "status": "agent-checked",
+          "contentSha256": "456ab02f9205d38441606b5e5751d78e24a59aa63732a6354038445b990a12ce"
+        },
+        "run.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "e0a75633c699c3dcc12d82c27424ad72e1c1ea173b0fa2807d7ea69533765806"
+        },
+        "run.title": {
+          "status": "agent-checked",
+          "contentSha256": "a64225ef9d58997f8a62e1782a7bbbe692c6465481ac699442f9e8efae20fcf6"
+        },
+        "run.body": {
+          "status": "agent-checked",
+          "contentSha256": "dcd1710e3ce32b8a66232f17e4696984af344321a12791d007b5281ba765e6f3"
+        },
+        "run.hold": {
+          "status": "agent-checked",
+          "contentSha256": "d9b486073205597fe1e99ff1ff3504b759437ca9702c8a8cc9134197731a543c"
+        },
+        "run.exit": {
+          "status": "agent-checked",
+          "contentSha256": "ba1e937c25e4852cf0095d469ae5e0e066244136dbbbb94699a9d64b5eaf23bd"
+        },
+        "run.decisionPoint": {
+          "status": "agent-checked",
+          "contentSha256": "9e69101dc3ada95949775bbceaa533f22bb88b734f9db5769c56dae8bb31ad58"
+        },
+        "run.warningPoint": {
+          "status": "agent-checked",
+          "contentSha256": "ed5285b8f0e060d2513440f8113290b50a57d7b5f1f6abcf45da63b8bfe5f887"
+        },
+        "run.resume": {
+          "status": "agent-checked",
+          "contentSha256": "4070afaa80e316e86244ab13e116ce20357efcfc5946038fbb1d36e1051cc09f"
+        },
+        "run.playing": {
+          "status": "agent-checked",
+          "contentSha256": "d3e47e394667b05dceebc5c4d39c40672ce985109ff392f357d21cbdac61fe60"
+        },
+        "run.pauseBody": {
+          "status": "agent-checked",
+          "contentSha256": "5dc083fef7e67f23ff38cb252cab173405de133c758a851094815f4e82a2e8e9"
+        },
+        "run.stepStatus": {
+          "status": "agent-checked",
+          "contentSha256": "a7c419209ad97445cfddacfee805c7388dc39b5f8220ef9e793d2a36e75bae60"
+        },
+        "run.startingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "b2ee52a90be1024ecf6bf731346b3fba28d89d587307b0d910005295e7eab54f"
+        },
+        "run.indexBase": {
+          "status": "agent-checked",
+          "contentSha256": "1c2ccda7ce636b045240fe5be112b50ef2497b0132638c62a58a100f23e24c76"
+        },
+        "run.lowEquity": {
+          "status": "agent-checked",
+          "contentSha256": "a7cdd2af29a2cd19934a59ffe884a5b228ffee7e90a08165284283a54c00558d"
+        },
+        "run.maintenanceLevel": {
+          "status": "agent-checked",
+          "contentSha256": "2327e72369c4b2656eef256b6167410b2bf05cf2f97d473f5f6732427410e0a7"
+        },
+        "run.warningLevel": {
+          "status": "agent-checked",
+          "contentSha256": "b96c30add5e7de622f3727dc3a7db1e2debc3d145fa61a4e0959240c333cc2fa"
+        },
+        "run.marginLabel": {
+          "status": "agent-checked",
+          "contentSha256": "e2779a41ae2cb2c317aae7dcfe5ee2bdc494a1f90dbab99e159a922c03848f6c"
+        },
+        "run.invalid": {
+          "status": "agent-checked",
+          "contentSha256": "447153ea1af2be8ba4cd8db281badd9b7e03030ce38c3737bdce08b9cc4ee50c"
+        },
+        "run.exitedChoice": {
+          "status": "agent-checked",
+          "contentSha256": "74887b221255225065a0f2e5a390d4b788a817e599b634da572859652f6fb693"
+        },
+        "run.priceLabel": {
+          "status": "agent-checked",
+          "contentSha256": "1fcf011a59997c90b4e6fd552cc3fff7b567833c658aaac3b3ae4c9136906818"
+        },
+        "run.equityLabel": {
+          "status": "agent-checked",
+          "contentSha256": "740d2ba17b4130d36e6e949437d7c3e05bf6face2f2987e90ed005d0c71c8b65"
+        },
+        "run.statusOpen": {
+          "status": "agent-checked",
+          "contentSha256": "c1797ac16274da45a82a7c282eb5cabbd64e1e5ca392c5403aa993edc768b168"
+        },
+        "run.statusWarning": {
+          "status": "agent-checked",
+          "contentSha256": "adb58397b93f954f5152a4ac46884ffd710e0522f3d364d37a838eb1fd117682"
+        },
+        "run.statusForced": {
+          "status": "agent-checked",
+          "contentSha256": "775871bcf2e21a6a8d18873bcef4305ba98de51e7daa281ce3ab1886a8218b7d"
+        },
+        "run.statusExited": {
+          "status": "agent-checked",
+          "contentSha256": "f2bead2184b05505f06a27df129e01799a66dc51370502a031ba4585398e2dbc"
+        },
+        "run.continue": {
+          "status": "agent-checked",
+          "contentSha256": "4e0af6e70031ec659515efeb0274ec02f8552a56b25fb4c001cc7829ab920927"
+        },
+        "result.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "63a9cc293ad6be95d9af17567177dafd7d06b45626785290b24e03e8954889e1"
+        },
+        "result.title": {
+          "status": "agent-checked",
+          "contentSha256": "32748a3f8bab6671199ca606348b59ecd5ac22991b67d8574d77725c4d4c7e75"
+        },
+        "result.body": {
+          "status": "agent-checked",
+          "contentSha256": "e7ba8d5647c8015894e8ae2426648546a845df60e520ec50441de3d99c5cc49f"
+        },
+        "result.finalEquity": {
+          "status": "agent-checked",
+          "contentSha256": "929a4c7e4fa23d7f20f8eeab3f8ec968dbd78a12bd124d2c9db6775dc6775b1d"
+        },
+        "result.change": {
+          "status": "agent-checked",
+          "contentSha256": "b31f69dab03278ea139158d7d3a5c2a5977b7eac5318f9bad00e12bc78b118fb"
+        },
+        "result.forcedExitLine": {
+          "status": "agent-checked",
+          "contentSha256": "653ba9755446d1552d247a7fccdd93f613e2b835d8041acdcb26c81b294b7617"
+        },
+        "result.survivedLine": {
+          "status": "agent-checked",
+          "contentSha256": "dffd04be9e00ae873813c05a86fd54b07246801dfea3b44264eeb1a684edf4b6"
+        },
+        "result.userExitLine": {
+          "status": "agent-checked",
+          "contentSha256": "0148bd975695cd08b49e1a6a1ce23c0188b190685b294f820afdee4b29330ee4"
+        },
+        "result.continue": {
+          "status": "agent-checked",
+          "contentSha256": "0c7e0fd95e3c9cd3b73da34852799413437f49f8a1d556ee23ad88629ad50994"
+        },
+        "replay.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "86d10587af04946ad345b26fb696092dbc94fffba48e19cba27df394e749fbda"
+        },
+        "replay.title": {
+          "status": "agent-checked",
+          "contentSha256": "7009d9f1996f73775b7315a0ba03c7a91e5ea18e41ea3ed40050addaaf8c4093"
+        },
+        "replay.body": {
+          "status": "agent-checked",
+          "contentSha256": "4a089862025a3058831a6062a165996b59393037f9ee89dd646e5baaeb56e953"
+        },
+        "replay.leveragedLine": {
+          "status": "agent-checked",
+          "contentSha256": "e9c7e077eebc124aa7e242968a0335757c56ff6e04d3aaa3ca66ed7381131a0b"
+        },
+        "replay.unleveragedLine": {
+          "status": "agent-checked",
+          "contentSha256": "b457586d6f118ac8219f1c70b1204a9761d40ef8863a23048e389d45ab3d761d"
+        },
+        "replay.chartDescription": {
+          "status": "agent-checked",
+          "contentSha256": "9b22c2005c1567e28196490a66b6489f9bcd924bfa1b0ec42a2eabebed7e5b20"
+        },
+        "replay.closed": {
+          "status": "agent-checked",
+          "contentSha256": "60ebc67af880b4d3e827d6201d05ed6df767c75c3393b3aad9f39ef3e2ea3adb"
+        },
+        "replay.leveragedFinal": {
+          "status": "agent-checked",
+          "contentSha256": "5efe95f4956a0fef72cd731570b45b82b274d3b3e561251e0925b38bf41425b7"
+        },
+        "replay.unleveragedFinal": {
+          "status": "agent-checked",
+          "contentSha256": "6b1ff542bb9b609e34ad3ddaf4388bde8f0862f0f57eeb632f45247def5eb2fd"
+        },
+        "replay.difference": {
+          "status": "agent-checked",
+          "contentSha256": "77e5763bbb7dbd3b23c8617f7a8fa3ed79961019e8e1948dda6372b488f904b2"
+        },
+        "replay.requiredGain": {
+          "status": "agent-checked",
+          "contentSha256": "6eee517300fd57047a63917ed6e42de75dd7300408eac5d3d5f2fb2b8e5cc12b"
+        },
+        "replay.requiredGainNone": {
+          "status": "agent-checked",
+          "contentSha256": "f87a93029c5102da5ddf334f510fee9e6d62eb7f02eb0a2102a4fb2b16b0bf98"
+        },
+        "replay.continue": {
+          "status": "agent-checked",
+          "contentSha256": "e29d80ceb457d86107b60d1bf26941e4bededa31c3ef235bfcf6e1db2d804359"
+        },
+        "reveal.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "7614c6219535577ba637d5513c87dc35403a61e42e0fed14d4025e87fde079c7"
+        },
+        "reveal.title": {
+          "status": "agent-checked",
+          "contentSha256": "8667774fbb6b3a7fb11f773f82dfdc6b4a8f6e2ebdddfdc20232a87ba5ec511e"
+        },
+        "reveal.body": {
+          "status": "agent-checked",
+          "contentSha256": "93e9d8cbdd2630b3f526e8e55b7a095a797ae4ec21f00fdd1ead960d6c5b635f"
+        },
+        "reveal.periodLabel": {
+          "status": "agent-checked",
+          "contentSha256": "16a3378e5a9d3f64d161120324b431d4dc2839dbce72ef083e312622dc9d641c"
+        },
+        "reveal.whatHappenedLabel": {
+          "status": "agent-checked",
+          "contentSha256": "6a8ba5e07d79c248bf77ebd4607f2c804a3b20a3b4aa545bea06e4d81437b800"
+        },
+        "reveal.sourceLabel": {
+          "status": "agent-checked",
+          "contentSha256": "21d2c665f5b7477b7844ec20f34dc9b48ee92e26b70dbf4c94a58754b971e222"
+        },
+        "reveal.placeholderNote": {
+          "status": "agent-checked",
+          "contentSha256": "896d80017fcea1d4012f2f5a52ec0237f501e62b2c06ef882aedc7a5d8869eb8"
+        },
+        "reveal.oneEpisode": {
+          "status": "agent-checked",
+          "contentSha256": "b61abb966a30e76c1dec678d0dc6cd64a690a2a62f3530f332e4a05307000e7a"
+        },
+        "reveal.statsLabel": {
+          "status": "agent-checked",
+          "contentSha256": "d7dfa5ea0d7322a175ae2f4be9d4827b6036c79b2c9804648cc64d6c648b50b5"
+        },
+        "reveal.statsMaxDrawdown": {
+          "status": "agent-checked",
+          "contentSha256": "2f3580b2f9d204115c3b82a83f93dc324fa22a21184837b9358703d1bb1b4700"
+        },
+        "reveal.statsWorstFall": {
+          "status": "agent-checked",
+          "contentSha256": "1cce0c2861c57c145d755daf19a5a20d76727045ca729bbaec71e2a8785a362b"
+        },
+        "reveal.statsDownCloses": {
+          "status": "agent-checked",
+          "contentSha256": "93ba6e1a1362aefc2453eb33f2912aeb7225ef2a2970a63bee0681f0a64b12d6"
+        },
+        "reveal.statsBarCount": {
+          "status": "agent-checked",
+          "contentSha256": "e472fd768609eefb87362b2edbd4de9394a7049d26957d43dcb96f8e674405d6"
+        },
+        "reveal.continue": {
+          "status": "agent-checked",
+          "contentSha256": "99ff5f2fd66c0336e4cc35e1d4f6f19e52fa866958f03bb3d47e19df610d78ca"
+        },
+        "debrief.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "89656297e6ec4ed68012803c51d47bea298485af97f6c6bbb604dbd2668d4823"
+        },
+        "debrief.title": {
+          "status": "agent-checked",
+          "contentSha256": "d6e6e7223b7327f2be5496b3b43b6d72a5f1e730f7f4de4063ecb0412ca72d58"
+        },
+        "debrief.body": {
+          "status": "agent-checked",
+          "contentSha256": "d74b281c18feea8b73e49277efba8b1885e8373e09d05cad395a75c745c48181"
+        },
+        "debrief.leverage": {
+          "status": "agent-checked",
+          "contentSha256": "bcd71f0b7adf21e247f152d501ac56c797c2ca7bac6c97973b4765bc05172bd4"
+        },
+        "debrief.margin": {
+          "status": "agent-checked",
+          "contentSha256": "0be76f82edc0ac754dc61bf99fad0cbe01f50c196d47205d068cb4fba033dad6"
+        },
+        "debrief.forcedExit": {
+          "status": "agent-checked",
+          "contentSha256": "a59a8ab10ec150f0b5addb352e8553b54242754fda76b809cc8d273ad6c93487"
+        },
+        "debrief.forcedExitBody": {
+          "status": "agent-checked",
+          "contentSha256": "332991f864417023b60b605422d9f093bd22c6287085f7a1176f8eb4bf3ce30b"
+        },
+        "debrief.survivedButHurt": {
+          "status": "agent-checked",
+          "contentSha256": "ab51a1be26a001a727cc965a6ddf6dc7d77b5b6bbbae8ffd1fd37369d51c7944"
+        },
+        "debrief.survivedButHurtBody": {
+          "status": "agent-checked",
+          "contentSha256": "407bf2ea91a17cffd5766efda0903ae668c53fcf3e4746437a7e5f2812890cb9"
+        },
+        "debrief.userExitedEarly": {
+          "status": "agent-checked",
+          "contentSha256": "9acf274feb8c7db6505c936acdfdbb3318e7f18c1f45343928060fb97192275f"
+        },
+        "debrief.userExitedEarlyBody": {
+          "status": "agent-checked",
+          "contentSha256": "0def05d758601818c568197298e11375c22e18d4af902042f47d9ed4bbb6d68c"
+        },
+        "debrief.unleveragedSurvived": {
+          "status": "agent-checked",
+          "contentSha256": "1f085344fa043678a4996b0b079ea8b8b764ee5d981097bdbaa47c23eb7b32e6"
+        },
+        "debrief.unleveragedSurvivedBody": {
+          "status": "agent-checked",
+          "contentSha256": "5ea4ec7b8e6f6962c6b52cb39ec51d03b6e3cfec36e0dd3c710c1b77ac895500"
+        },
+        "debrief.recoveryMaths": {
+          "status": "agent-checked",
+          "contentSha256": "8ff1d88ae0f9ca7e7ebd8c65162fb51d6562b4168e08c4ca15931b0e3a21ed04"
+        },
+        "debrief.recoveryInterpolated": {
+          "status": "agent-checked",
+          "contentSha256": "ff626f5a60ea113e7a0ac2a9266f3289d7fc22fffcb35e7c42b9d9f2ecb01ae6"
+        },
+        "debrief.recoveryNone": {
+          "status": "agent-checked",
+          "contentSha256": "7ca84e588633e0b23a4e8dced0f1890feb73f05956a71fe456e4e3c791d832e6"
+        },
+        "debrief.volatility": {
+          "status": "agent-checked",
+          "contentSha256": "4406c60ac1bcd4bc4dcc46bbf6130d2df4cb8528e30fd13502cb70fb922e3e1f"
+        },
+        "debrief.drawdown": {
+          "status": "agent-checked",
+          "contentSha256": "d5cca8830116fac654d16865ae1e5e1b34c1146b7b4ca9a7d5a6ca1479a7f2ac"
+        },
+        "debrief.recovery": {
+          "status": "agent-checked",
+          "contentSha256": "8ff1d88ae0f9ca7e7ebd8c65162fb51d6562b4168e08c4ca15931b0e3a21ed04"
+        },
+        "debrief.continue": {
+          "status": "agent-checked",
+          "contentSha256": "d87547085dea1bf574dbcd3e7b16459b5208d31f09a66f14ffecbcf1a9be37b4"
+        },
+        "postCheck.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "f8b871bd0409a7a82afc674806572743abf58123b0a46b08e952b982c3d0be4e"
+        },
+        "postCheck.title": {
+          "status": "agent-checked",
+          "contentSha256": "18fb8be83ac29229005aa3f1f2e428d40dfe685aa61bdf1168962875be2573b2"
+        },
+        "postCheck.body": {
+          "status": "agent-checked",
+          "contentSha256": "98cb8f39e7db4abcb0d47207dae825e8f30709df6ed8c65bc296c39fe591a0fc"
+        },
+        "postCheck.same": {
+          "status": "agent-checked",
+          "contentSha256": "bd501298e13399269c34df0a5c6b698cf491a93a29009a1e093c1580d258e27e"
+        },
+        "postCheck.wouldTake": {
+          "status": "agent-checked",
+          "contentSha256": "88c71ee26dcc6fb3699ba80e73fca63f1bbc974d5e05227ed45b2505858b20ed"
+        },
+        "postCheck.yes": {
+          "status": "agent-checked",
+          "contentSha256": "4a3daa901d0a9a1e593e2cc45889df2a1765d4a6f9f05461ac5a12ceb9ed0755"
+        },
+        "postCheck.no": {
+          "status": "agent-checked",
+          "contentSha256": "7f73843522890c327e3d522b2d0a110cccf9059321e0d5099fa86246a370689d"
+        },
+        "postCheck.notSure": {
+          "status": "agent-checked",
+          "contentSha256": "cdab3a4422a44fdf2f1ad78ad44ea15f9dd809b3bc3188c78a86859d2ae5f479"
+        },
+        "postCheck.changed": {
+          "status": "agent-checked",
+          "contentSha256": "a07e9d2bd598d86b96e3ecac4a4454d78bc0f7fd3011b92faf93b4485bc7dfb5"
+        },
+        "postCheck.unchanged": {
+          "status": "agent-checked",
+          "contentSha256": "a2a628600b9b6615aa5ba31af143e4f5b2ada82b005b8917f094b24be3557d25"
+        },
+        "postCheck.continue": {
+          "status": "agent-checked",
+          "contentSha256": "456ab02f9205d38441606b5e5751d78e24a59aa63732a6354038445b990a12ce"
+        },
+        "nextSteps.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "0de77b151db0e558e6dd02315f0f2e0cd1309630c8379eedb1e9c48aed349fdb"
+        },
+        "nextSteps.title": {
+          "status": "agent-checked",
+          "contentSha256": "ecdafe9e8aeca0b7a2fdd3e979910adbd50a24bb94eaf0af5c898c74f276c108"
+        },
+        "nextSteps.body": {
+          "status": "agent-checked",
+          "contentSha256": "bb5e2c7c07dacb5e75401be145f26b1b382cbfd7cec8b754f72c7f884386094a"
+        },
+        "nextSteps.empty": {
+          "status": "agent-checked",
+          "contentSha256": "2d5acb726233b573877b7997245bd2614b5b5eb4c4bcf87f9dc70d5eb25692ed"
+        },
+        "nextSteps.restart": {
+          "status": "agent-checked",
+          "contentSha256": "f4a2d329caf8f1e4fa0134c128cf9051b53f69e2444233ab267da061b195f759"
+        },
+        "pilotSummary.eyebrow": {
+          "status": "agent-checked",
+          "contentSha256": "ff6837b7c486ab44075a5ee5b789c258b202c8ac27115867bbee1d50c8a0d5f9"
+        },
+        "pilotSummary.title": {
+          "status": "agent-checked",
+          "contentSha256": "95d07cde8c2899c48e5c92cb2419a69d404c408bcd5c5e2b0546a886fe0c6ac8"
+        },
+        "pilotSummary.body": {
+          "status": "agent-checked",
+          "contentSha256": "a55f6c75ed50c20c835375da2da8d2d39a33da76674fc914178e02c75cb65244"
+        },
+        "pilotSummary.copy": {
+          "status": "agent-checked",
+          "contentSha256": "42a1763013956252dad94c0c2e6be4947ac00792d3c035f725907fc4f5702927"
+        },
+        "pilotSummary.back": {
+          "status": "agent-checked",
+          "contentSha256": "b083196854dc2ca666e70457a431a25f81deff77bbd05d7fa794e35eadd94eaf"
+        },
+        "common.caption": {
+          "status": "agent-checked",
+          "contentSha256": "a75ab8671db75316d785430fa6f3d1b0ae12d3800c483bd4d82b188bd608f25c"
+        },
+        "common.audio": {
+          "status": "agent-checked",
+          "contentSha256": "3a1c632534a14585afff1ee31a9928493269801b73ee6345c046afd19c6374b5"
+        },
+        "common.audioUnavailable": {
+          "status": "agent-checked",
+          "contentSha256": "948a28fa8ccaedfd63a1a3e5696ebf40b60258a2db59f198d7d2430fd45e07f9"
+        },
+        "common.chartData": {
+          "status": "agent-checked",
+          "contentSha256": "459dcc2496fd95a61b61125ae1c4ae075c43271d495c4028418f33df5fbfaddc"
+        },
+        "common.step": {
+          "status": "agent-checked",
+          "contentSha256": "c39fbf83f1c01960272a75a76fa488428df3868c860d64eb9298f67187a1cef5"
+        },
+        "common.syntheticLabel": {
+          "status": "agent-checked",
+          "contentSha256": "3957afdf3ea0be65f95569f674ea4ee28adc76504e8f62630567afd222a2c1ce"
+        }
+      },
+      "debrief.json": {
+        "forcedExit.title": {
+          "status": "agent-checked",
+          "contentSha256": "a59a8ab10ec150f0b5addb352e8553b54242754fda76b809cc8d273ad6c93487"
+        },
+        "forcedExit.body": {
+          "status": "agent-checked",
+          "contentSha256": "f7747d14209d35e931c775177404224bf21ce548d89d6747ed57efb4651ad772"
+        },
+        "survivedButHurt.title": {
+          "status": "agent-checked",
+          "contentSha256": "7eb098e4590cf6cbe2a84bd058f67abe1991a5809ccf24acc288d0369f4b1bde"
+        },
+        "survivedButHurt.body": {
+          "status": "agent-checked",
+          "contentSha256": "386da738fb7d051ff86c715ca94db710baeb51f3d4dd7130c274cf39432bf3b2"
+        },
+        "userExitedEarly.title": {
+          "status": "agent-checked",
+          "contentSha256": "297038d1b25fb040150040da71439e38813308e12b3a2737ce0f0972c0fa52c5"
+        },
+        "userExitedEarly.body": {
+          "status": "agent-checked",
+          "contentSha256": "5b5a927b622c57377f0a9a84e248618a792db5cef919e3a12d43742c6229d0b0"
+        },
+        "unleveragedSurvived.title": {
+          "status": "agent-checked",
+          "contentSha256": "251ab58b7d6569b109f253fa7325b6438e5fc3c4805d346c9bcaadcd7a026a96"
+        },
+        "unleveragedSurvived.body": {
+          "status": "agent-checked",
+          "contentSha256": "0e64d4a653ca622fba8aced7e51a3d087f825461be23456189d2bfcc5b0e418c"
+        },
+        "recoveryMaths.title": {
+          "status": "agent-checked",
+          "contentSha256": "8ff1d88ae0f9ca7e7ebd8c65162fb51d6562b4168e08c4ca15931b0e3a21ed04"
+        },
+        "recoveryMaths.body": {
+          "status": "agent-checked",
+          "contentSha256": "572152553731e63f0873a162b85fe457108e3c1286328a49a35b090e0d6dd916"
+        }
+      },
+      "features.json": {
+        "preferences": {
+          "status": "agent-checked",
+          "contentSha256": "3f316881b5e3c9c83dad5ab24dc14f66b496fea03c7f5a88fca92f7bc8697487"
+        },
+        "language": {
+          "status": "agent-checked",
+          "contentSha256": "360090ad87ed9d0db502d4bbbee9428afac7ac938e9b216ab369fb0d00bbaa71"
+        },
+        "textSize": {
+          "status": "agent-checked",
+          "contentSha256": "bf56d19fd98a3547c91f2135d2d5d23951cd58bb126bd87f94cbcb6f8cd09c0a"
+        },
+        "standardText": {
+          "status": "agent-checked",
+          "contentSha256": "74655133d6d00bd747fb0a860769b44c9b340505cd4a45c67016c34b8ccae07b"
+        },
+        "largeText": {
+          "status": "agent-checked",
+          "contentSha256": "c3bf8670b60bb3656a727d0d44cfe4c4f3dcb0fa5161d7abd6bfdd7063f4e12d"
+        },
+        "skip": {
+          "status": "agent-checked",
+          "contentSha256": "d3a61d17fab1e2a60628b5c2a70369cc64526a120d19617d84b872d3e82c1df0"
+        },
+        "reviewNotice": {
+          "status": "agent-checked",
+          "contentSha256": "8a19d5aa5f7bd472b138e0b15fa62c9dee8784246ad4adf1f6f6f3a08821a98b"
+        },
+        "privacy": {
+          "status": "agent-checked",
+          "contentSha256": "4401fbd1938571581093c06f2d118bdb6c5be99b2ca545e5d7e1604104e2c2e4"
+        },
+        "offline": {
+          "status": "agent-checked",
+          "contentSha256": "b363ac4d20d2a078b305685c0851f60a35347c4b48d4a200705ed10b8d000750"
+        },
+        "online": {
+          "status": "agent-checked",
+          "contentSha256": "a710eff8b88af389fc3090e3be7444366f0c6dafcb1f41d1e33bff1fe027ce42"
+        },
+        "disconnected": {
+          "status": "agent-checked",
+          "contentSha256": "93ee317986f9201aa678ae8fda7ca579f73f4cfc53ae9bfd06108d352a2980ca"
+        },
+        "audio": {
+          "status": "agent-checked",
+          "contentSha256": "66347f2acd04facb589b014cd824a0ca07ec9a854cf0d30c6a9b774d39fff0ef"
+        },
+        "listen": {
+          "status": "agent-checked",
+          "contentSha256": "e0f99fbf11d1c09939d4fd688ce1b9c76aa3ab6b6d5b1ec5b0f9253be876a676"
+        },
+        "pauseAudio": {
+          "status": "agent-checked",
+          "contentSha256": "cf59507de3ffea96ae9c96e816c90b3e1811fe771694c16cdc460f1f2e582e8e"
+        },
+        "resumeAudio": {
+          "status": "agent-checked",
+          "contentSha256": "ad1d2bbd32381e2a0a7069c204ef6c6a7e31d7bcee4a824a114874c69d4c2360"
+        },
+        "replayAudio": {
+          "status": "agent-checked",
+          "contentSha256": "317d2a30f03e67eae5b2b099a5ae932bfc634ca8fef92d6a69d6d8a7045f0a00"
+        },
+        "muteAudio": {
+          "status": "agent-checked",
+          "contentSha256": "f062a6d3ff530c6bf50fc5c6c94a409c3260629b763085f9a5a4627a3589d8c0"
+        },
+        "unmuteAudio": {
+          "status": "agent-checked",
+          "contentSha256": "261fea9854219e3af6230607a191f74619ea069d2c1184222002e5bb149d955c"
+        },
+        "audioSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "c1ef4a669a0db6a0dcc40115459a96bb3a12f08049f3e36701f48560c8e7ac16"
+        },
+        "normalSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "74655133d6d00bd747fb0a860769b44c9b340505cd4a45c67016c34b8ccae07b"
+        },
+        "slowSpeed": {
+          "status": "agent-checked",
+          "contentSha256": "68b63c3a1612c0d7a5860090253882b6856078e91af15d411c7602fe2650108a"
+        },
+        "audioIdle": {
+          "status": "agent-checked",
+          "contentSha256": "61d7712e2a6f49fd6e2cc0d9e0620aba4c88ee10ba6496961a9175ebd459acf8"
+        },
+        "audioLoading": {
+          "status": "agent-checked",
+          "contentSha256": "b3cb0c3957efc46a84d1bb8eb76f6e45ed219ce59fdeb38a47203a4640d823fd"
+        },
+        "audioPlaying": {
+          "status": "agent-checked",
+          "contentSha256": "12797ee27809e86c7cbd1f819bc58239cc0e359530b7751a2bf8fa2fdfacee75"
+        },
+        "audioPaused": {
+          "status": "agent-checked",
+          "contentSha256": "9a487823804930a2060b94a304148b01fc9e7398dcec1ac4e2d45e5a7d1b47b3"
+        },
+        "audioEnded": {
+          "status": "agent-checked",
+          "contentSha256": "afeb92f6c564d5ee9921d98f6abaa531c6ac1fb8c740b589301cd33f32977da6"
+        },
+        "audioUnavailable": {
+          "status": "agent-checked",
+          "contentSha256": "47123082ae5d31075b9b51473475576a5646121e88423989a2ebae4e88c285ec"
+        },
+        "episodeChoice": {
+          "status": "agent-checked",
+          "contentSha256": "eeaf9d7ab977e445ba1ead9ac7297478becb1afef20c5f82f87c3b57d8a72cd7"
+        },
+        "episode": {
+          "status": "agent-checked",
+          "contentSha256": "05207a6eb763676ecc5e37fc274f81c56cd3b9697235249b1b474a75d1f33526"
+        },
+        "historical": {
+          "status": "agent-checked",
+          "contentSha256": "ccb2b9b426f2a9f001e3eefe29228de2e75dd81e113ef712a3485dd38e8564ff"
+        },
+        "introBody": {
+          "status": "agent-checked",
+          "contentSha256": "78c910f244f1b8428678295adf494ce0cd133daf4e1ee2a0d3086e244f42480b"
+        },
+        "setupTitle": {
+          "status": "agent-checked",
+          "contentSha256": "818d05c96f95451ee97a8193d1ff87bc8876fec71451c9d98e9119e5f1e3657f"
+        },
+        "setupBody": {
+          "status": "agent-checked",
+          "contentSha256": "6fe96a53219ee65a39172f4c3150ba06af1d76b69e459b4160cf197a19123e22"
+        },
+        "predictionBody": {
+          "status": "agent-checked",
+          "contentSha256": "2ff1f291336ec83b3e26c27893274d0b019c033c1472cfcafbec2baa0483c8ce"
+        },
+        "postQuestion": {
+          "status": "agent-checked",
+          "contentSha256": "b8eee7a0968a1bb7da12f1c02804101975edd6b3db28d3886b50c4b1865e1b1e"
+        },
+        "settlement": {
+          "status": "agent-checked",
+          "contentSha256": "0c2c766ff34f82c8b1dacad143b4f259556a5a307fb40050a69d3eb6289f58a3"
+        },
+        "comparisonLimit": {
+          "status": "agent-checked",
+          "contentSha256": "ac3242a1ffb5366c70a7f4704df0dab50a8c70b7e014d31d758c85802d7fb40b"
+        },
+        "pausePath": {
+          "status": "agent-checked",
+          "contentSha256": "f40047accc9a78198c4c101ee47ddaec2489e679819f984fe5f317fddd887a72"
+        },
+        "resumePath": {
+          "status": "agent-checked",
+          "contentSha256": "b5690165183944daa73529a83534c5c5acccc31abd99f2e4779e1ee92c096e09"
+        },
+        "pausedPath": {
+          "status": "agent-checked",
+          "contentSha256": "505a093360935cf852027996cf879b7a8f3912550671ed50f0be91ace103d507"
+        },
+        "glossary": {
+          "status": "agent-checked",
+          "contentSha256": "5dba3f2e181fa37e44e4bebf07d558e6451f7f20e49cd1e8dced4e3192c6b904"
+        },
+        "glossaryClose": {
+          "status": "agent-checked",
+          "contentSha256": "45c5e47871c8aec971360f7dcf5dd4d5b1842e3697a768d3db7ca60734056d36"
+        },
+        "sourceNote": {
+          "status": "agent-checked",
+          "contentSha256": "2954d48231187da2961d56e6d181befe39ca3c8ef9d754d0a3a55f67beb1d649"
+        },
+        "revealNeutral": {
+          "status": "agent-checked",
+          "contentSha256": "84376a90004d6bdd44c639a687b998c4e76ac6444dd6e51fedc21220196195f3"
+        },
+        "nextBody": {
+          "status": "agent-checked",
+          "contentSha256": "6a947cffd7a7c5444e0518d337a52e58c7758fa5616ce2a18ead824543346503"
+        },
+        "resourceFallback": {
+          "status": "agent-checked",
+          "contentSha256": "f77e5280e14cb00dc09955e47a84698e7427f48ee64805f9e67b4db428269514"
+        },
+        "noResources": {
+          "status": "agent-checked",
+          "contentSha256": "beebcf1edd8352dac8d33de8891c381725c1ef2550790dab01fe3654ff2a5d1c"
+        },
+        "externalLink": {
+          "status": "agent-checked",
+          "contentSha256": "2618f64a409ca1d8d65402528bcfac8778f493a8739444585e90b78e2dce99bb"
+        },
+        "pilotOpen": {
+          "status": "agent-checked",
+          "contentSha256": "6f2f6ac33e7588d08a1d8fe24c240c5935e7e9210a8c0a76d9c951bc07209041"
+        },
+        "pilotTitle": {
+          "status": "agent-checked",
+          "contentSha256": "d79c6942e0240de3fa8a29333b9129c31b84bb2321a8766d1c87ad6d2082d614"
+        },
+        "pilotBody": {
+          "status": "agent-checked",
+          "contentSha256": "c084cc2b8449cbb72652ce09db902273fc4298beb8d3528987db0d8b0fd3f1e4"
+        },
+        "pilotBefore": {
+          "status": "agent-checked",
+          "contentSha256": "73ad938a589d996b77173b7080a7cb8791fb8502c966f2ce6d90b0f80f2b9e03"
+        },
+        "pilotAfter": {
+          "status": "agent-checked",
+          "contentSha256": "666ac507be62af090a1400bd3fde20b37c29b6cf1d83baa833d4cb6dc49e8c91"
+        },
+        "pilotExplanation": {
+          "status": "agent-checked",
+          "contentSha256": "1ae0ee5f57f0078b4d2daadef9c5dcb6ac070945314ada17ff8197cd68fe7548"
+        },
+        "pilotExposure": {
+          "status": "agent-checked",
+          "contentSha256": "e351f0c75fd7dec858d625b135b8f8382a6b1dbb12d5d94bdf967a23317fdf94"
+        },
+        "pilotOutcome": {
+          "status": "agent-checked",
+          "contentSha256": "137102233c061b78205b7ccab44f4d5349f80fc2471df0b5c67ea48bff684e7a"
+        },
+        "pilotCopy": {
+          "status": "agent-checked",
+          "contentSha256": "bceedbbf98bb3fd36a3133451cefad825d06bc1d0c7364f593c9d640f3d38597"
+        },
+        "pilotCopied": {
+          "status": "agent-checked",
+          "contentSha256": "aa2f5327579c2f0c5b97eb0490cf4c3c32645e39d86be96c82bb0312cb68826d"
+        },
+        "pilotCopyFailed": {
+          "status": "agent-checked",
+          "contentSha256": "2b325dcd0ccd342ec5a63cd9a8fc681c55d41b1c0a73b0117f44bf9b80ae47a5"
+        },
+        "pilotBack": {
+          "status": "agent-checked",
+          "contentSha256": "ca59ec46414910c44f932434ec210535e554124246b8098079efbd359a53c6a9"
+        },
+        "pilotMissing": {
+          "status": "agent-checked",
+          "contentSha256": "4b54fb7a7a822cebc7d87598b4b1b656535880f6bc074fa14a9a612736e8c331"
+        },
+        "restart": {
+          "status": "agent-checked",
+          "contentSha256": "6ed163e995532a9ce8082185cb7fc7886d2f5271ee4e95c1ea76d1d2ddbec27f"
+        }
+      },
+      "narration.json": {
+        "language.greeting.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "ec077872d211483a6ebaebf26c95200a81897e2f5cc01f28c9224559aa37145a"
+        },
+        "language.greeting.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "ec077872d211483a6ebaebf26c95200a81897e2f5cc01f28c9224559aa37145a"
+        },
+        "intro.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "e76d417ef9791b8bf3c46cfcd4d93b965b7eaa39b372123783db7460789a1bf0"
+        },
+        "intro.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "e76d417ef9791b8bf3c46cfcd4d93b965b7eaa39b372123783db7460789a1bf0"
+        },
+        "setup.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "c7cc6ecedad8c33a093176824b7d49bae5cea7726eb6e7ad28262e7ee63492a7"
+        },
+        "setup.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "c7cc6ecedad8c33a093176824b7d49bae5cea7726eb6e7ad28262e7ee63492a7"
+        },
+        "prediction.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "f7473dbdd5d34a205aa4b861320d655980b6d39b383f744c819c985f9fc1b512"
+        },
+        "prediction.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "f7473dbdd5d34a205aa4b861320d655980b6d39b383f744c819c985f9fc1b512"
+        },
+        "run.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d476381b5d3f9ab94769bacb872ebf68279c2aabca37ba8181b13a6d074ed349"
+        },
+        "run.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d476381b5d3f9ab94769bacb872ebf68279c2aabca37ba8181b13a6d074ed349"
+        },
+        "result.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "34499d7fb5de6931c1f66d9884576a00f3b8280376171309522a36dc868023f2"
+        },
+        "result.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "34499d7fb5de6931c1f66d9884576a00f3b8280376171309522a36dc868023f2"
+        },
+        "replay.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "42f884ba1aceae20e2d8db91f0351d84287ab3eed13ecf4ceff5e0c9569c6cba"
+        },
+        "replay.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "42f884ba1aceae20e2d8db91f0351d84287ab3eed13ecf4ceff5e0c9569c6cba"
+        },
+        "reveal.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "c58f973860be1cbb924f6b7ae186f06b621a3be7c111a3b8c1379baeb2105260"
+        },
+        "reveal.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "c58f973860be1cbb924f6b7ae186f06b621a3be7c111a3b8c1379baeb2105260"
+        },
+        "debrief.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "171d8d9ed13fb1d41d1f098b76f78406f66c3ef79cb9231293e88f50b69992ce"
+        },
+        "debrief.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "171d8d9ed13fb1d41d1f098b76f78406f66c3ef79cb9231293e88f50b69992ce"
+        },
+        "postcheck.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "7945c0e964af36854b3ebfe2c0cafa82483eae3b289542954143e4e7c1fa39ee"
+        },
+        "postcheck.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "7945c0e964af36854b3ebfe2c0cafa82483eae3b289542954143e4e7c1fa39ee"
+        },
+        "nextsteps.main.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "8aabcbf824e2c949d04466be8ddf885b30e7088deee13b44a5262933c89afc07"
+        },
+        "nextsteps.main.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "8aabcbf824e2c949d04466be8ddf885b30e7088deee13b44a5262933c89afc07"
+        },
+        "ENTRY.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "f805fc2549edc496837216655f50dbdcb206f8f1335ee5eab124c931511ff517"
+        },
+        "ENTRY.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "f805fc2549edc496837216655f50dbdcb206f8f1335ee5eab124c931511ff517"
+        },
+        "DRAWDOWN_5.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "166abe7fc1fd1f57c7459884ff67f4f8f3fd7accf8ec26f0b296311549a9f795"
+        },
+        "DRAWDOWN_5.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "166abe7fc1fd1f57c7459884ff67f4f8f3fd7accf8ec26f0b296311549a9f795"
+        },
+        "DRAWDOWN_10.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d0216b1ef0cb32ebb23c59d425e3f9d91f3ae7ac3648a15b1f54c97dffd53ba8"
+        },
+        "DRAWDOWN_10.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d0216b1ef0cb32ebb23c59d425e3f9d91f3ae7ac3648a15b1f54c97dffd53ba8"
+        },
+        "DRAWDOWN_20.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "b6fe844d63a9175b2382c14613d420b73aa805dcf8070fac52bac3dfebc1c5a6"
+        },
+        "DRAWDOWN_20.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "b6fe844d63a9175b2382c14613d420b73aa805dcf8070fac52bac3dfebc1c5a6"
+        },
+        "MARGIN_WARNING.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "8d98e579a3ad38d426fbbdb0db4a7f5fa715283b56078fab824e7a1e44aac800"
+        },
+        "MARGIN_WARNING.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "8d98e579a3ad38d426fbbdb0db4a7f5fa715283b56078fab824e7a1e44aac800"
+        },
+        "FORCED_EXIT.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "8745551316ebfa2139207a9faed522b8bdd55cbf7c29eea7406049284e874713"
+        },
+        "FORCED_EXIT.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "8745551316ebfa2139207a9faed522b8bdd55cbf7c29eea7406049284e874713"
+        },
+        "USER_EXIT.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "145f22f07e4af5a5fa2e38175c710bbb859bc8d482f2c82dd1ef81d276dfbbd6"
+        },
+        "USER_EXIT.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "145f22f07e4af5a5fa2e38175c710bbb859bc8d482f2c82dd1ef81d276dfbbd6"
+        },
+        "EPISODE_END.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "12bc341641f37d5670d93216379bdf5ed89abee9c2920578f93c02f1df959f72"
+        },
+        "EPISODE_END.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "12bc341641f37d5670d93216379bdf5ed89abee9c2920578f93c02f1df959f72"
+        },
+        "UNLEVERAGED_SURVIVED.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d9fc61c281b8bfd094a8ed72ba2f4f0cc1845862e863c1fcbdbbd488d1645b9f"
+        },
+        "UNLEVERAGED_SURVIVED.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "d9fc61c281b8bfd094a8ed72ba2f4f0cc1845862e863c1fcbdbbd488d1645b9f"
+        }
+      },
+      "glossary.json": {
+        "leverage.term": {
+          "status": "agent-checked",
+          "contentSha256": "bcd71f0b7adf21e247f152d501ac56c797c2ca7bac6c97973b4765bc05172bd4"
+        },
+        "leverage.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "bcd71f0b7adf21e247f152d501ac56c797c2ca7bac6c97973b4765bc05172bd4"
+        },
+        "leverage.short": {
+          "status": "agent-checked",
+          "contentSha256": "171d8d9ed13fb1d41d1f098b76f78406f66c3ef79cb9231293e88f50b69992ce"
+        },
+        "leverage.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "747e65fafcb938ce7e967294de43c1b043814ecda080d37b837362b2809387a8"
+        },
+        "leverage.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "263e53d1a98c99725bb09ad88b5cc4049349d84a63d541450bea259577c5dab1"
+        },
+        "margin.term": {
+          "status": "agent-checked",
+          "contentSha256": "0be76f82edc0ac754dc61bf99fad0cbe01f50c196d47205d068cb4fba033dad6"
+        },
+        "margin.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "0be76f82edc0ac754dc61bf99fad0cbe01f50c196d47205d068cb4fba033dad6"
+        },
+        "margin.short": {
+          "status": "agent-checked",
+          "contentSha256": "8c6b75191f725d93136e706ddd01497748ed033d1ec9d7c171e2cfb94d1e01fc"
+        },
+        "margin.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "de6e7a877bae4ab60b361348d4d7ca1208c3e414eaf0280059f081afff76574b"
+        },
+        "margin.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "f963c736fe7ee80c771719dc8f58b837fc2f3af62dd89eea63562113c3efd4df"
+        },
+        "forcedExit.term": {
+          "status": "agent-checked",
+          "contentSha256": "a59a8ab10ec150f0b5addb352e8553b54242754fda76b809cc8d273ad6c93487"
+        },
+        "forcedExit.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "a59a8ab10ec150f0b5addb352e8553b54242754fda76b809cc8d273ad6c93487"
+        },
+        "forcedExit.short": {
+          "status": "agent-checked",
+          "contentSha256": "56cfb1c6a1eba32a125bf64b56e953f333bf8c0a79297e868ad9ab8ce6086c68"
+        },
+        "forcedExit.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "0cd916ceba99629de7262ff06498dac2853cc6596c60164229ee5a8f5be9f924"
+        },
+        "forcedExit.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "5ab7cc3ffa2fb15373b353f29fd9c99654672ea7386ba2bb243802bcb4aaf379"
+        },
+        "volatility.term": {
+          "status": "agent-checked",
+          "contentSha256": "4406c60ac1bcd4bc4dcc46bbf6130d2df4cb8528e30fd13502cb70fb922e3e1f"
+        },
+        "volatility.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "4406c60ac1bcd4bc4dcc46bbf6130d2df4cb8528e30fd13502cb70fb922e3e1f"
+        },
+        "volatility.short": {
+          "status": "agent-checked",
+          "contentSha256": "c2239da929242a4abc25d3362dec3fcb1b0f83335415014bd90d3034663889cd"
+        },
+        "volatility.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "449ebd434e4976e1929fdd0cb481b2e536275bc8c44f7dc1ee1a5ba5690a5270"
+        },
+        "volatility.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "abae461d73f28df2c89459d9ff453df3c3f82f000ecd66c03f9cb03a87258838"
+        },
+        "drawdown.term": {
+          "status": "agent-checked",
+          "contentSha256": "d5cca8830116fac654d16865ae1e5e1b34c1146b7b4ca9a7d5a6ca1479a7f2ac"
+        },
+        "drawdown.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "d5cca8830116fac654d16865ae1e5e1b34c1146b7b4ca9a7d5a6ca1479a7f2ac"
+        },
+        "drawdown.short": {
+          "status": "agent-checked",
+          "contentSha256": "7c4bc57cc1e7f4bd2ea38e3c11b2b08deecf8379b753a1b116b62c637fb5749f"
+        },
+        "drawdown.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "1c09adb10d5d5d5353fe5a3d1a5a4d4bcd08b85d0236a52f285706455ef3bc48"
+        },
+        "drawdown.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "182a7ff703d44e9c2d913ea51d280a5cf472f309937e5f95b29e1b8406feb2a5"
+        },
+        "recovery.term": {
+          "status": "agent-checked",
+          "contentSha256": "8ff1d88ae0f9ca7e7ebd8c65162fb51d6562b4168e08c4ca15931b0e3a21ed04"
+        },
+        "recovery.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "8ff1d88ae0f9ca7e7ebd8c65162fb51d6562b4168e08c4ca15931b0e3a21ed04"
+        },
+        "recovery.short": {
+          "status": "agent-checked",
+          "contentSha256": "7436f13950f7f178bed9200b6c4cab3d97961ef83d4efb629159fea6f3d80ef8"
+        },
+        "recovery.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "762ca7401cee4be453e91efd5420a552f036eb2c91b1fa2d0a72d816d29eff80"
+        },
+        "recovery.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "37a16d63c4357aab1a1644a3b2d3c289fd101b67c5865f2090a03317cf05dd0c"
+        },
+        "diversification.term": {
+          "status": "agent-checked",
+          "contentSha256": "47e9444c393eccf1246e19251051891dad08c725e81d872a7deeebd97a6dbf92"
+        },
+        "diversification.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "47e9444c393eccf1246e19251051891dad08c725e81d872a7deeebd97a6dbf92"
+        },
+        "diversification.short": {
+          "status": "agent-checked",
+          "contentSha256": "9ddb69a678ffd2c9cca1b580f76204dd68781317afa73dabce7d625daef8a89c"
+        },
+        "diversification.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "e4cf184638d6da685f21aab69502c8f6b8d6781df0a20b96f642b9cacf9258d9"
+        },
+        "diversification.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "1a7f6f963840495504533d15b08686fa4ddece5d287e1c079b9f193e3be4d0dd"
+        },
+        "compounding.term": {
+          "status": "agent-checked",
+          "contentSha256": "e4c253c8539956fef02ce6a9dfa0b51ac1b5729c25b0bdd4c8be220e2a6c0752"
+        },
+        "compounding.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "e4c253c8539956fef02ce6a9dfa0b51ac1b5729c25b0bdd4c8be220e2a6c0752"
+        },
+        "compounding.short": {
+          "status": "agent-checked",
+          "contentSha256": "466010a183c121e300a9560e02932288de60a139c6b9971bd36d50a5ac6a48d0"
+        },
+        "compounding.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "fd1f24faf2cee72e2c4a5a73a0d2755bc0132b81727d85d5551721ab384bc81a"
+        },
+        "compounding.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "19005059ae94f0e734a7796e892a88941bea795a031ea02a773710311a2be485"
+        },
+        "fees.term": {
+          "status": "agent-checked",
+          "contentSha256": "024e1b753bd7142448a2b82a218c61a441737168b46adef5e85d2d75ac8f07ff"
+        },
+        "fees.displayText": {
+          "status": "agent-checked",
+          "contentSha256": "024e1b753bd7142448a2b82a218c61a441737168b46adef5e85d2d75ac8f07ff"
+        },
+        "fees.short": {
+          "status": "agent-checked",
+          "contentSha256": "d3849b09ad65f0c8d16a213d116aa36a95ad117fa34b7bc94fc63b3afb267a83"
+        },
+        "fees.analogy": {
+          "status": "agent-checked",
+          "contentSha256": "3402b1de9260de67e7baaabaa116c55d15536d6c0a1e9ba225ab1462044e7194"
+        },
+        "fees.spokenText": {
+          "status": "agent-checked",
+          "contentSha256": "75ca5211ef78f885f08406a6d9d34134cf2eea8aac9990b8664ceb4df2b97791"
+        }
+      },
+      "resources.json": {
+        "sebi-scores.label": {
+          "status": "agent-checked",
+          "contentSha256": "fdfb4910bba560d4e7c4b494d9ddf01bfdb7ffed1ab34f183c82f4c41b1db7f6"
+        },
+        "sebi-investor-support.label": {
+          "status": "agent-checked",
+          "contentSha256": "e898bdfd38d1666f43dd3afceb523719bf7a7f46578d264c923b9a2381108590"
+        },
+        "sebi-scam-warning-signs.label": {
+          "status": "agent-checked",
+          "contentSha256": "384a79f078ccd96a17a0384419ada33113d7b95c1d19a45351ea589e597debf6"
+        },
+        "government-cybercrime-reporting.label": {
+          "status": "agent-checked",
+          "contentSha256": "aca3c531350591a214c6f8d9281ca95ab67267a44ff4f07debfd8e38ee1fba90"
+        }
+      }
+    }
+  }
+}
