@@ -1,49 +1,75 @@
-# Phased task plan
+# Evidence-led implementation status — 2026-10-03
 
-Priority meanings: **P1 impact** = directly improves learner safety/outcome; **P2 Bharat** = bilingual/local-context reach; **P3 trust** = evidence, privacy, accessibility, and honest claims; **P4 tech** = maintainability and implementation quality; **P5 feasibility** = smallest practical delivery step. Each task has a primary owner: **agent** for implementation support, **human** for judgment/sign-off.
+Priority: protective impact → Bharat usability → guardrails/trust → technical
+execution → feasibility. Status here describes actual work, not a claim of
+human review, legal clearance, deployed release or pilot efficacy.
 
-## Phase 0 — Scaffold and documentation (complete)
+## Completed locally
 
-- **P1/P2/P3/P4/P5 / agent:** create the bilingual clickable skeleton, content dictionaries, guardrail checks, typed contracts, documentation, and intentionally red release gate.
-- **P3 / human:** review safety wording, draft Hindi, accessibility, licences, and release blockers.
+- [x] Record current user authorization in AGENTS.md and ADR-0011. Local
+  milestones committed; no pushes. Preserve historical audit/failed TTS evidence.
+- [x] Pure deterministic engine, prediction-before/recheck-after, true pauses,
+  user/forced exits, same-observation replay, correct settled chart endpoints,
+  recovery maths and plain debrief. Regression/unit/browser evidence retained.
+- [x] Replace runtime synthetic placeholders with two single-source ECB
+  historical reference-observation windows; exact reuse quotes, hashes,
+  offline prepare_episode reproduction, stats and absent-calendar-date limits.
+  EIA/Refinitiv candidates remain unapproved outside runtime.
+- [x] Four direct official protective links fetched/checked this session with
+  URL/date/body hashes, neutral bilingual labels and external privacy disclosure.
+- [x] Review every current Hindi leaf/back-translation; correct semantic drift,
+  finish nine glossary terms, move NAV/nomination out of shipped scope.
+  Hash-bound review and explicit **agent-checked, not native-reviewed** status.
+- [x] Release enumerates every agent-checked string, blocks draft/planned/shipped
+  TODO/placeholder/unverified/missing-or-stale audio, accepts genuinely reviewed
+  fixtures cleanly. Agents never set production `reviewed`.
+- [x] Diagnose near-silent greedy TTS outside provider with default English/Hindi
+  examples; isolate decode-mode variable, benchmark four vs eight threads,
+  record wall/signal/peak RSS. Keep pinned stack/weights/tokenizers offline.
+- [x] Add fixed per-ID/text seeds, exact-input caching, all-codebook EOS,
+  signal/duration/duplicate/quantity/CER gates, three-attempt bound, compact
+  normalized mono Opus + schema-2 manifest. Pinned permissive ASR installed/cached.
+- [x] Six actual Rohit/Divya auditions; Divya selected objectively. **No human
+  listened.** CPU selected clips 12.50–62.45s, no measured >90s synthesis clip;
+  optional unexecuted free-GPU notebook recipe retained.
+- [x] Gesture-only fail-closed audio player, readable captions/fallback, glossary,
+  text size, language attributes, focus/keyboard/reduced motion and local summary.
+- [x] Production PWA shell and requested-audio cache policy, same-origin CSP,
+  cache cleanup and no participant persistence. Real warmed-shell offline proof.
+- [x] English/Hindi × two episodes at 360×640, no external runtime traffic,
+  prediction/post-check memory, same-series contrast, keyboard/reflow/axe checks.
+- [x] Mobile Lighthouse Slow-3G-shaped/4×-CPU measured; exact build hashes,
+  bundle/audio sizes, clean-clone npm-ci/build and expected release failure recorded.
+- [x] Package/notice inventory and every original human-TODO disposition recorded.
 
-## Phase 1 — Deterministic engine and episode pipeline (implemented; real data pending)
+## Parked technical blocker — release is not complete
 
-- **P1/P4 / agent:** implement pure deterministic simulation, leverage/equity identity, intrabar lows, warning-once/event ordering, forced-exit simplification, user exit, recovery maths, summary statistics, and same-path unleveraged replay.
-- **P4 / agent:** validate runtime episode documents and maintain TypeScript/Python statistics parity tests.
-- **P5 / agent:** implement explicit-session CSV preparation, provenance/hash output, and synthetic crash/choppy fixtures.
-- **P1/P3 / human:** review the teaching margin rule, worked 10× example, and supply/licence real episodes. Release remains blocked until this is done.
+- [ ] **`hi:DRAWDOWN_5` audio:** 57/58 tracks accepted. The Hindi five-percent
+  line exhausted three seeds; ASR did not confirm “पाँच”. A separate five-beam
+  ASR check on the same WAVs did not resolve it. Do not silently fuzzy-map the
+  number, lower thresholds, generate unlimited attempts, or publish silence.
+  Determine whether TTS pronunciation or recognizer error using targeted native
+  listening / an independently justified recognizer or voice change, preserving
+  the prior evidence. Then rebuild/hash-check all current entries.
+- [ ] Full manifest stays `complete:false`. The app intentionally rejects an
+  incomplete set; Listen shows fallback. Real packaged en/hi playback + warmed
+  clip tests remain **two explicit skips**, not passes. After resolving the
+  track, rerun build/browser/content/release and preserve the new evidence.
 
-## Phase 2 — Real journey UI (implemented; review pending)
+## Publication / human-only actions
 
-- **P1 / agent:** connect the reducer journey to simulation playback, decision pauses, chart, equity/margin meters, replay contrast, reveal, debrief, post-check, and verified-resource filtering.
-- **P1/P2/P3 / human:** approve safety wording, hidden-period behavior, Hindi meaning, accessibility, and no-advice boundaries before release.
+- [ ] Working title and publication context owner decision.
+- [ ] Actual English listening/native Hindi pronunciation/meaning review;
+  no `reviewed` status without evidence.
+- [ ] Resolve exact historical training-subset/voice/output attribution where
+  official terms are still incomplete; don't revive EIA without separate rights.
+- [ ] Real assistive-technology/physical low-end-device/native-zoom review.
+- [ ] Choose/authenticate static preview host and inspect HTTPS/CSP/logging;
+  no authenticated CLI was available, no preview/deployment occurred.
+- [ ] Actual-setting pilot consent/contact/recruitment/external-note retention;
+  no participants or efficacy results fabricated.
 
-## Phase 3 — Bilingual content and offline audio pipeline (implemented; review pending)
-
-- **P2 / agent:** implement English-first strings, separate display/spoken fields, draft-Hindi labels, and content-limit checks.
-- **P2 / agent:** implement the optional local-only Indic Parler audio provider, deterministic hashes, Opus conversion, manifest provenance, and fail-closed dependency/model checks.
-- **P2 / human:** review Hindi meaning, naturalness, cultural clarity, glossary, analogies, pronunciation, and voice quality.
-- **P1 / human:** approve the leverage, margin, forced-exit, and recovery explanations; reject recommendations or brands.
-- **P3 / human:** review the gated model access, checkpoint, optional dependency licences, training/voice provenance, and audio release terms before generating or publishing assets.
-
-## Earlier Phase 1 carryover — Deterministic engine plumbing (implemented)
-
-- **P4 / agent:** implemented and tested `mulberry32`, geometric synthetic path, typed engine APIs, units/entry/close/equity math, intrabar low, warning-once, forced-exit simplification, recovery, and summary statistics.
-- **P1 / human:** review the margin rule and 10×/7% worked example; confirm user-facing caveats.
-- **P5 / agent:** implemented the CSV CLI validation contract with crash, choppy, and paired rally/shakeout fixtures.
-- **P3 / human:** verify every source, licence, date, calendar, and resource pointer before any is visible.
-
-## Phase 4 — Quality and packaging (P3/P4/P5)
-
-- **P4 / agent:** add Vitest, ESLint, Prettier, content, bundle, and release checks; keep release red for placeholders/unverified resources.
-- **P3 / agent:** add CSP and same-origin request assertions; document storage keys and generated-artifact ignore rules.
-- **P5 / agent:** implement the silent audio CLI only; no model, playback, or generated audio claim.
-- **P3 / human:** inspect package metadata, transitive licences, accessibility matrix, performance measurements, and privacy behavior.
-
-## Phase 5 — Evidence-led pilot readiness (P1/P2/P3)
-
-- **P1 / human:** approve consent, information sheet, withdrawal, retention, and facilitator process for 5–10 people.
-- **P2 / human:** conduct the small manual pre/post formative pilot; keep raw responses outside the repository.
-- **P3 / agent:** produce a local summary scaffold that reports sample limits and missingness without causal claims.
-- **P1 / human:** decide whether evidence justifies the next phase; no pilot result may become a recommendation or efficacy claim.
+Evidence and exact commands/results: [FINISH_REPORT](FINISH_REPORT.md),
+[AUDIO_BUILD](AUDIO_BUILD.md), [TODO_DISPOSITION](TODO_DISPOSITION.md),
+[RELEASE_WARNINGS](RELEASE_WARNINGS.md). Technical completion must not be
+misrepresented as a green release while the blocker above remains.

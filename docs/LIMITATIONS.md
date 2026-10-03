@@ -1,17 +1,58 @@
 # Limitations and non-claims
 
-- Phase 2 connects the journey UI to deterministic teaching playback, charts, replay, result, reveal, debrief, and post-check screens; this is still not a production simulator.
-- Charts are plain educational SVG views of the loaded episode and are not market-analysis tools.
-- The seeded `mulberry32` geometric path is synthetic test input, not market data, history, a forecast, or a representative distribution.
-- The equity and forced-exit math is an educational simplification, not a broker, exchange, lender, tax, or jurisdictional rule.
-- No margin call, liquidation, slippage, fees, funding, spread, taxes, corporate actions, liquidity, gaps, or execution uncertainty is modeled.
-- The runtime still imports only synthetic crash/choppy fixtures. Downloaded candidates, source pointers, datasets, and licence evidence remain outside the app until human review; see `docs/DATA_SOURCES.md` and any candidate review log.
-- No audio is generated or played. No model or voice dataset is bundled.
-- No offline behavior is supported, even though the future stack includes a PWA plugin.
-- Daily data may understate forced exits; the engine can use an intrabar low only when the supplied episode contains one.
-- No pilot UI, participant database, outcome analysis, or research claim exists.
-- Performance targets are unmeasured. Accessibility requires manual testing and human review.
-- Draft Hindi and analogy copy may be inaccurate or culturally unclear until reviewed.
-- A small pilot, if later run, cannot establish effectiveness, safety, causality, or population-level behavior.
-
-Whenever a limitation changes, update this file and the relevant release gate. Use `TODO(human)` for unresolved evidence, not invented confidence.
+- The deterministic virtual-money engine is a **teaching simplification**, not
+  a broker/exchange/lender/jurisdiction rule, financial tool, strategy test or
+  risk-tolerance assessment. No recommendation, prediction or expected return.
+- Warning is at most once; the teaching maintenance/forced-exit thresholds and
+  ordering are arithmetic choices. Real slippage, spread, fees, financing,
+  taxes, liquidity, actual gaps/execution and corporate actions are omitted.
+  Fee/compounding/diversification glossary entries do not add those engine features.
+- Two runtime paths use real ECB **daily reference observations**, not equity
+  prices, Indian markets, executable quotes or independent observations of
+  trade execution. Internal `close` is merely the schema's numeric carrier.
+  They are retrospectively selected, not representative or random samples.
+- No intraday values are available in those paths. Daily observations can hide
+  earlier threshold crossings. The engine supports verified intrabar lows only
+  when actually supplied; none are invented. Absent dates are not guessed to
+  be holidays, weekends or missing sessions. Source completeness is only
+  within returned observations. No causal event story is inferred.
+- Charts are educational SVGs. Replay uses the same underlying observed series;
+  exposure differs, and a forced-exit curve settles/stays flat rather than
+  continuing a fictional leveraged position. No successful strategy claim.
+- Period is hidden in the UI until reveal, not cryptographically secret.
+  The client bundle necessarily contains public data/provenance, inspectable
+  with developer tools. Real instrument identifiers are not shown/spoken.
+- Synthetic seeded paths remain **test fixtures only**, not runtime episodes.
+  EIA/Refinitiv candidates remain unapproved outside runtime.
+- All current copy is `agent-checked`, **not human-reviewed**. Every Hindi leaf
+  has agent back-translation evidence, but no native speaker reviewed it.
+  Naturalness, cultural clarity, reading difficulty and comprehension need
+  actual users. No automated check establishes those properties.
+- **No human listened to generated audio.** Signal/EOS/duplicate/duration and
+  pinned-ASR CER gates screen failures, but ASR itself makes errors and can
+  miss wrong negations/numbers. The selected voice is an automated result,
+  not a subjective/native quality endorsement. Text is authoritative.
+  Actual generated/failed track counts are in [AUDIO_BUILD.md](AUDIO_BUILD.md).
+- Audio needs an explicit gesture. Missing/unusable media falls back to visible
+  text. Captions are complete utterance text, **not word-timed subtitles**.
+  Historical reveal details and numeric charts remain readable text; narration
+  is fixed instructional copy, not dynamically synthesized participant results.
+- PWA reload is only available after a successful warm visit/install and can
+  be affected by browser eviction/private mode. Only previously requested
+  audio is cached. No cold-start-offline or complete audio-pack guarantee.
+- Browser/keyboard/reflow/Lighthouse results cover the exact recorded local
+  Chrome setup, not all devices, screen readers, network conditions, browsers,
+  production hosts or WCAG conformance. No human screen-reader audit occurred.
+  See [ACCESSIBILITY_AND_PERFORMANCE.md](ACCESSIBILITY_AND_PERFORMANCE.md).
+- Official resource verification establishes URL identity/relevance at its
+  recorded check date, not eligibility, destination privacy/accessibility,
+  successful service delivery or money recovery. External instructions change.
+- Package/model metadata and exact ECB reuse text are evidence, not blanket
+  legal clearance. Exact upstream training-subset/voice/output attribution
+  questions remain in [THIRD_PARTY.md](THIRD_PARTY.md).
+- Pilot summary is one journey in memory, not a participant database, research
+  export, statistical analysis or proof of learning. No pilot occurred. Even a
+  later 5–10-person convenience sample cannot establish efficacy or causality.
+- Static host logging, consent/contact/retention for any external facilitator
+  notes, working-title approval and publication remain human decisions. No
+  account creation, push, paid service or production deployment is implied.

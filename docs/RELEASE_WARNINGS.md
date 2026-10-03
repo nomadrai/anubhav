@@ -1,0 +1,682 @@
+# Exact release warning list — 2026-10-03
+
+Generated from `checkRelease()` on the final current content. No human/native/listening review claimed. Technical release is BLOCKED, not green.
+
+## Blockers
+
+- public/audio/manifest.json: complete must be true
+- public/audio/manifest.json: missing track id=DRAWDOWN_5 language=hi
+
+## 614 individually identified agent-checked strings + 57 audio entries
+
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.forcedExit.title id=forcedExit.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.forcedExit.body id=forcedExit.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.survivedButHurt.title id=survivedButHurt.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.survivedButHurt.body id=survivedButHurt.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.userExitedEarly.title id=userExitedEarly.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.userExitedEarly.body id=userExitedEarly.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.unleveragedSurvived.title id=unleveragedSurvived.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.unleveragedSurvived.body id=unleveragedSurvived.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.recoveryMaths.title id=recoveryMaths.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.recoveryMaths.body id=recoveryMaths.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.preferences id=preferences language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.language id=language language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.textSize id=textSize language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.standardText id=standardText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.largeText id=largeText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.skip id=skip language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.reviewNotice id=reviewNotice language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.privacy id=privacy language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.offline id=offline language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.online id=online language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.disconnected id=disconnected language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audio id=audio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.listen id=listen language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pauseAudio id=pauseAudio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.resumeAudio id=resumeAudio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.replayAudio id=replayAudio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.muteAudio id=muteAudio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.unmuteAudio id=unmuteAudio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioSpeed id=audioSpeed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.normalSpeed id=normalSpeed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.slowSpeed id=slowSpeed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioIdle id=audioIdle language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioLoading id=audioLoading language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioPlaying id=audioPlaying language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioPaused id=audioPaused language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioEnded id=audioEnded language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.audioUnavailable id=audioUnavailable language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.episodeChoice id=episodeChoice language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.episode id=episode language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.historical id=historical language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.introBody id=introBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.setupTitle id=setupTitle language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.setupBody id=setupBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.predictionBody id=predictionBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.postQuestion id=postQuestion language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.settlement id=settlement language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.comparisonLimit id=comparisonLimit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pausePath id=pausePath language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.resumePath id=resumePath language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pausedPath id=pausedPath language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.glossary id=glossary language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.glossaryClose id=glossaryClose language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.sourceNote id=sourceNote language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.revealNeutral id=revealNeutral language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.nextBody id=nextBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.resourceFallback id=resourceFallback language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.noResources id=noResources language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.externalLink id=externalLink language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotOpen id=pilotOpen language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotTitle id=pilotTitle language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotBody id=pilotBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotBefore id=pilotBefore language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotAfter id=pilotAfter language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotExplanation id=pilotExplanation language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotExposure id=pilotExposure language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotOutcome id=pilotOutcome language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotCopy id=pilotCopy language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotCopied id=pilotCopied language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotCopyFailed id=pilotCopyFailed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotBack id=pilotBack language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.pilotMissing id=pilotMissing language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.restart id=restart language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[0].term id=leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[0].displayText id=leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[0].short id=leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[0].analogy id=leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[0].spokenText id=leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[1].term id=margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[1].displayText id=margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[1].short id=margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[1].analogy id=margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[1].spokenText id=margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[2].term id=forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[2].displayText id=forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[2].short id=forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[2].analogy id=forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[2].spokenText id=forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[3].term id=volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[3].displayText id=volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[3].short id=volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[3].analogy id=volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[3].spokenText id=volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[4].term id=drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[4].displayText id=drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[4].short id=drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[4].analogy id=drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[4].spokenText id=drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[5].term id=recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[5].displayText id=recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[5].short id=recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[5].analogy id=recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[5].spokenText id=recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[6].term id=diversification language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[6].displayText id=diversification language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[6].short id=diversification language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[6].analogy id=diversification language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[6].spokenText id=diversification language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[7].term id=compounding language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[7].displayText id=compounding language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[7].short id=compounding language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[7].analogy id=compounding language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[7].spokenText id=compounding language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[8].term id=fees language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[8].displayText id=fees language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[8].short id=fees language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[8].analogy id=fees language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/glossary.json $[8].spokenText id=fees language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[0].displayText id=language.greeting language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[0].spokenText id=language.greeting language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[1].displayText id=intro.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[1].spokenText id=intro.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[2].displayText id=setup.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[2].spokenText id=setup.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[3].displayText id=prediction.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[3].spokenText id=prediction.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[4].displayText id=run.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[4].spokenText id=run.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[5].displayText id=result.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[5].spokenText id=result.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[6].displayText id=replay.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[6].spokenText id=replay.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[7].displayText id=reveal.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[7].spokenText id=reveal.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[8].displayText id=debrief.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[8].spokenText id=debrief.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[9].displayText id=postcheck.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[9].spokenText id=postcheck.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[10].displayText id=nextsteps.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[10].spokenText id=nextsteps.main language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[11].displayText id=ENTRY language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[11].spokenText id=ENTRY language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[12].displayText id=DRAWDOWN_5 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[12].spokenText id=DRAWDOWN_5 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[13].displayText id=DRAWDOWN_10 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[13].spokenText id=DRAWDOWN_10 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[14].displayText id=DRAWDOWN_20 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[14].spokenText id=DRAWDOWN_20 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[15].displayText id=MARGIN_WARNING language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[15].spokenText id=MARGIN_WARNING language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[16].displayText id=FORCED_EXIT language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[16].spokenText id=FORCED_EXIT language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[17].displayText id=USER_EXIT language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[17].spokenText id=USER_EXIT language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[18].displayText id=EPISODE_END language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[18].spokenText id=EPISODE_END language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[19].displayText id=UNLEVERAGED_SURVIVED language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/narration.json $[19].spokenText id=UNLEVERAGED_SURVIVED language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.eyebrow id=languageSelect.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.title id=languageSelect.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.body id=languageSelect.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.hindi id=languageSelect.hindi language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.english id=languageSelect.english language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.languageSelect.continue id=languageSelect.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.intro.eyebrow id=intro.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.intro.title id=intro.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.intro.body id=intro.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.intro.continue id=intro.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.eyebrow id=setup.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.title id=setup.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.body id=setup.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.capital id=setup.capital language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.stake id=setup.stake language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.leverage id=setup.leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.stake25 id=setup.stake25 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.stake50 id=setup.stake50 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.stake100 id=setup.stake100 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.leverage2 id=setup.leverage2 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.leverage5 id=setup.leverage5 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.leverage10 id=setup.leverage10 language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.setup.continue id=setup.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.eyebrow id=prediction.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.title id=prediction.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.body id=prediction.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.bigGain id=prediction.bigGain language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.smallGain id=prediction.smallGain language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.smallLoss id=prediction.smallLoss language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.almostEverything id=prediction.almostEverything language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.prediction.continue id=prediction.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.eyebrow id=run.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.title id=run.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.body id=run.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.hold id=run.hold language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.exit id=run.exit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.decisionPoint id=run.decisionPoint language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.warningPoint id=run.warningPoint language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.resume id=run.resume language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.playing id=run.playing language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.pauseBody id=run.pauseBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.stepStatus id=run.stepStatus language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.startingAmount id=run.startingAmount language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.indexBase id=run.indexBase language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.lowEquity id=run.lowEquity language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.maintenanceLevel id=run.maintenanceLevel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.warningLevel id=run.warningLevel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.marginLabel id=run.marginLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.invalid id=run.invalid language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.exitedChoice id=run.exitedChoice language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.priceLabel id=run.priceLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.equityLabel id=run.equityLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.statusOpen id=run.statusOpen language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.statusWarning id=run.statusWarning language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.statusForced id=run.statusForced language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.statusExited id=run.statusExited language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.run.continue id=run.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.eyebrow id=result.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.title id=result.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.body id=result.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.finalEquity id=result.finalEquity language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.change id=result.change language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.forcedExitLine id=result.forcedExitLine language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.survivedLine id=result.survivedLine language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.userExitLine id=result.userExitLine language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.result.continue id=result.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.eyebrow id=replay.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.title id=replay.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.body id=replay.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.leveragedLine id=replay.leveragedLine language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.unleveragedLine id=replay.unleveragedLine language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.chartDescription id=replay.chartDescription language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.closed id=replay.closed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.leveragedFinal id=replay.leveragedFinal language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.unleveragedFinal id=replay.unleveragedFinal language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.difference id=replay.difference language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.requiredGain id=replay.requiredGain language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.requiredGainNone id=replay.requiredGainNone language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.replay.continue id=replay.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.eyebrow id=reveal.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.title id=reveal.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.body id=reveal.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.periodLabel id=reveal.periodLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.whatHappenedLabel id=reveal.whatHappenedLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.sourceLabel id=reveal.sourceLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.placeholderNote id=reveal.placeholderNote language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.oneEpisode id=reveal.oneEpisode language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.statsLabel id=reveal.statsLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.statsMaxDrawdown id=reveal.statsMaxDrawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.statsWorstFall id=reveal.statsWorstFall language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.statsDownCloses id=reveal.statsDownCloses language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.statsBarCount id=reveal.statsBarCount language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.reveal.continue id=reveal.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.eyebrow id=debrief.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.title id=debrief.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.body id=debrief.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.leverage id=debrief.leverage language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.margin id=debrief.margin language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.forcedExit id=debrief.forcedExit language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.forcedExitBody id=debrief.forcedExitBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.survivedButHurt id=debrief.survivedButHurt language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.survivedButHurtBody id=debrief.survivedButHurtBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.userExitedEarly id=debrief.userExitedEarly language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.userExitedEarlyBody id=debrief.userExitedEarlyBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.unleveragedSurvived id=debrief.unleveragedSurvived language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.unleveragedSurvivedBody id=debrief.unleveragedSurvivedBody language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.recoveryMaths id=debrief.recoveryMaths language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.recoveryInterpolated id=debrief.recoveryInterpolated language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.recoveryNone id=debrief.recoveryNone language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.volatility id=debrief.volatility language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.drawdown id=debrief.drawdown language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.recovery id=debrief.recovery language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.debrief.continue id=debrief.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.eyebrow id=postCheck.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.title id=postCheck.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.body id=postCheck.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.same id=postCheck.same language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.wouldTake id=postCheck.wouldTake language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.yes id=postCheck.yes language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.no id=postCheck.no language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.notSure id=postCheck.notSure language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.changed id=postCheck.changed language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.unchanged id=postCheck.unchanged language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.postCheck.continue id=postCheck.continue language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.nextSteps.eyebrow id=nextSteps.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.nextSteps.title id=nextSteps.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.nextSteps.body id=nextSteps.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.nextSteps.empty id=nextSteps.empty language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.nextSteps.restart id=nextSteps.restart language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.pilotSummary.eyebrow id=pilotSummary.eyebrow language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.pilotSummary.title id=pilotSummary.title language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.pilotSummary.body id=pilotSummary.body language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.pilotSummary.copy id=pilotSummary.copy language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.pilotSummary.back id=pilotSummary.back language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.caption id=common.caption language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.audio id=common.audio language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.audioUnavailable id=common.audioUnavailable language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.chartData id=common.chartData language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.step id=common.step language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/ui.json $.common.syntheticLabel id=common.syntheticLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.forcedExit.title id=forcedExit.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.forcedExit.body id=forcedExit.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.survivedButHurt.title id=survivedButHurt.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.survivedButHurt.body id=survivedButHurt.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.userExitedEarly.title id=userExitedEarly.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.userExitedEarly.body id=userExitedEarly.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.unleveragedSurvived.title id=unleveragedSurvived.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.unleveragedSurvived.body id=unleveragedSurvived.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.recoveryMaths.title id=recoveryMaths.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.recoveryMaths.body id=recoveryMaths.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.preferences id=preferences language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.language id=language language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.textSize id=textSize language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.standardText id=standardText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.largeText id=largeText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.skip id=skip language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.reviewNotice id=reviewNotice language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.privacy id=privacy language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.offline id=offline language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.online id=online language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.disconnected id=disconnected language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audio id=audio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.listen id=listen language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pauseAudio id=pauseAudio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.resumeAudio id=resumeAudio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.replayAudio id=replayAudio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.muteAudio id=muteAudio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.unmuteAudio id=unmuteAudio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioSpeed id=audioSpeed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.normalSpeed id=normalSpeed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.slowSpeed id=slowSpeed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioIdle id=audioIdle language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioLoading id=audioLoading language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioPlaying id=audioPlaying language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioPaused id=audioPaused language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioEnded id=audioEnded language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.audioUnavailable id=audioUnavailable language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.episodeChoice id=episodeChoice language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.episode id=episode language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.historical id=historical language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.introBody id=introBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.setupTitle id=setupTitle language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.setupBody id=setupBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.predictionBody id=predictionBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.postQuestion id=postQuestion language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.settlement id=settlement language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.comparisonLimit id=comparisonLimit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pausePath id=pausePath language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.resumePath id=resumePath language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pausedPath id=pausedPath language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.glossary id=glossary language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.glossaryClose id=glossaryClose language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.sourceNote id=sourceNote language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.revealNeutral id=revealNeutral language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.nextBody id=nextBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.resourceFallback id=resourceFallback language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.noResources id=noResources language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.externalLink id=externalLink language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotOpen id=pilotOpen language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotTitle id=pilotTitle language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotBody id=pilotBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotBefore id=pilotBefore language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotAfter id=pilotAfter language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotExplanation id=pilotExplanation language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotExposure id=pilotExposure language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotOutcome id=pilotOutcome language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotCopy id=pilotCopy language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotCopied id=pilotCopied language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotCopyFailed id=pilotCopyFailed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotBack id=pilotBack language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.pilotMissing id=pilotMissing language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.restart id=restart language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[0].term id=leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[0].displayText id=leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[0].short id=leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[0].analogy id=leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[0].spokenText id=leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[1].term id=margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[1].displayText id=margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[1].short id=margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[1].analogy id=margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[1].spokenText id=margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[2].term id=forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[2].displayText id=forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[2].short id=forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[2].analogy id=forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[2].spokenText id=forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[3].term id=volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[3].displayText id=volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[3].short id=volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[3].analogy id=volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[3].spokenText id=volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[4].term id=drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[4].displayText id=drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[4].short id=drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[4].analogy id=drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[4].spokenText id=drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[5].term id=recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[5].displayText id=recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[5].short id=recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[5].analogy id=recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[5].spokenText id=recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[6].term id=diversification language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[6].displayText id=diversification language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[6].short id=diversification language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[6].analogy id=diversification language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[6].spokenText id=diversification language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[7].term id=compounding language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[7].displayText id=compounding language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[7].short id=compounding language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[7].analogy id=compounding language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[7].spokenText id=compounding language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[8].term id=fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[8].displayText id=fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[8].short id=fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[8].analogy id=fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/glossary.json $[8].spokenText id=fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[0].displayText id=language.greeting language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[0].spokenText id=language.greeting language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[1].displayText id=intro.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[1].spokenText id=intro.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[2].displayText id=setup.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[2].spokenText id=setup.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[3].displayText id=prediction.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[3].spokenText id=prediction.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[4].displayText id=run.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[4].spokenText id=run.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[5].displayText id=result.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[5].spokenText id=result.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[6].displayText id=replay.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[6].spokenText id=replay.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[7].displayText id=reveal.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[7].spokenText id=reveal.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[8].displayText id=debrief.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[8].spokenText id=debrief.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[9].displayText id=postcheck.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[9].spokenText id=postcheck.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[10].displayText id=nextsteps.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[10].spokenText id=nextsteps.main language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[11].displayText id=ENTRY language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[11].spokenText id=ENTRY language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[12].displayText id=DRAWDOWN_5 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[12].spokenText id=DRAWDOWN_5 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[13].displayText id=DRAWDOWN_10 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[13].spokenText id=DRAWDOWN_10 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[14].displayText id=DRAWDOWN_20 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[14].spokenText id=DRAWDOWN_20 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[15].displayText id=MARGIN_WARNING language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[15].spokenText id=MARGIN_WARNING language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[16].displayText id=FORCED_EXIT language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[16].spokenText id=FORCED_EXIT language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[17].displayText id=USER_EXIT language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[17].spokenText id=USER_EXIT language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[18].displayText id=EPISODE_END language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[18].spokenText id=EPISODE_END language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[19].displayText id=UNLEVERAGED_SURVIVED language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/narration.json $[19].spokenText id=UNLEVERAGED_SURVIVED language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.eyebrow id=languageSelect.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.title id=languageSelect.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.body id=languageSelect.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.hindi id=languageSelect.hindi language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.english id=languageSelect.english language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.languageSelect.continue id=languageSelect.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.intro.eyebrow id=intro.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.intro.title id=intro.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.intro.body id=intro.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.intro.continue id=intro.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.eyebrow id=setup.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.title id=setup.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.body id=setup.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.capital id=setup.capital language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.stake id=setup.stake language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.leverage id=setup.leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.stake25 id=setup.stake25 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.stake50 id=setup.stake50 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.stake100 id=setup.stake100 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.leverage2 id=setup.leverage2 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.leverage5 id=setup.leverage5 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.leverage10 id=setup.leverage10 language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.setup.continue id=setup.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.eyebrow id=prediction.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.title id=prediction.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.body id=prediction.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.bigGain id=prediction.bigGain language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.smallGain id=prediction.smallGain language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.smallLoss id=prediction.smallLoss language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.almostEverything id=prediction.almostEverything language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.prediction.continue id=prediction.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.eyebrow id=run.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.title id=run.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.body id=run.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.hold id=run.hold language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.exit id=run.exit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.decisionPoint id=run.decisionPoint language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.warningPoint id=run.warningPoint language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.resume id=run.resume language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.playing id=run.playing language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.pauseBody id=run.pauseBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.stepStatus id=run.stepStatus language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.startingAmount id=run.startingAmount language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.indexBase id=run.indexBase language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.lowEquity id=run.lowEquity language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.maintenanceLevel id=run.maintenanceLevel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.warningLevel id=run.warningLevel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.marginLabel id=run.marginLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.invalid id=run.invalid language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.exitedChoice id=run.exitedChoice language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.priceLabel id=run.priceLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.equityLabel id=run.equityLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.statusOpen id=run.statusOpen language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.statusWarning id=run.statusWarning language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.statusForced id=run.statusForced language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.statusExited id=run.statusExited language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.run.continue id=run.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.eyebrow id=result.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.title id=result.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.body id=result.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.finalEquity id=result.finalEquity language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.change id=result.change language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.forcedExitLine id=result.forcedExitLine language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.survivedLine id=result.survivedLine language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.userExitLine id=result.userExitLine language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.result.continue id=result.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.eyebrow id=replay.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.title id=replay.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.body id=replay.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.leveragedLine id=replay.leveragedLine language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.unleveragedLine id=replay.unleveragedLine language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.chartDescription id=replay.chartDescription language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.closed id=replay.closed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.leveragedFinal id=replay.leveragedFinal language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.unleveragedFinal id=replay.unleveragedFinal language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.difference id=replay.difference language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.requiredGain id=replay.requiredGain language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.requiredGainNone id=replay.requiredGainNone language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.replay.continue id=replay.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.eyebrow id=reveal.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.title id=reveal.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.body id=reveal.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.periodLabel id=reveal.periodLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.whatHappenedLabel id=reveal.whatHappenedLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.sourceLabel id=reveal.sourceLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.placeholderNote id=reveal.placeholderNote language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.oneEpisode id=reveal.oneEpisode language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.statsLabel id=reveal.statsLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.statsMaxDrawdown id=reveal.statsMaxDrawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.statsWorstFall id=reveal.statsWorstFall language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.statsDownCloses id=reveal.statsDownCloses language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.statsBarCount id=reveal.statsBarCount language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.reveal.continue id=reveal.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.eyebrow id=debrief.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.title id=debrief.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.body id=debrief.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.leverage id=debrief.leverage language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.margin id=debrief.margin language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.forcedExit id=debrief.forcedExit language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.forcedExitBody id=debrief.forcedExitBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.survivedButHurt id=debrief.survivedButHurt language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.survivedButHurtBody id=debrief.survivedButHurtBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.userExitedEarly id=debrief.userExitedEarly language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.userExitedEarlyBody id=debrief.userExitedEarlyBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.unleveragedSurvived id=debrief.unleveragedSurvived language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.unleveragedSurvivedBody id=debrief.unleveragedSurvivedBody language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.recoveryMaths id=debrief.recoveryMaths language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.recoveryInterpolated id=debrief.recoveryInterpolated language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.recoveryNone id=debrief.recoveryNone language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.volatility id=debrief.volatility language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.drawdown id=debrief.drawdown language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.recovery id=debrief.recovery language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.debrief.continue id=debrief.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.eyebrow id=postCheck.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.title id=postCheck.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.body id=postCheck.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.same id=postCheck.same language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.wouldTake id=postCheck.wouldTake language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.yes id=postCheck.yes language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.no id=postCheck.no language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.notSure id=postCheck.notSure language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.changed id=postCheck.changed language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.unchanged id=postCheck.unchanged language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.postCheck.continue id=postCheck.continue language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.nextSteps.eyebrow id=nextSteps.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.nextSteps.title id=nextSteps.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.nextSteps.body id=nextSteps.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.nextSteps.empty id=nextSteps.empty language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.nextSteps.restart id=nextSteps.restart language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.pilotSummary.eyebrow id=pilotSummary.eyebrow language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.pilotSummary.title id=pilotSummary.title language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.pilotSummary.body id=pilotSummary.body language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.pilotSummary.copy id=pilotSummary.copy language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.pilotSummary.back id=pilotSummary.back language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.caption id=common.caption language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.audio id=common.audio language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.audioUnavailable id=common.audioUnavailable language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.chartData id=common.chartData language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.step id=common.step language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/ui.json $.common.syntheticLabel id=common.syntheticLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.en id=sebi-scores language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.hi id=sebi-scores language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.en id=sebi-investor-support language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.hi id=sebi-investor-support language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.en id=sebi-scam-warning-signs language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.hi id=sebi-scam-warning-signs language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.en id=government-cybercrime-reporting language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/content/resources.json $.label.hi id=government-cybercrime-reporting language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=language.greeting language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=intro.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=setup.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=prediction.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=run.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=result.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=replay.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=reveal.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=debrief.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=postcheck.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=nextsteps.main language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=ENTRY language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_5 language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_10 language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_20 language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=MARGIN_WARNING language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=FORCED_EXIT language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=USER_EXIT language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=EPISODE_END language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=UNLEVERAGED_SURVIVED language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.leverage language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.margin language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.forcedExit language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.volatility language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.drawdown language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.recovery language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.diversification language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.compounding language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.fees language=en
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=language.greeting language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=intro.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=setup.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=prediction.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=run.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=result.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=replay.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=reveal.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=debrief.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=postcheck.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=nextsteps.main language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=ENTRY language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_10 language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_20 language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=MARGIN_WARNING language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=FORCED_EXIT language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=USER_EXIT language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=EPISODE_END language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=UNLEVERAGED_SURVIVED language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.leverage language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.margin language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.forcedExit language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.volatility language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.drawdown language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.recovery language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.diversification language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.compounding language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=glossary.fees language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.reveal.periodText.en id=historical-crash.reveal.periodText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.reveal.periodText.hi id=historical-crash.reveal.periodText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.reveal.whatHappenedText.en id=historical-crash.reveal.whatHappenedText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.reveal.whatHappenedText.hi id=historical-crash.reveal.whatHappenedText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.sourceLabel.en id=historical-crash.sourceLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-crash.json $.sourceLabel.hi id=historical-crash.sourceLabel language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.reveal.periodText.en id=historical-choppy.reveal.periodText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.reveal.periodText.hi id=historical-choppy.reveal.periodText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.reveal.whatHappenedText.en id=historical-choppy.reveal.whatHappenedText language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.reveal.whatHappenedText.hi id=historical-choppy.reveal.whatHappenedText language=hi
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.sourceLabel.en id=historical-choppy.sourceLabel language=en
+- AGENT-CHECKED STRING (not human/native-reviewed): src/data/episodes/historical-choppy.json $.sourceLabel.hi id=historical-choppy.sourceLabel language=hi

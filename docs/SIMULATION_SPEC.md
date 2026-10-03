@@ -1,6 +1,6 @@
 # Simulation specification
 
-This document defines the Phase 1 educational engine contract and current implementation. The pure TypeScript engine executes deterministic runs for tests and Phase 2 journey playback. The UI displays plain educational charts and meters; it does not claim production market analysis, audio playback, or offline behavior.
+This document defines the implemented pure TypeScript educational engine. It executes deterministic tests and journey playback without I/O. Charts/meters are teaching views, not market analysis; audio/offline behavior belongs to separate UI/static-asset layers. Real runtime ECB reference observations use internal `close` as a numeric carrier, not a claim of executable market closing prices.
 
 ## Model and units
 
@@ -22,7 +22,7 @@ For an intrabar low `Plow`, use `equityLow = C + U × (Plow - P0)`. Intrabar low
 
 For `L > 1`, define maintenance equity `M = 0.25 × C`. If `equityLow ≤ M`, settle the run at `M`. This is an explicit educational simplification, not a broker rule and not a real liquidation model. The engine must record that a forced-exit condition was reached and stop later path values from being presented as recoverable.
 
-For leveraged runs only, a maintenance warning is emitted at most once before exit when close equity `equity ≤ 1.5 × M` (that is, at or below 37.5% of starting capital), using the requested 1.5 maintenance buffer. It is a teaching rule, not a margin requirement. If the same low reaches the forced-exit threshold, event ordering must be tested and reviewed; no repeated warning events are allowed for one run. Human review must approve the warning wording and ordering before release (`TODO(human)`).
+For leveraged runs only, a maintenance warning is emitted at most once before exit when close equity `equity ≤ 1.5 × M` (that is, at or below 37.5% of starting capital), using the requested 1.5 maintenance buffer. It is a teaching rule, not a margin requirement. If the same low reaches the forced-exit threshold, event ordering must be tested and reviewed; no repeated warning events are allowed for one run. Warning-once/order/threshold regression tests and bilingual agent QA check this contract. Under ADR-0011, agent-checked copy may pass with explicit warnings; no human review is claimed.
 
 ## Seeded synthetic path
 
@@ -63,8 +63,8 @@ Use `C = 100`, `L = 10`, `P0 = 100`, and a close of `P = 93`:
 - recovery fraction `x = 0.70`; required recovery `0.70 / 0.30 = 2.3333…`, or **233.33%**;
 - the 25% forced-exit threshold is `25` equity and the 1.5-maintenance warning threshold is `37.5`; the 7% close therefore warns but is not forced out. A low of `92.5` reaches forced exit exactly (`100 + 10 × (92.5 - 100) = 25`), while a deeper intrabar low would settle at `25`.
 
-The example is arithmetic only. It is not an expected outcome, an historical observation, or advice.
+The example is arithmetic only. It is not an expected outcome, an historical observation, or advice. Runtime chart endpoints display actual settled equity on forced exit rather than the raw below-threshold close; the closed exposure does not recover on later path steps. Unleveraged comparison uses the full identical observed series and starting capital. After an early manual exit, durations differ; UI explicitly discloses that comparison limit.
 
-## Human review margin rule
+## Teaching-rule review boundary
 
-Any displayed margin, threshold, or forced-exit explanation requires human review before release. A reviewer must check that “capital”, “exposure”, “equity”, “units”, “low”, “warning”, and “settlement” are not conflated; that `L > 1` is explicit; that the 1.5-maintenance buffer is computed from `M = 0.25 × C`; and that the 10× example is reproduced exactly. Do not publish a broker-, exchange-, or jurisdiction-specific margin claim without a verified source and separate approval.
+The agent checked arithmetic, deterministic event ordering and bilingual meaning; actual human/native review remains distinct. Any future change must check that “capital”, “exposure”, “equity”, “units”, “low”, “warning”, and “settlement” are not conflated; that `L > 1` is explicit; that the 1.5-maintenance buffer is computed from `M = 0.25 × C`; and that the 10× example is reproduced exactly. Do not publish a broker-, exchange-, or jurisdiction-specific margin claim without a verified source and separate approval.

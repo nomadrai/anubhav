@@ -1,6 +1,31 @@
 # Accessibility and performance — measured product track
 
-## Evidence scope (2026-10-03)
+## Final integration rerun (2026-10-03)
+
+After the final audio/gate integration at `2390e00`, the production build and
+browser suite were rerun: **6 passed, 2 explicit audio skips in 41.0s**. The
+manifest is **57/58, complete:false**, not the earlier in-progress snapshot.
+`hi:DRAWDOWN_5` is parked after bounded synthesis/quantity-check failure.
+Journey playback deliberately rejects the incomplete manifest; no real
+packaged Listen/offline-clip pass is claimed. Unit tests include genuinely
+reviewed-status acceptance and draft/unsafe/stale/corrupt/failed rejection.
+
+Final bundle: **109,224 gzip JS bytes**, **1,974 gzip CSS bytes**. Final local
+Lighthouse run (same explicit 360×640 / 400kbps down+up / 400ms / 4× CPU profile)
+at `2026-10-03T14:13:46.386Z`: **89 performance / 100 automated accessibility /
+100 best practices**, FCP/LCP/interactive **2,987.057ms**, speed index **2,587ms**,
+TBT **0ms**, CLS **0**, reported network bytes **108,032**, no run warnings.
+This is not an optimization speedup claim; independent one-run results vary.
+TTS was no longer generating during this rerun, but the host was not isolated.
+
+Final main asset: `index-BrO9AhIS.js`, 333,119 raw / 97,949 gzip bytes,
+SHA256 `48906ce4253f460659d5bf46600035091d83f24faa983ee2a9c0b85be7d1914b`.
+CSS/Workbox-window hashes match the earlier table. Full final settings/metrics/
+asset identifiers are committed in [PERFORMANCE_EVIDENCE.json](PERFORMANCE_EVIDENCE.json).
+Raw browser/Lighthouse reports remain ignored. All review/device/host limitations
+below continue to apply. No actual deployed host was measured.
+
+## Earlier product-track evidence scope (2026-10-03)
 
 Production Vite build, local Google Chrome **149.0.7827.102**, Playwright **1.63.0**, axe-core Playwright **4.13.0**, Lighthouse **13.5.0**. These are automated desktop-hosted Chromium measurements, not a physical phone, human screen-reader session, native-speaker review, listening review or participant study. The parent was separately generating speech during this session; the host is not an isolated performance laboratory.
 

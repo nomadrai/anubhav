@@ -1,40 +1,52 @@
-# Investor-protection learning scaffold
+# Investor-protection learning app
 
-This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing, Phase 2 journey integration, and Phase 3 bilingual/audio pipeline work for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
+An English/Hindi, virtual-money lesson about leverage, loss, forced exit and
+recovery—not an investment simulator, recommendation, forecast or trading
+product. The product name has one source of truth: `src/config/app.ts`.
 
-## Current status: Phase 3 bilingual content and offline audio pipeline
+## Current implementation
 
-Phase 3 builds on the Phase 2 journey and strengthens the bilingual/audio boundary:
+- Prediction **before** the path; pause/continue/exit at teaching events;
+  deterministic virtual-money engine and plain charts/meters.
+- Result → **same-input-path** unleveraged comparison → hidden-period reveal
+  → plain-language debrief/recovery maths → post-check → protective resources.
+- Two real, single-source historical windows, replacing shipped synthetic
+  placeholders. ECB reference observations were chosen for explicit reuse
+  terms; they are **not stock prices, executable quotes or an Indian-market
+  sample**. Exact terms, counts, gaps, hashes and selection limitations:
+  [DATA_SOURCES](docs/DATA_SOURCES.md), [DATA_REVIEW](docs/DATA_REVIEW.md).
+- Every shipped Hindi string has an agent QA/back-translation record. **No
+  native Hindi speaker reviewed it.** `agent-checked` is not `reviewed`.
+  [CONTENT_QA](docs/CONTENT_QA.md) records corrections and remaining limits.
+- Local-only, fixed-seed sampled TTS with cached inputs, natural-EOS/signal/
+  duration/duplicate/ASR-CER gates and bounded retries. Original greedy silence
+  was reproduced and isolated: [TTS_DIAGNOSTICS](docs/TTS_DIAGNOSTICS.md).
+  Actual produced assets, missing tracks and measurements—not an assumed full
+  set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
+- Gesture-only audio controls with readable text fallback, glossary/captions,
+  text sizing, same-origin PWA caching and an in-memory pilot summary.
+  Offline audio is **only previously cached audio**, not a promise that every
+  clip is preinstalled. No automatic narration or remote TTS service.
+- Four official protective links checked against official pages this session:
+  [RESOURCE_CHECKS](docs/RESOURCE_CHECKS.md). Links leave this app; destination
+  privacy rules apply. Unverified pointers remain hidden.
 
-- deterministic playback pauses at decision points and warnings, with a user exit action;
-- accessible price, equity, and teaching-margin views with text labels and reduced-motion CSS;
-- result, same-path replay contrast, reveal-after-prediction, debrief, and post-check screens;
-- verified-resource filtering that keeps unverified resource pointers hidden;
-- synthetic crash/choppy fixtures remain clearly marked `isPlaceholder: true` and are not market data;
-- candidate data acquisition and provenance remain separate from checked-in runtime episodes until source, licence, and safety review are complete;
-- optional local-only Indic Parler generation now has deterministic hashes, fail-closed model/dependency checks, Opus conversion, and manifest provenance, but no model or audio is bundled.
+**No human listened to the generated voices.** Automated Divya selection and
+CER checks do not prove natural pronunciation, comfort, or every word's
+semantic fidelity. Text is authoritative. No pilot was conducted, no participant
+results exist, and no efficacy claim is made. See [LIMITATIONS](docs/LIMITATIONS.md)
+and the exact unresolved actions in [TODO_DISPOSITION](docs/TODO_DISPOSITION.md).
 
-The journey runs the checked-in synthetic teaching path. Runtime playback, PWA/offline behavior, and verified real episodes remain later work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
+## Run and check
 
-## Screen contract
-
-The journey moves through these screens in order:
-
-`language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`
-
-`pilot=1` is a separate local summary route/state for the small pilot scaffold. The period stays hidden until reveal; the run, replay, and result use synthetic teaching data and do not make market claims. No screen recommends an instrument, brand, trade, or allocation.
-
-## Safety boundary
-
-There are no recommendations, brands, real instruments, monetisation, profit gamification, accounts, cookies, financial storage, or external runtime telemetry. Resource pointers are shown only after human verification; false or unverified pointers remain hidden. Production must use a restrictive CSP with `connect-src 'self'`. Read [`docs/GUARDRAILS.md`](docs/GUARDRAILS.md) before adding UI or content.
-
-## Intended stack and checks
-
-The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a bilingual journey, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and an optional local-only audio generation CLI. Audio playback, PWA/offline behavior, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
+Use the Node/npm versions recorded in [DEPLOYMENT](docs/DEPLOYMENT.md) and the
+committed lockfile. Python 3.10+ and PyYAML are needed for data preparation/tests,
+not to use or deploy the already-built web app. TTS has a separate external venv.
 
 ```sh
-npm install
+npm ci
 npm run dev
+# Production checks:
 npm run lint
 npm run typecheck
 npm run test
@@ -42,29 +54,46 @@ npm run check:content
 npm run build
 npm run check:bundle
 npm run release
+# Build-time Python regression tests:
+python3 -m unittest discover -s scripts/tests
+python3 -m unittest scripts.data_ecb_test scripts.data_resources_test
 ```
 
-`release` is deliberately expected to fail while the placeholder episode, draft Hindi content, TODOs, or unverified candidate resources remain. Do not turn that failure into a green check by weakening the gate. `check:content` warns about the not-yet-generated audio manifest because audio remains a later phase. The preparation-script contract is documented in [`scripts/README.md`](scripts/README.md) and [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md); the audio stub contract is documented in [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md).
+The browser journey is:
+`language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`.
+Pilot mode (`?pilot=1`) offers a local summary, **not a participant database**.
+A refresh/reset discards answers; no account or research submission is created.
 
-## Documentation map
+The revised gate blocks draft content, runtime placeholders, unverified
+resources, stale/missing audio and unsafe content. It allows `agent-checked`
+with **loud warnings listing every such string**, and accepts genuinely
+human-`reviewed` content without that warning. Agents never assign `reviewed`.
+Do not bypass an audio/content failure to obtain a green release. A passing
+technical gate is not legal advice, human listening approval or pilot consent.
 
-- [`docs/PRODUCT.md`](docs/PRODUCT.md) — audience, outcome, and phase boundaries.
-- [`docs/GUARDRAILS.md`](docs/GUARDRAILS.md) — prohibited claims and release safety rules.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — layers, routes, data flow, and Mermaid diagram.
-- [`docs/SIMULATION_SPEC.md`](docs/SIMULATION_SPEC.md) — future deterministic math and API contracts.
-- [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md) — bilingual writing, glossary, and analogy drafts.
-- [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) — candidate source register, row/date evidence, and CSV preparation contract.
-- [`docs/RESOURCE_REVIEW.md`](docs/RESOURCE_REVIEW.md) — automated protective-resource checks and human approval boundary.
-- [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md) — optional local-only TTS build and audio review boundary.
-- [`docs/ACCESSIBILITY_AND_PERFORMANCE.md`](docs/ACCESSIBILITY_AND_PERFORMANCE.md) — targets and test matrix.
-- [`docs/PRIVACY.md`](docs/PRIVACY.md) — permitted storage and network behavior.
-- [`docs/PILOT.md`](docs/PILOT.md) — consent, manual measures, and sample limits.
-- [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md) — explicit non-claims.
-- [`docs/THIRD_PARTY.md`](docs/THIRD_PARTY.md) — dependency and licence verification.
-- [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md) — honest 3–5 minute walkthrough.
-- [`docs/DECISIONS.md`](docs/DECISIONS.md) — ADRs and unresolved choices.
-- [`docs/TASKS.md`](docs/TASKS.md) — Phases 1–5, priorities, and ownership.
+## Privacy and safety
 
-## Truthfulness rule
+No buy/sell/hold calls, real instrument names in UI/audio, promotion, brands of
+financial providers, monetisation, profit gamification, accounts, cookies,
+analytics, personal/financial persistence or external runtime APIs. Only
+language and text-size preferences may persist. Static assets/audio are
+same-origin; source/model downloads happen **only during explicit build-time
+preparation**, never in the participant app. See [PRIVACY](docs/PRIVACY.md) and
+[GUARDRAILS](docs/GUARDRAILS.md). Real provenance is in the client bundle for
+transparency, not encrypted against deliberate developer-tool inspection.
 
-The Phase 2 checks are run locally; see the task report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, real-episode selection, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.
+## Evidence and operations
+
+- [WALKTHROUGH](docs/WALKTHROUGH.md): actual learner flow.
+- [ACCESSIBILITY_AND_PERFORMANCE](docs/ACCESSIBILITY_AND_PERFORMANCE.md): measured
+  browser/mobile/Lighthouse evidence and explicitly untested assistive technology.
+- [DEPLOYMENT](docs/DEPLOYMENT.md): clean-checkout build, static hosting, CSP,
+  preview-deployment disposition. No push or production deployment is implied.
+- [AUDIO_PIPELINE](docs/AUDIO_PIPELINE.md), [scripts README](scripts/README.md):
+  offline reproducible speech/data tools; weights/raw WAVs never ship.
+- [THIRD_PARTY](docs/THIRD_PARTY.md), [runtime notices](public/THIRD_PARTY_NOTICES.txt):
+  exact packages, model pins, data terms, attribution and upstream uncertainty.
+- [TASKS](docs/TASKS.md), [DECISIONS](docs/DECISIONS.md),
+  [TODO_DISPOSITION](docs/TODO_DISPOSITION.md): completed scope, deviations and
+  human-only decisions. Historical audits remain preserved, not rewritten as
+  evidence of checks they did not perform.

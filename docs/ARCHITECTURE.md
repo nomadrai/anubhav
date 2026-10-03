@@ -1,51 +1,76 @@
 # Architecture
 
-## Phase 3 shape
+## Implemented shape
 
-The fixed implementation target is a Vite React application in strict TypeScript, styled with Tailwind, tested with Vitest, linted with ESLint, formatted with Prettier, and packaged with `vite-plugin-pwa`. Python 3.10+ scripts handle offline preparation tasks. Phase 3 includes the bilingual journey, deterministic simulation playback, display/spoken content contracts, fail-closed content checks, and an optional local-only Indic Parler audio build with hashes, Opus conversion, and manifest provenance. Reviewed audio playback, PWA registration, offline behavior, and verified real episodes remain unimplemented.
-
-The product name has one source of truth: `src/config/app.ts`. Components may import that value; docs and participant-facing copy say **the app** rather than duplicating it.
+Vite + React reducer state + strict TypeScript, plain JSON bilingual content,
+Tailwind/CSS, Vitest and browser tests, and vite-plugin-pwa/Workbox. Python
+prepares verified historical windows and quality-gated static speech **at build
+time**. The pure engine performs no I/O. Product name: `src/config/app.ts` only.
 
 ## Boundaries
 
-- **Presentation:** route-like journey states, language/text-size controls, explicit synthetic/unavailable labels, keyboard and screen-reader semantics.
-- **Content:** versioned English strings followed by draft Hindi, glossary terms, content validation, and release blockers.
-- **Engine boundary:** pure TypeScript functions for seed, path, exposure, equity, warnings, forced exit, recovery, summary statistics, and same-path replay. The engine accepts no I/O or DOM dependencies; synthetic fixtures are not market data.
-- **Synthetic data:** seeded `mulberry32` values and a geometric path fixture. It is deterministic test input, never a source of real data.
-- **Preparation tools:** Python CSV preparation and optional local-only audio generation. The audio path never downloads a model, makes runtime requests, or invents spoken content.
-- **Build/release:** content, type, test, bundle-budget, and release checks. Release intentionally blocks unresolved placeholders and unverified resources.
-
-## Mermaid flow
+- **Presentation:** App/screens/components render the journey, chart tables,
+  controls, captions and glossary; use content files for all learner strings.
+  Heading focus, native controls, reading-size preference and reduced motion
+  are separate from numerical logic.
+- **Journey:** reducer requires prediction, real simulation result and
+  post-check before advancing. `useSimulationRun` schedules/pauses playback;
+  all answers and the local pilot summary remain in memory.
+- **Engine:** `runSimulation`, `positionUnits`, `equityAt`,
+  `recoveryGainFraction`, `calculateStats`, `replayUnleveraged`, `compareRuns`
+  and `selectDebrief` are pure, deterministic, serializable teaching operations.
+  Synthetic mulberry32 fixtures remain for tests, never fabricated history.
+- **Data:** production episode registry imports two schema-validated ECB
+  windows. Exact source/reuse/validation evidence lives in provenance/docs;
+  only neutral labels/details render, with dates/source institution at reveal.
+- **Content:** English/Hindi display/spoken separation. Hash-bound leaf review
+  registry, QA/back-translations, status draft → agent-checked → reviewed.
+  Only human evidence can establish reviewed. Every agent-checked leaf warns.
+- **Audio:** one gesture-started `AudioManager`; schema-2 completeness, same-
+  origin path, current text hash and actual asset bytes/hash must match.
+  Provider/ASR models are local build-only, not browser dependencies. Failure
+  preserves text. Spoken asset manifest is not a participant record.
+- **Offline:** production service worker precaches public shell assets and
+  caches requested audio with expiry/version cleanup. No bulk audio precache,
+  personal-data caching or cold-start-offline promise.
+- **Release:** lint/types/unit/content/audio/build/bundle/release gates, plus
+  production-browser/offline/network tests and measured local Lighthouse.
+  Public notices and host CSP instructions accompany the static output.
 
 ```mermaid
 flowchart TD
-  A[Language stub] --> B[Intro]
-  B --> C[Setup]
-  C --> D[Prediction]
-  D --> E[Simulation playback]
-  E --> F[Result and replay]
-  F --> G[Replay]
-  G --> H[Reveal period]
-  H --> I[Debrief]
-  I --> J[Postcheck]
-  J --> K[Next steps]
-  K --> L[pilot=1 local summary scaffold]
-
-  C --> X[Typed engine API stub]
-  X --> Y[Seeded mulberry32 fixture]
-  Y --> Z[Future simulation implementation]
-
-  M[English + draft Hindi content] --> N[Content check]
-  N --> O[Release gate]
-  P[CSV prep CLI] --> Q[Prepared fixture]
-  R[Optional local audio build] --> S[Provenance manifest]
-  O --> T[Static build]
+  A[Language] --> B[Intro and setup]
+  B --> C[Required prediction]
+  C --> D[Paused deterministic path]
+  D --> E[Result]
+  E --> F[Same-series one-times comparison]
+  F --> G[Reveal period and neutral source]
+  G --> H[Debrief and recovery]
+  H --> I[Post-check]
+  I --> J[Verified official resource links]
+  J --> K[Optional in-memory summary]
+  L[Verified historical JSON] --> M[Pure engine]
+  M --> D
+  M --> F
+  N[Hash-reviewed English/Hindi content] --> O[Offline TTS and ASR gates]
+  O --> P[Hashed Opus and complete manifest]
+  P --> Q[Gesture-only same-origin player]
+  N --> R[Captions and glossary]
+  S[Static production build] --> T[Warmed-shell service worker]
 ```
 
-## Data flow and storage
+## Storage/network contract
 
-A participant selection is held in memory during the flow. Only language and text-size preference may be persisted locally. No financial value, prediction, response, or pilot answer is persisted by the product. Episode preparation and optional audio generation run offline and write explicit artifacts; Phase 3 playback consumes checked-in static fixtures only, and the UI keeps audio unavailable until assets are reviewed. Candidate real episodes remain outside the runtime import until reviewed. Static assets are same-origin; no runtime API or telemetry endpoint is allowed.
+Only language/text-size preferences persist as app localStorage. Public static
+assets and audio use Cache Storage/Workbox expiry metadata. Predictions,
+amounts, choices and pilot answers are not serialized to persistent browser
+storage, URLs or a server. Explicit optional clipboard copy is user-controlled
+outside the app's storage; see PRIVACY.md. No remote model, live data source,
+analytics, cookie, font or service runs in the participant app. Official links
+are deliberate external navigations with disclosure, not background requests.
 
-## API stub contract
-
-Future typed boundaries should expose pure, serializable operations such as `makeSeededPath(seed, config)`, `computeExposure(capital, leverage)`, `computeEquity(capital, units, price, entry)`, `evaluateIntrabarLow(...)`, and `summarizePath(...)`. Each must document units, rounding, invalid inputs, and whether it is a fixture or implemented engine. No component may silently substitute a real data fetch.
+Explicit build-time acquisition is separate from the offline preparation and
+inference paths. Caches, raw source downloads and rejected/audition WAVs are
+ignored; only reviewed-by-policy JSON/content and passed compact audio become
+static assets. Technical gating does not certify legal rights, native fluency,
+listening quality, human accessibility or pilot consent.

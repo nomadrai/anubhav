@@ -8,7 +8,7 @@ This is education and reflection, not financial advice. It must not tell a perso
 
 ## Intended audience
 
-The primary audience is an adult learner who may be unfamiliar with leverage and downside risk. Phase 0 assumes bilingual English/Hindi reading support, a phone-sized viewport, keyboard access, and a screen reader. Hindi copy is draft content until a qualified human reviews meaning, tone, and spoken numbers.
+The primary audience is an adult learner who may be unfamiliar with leverage and downside risk. The app supports English/Hindi reading, phone-sized layouts, keyboard controls and text alternatives. Current Hindi is agent-checked with back-translation evidence, not native-reviewed. Human screen-reader, pronunciation and comprehension review remain unperformed and explicitly disclosed.
 
 ## User outcome
 
@@ -24,17 +24,17 @@ The outcome is recognition, not prediction skill or a profitable strategy.
 
 ## Phase boundaries
 
-Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. Phase 2 connects those results to playback, educational charts/meters, replay, reveal, debrief, and post-check. Phase 3 adds bilingual display/spoken content contracts, content-limit checks, and an optional local-only audio generation path. Reviewed audio playback, offline behavior, real verified episodes, and a polished pilot flow remain later work.
+The implemented journey combines the pure teaching engine, two provenance/reuse-checked historical windows, bilingual hash-reviewed content, optional gesture-only static narration/glossary audio, warmed-shell offline behavior and memory-only reflection summary. Audio completeness/quality remains strictly gated: see AUDIO_BUILD.md for actual generated assets, not a presumed full set. Real browser/performance evidence is in ACCESSIBILITY_AND_PERFORMANCE.md. No actual pilot, native-speaker/listening review or public deployment is implied.
 
 Every screen must have a keyboard-reachable primary action, a clear synthetic or unavailable state where work is not implemented, and a language label. The journey is:
 
 `language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`
 
-The `pilot=1` route/state exposes only a local summary scaffold; it is not a data-collection system.
+The `pilot=1` mode exposes the current session's in-memory pre/post summary and explicit optional clipboard copy; it is not a data-collection system.
 
 ## Non-goals
 
-- No recommendations, product or company brands, real instruments, or live/prior market data.
+- No recommendations, financial-product/provider promotion, named real instruments in UI/audio, or live market data. Selected historical observations are neutral teaching inputs, never a market forecast.
 - No trading, account, order, portfolio, payment, subscription, or monetisation feature.
 - No profit leaderboard, streak, confetti, or other gamification of financial outcomes.
 - No promise of safety, returns, prediction accuracy, or generalisation to markets.

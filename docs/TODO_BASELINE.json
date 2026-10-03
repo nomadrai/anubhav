@@ -1,0 +1,262 @@
+[
+  {
+    "file": "AGENTS.md",
+    "line": 16,
+    "text": "- [ ] Only verified resources render; unverified resources remain `TODO(human)` and blocked by release."
+  },
+  {
+    "file": "AGENTS.md",
+    "line": 19,
+    "text": "- [ ] Do not fabricate facts, dates, sources, licences or performance; use `TODO(human)`."
+  },
+  {
+    "file": "README.md",
+    "line": 70,
+    "text": "The Phase 2 checks are run locally; see the task report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, real-episode selection, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations."
+  },
+  {
+    "file": "src/data/episodes/placeholder-synthetic.json",
+    "line": 5,
+    "text": "  \"provenance\":{\"sourceName\":\"Synthetic seeded path\",\"sourceUrl\":\"TODO(human): replace with verified data provenance\",\"retrievedOn\":\"TODO(human)\",\"licenceNote\":\"Synthetic placeholder; not market data.\"},\"isPlaceholder\":true"
+  },
+  {
+    "file": "scripts/check-release.mjs",
+    "line": 9,
+    "text": "  const scan = (item, key = '') => { if (item && typeof item === 'object') for (const [name, child] of Object.entries(item)) { if (name === 'isPlaceholder' && child === true) blockers.push(`${path.relative(root, file)}: placeholder episode is not shippable`); if (name === 'verified' && child === false) blockers.push(`${path.relative(root, file)}: unverified resource is not shippable`); if (name === 'status' && child === 'draft') blockers.push(`${path.relative(root, file)}: draft content (${key || name})`); scan(child, name); } else if (typeof item === 'string' && item.includes('TODO(human)')) blockers.push(`${path.relative(root, file)}: TODO(human) remains`); };"
+  },
+  {
+    "file": "scripts/check-release.mjs",
+    "line": 12,
+    "text": "for (const file of walk(path.join(root, 'src'))) if (file.endsWith('.ts') || file.endsWith('.tsx')) { const source = fs.readFileSync(file, 'utf8'); if (source.includes('TODO(human)')) blockers.push(`${path.relative(root, file)}: TODO(human) remains`); }"
+  },
+  {
+    "file": "docs/CONTENT_GUIDE.md",
+    "line": 20,
+    "text": "Planned later glossary terms: diversification, NAV, compounding, fees, and nomination. They are not release-ready definitions yet: `TODO(human): review each term for jurisdiction, translation, and scope`."
+  },
+  {
+    "file": "docs/CONTENT_GUIDE.md",
+    "line": 45,
+    "text": "`TODO(human)`: test each analogy for cultural clarity, financial misconception, Hindi naturalness, and the 25-word limit before publication. The content checker enforces structural parity, spoken-text hygiene, and the sentence limit; it does not replace human review."
+  },
+  {
+    "file": "docs/CONTENT_GUIDE.md",
+    "line": 49,
+    "text": "Show formula labels and units next to values. Provide a separate spoken string for `10×`, `7%`, negative values, decimals, and `0.25 × capital`. Never add a date, holiday, source, performance result, or certainty that is not in a verified input. If a claim cannot be evidenced, remove it or mark it `TODO(human)` outside the participant-facing copy."
+  },
+  {
+    "file": "docs/PILOT.md",
+    "line": 11,
+    "text": "Before any future session, explain the educational purpose, synthetic data, lack of advice, no expected financial benefit, what is recorded, who can see it, retention/deletion, voluntary participation, withdrawal, discomfort from loss examples, and contact/escalation route. Ask permission separately for direct quotes or recordings; default to no recording. `TODO(human): obtain appropriate review and consent wording for the actual setting.`"
+  },
+  {
+    "file": "docs/PRIVACY.md",
+    "line": 22,
+    "text": "Before release, confirm storage keys and values, clear/reset behavior, browser persistence, service-worker scope (if any), CSP, source maps, build logs, generated manifests, and failure messages. `TODO(human): record the actual review and retention decision.`"
+  },
+  {
+    "file": "docs/GUARDRAILS.md",
+    "line": 14,
+    "text": "- Do not fabricate a source, price, holiday, date, participant response, model result, or licence. Use `TODO(human)`."
+  },
+  {
+    "file": "docs/LIMITATIONS.md",
+    "line": 17,
+    "text": "Whenever a limitation changes, update this file and the relevant release gate. Use `TODO(human)` for unresolved evidence, not invented confidence."
+  },
+  {
+    "file": "docs/DATA_SOURCES.md",
+    "line": 129,
+    "text": "A missing answer blocks release. Use `TODO(human)` rather than a plausible-looking value."
+  },
+  {
+    "file": "docs/DATA_SOURCES.md",
+    "line": 156,
+    "text": "The CLI must not fetch the web, backfill missing observations with guesses, or transform real data into a claim of prediction. Its output is test input, not investment information. The fixture regression tests write regenerated JSON only to temporary directories; they do not overwrite committed app data. Real-data preparation and licence review remain blocked on `TODO(human)` evidence."
+  },
+  {
+    "file": "src/content/lint-allowlist.json",
+    "line": 7,
+    "text": " {\"pattern\":\"TODO(human)\",\"file\":\"src/content/resources.json\",\"reason\":\"Required unverified placeholder; release check blocks it from shipping.\"},"
+  },
+  {
+    "file": "docs/DECISIONS.md",
+    "line": 57,
+    "text": "- `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy."
+  },
+  {
+    "file": "docs/DECISIONS.md",
+    "line": 58,
+    "text": "- `TODO(human)`: review the implemented teaching rule and wording: for leverage greater than one, warning on close equity `≤ 1.5 × (0.25 × capital)` once; forced settlement uses intrabar low `≤ 0.25 × capital`, with warning before forced exit."
+  },
+  {
+    "file": "docs/DECISIONS.md",
+    "line": 59,
+    "text": "- `TODO(human)`: approve Hindi copy, analogies, accessibility evidence, source pointers, calendar policy, dependency licences, CSP, and pilot consent."
+  },
+  {
+    "file": "docs/SOURCE_AUDIT.md",
+    "line": 320,
+    "text": "   `TODO(human)` Hindi text and an English TODO for neutral path/selection-bias"
+  },
+  {
+    "file": "src/content/hi/ui.json",
+    "line": 12,
+    "text": "  \"nextSteps\": {\"eyebrow\":\"सुरक्षित ढंग से सीखते रहें\",\"title\":\"यहाँ कोई सलाह नहीं है\",\"body\":\"मानव द्वारा जाँचे गए सुरक्षात्मक संसाधन बाद में यहाँ दिखेंगे। अभी कोई प्रकाशित नहीं है।\",\"empty\":\"TODO(human): रिलीज़ से पहले जाँचे हुए संसाधन जोड़ें\",\"restart\":\"फिर शुरू करें\"},"
+  },
+  {
+    "file": "docs/SIMULATION_SPEC.md",
+    "line": 25,
+    "text": "For leveraged runs only, a maintenance warning is emitted at most once before exit when close equity `equity ≤ 1.5 × M` (that is, at or below 37.5% of starting capital), using the requested 1.5 maintenance buffer. It is a teaching rule, not a margin requirement. If the same low reaches the forced-exit threshold, event ordering must be tested and reviewed; no repeated warning events are allowed for one run. Human review must approve the warning wording and ordering before release (`TODO(human)`)."
+  },
+  {
+    "file": "src/content/en/ui.json",
+    "line": 12,
+    "text": "  \"nextSteps\": {\"eyebrow\":\"Keep learning safely\",\"title\":\"No recommendations here\",\"body\":\"Verified protective resources will appear here when a human checks them. None are published yet.\",\"empty\":\"TODO(human): add verified protective resources before release\",\"restart\":\"Start again\"},"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 7,
+    "text": "Before release, inspect installed package metadata and lockfiles, including transitive dependencies, and record exact versions and licence evidence. Mark every unknown as **pending**; do not infer a licence from a package name or a registry summary. `TODO(human): complete package metadata review after installation.`"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 13,
+    "text": "| React / React DOM | 19.3.0 | MIT | UI runtime, `src/` | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 14,
+    "text": "| Vite | 8.3.2 | MIT | dev server/build | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 15,
+    "text": "| `@vitejs/plugin-react` | 6.1.1 | MIT | Vite JSX transform | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 16,
+    "text": "| `vite-plugin-pwa` | 1.3.0 | MIT | disabled PWA stub, `vite.config.ts` | no in Phase 2 | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 17,
+    "text": "| Tailwind CSS / `@tailwindcss/postcss` | 4.3.3 | MIT | CSS build | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 18,
+    "text": "| TypeScript | 6.0.3 | Apache-2.0 | type checking | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 19,
+    "text": "| Vitest | 5.0.3 | MIT | tests | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 20,
+    "text": "| ESLint | 10.11.0 | MIT | lint | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 21,
+    "text": "| Prettier | 3.9.9 | MIT | formatting contract | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 22,
+    "text": "| PostCSS / Autoprefixer | 8.5.28 / 10.6.1 | MIT / MIT | CSS processing | no | TODO(human): review notice |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 23,
+    "text": "| `PyYAML` | >=6.0 (Python environment) | TODO(human) | metadata parsing in `scripts/prepare_episode.py` | no | verify installed version and licence |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 25,
+    "text": "| EIA RWTC candidate snapshots | EIA reuse statement; upstream rights pending | TODO(human) | non-runtime `data/candidates/`; see `docs/DATA_SOURCES.md` | no | human redistribution review required |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 75,
+    "text": "| `libopus`, `libsndfile`, other native libraries | `TODO(human)`: full native inventory | Terms/notices must be inventoried separately from Python wrappers | Native audio I/O/conversion |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 106,
+    "text": "| GLOBE (front matter points to `ai4b-hf/GLOBE-annotated`) | `CC V1` | Ambiguous label; do not silently interpret it as CC0 or another specific licence. `TODO(human)`: resolve original licence and attribution evidence. |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 107,
+    "text": "| IndicTTS | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 108,
+    "text": "| LIMMITS | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 109,
+    "text": "| Rasa | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |"
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 118,
+    "text": "- `TODO(human)`: retain the gated-access acceptance record without credentials; confirm applicable terms, model/codec/training-source provenance, voice/output rights, and Apache-2.0/other licence and notice obligations."
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 119,
+    "text": "- `TODO(human)`: finish the transitive and platform/native-library inventory and compatibility checks. The supplied reports are not a security or redistribution clearance."
+  },
+  {
+    "file": "docs/THIRD_PARTY.md",
+    "line": 120,
+    "text": "- `TODO(human)`: obtain English listening review, native-speaker Hindi review, pronunciation/number/symbol checks, safety-copy review, accessibility/transcript checks, and output-quality approval for every released asset. Hindi remains draft until that review; a successful audition command must not mark audio release-ready."
+  },
+  {
+    "file": "docs/ACCESSIBILITY_AND_PERFORMANCE.md",
+    "line": 9,
+    "text": "| JavaScript transfer | ≤150 KiB | — | `TODO(human)` |"
+  },
+  {
+    "file": "docs/ACCESSIBILITY_AND_PERFORMANCE.md",
+    "line": 10,
+    "text": "| CSS transfer | ≤20 KiB | — | `TODO(human)` |"
+  },
+  {
+    "file": "docs/ACCESSIBILITY_AND_PERFORMANCE.md",
+    "line": 11,
+    "text": "| first usable interaction | record actual result | — | `TODO(human)` |"
+  },
+  {
+    "file": "scripts/acquire_eia_candidates.py",
+    "line": 35,
+    "text": "    \"TODO(human): obtain dataset-specific rights/attribution confirmation. \""
+  },
+  {
+    "file": "scripts/acquire_eia_candidates.py",
+    "line": 155,
+    "text": "                \"hi\": \"TODO(human): draft Hindi period text and native-speaker review required.\","
+  },
+  {
+    "file": "scripts/acquire_eia_candidates.py",
+    "line": 158,
+    "text": "                \"en\": \"TODO(human): review the historical path, selection bias, and neutral reveal copy before use.\","
+  },
+  {
+    "file": "scripts/acquire_eia_candidates.py",
+    "line": 159,
+    "text": "                \"hi\": \"TODO(human): draft Hindi explanation and native-speaker review required.\","
+  },
+  {
+    "file": "scripts/acquire_eia_candidates.py",
+    "line": 197,
+    "text": "        \"timeZone\": \"TODO(human): exact observation time/timezone not established\","
+  }
+]
