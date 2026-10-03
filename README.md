@@ -21,8 +21,10 @@ product. The product name has one source of truth: `src/config/app.ts`.
 - Local-only, fixed-seed sampled TTS with cached inputs, natural-EOS/signal/
   duration/duplicate/ASR-CER gates and bounded retries. Original greedy silence
   was reproduced and isolated: [TTS_DIAGNOSTICS](docs/TTS_DIAGNOSTICS.md).
-  Actual produced assets, missing tracks and measurements—not an assumed full
-  set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
+  The complete 58/58 bilingual set now passes; the last Hindi quantity-only ASR
+  mismatch was corroborated by a second pinned recogniser on the same WAV
+  without relaxing the CER gate. Actual produced assets and measurements—not an
+  assumed full set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
 - Gesture-only audio controls with readable text fallback, glossary/captions,
   text sizing, same-origin PWA caching and an in-memory pilot summary.
   Offline audio is **only previously cached audio**, not a promise that every

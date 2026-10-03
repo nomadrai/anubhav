@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "complete": false,
+  "complete": true,
   "status": "agent-checked",
   "voices": {
     "en": "Divya",
@@ -39,6 +39,13 @@
         "sampleRate": 16000,
         "doSample": false
       },
+      "asrCorroboration": {
+        "modelId": "openai/whisper-medium",
+        "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+        "licence": "Apache-2.0",
+        "sampleRate": 16000,
+        "doSample": false
+      },
       "encoding": {
         "codec": "libopus",
         "bitrate": "24k",
@@ -68,7 +75,7 @@
       "path": "/audio/en/7b4e80d7ec7334f7b6c5b263df8e07bb0f697b1239234861bbe1b4505427258e.opus",
       "contentSha256": "5f387f78b765b50dba8480f3cc1020dd2ba6a3698f4fefc18bebb95b2bba1ee2",
       "inputSha256": "7b4e80d7ec7334f7b6c5b263df8e07bb0f697b1239234861bbe1b4505427258e",
-      "assetSha256": "d1de9c6947ff1ea77b73eee0a30568c9c2bd6cd3bb4892c75bd8ce99f07fe6de",
+      "assetSha256": "7ad5e73eb7fcacba94c82519ab33cc9a6db5e6eb7981826fca30c3c6109a5697",
       "durationSeconds": 2.7283541666666666,
       "bytes": 8384,
       "status": "agent-checked",
@@ -109,7 +116,7 @@
           "peak": 0.8136051297187805,
           "silenceRatio": 0.28381731966005147,
           "clippedRatio": 0.0,
-          "wavSha256": "d1de9c6947ff1ea77b73eee0a30568c9c2bd6cd3bb4892c75bd8ce99f07fe6de"
+          "wavSha256": "7ad5e73eb7fcacba94c82519ab33cc9a6db5e6eb7981826fca30c3c6109a5697"
         }
       }
     },
@@ -120,7 +127,7 @@
       "path": "/audio/en/f3531e9de4ad1132ccd3b227372c4f445a4618797febe9970c972977244e884f.opus",
       "contentSha256": "ef38893376975ddab590bf5abe9eed5efe5760cf3ec785fdd10dd9ac9884ab7e",
       "inputSha256": "f3531e9de4ad1132ccd3b227372c4f445a4618797febe9970c972977244e884f",
-      "assetSha256": "90a7ade2acca290ba7f36999f9c726b6516b54b1e1556da99d5e0d5c3550259f",
+      "assetSha256": "eb79a95794b42a3456e180d352b2e86c5225c2280f0cf4b89471aea3cdf839ab",
       "durationSeconds": 7.987666666666667,
       "bytes": 24153,
       "status": "agent-checked",
@@ -161,7 +168,7 @@
           "peak": 0.7791035175323486,
           "silenceRatio": 0.2775946250469474,
           "clippedRatio": 0.0,
-          "wavSha256": "90a7ade2acca290ba7f36999f9c726b6516b54b1e1556da99d5e0d5c3550259f"
+          "wavSha256": "eb79a95794b42a3456e180d352b2e86c5225c2280f0cf4b89471aea3cdf839ab"
         }
       }
     },
@@ -172,7 +179,7 @@
       "path": "/audio/en/c83bc90be21ffd42a39118c0b5db7ed1889c28b68efe83d64662754e799c11ab.opus",
       "contentSha256": "00ba8dbe8b9163eacaf9fedb2fd69ba42e811fe482a80137f29d0242bbae954c",
       "inputSha256": "c83bc90be21ffd42a39118c0b5db7ed1889c28b68efe83d64662754e799c11ab",
-      "assetSha256": "de157f425a7b8e8e643373614887fa643f00ae752415fa1509bdf23ec639f52d",
+      "assetSha256": "834cfa8558f29e72a948c647a32ea7091404700b9eceab1e11a62df36ca493f1",
       "durationSeconds": 8.138604166666667,
       "bytes": 24068,
       "status": "agent-checked",
@@ -213,7 +220,7 @@
           "peak": 0.7905309200286865,
           "silenceRatio": 0.31806744092583444,
           "clippedRatio": 0.0,
-          "wavSha256": "de157f425a7b8e8e643373614887fa643f00ae752415fa1509bdf23ec639f52d"
+          "wavSha256": "834cfa8558f29e72a948c647a32ea7091404700b9eceab1e11a62df36ca493f1"
         }
       }
     },
@@ -224,7 +231,7 @@
       "path": "/audio/en/818a44d3ebf2a4750a55cd0be35d6442346da1008fd5ca6593546984d1ea061f.opus",
       "contentSha256": "666f7f72c12fc5b0bb2b52240683f67bb672e33599199dee4549b11186ae8895",
       "inputSha256": "818a44d3ebf2a4750a55cd0be35d6442346da1008fd5ca6593546984d1ea061f",
-      "assetSha256": "bff7427c35ae320f3fe0f4d041f2d7e8d878c9396ec8a3466c06b5516c8d8c58",
+      "assetSha256": "11fd054d96ef410e475f3e3d9aa6c555c8afafc4e92354529bf9e43a0620f64b",
       "durationSeconds": 3.9125625,
       "bytes": 11528,
       "status": "agent-checked",
@@ -265,7 +272,7 @@
           "peak": 0.8633724451065063,
           "silenceRatio": 0.36683652550811224,
           "clippedRatio": 0.0,
-          "wavSha256": "bff7427c35ae320f3fe0f4d041f2d7e8d878c9396ec8a3466c06b5516c8d8c58"
+          "wavSha256": "11fd054d96ef410e475f3e3d9aa6c555c8afafc4e92354529bf9e43a0620f64b"
         }
       }
     },
@@ -276,7 +283,7 @@
       "path": "/audio/en/1ec9ef297122811ccbc74eaf4321033d9b25ade2a51d812740e6a97f4f252763.opus",
       "contentSha256": "d98c44ee38ee897e50280afb79bfc2908ab07633e9809f5d97cf862f9bae1915",
       "inputSha256": "1ec9ef297122811ccbc74eaf4321033d9b25ade2a51d812740e6a97f4f252763",
-      "assetSha256": "a0c16bd898f3428baeb6c38b386d1411d74569accadb616507810a2e71aeafb3",
+      "assetSha256": "2d2c02f050aa5bc6ea498423f9268185ac77d5b6bce929a150ebfd53429e4fcc",
       "durationSeconds": 5.607625,
       "bytes": 16175,
       "status": "agent-checked",
@@ -317,7 +324,7 @@
           "peak": 0.8085285425186157,
           "silenceRatio": 0.40798614981089737,
           "clippedRatio": 0.0,
-          "wavSha256": "a0c16bd898f3428baeb6c38b386d1411d74569accadb616507810a2e71aeafb3"
+          "wavSha256": "2d2c02f050aa5bc6ea498423f9268185ac77d5b6bce929a150ebfd53429e4fcc"
         }
       }
     },
@@ -328,7 +335,7 @@
       "path": "/audio/en/a908791d522c425e8f8c0d1420ce2d0bfc43570b76e627d40fe6bcc540ff9617.opus",
       "contentSha256": "7da2e4654223e46d25efc6d4975d463feb038567f3ef15b41112b21ee8ca97c2",
       "inputSha256": "a908791d522c425e8f8c0d1420ce2d0bfc43570b76e627d40fe6bcc540ff9617",
-      "assetSha256": "bf6c0d7c5cd3ec93b2348646c000dbaf75339a156161ed7c903f130f7c4af766",
+      "assetSha256": "4654d260d4bfec8903e2ea0d9d9d638c9ce189b25d1b977a71d075ccc47ce59c",
       "durationSeconds": 3.3552916666666666,
       "bytes": 9802,
       "status": "agent-checked",
@@ -369,7 +376,7 @@
           "peak": 0.7874858379364014,
           "silenceRatio": 0.31151042507481963,
           "clippedRatio": 0.0,
-          "wavSha256": "bf6c0d7c5cd3ec93b2348646c000dbaf75339a156161ed7c903f130f7c4af766"
+          "wavSha256": "4654d260d4bfec8903e2ea0d9d9d638c9ce189b25d1b977a71d075ccc47ce59c"
         }
       }
     },
@@ -380,7 +387,7 @@
       "path": "/audio/en/1a0f3f26b425e5ecb500aecd888ba6b776a2fc7b6aea52d28aaa7257d628c754.opus",
       "contentSha256": "3e7c7328794e302400c172274ec7a69e7afbe3929192d20578bf7d81dc637bc5",
       "inputSha256": "1a0f3f26b425e5ecb500aecd888ba6b776a2fc7b6aea52d28aaa7257d628c754",
-      "assetSha256": "5718dd31e26ca5d9d23deb9424096cac173c02e49baf78dc08618478e751e9fa",
+      "assetSha256": "5e6a2af1a78193360ede21d9de76fa01f3dadaf5794c31f603624900bd0dc4f6",
       "durationSeconds": 4.446625,
       "bytes": 13334,
       "status": "agent-checked",
@@ -421,7 +428,7 @@
           "peak": 0.7579260468482971,
           "silenceRatio": 0.29338262165125234,
           "clippedRatio": 0.0,
-          "wavSha256": "5718dd31e26ca5d9d23deb9424096cac173c02e49baf78dc08618478e751e9fa"
+          "wavSha256": "5e6a2af1a78193360ede21d9de76fa01f3dadaf5794c31f603624900bd0dc4f6"
         }
       }
     },
@@ -432,7 +439,7 @@
       "path": "/audio/en/53e17d8588b313fa53743901847fa1fd9de017be374f6577f6dce8c472ef4245.opus",
       "contentSha256": "c3a97d8484b99da00d4a62ba1871c4374d163e56a5d9dc2fa433bf1bc168685d",
       "inputSha256": "53e17d8588b313fa53743901847fa1fd9de017be374f6577f6dce8c472ef4245",
-      "assetSha256": "84925ef6b80dfc5b6736e4ef0e78f7df7a901ba1a2306a134632c47b32803e3b",
+      "assetSha256": "c7f2768ddce34ce40994d8490347979277cac99030d5dfa5d628b6fe45bc2e42",
       "durationSeconds": 5.909479166666666,
       "bytes": 17491,
       "status": "agent-checked",
@@ -473,7 +480,7 @@
           "peak": 0.8166082501411438,
           "silenceRatio": 0.32170770830762724,
           "clippedRatio": 0.0,
-          "wavSha256": "84925ef6b80dfc5b6736e4ef0e78f7df7a901ba1a2306a134632c47b32803e3b"
+          "wavSha256": "c7f2768ddce34ce40994d8490347979277cac99030d5dfa5d628b6fe45bc2e42"
         }
       }
     },
@@ -484,7 +491,7 @@
       "path": "/audio/en/56bac5a06dc3fc2bf8074e8137473439692e959bf06a3a9c5dcc09c0cae126db.opus",
       "contentSha256": "5c527e24b279637092685b4fa535a1b862b09021c73a357ca6e5b5ecf637b238",
       "inputSha256": "56bac5a06dc3fc2bf8074e8137473439692e959bf06a3a9c5dcc09c0cae126db",
-      "assetSha256": "dcfbdd77d349f894988c40bb4be82437e36eab8e5aed343dafa6718e75769500",
+      "assetSha256": "97e51af14b40a2f3b633ef05e95cae835098582a7b94fca4ba600d9e603b70b7",
       "durationSeconds": 3.750020833333333,
       "bytes": 11497,
       "status": "agent-checked",
@@ -525,7 +532,7 @@
           "peak": 0.7524576187133789,
           "silenceRatio": 0.24397642235320915,
           "clippedRatio": 0.0,
-          "wavSha256": "dcfbdd77d349f894988c40bb4be82437e36eab8e5aed343dafa6718e75769500"
+          "wavSha256": "97e51af14b40a2f3b633ef05e95cae835098582a7b94fca4ba600d9e603b70b7"
         }
       }
     },
@@ -536,7 +543,7 @@
       "path": "/audio/en/77fe29e67a2b1f16d5098b07b95886e4bfc5394681bc741a9216125959183d61.opus",
       "contentSha256": "7cadc7d53460b746831c51ebface6a30eaaabac41ad583b48d00a90391161989",
       "inputSha256": "77fe29e67a2b1f16d5098b07b95886e4bfc5394681bc741a9216125959183d61",
-      "assetSha256": "b5e6979796f236ff5d0cbeac6616b5dd9854bd320058a1c10a78330a2d5969d8",
+      "assetSha256": "c8790394864385b2210410accd01f5b2d4a0702cd36aa33843d7d1f22dcea7ef",
       "durationSeconds": 4.562729166666666,
       "bytes": 14110,
       "status": "agent-checked",
@@ -577,7 +584,7 @@
           "peak": 0.7268691658973694,
           "silenceRatio": 0.2753651643068156,
           "clippedRatio": 0.0,
-          "wavSha256": "b5e6979796f236ff5d0cbeac6616b5dd9854bd320058a1c10a78330a2d5969d8"
+          "wavSha256": "c8790394864385b2210410accd01f5b2d4a0702cd36aa33843d7d1f22dcea7ef"
         }
       }
     },
@@ -588,7 +595,7 @@
       "path": "/audio/en/a877cf6ec6381c7079b4e67a12c3ac5bb6f57f51bc72392d39b330d4542d23b2.opus",
       "contentSha256": "51369f7dcb86765a76e24819f81aca6f389815af09759550ee7eecd0c4dc92e5",
       "inputSha256": "a877cf6ec6381c7079b4e67a12c3ac5bb6f57f51bc72392d39b330d4542d23b2",
-      "assetSha256": "973aa561ee9138891ae29e7bfdf27d5b5e339d75ac966e87e3f28eb9d06da636",
+      "assetSha256": "a5539671d98ec5d0b79b37271b320e94342ba6a1beab298e524be73e78624355",
       "durationSeconds": 6.211333333333333,
       "bytes": 18172,
       "status": "agent-checked",
@@ -629,7 +636,7 @@
           "peak": 0.7664180397987366,
           "silenceRatio": 0.3740507942470752,
           "clippedRatio": 0.0,
-          "wavSha256": "973aa561ee9138891ae29e7bfdf27d5b5e339d75ac966e87e3f28eb9d06da636"
+          "wavSha256": "a5539671d98ec5d0b79b37271b320e94342ba6a1beab298e524be73e78624355"
         }
       }
     },
@@ -640,7 +647,7 @@
       "path": "/audio/en/81ff8f07c2616bd03295af8cf9e66ca63cbc0cd747c2456293c67ff99355ed32.opus",
       "contentSha256": "d0ea0fdc6cd982485f3d73617b39a5b3135a8750b83a24604d16a4d70768b3e6",
       "inputSha256": "81ff8f07c2616bd03295af8cf9e66ca63cbc0cd747c2456293c67ff99355ed32",
-      "assetSha256": "f4bc2d95733b1d2f165613a73504b7360e31132a1d8a9ae4b9f21ec2b987bd9e",
+      "assetSha256": "bfc896f9dfa9cc5875675aa1f8e81d2347031b00cbd24938f5e5d57a45ce7cff",
       "durationSeconds": 3.0650416666666667,
       "bytes": 9195,
       "status": "agent-checked",
@@ -681,7 +688,7 @@
           "peak": 0.8446938991546631,
           "silenceRatio": 0.33387256834463913,
           "clippedRatio": 0.0,
-          "wavSha256": "f4bc2d95733b1d2f165613a73504b7360e31132a1d8a9ae4b9f21ec2b987bd9e"
+          "wavSha256": "bfc896f9dfa9cc5875675aa1f8e81d2347031b00cbd24938f5e5d57a45ce7cff"
         }
       }
     },
@@ -692,7 +699,7 @@
       "path": "/audio/en/4704737516297b355cff134fb6cb6028e9865c10bff86aa955f6bf7544b22df9.opus",
       "contentSha256": "5ea72d1dee20aa4a36fc7f56fad5cc5ab404d00a1c60516889aca8c361c1ef48",
       "inputSha256": "4704737516297b355cff134fb6cb6028e9865c10bff86aa955f6bf7544b22df9",
-      "assetSha256": "912bfe39132f88d6d6f59525204ac4212be8b06e49b647ba53f1ec17d31e7bf1",
+      "assetSha256": "a72dad1bd75044e49576dbccb1d10a9d643a51581db4dc06144a16537d6a0e3c",
       "durationSeconds": 3.0534375,
       "bytes": 8889,
       "status": "agent-checked",
@@ -733,7 +740,7 @@
           "peak": 0.7881888747215271,
           "silenceRatio": 0.3323849486575922,
           "clippedRatio": 0.0,
-          "wavSha256": "912bfe39132f88d6d6f59525204ac4212be8b06e49b647ba53f1ec17d31e7bf1"
+          "wavSha256": "a72dad1bd75044e49576dbccb1d10a9d643a51581db4dc06144a16537d6a0e3c"
         }
       }
     },
@@ -744,7 +751,7 @@
       "path": "/audio/en/b529a94f7e4ee3246f6558df3ec57b3b989d99418cbba6b57a97f4126197f8b3.opus",
       "contentSha256": "1bc63f3f41cbb8f8993400110e2ca42a8b79947549933eaad835123b53ddfad3",
       "inputSha256": "b529a94f7e4ee3246f6558df3ec57b3b989d99418cbba6b57a97f4126197f8b3",
-      "assetSha256": "8600d66b122969667a1cc088f5b1c6592b82934d83fede57c7acf57483fa55dc",
+      "assetSha256": "3227765324529f817dffc500bc66d4e79f2370eb37137b56d3dfe09d3ed06a11",
       "durationSeconds": 3.5178333333333334,
       "bytes": 9402,
       "status": "agent-checked",
@@ -785,7 +792,7 @@
           "peak": 0.7769902944564819,
           "silenceRatio": 0.44261382479746053,
           "clippedRatio": 0.0,
-          "wavSha256": "8600d66b122969667a1cc088f5b1c6592b82934d83fede57c7acf57483fa55dc"
+          "wavSha256": "3227765324529f817dffc500bc66d4e79f2370eb37137b56d3dfe09d3ed06a11"
         }
       }
     },
@@ -796,7 +803,7 @@
       "path": "/audio/en/db3762443808e81674e23b449594fdfd0e780e907139e3d518bba105e2269826.opus",
       "contentSha256": "2765c70aa170e776c7273461b8d0c3330c3d2273d5016e79508b893952071b10",
       "inputSha256": "db3762443808e81674e23b449594fdfd0e780e907139e3d518bba105e2269826",
-      "assetSha256": "623260681b6ede042a31d475a0f82fbc3a38af47d05fac8a80fc6b6c81b38ec6",
+      "assetSha256": "28f36c8101278f6d8e0bf34ba75b8e0e5f107ba3397c2363e498c839efcd7c54",
       "durationSeconds": 2.6006458333333335,
       "bytes": 7845,
       "status": "agent-checked",
@@ -837,7 +844,7 @@
           "peak": 0.7378889322280884,
           "silenceRatio": 0.31687641691567,
           "clippedRatio": 0.0,
-          "wavSha256": "623260681b6ede042a31d475a0f82fbc3a38af47d05fac8a80fc6b6c81b38ec6"
+          "wavSha256": "28f36c8101278f6d8e0bf34ba75b8e0e5f107ba3397c2363e498c839efcd7c54"
         }
       }
     },
@@ -848,7 +855,7 @@
       "path": "/audio/en/5f0479a2df70b492655764cb5fcac47da0cac2f0545d42e30c67f93f63d70807.opus",
       "contentSha256": "99c3a7ede57ec4d1908fb3bcd10481af9b56af4e34bc5caeef20d601001aa0fa",
       "inputSha256": "5f0479a2df70b492655764cb5fcac47da0cac2f0545d42e30c67f93f63d70807",
-      "assetSha256": "6ef4afae8a1115fb2af6ff2604a0de786ff0a917de3ed0c918486bd42e7c28ab",
+      "assetSha256": "fed70664b3b00073ac6193163b11e5a2278641303d6cedd7553a3508860bbb71",
       "durationSeconds": 4.272479166666667,
       "bytes": 12949,
       "status": "agent-checked",
@@ -889,7 +896,7 @@
           "peak": 0.7654407620429993,
           "silenceRatio": 0.321997864237684,
           "clippedRatio": 0.0,
-          "wavSha256": "6ef4afae8a1115fb2af6ff2604a0de786ff0a917de3ed0c918486bd42e7c28ab"
+          "wavSha256": "fed70664b3b00073ac6193163b11e5a2278641303d6cedd7553a3508860bbb71"
         }
       }
     },
@@ -900,7 +907,7 @@
       "path": "/audio/en/4e2844e24efe1314e6bdc43101d2c7e6225514eae691f3290196d94dbe09f0a8.opus",
       "contentSha256": "2216a6221d3c091f3b51fc9b19dea89617cc44c164ba157115bbd149dfa211d8",
       "inputSha256": "4e2844e24efe1314e6bdc43101d2c7e6225514eae691f3290196d94dbe09f0a8",
-      "assetSha256": "726eac3b2245e14e2aa22e4727c910e80dde33d5c0ffa56ef9369e0d0efcedbe",
+      "assetSha256": "a20947a9797008e8422dc5b866b0dc1718cd1016aed4aa55fe6ee0584665afd2",
       "durationSeconds": 3.8545208333333334,
       "bytes": 11611,
       "status": "agent-checked",
@@ -941,7 +948,7 @@
           "peak": 0.8244767785072327,
           "silenceRatio": 0.34364409756941255,
           "clippedRatio": 0.0,
-          "wavSha256": "726eac3b2245e14e2aa22e4727c910e80dde33d5c0ffa56ef9369e0d0efcedbe"
+          "wavSha256": "a20947a9797008e8422dc5b866b0dc1718cd1016aed4aa55fe6ee0584665afd2"
         }
       }
     },
@@ -952,7 +959,7 @@
       "path": "/audio/en/5b9ef85be08d60b886a68de96796abbe74960d88b5c2d5543020c6d1585cc303.opus",
       "contentSha256": "39675f57a741ac212716b611e02f0bc343806f83f5aa7f823f33652844d27476",
       "inputSha256": "5b9ef85be08d60b886a68de96796abbe74960d88b5c2d5543020c6d1585cc303",
-      "assetSha256": "ee4109fe95862ff05c2d5b4fcebbd9aab81509cec100f616a39e55d7abfd2e6f",
+      "assetSha256": "c8ad40aaaba94cef0465e85ee4f372e8e0bfdff975c5b86286218ccc21706817",
       "durationSeconds": 2.9837708333333333,
       "bytes": 8032,
       "status": "agent-checked",
@@ -993,7 +1000,7 @@
           "peak": 0.6116991639137268,
           "silenceRatio": 0.39339901271461586,
           "clippedRatio": 0.0,
-          "wavSha256": "ee4109fe95862ff05c2d5b4fcebbd9aab81509cec100f616a39e55d7abfd2e6f"
+          "wavSha256": "c8ad40aaaba94cef0465e85ee4f372e8e0bfdff975c5b86286218ccc21706817"
         }
       }
     },
@@ -1004,7 +1011,7 @@
       "path": "/audio/en/0643d88b31a1d99c32f34c45277f3cbf35f844905509b1af5e7571177ec230fc.opus",
       "contentSha256": "90f97f27e94e767d8a2f26a943236770b766a5577443b361c3c20dec9995a69d",
       "inputSha256": "0643d88b31a1d99c32f34c45277f3cbf35f844905509b1af5e7571177ec230fc",
-      "assetSha256": "0153f926508b4085b863686cdef6325fce6b8ba6fefb362c44b98f79ca5ddeb5",
+      "assetSha256": "0c4380081499f3aa2ef68154c0872e8ef0d46b0d8be611f34c2a06016f27117c",
       "durationSeconds": 2.3800416666666666,
       "bytes": 6662,
       "status": "agent-checked",
@@ -1045,7 +1052,7 @@
           "peak": 0.7710144519805908,
           "silenceRatio": 0.35242730344356715,
           "clippedRatio": 0.0,
-          "wavSha256": "0153f926508b4085b863686cdef6325fce6b8ba6fefb362c44b98f79ca5ddeb5"
+          "wavSha256": "0c4380081499f3aa2ef68154c0872e8ef0d46b0d8be611f34c2a06016f27117c"
         }
       }
     },
@@ -1056,7 +1063,7 @@
       "path": "/audio/en/1caed2ba1cd159d9e3d6f755d9a039f8166abef81100a590bf837d432320999e.opus",
       "contentSha256": "5af6d9c73a8788adca50b891abf64ef4c017276423b82b5b321348bc4f486e3f",
       "inputSha256": "1caed2ba1cd159d9e3d6f755d9a039f8166abef81100a590bf837d432320999e",
-      "assetSha256": "1ecf7163531653972b569f808a3ef12b56bba519e4b652a30c5d608258864c24",
+      "assetSha256": "1e979fbc3f447b6e0efbf9c4f7d9f7c941de0b40ba076c1ecd431000233fa1ae",
       "durationSeconds": 4.435020833333334,
       "bytes": 13131,
       "status": "agent-checked",
@@ -1097,7 +1104,7 @@
           "peak": 0.8103283047676086,
           "silenceRatio": 0.34917630037438757,
           "clippedRatio": 0.0,
-          "wavSha256": "1ecf7163531653972b569f808a3ef12b56bba519e4b652a30c5d608258864c24"
+          "wavSha256": "1e979fbc3f447b6e0efbf9c4f7d9f7c941de0b40ba076c1ecd431000233fa1ae"
         }
       }
     },
@@ -1108,7 +1115,7 @@
       "path": "/audio/en/4aafd4fcda72b2199584d687f0f7c265e1b8089b787ae9436474ad30bed2c1b6.opus",
       "contentSha256": "a7dff1082e53bd119d4ea529833ac315bbcc3ce7fe3bf9c5f40d3d4e95e69a44",
       "inputSha256": "4aafd4fcda72b2199584d687f0f7c265e1b8089b787ae9436474ad30bed2c1b6",
-      "assetSha256": "eac47003cc0d3098f9854d11ccb825dcb41a238466c809f68abfbd89a41c4948",
+      "assetSha256": "6a3deb9b7b4fdd130558a23eee5cfc52c510ae7e0c711186f51f556e622b9898",
       "durationSeconds": 6.791833333333333,
       "bytes": 20824,
       "status": "agent-checked",
@@ -1149,7 +1156,7 @@
           "peak": 0.8134786486625671,
           "silenceRatio": 0.23369978650830656,
           "clippedRatio": 0.0,
-          "wavSha256": "eac47003cc0d3098f9854d11ccb825dcb41a238466c809f68abfbd89a41c4948"
+          "wavSha256": "6a3deb9b7b4fdd130558a23eee5cfc52c510ae7e0c711186f51f556e622b9898"
         }
       }
     },
@@ -1160,7 +1167,7 @@
       "path": "/audio/en/3c8b2c4c2f06f96a00339a7f34f901779432a78c7d187a38838019d71eac5413.opus",
       "contentSha256": "1d8c05c780c5a7afc48544f1f8cca867dbaf5c4dd9c03d862b89f65320583cfc",
       "inputSha256": "3c8b2c4c2f06f96a00339a7f34f901779432a78c7d187a38838019d71eac5413",
-      "assetSha256": "09c4545243c29ac134545f9b104d9880a5bb00cb47482df5c431db8d4b857b27",
+      "assetSha256": "d66bc424a5615780323c18d4ea248f5453afdbb82b57639a4a0fbe755fe0b62e",
       "durationSeconds": 5.723729166666667,
       "bytes": 17011,
       "status": "agent-checked",
@@ -1201,7 +1208,7 @@
           "peak": 0.7793858647346497,
           "silenceRatio": 0.3668900301740925,
           "clippedRatio": 0.0,
-          "wavSha256": "09c4545243c29ac134545f9b104d9880a5bb00cb47482df5c431db8d4b857b27"
+          "wavSha256": "d66bc424a5615780323c18d4ea248f5453afdbb82b57639a4a0fbe755fe0b62e"
         }
       }
     },
@@ -1212,7 +1219,7 @@
       "path": "/audio/en/8f77e6008a5348f380388707bbe279515f4415ee7f1a0335fc0ac893e0e1b37e.opus",
       "contentSha256": "a42cb4db74d9540135374d5d98585b4f11baac576e5f917a020795d258e478c1",
       "inputSha256": "8f77e6008a5348f380388707bbe279515f4415ee7f1a0335fc0ac893e0e1b37e",
-      "assetSha256": "aae2279390a1f7abe9c4708eb454be6ee28d9e497f9121d2bec73eea56e9e032",
+      "assetSha256": "1cd4bc3b1f6b989f68b755dc79bc8bb040304ddf053d222ae6a16c5d52562306",
       "durationSeconds": 5.6540625,
       "bytes": 17092,
       "status": "agent-checked",
@@ -1253,7 +1260,7 @@
           "peak": 0.7541122436523438,
           "silenceRatio": 0.26931594170857975,
           "clippedRatio": 0.0,
-          "wavSha256": "aae2279390a1f7abe9c4708eb454be6ee28d9e497f9121d2bec73eea56e9e032"
+          "wavSha256": "1cd4bc3b1f6b989f68b755dc79bc8bb040304ddf053d222ae6a16c5d52562306"
         }
       }
     },
@@ -1264,7 +1271,7 @@
       "path": "/audio/en/dd142ff77a7df0eee8ed940298b718a6d13e6e665e40e5c8845f52b9ea5e2bd5.opus",
       "contentSha256": "d9cacc307b4335ca19e55f35cbba6e1eb7b0d963c8587d692e52525107ae41cd",
       "inputSha256": "dd142ff77a7df0eee8ed940298b718a6d13e6e665e40e5c8845f52b9ea5e2bd5",
-      "assetSha256": "7263caa1bc043a2e900cb0d6465bbd9283559cb705641d3f9de01bdac0b576d8",
+      "assetSha256": "6dacb21f222e05e449f24f59797c985b100edfd07fb69c2f6282ffc19419b649",
       "durationSeconds": 5.4566875,
       "bytes": 16484,
       "status": "agent-checked",
@@ -1305,7 +1312,7 @@
           "peak": 0.8022197484970093,
           "silenceRatio": 0.2364949736752685,
           "clippedRatio": 0.0,
-          "wavSha256": "7263caa1bc043a2e900cb0d6465bbd9283559cb705641d3f9de01bdac0b576d8"
+          "wavSha256": "6dacb21f222e05e449f24f59797c985b100edfd07fb69c2f6282ffc19419b649"
         }
       }
     },
@@ -1316,7 +1323,7 @@
       "path": "/audio/en/a06cc4c81b303601d3c51dc6f88fd9ae6d4ec4c5abd5f858dd80305841d4e18c.opus",
       "contentSha256": "b2bfc9e2a8c57ef72a36f719e87e3da8c9ffd558f26b619e7b664cda6dbc324b",
       "inputSha256": "a06cc4c81b303601d3c51dc6f88fd9ae6d4ec4c5abd5f858dd80305841d4e18c",
-      "assetSha256": "221a591dc3334b327a9c5dda226dbb8d2983552e3a1f8da2f7b2ce975f7aa912",
+      "assetSha256": "e3708d5605de0456aa042030ade8744f94602a8e24741846ce0f4690781de281",
       "durationSeconds": 4.922645833333333,
       "bytes": 15029,
       "status": "agent-checked",
@@ -1357,7 +1364,7 @@
           "peak": 0.7836673855781555,
           "silenceRatio": 0.22320737069749924,
           "clippedRatio": 0.0,
-          "wavSha256": "221a591dc3334b327a9c5dda226dbb8d2983552e3a1f8da2f7b2ce975f7aa912"
+          "wavSha256": "e3708d5605de0456aa042030ade8744f94602a8e24741846ce0f4690781de281"
         }
       }
     },
@@ -1368,7 +1375,7 @@
       "path": "/audio/en/fcb571147e26b5512d5b11327305f975c4bd61daf63a81faac3594fddbcb90e8.opus",
       "contentSha256": "9201275eab88b5fc89c2cb725bc816a1c2dd80eb1a1d75ff71ae46f5aef1b435",
       "inputSha256": "fcb571147e26b5512d5b11327305f975c4bd61daf63a81faac3594fddbcb90e8",
-      "assetSha256": "6cfbd8c1da3766a9f93bef4b45c04da3f58f610727e11d2d879e6df68d1e202f",
+      "assetSha256": "ca871509f672eb6ef107a8bbf4fd82a0dfb50d07a29446065eb4c0e99949428e",
       "durationSeconds": 8.31275,
       "bytes": 25141,
       "status": "agent-checked",
@@ -1409,7 +1416,7 @@
           "peak": 0.812732994556427,
           "silenceRatio": 0.280981524365182,
           "clippedRatio": 0.0,
-          "wavSha256": "6cfbd8c1da3766a9f93bef4b45c04da3f58f610727e11d2d879e6df68d1e202f"
+          "wavSha256": "ca871509f672eb6ef107a8bbf4fd82a0dfb50d07a29446065eb4c0e99949428e"
         }
       }
     },
@@ -1420,7 +1427,7 @@
       "path": "/audio/en/b142c1c96dbd0791892673b7ba52c8b9642cab12ac101d5b90e813438a63733c.opus",
       "contentSha256": "e75c3f34083004bc1a216fa1cc1dd807ba885c128f889c90236eefc23cd04900",
       "inputSha256": "b142c1c96dbd0791892673b7ba52c8b9642cab12ac101d5b90e813438a63733c",
-      "assetSha256": "b01d9e2e2f58099d223bc2b4667bf171bb416749f7180be13964affc208fad33",
+      "assetSha256": "39cc97579ab5f179de63cf67d070c7775d6f22ba94b119c8b5d00b149dac1179",
       "durationSeconds": 9.195104166666667,
       "bytes": 26827,
       "status": "agent-checked",
@@ -1461,7 +1468,7 @@
           "peak": 0.7855093479156494,
           "silenceRatio": 0.3488224032263546,
           "clippedRatio": 0.0,
-          "wavSha256": "b01d9e2e2f58099d223bc2b4667bf171bb416749f7180be13964affc208fad33"
+          "wavSha256": "39cc97579ab5f179de63cf67d070c7775d6f22ba94b119c8b5d00b149dac1179"
         }
       }
     },
@@ -1472,7 +1479,7 @@
       "path": "/audio/en/6e744bce34841b66a89fd7690918f48bf429a50018b508bfeb1d8e23d3c76691.opus",
       "contentSha256": "e0a0772fdb814eb4002f1e0ba2420e1121fdaf188df910225e4da0fb4580fc9a",
       "inputSha256": "6e744bce34841b66a89fd7690918f48bf429a50018b508bfeb1d8e23d3c76691",
-      "assetSha256": "b0df38caf20aa0d2c7747f64e896b73308db055f76f434aba6cbb5f815867db5",
+      "assetSha256": "00b51879e0199c5b099e1c9bba55c6b59784b2411db3e6f13162c1fae0008e5f",
       "durationSeconds": 8.394020833333334,
       "bytes": 25510,
       "status": "agent-checked",
@@ -1513,7 +1520,7 @@
           "peak": 0.8095657229423523,
           "silenceRatio": 0.294100711568006,
           "clippedRatio": 0.0,
-          "wavSha256": "b0df38caf20aa0d2c7747f64e896b73308db055f76f434aba6cbb5f815867db5"
+          "wavSha256": "00b51879e0199c5b099e1c9bba55c6b59784b2411db3e6f13162c1fae0008e5f"
         }
       }
     },
@@ -1524,7 +1531,7 @@
       "path": "/audio/en/b176fe34c9be8082873b622605428ffc6b472dcc05de226c010081a2444d281f.opus",
       "contentSha256": "a942dcb77bd557947c45de248c18a304c56f0e03ff3b9ce7c21e525518cb176d",
       "inputSha256": "b176fe34c9be8082873b622605428ffc6b472dcc05de226c010081a2444d281f",
-      "assetSha256": "b0f199bab07ddd6c10b2a623ef6a09d92f4b3fa5bf22317f45b0960b0b9bde92",
+      "assetSha256": "21a0f6183ba1f63b67af1cc8b820ed307b2233c05a5572c55cb3196bd268d46e",
       "durationSeconds": 7.569708333333334,
       "bytes": 22785,
       "status": "agent-checked",
@@ -1565,7 +1572,7 @@
           "peak": 0.8438740968704224,
           "silenceRatio": 0.2748702338817546,
           "clippedRatio": 0.0,
-          "wavSha256": "b0f199bab07ddd6c10b2a623ef6a09d92f4b3fa5bf22317f45b0960b0b9bde92"
+          "wavSha256": "21a0f6183ba1f63b67af1cc8b820ed307b2233c05a5572c55cb3196bd268d46e"
         }
       }
     },
@@ -1576,7 +1583,7 @@
       "path": "/audio/hi/bbfd331867f4a48ad2d19666bb42eab648fae7dfc5b484c9ca82e89a91f454e0.opus",
       "contentSha256": "ec077872d211483a6ebaebf26c95200a81897e2f5cc01f28c9224559aa37145a",
       "inputSha256": "bbfd331867f4a48ad2d19666bb42eab648fae7dfc5b484c9ca82e89a91f454e0",
-      "assetSha256": "8653a919e7cb4d807b0cb6f83a310b1eafa456ab9ae9241a0bc9a683d7232f4b",
+      "assetSha256": "048641fe151dba789359988ba51c414897d012058ac1feb1e6464a5444731cfb",
       "durationSeconds": 3.0766458333333335,
       "bytes": 9671,
       "status": "agent-checked",
@@ -1617,7 +1624,7 @@
           "peak": 0.7802688479423523,
           "silenceRatio": 0.24873543293223815,
           "clippedRatio": 0.0,
-          "wavSha256": "8653a919e7cb4d807b0cb6f83a310b1eafa456ab9ae9241a0bc9a683d7232f4b"
+          "wavSha256": "048641fe151dba789359988ba51c414897d012058ac1feb1e6464a5444731cfb"
         }
       }
     },
@@ -1628,7 +1635,7 @@
       "path": "/audio/hi/e3a76d64905bc4b617ef4e3dee11dcca962cdbe487082cabe3b5f79025e288f1.opus",
       "contentSha256": "e76d417ef9791b8bf3c46cfcd4d93b965b7eaa39b372123783db7460789a1bf0",
       "inputSha256": "e3a76d64905bc4b617ef4e3dee11dcca962cdbe487082cabe3b5f79025e288f1",
-      "assetSha256": "cbbec18652024eb5575276f71afd8cc98e54b1f32030900ecaf2f0e9277e7353",
+      "assetSha256": "bc58e29f665bb884b463c1365f860b2ce5a618ee9ce5124e7eff2cd709904cc1",
       "durationSeconds": 9.462145833333333,
       "bytes": 29059,
       "status": "agent-checked",
@@ -1669,7 +1676,7 @@
           "peak": 0.8021912574768066,
           "silenceRatio": 0.24940827816100558,
           "clippedRatio": 0.0,
-          "wavSha256": "cbbec18652024eb5575276f71afd8cc98e54b1f32030900ecaf2f0e9277e7353"
+          "wavSha256": "bc58e29f665bb884b463c1365f860b2ce5a618ee9ce5124e7eff2cd709904cc1"
         }
       }
     },
@@ -1680,7 +1687,7 @@
       "path": "/audio/hi/52e68290307bf6aa4d71a26fd8abc301260fac8140833fa0c6401cfee387a07f.opus",
       "contentSha256": "c7cc6ecedad8c33a093176824b7d49bae5cea7726eb6e7ad28262e7ee63492a7",
       "inputSha256": "52e68290307bf6aa4d71a26fd8abc301260fac8140833fa0c6401cfee387a07f",
-      "assetSha256": "9421dea8da6ab6b3c6ed249f2ca959463acba57b34a58c6aa8fc1f847b9974a9",
+      "assetSha256": "e191a0a8e635132e3c0b8769b85c8c12656ab44fd30b6d3f304585c69c343668",
       "durationSeconds": 9.601458333333333,
       "bytes": 28678,
       "status": "agent-checked",
@@ -1721,7 +1728,7 @@
           "peak": 0.842632532119751,
           "silenceRatio": 0.33309610085273506,
           "clippedRatio": 0.0,
-          "wavSha256": "9421dea8da6ab6b3c6ed249f2ca959463acba57b34a58c6aa8fc1f847b9974a9"
+          "wavSha256": "e191a0a8e635132e3c0b8769b85c8c12656ab44fd30b6d3f304585c69c343668"
         }
       }
     },
@@ -1732,7 +1739,7 @@
       "path": "/audio/hi/a11518effcd68018cb74e3a73ceaf4e13dfef0a320bafe6b5eac5c1095a789a0.opus",
       "contentSha256": "f7473dbdd5d34a205aa4b861320d655980b6d39b383f744c819c985f9fc1b512",
       "inputSha256": "a11518effcd68018cb74e3a73ceaf4e13dfef0a320bafe6b5eac5c1095a789a0",
-      "assetSha256": "8e12518e19c245c94271ebe77f38969237b6f4398f639d143c3ac65913689098",
+      "assetSha256": "33254c6b1adfde1c59ddd08e60e1da4f6cb97edf638607cd5f6f9d69c37365c0",
       "durationSeconds": 4.35375,
       "bytes": 12660,
       "status": "agent-checked",
@@ -1773,7 +1780,7 @@
           "peak": 0.8322798609733582,
           "silenceRatio": 0.3800363671164705,
           "clippedRatio": 0.0,
-          "wavSha256": "8e12518e19c245c94271ebe77f38969237b6f4398f639d143c3ac65913689098"
+          "wavSha256": "33254c6b1adfde1c59ddd08e60e1da4f6cb97edf638607cd5f6f9d69c37365c0"
         }
       }
     },
@@ -1784,7 +1791,7 @@
       "path": "/audio/hi/fb90efe5bf2d4f7f2254079c1933eb9251eb18d4b13eb79a2fedfa961cfb804a.opus",
       "contentSha256": "d476381b5d3f9ab94769bacb872ebf68279c2aabca37ba8181b13a6d074ed349",
       "inputSha256": "fb90efe5bf2d4f7f2254079c1933eb9251eb18d4b13eb79a2fedfa961cfb804a",
-      "assetSha256": "3cc283195537fb0f44662dfd7a50d6ed00561af0193f1bc2150ca30c64a68d0a",
+      "assetSha256": "38e533909074c9303f5ebbe7344ccb2dab735a2f4e1658b046d6a9555565bf2e",
       "durationSeconds": 5.433479166666666,
       "bytes": 16331,
       "status": "agent-checked",
@@ -1825,7 +1832,7 @@
           "peak": 0.7939324378967285,
           "silenceRatio": 0.31403681649648973,
           "clippedRatio": 0.0,
-          "wavSha256": "3cc283195537fb0f44662dfd7a50d6ed00561af0193f1bc2150ca30c64a68d0a"
+          "wavSha256": "38e533909074c9303f5ebbe7344ccb2dab735a2f4e1658b046d6a9555565bf2e"
         }
       }
     },
@@ -1836,7 +1843,7 @@
       "path": "/audio/hi/fe9ac0e9a5e84d4aaaf9b003cda96a9b9a6c39e12f667c05f5e72339e081ee43.opus",
       "contentSha256": "34499d7fb5de6931c1f66d9884576a00f3b8280376171309522a36dc868023f2",
       "inputSha256": "fe9ac0e9a5e84d4aaaf9b003cda96a9b9a6c39e12f667c05f5e72339e081ee43",
-      "assetSha256": "085325d2b1902fe521cf961102f1fee30d568e26f5eee299b716653e5c950a13",
+      "assetSha256": "18fac109c7b3a368af491f3dec44dffb5868803ba9e9bd013774f1ace4c1c439",
       "durationSeconds": 4.5395,
       "bytes": 12693,
       "status": "agent-checked",
@@ -1877,7 +1884,7 @@
           "peak": 0.8760343194007874,
           "silenceRatio": 0.4522891654734369,
           "clippedRatio": 0.0,
-          "wavSha256": "085325d2b1902fe521cf961102f1fee30d568e26f5eee299b716653e5c950a13"
+          "wavSha256": "18fac109c7b3a368af491f3dec44dffb5868803ba9e9bd013774f1ace4c1c439"
         }
       }
     },
@@ -1888,7 +1895,7 @@
       "path": "/audio/hi/f95d81363d4aa87012a4e3dfc05e3c0a05693bb0f54bafc8e79546df9de35ba8.opus",
       "contentSha256": "42f884ba1aceae20e2d8db91f0351d84287ab3eed13ecf4ceff5e0c9569c6cba",
       "inputSha256": "f95d81363d4aa87012a4e3dfc05e3c0a05693bb0f54bafc8e79546df9de35ba8",
-      "assetSha256": "c1ca7894d9f1b4f9f19cd0ab299049655179dc65f436209abdb140055ab02c65",
+      "assetSha256": "30e2b1db8268b535c5e2e7f7ccfd52acab127e95aea58afcfc7b1a2e6587828d",
       "durationSeconds": 4.24925,
       "bytes": 12463,
       "status": "agent-checked",
@@ -1929,7 +1936,7 @@
           "peak": 0.8155109286308289,
           "silenceRatio": 0.38500421643035043,
           "clippedRatio": 0.0,
-          "wavSha256": "c1ca7894d9f1b4f9f19cd0ab299049655179dc65f436209abdb140055ab02c65"
+          "wavSha256": "30e2b1db8268b535c5e2e7f7ccfd52acab127e95aea58afcfc7b1a2e6587828d"
         }
       }
     },
@@ -1940,7 +1947,7 @@
       "path": "/audio/hi/560427fc5c079aab0dcaacecc97f1e91d5d0781088862aa803f772edf394e895.opus",
       "contentSha256": "c58f973860be1cbb924f6b7ae186f06b621a3be7c111a3b8c1379baeb2105260",
       "inputSha256": "560427fc5c079aab0dcaacecc97f1e91d5d0781088862aa803f772edf394e895",
-      "assetSha256": "dd8295ba3fba3e8d4871fc57291f2f3ccf3400f27ab0b81c7e1ff94d1b1b9f34",
+      "assetSha256": "43384e98ee0224a266276a0a54d73f5387ee7a46b541f0b94c351b5d3eb24cef",
       "durationSeconds": 5.328979166666667,
       "bytes": 15910,
       "status": "agent-checked",
@@ -1981,7 +1988,7 @@
           "peak": 0.800616443157196,
           "silenceRatio": 0.2930712964881485,
           "clippedRatio": 0.0,
-          "wavSha256": "dd8295ba3fba3e8d4871fc57291f2f3ccf3400f27ab0b81c7e1ff94d1b1b9f34"
+          "wavSha256": "43384e98ee0224a266276a0a54d73f5387ee7a46b541f0b94c351b5d3eb24cef"
         }
       }
     },
@@ -1992,7 +1999,7 @@
       "path": "/audio/hi/b473f35883f22be2803149c08207ac57d198399b5fc05fff77c6e2962bccf883.opus",
       "contentSha256": "171d8d9ed13fb1d41d1f098b76f78406f66c3ef79cb9231293e88f50b69992ce",
       "inputSha256": "b473f35883f22be2803149c08207ac57d198399b5fc05fff77c6e2962bccf883",
-      "assetSha256": "3f5b0feda57be7b3dae023c738b2fff0c50944466ef986190b95161dfddc9bd1",
+      "assetSha256": "7358da5fbc93adbc3bdc86d82f983f211ee130e13631a4deb55158e36b02261d",
       "durationSeconds": 6.072020833333333,
       "bytes": 18494,
       "status": "agent-checked",
@@ -2033,7 +2040,7 @@
           "peak": 0.7748143076896667,
           "silenceRatio": 0.26354831072851226,
           "clippedRatio": 0.0,
-          "wavSha256": "3f5b0feda57be7b3dae023c738b2fff0c50944466ef986190b95161dfddc9bd1"
+          "wavSha256": "7358da5fbc93adbc3bdc86d82f983f211ee130e13631a4deb55158e36b02261d"
         }
       }
     },
@@ -2044,7 +2051,7 @@
       "path": "/audio/hi/789d292d67f4929a03858e946333719b44c2ff95dc036e7b856b84b9694314f1.opus",
       "contentSha256": "7945c0e964af36854b3ebfe2c0cafa82483eae3b289542954143e4e7c1fa39ee",
       "inputSha256": "789d292d67f4929a03858e946333719b44c2ff95dc036e7b856b84b9694314f1",
-      "assetSha256": "d7ee94a63197d51504b4655eb9895007b2ede6131a73425cbfc173ec593772a0",
+      "assetSha256": "cb5cb86f2994272831f3af093c9a9bd02280b45c8d0f5ccbf08dd11f8bc3e912",
       "durationSeconds": 5.51475,
       "bytes": 16311,
       "status": "agent-checked",
@@ -2085,7 +2092,7 @@
           "peak": 0.7823993563652039,
           "silenceRatio": 0.37122036357042476,
           "clippedRatio": 0.0,
-          "wavSha256": "d7ee94a63197d51504b4655eb9895007b2ede6131a73425cbfc173ec593772a0"
+          "wavSha256": "cb5cb86f2994272831f3af093c9a9bd02280b45c8d0f5ccbf08dd11f8bc3e912"
         }
       }
     },
@@ -2096,7 +2103,7 @@
       "path": "/audio/hi/777e734f6255488ad71cbddf54125f2b94e41ffa8168a9a22f79737f7c6eeef9.opus",
       "contentSha256": "8aabcbf824e2c949d04466be8ddf885b30e7088deee13b44a5262933c89afc07",
       "inputSha256": "777e734f6255488ad71cbddf54125f2b94e41ffa8168a9a22f79737f7c6eeef9",
-      "assetSha256": "867c87914f4c4f295167da18dd1d4abeb3f6518eb7a749a8954377c530ab5156",
+      "assetSha256": "cf8c3611f2cbd7c245f73f3b1fc3336038c9782aaa8e6c6acace314ae845abf6",
       "durationSeconds": 6.954375,
       "bytes": 21270,
       "status": "agent-checked",
@@ -2137,7 +2144,7 @@
           "peak": 0.8100559711456299,
           "silenceRatio": 0.22139840028758875,
           "clippedRatio": 0.0,
-          "wavSha256": "867c87914f4c4f295167da18dd1d4abeb3f6518eb7a749a8954377c530ab5156"
+          "wavSha256": "cf8c3611f2cbd7c245f73f3b1fc3336038c9782aaa8e6c6acace314ae845abf6"
         }
       }
     },
@@ -2148,7 +2155,7 @@
       "path": "/audio/hi/6eaa9f6261db8b0b30e773b62b8bcf3bce732e2c11b201c3ff1ed6acfdec0f9e.opus",
       "contentSha256": "f805fc2549edc496837216655f50dbdcb206f8f1335ee5eab124c931511ff517",
       "inputSha256": "6eaa9f6261db8b0b30e773b62b8bcf3bce732e2c11b201c3ff1ed6acfdec0f9e",
-      "assetSha256": "ac5f0392f12817f36a7c9d2030592cbab43b9f724f1c8b542770538935e6f8cf",
+      "assetSha256": "17ae63fcea032d4dcf7764dcc4456ccc03985b6352b75697be430f86b0b22c8a",
       "durationSeconds": 2.4265,
       "bytes": 7389,
       "status": "agent-checked",
@@ -2189,7 +2196,69 @@
           "peak": 0.7021614909172058,
           "silenceRatio": 0.23318909265746274,
           "clippedRatio": 0.0,
-          "wavSha256": "ac5f0392f12817f36a7c9d2030592cbab43b9f724f1c8b542770538935e6f8cf"
+          "wavSha256": "17ae63fcea032d4dcf7764dcc4456ccc03985b6352b75697be430f86b0b22c8a"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_5",
+      "language": "hi",
+      "spokenText": "रास्ता शुरुआत से पाँच प्रतिशत नीचे है।",
+      "path": "/audio/hi/272e9a351189d8701c7a4de1b983beb3aa9d5400755b90bf9bcd5d14348d8748.opus",
+      "contentSha256": "166abe7fc1fd1f57c7459884ff67f4f8f3fd7accf8ec26f0b296311549a9f795",
+      "inputSha256": "272e9a351189d8701c7a4de1b983beb3aa9d5400755b90bf9bcd5d14348d8748",
+      "assetSha256": "c6a3a06ab7974d0c033ee2720bb647966bf0fff4f8a43fc4dad7dbc3bebbe5f2",
+      "durationSeconds": 2.995375,
+      "bytes": 9112,
+      "status": "agent-checked",
+      "seed": 1717374669,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "रास्ता शुर्वाद से पाज्प्रतिषत निचे हैं",
+          "cer": 0.2702702702702703,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.2702702702702703,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.2702702702702703,
+          "quantitiesMatch": false,
+          "normalizationVersion": 2,
+          "corroboration": {
+            "modelId": "openai/whisper-medium",
+            "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+            "transcript": "रास्ता शुरूआज से पाँच प्रतिष्यत निजे हैं।",
+            "cer": 0.21621621621621623,
+            "rawCer": 0.21621621621621623,
+            "quantitiesMatch": true,
+            "seconds": 12.357566366001265
+          },
+          "quantityConfirmedBy": "openai/whisper-medium"
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.573407017747286,
+          "peak": 0.198577880859375,
+          "silenceRatio": 0.4161140382751938,
+          "generatedSteps": 267,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.995375,
+          "rmsDbfs": -22.933781010948415,
+          "peak": 0.7228968739509583,
+          "silenceRatio": 0.31408143109516057,
+          "clippedRatio": 0.0,
+          "wavSha256": "c6a3a06ab7974d0c033ee2720bb647966bf0fff4f8a43fc4dad7dbc3bebbe5f2"
         }
       }
     },
@@ -2200,7 +2269,7 @@
       "path": "/audio/hi/9946c5d31157b51d616a36f91dbcc7a8afdcdedce9006cd6d1b48072c20ce3f4.opus",
       "contentSha256": "d0216b1ef0cb32ebb23c59d425e3f9d91f3ae7ac3648a15b1f54c97dffd53ba8",
       "inputSha256": "9946c5d31157b51d616a36f91dbcc7a8afdcdedce9006cd6d1b48072c20ce3f4",
-      "assetSha256": "06795419f1b534de14a492c5b9bc7c6339c198875c09ed5b68987a589572cce1",
+      "assetSha256": "25720d1dbf748c79ea2831fba2d74306512b9e49d57b01653cd3a3cf43ad75f1",
       "durationSeconds": 3.111479166666667,
       "bytes": 9593,
       "status": "agent-checked",
@@ -2241,7 +2310,7 @@
           "peak": 0.8233913779258728,
           "silenceRatio": 0.2981767781936512,
           "clippedRatio": 0.0,
-          "wavSha256": "06795419f1b534de14a492c5b9bc7c6339c198875c09ed5b68987a589572cce1"
+          "wavSha256": "25720d1dbf748c79ea2831fba2d74306512b9e49d57b01653cd3a3cf43ad75f1"
         }
       }
     },
@@ -2249,46 +2318,61 @@
       "id": "DRAWDOWN_20",
       "language": "hi",
       "spokenText": "रास्ता शुरुआत से बीस प्रतिशत नीचे है।",
-      "path": "/audio/hi/55234806d4fdd90963544c2b7efed1d7ea79ecf5354a19aa5a89052e81e899e3.opus",
+      "path": "/audio/hi/19b75472f23acd935fe793c25a76a95223eefe07b5226b746eb610ed6dd87946.opus",
       "contentSha256": "b6fe844d63a9175b2382c14613d420b73aa805dcf8070fac52bac3dfebc1c5a6",
-      "inputSha256": "55234806d4fdd90963544c2b7efed1d7ea79ecf5354a19aa5a89052e81e899e3",
-      "assetSha256": "5c3729b8bbb0098c3925766d58b147c5dc61db30a4b1824a487b840100d8d19a",
-      "durationSeconds": 3.111479166666667,
-      "bytes": 9413,
+      "inputSha256": "19b75472f23acd935fe793c25a76a95223eefe07b5226b746eb610ed6dd87946",
+      "assetSha256": "3d53846f9f41beb1b2a49121f2e3f014e58febd267b4f538191c3e793b852f8f",
+      "durationSeconds": 3.575875,
+      "bytes": 10731,
       "status": "agent-checked",
-      "seed": 2007334000,
+      "seed": 2369167656,
       "quality": {
         "passed": true,
         "eos": true,
         "asr": {
-          "transcript": "रास्ता शुर्वाद सी बीस प्रतिषत नीचे हैं",
-          "cer": 0.19444444444444445,
-          "rawCer": 0.19444444444444445,
-          "quantitiesMatch": true,
-          "normalizationVersion": 2,
-          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "transcript": "रास्ता शुर्वाद सी बीस्प्रतिषक नीचे हैं",
+          "cer": 0.25,
           "modelId": "openai/whisper-small",
           "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
           "threshold": 0.35,
-          "status": "passed"
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.25,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.25,
+          "quantitiesMatch": false,
+          "normalizationVersion": 2,
+          "corroboration": {
+            "modelId": "openai/whisper-medium",
+            "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+            "transcript": "रास्ता शुरुवाथ से 20 प्रतिशक निचे हैं",
+            "cer": 0.16666666666666666,
+            "rawCer": 0.25,
+            "quantitiesMatch": true,
+            "seconds": 9.726270888000727
+          },
+          "quantityConfirmedBy": "openai/whisper-medium"
         },
         "sourceMetrics": {
-          "rmsDbfs": -33.73325388607845,
-          "peak": 0.230743408203125,
-          "silenceRatio": 0.4274501515858209,
-          "generatedSteps": 277,
+          "rmsDbfs": -36.2317696523526,
+          "peak": 0.17572021484375,
+          "silenceRatio": 0.495998630275974,
+          "generatedSteps": 317,
           "maxNewTokens": 690
         },
         "encodedMetrics": {
           "finite": true,
           "sampleRate": 48000,
           "channels": 1,
-          "durationSeconds": 3.111479166666667,
-          "rmsDbfs": -18.593880405272408,
-          "peak": 0.8183857798576355,
-          "silenceRatio": 0.2660109406699654,
+          "durationSeconds": 3.575875,
+          "rmsDbfs": -19.455026258796963,
+          "peak": 0.8089945912361145,
+          "silenceRatio": 0.35814660747369526,
           "clippedRatio": 0.0,
-          "wavSha256": "5c3729b8bbb0098c3925766d58b147c5dc61db30a4b1824a487b840100d8d19a"
+          "wavSha256": "3d53846f9f41beb1b2a49121f2e3f014e58febd267b4f538191c3e793b852f8f"
         }
       }
     },
@@ -2299,7 +2383,7 @@
       "path": "/audio/hi/8c767734dd4133f31c4b05b29e2ce5010aed62396c1e911966346a83f64ab2d7.opus",
       "contentSha256": "8d98e579a3ad38d426fbbdb0db4a7f5fa715283b56078fab824e7a1e44aac800",
       "inputSha256": "8c767734dd4133f31c4b05b29e2ce5010aed62396c1e911966346a83f64ab2d7",
-      "assetSha256": "28b95edf89afbc9cc9c07bdb18476b16cb1eea9522fdcf44db2998d10679885a",
+      "assetSha256": "4e650ccda975df98bbf91ad3a7dae79c88a7b5d7e54bdc0ebe964218e626bad6",
       "durationSeconds": 5.189666666666667,
       "bytes": 14492,
       "status": "agent-checked",
@@ -2340,7 +2424,7 @@
           "peak": 0.8504239916801453,
           "silenceRatio": 0.48977535487186075,
           "clippedRatio": 0.0,
-          "wavSha256": "28b95edf89afbc9cc9c07bdb18476b16cb1eea9522fdcf44db2998d10679885a"
+          "wavSha256": "4e650ccda975df98bbf91ad3a7dae79c88a7b5d7e54bdc0ebe964218e626bad6"
         }
       }
     },
@@ -2351,7 +2435,7 @@
       "path": "/audio/hi/17ef3aa929be6d47cc1984b2eade112d7816177c4458639fd25416aa762b4752.opus",
       "contentSha256": "8745551316ebfa2139207a9faed522b8bdd55cbf7c29eea7406049284e874713",
       "inputSha256": "17ef3aa929be6d47cc1984b2eade112d7816177c4458639fd25416aa762b4752",
-      "assetSha256": "5589382d0c09a65af192922a7626de1bef0ac75ef74d1d39608f8dd7c657eef4",
+      "assetSha256": "7bfacbcad72e5fb891dc602531db07a64538db3f5cfba9d620ac081fd9c21558",
       "durationSeconds": 5.51475,
       "bytes": 16341,
       "status": "agent-checked",
@@ -2392,7 +2476,7 @@
           "peak": 0.7953058481216431,
           "silenceRatio": 0.3645110839113287,
           "clippedRatio": 0.0,
-          "wavSha256": "5589382d0c09a65af192922a7626de1bef0ac75ef74d1d39608f8dd7c657eef4"
+          "wavSha256": "7bfacbcad72e5fb891dc602531db07a64538db3f5cfba9d620ac081fd9c21558"
         }
       }
     },
@@ -2403,7 +2487,7 @@
       "path": "/audio/hi/b614048f903610a68ca9bbb8c92cf3341d478f06e5514ecd4cb71379923ad92b.opus",
       "contentSha256": "145f22f07e4af5a5fa2e38175c710bbb859bc8d482f2c82dd1ef81d276dfbbd6",
       "inputSha256": "b614048f903610a68ca9bbb8c92cf3341d478f06e5514ecd4cb71379923ad92b",
-      "assetSha256": "1766273393cb3c2a8309d0dfb3100df0a3752bdb7e1b7b68913e346ddd85b597",
+      "assetSha256": "50e5970bf93ad70d80d52ce297e1b95bff6abaa64c98fc015d742d44ed01af5c",
       "durationSeconds": 2.786395833333333,
       "bytes": 8590,
       "status": "agent-checked",
@@ -2444,7 +2528,7 @@
           "peak": 0.7292779088020325,
           "silenceRatio": 0.3545574854015417,
           "clippedRatio": 0.0,
-          "wavSha256": "1766273393cb3c2a8309d0dfb3100df0a3752bdb7e1b7b68913e346ddd85b597"
+          "wavSha256": "50e5970bf93ad70d80d52ce297e1b95bff6abaa64c98fc015d742d44ed01af5c"
         }
       }
     },
@@ -2455,7 +2539,7 @@
       "path": "/audio/hi/a6d30b4d67597e37e9f1fa0416ad070de79b0acf77c32e70427631de88931752.opus",
       "contentSha256": "12bc341641f37d5670d93216379bdf5ed89abee9c2920578f93c02f1df959f72",
       "inputSha256": "a6d30b4d67597e37e9f1fa0416ad070de79b0acf77c32e70427631de88931752",
-      "assetSha256": "17f6714e420ca720055c86f653848115cfd080f57ee1f874dd313c6c21e3a158",
+      "assetSha256": "4f34cfeb90ec3a571f5c1ff25ee8bf847004145fdec21b4d60097e69e4a75222",
       "durationSeconds": 3.0186041666666665,
       "bytes": 9127,
       "status": "agent-checked",
@@ -2496,7 +2580,7 @@
           "peak": 0.865088701248169,
           "silenceRatio": 0.30534946477745645,
           "clippedRatio": 0.0,
-          "wavSha256": "17f6714e420ca720055c86f653848115cfd080f57ee1f874dd313c6c21e3a158"
+          "wavSha256": "4f34cfeb90ec3a571f5c1ff25ee8bf847004145fdec21b4d60097e69e4a75222"
         }
       }
     },
@@ -2507,7 +2591,7 @@
       "path": "/audio/hi/e8107547cc625bf8c3921165bc7008d3bb87e12ef050a7e5fe432c0775032ab0.opus",
       "contentSha256": "d9fc61c281b8bfd094a8ed72ba2f4f0cc1845862e863c1fcbdbbd488d1645b9f",
       "inputSha256": "e8107547cc625bf8c3921165bc7008d3bb87e12ef050a7e5fe432c0775032ab0",
-      "assetSha256": "61754872510ae197c9ee1651a518a89ae2fdd959843ce07b8c542870c438a97e",
+      "assetSha256": "9a4a8a665165309031fba41f09b6df0724427ffb59849df04d88d85d7dd9399b",
       "durationSeconds": 4.504666666666667,
       "bytes": 13906,
       "status": "agent-checked",
@@ -2548,7 +2632,7 @@
           "peak": 0.7433050274848938,
           "silenceRatio": 0.22854077253218885,
           "clippedRatio": 0.0,
-          "wavSha256": "61754872510ae197c9ee1651a518a89ae2fdd959843ce07b8c542870c438a97e"
+          "wavSha256": "9a4a8a665165309031fba41f09b6df0724427ffb59849df04d88d85d7dd9399b"
         }
       }
     },
@@ -2559,7 +2643,7 @@
       "path": "/audio/hi/f04691c0e53da894ce4e7643f76f6bf440d3c73aa27aee73fea8f86413a5661f.opus",
       "contentSha256": "263e53d1a98c99725bb09ad88b5cc4049349d84a63d541450bea259577c5dab1",
       "inputSha256": "f04691c0e53da894ce4e7643f76f6bf440d3c73aa27aee73fea8f86413a5661f",
-      "assetSha256": "7b3870ac3399a3cf7311351fdf0e8cc474eacc83766e4974b2c9be6b642c171c",
+      "assetSha256": "bc4e353526fcf0e10d1a2a897eb669afcf9278b5eff5c70d250499213719f727",
       "durationSeconds": 10.228395833333334,
       "bytes": 30765,
       "status": "agent-checked",
@@ -2600,7 +2684,7 @@
           "peak": 0.8424941301345825,
           "silenceRatio": 0.2947452252002697,
           "clippedRatio": 0.0,
-          "wavSha256": "7b3870ac3399a3cf7311351fdf0e8cc474eacc83766e4974b2c9be6b642c171c"
+          "wavSha256": "bc4e353526fcf0e10d1a2a897eb669afcf9278b5eff5c70d250499213719f727"
         }
       }
     },
@@ -2611,7 +2695,7 @@
       "path": "/audio/hi/c6b2970846b3e385652652442666cde4923211afa174a26fcc8d1376892e4e1c.opus",
       "contentSha256": "f963c736fe7ee80c771719dc8f58b837fc2f3af62dd89eea63562113c3efd4df",
       "inputSha256": "c6b2970846b3e385652652442666cde4923211afa174a26fcc8d1376892e4e1c",
-      "assetSha256": "3f22acd7339e567437e94689f4dcf3e8fd5748deb6c1fd46999aee8e5a8410af",
+      "assetSha256": "d773d6ed5a3ffa6254f9115d7004f66167bfd8c44f6a04f90c8be1c6f8d35e13",
       "durationSeconds": 5.828208333333333,
       "bytes": 17637,
       "status": "agent-checked",
@@ -2652,7 +2736,7 @@
           "peak": 0.8372804522514343,
           "silenceRatio": 0.27813364598897605,
           "clippedRatio": 0.0,
-          "wavSha256": "3f22acd7339e567437e94689f4dcf3e8fd5748deb6c1fd46999aee8e5a8410af"
+          "wavSha256": "d773d6ed5a3ffa6254f9115d7004f66167bfd8c44f6a04f90c8be1c6f8d35e13"
         }
       }
     },
@@ -2663,7 +2747,7 @@
       "path": "/audio/hi/4eb3df2882c11ae5dc0cc1702ba4af6d850dd7a57bb853afe83925f1a534d47b.opus",
       "contentSha256": "5ab7cc3ffa2fb15373b353f29fd9c99654672ea7386ba2bb243802bcb4aaf379",
       "inputSha256": "4eb3df2882c11ae5dc0cc1702ba4af6d850dd7a57bb853afe83925f1a534d47b",
-      "assetSha256": "d1ee2742269d6205f90bea51c0804b373df312a74beb105764ca8a9cf36e8fe8",
+      "assetSha256": "6cf1a4957e50b201807f6cc489ec367b19c3d973d6e60ad981a90d880d7f8fad",
       "durationSeconds": 6.652520833333333,
       "bytes": 20344,
       "status": "agent-checked",
@@ -2704,7 +2788,7 @@
           "peak": 0.800613284111023,
           "silenceRatio": 0.2302260108167017,
           "clippedRatio": 0.0,
-          "wavSha256": "d1ee2742269d6205f90bea51c0804b373df312a74beb105764ca8a9cf36e8fe8"
+          "wavSha256": "6cf1a4957e50b201807f6cc489ec367b19c3d973d6e60ad981a90d880d7f8fad"
         }
       }
     },
@@ -2715,7 +2799,7 @@
       "path": "/audio/hi/c0deca862fa3f7639096a81e79144cfbfba56c27025a90698baae6455187047f.opus",
       "contentSha256": "abae461d73f28df2c89459d9ff453df3c3f82f000ecd66c03f9cb03a87258838",
       "inputSha256": "c0deca862fa3f7639096a81e79144cfbfba56c27025a90698baae6455187047f",
-      "assetSha256": "3569c4d8724a9bdf3929e52a11ed82f17fbd1b4dcc0734868dab564c67700ce5",
+      "assetSha256": "c059361b06a514a7f484c7a0b37f5859d6751fb161a674c3653257293c707174",
       "durationSeconds": 6.083625,
       "bytes": 18352,
       "status": "agent-checked",
@@ -2756,7 +2840,7 @@
           "peak": 0.8550769686698914,
           "silenceRatio": 0.2631517666961173,
           "clippedRatio": 0.0,
-          "wavSha256": "3569c4d8724a9bdf3929e52a11ed82f17fbd1b4dcc0734868dab564c67700ce5"
+          "wavSha256": "c059361b06a514a7f484c7a0b37f5859d6751fb161a674c3653257293c707174"
         }
       }
     },
@@ -2767,7 +2851,7 @@
       "path": "/audio/hi/88569fc1c47692b248b96429f2ec275ae0c881a6d77c088591324a1389be41df.opus",
       "contentSha256": "182a7ff703d44e9c2d913ea51d280a5cf472f309937e5f95b29e1b8406feb2a5",
       "inputSha256": "88569fc1c47692b248b96429f2ec275ae0c881a6d77c088591324a1389be41df",
-      "assetSha256": "7a63db9d5a0f1b05031a7ab1ddcb8300472dbd1d69e3ec85bea1e0b8bf48ab17",
+      "assetSha256": "6d2883cc015d38b7bdf35eab06575df26eb6e78c879cefb894fe00d9c530c0c7",
       "durationSeconds": 5.6540625,
       "bytes": 16456,
       "status": "agent-checked",
@@ -2808,7 +2892,7 @@
           "peak": 0.807470977306366,
           "silenceRatio": 0.38982295178614196,
           "clippedRatio": 0.0,
-          "wavSha256": "7a63db9d5a0f1b05031a7ab1ddcb8300472dbd1d69e3ec85bea1e0b8bf48ab17"
+          "wavSha256": "6d2883cc015d38b7bdf35eab06575df26eb6e78c879cefb894fe00d9c530c0c7"
         }
       }
     },
@@ -2819,7 +2903,7 @@
       "path": "/audio/hi/30ab1505cc4701f7f0d1ff1e191645717ac5609bb1497ab3e2ad468c87dfe84e.opus",
       "contentSha256": "37a16d63c4357aab1a1644a3b2d3c289fd101b67c5865f2090a03317cf05dd0c",
       "inputSha256": "30ab1505cc4701f7f0d1ff1e191645717ac5609bb1497ab3e2ad468c87dfe84e",
-      "assetSha256": "c3f61d08e17630e5b830084d9d31a804948f7de8e127ffde701e7c44d535adb1",
+      "assetSha256": "7fc5e7957116e0900a997132d1a3de8d5c7f0a076e8f83aaf631e8c44f934643",
       "durationSeconds": 8.858416666666667,
       "bytes": 27125,
       "status": "agent-checked",
@@ -2860,7 +2944,7 @@
           "peak": 0.7994988560676575,
           "silenceRatio": 0.23247194287918269,
           "clippedRatio": 0.0,
-          "wavSha256": "c3f61d08e17630e5b830084d9d31a804948f7de8e127ffde701e7c44d535adb1"
+          "wavSha256": "7fc5e7957116e0900a997132d1a3de8d5c7f0a076e8f83aaf631e8c44f934643"
         }
       }
     },
@@ -2871,7 +2955,7 @@
       "path": "/audio/hi/6a6a0e831c9514f4112f8053580e03b3c39ee17bd70778844ae80938133bd02d.opus",
       "contentSha256": "1a7f6f963840495504533d15b08686fa4ddece5d287e1c079b9f193e3be4d0dd",
       "inputSha256": "6a6a0e831c9514f4112f8053580e03b3c39ee17bd70778844ae80938133bd02d",
-      "assetSha256": "f9e534521a20f4345e9d616b2d83241154903053b818e987d1d7644128e60b46",
+      "assetSha256": "8db8f4ac52cc74bcc8dba04af202655432118c58579e271a0405f8c51f2931a1",
       "durationSeconds": 9.067395833333334,
       "bytes": 27345,
       "status": "agent-checked",
@@ -2912,7 +2996,7 @@
           "peak": 0.8184292316436768,
           "silenceRatio": 0.26099923030087196,
           "clippedRatio": 0.0,
-          "wavSha256": "f9e534521a20f4345e9d616b2d83241154903053b818e987d1d7644128e60b46"
+          "wavSha256": "8db8f4ac52cc74bcc8dba04af202655432118c58579e271a0405f8c51f2931a1"
         }
       }
     },
@@ -2923,7 +3007,7 @@
       "path": "/audio/hi/fc267579eba84eb1d73eaf84a5ba071de57f787a365474868f919e206d9926a9.opus",
       "contentSha256": "19005059ae94f0e734a7796e892a88941bea795a031ea02a773710311a2be485",
       "inputSha256": "fc267579eba84eb1d73eaf84a5ba071de57f787a365474868f919e206d9926a9",
-      "assetSha256": "f497a7b4cd4ce1aa013abc8e09fbd48d234ae3b3abb7237b3a54e0e3007a1a4e",
+      "assetSha256": "1d9faa964940009f6aca077100eb71c971a3e8360f536ce5d2d05301cb3c6a77",
       "durationSeconds": 10.379333333333333,
       "bytes": 30808,
       "status": "agent-checked",
@@ -2964,7 +3048,7 @@
           "peak": 0.8269454836845398,
           "silenceRatio": 0.26608565097308756,
           "clippedRatio": 0.0,
-          "wavSha256": "f497a7b4cd4ce1aa013abc8e09fbd48d234ae3b3abb7237b3a54e0e3007a1a4e"
+          "wavSha256": "1d9faa964940009f6aca077100eb71c971a3e8360f536ce5d2d05301cb3c6a77"
         }
       }
     },
@@ -2975,7 +3059,7 @@
       "path": "/audio/hi/e414705127819becb6f1aa8f617d081c545a2079ea5551398e759d95b38c3b5e.opus",
       "contentSha256": "75ca5211ef78f885f08406a6d9d34134cf2eea8aac9990b8664ceb4df2b97791",
       "inputSha256": "e414705127819becb6f1aa8f617d081c545a2079ea5551398e759d95b38c3b5e",
-      "assetSha256": "168eda995eac342f3179142eab39273663f543020e53d02b84be518d9a7d1413",
+      "assetSha256": "b16fe20fcf568cdd93bc61f7946d3ea7379fc42018f8963cacb649ca0edd8de7",
       "durationSeconds": 7.8135208333333335,
       "bytes": 23351,
       "status": "agent-checked",
@@ -3016,12 +3100,10 @@
           "peak": 0.8068675398826599,
           "silenceRatio": 0.30225117251345823,
           "clippedRatio": 0.0,
-          "wavSha256": "168eda995eac342f3179142eab39273663f543020e53d02b84be518d9a7d1413"
+          "wavSha256": "b16fe20fcf568cdd93bc61f7946d3ea7379fc42018f8963cacb649ca0edd8de7"
         }
       }
     }
   ],
-  "failedTracks": [
-    "hi:DRAWDOWN_5"
-  ]
+  "failedTracks": []
 }

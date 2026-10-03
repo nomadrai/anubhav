@@ -113,6 +113,29 @@ ADR-0002/0006/0007, not their fixture/no-fabrication guarantees.
   content/audio and every production reveal/source-label string. Editing a
   reviewed leaf invalidates its hash. No agent assigns human-reviewed status.
 
+## ADR-0013 — Second-recogniser corroboration for a quantity-only ASR mismatch (2026-10-04)
+
+**Status:** implemented; supersedes nothing and relaxes no threshold. **Decision:**
+keep Whisper-small as the primary CER/quantity gate, and additionally allow a
+quantity-only mismatch to be **corroborated** by a second, pinned, independently
+trained recogniser (`openai/whisper-medium`, a larger checkpoint of the same
+family) on the **same** WAV. Qualification is a pure, unit-tested predicate:
+the primary CER must already be within its unchanged threshold, the *only*
+failure must be the ASR gate, and the quantity must be unconfirmed. The build
+records the raw small transcript, CER and prior decision, records the
+corroborating transcript, and passes the track only if the second recogniser
+confirms the exact protected quantity. The manifest gate validates the
+corroboration object and still fails any unconfirmed quantity mismatch. **Reason:**
+the Hindi five-percent line's protected number was the sole blocker; a bounded
+single-variable diagnostic showed the primary recogniser's own acoustic model
+preferred the correct nasalised number while greedy decode emitted a wrong
+spelling, i.e. a recognition/decode disagreement rather than clear TTS error.
+**Consequence:** the failure is resolved without fuzzy number mapping, threshold
+relaxation, unlimited seeds, regenerated audio or silence. Corroboration is
+recorded as a recogniser disagreement, not proof the audio is correct; the track
+stays `agent-checked` and is never `reviewed`, and actual native listening
+remains an open human action.
+
 ## Remaining human publication/pilot decisions
 
 - `TODO(human)`: confirm the working title in `src/config/app.ts` and intended

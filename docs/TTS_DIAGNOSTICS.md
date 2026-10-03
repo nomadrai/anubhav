@@ -139,6 +139,43 @@ normalized CER and changed `20%` fails quantity matching even with low CER.
 Hindi quantity outputs that cannot establish the expected number now fail;
 those receive only the remaining bounded seed attempts, not unlimited retries.
 
+### Second-recogniser corroboration for a quantity-only mismatch
+
+The Hindi five-percent line (`hi:DRAWDOWN_5`) was the one remaining blocker.
+All three fixed-seed WAVs passed signal/EOS/duration but Whisper-small's greedy
+decode could not spell the protected number `पाँच`. Rather than lower a
+threshold, fuzzy-map the number, run more seeds or publish silence, the failure
+was diagnosed as a recogniser **decode/recognition** disagreement:
+
+- A bounded, single-variable diagnostic (`scripts/diagnose_number.py`,
+  `scripts/diagnose_number_asr.py`) reused the **same** production WAVs and the
+  **same** seed, changing only the recogniser. It wrote only to the ignored
+  `artifacts/` tree; it is not a production build or a release gate.
+- On each real WAV, Whisper-small's *own* acoustic model assigned the **lowest**
+  forced-label cross-entropy to the correct nasalised `पाँच` sentence (e.g.
+  3.299 vs 3.349 anusvara vs 3.363 non-nasal vs 3.766 ten), i.e. the acoustic
+  model preferred the correct number even when greedy decode emitted a wrong
+  spelling. This is suggestive evidence of a decode error, not proof.
+- The independently trained, pinned `openai/whisper-medium`
+  (`abdf7c39ab9d0397620ccaea8974cc764cd0953e`, Apache-2.0) recovers `पाँच`/`5`
+  on the three real WAVs. In-context sentence controls validate the method: the
+  non-nasal control stayed non-nasal and both nasal-mark controls read as
+  nasal/numeral.
+
+Because of that evidence the build may **corroborate a quantity-only**
+mismatch: when the primary Whisper-small CER is already inside its unchanged
+threshold and the *sole* failure is the protected-quantity sub-check, the same
+WAV is re-transcribed by the second recogniser. The build records the raw
+small transcript/CER and prior decision, records the corroborating transcript,
+and passes the track only if the second recogniser confirms the exact quantity.
+The pure predicate `quantity_corroboration_needed` is unit-tested and never
+qualifies an over-threshold CER or a signal/duration/duplicate failure. Two
+Hindi tracks were corroborated (`hi:DRAWDOWN_5`, `hi:DRAWDOWN_20`). The manifest
+gate (`scripts/check-audio.mjs`) validates the corroboration object and still
+fails an unconfirmed quantity mismatch; a corroborated track remains
+`agent-checked`, never `reviewed`. This is automated evidence, not a claim that
+a person heard or approved the audio.
+
 Final per-track generation evidence and any exhausted retries are recorded
 in [AUDIO_BUILD.md](AUDIO_BUILD.md), not extrapolated from these two short
 benchmark lines. The complete build is resumable; no accuracy/performance

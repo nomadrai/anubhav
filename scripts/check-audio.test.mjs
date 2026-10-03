@@ -108,6 +108,48 @@ describe('schema-2 audio integrity gate (not a listening test)', () => {
     expect(checkAudio(root).failures).toEqual([]);
   });
 
+  const validCorroboration = () => ({
+    modelId: 'openai/whisper-medium',
+    revision: 'a'.repeat(40),
+    transcript: 'रास्ता शुरुआत से पाँच प्रतिशत नीचे है।',
+    quantitiesMatch: true,
+  });
+
+  it('accepts a quantity-only ASR failure only when a well-formed independent recogniser confirms it', () => {
+    const root = fixture();
+    mutateJson(root, manifestFile, (m) => {
+      m.tracks[0].quality.asr = { cer: 0.1, quantitiesMatch: false, status: 'passed', corroboration: validCorroboration() };
+    });
+    expect(checkAudio(root).failures).toEqual([]);
+  });
+
+  it.each([
+    ['unconfirmed corroboration', (c) => { c.quantitiesMatch = false; }],
+    ['missing model identity', (c) => { delete c.modelId; }],
+    ['blank model identity', (c) => { c.modelId = '   '; }],
+    ['non-string model identity', (c) => { c.modelId = 7; }],
+    ['missing revision', (c) => { delete c.revision; }],
+    ['short revision', (c) => { c.revision = 'abc'; }],
+    ['non-hex revision', (c) => { c.revision = 'z'.repeat(40); }],
+    ['missing transcript', (c) => { delete c.transcript; }],
+    ['non-string transcript', (c) => { c.transcript = null; }],
+    ['string boolean', (c) => { c.quantitiesMatch = 'true'; }],
+  ])('fails closed when corroboration is %s', (_name, mutate) => {
+    const root = fixture();
+    const built = validCorroboration();
+    mutate(built);
+    mutateJson(root, manifestFile, (m) => {
+      m.tracks[0].quality.asr = { cer: 0.1, quantitiesMatch: false, status: 'passed', corroboration: built };
+    });
+    rejects(root, 'invalid or failed ASR');
+  });
+
+  it('still rejects an unconfirmed quantity mismatch with no corroboration at all', () => {
+    const root = fixture();
+    mutateJson(root, manifestFile, (m) => { m.tracks[0].quality.asr = { cer: 0.27, quantitiesMatch: false, status: 'passed' }; });
+    rejects(root, 'invalid or failed ASR');
+  });
+
   it('fails closed for malformed, unapproved or empty source collections instead of throwing', () => {
     const root = fixture();
     mutateJson(root, 'src/content/en/glossary.json', (v) => { delete v[0].termId; v[1].spokenText = 8; v[2].status = 'draft'; });

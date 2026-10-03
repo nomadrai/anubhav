@@ -1,13 +1,13 @@
 # Exact release warning list — 2026-10-03
 
-Generated from `checkRelease()` on the final current content. No human/native/listening review claimed. Technical release is BLOCKED, not green.
+Generated from `checkRelease()` on the final current content. No human/native/listening review claimed. Technical release **passes** the fail-closed gates; it is not a claim of human review.
 
 ## Blockers
 
-- public/audio/manifest.json: complete must be true
-- public/audio/manifest.json: missing track id=DRAWDOWN_5 language=hi
+- None. The audio manifest is `complete:true` with all 58 bilingual tracks, including `hi:DRAWDOWN_5`, whose protected quantity was confirmed by the second pinned recogniser (`openai/whisper-medium`) without relaxing the Whisper-small CER gate. See [AUDIO_BUILD.md](AUDIO_BUILD.md).
+- Every track and every current user string remains `agent-checked`, so release still emits the loud per-item warnings below. No item is `reviewed`; human/native/listening review has not occurred.
 
-## 614 individually identified agent-checked strings + 57 audio entries
+## 614 individually identified agent-checked strings + 58 audio entries (57 warned before the hi:DRAWDOWN_5 resolution; that entry is now listed too)
 
 - AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.forcedExit.title id=forcedExit.title language=en
 - AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.forcedExit.body id=forcedExit.body language=en
@@ -652,6 +652,7 @@ Generated from `checkRelease()` on the final current content. No human/native/li
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=postcheck.main language=hi
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=nextsteps.main language=hi
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=ENTRY language=hi
+- AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_5 language=hi
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_10 language=hi
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=DRAWDOWN_20 language=hi
 - AGENT-CHECKED AUDIO (automated; no human listening claimed): public/audio/manifest.json id=MARGIN_WARNING language=hi

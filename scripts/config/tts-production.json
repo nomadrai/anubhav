@@ -22,5 +22,12 @@
     "sampleRate": 16000,
     "doSample": false
   },
+  "asrCorroboration": {
+    "modelId": "openai/whisper-medium",
+    "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+    "licence": "Apache-2.0",
+    "sampleRate": 16000,
+    "doSample": false
+  },
   "encoding": {"codec": "libopus", "bitrate": "24k", "channels": 1, "sampleRate": 48000, "integratedLufs": -18, "truePeakDb": -2, "loudnessRange": 7}
 }

@@ -2,6 +2,7 @@ import json
 import unittest
 from pathlib import Path
 from scripts.audio_quality import stable_seed, token_cap, character_error_rate, normalized_transcript, signal_failures, assess_transcript
+from scripts.build_narration import quantity_corroboration_needed
 from scripts.providers.indic_parler import TokenTrace, IndicParlerProvider, IndicParlerError
 
 CONFIG = json.loads((Path(__file__).parents[1] / 'config/tts-production.json').read_text())
@@ -79,6 +80,22 @@ class AudioQualityTests(unittest.TestCase):
         self.assertIn('duplicate-audio-for-different-text', signal_failures(self.metrics(), 'some words', end, CONFIG, {'a'*64: 'different'}))
         self.assertEqual(signal_failures(self.metrics(), 'some words', end, CONFIG, {'a'*64: 'some words'}), [])
         self.assertIn('empty-or-nonfinite-signal', signal_failures({'finite': False}, 'text', end, CONFIG, {}))
+
+    def test_corroboration_only_qualifies_a_quantity_only_asr_mismatch(self):
+        # The exact real blocker shape: in-threshold CER, sole failure is the ASR gate, quantity unconfirmed.
+        row = {'failures': ['asr-character-error-rate'], 'asr': {'cer': 0.27, 'threshold': 0.35, 'quantitiesMatch': False, 'status': 'failed'}}
+        self.assertTrue(quantity_corroboration_needed(row))
+        # A passing row, or one already corroborated, is never re-sent.
+        self.assertFalse(quantity_corroboration_needed({'failures': [], 'asr': {'cer': 0.1, 'threshold': 0.35, 'quantitiesMatch': True, 'status': 'passed'}}))
+        self.assertFalse(quantity_corroboration_needed({'failures': ['asr-character-error-rate'], 'asr': {'cer': 0.27, 'threshold': 0.35, 'quantitiesMatch': False, 'status': 'failed', 'corroboration': {'quantitiesMatch': True}}}))
+        # An over-threshold CER cannot be rescued by a second recogniser.
+        self.assertFalse(quantity_corroboration_needed({'failures': ['asr-character-error-rate'], 'asr': {'cer': 0.5, 'threshold': 0.35, 'quantitiesMatch': False, 'status': 'failed'}}))
+        # Signal/duration/duplicate failures are never excused.
+        self.assertFalse(quantity_corroboration_needed({'failures': ['asr-character-error-rate', 'implausible-duration'], 'asr': {'cer': 0.27, 'threshold': 0.35, 'quantitiesMatch': False, 'status': 'failed'}}))
+        self.assertFalse(quantity_corroboration_needed({'failures': ['duplicate-audio-for-different-text'], 'asr': {'cer': 0.27, 'threshold': 0.35, 'quantitiesMatch': False, 'status': 'failed'}}))
+        # Missing ASR evidence or a row without an ASR result is not eligible.
+        self.assertFalse(quantity_corroboration_needed({'failures': []}))
+        self.assertFalse(quantity_corroboration_needed({'failures': ['asr-character-error-rate'], 'asr': {'cer': 0.27, 'threshold': 0.35, 'quantitiesMatch': True, 'status': 'failed'}}))
 
     def test_provider_defaults_to_checkpoint_sampling_and_settings_are_validated(self):
         provider = IndicParlerProvider(model_revision='a'*40)

@@ -387,6 +387,13 @@
         "sampleRate": 16000,
         "doSample": false
       },
+      "asrCorroboration": {
+        "modelId": "openai/whisper-medium",
+        "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+        "licence": "Apache-2.0",
+        "sampleRate": 16000,
+        "doSample": false
+      },
       "encoding": {
         "codec": "libopus",
         "bitrate": "24k",
@@ -398,10 +405,10 @@
       }
     },
     "load": {
-      "ttsSeconds": 7.531017015004181,
-      "ttsPeakRssBytes": 4462186496,
-      "asrSeconds": 0.33004738700401504,
-      "asrPeakRssBytes": 2261405696
+      "ttsSeconds": 13.48750231199665,
+      "ttsPeakRssBytes": 4189151232,
+      "asrSeconds": 0.6409508779906901,
+      "asrPeakRssBytes": 1761746944
     },
     "versions": {
       "torch": "2.14.1+cpu",
@@ -413,17 +420,17 @@
   },
   "build": {
     "expected": 58,
-    "passed": 57,
-    "failed": [
-      "hi:DRAWDOWN_5"
-    ],
-    "audioBytes": 937707,
-    "audioSeconds": 313.609,
+    "passed": 58,
+    "failed": [],
+    "audioBytes": 948137,
+    "audioSeconds": 317.06877083333336,
     "load": {
-      "ttsSeconds": 7.531017015004181,
-      "ttsPeakRssBytes": 4462186496,
-      "asrSeconds": 0.33004738700401504,
-      "asrPeakRssBytes": 2261405696
+      "ttsSeconds": 13.48750231199665,
+      "ttsPeakRssBytes": 4189151232,
+      "asrSeconds": 0.6409508779906901,
+      "asrPeakRssBytes": 1761746944,
+      "corroborationAsrSeconds": 0.791437590989517,
+      "corroborationAsrPeakRssBytes": 1810677760
     },
     "events": [
       {
@@ -3150,9 +3157,7 @@
         "speaker": "Divya",
         "ttsWallSeconds": 15.704716143998667,
         "peakRssBytes": 6166372352,
-        "failures": [
-          "asr-character-error-rate"
-        ],
+        "failures": [],
         "cacheHit": true,
         "asr": {
           "transcript": "रास्ता शुर्वाद से पाज्प्रतिषत निचे हैं",
@@ -3161,7 +3166,7 @@
           "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
           "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
           "threshold": 0.35,
-          "status": "failed",
+          "status": "passed",
           "previousAssessment": {
             "cer": 0.2702702702702703,
             "status": "passed",
@@ -3169,116 +3174,20 @@
           },
           "rawCer": 0.2702702702702703,
           "quantitiesMatch": false,
-          "normalizationVersion": 2
+          "normalizationVersion": 2,
+          "corroboration": {
+            "modelId": "openai/whisper-medium",
+            "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+            "transcript": "रास्ता शुरूआज से पाँच प्रतिष्यत निजे हैं।",
+            "cer": 0.21621621621621623,
+            "rawCer": 0.21621621621621623,
+            "quantitiesMatch": true,
+            "seconds": 12.357566366001265
+          },
+          "quantityConfirmedBy": "openai/whisper-medium"
         },
         "asrWallSeconds": 2.2642381559999194,
-        "passed": false
-      },
-      {
-        "id": "DRAWDOWN_5",
-        "language": "hi",
-        "spokenText": "रास्ता शुरुआत से पाँच प्रतिशत नीचे है।",
-        "finite": true,
-        "sampleRate": 44100,
-        "channels": 1,
-        "durationSeconds": 3.006984126984127,
-        "rmsDbfs": -35.47205343455072,
-        "peak": 0.113677978515625,
-        "silenceRatio": 0.4447167591698842,
-        "clippedRatio": 0.0,
-        "wavSha256": "c6fcf54610b40b02b6d495f426635f988990e4a373203d0f0d92d44d9f05e8ad",
-        "generatedSteps": 268,
-        "maxNewTokens": 690,
-        "eosCodebooks": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        "eos": true,
-        "hitTokenLimit": false,
-        "inputSha256": "beed52956c2d2e1b9026f209af06fdf094bd73bb65905e0143c4c03a12e40ffb",
-        "seed": 1537880580,
-        "attempt": 2,
-        "speaker": "Divya",
-        "ttsWallSeconds": 15.5828855719883,
-        "peakRssBytes": 5870395392,
-        "failures": [
-          "asr-character-error-rate"
-        ],
-        "cacheHit": false,
-        "asr": {
-          "transcript": "जास्ता शुर्वाद से पाज प्रतिषत नीचे हैं",
-          "cer": 0.24324324324324326,
-          "rawCer": 0.24324324324324326,
-          "quantitiesMatch": false,
-          "normalizationVersion": 2,
-          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
-          "modelId": "openai/whisper-small",
-          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
-          "threshold": 0.35,
-          "status": "failed"
-        },
-        "asrWallSeconds": 2.4543316759954905,
-        "passed": false
-      },
-      {
-        "id": "DRAWDOWN_5",
-        "language": "hi",
-        "spokenText": "रास्ता शुरुआत से पाँच प्रतिशत नीचे है।",
-        "finite": true,
-        "sampleRate": 44100,
-        "channels": 1,
-        "durationSeconds": 3.3668934240362813,
-        "rmsDbfs": -34.97318319952758,
-        "peak": 0.1397705078125,
-        "silenceRatio": 0.45633081896551725,
-        "clippedRatio": 0.0,
-        "wavSha256": "9e4e2897691766694bca09e7d4893cbef8f57fcabde28a92000a9c85df7e11eb",
-        "generatedSteps": 299,
-        "maxNewTokens": 690,
-        "eosCodebooks": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        "eos": true,
-        "hitTokenLimit": false,
-        "inputSha256": "fa3cc3575807e05cdaf34494662f67c85e2d321ab9710e0780592324579487f7",
-        "seed": 3517245280,
-        "attempt": 3,
-        "speaker": "Divya",
-        "ttsWallSeconds": 17.6174994759931,
-        "peakRssBytes": 5932212224,
-        "failures": [
-          "asr-character-error-rate"
-        ],
-        "cacheHit": false,
-        "asr": {
-          "transcript": "रास्ता शुर्वाद सी पाज्प्रतिषत नीचे हैं",
-          "cer": 0.2702702702702703,
-          "rawCer": 0.2702702702702703,
-          "quantitiesMatch": false,
-          "normalizationVersion": 2,
-          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
-          "modelId": "openai/whisper-small",
-          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
-          "threshold": 0.35,
-          "status": "failed"
-        },
-        "asrWallSeconds": 2.2015218819869915,
-        "passed": false
+        "passed": true
       },
       {
         "id": "DRAWDOWN_10",
@@ -3428,9 +3337,7 @@
         "speaker": "Divya",
         "ttsWallSeconds": 19.9459863009979,
         "peakRssBytes": 6250332160,
-        "failures": [
-          "asr-character-error-rate"
-        ],
+        "failures": [],
         "cacheHit": true,
         "asr": {
           "transcript": "रास्ता शुर्वाद सी बीस्प्रतिषक नीचे हैं",
@@ -3439,7 +3346,7 @@
           "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
           "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
           "threshold": 0.35,
-          "status": "failed",
+          "status": "passed",
           "previousAssessment": {
             "cer": 0.25,
             "status": "passed",
@@ -3447,60 +3354,19 @@
           },
           "rawCer": 0.25,
           "quantitiesMatch": false,
-          "normalizationVersion": 2
+          "normalizationVersion": 2,
+          "corroboration": {
+            "modelId": "openai/whisper-medium",
+            "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+            "transcript": "रास्ता शुरुवाथ से 20 प्रतिशक निचे हैं",
+            "cer": 0.16666666666666666,
+            "rawCer": 0.25,
+            "quantitiesMatch": true,
+            "seconds": 9.726270888000727
+          },
+          "quantityConfirmedBy": "openai/whisper-medium"
         },
         "asrWallSeconds": 2.160143128996424,
-        "passed": false
-      },
-      {
-        "id": "DRAWDOWN_20",
-        "language": "hi",
-        "spokenText": "रास्ता शुरुआत से बीस प्रतिशत नीचे है।",
-        "finite": true,
-        "sampleRate": 44100,
-        "channels": 1,
-        "durationSeconds": 3.111473922902494,
-        "rmsDbfs": -33.73325388607845,
-        "peak": 0.230743408203125,
-        "silenceRatio": 0.4274501515858209,
-        "clippedRatio": 0.0,
-        "wavSha256": "6ebddb3c72271c9ac7c1828beeaabca4eab3b96f09028e8cd1aa9e5aecc4adbc",
-        "generatedSteps": 277,
-        "maxNewTokens": 690,
-        "eosCodebooks": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
-        ],
-        "eos": true,
-        "hitTokenLimit": false,
-        "inputSha256": "55234806d4fdd90963544c2b7efed1d7ea79ecf5354a19aa5a89052e81e899e3",
-        "seed": 2007334000,
-        "attempt": 2,
-        "speaker": "Divya",
-        "ttsWallSeconds": 16.64783769600035,
-        "peakRssBytes": 5930999808,
-        "failures": [],
-        "cacheHit": false,
-        "asr": {
-          "transcript": "रास्ता शुर्वाद सी बीस प्रतिषत नीचे हैं",
-          "cer": 0.19444444444444445,
-          "rawCer": 0.19444444444444445,
-          "quantitiesMatch": true,
-          "normalizationVersion": 2,
-          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
-          "modelId": "openai/whisper-small",
-          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
-          "threshold": 0.35,
-          "status": "passed"
-        },
-        "asrWallSeconds": 2.1707494250003947,
         "passed": true
       },
       {
@@ -4382,9 +4248,7 @@
       "speaker": "Divya",
       "ttsWallSeconds": 15.704716143998667,
       "peakRssBytes": 6166372352,
-      "failures": [
-        "asr-character-error-rate"
-      ],
+      "failures": [],
       "cacheHit": true,
       "asr": {
         "transcript": "रास्ता शुर्वाद से पाज्प्रतिषत निचे हैं",
@@ -4393,7 +4257,7 @@
         "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
         "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
         "threshold": 0.35,
-        "status": "failed",
+        "status": "passed",
         "previousAssessment": {
           "cer": 0.2702702702702703,
           "status": "passed",
@@ -4401,10 +4265,20 @@
         },
         "rawCer": 0.2702702702702703,
         "quantitiesMatch": false,
-        "normalizationVersion": 2
+        "normalizationVersion": 2,
+        "corroboration": {
+          "modelId": "openai/whisper-medium",
+          "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+          "transcript": "रास्ता शुरूआज से पाँच प्रतिष्यत निजे हैं।",
+          "cer": 0.21621621621621623,
+          "rawCer": 0.21621621621621623,
+          "quantitiesMatch": true,
+          "seconds": 12.357566366001265
+        },
+        "quantityConfirmedBy": "openai/whisper-medium"
       },
       "asrWallSeconds": 2.2642381559999194,
-      "passed": false
+      "passed": true
     },
     {
       "id": "glossary.fees",
@@ -4608,9 +4482,7 @@
       "speaker": "Divya",
       "ttsWallSeconds": 19.9459863009979,
       "peakRssBytes": 6250332160,
-      "failures": [
-        "asr-character-error-rate"
-      ],
+      "failures": [],
       "cacheHit": true,
       "asr": {
         "transcript": "रास्ता शुर्वाद सी बीस्प्रतिषक नीचे हैं",
@@ -4619,7 +4491,7 @@
         "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
         "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
         "threshold": 0.35,
-        "status": "failed",
+        "status": "passed",
         "previousAssessment": {
           "cer": 0.25,
           "status": "passed",
@@ -4627,10 +4499,20 @@
         },
         "rawCer": 0.25,
         "quantitiesMatch": false,
-        "normalizationVersion": 2
+        "normalizationVersion": 2,
+        "corroboration": {
+          "modelId": "openai/whisper-medium",
+          "revision": "abdf7c39ab9d0397620ccaea8974cc764cd0953e",
+          "transcript": "रास्ता शुरुवाथ से 20 प्रतिशक निचे हैं",
+          "cer": 0.16666666666666666,
+          "rawCer": 0.25,
+          "quantitiesMatch": true,
+          "seconds": 9.726270888000727
+        },
+        "quantityConfirmedBy": "openai/whisper-medium"
       },
       "asrWallSeconds": 2.160143128996424,
-      "passed": false
+      "passed": true
     },
     {
       "id": "USER_EXIT",

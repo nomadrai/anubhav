@@ -71,6 +71,7 @@ No automatic dependency upgrades or paid services were used.
 | Description tokenizer | `google/flan-t5-large@0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a` | [Pinned card](https://huggingface.co/google/flan-t5-large/blob/0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a/README.md) and official API declare Apache-2.0. Tokenizer/config only cached, **no separate FLAN weights**. Model config identifies this encoder. |
 | Audio-codec lineage | `ylacombe/dac_44khz` | Identity is in the Indic Parler config; no separate codec checkpoint downloaded. Not an independent historical weight audit. |
 | Hindi/English ASR | `openai/whisper-small@973afd24965f72e36ca33b3055d56a652f456b4d` | [Pinned card](https://huggingface.co/openai/whisper-small/blob/973afd24965f72e36ca33b3055d56a652f456b4d/README.md), official API fetched 2026-10-03: Apache-2.0, Hindi supported. Used only for build-time transcription/CER; cached weights are not deployed. |
+| Independent quantity-corroboration ASR | `openai/whisper-medium@abdf7c39ab9d0397620ccaea8974cc764cd0953e` | [Pinned card](https://huggingface.co/openai/whisper-medium/blob/abdf7c39ab9d0397620ccaea8974cc764cd0953e/README.md), same Whisper family, **different checkpoint size/weights**, Apache-2.0, Hindi supported. Used only for build-time re-transcription of a quantity-only mismatch on the SAME WAV; it cannot relax the primary CER threshold and its weights are not deployed. Licence/revision recorded in `scripts/config/tts-production.json` (`asrCorroboration`). |
 
 Whisper's card attributes the model to OpenAI / Radford et al., *Robust Speech
 Recognition via Large-Scale Weak Supervision* (2022), arXiv:2212.04356. It reports
@@ -78,7 +79,11 @@ Recognition via Large-Scale Weak Supervision* (2022), arXiv:2212.04356. It repor
 and uneven language accuracy. Its Hindi Common Voice 11 WER entry is **87.3,
 unverified**: this is a warning about limitations, not this app's measured WER.
 ASR errors may reflect recognizer spelling/accent errors, TTS errors, or both.
-CER is a bounded diagnostic, never native-speaker or semantic approval.
+CER is a bounded diagnostic, never native-speaker or semantic approval. The
+second recogniser is not an independent third-party auditor: it is the same
+Whisper architecture at a larger size, so corroboration records a decode
+disagreement and preserves the raw small result rather than asserting the audio
+is correct. See [TTS_DIAGNOSTICS.md](TTS_DIAGNOSTICS.md).
 
 ## Local build environment and licence evidence
 

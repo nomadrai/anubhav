@@ -32,7 +32,10 @@
   pinned-ASR CER gates screen failures, but ASR itself makes errors and can
   miss wrong negations/numbers. The selected voice is an automated result,
   not a subjective/native quality endorsement. Text is authoritative.
-  Actual generated/failed track counts are in [AUDIO_BUILD.md](AUDIO_BUILD.md).
+  A quantity-only mismatch on the Hindi five-percent line was corroborated by a
+  second, larger Whisper checkpoint on the same WAV; that records a recogniser
+  decode disagreement, not proof the audio is correct. Actual track counts and
+  the corroboration transcripts are in [AUDIO_BUILD.md](AUDIO_BUILD.md).
 - Audio needs an explicit gesture. Missing/unusable media falls back to visible
   text. Captions are complete utterance text, **not word-timed subtitles**.
   Historical reveal details and numeric charts remain readable text; narration

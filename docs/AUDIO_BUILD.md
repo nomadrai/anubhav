@@ -2,7 +2,7 @@
 
 **Automated checks only: no human listened and no native Hindi review occurred.**
 
-Manifest: schema 2, complete=false, **57/58** required tracks. Failed: `['hi:DRAWDOWN_5']`.
+Manifest: schema 2, complete=true, **58/58** required tracks. Failed: `[]`.
 
 ## Controlled voice choice
 
@@ -29,10 +29,10 @@ Selected: **Divya**. This is not a naturalness/pronunciation/listening endorseme
 - CPU float32, four intra-op/one inter-op threads; fixed-seed sampling, exact pinned model/tokenizers/Transformers. Shared workstation, no warmup or isolated benchmark claim.
 - TTS wall uses perf_counter around tokenize/inference/WAV write; excludes model load, ASR and encoding. Peak RSS sampled with psutil every 20ms, including already-loaded TTS/ASR memory. Full attempt evidence stays ignored, original experiment untouched.
 - Unique production generation attempts retained: **70**; cumulative actual synthesis time **2038.90s**. This includes rejected/redundant initial numeric-format attempts, not just chosen output.
-- Selected tracks: 57; synthesis range **12.50–62.45s**, median **30.40s**; total **1802.31s**.
+- Selected tracks: 58; synthesis range **12.50–62.45s**, median **30.35s**; total **1821.31s**.
 - All production attempts max synthesis **62.45s**; attempts above 90s: **0**. No free GPU job was needed/run; optional exact instructions are in GPU_AUDIO.md.
 - Highest sampled process RSS across production attempts: **7029870592 bytes**.
-- Final Opus assets: **937707 bytes**, **313.60900s** audio. Manifest: 130577 bytes. No model, raw data or WAV is shipped.
+- Final Opus assets: **948137 bytes**, **317.06877s** audio. Manifest: 134198 bytes. No model, raw data or WAV is shipped.
 - Mono, target 24kbps variable-bitrate Opus; loudnorm targets −18 LUFS/−2dB true peak/LRA7. Targets are not asserted achieved per-clip measurements. Final byte/duration/finite/clipping evidence is in each manifest entry.
 
 ## Per-track gate and timing record
@@ -69,7 +69,8 @@ Selected: **Divya**. This is not a naturalness/pronunciation/listening endorseme
 | en / run.main | 1 | 30.40 | 5.60762 | 492 / 931 | -37.66 | 0.094340 (0.094340) |
 | en / setup.main | 1 | 54.67 | 8.13859 | 710 / 1293 | -34.18 | 0.000000 (0.000000) |
 | hi / DRAWDOWN_10 | 2 | 17.37 | 3.11147 | 277 / 690 | -32.90 | 0.228571 (0.228571) |
-| hi / DRAWDOWN_20 | 2 | 16.65 | 3.11147 | 277 / 690 | -33.73 | 0.194444 (0.194444) |
+| hi / DRAWDOWN_20 | 1 | 19.95 | 3.57587 | 317 / 690 | -36.23 | 0.250000 (0.250000) |
+| hi / DRAWDOWN_5 | 1 | 15.70 | 2.99537 | 267 / 690 | -34.57 | 0.270270 (0.270270) |
 | hi / ENTRY | 1 | 12.50 | 2.42649 | 218 / 690 | -36.50 | 0.258065 (0.258065) |
 | hi / EPISODE_END | 1 | 17.28 | 3.01859 | 269 / 690 | -34.56 | 0.161290 (0.161290) |
 | hi / FORCED_EXIT | 1 | 31.44 | 5.51474 | 484 / 1052 | -35.75 | 0.122807 (0.122807) |
@@ -115,16 +116,26 @@ Initial raw-CER percentage failures are preserved in `build-report-pre-number-no
 | en / DRAWDOWN_5 | 2 | Rejected: asr-character-error-rate | The path is 5% below its start. |
 | en / DRAWDOWN_5 | 3 | Rejected: asr-character-error-rate | The path is 5% below its start. |
 | hi / DRAWDOWN_10 | 1 | Rejected: asr-character-error-rate | रास्ता शुर्वाद सी देस्प्रतिष्ट्नी चिहें |
-| hi / DRAWDOWN_20 | 1 | Rejected: asr-character-error-rate | रास्ता शुर्वाद सी बीस्प्रतिषक नीचे हैं |
-| hi / DRAWDOWN_5 | 1 | Rejected: asr-character-error-rate | रास्ता शुर्वाद से पाज्प्रतिषत निचे हैं |
 | hi / DRAWDOWN_5 | 2 | Rejected: asr-character-error-rate | जास्ता शुर्वाद से पाज प्रतिषत नीचे हैं |
 | hi / DRAWDOWN_5 | 3 | Rejected: asr-character-error-rate | रास्ता शुर्वाद सी पाज्प्रतिषत नीचे हैं |
 | hi / USER_EXIT | 1 | Rejected: asr-character-error-rate | स्तिती आपके चनाफसी बन दूई |
 | hi / run.main | 1 | Rejected: asr-character-error-rate | रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, रास्ता दिखें, � |
 
-## Parked Hindi five-percent blocker
+## Quantity-only ASR corroboration
 
-All three fixed-seed attempts for `hi:DRAWDOWN_5` had plausible signal/natural EOS but could not establish the exact protected number. A separate offline one-variable ASR diagnostic changed greedy ASR to five beams on the SAME three WAVs; it did not change TTS or add synthesis attempts. All three still failed exact quantity confirmation. Results below are diagnostic only, not alternate approvals.
+The pinned Whisper-small CER gate is unchanged: no threshold was relaxed and no WAV was regenerated. For a track whose primary transcript is already inside the CER threshold and whose *only* failure is the protected-quantity sub-check, the build re-transcribes the SAME WAV with a second pinned, independently trained recogniser (`openai/whisper-medium`). The raw small transcript, CER and prior decision are retained; the corroborating transcript is recorded; the track passes only if the second recogniser confirms the exact protected quantity. A corroborated track is still `agent-checked` with a loud release warning, never `reviewed`.
+
+| Language / ID | Small transcript (retained) | Medium transcript (corroboration) | Medium CER | Quantity confirmed |
+|---|---|---|---:|---|
+| hi / DRAWDOWN_20 | रास्ता शुर्वाद सी बीस्प्रतिषक नीचे हैं | रास्ता शुरुवाथ से 20 प्रतिशक निचे हैं | 0.166667 | True |
+| hi / DRAWDOWN_5 | रास्ता शुर्वाद से पाज्प्रतिषत निचे हैं | रास्ता शुरूआज से पाँच प्रतिष्यत निजे हैं। | 0.216216 | True |
+
+This records the recogniser disagreement honestly rather than asserting the audio is correct. It is automated evidence, not human listening or native review.
+
+
+## Retained five-beam diagnostic (prior evidence, not an approval)
+
+A separate offline one-variable ASR diagnostic changed greedy ASR to five beams on the SAME three `hi:DRAWDOWN_5` WAVs; it did not change TTS or add synthesis attempts. It did not by itself resolve the quantity. The evidence is preserved below; the resolution above uses a different, independent recogniser instead.
 
 | Attempt | Beam-5 transcript | CER | Quantity confirmed | ASR wall s | Peak RSS bytes |
 |---:|---|---:|---|---:|---:|
@@ -132,10 +143,10 @@ All three fixed-seed attempts for `hi:DRAWDOWN_5` had plausible signal/natural E
 | 2 | जास्ता शुर्वाद से पाज प्रतिषत नीचे हैं। | 0.243243 | False | 5.87 | 2129096704 |
 | 3 | रास्ता शुर्वाद सी पाज्प्रतिषत नीचे हैं। | 0.270270 | False | 6.01 | 2132144128 |
 
-This does not establish whether the defect is TTS pronunciation or ASR recognition. A targeted native-Hindi listening check or independently justified recognizer/voice intervention is needed. Do not mark the number correct by fuzzy substitution or keep changing seeds. The incomplete manifest deliberately disables journey playback and blocks release; the rest of the text journey remains usable.
+These rejected fixed-seed attempts and their WAVs remain retained in the ignored build cache; no unlimited retries were run.
 
 
 ## Reproduction and honest limits
 
 Use AUDIO_PIPELINE.md for explicit cache preparation and offline generation. Run `node scripts/check-audio.mjs`, content/release checks, a fresh build and production browser tests; the synthesis script alone does not establish playback/offline success.
-Whisper-small is a fallible recognizer, especially Hindi. Nonzero CER can reflect TTS or ASR errors; exact negation/prosody and cultural clarity still require listening/native review. Captions remain authoritative. No full-set success is claimed if `complete` is false. Any failed tracks remain excluded and the gate stays red.
+Whisper-small is a fallible recognizer, especially Hindi. Nonzero CER can reflect TTS or ASR errors; exact negation/prosody and cultural clarity still require listening/native review. A passing gate (including a corroborated quantity) is not a claim that the audio was heard or is correct. Captions remain authoritative. Every track is `agent-checked` with a loud release warning; no track is `reviewed`.

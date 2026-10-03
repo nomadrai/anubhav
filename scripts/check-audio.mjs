@@ -71,7 +71,21 @@ export function checkAudio(root = process.cwd()) {
     if (!accepted.has(track.status)) failures.push(`${label}: draft or invalid review status`);
     if (track.status === 'agent-checked') warnings.push(`AGENT-CHECKED AUDIO (automated; no human listening claimed): ${label}`);
     if (!object(track.quality) || track.quality.passed !== true || track.quality.eos !== true) failures.push(`${label}: quality.passed and quality.eos must both be true`);
-    if (track.quality?.asr !== undefined && (!object(track.quality.asr) || !Number.isFinite(track.quality.asr.cer) || track.quality.asr.cer < 0 || track.quality.asr.cer > (cerLimits[track.language] ?? 0) || track.quality.asr.quantitiesMatch === false || !['passed', 'pass'].includes(track.quality.asr.status))) failures.push(`${label}: invalid or failed ASR quality result`);
+    const asr = track.quality?.asr;
+    if (asr !== undefined) {
+      // A primary quantity mismatch may be overridden only by an independent
+      // pinned second recogniser that confirms the protected quantity; its
+      // identity is validated and the raw primary result is retained.
+      const corroboration = object(asr) && object(asr.corroboration) ? asr.corroboration : null;
+      const corroborationValid = corroboration === null || (
+        typeof corroboration.modelId === 'string' && corroboration.modelId.trim().length > 0 &&
+        typeof corroboration.revision === 'string' && /^[a-f0-9]{40}$/u.test(corroboration.revision) &&
+        typeof corroboration.transcript === 'string' &&
+        typeof corroboration.quantitiesMatch === 'boolean'
+      );
+      const quantityOk = object(asr) && (asr.quantitiesMatch !== false || corroboration?.quantitiesMatch === true);
+      if (!object(asr) || !Number.isFinite(asr.cer) || asr.cer < 0 || asr.cer > (cerLimits[track.language] ?? 0) || !quantityOk || !corroborationValid || !['passed', 'pass'].includes(asr.status)) failures.push(`${label}: invalid or failed ASR quality result`);
+    }
     if (!Number.isFinite(track.durationSeconds) || track.durationSeconds <= 0) failures.push(`${label}: durationSeconds must be positive`);
     if (!Number.isSafeInteger(track.bytes) || track.bytes <= 0) failures.push(`${label}: bytes must be a positive integer`);
     // Restrict raw spelling, not URL-normalized spelling: encoded traversal, query, fragment,

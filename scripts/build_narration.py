@@ -40,6 +40,26 @@ def write_json(path, value):
     temporary.replace(path)
 
 
+def quantity_corroboration_needed(row):
+    """Pure predicate: may this row be sent to the independent recogniser?
+
+    Only a quantity-only mismatch qualifies. The primary CER must already be
+    inside its threshold and the sole failure must be the ASR gate, so the
+    corroboration can never excuse a signal, duration, duplicate or CER
+    failure and never relaxes a threshold.
+    """
+    asr = row.get("asr")
+    if not isinstance(asr, dict) or asr.get("status") == "passed":
+        return False
+    if asr.get("corroboration") is not None:
+        return False
+    if asr.get("quantitiesMatch"):
+        return False
+    if asr.get("cer", 1) > asr.get("threshold", 0):
+        return False
+    return set(row.get("failures", [])) == {"asr-character-error-rate"}
+
+
 def content_tracks(root=ROOT):
     tracks = []
     for language in ("en", "hi"):
@@ -62,6 +82,7 @@ class Builder:
         self.cache.mkdir(parents=True, exist_ok=True)
         self.hashes = {}
         self.events = []
+        self._corroboration_asr = None
         self.versions = {name: importlib.metadata.version(name) for name in ("torch", "transformers", "parler-tts", "soundfile", "psutil")}
         self.provider = IndicParlerProvider(model_dir=model_dir, model_revision=BASE["modelRevision"],
             description_tokenizer_id=BASE["descriptionTokenizerId"], description_tokenizer_revision=BASE["descriptionTokenizerRevision"],
@@ -80,8 +101,11 @@ class Builder:
             seed = stable_seed(language, track_id, text, attempt, CONFIG["baseSeed"])
             cap = token_cap(text, CONFIG)
             self.provider.set_generation_settings(seed=seed, max_new_tokens=cap, do_sample=CONFIG["doSample"])
+            # The fingerprint identifies synthesis inputs only. The independent
+            # ASR corroboration policy does not change how a WAV is produced, so
+            # it is deliberately excluded to keep existing synthesis caches valid.
             fingerprint = {"pipelineVersion": 1, "track": track, "generation": self.provider.generation_config(),
-                           "policy": CONFIG, "versions": self.versions}
+                           "policy": {key: value for key, value in CONFIG.items() if key != "asrCorroboration"}, "versions": self.versions}
             input_hash = digest(json.dumps(fingerprint, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode())
             folder = self.cache / input_hash
             folder.mkdir(exist_ok=True)
@@ -127,6 +151,7 @@ class Builder:
                     row["failures"].append("asr-character-error-rate")
                 row["passed"] = not row["failures"]
                 write_json(report_path, row)
+            self.corroborate(row, text, language, wav)
             # Check cross-text duplicate evidence even for individually valid cached tracks.
             old_text = self.hashes.get(row.get("wavSha256"))
             if old_text is not None and old_text != text:
@@ -139,6 +164,40 @@ class Builder:
             if row["passed"]:
                 return row, wav
         return None
+
+    def corroborate(self, row, text, language, wav):
+        """Independent quantity confirmation for a decode-only ASR failure.
+
+        The pinned Whisper-small CER gate is unchanged. Only a quantity-only
+        mismatch — where the primary transcript is already inside the CER
+        threshold and the sole failure is the quantity sub-check — may be
+        resolved by the second pinned, independently trained recogniser. The
+        raw small result is preserved, the corroborating transcript is
+        recorded, no threshold is relaxed and no other failure is excused.
+        """
+        if not quantity_corroboration_needed(row):
+            return
+        config = CONFIG.get("asrCorroboration")
+        if not config:
+            return
+        asr = row["asr"]
+        if self._corroboration_asr is None:
+            with Measure() as load_measure:
+                self._corroboration_asr = OfflineAsr(config)
+            self.load["corroborationAsrSeconds"] = load_measure.seconds
+            self.load["corroborationAsrPeakRssBytes"] = load_measure.peak
+        with Measure() as measure:
+            result = self._corroboration_asr.transcribe(wav, language, text)
+        asr["corroboration"] = {key: result[key] for key in ("modelId", "revision", "transcript", "cer", "rawCer", "quantitiesMatch")}
+        asr["corroboration"]["seconds"] = measure.seconds
+        if result.get("quantitiesMatch"):
+            asr["status"] = "passed"
+            asr["quantityConfirmedBy"] = result["modelId"]
+            row["failures"] = [failure for failure in row["failures"] if failure != "asr-character-error-rate"]
+            row["passed"] = not row["failures"]
+        if row.get("inputSha256"):
+            write_json(self.cache / row["inputSha256"] / "quality.json", row)
+        print(f"CORROBORATE {language}:{row['id']} small={asr.get('transcript')!r} medium={result.get('transcript')!r} confirmed={bool(result.get('quantitiesMatch'))}", flush=True)
 
     def audition(self, tracks):
         by_id = {t["id"]: t for t in tracks if t["language"] == "hi"}
