@@ -67,6 +67,25 @@ export function RunPlayback({
     <JourneyFrame
       {...frame}
       narration={eventNarration ?? frame.narration}
+      autoNarrations={[
+        ...(frame.narration
+          ? [
+              {
+                language,
+                id: frame.narration.id,
+                spokenText: frame.narration.spokenText,
+              },
+            ]
+          : []),
+        ...playback.firedEvents.flatMap((event) => {
+          const track = (language === 'hi' ? hiNarration : enNarration).find(
+            (item) => item.id === event.id,
+          );
+          return track
+            ? [{ language, id: track.id, spokenText: track.spokenText }]
+            : [];
+        }),
+      ]}
       reading={
         <>
           {playback.decision !== 'none' ? (

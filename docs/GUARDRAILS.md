@@ -16,9 +16,9 @@ These are product requirements, not suggestions. A release must fail or hide con
 ## Interaction constraints
 
 - The period remains hidden until the reveal step. A participant first records a prediction or expectation, then sees the virtual-money result. Real historical observations must have evidenced reuse/provenance and remain distinct from synthetic test fixtures.
-- Run, chart, replay, reveal and debrief are educational engine views, not market-analysis tools. Audio starts only on a gesture and errors preserve visible text. Offline promises are limited to the measured warmed/cached behavior.
+- Run, chart, replay, reveal and debrief are educational engine views, not market-analysis tools. Manual Listen starts on a gesture; user-authorized, locally remembered auto-speak may play stored narration automatically. Browser-blocked autoplay stays quiet and all errors preserve visible text. Offline promises are limited to the measured warmed/cached behavior.
 - English/Hindi copy has hash-bound review evidence. Draft blocks release; agent-checked content passes only with individual loud warnings and an explicit lack-of-native-review disclosure. Only actual human evidence may set reviewed. Numbers intended for speech have separate spoken text; do not force a screen reader to pronounce symbols ambiguously.
-- The app stores only the selected language and text-size preference locally. It has no accounts, cookies, financial records, or external runtime telemetry.
+- The app stores only the selected language and auto-speak preference locally. Text uses the fixed former A+ size; the retired text-size key is removed. It has no accounts, cookies, financial records, or external runtime telemetry.
 - Network requests at runtime are same-origin static asset requests only. Production CSP must use `connect-src 'self'` and an equivalent restrictive policy reviewed by a human.
 
 ## Release gate

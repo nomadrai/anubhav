@@ -201,6 +201,21 @@ explicit translated labels; decorative check marks never pollute their names.
 Exact before/provisional/after build hashes and lab limitations are recorded in
 UI_PERFORMANCE_EVIDENCE.json and ACCESSIBILITY_AND_PERFORMANCE.md.
 
+## ADR-0019 — Scoped fixed-size header/footer and automatic narration
+
+**Status:** implemented at the user's request, superseding the variable-text-size,
+header progress and gesture-only auto-narration parts of prior UI decisions. Keep
+former A+ sizing always; delete the retired preference. Persist only language and
+explicit auto-speak. DEFAULT_AUTO_SPEAK in src/config/audio.ts is false. Queue stored
+step/Run tracks through the existing manager, retain automatic ownership until end,
+stop at scope exit/off and fail quietly when autoplay is blocked. Manual Listen
+keeps its existing behavior and priority. Automatic playback uses its primary
+control/progress without opening manual-only extra tools/status; no audio/text is
+regenerated. Header is language → switch → inert TODO(chat) button. Footer keeps
+its width and unchanged privacy line, with About directly below at bottom-left.
+Fixed-size fit required compact caption/control grouping, not smaller body text.
+No new dependencies, chat/network feature, engine or journey-rule change.
+
 ## Remaining human publication/pilot decisions
 
 - `TODO(human)`: confirm the working title in `src/config/app.ts` and intended

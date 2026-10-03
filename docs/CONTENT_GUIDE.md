@@ -50,7 +50,7 @@ Preserve direction, time and scope, not just terminology:
 - “Did not **end** below the start” does not mean “never went below”.
 - An intrabar low applies to that step, not to the lowest value of the entire path. Production daily reference observations have no intraday data.
 - Continue and exit are simulated choices, not recommendations to hold or stop a real position.
-- Answers remain in memory and clear on reload/restart. Do not claim that nothing is stored: language/text-size preferences and cached static assets have separate contracts.
+- Answers remain in memory and clear on reload/restart. Do not claim that nothing is stored: language/auto-speak preferences and cached static assets have separate contracts.
 - Official resources were agent-verified with exact-page evidence in `RESOURCE_CHECKS.md`; do not falsely call that human review. External links leave the app and have destination privacy rules.
 
 ## Speech and audio contract

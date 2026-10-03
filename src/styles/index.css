@@ -11,7 +11,7 @@
   color: #29251f;
   background: #f7f1e8;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 20px;
   --green: #386b57;
   --ink: #29251f;
   --muted: #665c50;
@@ -19,12 +19,6 @@
   --paper: #fffdf9;
   --gap: clamp(0.75rem, 1.5vw, 1.5rem);
   --pad: clamp(1rem, 2vw, 2rem);
-}
-:root[data-text-size='medium'] {
-  font-size: 18px;
-}
-:root[data-text-size='large'] {
-  font-size: 20px;
 }
 * {
   box-sizing: border-box;
@@ -152,7 +146,8 @@ p {
   transform: none;
 }
 .app-header {
-  padding-top: max(0.5rem, env(safe-area-inset-top));
+  padding-top: max(0.25rem, env(safe-area-inset-top));
+  padding-bottom: 0.25rem;
   background: #f7f1e8;
   position: sticky;
   top: 0;
@@ -189,64 +184,27 @@ p {
   width: 6.4rem;
   font-size: 0.85rem;
 }
-.text-size-control {
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 0.7rem;
-  background: var(--paper);
+.auto-speak-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
 }
-.text-size-control button {
-  border: 0;
-  border-radius: 0.55rem;
-  min-width: 48px;
-  padding: 0.35rem;
-}
-.text-size-control button[aria-pressed='true'] {
+.auto-speak-switch[aria-checked='true'] {
+  border-color: var(--green);
   background: #e3efe8;
-  box-shadow: inset 0 -3px var(--green);
-  font-weight: 800;
 }
-.step-progress {
-  padding: 0.55rem 0 0.15rem;
-}
-.step-progress ol {
-  display: grid;
-  grid-template-columns: repeat(11, minmax(0, 1fr));
-  list-style: none;
-  padding: 0;
-  gap: 0.35rem;
-}
-.step-progress li {
-  min-width: 0;
-}
-.mobile-step-name {
-  display: none;
-}
-.progress-segment {
-  display: block;
-  height: 0.2rem;
-  border-radius: 1rem;
-  background: #c9bdad;
-  margin-bottom: 0.25rem;
-}
-.step-progress [data-complete='true'] .progress-segment {
-  background: var(--green);
-}
-.step-progress [aria-current='step'] .progress-segment {
-  height: 0.3rem;
-  background: var(--green);
-  outline: 1px solid var(--green);
-}
-.progress-name {
-  display: block;
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--muted);
-}
-[aria-current='step'] .progress-name {
+.switch-state {
   color: var(--green);
-  font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 750;
+  border: 1px solid currentColor;
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.3rem;
+}
+.chat-button {
+  font-size: 0.85rem;
 }
 .split-layout {
   display: grid;
@@ -407,13 +365,14 @@ p {
 }
 .app-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.15rem 0 0.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0 0 0.1rem;
 }
 .app-footer p {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
   color: var(--muted);
 }
 .about-link {
@@ -421,8 +380,11 @@ p {
   background: transparent;
   color: var(--green);
   text-decoration: underline;
-  font-size: 0.8rem;
-  padding: 0.2rem;
+  text-align: left;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  min-height: 24px;
+  padding: 0;
   flex-shrink: 0;
 }
 .big-button {
@@ -889,10 +851,6 @@ meter {
   .action-inner {
     margin-left: calc((100% - var(--gap)) * 0.45 + var(--gap));
   }
-  .app-footer {
-    min-height: 48px;
-    padding-bottom: 0;
-  }
   [data-step='Run'] .caption {
     background: #f9edcf;
     border-left-color: #776247;
@@ -907,6 +865,16 @@ meter {
   }
   .pane-content {
     gap: 0.5rem;
+  }
+  .narration-block {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .narration-block > .eyebrow {
+    grid-column: 1 / -1;
+  }
+  .narration-block:has(.audio-tools) {
+    grid-template-columns: minmax(0, 1fr);
   }
   .action-bar {
     padding: 0.4rem 0;
@@ -954,6 +922,16 @@ meter {
   }
 }
 @media (min-width: 1800px) {
+  .narration-block {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .narration-block > .eyebrow {
+    grid-column: 1 / -1;
+  }
+  .narration-block:has(.audio-tools) {
+    grid-template-columns: minmax(0, 1fr);
+  }
   :root {
     --pad: clamp(1.75rem, 2.2vw, 3rem);
     --gap: clamp(1.5rem, 2vw, 2.5rem);
@@ -1024,23 +1002,18 @@ meter {
     gap: 0.35rem;
   }
   .toolbar select {
-    width: 5.5rem;
+    width: 5.3rem;
+    min-width: 0;
+    padding-inline: 0.35rem;
   }
-  .toolbar .audio-main-button {
-    font-size: 0.8rem;
-  }
-  .progress-name {
-    display: none;
-  }
-  .mobile-step-name {
-    display: block;
+  .auto-speak-switch {
     font-size: 0.75rem;
-    color: var(--green);
-    font-weight: 700;
-    margin-top: 0.3rem;
+    padding: 0.35rem 0.4rem;
+    gap: 0.3rem;
   }
-  .step-progress {
-    padding-bottom: 0.5rem;
+  .chat-button {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.5rem;
   }
   .split-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -1063,10 +1036,6 @@ meter {
   }
   .primary-actions .big-button {
     flex: 1;
-  }
-  .app-footer {
-    align-items: center;
-    gap: 0.5rem;
   }
   .app-footer p {
     font-size: 0.75rem;

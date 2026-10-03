@@ -36,7 +36,17 @@ The user explicitly revised the earlier human-only workflow:
 - Public artifact downloads and local dev/TTS package installs are authorized. Existing Hugging Face authentication may be used read-only; never print, copy, log, or commit credentials.
 - Commit milestones on the current branch; never push. An already-authenticated static-host CLI may deploy a preview only. No new accounts, payments, or production-domain deploys.
 - TTS voice selection may use objective signal/end-token/ASR gates, labeled automated with no listening review. Cache and quality-check generated speech; never substitute silence for speech.
-- Predictions and pilot answers remain in-memory only (local to the journey), not browser-persisted. Only language/text-size preferences may persist.
+- Predictions and pilot answers remain in-memory only (local to the journey), not browser-persisted. Only language/auto-speak preferences may persist (the later UI request retires text-size storage).
 - Park blockers and continue independent work. Batch remaining user actions/questions at the end. Real-data rights must be explicit; speculative licences, data, causal explanations, and measurements remain prohibited.
+
+## Scoped UI authorization (later user request)
+
+- The former A+ size is now fixed; remove the old stored text-size preference.
+- Auto-speak defaults OFF from one config constant; only language and the explicit
+  auto-speak setting may persist. Enabled auto-speak may play stored step/event
+  narration automatically, queued through the existing manager, with no overlap.
+  Stop on leaving a step; blocked autoplay is quiet and text remains available.
+- Manual left-pane Listen and all audio integrity/quality checks remain intact.
+- Chat is only an empty `TODO(chat)` click handler, with no network/state feature.
 
 All other guardrails above remain unchanged. These permissions do not establish publisher rights, actual listening, native fluency, participant consent, or pilot efficacy.

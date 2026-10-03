@@ -1,25 +1,18 @@
 import { APP_NAME } from '../config/app';
 import type { Language } from '../config/languages';
 import { t } from '../i18n';
-import { JOURNEY_STEPS, stepNumber, type JourneyStep } from '../journey/steps';
-import { AudioControls } from './AudioControls';
-import { TextSizeControl, type TextSize } from './TextSizeControl';
 
 export type Narration = { id: string; displayText: string; spokenText: string };
 export function StepHeader({
   language,
-  step,
   onLanguage,
-  textSize,
-  onTextSize,
-  narration,
+  autoSpeak,
+  onAutoSpeak,
 }: {
   language: Language;
-  step: JourneyStep;
   onLanguage?: (language: Language) => void;
-  textSize: TextSize;
-  onTextSize: (size: TextSize) => void;
-  narration?: Narration;
+  autoSpeak: boolean;
+  onAutoSpeak: (enabled: boolean) => void;
 }) {
   return (
     <header className="app-header">
@@ -47,44 +40,28 @@ export function StepHeader({
               </option>
             </select>
           )}
-          <TextSizeControl
-            language={language}
-            value={textSize}
-            onChange={onTextSize}
-          />
-          {narration && (
-            <AudioControls
-              language={language}
-              id={narration.id}
-              spokenText={narration.spokenText}
-              compact
-            />
-          )}
+          <button
+            className="auto-speak-switch"
+            role="switch"
+            aria-checked={autoSpeak}
+            aria-label={t(language, 'features.autoSpeak')}
+            onClick={() => onAutoSpeak(!autoSpeak)}
+          >
+            <span>{t(language, 'features.autoSpeak')}</span>
+            <span className="switch-state" aria-hidden="true">
+              {t(language, autoSpeak ? 'features.on' : 'features.off')}
+            </span>
+          </button>
+          <button
+            className="chat-button"
+            onClick={() => {
+              /* TODO(chat): no feature, state change or network call yet. */
+            }}
+          >
+            {t(language, 'features.chat')}
+          </button>
         </div>
       </div>
-      <nav
-        className="step-progress"
-        aria-label={t(language, 'features.progress')}
-      >
-        <ol>
-          {JOURNEY_STEPS.map((item, index) => (
-            <li
-              key={item}
-              aria-label={t(language, `features.steps.${item}`)}
-              aria-current={step === item ? 'step' : undefined}
-              data-complete={index < stepNumber(step)}
-            >
-              <span className="progress-segment" aria-hidden="true" />
-              <span className="progress-name">
-                {t(language, `features.steps.${item}`)}
-              </span>
-            </li>
-          ))}
-        </ol>
-        <p className="mobile-step-name">
-          {t(language, `features.steps.${step}`)}
-        </p>
-      </nav>
     </header>
   );
 }

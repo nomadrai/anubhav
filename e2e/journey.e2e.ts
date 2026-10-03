@@ -341,9 +341,9 @@ test('keyboard, large text, 200% equivalent reflow, reduced motion and CSP', asy
   await page.locator('.skip-link').focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
-  await page
-    .getByRole('button', { name: enFeatures.largeText, exact: true })
-    .click();
+  await expect(page.locator('.text-size-control, .step-progress')).toHaveCount(
+    0,
+  );
   await expect(page.locator('html')).toHaveCSS('font-size', '20px');
   await page
     .getByRole('combobox', { name: enFeatures.language, exact: true })
@@ -365,7 +365,7 @@ test('keyboard, large text, 200% equivalent reflow, reduced motion and CSP', asy
   await expect(page.locator('html')).toHaveAttribute('data-text-size', 'large');
   expect(
     await page.evaluate(() => Object.keys(window.localStorage).sort()),
-  ).toEqual(['learning.language', 'learning.text-size']);
+  ).toEqual(['learning.language']);
 });
 
 for (const language of languages) {

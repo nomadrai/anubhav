@@ -5,6 +5,8 @@ export type AudioStatus =
 export interface AudioSnapshot {
   key: string;
   status: AudioStatus;
+  /** Ownership, not permission: only the opt-in controller requests automatic play. */
+  automatic: boolean;
   muted: boolean;
   speed: number;
   elapsedSeconds: number;
@@ -32,7 +34,7 @@ interface Manifest {
   tracks: Track[];
 }
 
-/** No constructor/network side effects. Only an explicit Listen/Replay gesture calls play(). */
+/** No constructor/network side effects. Playback is manual or explicitly opted-in. */
 export class AudioManager {
   private audio?: InstanceType<typeof window.Audio>;
   private manifest?: Manifest;
@@ -44,6 +46,7 @@ export class AudioManager {
   private snapshot: AudioSnapshot = {
     key: '',
     status: 'idle',
+    automatic: false,
     muted: false,
     speed: 1,
     elapsedSeconds: 0,
@@ -58,7 +61,7 @@ export class AudioManager {
     };
   };
   /** Mounting a control never loads audio; the last same-key consumer stops it. */
-  retain(key: string) {
+  retain(key: string, options: { automatic?: boolean } = {}) {
     this.consumers.set(key, (this.consumers.get(key) ?? 0) + 1);
     let released = false;
     return () => {
@@ -68,7 +71,8 @@ export class AudioManager {
       if (remaining > 0) this.consumers.set(key, remaining);
       else {
         this.consumers.delete(key);
-        this.stop(key);
+        // Releasing automatic ownership must not stop a same-key manual replay.
+        if (!options.automatic || this.snapshot.automatic) this.stop(key);
       }
     };
   }
@@ -102,10 +106,15 @@ export class AudioManager {
     this.update({
       key: '',
       status: 'idle',
+      automatic: false,
       elapsedSeconds: 0,
       durationSeconds: 0,
       progress: 0,
     });
+  }
+  /** Opt-out/scope cleanup never interrupts an unrelated manual clip. */
+  stopAutomatic(key?: string) {
+    if (this.snapshot.automatic) this.stop(key);
   }
   private fail(sequence: number) {
     if (sequence !== this.sequence) return;
@@ -141,10 +150,15 @@ export class AudioManager {
     language: Language,
     id: string,
     spokenText: string,
-  ): Promise<void> {
+    options: { automatic?: boolean } = {},
+  ): Promise<boolean> {
+    const automatic = options.automatic === true;
+    // Even a racing automatic caller must wait behind any active clip.
+    if (automatic && ['loading', 'playing', 'paused'].includes(this.snapshot.status))
+      return false;
     this.stop();
     const sequence = this.sequence;
-    this.update({ key: `${language}:${id}`, status: 'loading' });
+    this.update({ key: `${language}:${id}`, status: 'loading', automatic });
     try {
       this.controller = new globalThis.AbortController();
       if (!this.manifest) {
@@ -164,7 +178,7 @@ export class AudioManager {
           throw new Error('Invalid manifest');
         this.manifest = manifest;
       }
-      if (sequence !== this.sequence) return;
+      if (sequence !== this.sequence) return false;
       const track = this.manifest.tracks.find(
         (entry) => entry.language === language && entry.id === id,
       );
@@ -195,7 +209,7 @@ export class AudioManager {
       ).join('');
       if (track.contentSha256 !== actualHash)
         throw new Error('Stale narration hash');
-      if (sequence !== this.sequence) return;
+      if (sequence !== this.sequence) return false;
       const response = await globalThis.fetch(track.path, {
         credentials: 'omit',
         redirect: 'error',
@@ -212,7 +226,7 @@ export class AudioManager {
       ).join('');
       if (bytes.byteLength !== track.bytes || assetHash !== track.assetSha256)
         throw new Error('Invalid audio asset');
-      if (sequence !== this.sequence) return;
+      if (sequence !== this.sequence) return false;
       this.objectUrl = globalThis.URL.createObjectURL(
         new globalThis.Blob([bytes], { type: 'audio/ogg; codecs=opus' }),
       );
@@ -248,8 +262,17 @@ export class AudioManager {
       await audio.play();
       if (isCurrent() && !audio.paused)
         this.update({ ...this.mediaProgress(audio), status: 'playing' });
-    } catch {
-      this.fail(sequence);
+      return isCurrent();
+    } catch (error) {
+      if (
+        automatic &&
+        error instanceof Object &&
+        'name' in error &&
+        error.name === 'NotAllowedError'
+      ) {
+        if (sequence === this.sequence) this.stop();
+      } else this.fail(sequence);
+      return false;
     }
   }
   pause() {

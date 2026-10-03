@@ -1,6 +1,23 @@
 # Accessibility and performance — measured product track
 
-## Current UI redesign evidence
+## Scoped header/footer follow-up — fixed A+ and opt-in auto-speak
+
+Current follow-up checks: **197 unit/policy tests and 34 browser tests passed**, none
+skipped. Layout now runs the same 10 viewports × two languages at the single fixed
+A+ size (220 required step samples); short desktop steps fit, with inner scrolling
+reserved for longer content/expanded data. Run warning cases also fit at 1280×650.
+Native packaged-audio tests cover ordered Run playback with peak concurrency one,
+step/opt-out cleanup, saved settings, manual Listen and a simulated blocked-autoplay
+policy with silent fallback. Chat is inert. Footer/link are stacked left; header
+progress and text-size controls are removed. Old text-size storage is retired.
+
+Lint, typecheck, content/audio, build, bundle and release gates pass. Aggregate gzip
+JS **115,075 B** / CSS **4,197 B**, within unchanged budgets. No new Lighthouse or
+contact-board run was requested/performed for this follow-up; the measurements and
+three-size contact boards below describe the **prior** redesign, not this build.
+No human/native/listening review, deployment or engine/narrated-text change occurred.
+
+## Prior UI redesign evidence
 
 **Implemented and checked locally; not deployed or human-reviewed.** The older
 integration sections below are historical snapshots, not the current audio or

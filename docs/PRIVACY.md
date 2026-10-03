@@ -3,7 +3,9 @@
 ## What is retained
 
 - `localStorage.learning.language`: `en` or `hi`.
-- `localStorage.learning.text-size`: chosen reading-size preference.
+- `localStorage.learning.auto-speak`: explicit `true` or `false` narration preference.
+- Text is always the former A+ size. The retired `learning.text-size` key is removed
+  on app-shell initialization; no text-size preference is read or written.
 - Public app assets and requested public audio may be held by the service
   worker in Cache Storage. Workbox may keep public-cache expiry metadata in
   IndexedDB. These are **not participant responses**.
@@ -19,7 +21,7 @@
   payment, analytics, remote logger or telemetry is requested/implemented.
 
 The preference helper is `src/journey/preferences.ts`; storage-denied browsers
-fall back to memory. `AudioManager` reads only build-time public narration,
+can still use the current page, but preferences may not survive remount/reload. `AudioManager` reads only build-time public narration,
 never learner answers. Source maps are not enabled for the production bundle.
 The public audio manifest contains fixed content/voice/build hashes/metrics,
 not local user paths, credentials, participant inputs or generated private text.
@@ -39,6 +41,20 @@ is advertised as evidence of connectivity. Static chunk loading and fixed public
 narration paths carry no virtual-money choices or prediction/reflection payload.
 The full-journey tests check same-origin static GETs with no query/body, not merely
 an origin check that could accidentally allow same-origin answer submission.
+
+## Auto-speak and Chat
+
+Auto-speak defaults OFF via `src/config/audio.ts`. The locally remembered choice
+may enable stored step narration without a new Listen gesture. Run events use an
+in-memory, ordered queue through the same validated audio manager: no overlapping
+clips, no synthesized inputs and no uploaded choices. Leaving a step or opting out
+cancels automatic audio and queued work. Browser-blocked autoplay is silent, with
+captions still readable. Manual Listen remains available and takes priority.
+
+The Chat button is only a labelled, empty `TODO(chat)` handler. It opens no feature,
+collects nothing, changes no answers and makes no network calls. The local-only
+footer and `userDataLeavesDevice=false` remain accurate; future Chat implementation
+would require a separate privacy/guardrail review and disclosure.
 
 ## Network and host scope
 

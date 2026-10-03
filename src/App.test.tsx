@@ -105,7 +105,15 @@ describe('protective learner journey', () => {
       features.localNotice,
     );
     expect(container.textContent).not.toContain(features.reviewNotice);
-    expect(container.querySelector('.text-size-control')).not.toBeNull();
+    expect(container.querySelector('.text-size-control')).toBeNull();
+    expect(container.querySelector('.step-progress')).toBeNull();
+    expect(
+      container.querySelector('[role="switch"]')?.getAttribute('aria-checked'),
+    ).toBe('false');
+    expect(container.querySelector('.toolbar .audio-main-button')).toBeNull();
+    expect(
+      container.querySelector('.pane-reading .audio-main-button'),
+    ).not.toBeNull();
     expect(container.querySelector('.preferences')).toBeNull();
     capabilities.userDataLeavesDevice = true;
     render();
@@ -115,6 +123,19 @@ describe('protective learner journey', () => {
     expect(container.querySelector('.app-footer')?.textContent).not.toContain(
       features.localNotice,
     );
+  });
+
+  it('removes the legacy text-size key and leaves Chat inert', () => {
+    window.localStorage.setItem('learning.text-size', 'standard');
+    act(() => root.unmount());
+    root = createRoot(container);
+    render();
+    expect(window.localStorage.getItem('learning.text-size')).toBeNull();
+    expect(document.documentElement.dataset.textSize).toBe('large');
+    const before = container.innerHTML;
+    click(features.chat);
+    expect(container.innerHTML).toBe(before);
+    expect(Object.keys(window.localStorage)).toEqual([]);
   });
 
   it('revisits setup without advancing playback and updates the live summary from configuration', () => {

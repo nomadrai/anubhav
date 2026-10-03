@@ -5,7 +5,12 @@ Date: 2026-10-03. Reviewer: coding agent. Method: read each English/Hindi leaf, 
 ## UI redesign addendum
 
 The feature-copy table and feature-file hashes below preserve the earlier audit snapshot.
-Current feature-copy evidence is [UI_CONTENT_QA.json](UI_CONTENT_QA.json): 44 changed/new bilingual leaf pairs, exact English/Hindi text, independent Hindi back-translations and current file hashes. Unchanged leaves retain the earlier evidence and per-leaf registry hashes. Three obsolete idle/connectivity leaves were removed, with dispositions. The footer refers to in-app choices/answers, not host request metadata or outbound destinations; About preserves the full storage/offline/missing-review disclosures and adds the host-log limitation. The summary is config-derived arithmetic, never advice or a forecast. No narration/glossary text or audio asset changed. All new copy remains agent-checked; no human/native/listening review occurred.
+Current feature-copy evidence is [UI_CONTENT_QA.json](UI_CONTENT_QA.json): 49 changed/new bilingual leaf pairs, exact English/Hindi text, independent Hindi back-translations and current file hashes. Unchanged leaves retain the earlier evidence and per-leaf registry hashes. Three obsolete idle/connectivity leaves were removed, with dispositions. The footer refers to in-app choices/answers, not host request metadata or outbound destinations; About preserves the full storage/offline/missing-review disclosures and adds the host-log limitation. The summary is config-derived arithmetic, never advice or a forecast. No narration/glossary text or audio asset changed. All new copy remains agent-checked; no human/native/listening review occurred.
+
+The scoped header/footer follow-up adds Auto-speak, On, Off and Chat labels and
+updates the preference-only storage paragraph. All five bilingual pairs have exact
+text and Hindi back-translation rows in UI_CONTENT_QA.json, with updated file/leaf
+hashes. Narration/glossary text and all generated audio remain unchanged.
 
 ## Scope and key fixes
 

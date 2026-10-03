@@ -29,6 +29,7 @@ const manifest = {
 };
 class FakeAudio {
   static instances: FakeAudio[] = [];
+  static nextPlayError?: Error;
   constructor() {
     FakeAudio.instances.push(this);
   }
@@ -48,6 +49,11 @@ class FakeAudio {
   onplaying: (() => void) | null = null;
   onpause: (() => void) | null = null;
   play = vi.fn(() => {
+    if (FakeAudio.nextPlayError) {
+      const error = FakeAudio.nextPlayError;
+      FakeAudio.nextPlayError = undefined;
+      return Promise.reject(error);
+    }
     this.paused = false;
     return Promise.resolve();
   });
@@ -61,6 +67,7 @@ const fetchMock = vi.fn();
 let manager: AudioManager;
 beforeEach(() => {
   FakeAudio.instances = [];
+  FakeAudio.nextPlayError = undefined;
   fetchMock.mockReset();
   vi.stubGlobal('window', { Audio: FakeAudio });
   vi.stubGlobal('crypto', webcrypto);
@@ -84,7 +91,7 @@ function responses(value = manifest) {
     .mockResolvedValueOnce({ ok: true, arrayBuffer: async () => bytes.buffer });
 }
 
-describe('gesture-only local narration', () => {
+describe('gated local narration', () => {
   it('does nothing until play, validates hashes, pauses/resumes, controls speed and tears down', async () => {
     expect(fetchMock).not.toHaveBeenCalled();
     expect(FakeAudio.instances).toHaveLength(0);
@@ -382,6 +389,44 @@ describe('gesture-only local narration', () => {
     await playing;
     expect(manager.getSnapshot().status).toBe('idle');
     expect(FakeAudio.instances).toHaveLength(0);
+  });
+  it('quiets denied automatic autoplay but preserves manual rejection fallback', async () => {
+    responses();
+    FakeAudio.nextPlayError = new globalThis.DOMException('Gesture required', 'NotAllowedError');
+    expect(await manager.play('en', track.id, spokenText, { automatic: true })).toBe(false);
+    expect(manager.getSnapshot()).toMatchObject({
+      key: '', status: 'idle', automatic: false, progress: 0,
+    });
+    expect(FakeAudio.instances[0].removeAttribute).toHaveBeenCalledWith('src');
+    fetchMock.mockResolvedValueOnce({ ok: true, arrayBuffer: async () => bytes.buffer });
+    FakeAudio.nextPlayError = new globalThis.DOMException('Gesture required', 'NotAllowedError');
+    expect(await manager.play('en', track.id, spokenText)).toBe(false);
+    expect(manager.getSnapshot().status).toBe('unavailable');
+  });
+  it('does not allow automatic playback to replace a playing or paused manual clip', async () => {
+    responses();
+    await manager.play('en', track.id, spokenText);
+    const audio = FakeAudio.instances[0];
+    const snapshot = manager.getSnapshot();
+    expect(await manager.play('en', track.id, spokenText, { automatic: true })).toBe(false);
+    expect(manager.getSnapshot()).toBe(snapshot);
+    manager.pause();
+    expect(await manager.play('en', track.id, spokenText, { automatic: true })).toBe(false);
+    manager.stopAutomatic();
+    expect(manager.getSnapshot().status).toBe('paused');
+    expect(audio.pause).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+  it('keeps non-policy automatic playback errors unavailable and integrity-gated', async () => {
+    responses();
+    FakeAudio.nextPlayError = new Error('Decode failure');
+    expect(await manager.play('en', track.id, spokenText, { automatic: true })).toBe(false);
+    expect(manager.getSnapshot().status).toBe('unavailable');
+    manager = new AudioManager();
+    responses({ ...manifest, tracks: [{ ...track, quality: { passed: false, eos: true } }] });
+    expect(await manager.play('en', track.id, spokenText, { automatic: true })).toBe(false);
+    expect(manager.getSnapshot().status).toBe('unavailable');
+    expect(FakeAudio.instances).toHaveLength(1);
   });
   it('keeps a text fallback for missing audio and browser playback rejection', async () => {
     fetchMock.mockRejectedValueOnce(new Error('Offline'));

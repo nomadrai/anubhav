@@ -3,8 +3,8 @@
   "status": "agent-checked",
   "method": "Read both exact leaves; independently render Hindi back into English; compare meaning, negation, scope, quantity and interpolation. Then update only changed review hashes. No human/native review or listening.",
   "fileSha256": {
-    "en": "099eb014cc0dca9120cacbe706f3e272604a540dcff831893e841a45986ee624",
-    "hi": "478fab7750938b5914d9f39ebd2cc5e6b4e13c971e29cd26d51f05d705b15fb9"
+    "en": "b1303d650c38483f28850ec34be6654ea3028864309d92d5e9a6a3101ee96941",
+    "hi": "695ef6909a85cd06de1c805dffe88947c4c2285eb27806f840f48e6ccd4a07bd"
   },
   "privacyScope": "Footer refers to in-app choices/answers only, never anonymity, host metadata or explicit outbound resource navigation. Capability true uses the alternate disclosure; it implements and authorizes no sending feature.",
   "calculationScope": "Summary uses STARTING_CAPITAL * stake/100 * exposure, and 0.01 times that exposure. It is sensitivity before a teaching closure, not a forecast or recommendation.",
@@ -316,6 +316,41 @@
       "hi": "आपका अभ्यास एक नज़र में",
       "hiBackTranslation": "Your practice at a glance.",
       "status": "agent-checked"
+    },
+    {
+      "key": "autoSpeak",
+      "en": "Auto-speak",
+      "hi": "अपने-आप सुनें",
+      "hiBackTranslation": "Listen automatically.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "on",
+      "en": "On",
+      "hi": "चालू",
+      "hiBackTranslation": "On.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "off",
+      "en": "Off",
+      "hi": "बंद",
+      "hiBackTranslation": "Off.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "chat",
+      "en": "Chat",
+      "hi": "चैट",
+      "hiBackTranslation": "Chat.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "privacy",
+      "en": "Answers stay only in this open page and clear on reload or restart. Only language and auto-speak are saved. No accounts or tracking.",
+      "hi": "जवाब सिर्फ़ इस खुले पन्ने में रहते हैं। पन्ना दोबारा खोलने या अभ्यास फिर शुरू करने पर मिट जाते हैं। केवल भाषा और अपने-आप सुनने की सेटिंग सहेजी जाती है। कोई खाता या ट्रैकिंग नहीं।",
+      "hiBackTranslation": "Answers remain only in this open page. Reloading or restarting clears them. Only language and the automatic-listening setting are saved. No account or tracking.",
+      "status": "agent-checked"
     }
   ],
   "removed": [
@@ -332,5 +367,6 @@
       "disposition": "Browser connectivity notices removed; actual cache/offline limits remain in About."
     }
   ],
-  "unchangedNarration": "All narration/glossary spokenText and displayText, generated clips and manifest unchanged. No new speech generated."
+  "unchangedNarration": "All narration/glossary spokenText and displayText, generated clips and manifest unchanged. No new speech generated.",
+  "followup": "Scoped fixed-A+ header/footer update: only language and auto-speak persist; old text-size key is removed. Auto-speak uses stored local narration, opt-in, same-origin and silent on blocked autoplay. Chat is a no-network empty stub. No narrated text or audio changed; no native/human listening review."
 }

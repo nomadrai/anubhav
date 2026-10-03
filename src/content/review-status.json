@@ -637,7 +637,7 @@
         },
         "privacy": {
           "status": "agent-checked",
-          "contentSha256": "5ae9c6510fed7a3d04df5238ec1b09ed1eebad942d9d9278fb06dae3027bb78c"
+          "contentSha256": "b23a1e8d7c9cff3fd8ee44c939bd6f6cb811567cdafeb336b6c67adbeac139c2"
         },
         "offline": {
           "status": "agent-checked",
@@ -1014,6 +1014,22 @@
         "steps.NextSteps": {
           "status": "agent-checked",
           "contentSha256": "e89b30aa1dc30a6ad8c34610689bede83b3ef645a24c3a84a0990826687fb735"
+        },
+        "autoSpeak": {
+          "status": "agent-checked",
+          "contentSha256": "19d02a8bd2af69669b545e58b9694b41d59fc9a4b54b60bf11cf0ceb3ab69daf"
+        },
+        "on": {
+          "status": "agent-checked",
+          "contentSha256": "130011756125313c72f2cab730db4347e2841526d236a89cb25f38789fa49229"
+        },
+        "off": {
+          "status": "agent-checked",
+          "contentSha256": "ca7981b46ecf2c1787b6d76d81d9fd7fa0ca95842e2fcc2a452869891a9334d1"
+        },
+        "chat": {
+          "status": "agent-checked",
+          "contentSha256": "460b3a7da007b7af9d35bca54181dc91382263b2bf133ca214871ca1fed1fc1c"
         }
       },
       "narration.json": {
@@ -2015,7 +2031,7 @@
         },
         "privacy": {
           "status": "agent-checked",
-          "contentSha256": "4401fbd1938571581093c06f2d118bdb6c5be99b2ca545e5d7e1604104e2c2e4"
+          "contentSha256": "7c0bbb4df75ca5fa1c0b2764dd2ae0b682eb1311ab5f3aa9d7f739d4de9e75d7"
         },
         "offline": {
           "status": "agent-checked",
@@ -2392,6 +2408,22 @@
         "steps.NextSteps": {
           "status": "agent-checked",
           "contentSha256": "69ad7cb0f16bff992966e949d97ac4c4ca6c67e59c8a6dd99d91d71f8c782b71"
+        },
+        "autoSpeak": {
+          "status": "agent-checked",
+          "contentSha256": "7ca4c045a1d7306e0371f76073f26b393514c37ffcd8245dbe5127f715eca673"
+        },
+        "on": {
+          "status": "agent-checked",
+          "contentSha256": "4067b8641483c4b9d2810ec281490391fdaf2b9b361dfb8c13db3e285d651010"
+        },
+        "off": {
+          "status": "agent-checked",
+          "contentSha256": "60ebc67af880b4d3e827d6201d05ed6df767c75c3393b3aad9f39ef3e2ea3adb"
+        },
+        "chat": {
+          "status": "agent-checked",
+          "contentSha256": "5d8d84ac8af67925bb0736a5397db8f112b31c8b68c626609571a59467521904"
         }
       },
       "narration.json": {

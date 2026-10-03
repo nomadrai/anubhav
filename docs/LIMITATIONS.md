@@ -36,7 +36,9 @@
   second, larger Whisper checkpoint on the same WAV; that records a recogniser
   decode disagreement, not proof the audio is correct. Actual track counts and
   the corroboration transcripts are in [AUDIO_BUILD.md](AUDIO_BUILD.md).
-- Audio needs an explicit gesture. Missing/unusable media falls back to visible
+- Manual Listen needs an explicit gesture. Remembered opt-in auto-speak may play
+  stored step/event narration automatically; browser-blocked autoplay is quiet,
+  queued clips do not overlap, and leaving the step/turning it off cancels the queue. Missing/unusable media falls back to visible
   text. Captions are complete utterance text, **not word-timed subtitles**.
   Historical reveal details and numeric charts remain readable text; narration
   is fixed instructional copy, not dynamically synthesized participant results.

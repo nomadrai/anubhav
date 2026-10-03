@@ -4,9 +4,15 @@ import { APP_NAME } from '../config/app';
 import { capabilities } from '../config/capabilities';
 import { t } from '../i18n';
 import type { JourneyStep } from '../journey/steps';
-import { readPreference, savePreference } from '../journey/preferences';
+import {
+  readPreference,
+  savePreference,
+  removeLegacyTextSizePreference,
+} from '../journey/preferences';
+import { DEFAULT_AUTO_SPEAK } from '../config/audio';
+import { useAutoSpeak } from '../audio/useAutoSpeak';
+import type { AutoTrack } from '../audio/AutoSpeakController';
 import { StepHeader, type Narration } from './StepHeader';
-import type { TextSize } from './TextSizeControl';
 import { ActionBar } from './ActionBar';
 import { AboutDialog } from './AboutDialog';
 
@@ -18,6 +24,7 @@ export function AppShell({
   onBack,
   onLanguage,
   narration,
+  autoNarrations,
   focusKey,
 }: {
   language: Language;
@@ -27,20 +34,32 @@ export function AppShell({
   onBack?: () => void;
   onLanguage?: (language: Language) => void;
   narration?: Narration;
+  autoNarrations?: AutoTrack[];
   focusKey?: string;
 }) {
-  const [textSize, setTextSize] = useState<TextSize>(() => {
-    const value = readPreference('text-size');
-    return value === 'large' || value === 'medium' ? value : 'standard';
+  const [autoSpeak, setAutoSpeak] = useState(() => {
+    const value = readPreference('auto-speak');
+    return value === null ? DEFAULT_AUTO_SPEAK : value === 'true';
   });
   const [about, setAbout] = useState(false);
+  const tracks =
+    autoNarrations ??
+    (narration
+      ? [{ language, id: narration.id, spokenText: narration.spokenText }]
+      : []);
+  useAutoSpeak(
+    autoSpeak && !about,
+    `${language}:${step}:${tracks.length ? 'narrated' : 'quiet'}`,
+    tracks,
+  );
   useEffect(() => {
     document.documentElement.lang = language;
     document.title = APP_NAME;
   }, [language]);
   useEffect(() => {
-    document.documentElement.dataset.textSize = textSize;
-  }, [textSize]);
+    document.documentElement.dataset.textSize = 'large';
+    removeLegacyTextSizePreference();
+  }, []);
   useEffect(() => {
     document.getElementById('screen-title')?.focus({ preventScroll: true });
     document.querySelectorAll('.pane-scroll').forEach((node) => {
@@ -55,14 +74,12 @@ export function AppShell({
       </a>
       <StepHeader
         language={language}
-        step={step}
         onLanguage={onLanguage}
-        textSize={textSize}
-        onTextSize={(value) => {
-          setTextSize(value);
-          savePreference('text-size', value);
+        autoSpeak={autoSpeak}
+        onAutoSpeak={(value) => {
+          setAutoSpeak(value);
+          savePreference('auto-speak', String(value));
         }}
-        narration={narration}
       />
       {children}
       <div className="shell-bottom">

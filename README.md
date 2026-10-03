@@ -26,12 +26,13 @@ product. The product name has one source of truth: `src/config/app.ts`.
   without relaxing the CER gate. Actual produced assets and measurements—not an
   assumed full set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
 - Desktop two-pane reading/interaction layout with pinned actions; single-column
-  mobile layout with a sticky action area. Standard, medium and larger text;
+  mobile layout with a sticky action area. The former A+ text size is always used;
   lesson-by-lesson debrief and glossary explanations in the interaction pane.
-- Gesture-only mirrored audio controls with real playback progress, readable text
-  fallback, glossary/captions, same-origin PWA caching and an in-memory pilot summary.
+- Left-pane Listen controls with real playback progress, readable text fallback,
+  glossary/captions, same-origin PWA caching and an in-memory pilot summary.
+  Optional auto-speak defaults OFF; its local setting enables queued stored narration.
   Offline audio is **only previously cached audio**, not a promise that every
-  clip is preinstalled. No automatic narration or remote TTS service.
+  clip is preinstalled. Auto-speak is opt-in; there is no remote TTS service.
 - Four official protective links checked against official pages this session:
   [RESOURCE_CHECKS](docs/RESOURCE_CHECKS.md). Links leave this app; destination
   privacy rules apply. Unverified pointers remain hidden.
@@ -73,7 +74,7 @@ full preferences/cache/offline, absent native/listening review and ordinary host
 log disclosures. No browser-reported connectivity is presented as verified.
 
 ```sh
-npm run test:layout       # 10 viewports × 2 languages × 3 text sizes × 11 steps
+npm run test:layout       # 10 viewports × 2 languages × fixed A+ size × 11 steps
 npm run screenshots:contact  # artifacts/ui/contact-sheet.html and per-case PNG boards
 ```
 
@@ -93,7 +94,8 @@ technical gate is not legal advice, human listening approval or pilot consent.
 No buy/sell/hold calls, real instrument names in UI/audio, promotion, brands of
 financial providers, monetisation, profit gamification, accounts, cookies,
 analytics, personal/financial persistence or external runtime APIs. Only
-language and text-size preferences may persist. Static assets/audio are
+language and auto-speak preferences may persist. The retired text-size key is removed.
+The Chat button is an empty no-network stub, not an implemented chat feature. Static assets/audio are
 same-origin; source/model downloads happen **only during explicit build-time
 preparation**, never in the participant app. See [PRIVACY](docs/PRIVACY.md) and
 [GUARDRAILS](docs/GUARDRAILS.md). Real provenance is in the client bundle for

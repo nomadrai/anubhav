@@ -55,7 +55,7 @@ export function AudioControls({
           aria-label={t(language, 'common.audio')}
         />
       )}
-      {!compact && active && (
+      {!compact && active && !audio.automatic && (
         <div className="audio-tools">
           <button type="button" onClick={audio.play}>
             {f('replayAudio')}
@@ -79,7 +79,7 @@ export function AudioControls({
           </label>
         </div>
       )}
-      {!compact && audio.status !== 'idle' && (
+      {!compact && audio.status !== 'idle' && !audio.automatic && (
         <p role="status" className="quiet">
           {f(statusKey)}
         </p>

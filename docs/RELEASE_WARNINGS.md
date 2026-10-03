@@ -1,6 +1,6 @@
 # Current agent-checked release warnings
 
-Generated from checkRelease() after the UI redesign: **752** unique warnings, **0** technical blockers. Every current content/reveal/audio item remains agent-checked, not human/native/listening-reviewed. This is not a publication or efficacy certification. Exact new chrome QA is in UI_CONTENT_QA.json.
+Generated after the scoped fixed-size/auto-speak follow-up: **760** unique warnings, **0** technical blockers. All content/reveal/audio remains agent-checked, not human/native/listening-reviewed. Exact chrome QA: UI_CONTENT_QA.json.
 
 ```text
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.forcedExit.title id=forcedExit.title language=en
@@ -15,6 +15,10 @@ WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrie
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/debrief.json $.recoveryMaths.body id=recoveryMaths.body language=en
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.preferences id=preferences language=en
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.language id=language language=en
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.autoSpeak id=autoSpeak language=en
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.on id=on language=en
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.off id=off language=en
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.chat id=chat language=en
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.textSize id=textSize language=en
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.standardText id=standardText language=en
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/en/features.json $.largeText id=largeText language=en
@@ -352,6 +356,10 @@ WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrie
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/debrief.json $.recoveryMaths.body id=recoveryMaths.body language=hi
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.preferences id=preferences language=hi
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.language id=language language=hi
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.autoSpeak id=autoSpeak language=hi
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.on id=on language=hi
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.off id=off language=hi
+WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.chat id=chat language=hi
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.textSize id=textSize language=hi
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.standardText id=standardText language=hi
 WARNING: AGENT-CHECKED STRING (not human/native-reviewed): src/content/hi/features.json $.largeText id=largeText language=hi

@@ -7,6 +7,7 @@ import { SplitLayout } from './SplitLayout';
 import { AudioControls } from './AudioControls';
 import { CaptionBar } from './CaptionBar';
 import type { Narration } from './StepHeader';
+import type { AutoTrack } from '../audio/AutoSpeakController';
 
 export interface JourneyFrameProps {
   language: Language;
@@ -18,6 +19,7 @@ export interface JourneyFrameProps {
   reading?: ReactNode;
   actions?: ReactNode;
   narration?: Narration;
+  autoNarrations?: AutoTrack[];
   onLanguage?: (language: Language) => void;
   onBack?: () => void;
   focusKey?: string;
@@ -32,6 +34,7 @@ export function JourneyFrame({
   reading,
   actions,
   narration,
+  autoNarrations,
   onLanguage,
   onBack,
   focusKey,
@@ -41,6 +44,7 @@ export function JourneyFrame({
       language={language}
       step={step}
       narration={narration}
+      autoNarrations={autoNarrations}
       onLanguage={onLanguage}
       onBack={onBack}
       actions={actions}
