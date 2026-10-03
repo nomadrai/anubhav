@@ -1,5 +1,18 @@
 # Accessibility and performance — measured product track
 
+## Bottom-section correction and Chat icon
+
+The footer means the **entire** bottom section, including Back/primary actions.
+At 1280×650, measured height is now **55 px versus 118.109 px before**, with the
+same **1228.813 px width** (language entry and Intro). Desktop places the existing
+privacy/About block left and actions right on the same compact row; mobile retains
+stacking with less button/row padding. Action targets remain >=48 px. Chat is now
+an inline SVG with the existing translated accessible name/title; its handler is
+still inert. Full browser suite: **38 passed**, plus a focused four-case rerun after
+strengthening the Intro wait; unit/policy suite: **197 passed**. Release checks pass;
+gzip JS **115,203 B**, CSS **4,247 B**, within budgets. Screens/measurements:
+`artifacts/ui/bottom-bar/`. No typography, audio, engine, palette or network change.
+
 ## Scoped header/footer follow-up — fixed A+ and opt-in auto-speak
 
 Current follow-up checks: **197 unit/policy tests and 34 browser tests passed**, none

@@ -20,7 +20,8 @@ let root: Root;
 const episode = episodes[0];
 function button(label: string): HTMLButtonElement {
   const found = [...container.querySelectorAll('button')].find(
-    (item) => item.textContent === label,
+    (item) =>
+      item.textContent === label || item.getAttribute('aria-label') === label,
   );
   if (!found) throw new Error(`Missing button: ${label}`);
   return found;
@@ -132,6 +133,9 @@ describe('protective learner journey', () => {
     render();
     expect(window.localStorage.getItem('learning.text-size')).toBeNull();
     expect(document.documentElement.dataset.textSize).toBe('large');
+    const chat = button(features.chat);
+    expect(chat.querySelector('svg')).not.toBeNull();
+    expect(chat.textContent).toBe('');
     const before = container.innerHTML;
     click(features.chat);
     expect(container.innerHTML).toBe(before);
