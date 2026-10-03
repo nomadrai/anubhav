@@ -1,0 +1,26 @@
+BUILD-TIME SPEECH PROVENANCE — NO MODEL WEIGHTS OR TRAINING DATA SHIPPED
+
+Generated instructional audio uses AI4Bharat and Hugging Face audio teams' Indic Parler-TTS:
+https://huggingface.co/ai4bharat/indic-parler-tts
+Checkpoint revision: 7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca
+Model card declares Apache-2.0. The user reports accepting the gated access conditions.
+Description tokenizer: google/flan-t5-large, revision 0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a (Apache-2.0 declaration).
+Build-time Parler implementation: huggingface/parler-tts d108732cd57788ec86bc857d99a6cabd66663d68, Apache-2.0, copyright 2024 The HuggingFace Inc. team.
+Model config records ylacombe/dac_44khz audio-codec lineage.
+
+Requested upstream citations:
+Sankar, Lacombe, Thomas, Srinivasa Varadhan, Gandhi and Khapra. Rasmalai: Resources for Adaptive Speech Modeling in IndiAn Languages with Accents and Intonations. Interspeech 2025. DOI 10.21437/Interspeech.2025-2758.
+Lacombe, Srivastav and Gandhi. Parler-TTS. 2024. https://github.com/huggingface/parler-tts
+Lyth and King. Natural language guidance of high-fidelity text-to-speech with synthetic annotations. 2024. arXiv:2402.01912.
+
+Model-card training attribution (not an audit of each training item or a blanket output-rights grant):
+GLOBE: Wenbin Wang, Yang Song, Sanjay Jha. GLOBE: A High-quality English Corpus with Global Accents for Zero-shot Speaker Adaptive Text-to-Speech. 2024. arXiv:2406.14875. Original card declares CC0-1.0 and Common Voice 14 lineage. The model card's label "CC V1" is ambiguous; the exact annotated training fork's licence/subset mapping remains unverified.
+IndicTTS: named by model card, CC BY 4.0 claim; exact historical source/subset and required attribution linkage remain unverified.
+LIMMITS: named by model card, CC BY 4.0 claim; IISc original terms/version linkage remains unverified.
+Rasa: AI4Bharat; official dataset API declares CC BY 4.0 and credits Bhashini/MeitY funding, EkStep Foundation and Nilekani Philanthropies support. Exact historical subset/output applicability remains unverified.
+No training dataset, voice recording or model is redistributed here, and no speaker/publisher endorsement is implied.
+
+Build-time ASR screening: OpenAI Whisper-small, revision 973afd24965f72e36ca33b3055d56a652f456b4d, Hugging Face card declares Apache-2.0. Radford et al. Robust Speech Recognition via Large-Scale Weak Supervision. 2022. arXiv:2212.04356. Used offline for transcription/CER; not deployed. ASR can misrecognize or hallucinate and is not a native-speaker review.
+
+Compact assets are generated from this app's fixed instructional text and normalized/encoded with build-time FFmpeg/libopus. Actual text/input/asset hashes, selected voice, settings, quality metrics and ASR evidence are in /audio/manifest.json.
+No human listened to or approved pronunciation. No native Hindi review occurred. Text/captions remain authoritative. Full evidence and remaining rights/publication actions: docs/THIRD_PARTY.md in the source repository.

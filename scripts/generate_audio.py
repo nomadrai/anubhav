@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Build a deterministic offline audio plan or local reviewed asset bundle.
+"""Legacy schema-1 episode fixture builder; not a release speech-quality gate.
+
+Use build_narration.py for the full gated schema-2 narration/glossary bundle.
 
 The stub provider remains planning-only. The optional Indic Parler provider
 requires a caller-supplied local checkpoint and never downloads model files.
@@ -407,7 +409,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--description-tokenizer-dir", type=Path, help="optional local description tokenizer (otherwise use pinned HF cache)")
     parser.add_argument("--description-tokenizer-id", default=DEFAULT_TOKENIZER_ID)
     parser.add_argument("--description-tokenizer-revision", default=DEFAULT_TOKENIZER_REVISION)
-    parser.add_argument("--do-sample", action=argparse.BooleanOptionalAction, default=False, help="sampling instead of greedy decoding; keep an explicit seed")
+    parser.add_argument("--do-sample", action=argparse.BooleanOptionalAction, default=True, help="checkpoint sampling default; --no-do-sample only reproduces the failed greedy experiment")
     parser.add_argument("--max-new-tokens", type=int, default=2048)
     parser.add_argument("--device", default="cpu", help="cpu, cuda[:N], or auto (default: cpu)")
     parser.add_argument("--seed", type=int, default=0, help="deterministic generation seed")

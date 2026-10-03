@@ -99,7 +99,7 @@ class AuditionConfigChecks(unittest.TestCase):
         self.assertEqual(config["generation"]["seed"], 0)
         self.assertIn("दस प्रतिशत", clips[2]["spokenText"])
         self.assertIn("एपिसोड", clips[2]["spokenText"])
-        self.assertTrue(all("draft" in clip["contentStatuses"] for clip in clips))
+        self.assertTrue(all(set(clip["contentStatuses"]) == {"agent-checked"} for clip in clips))
         descriptions = [config["voiceDescriptionTemplate"].format(speaker=name) for name in config["audition"]["speakers"]]
         self.assertEqual(descriptions[0].replace("Rohit", "Divya"), descriptions[1])
 

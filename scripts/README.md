@@ -1,4 +1,4 @@
-# Phase 1 preparation scripts
+# Offline data and speech build tools
 
 ## Episode metadata schema
 
@@ -76,7 +76,7 @@ python scripts/prepare_episode.py \
 
 ## Optional historical candidate acquisition (not runtime)
 
-`scripts/acquire_eia_candidates.py` is the only explicitly network-capable data script. It fetches two EIA candidate windows into `data/candidates/`, preserves raw-response hashes and retrieval receipts, and invokes the offline preparation CLI. It does not import data into `src/data/episodes/`, set human approval, or infer a calendar. Reproduction of the checked-in receipts is network-free:
+`scripts/acquire_eia_candidates.py` is an explicitly network-capable **research-only** data script; `scripts/data_ecb.py --fetch` is the separate production source acquisition path. It fetches two EIA candidate windows into `data/candidates/`, preserves raw-response hashes and retrieval receipts, and invokes the offline preparation CLI. It does not import data into `src/data/episodes/`, set human approval, or infer a calendar. Reproduction of the checked-in receipts is network-free:
 
 ```sh
 python3 scripts/acquire_eia_candidates.py --offline --output-root data/candidates
@@ -98,9 +98,10 @@ packages, and `ffmpeg`; it never downloads a model or makes a runtime request.
 Use `--check` for fail-closed prerequisite checks and see
 [`docs/AUDIO_PIPELINE.md`](../docs/AUDIO_PIPELINE.md) for the manifest hashes,
 safe output rules, and review boundary. Missing dependencies/model access or
-conversion failure produces no approved asset. We do not commit model weights,
-WAV/Opus output, or manifests, and the app keeps audio unavailable until
-human/native-speaker review is complete.
+conversion failure produces no approved asset. This CLI is a **legacy schema-1
+fixture builder**, not the quality-gated release path. We never commit weights
+or raw/audition WAVs. Passed compact Opus + schema-2 manifest may be committed
+under the revised agent-checked policy, with no human-listening/native claim.
 
 ### Small Hindi voice audition
 
@@ -112,4 +113,35 @@ release manifest or a full audio set. `--dry-run` needs no TTS environment.
 once; `--check` and generation then use `HF_HUB_OFFLINE=1` and local-only loads.
 See `docs/AUDIO_PIPELINE.md` for exact commands, CPU timing methodology, and the
 fixed-seed sampling config switch. Output directories must be empty to prevent
-accidental overwrites.
+accidental overwrites. The original greedy settings are retained for historical
+reproduction, not the chosen production decoding policy.
+
+## Current production commands
+
+```sh
+# Explicit online source acquisition, or omit --fetch for preserved-snapshot offline rebuild:
+python3 scripts/data_ecb.py --fetch
+python3 -m unittest scripts.data_ecb_test scripts.data_resources_test
+
+# Standalone model-card diagnosis (new empty output directory required):
+HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/diagnose_tts.py \
+  --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts \
+  --output-dir artifacts/tts-auditions/new-diagnostic --mode default --threads 4
+
+# Resumable, sampled speech build: 6 auditions, then 58 current bilingual tracks:
+HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/build_narration.py \
+  --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts
+# --audition-only stops before the complete set. --device cuda:0 is explicit.
+
+python3 -m unittest discover -s scripts/tests
+node scripts/check-audio.mjs
+node scripts/inventory_licences.mjs
+```
+
+`build_narration.py` and `audio_quality.py` apply input-hash caches, per-text/ID
+fixed seeds, natural codec EOS, signal/duration/duplicate gates, bounded retries
+and pinned offline Hindi-capable ASR. No threshold relaxation or silence fill.
+The failed greedy experiment, number-format CER fix, precise pins and measured
+results are documented in `docs/TTS_DIAGNOSTICS.md`, `docs/AUDIO_PIPELINE.md`
+and `docs/AUDIO_BUILD.md`. Raw data/WAV/cache evidence is ignored; only passed
+static outputs ship. No Python/model package is required by the web runtime.

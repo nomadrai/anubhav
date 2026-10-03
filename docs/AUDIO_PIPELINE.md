@@ -1,189 +1,130 @@
-# Offline audio pipeline
+# Offline narration pipeline and browser audio
 
-## Phase 3 boundary
+## Current boundary
 
-The repository now has an optional **build-time** audio path. It does not add
-runtime network requests, model downloads, playback, or a UI claim that audio
-exists. The checked-in app continues to use visible text; the caller's model
-checkpoint stays outside git, while temporary WAV files and generated Opus/
-manifest artifacts remain local (the default `public/audio` output is ignored).
+Speech is generated **at build time**, never on a learner's device or an external
+runtime service. The app fetches only same-origin, hash-validated Opus after a
+Listen gesture. Captions/text remain available independently; a missing,
+incomplete, stale or corrupt manifest/asset produces readable fallback.
 
-The selected open-source candidate is `ai4bharat/indic-parler-tts`. Its model
-card declares Apache-2.0, supports English and Hindi among its multilingual
-languages, and requires gated model access. It is a large local dependency
-(about 0.9B parameters). Those facts do not mean that this checkout contains
-the model or that generated speech has been reviewed. See the focused
-requirements note in [`THIRD_PARTY.md`](THIRD_PARTY.md).
+The production entry point is **`scripts/build_narration.py`**, not the older
+schema-1 episode-reveal fixture builder. It builds the 20 narration + 9 glossary
+entries for each language from exact current content, using pinned local
+Indic Parler and a separately pinned FLAN description tokenizer. It also uses
+pinned local Whisper-small for ASR/CER checking. Build-time tools/models are
+not deployed. Full pin/licence/attribution evidence: [THIRD_PARTY](THIRD_PARTY.md).
 
-## CLI contract
+Current copied/generated assets and actual failures/timings are reported in
+[AUDIO_BUILD](AUDIO_BUILD.md). No audio or Hindi string has a fabricated human
+`reviewed` status. **No human listened and no native Hindi review occurred.**
 
-The stub remains deterministic and planning-only:
+## Prerequisites and explicit cache step
 
-```sh
-python3 scripts/generate_audio.py \
-  --provider stub --dry-run --episode EPISODE.json
-```
+The supplied tested venv is `/home/nomad_aadi/venvs/tts`; model directory is
+`/home/nomad_aadi/Documents/Projects/models/indic-parler-tts`. The model revision
+is `7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca`, not floating main. Inspect actual
+imports—not merely package discovery. Keep the compatible CPU torchaudio wheel
+recorded in THIRD_PARTY; do not silently replace Torch/Transformers.
 
-The plan contains the exact spoken text and its UTF-8 SHA-256
-`contentSha256`. It always sets `manifestGenerated: false` and
-`assetsGenerated: false`; it writes no audio and no manifest.
-
-Indic Parler can also produce a plan without importing PyTorch or inspecting a
-model. This is useful for checking text and hashes, but is not evidence that a
-model is available:
-
-```sh
-python3 scripts/generate_audio.py \
-  --provider indic_parler --dry-run --episode EPISODE.json \
-  --model-id ai4bharat/indic-parler-tts --model-revision LOCAL_REVISION
-```
-
-A real build is explicitly local-only. The caller must first obtain and review
-the gated checkpoint outside this repository, then pass its directory and an
-immutable revision or other locally recorded revision:
-
-```sh
-python3 scripts/generate_audio.py \
-  --provider indic_parler \
-  --episode EPISODE.json \
-  --model-dir /absolute/path/to/local/checkpoint \
-  --model-revision MODEL_COMMIT \
-  --output-dir public/audio
-```
-
-`--check` validates the local directory, imports the real optional stack, and
-loads **both tokenizers at their recorded revisions**, without loading model
-weights or generating tracks. Missing tokenizer caches or broken native wheels
-now fail the check; `ready: true` means prerequisites pass, not voice approval:
-
-```sh
-python3 scripts/generate_audio.py \
-  --provider indic_parler --check --episode EPISODE.json \
-  --model-dir /absolute/path/to/local/checkpoint \
-  --model-revision MODEL_COMMIT
-```
-
-No model or dependency is added to `package.json` or the default Python
-requirements. The supplied external venv and exact source pins are recorded in
-`THIRD_PARTY.md`, including the correction from CUDA to CPU `torchaudio`.
-The generation environment uses `torch`, `transformers`, `parler-tts`
-(imported as `parler_tts`), `soundfile`, and the `ffmpeg` executable for Opus
-encoding. Native notices and final output review remain open. `from_pretrained` is always called with
-`local_files_only=True`, and a missing/incomplete gated checkpoint is an
-error rather than a fallback to a network request or fake audio.
-
-## Deterministic inputs and manifest
-
-Each track is the English or Hindi `periodText` or `whatHappenedText` from the
-prepared episode. `contentSha256` hashes the exact stripped spoken text.
-`inputSha256` hashes a canonical JSON object containing:
-
-- the content hash and language;
-- provider name; and
-- generation configuration: model id/revision, separately pinned description
-  tokenizer id/revision, tokenizer file hashes once checked, voice-description
-  prompt, device, seed, `doSample`, and `maxNewTokens`.
-
-It does not contain participant responses or other private data. A successful
-build writes `public/audio/manifest.json` (or the selected output directory)
-only after all tracks succeed. The manifest contains `schemaVersion: 1`, the
-provider, explicit `provenance` (`modelId`, `modelRevision`, local-only source,
-and generation `config`), and an `entries` array. Every entry records the
-track id, spoken text, both hashes, relative `.opus` path, sample rate, output
-SHA-256, and this format contract:
-
-```json
-{"container":"ogg","codec":"opus","channels":1,"bitrate":"24k"}
-```
-
-Output components are restricted to safe filename characters. The output
-directory cannot be a symlink and must be separate from the model directory.
-WAV intermediates are created in a temporary directory and removed after the
-build. Existing assets and manifests are not overwritten unless
-`--overwrite` is explicit. The manifest is written atomically after conversion
-succeeds.
-
-## Six-clip Hindi auditions (not the full audio set)
-
-Configuration lives in `scripts/config/tts.json`. It pins:
-
-- Indic Parler: `7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca`;
-- `google/flan-t5-large` description tokenizer:
-  `0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a`;
-- speaker order: Rohit, then Divya;
-- one shared description template, changing only `{speaker}`;
-- CPU threads: four; inter-op threads: one; seed zero; `doSample: false`;
-- `maxNewTokens: 2048`, a generation safety cap, not a target length.
-
-The exact Hindi `spokenText` is read from `src/content/hi/narration.json`:
-`USER_EXIT` (short), `run.main` (medium), and the concatenation of `DRAWDOWN_10`
-with `reveal.main` (number in words plus the transliterated term “एपिसोड”). The
-third clip combines existing entries rather than inventing an extra lesson.
-All remain draft, and the listener chooses the voice; no approval is inferred.
-
-First cache only the public description-tokenizer files online (no FLAN weights,
-no gated-account token needed). This is separate from generation:
+Cache the separate tokenizer explicitly online if missing:
 
 ```sh
 /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py --cache-tokenizer
 ```
 
-Then check and generate entirely offline:
+Cache only the pinned ASR artifacts online (no dataset download, no new account):
+
+```sh
+HF_HUB_DISABLE_TELEMETRY=1 /home/nomad_aadi/venvs/tts/bin/python - <<'PY'
+from huggingface_hub import snapshot_download
+snapshot_download('openai/whisper-small',
+    revision='973afd24965f72e36ca33b3055d56a652f456b4d',
+    allow_patterns=['config.json','generation_config.json','preprocessor_config.json',
+      'tokenizer.json','tokenizer_config.json','special_tokens_map.json',
+      'added_tokens.json','normalizer.json','vocab.json','merges.txt',
+      'model.safetensors','README.md'])
+PY
+```
+
+The explicit cache command may use the user's existing authentication read-only.
+Never print/copy credentials, log a token, or embed it in a notebook/command.
+All subsequent model/tokenizer/ASR loading is `local_files_only=True`.
+
+## Diagnose and build offline
+
+The original greedy failure and the standalone one-variable diagnosis are
+preserved in [TTS_AUDITIONS](TTS_AUDITIONS.md) and
+[TTS_DIAGNOSTICS](TTS_DIAGNOSTICS.md). `scripts/config/tts.json` retains the
+historical greedy experiment; `tts-production.json` is the sampled production
+policy. The shared voice-description template changes only the speaker name.
 
 ```sh
 HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
   --check --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts
 
 HF_HUB_OFFLINE=1 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 \
-  /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
+  /home/nomad_aadi/venvs/tts/bin/python -u scripts/build_narration.py \
   --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts
+# Add --audition-only to stop after the controlled six-clip comparison.
 ```
 
-The output is six PCM16 mono WAVs and `run.json` under the gitignored
-`artifacts/tts-auditions/greedy-seed0/`, **not** `src/`, `public/`, or a deployment
-manifest. The runner refuses to overwrite a nonempty output folder. A single
-model instance is reused for both speakers. `modelLoadSeconds` is separate;
-each `generationSeconds` measures text tokenization, inference, and WAV writing
-using `perf_counter` wall time, excluding loading and post-generation metrics.
-There is no warmup; the first clip can include first-inference overhead.
-`durationSeconds`, real-time factor, WAV hash, RMS, peak, clipping fraction,
-package versions, transcripts, and effective configuration are recorded per run.
-These numerical checks cannot assess pronunciation or naturalness.
+Rerunning the build verifies/reuses cached waveforms/transcripts rather than
+resynthesizing identical inputs. Per-ID/text/attempt seeds and hashes cover the
+model/tokenizer configuration, speaker, generation settings, exact text, policy
+and package versions. Changed text invalidates its entry. There are at most
+three attempts for each text/voice. Files are never approved because they merely
+exist; codec EOS, signal/duration/duplicate checks and ASR must pass. Cached
+quality assessments are versioned; the numeric-format CER repair preserves
+original raw scores/transcripts and reevaluates without new inference.
 
-To try sampling **later**, copy the config, set `generation.doSample` to `true`,
-keep an explicit fixed seed, and choose a new output directory:
+Use the actual observed four-vs-eight-thread evidence, not core count intuition.
+No speed guarantee is inferred for a different computer. Optional user-run GPU
+instructions: [GPU_AUDIO](GPU_AUDIO.md); no hosted job/account was started.
+
+## Artifact contract and gates
+
+- Ignored `artifacts/audio-build/<input-sha>/speech.wav` + `quality.json` retain
+  passed and rejected candidates. `auditions.json`, `progress.json` and
+  `build-report.json` record measurements, transcripts, retries and selection.
+- Only passed mono normalized Opus enters
+  `public/audio/{en,hi}/<input-sha>.opus`, target 24kbps, loudnorm target −18 LUFS,
+  true-peak target −2dB, LRA 7. These are targets; actual bytes/durations are
+  measured and encoded clipping/finite-signal checks run.
+- `public/audio/manifest.json`, schemaVersion 2, declares `complete`, review
+  status, voices, build/model/tokenizer provenance and all tracks. Each includes
+  language/ID/exact spoken text, content/input/asset SHA-256, bytes/duration,
+  seed and actual EOS/signal/ASR metrics. It contains no participant data,
+  credentials or local filesystem paths.
+- Manifest writes are atomic. Partial builds explicitly have `complete:false`
+  and failed/missing tracks; release remains red. No silence or fixture bytes
+  are inserted to fill a gap. All required IDs and both languages must match
+  current source. Audio files are intentionally committed only after checks,
+  so a clean web build does not need model downloads or TTS hardware.
 
 ```sh
-HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
-  --config /path/to/your/sampling-config.json \
-  --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts \
-  --output-dir artifacts/tts-auditions/sampling-seed0
+node scripts/check-audio.mjs
+npm run check:content
+npm run check:release
+python3 -m unittest discover -s scripts/tests
 ```
 
-The seed resets before every clip. The existing episode CLI also accepts
-`--do-sample`/`--no-do-sample`; both default greedy. Neither a fixed seed nor
-greedy decoding promises byte-identical output across devices/package versions.
-No full-set generation or runtime playback is part of this audition task.
+The audio check verifies paths, completeness, exact current spoken hashes,
+asset bytes/SHA, quality/EOS and bounded ASR-CER results; content/release also
+verify hash-bound text review. Changing a status to `reviewed` requires actual
+human evidence, never a successful command. Original greedy WAVs remain ignored
+and unchanged. Schema-1 fixture/stub output is not accepted for release.
 
-## Conversion and review boundary
+## Playback and offline scope
 
-The provider first writes a temporary WAV. If `ffmpeg` is available, the CLI
-converts it with mono, `libopus`, and 24 kbps settings. Missing `ffmpeg`, a
-failed conversion, an empty file, a bad model, missing tokenizer, or failed
-optional import stops the command with a non-zero error. It never creates a
-silent placeholder or marks a failed track as available.
+`src/audio/AudioManager.ts` is one player shared by narration and glossary. It
+loads no audio automatically, cancels old requests, validates manifest/text/
+bytes/hash, supports pause/resume/replay/mute/0.8× speed, and stops on screen or
+language change. It accepts permitted agent-checked or genuinely reviewed
+assets and refuses draft. Controls disclose loading/failure; no audio is needed
+to continue. Captions are utterance text, not word-timed subtitles.
 
-The generated files are not release assets merely because a command succeeded.
-Before any asset is copied into a reviewed release set, a human must verify
-English/Hindi pronunciation, naturalness, intelligibility, voice consistency,
-number/symbol reading, safety wording, accessibility transcripts, output
-licence/notice obligations, and the model's gated-access terms. Native-speaker
-review is required for Hindi. Do not expose a “Listen” control or change the
-UI's unavailable-audio state until reviewed assets and the release manifest
-actually exist; this implementation deliberately does not modify UI/content
-files.
-
-Visible text and an accessible transcript remain the authoritative route for
-every warning, formula, consent statement, and teaching explanation. Audio is
-never the only route. No participant response, account data, telemetry, or
-runtime external request enters this build.
+The service worker precaches the shell but **not audio**. It caches only
+requested same-origin files, with cleanup/expiry limits. Offline reopening
+requires a warmed successful cache; unrequested clips still need a connection.
+Browser playback/offline proof is separate from synthesis success and is
+recorded in [ACCESSIBILITY_AND_PERFORMANCE](ACCESSIBILITY_AND_PERFORMANCE.md).

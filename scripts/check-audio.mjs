@@ -71,7 +71,7 @@ export function checkAudio(root = process.cwd()) {
     if (!accepted.has(track.status)) failures.push(`${label}: draft or invalid review status`);
     if (track.status === 'agent-checked') warnings.push(`AGENT-CHECKED AUDIO (automated; no human listening claimed): ${label}`);
     if (!object(track.quality) || track.quality.passed !== true || track.quality.eos !== true) failures.push(`${label}: quality.passed and quality.eos must both be true`);
-    if (track.quality?.asr !== undefined && (!object(track.quality.asr) || !Number.isFinite(track.quality.asr.cer) || track.quality.asr.cer < 0 || track.quality.asr.cer > (cerLimits[track.language] ?? 0) || !['passed', 'pass'].includes(track.quality.asr.status))) failures.push(`${label}: invalid or failed ASR quality result`);
+    if (track.quality?.asr !== undefined && (!object(track.quality.asr) || !Number.isFinite(track.quality.asr.cer) || track.quality.asr.cer < 0 || track.quality.asr.cer > (cerLimits[track.language] ?? 0) || track.quality.asr.quantitiesMatch === false || !['passed', 'pass'].includes(track.quality.asr.status))) failures.push(`${label}: invalid or failed ASR quality result`);
     if (!Number.isFinite(track.durationSeconds) || track.durationSeconds <= 0) failures.push(`${label}: durationSeconds must be positive`);
     if (!Number.isSafeInteger(track.bytes) || track.bytes <= 0) failures.push(`${label}: bytes must be a positive integer`);
     // Restrict raw spelling, not URL-normalized spelling: encoded traversal, query, fragment,
@@ -91,6 +91,13 @@ export function checkAudio(root = process.cwd()) {
     } catch { failures.push(`${label}: audio asset missing or unreadable`); }
   }
   for (const [key, track] of expected) if (!seen.has(key)) failures.push(`${manifestPath}: missing track id=${track.id} language=${track.language}`);
+  const allowedFiles = new Set(manifest.tracks.map((track) => track?.path));
+  for (const language of ['en', 'hi']) {
+    const directory = path.join(root, 'public/audio', language);
+    if (fs.existsSync(directory)) for (const file of fs.readdirSync(directory)) {
+      if (file.endsWith('.opus') && !allowedFiles.has(`/audio/${language}/${file}`)) failures.push(`public/audio/${language}/${file}: unlisted audio asset must not ship`);
+    }
+  }
   return { failures, warnings, expectedCount: expected.size };
 }
 

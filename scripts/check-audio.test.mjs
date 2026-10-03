@@ -53,6 +53,7 @@ describe('schema-2 audio integrity gate (not a listening test)', () => {
     ['failed ASR', (m) => { m.tracks[0].quality.asr = { cer: 0.1, status: 'failed' }; }, 'invalid or failed ASR'],
     ['bad CER', (m) => { m.tracks[0].quality.asr = { cer: -1, status: 'passed' }; }, 'invalid or failed ASR'],
     ['over-threshold CER with false pass flag', (m) => { m.tracks[0].quality.asr = { cer: 0.9, status: 'passed' }; }, 'invalid or failed ASR'],
+    ['wrong quantity with low CER', (m) => { m.tracks[0].quality.asr = { cer: 0.1, quantitiesMatch: false, status: 'passed' }; }, 'invalid or failed ASR'],
     ['string CER', (m) => { m.tracks[0].quality.asr = { cer: '0', status: 'passed' }; }, 'invalid or failed ASR'],
     ['null ASR', (m) => { m.tracks[0].quality.asr = null; }, 'invalid or failed ASR'],
     ['zero duration', (m) => { m.tracks[0].durationSeconds = 0; }, 'durationSeconds must be positive'],
@@ -94,6 +95,12 @@ describe('schema-2 audio integrity gate (not a listening test)', () => {
     fs.rmSync(asset);
     const outside = path.join(root, 'outside.opus'); fs.writeFileSync(outside, original);
     fs.symlinkSync(outside, asset); rejects(root, 'audio asset escapes public root');
+  });
+
+  it('blocks stale or rejected assets left outside the manifest', () => {
+    const root = fixture();
+    fs.writeFileSync(path.join(root, 'public/audio/en', `${'f'.repeat(64)}.opus`), 'rejected old output');
+    rejects(root, 'unlisted audio asset must not ship');
   });
 
   it('accepts optional passed ASR evidence but never requires or invents listening', () => {

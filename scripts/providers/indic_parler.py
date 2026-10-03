@@ -48,7 +48,7 @@ class IndicParlerConfig:
     description_tokenizer_dir: Path | None = None
     description_tokenizer_id: str = DEFAULT_TOKENIZER_ID
     description_tokenizer_revision: str = DEFAULT_TOKENIZER_REVISION
-    do_sample: bool = False
+    do_sample: bool = True
     max_new_tokens: int = 2048
 
     def validate(self) -> None:
@@ -89,6 +89,37 @@ class IndicParlerConfig:
         }
 
 
+class TokenTrace:
+    """Observe generated codec tokens without changing logits or termination.
+
+    Parler overwrites output sequences with PCM; the streamer retains evidence
+    of EOS on every codebook. The initial delay-pattern prompt is excluded.
+    """
+
+    def __init__(self, eos: int, codebooks: int) -> None:
+        self.eos = eos
+        self.seen = [False] * codebooks
+        self.steps = 0
+        self.initial = True
+
+    def put(self, value: Any) -> None:
+        if self.initial:
+            self.initial = False
+            return
+        tokens = value.detach().cpu().reshape(-1).tolist()
+        self.steps += 1
+        for index, token in enumerate(tokens[:len(self.seen)]):
+            self.seen[index] = self.seen[index] or token == self.eos
+
+    def end(self) -> None:
+        pass
+
+    def result(self, cap: int) -> dict[str, Any]:
+        return {"generatedSteps": self.steps, "maxNewTokens": cap,
+                "eosCodebooks": self.seen, "eos": all(self.seen) and self.steps < cap,
+                "hitTokenLimit": self.steps >= cap}
+
+
 class _TransformersBackend:
     """Thin wrapper around the lazily imported model objects."""
 
@@ -116,8 +147,8 @@ class _TransformersBackend:
         self.max_new_tokens = max_new_tokens
 
     def synthesize(self, spoken_text: str, *, language: str) -> tuple[Any, int]:
-        # Greedy generation plus a fixed seed makes the requested build path
-        # deterministic where the selected backend/device is deterministic.
+        # Fixed-seed sampling matches the checkpoint's intended decode mode.
+        # Greedy is retained explicitly for reproducing the failed audition.
         self.torch.manual_seed(self.seed)
         if hasattr(self.torch, "cuda") and self.torch.cuda.is_available():
             self.torch.cuda.manual_seed_all(self.seed)
@@ -130,6 +161,7 @@ class _TransformersBackend:
         ).to(self.device)
         inference_mode = getattr(self.torch, "inference_mode", None)
         context = inference_mode() if inference_mode else self.torch.no_grad()
+        trace = TokenTrace(1024, 9)
         with context:
             generation = self.model.generate(
                 input_ids=description_inputs.input_ids,
@@ -138,7 +170,9 @@ class _TransformersBackend:
                 prompt_attention_mask=prompt_inputs.attention_mask,
                 do_sample=self.do_sample,
                 max_new_tokens=self.max_new_tokens,
+                streamer=trace,
             )
+        self.last_generation = trace.result(self.max_new_tokens)
         audio = generation.detach().cpu().numpy().squeeze()
         sample_rate = getattr(getattr(self.model, "config", None), "sampling_rate", None)
         if not isinstance(sample_rate, int) or sample_rate <= 0:
@@ -165,7 +199,7 @@ class IndicParlerProvider(AudioProvider):
         description_tokenizer_dir: Path | str | None = None,
         description_tokenizer_id: str = DEFAULT_TOKENIZER_ID,
         description_tokenizer_revision: str = DEFAULT_TOKENIZER_REVISION,
-        do_sample: bool = False,
+        do_sample: bool = True,
         max_new_tokens: int = 2048,
         backend_factory: Callable[[], Any] | None = None,
         wav_writer: Callable[[Path, Any, int], None] | None = None,
@@ -330,6 +364,18 @@ class IndicParlerProvider(AudioProvider):
         self.config = config
         if self._backend is not None:
             self._backend.description = description
+
+    def set_generation_settings(self, *, seed: int, max_new_tokens: int, do_sample: bool = True) -> None:
+        config = replace(self.config, seed=seed, max_new_tokens=max_new_tokens, do_sample=do_sample)
+        config.validate()
+        self.config = config
+        if self._backend is not None:
+            self._backend.seed = seed
+            self._backend.max_new_tokens = max_new_tokens
+            self._backend.do_sample = do_sample
+
+    def last_generation(self) -> dict[str, Any]:
+        return dict(getattr(self._backend, "last_generation", {}))
 
     def provenance(self) -> dict[str, Any]:
         model_dir = (

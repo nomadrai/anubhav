@@ -1,0 +1,3027 @@
+{
+  "schemaVersion": 2,
+  "complete": false,
+  "status": "agent-checked",
+  "voices": {
+    "en": "Divya",
+    "hi": "Divya"
+  },
+  "provenance": {
+    "modelId": "ai4bharat/indic-parler-tts",
+    "modelRevision": "7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca",
+    "descriptionTokenizerId": "google/flan-t5-large",
+    "descriptionTokenizerRevision": "0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a",
+    "voiceDescriptionTemplate": "{speaker} speaks in a clear, calm voice at a moderate pace with a neutral tone. The recording is close, clean, and free of background noise.",
+    "buildConfig": {
+      "schemaVersion": 1,
+      "doSample": true,
+      "baseSeed": 0,
+      "cpuThreads": 4,
+      "maxAttempts": 3,
+      "maximumTokens": 2580,
+      "minimumTokens": 384,
+      "secondsPerWordAllowance": 0.7,
+      "durationPaddingSeconds": 3,
+      "quality": {
+        "minimumRmsDbfs": -48,
+        "minimumPeak": 0.01,
+        "maximumSilenceRatio": 0.85,
+        "maximumClippedRatio": 0.002,
+        "maximumCer": {
+          "en": 0.2,
+          "hi": 0.35
+        }
+      },
+      "asr": {
+        "modelId": "openai/whisper-small",
+        "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+        "licence": "Apache-2.0",
+        "sampleRate": 16000,
+        "doSample": false
+      },
+      "encoding": {
+        "codec": "libopus",
+        "bitrate": "24k",
+        "channels": 1,
+        "sampleRate": 48000,
+        "integratedLufs": -18,
+        "truePeakDb": -2,
+        "loudnessRange": 7
+      }
+    },
+    "versions": {
+      "torch": "2.14.1+cpu",
+      "transformers": "4.46.1",
+      "parler-tts": "0.2.2",
+      "soundfile": "0.14.0",
+      "psutil": "7.2.2"
+    },
+    "humanListened": false,
+    "nativeReview": false,
+    "selection": "automated Hindi auditions; English individually gated; no subjective voice claim"
+  },
+  "tracks": [
+    {
+      "id": "language.greeting",
+      "language": "en",
+      "spokenText": "Welcome. Choose a language to begin.",
+      "path": "/audio/en/7b4e80d7ec7334f7b6c5b263df8e07bb0f697b1239234861bbe1b4505427258e.opus",
+      "contentSha256": "5f387f78b765b50dba8480f3cc1020dd2ba6a3698f4fefc18bebb95b2bba1ee2",
+      "inputSha256": "7b4e80d7ec7334f7b6c5b263df8e07bb0f697b1239234861bbe1b4505427258e",
+      "assetSha256": "d1de9c6947ff1ea77b73eee0a30568c9c2bd6cd3bb4892c75bd8ce99f07fe6de",
+      "durationSeconds": 2.7283541666666666,
+      "bytes": 8384,
+      "status": "agent-checked",
+      "seed": 211936500,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Welcome. Choose a language to begin.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.47725508616004,
+          "peak": 0.088104248046875,
+          "silenceRatio": 0.4606216755319149,
+          "generatedSteps": 244,
+          "maxNewTokens": 630
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.7283541666666666,
+          "rmsDbfs": -18.626009112550953,
+          "peak": 0.8136051297187805,
+          "silenceRatio": 0.28381731966005147,
+          "clippedRatio": 0.0,
+          "wavSha256": "d1de9c6947ff1ea77b73eee0a30568c9c2bd6cd3bb4892c75bd8ce99f07fe6de"
+        }
+      }
+    },
+    {
+      "id": "intro.main",
+      "language": "en",
+      "spokenText": "This is practice with virtual money. Your answers stay in memory during this journey; they are not saved or sent.",
+      "path": "/audio/en/f3531e9de4ad1132ccd3b227372c4f445a4618797febe9970c972977244e884f.opus",
+      "contentSha256": "ef38893376975ddab590bf5abe9eed5efe5760cf3ec785fdd10dd9ac9884ab7e",
+      "inputSha256": "f3531e9de4ad1132ccd3b227372c4f445a4618797febe9970c972977244e884f",
+      "assetSha256": "90a7ade2acca290ba7f36999f9c726b6516b54b1e1556da99d5e0d5c3550259f",
+      "durationSeconds": 7.987666666666667,
+      "bytes": 24153,
+      "status": "agent-checked",
+      "seed": 1222546094,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "This is practice with virtual money. Your answers stay in memory. During this journey, they are not sieved or sent.",
+          "cer": 0.01818181818181818,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.01818181818181818,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.01818181818181818,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.541612446080535,
+          "peak": 0.13421630859375,
+          "silenceRatio": 0.4084926871366279,
+          "generatedSteps": 697,
+          "maxNewTokens": 1474
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 7.987666666666667,
+          "rmsDbfs": -18.565255830168475,
+          "peak": 0.7791035175323486,
+          "silenceRatio": 0.2775946250469474,
+          "clippedRatio": 0.0,
+          "wavSha256": "90a7ade2acca290ba7f36999f9c726b6516b54b1e1556da99d5e0d5c3550259f"
+        }
+      }
+    },
+    {
+      "id": "setup.main",
+      "language": "en",
+      "spokenText": "A forwarded message promises to double money using borrowed exposure. This is a teaching example, not advice.",
+      "path": "/audio/en/c83bc90be21ffd42a39118c0b5db7ed1889c28b68efe83d64662754e799c11ab.opus",
+      "contentSha256": "00ba8dbe8b9163eacaf9fedb2fd69ba42e811fe482a80137f29d0242bbae954c",
+      "inputSha256": "c83bc90be21ffd42a39118c0b5db7ed1889c28b68efe83d64662754e799c11ab",
+      "assetSha256": "de157f425a7b8e8e643373614887fa643f00ae752415fa1509bdf23ec639f52d",
+      "durationSeconds": 8.138604166666667,
+      "bytes": 24068,
+      "status": "agent-checked",
+      "seed": 2812462456,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "A forwarded message promises to double money using borrowed exposure. This is a teaching example, not advice.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.18307951467661,
+          "peak": 0.16278076171875,
+          "silenceRatio": 0.4026084388373752,
+          "generatedSteps": 710,
+          "maxNewTokens": 1293
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 8.138604166666667,
+          "rmsDbfs": -19.654948651753497,
+          "peak": 0.7905309200286865,
+          "silenceRatio": 0.31806744092583444,
+          "clippedRatio": 0.0,
+          "wavSha256": "de157f425a7b8e8e643373614887fa643f00ae752415fa1509bdf23ec639f52d"
+        }
+      }
+    },
+    {
+      "id": "prediction.main",
+      "language": "en",
+      "spokenText": "What do you think will happen? There is no right answer.",
+      "path": "/audio/en/818a44d3ebf2a4750a55cd0be35d6442346da1008fd5ca6593546984d1ea061f.opus",
+      "contentSha256": "666f7f72c12fc5b0bb2b52240683f67bb672e33599199dee4549b11186ae8895",
+      "inputSha256": "818a44d3ebf2a4750a55cd0be35d6442346da1008fd5ca6593546984d1ea061f",
+      "assetSha256": "bff7427c35ae320f3fe0f4d041f2d7e8d878c9396ec8a3466c06b5516c8d8c58",
+      "durationSeconds": 3.9125625,
+      "bytes": 11528,
+      "status": "agent-checked",
+      "seed": 1307947735,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "What do you think will happen? There is no right answer.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.828544774694784,
+          "peak": 0.174407958984375,
+          "silenceRatio": 0.47571054339762614,
+          "generatedSteps": 346,
+          "maxNewTokens": 931
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.9125625,
+          "rmsDbfs": -18.602170545053504,
+          "peak": 0.8633724451065063,
+          "silenceRatio": 0.36683652550811224,
+          "clippedRatio": 0.0,
+          "wavSha256": "bff7427c35ae320f3fe0f4d041f2d7e8d878c9396ec8a3466c06b5516c8d8c58"
+        }
+      }
+    },
+    {
+      "id": "run.main",
+      "language": "en",
+      "spokenText": "Watch the path. You can continue or exit at each pause.",
+      "path": "/audio/en/1ec9ef297122811ccbc74eaf4321033d9b25ade2a51d812740e6a97f4f252763.opus",
+      "contentSha256": "d98c44ee38ee897e50280afb79bfc2908ab07633e9809f5d97cf862f9bae1915",
+      "inputSha256": "1ec9ef297122811ccbc74eaf4321033d9b25ade2a51d812740e6a97f4f252763",
+      "assetSha256": "a0c16bd898f3428baeb6c38b386d1411d74569accadb616507810a2e71aeafb3",
+      "durationSeconds": 5.607625,
+      "bytes": 16175,
+      "status": "agent-checked",
+      "seed": 2152599663,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Watch the path. You can canoe or exit at each pause.",
+          "cer": 0.09433962264150944,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.09433962264150944,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.09433962264150944,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.66191270552009,
+          "peak": 0.0985107421875,
+          "silenceRatio": 0.6345351319875776,
+          "generatedSteps": 492,
+          "maxNewTokens": 931
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.607625,
+          "rmsDbfs": -19.327681113109556,
+          "peak": 0.8085285425186157,
+          "silenceRatio": 0.40798614981089737,
+          "clippedRatio": 0.0,
+          "wavSha256": "a0c16bd898f3428baeb6c38b386d1411d74569accadb616507810a2e71aeafb3"
+        }
+      }
+    },
+    {
+      "id": "result.main",
+      "language": "en",
+      "spokenText": "Here is how the leveraged position ended.",
+      "path": "/audio/en/a908791d522c425e8f8c0d1420ce2d0bfc43570b76e627d40fe6bcc540ff9617.opus",
+      "contentSha256": "7da2e4654223e46d25efc6d4975d463feb038567f3ef15b41112b21ee8ca97c2",
+      "inputSha256": "a908791d522c425e8f8c0d1420ce2d0bfc43570b76e627d40fe6bcc540ff9617",
+      "assetSha256": "bf6c0d7c5cd3ec93b2348646c000dbaf75339a156161ed7c903f130f7c4af766",
+      "durationSeconds": 3.3552916666666666,
+      "bytes": 9802,
+      "status": "agent-checked",
+      "seed": 3376010501,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Here is how the leaf-reached position ended.",
+          "cer": 0.15,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.15,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.15,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -26.41375724321058,
+          "peak": 0.309844970703125,
+          "silenceRatio": 0.36935688797577854,
+          "generatedSteps": 298,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.3552916666666666,
+          "rmsDbfs": -17.951426632140336,
+          "peak": 0.7874858379364014,
+          "silenceRatio": 0.31151042507481963,
+          "clippedRatio": 0.0,
+          "wavSha256": "bf6c0d7c5cd3ec93b2348646c000dbaf75339a156161ed7c903f130f7c4af766"
+        }
+      }
+    },
+    {
+      "id": "replay.main",
+      "language": "en",
+      "spokenText": "The same path without leverage shows the contrast plainly.",
+      "path": "/audio/en/1a0f3f26b425e5ecb500aecd888ba6b776a2fc7b6aea52d28aaa7257d628c754.opus",
+      "contentSha256": "3e7c7328794e302400c172274ec7a69e7afbe3929192d20578bf7d81dc637bc5",
+      "inputSha256": "1a0f3f26b425e5ecb500aecd888ba6b776a2fc7b6aea52d28aaa7257d628c754",
+      "assetSha256": "5718dd31e26ca5d9d23deb9424096cac173c02e49baf78dc08618478e751e9fa",
+      "durationSeconds": 4.446625,
+      "bytes": 13334,
+      "status": "agent-checked",
+      "seed": 2554200844,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The same path without leverage shows the contrast plainly.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.43802008501595,
+          "peak": 0.138580322265625,
+          "silenceRatio": 0.4398661879895561,
+          "generatedSteps": 392,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.446625,
+          "rmsDbfs": -18.582569804456796,
+          "peak": 0.7579260468482971,
+          "silenceRatio": 0.29338262165125234,
+          "clippedRatio": 0.0,
+          "wavSha256": "5718dd31e26ca5d9d23deb9424096cac173c02e49baf78dc08618478e751e9fa"
+        }
+      }
+    },
+    {
+      "id": "reveal.main",
+      "language": "en",
+      "spokenText": "This episode is a teaching example. One episode does not predict the future.",
+      "path": "/audio/en/53e17d8588b313fa53743901847fa1fd9de017be374f6577f6dce8c472ef4245.opus",
+      "contentSha256": "c3a97d8484b99da00d4a62ba1871c4374d163e56a5d9dc2fa433bf1bc168685d",
+      "inputSha256": "53e17d8588b313fa53743901847fa1fd9de017be374f6577f6dce8c472ef4245",
+      "assetSha256": "84925ef6b80dfc5b6736e4ef0e78f7df7a901ba1a2306a134632c47b32803e3b",
+      "durationSeconds": 5.909479166666666,
+      "bytes": 17491,
+      "status": "agent-checked",
+      "seed": 1780666835,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "This episode is a teaching example. One episode does not preach the future.",
+          "cer": 0.04054054054054054,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.04054054054054054,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.04054054054054054,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.58736425211505,
+          "peak": 0.231781005859375,
+          "silenceRatio": 0.453589298870334,
+          "generatedSteps": 518,
+          "maxNewTokens": 1052
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.909479166666666,
+          "rmsDbfs": -18.824323603552443,
+          "peak": 0.8166082501411438,
+          "silenceRatio": 0.32170770830762724,
+          "clippedRatio": 0.0,
+          "wavSha256": "84925ef6b80dfc5b6736e4ef0e78f7df7a901ba1a2306a134632c47b32803e3b"
+        }
+      }
+    },
+    {
+      "id": "debrief.main",
+      "language": "en",
+      "spokenText": "Leverage makes each price change affect more virtual money.",
+      "path": "/audio/en/56bac5a06dc3fc2bf8074e8137473439692e959bf06a3a9c5dcc09c0cae126db.opus",
+      "contentSha256": "5c527e24b279637092685b4fa535a1b862b09021c73a357ca6e5b5ecf637b238",
+      "inputSha256": "56bac5a06dc3fc2bf8074e8137473439692e959bf06a3a9c5dcc09c0cae126db",
+      "assetSha256": "dcfbdd77d349f894988c40bb4be82437e36eab8e5aed343dafa6718e75769500",
+      "durationSeconds": 3.750020833333333,
+      "bytes": 11497,
+      "status": "agent-checked",
+      "seed": 1161807797,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Leverage makes each price change affect more virtual money.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.04464061622275,
+          "peak": 0.154571533203125,
+          "silenceRatio": 0.3906370936532508,
+          "generatedSteps": 332,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.750020833333333,
+          "rmsDbfs": -18.057755126903842,
+          "peak": 0.7524576187133789,
+          "silenceRatio": 0.24397642235320915,
+          "clippedRatio": 0.0,
+          "wavSha256": "dcfbdd77d349f894988c40bb4be82437e36eab8e5aed343dafa6718e75769500"
+        }
+      }
+    },
+    {
+      "id": "postcheck.main",
+      "language": "en",
+      "spokenText": "Answer the question again. This is reflection, not a score.",
+      "path": "/audio/en/77fe29e67a2b1f16d5098b07b95886e4bfc5394681bc741a9216125959183d61.opus",
+      "contentSha256": "7cadc7d53460b746831c51ebface6a30eaaabac41ad583b48d00a90391161989",
+      "inputSha256": "77fe29e67a2b1f16d5098b07b95886e4bfc5394681bc741a9216125959183d61",
+      "assetSha256": "b5e6979796f236ff5d0cbeac6616b5dd9854bd320058a1c10a78330a2d5969d8",
+      "durationSeconds": 4.562729166666666,
+      "bytes": 14110,
+      "status": "agent-checked",
+      "seed": 2420552239,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Answer the question again. This is reflection, not a score.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.833502702989236,
+          "peak": 0.111175537109375,
+          "silenceRatio": 0.4481403069338422,
+          "generatedSteps": 402,
+          "maxNewTokens": 871
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.562729166666666,
+          "rmsDbfs": -18.214562379524274,
+          "peak": 0.7268691658973694,
+          "silenceRatio": 0.2753651643068156,
+          "clippedRatio": 0.0,
+          "wavSha256": "b5e6979796f236ff5d0cbeac6616b5dd9854bd320058a1c10a78330a2d5969d8"
+        }
+      }
+    },
+    {
+      "id": "nextsteps.main",
+      "language": "en",
+      "spokenText": "Only checked protective resources are shown. They are for learning, not investment advice.",
+      "path": "/audio/en/a877cf6ec6381c7079b4e67a12c3ac5bb6f57f51bc72392d39b330d4542d23b2.opus",
+      "contentSha256": "51369f7dcb86765a76e24819f81aca6f389815af09759550ee7eecd0c4dc92e5",
+      "inputSha256": "a877cf6ec6381c7079b4e67a12c3ac5bb6f57f51bc72392d39b330d4542d23b2",
+      "assetSha256": "973aa561ee9138891ae29e7bfdf27d5b5e339d75ac966e87e3f28eb9d06da636",
+      "durationSeconds": 6.211333333333333,
+      "bytes": 18172,
+      "status": "agent-checked",
+      "seed": 3966293530,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Only checked or detective resources are true. They are for looting, not investment advice.",
+          "cer": 0.14942528735632185,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.14942528735632185,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.14942528735632185,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.13920477722781,
+          "peak": 0.157958984375,
+          "silenceRatio": 0.47451810747663553,
+          "generatedSteps": 544,
+          "maxNewTokens": 1052
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.211333333333333,
+          "rmsDbfs": -17.75557541555163,
+          "peak": 0.7664180397987366,
+          "silenceRatio": 0.3740507942470752,
+          "clippedRatio": 0.0,
+          "wavSha256": "973aa561ee9138891ae29e7bfdf27d5b5e339d75ac966e87e3f28eb9d06da636"
+        }
+      }
+    },
+    {
+      "id": "ENTRY",
+      "language": "en",
+      "spokenText": "The practice begins at the first value.",
+      "path": "/audio/en/81ff8f07c2616bd03295af8cf9e66ca63cbc0cd747c2456293c67ff99355ed32.opus",
+      "contentSha256": "d0ea0fdc6cd982485f3d73617b39a5b3135a8750b83a24604d16a4d70768b3e6",
+      "inputSha256": "81ff8f07c2616bd03295af8cf9e66ca63cbc0cd747c2456293c67ff99355ed32",
+      "assetSha256": "f4bc2d95733b1d2f165613a73504b7360e31132a1d8a9ae4b9f21ec2b987bd9e",
+      "durationSeconds": 3.0650416666666667,
+      "bytes": 9195,
+      "status": "agent-checked",
+      "seed": 2895110673,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "the practice begins at the first value.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.166788511924416,
+          "peak": 0.19610595703125,
+          "silenceRatio": 0.46772165009469696,
+          "generatedSteps": 273,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.0650416666666667,
+          "rmsDbfs": -19.613140594209806,
+          "peak": 0.8446938991546631,
+          "silenceRatio": 0.33387256834463913,
+          "clippedRatio": 0.0,
+          "wavSha256": "f4bc2d95733b1d2f165613a73504b7360e31132a1d8a9ae4b9f21ec2b987bd9e"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_5",
+      "language": "en",
+      "spokenText": "The path is five percent below its start.",
+      "path": "/audio/en/4704737516297b355cff134fb6cb6028e9865c10bff86aa955f6bf7544b22df9.opus",
+      "contentSha256": "5ea72d1dee20aa4a36fc7f56fad5cc5ab404d00a1c60516889aca8c361c1ef48",
+      "inputSha256": "4704737516297b355cff134fb6cb6028e9865c10bff86aa955f6bf7544b22df9",
+      "assetSha256": "912bfe39132f88d6d6f59525204ac4212be8b06e49b647ba53f1ec17d31e7bf1",
+      "durationSeconds": 3.0534375,
+      "bytes": 8889,
+      "status": "agent-checked",
+      "seed": 960073672,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The path is 5% below its start.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.3,
+            "status": "failed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.3,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.664833684294706,
+          "peak": 0.197479248046875,
+          "silenceRatio": 0.49056855988593157,
+          "generatedSteps": 272,
+          "maxNewTokens": 750
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.0534375,
+          "rmsDbfs": -18.90385461768504,
+          "peak": 0.7881888747215271,
+          "silenceRatio": 0.3323849486575922,
+          "clippedRatio": 0.0,
+          "wavSha256": "912bfe39132f88d6d6f59525204ac4212be8b06e49b647ba53f1ec17d31e7bf1"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_10",
+      "language": "en",
+      "spokenText": "The path is ten percent below its start.",
+      "path": "/audio/en/b529a94f7e4ee3246f6558df3ec57b3b989d99418cbba6b57a97f4126197f8b3.opus",
+      "contentSha256": "1bc63f3f41cbb8f8993400110e2ca42a8b79947549933eaad835123b53ddfad3",
+      "inputSha256": "b529a94f7e4ee3246f6558df3ec57b3b989d99418cbba6b57a97f4126197f8b3",
+      "assetSha256": "8600d66b122969667a1cc088f5b1c6592b82934d83fede57c7acf57483fa55dc",
+      "durationSeconds": 3.5178333333333334,
+      "bytes": 9402,
+      "status": "agent-checked",
+      "seed": 3323453004,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The path is 10% below its start.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.28205128205128205,
+            "status": "failed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.28205128205128205,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.38827575131495,
+          "peak": 0.25030517578125,
+          "silenceRatio": 0.5706605816831684,
+          "generatedSteps": 312,
+          "maxNewTokens": 750
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.5178333333333334,
+          "rmsDbfs": -19.381769985114683,
+          "peak": 0.7769902944564819,
+          "silenceRatio": 0.44261382479746053,
+          "clippedRatio": 0.0,
+          "wavSha256": "8600d66b122969667a1cc088f5b1c6592b82934d83fede57c7acf57483fa55dc"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_20",
+      "language": "en",
+      "spokenText": "The path is twenty percent below its start.",
+      "path": "/audio/en/db3762443808e81674e23b449594fdfd0e780e907139e3d518bba105e2269826.opus",
+      "contentSha256": "2765c70aa170e776c7273461b8d0c3330c3d2273d5016e79508b893952071b10",
+      "inputSha256": "db3762443808e81674e23b449594fdfd0e780e907139e3d518bba105e2269826",
+      "assetSha256": "623260681b6ede042a31d475a0f82fbc3a38af47d05fac8a80fc6b6c81b38ec6",
+      "durationSeconds": 2.6006458333333335,
+      "bytes": 7845,
+      "status": "agent-checked",
+      "seed": 1602738739,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The path is 20% below its start.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.3333333333333333,
+            "status": "failed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.3333333333333333,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.56074272470585,
+          "peak": 0.133087158203125,
+          "silenceRatio": 0.4552525111607143,
+          "generatedSteps": 233,
+          "maxNewTokens": 750
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.6006458333333335,
+          "rmsDbfs": -20.303028650884386,
+          "peak": 0.7378889322280884,
+          "silenceRatio": 0.31687641691567,
+          "clippedRatio": 0.0,
+          "wavSha256": "623260681b6ede042a31d475a0f82fbc3a38af47d05fac8a80fc6b6c81b38ec6"
+        }
+      }
+    },
+    {
+      "id": "MARGIN_WARNING",
+      "language": "en",
+      "spokenText": "The virtual position is near its teaching margin level.",
+      "path": "/audio/en/5f0479a2df70b492655764cb5fcac47da0cac2f0545d42e30c67f93f63d70807.opus",
+      "contentSha256": "99c3a7ede57ec4d1908fb3bcd10481af9b56af4e34bc5caeef20d601001aa0fa",
+      "inputSha256": "5f0479a2df70b492655764cb5fcac47da0cac2f0545d42e30c67f93f63d70807",
+      "assetSha256": "6ef4afae8a1115fb2af6ff2604a0de786ff0a917de3ed0c918486bd42e7c28ab",
+      "durationSeconds": 4.272479166666667,
+      "bytes": 12949,
+      "status": "agent-checked",
+      "seed": 1415800042,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "the virtual position is near its teaching margin level.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -32.78226726451414,
+          "peak": 0.17083740234375,
+          "silenceRatio": 0.439277980638587,
+          "generatedSteps": 377,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.272479166666667,
+          "rmsDbfs": -18.24227857182335,
+          "peak": 0.7654407620429993,
+          "silenceRatio": 0.321997864237684,
+          "clippedRatio": 0.0,
+          "wavSha256": "6ef4afae8a1115fb2af6ff2604a0de786ff0a917de3ed0c918486bd42e7c28ab"
+        }
+      }
+    },
+    {
+      "id": "FORCED_EXIT",
+      "language": "en",
+      "spokenText": "The teaching rule closes this leveraged position.",
+      "path": "/audio/en/4e2844e24efe1314e6bdc43101d2c7e6225514eae691f3290196d94dbe09f0a8.opus",
+      "contentSha256": "2216a6221d3c091f3b51fc9b19dea89617cc44c164ba157115bbd149dfa211d8",
+      "inputSha256": "4e2844e24efe1314e6bdc43101d2c7e6225514eae691f3290196d94dbe09f0a8",
+      "assetSha256": "726eac3b2245e14e2aa22e4727c910e80dde33d5c0ffa56ef9369e0d0efcedbe",
+      "durationSeconds": 3.8545208333333334,
+      "bytes": 11611,
+      "status": "agent-checked",
+      "seed": 2744505968,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The teaching rule closes this leverage position.",
+          "cer": 0.020833333333333332,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.020833333333333332,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.020833333333333332,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.922038078829296,
+          "peak": 0.124176025390625,
+          "silenceRatio": 0.4801451901355422,
+          "generatedSteps": 341,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.8545208333333334,
+          "rmsDbfs": -18.31618010503641,
+          "peak": 0.8244767785072327,
+          "silenceRatio": 0.34364409756941255,
+          "clippedRatio": 0.0,
+          "wavSha256": "726eac3b2245e14e2aa22e4727c910e80dde33d5c0ffa56ef9369e0d0efcedbe"
+        }
+      }
+    },
+    {
+      "id": "USER_EXIT",
+      "language": "en",
+      "spokenText": "The position was closed by your choice.",
+      "path": "/audio/en/5b9ef85be08d60b886a68de96796abbe74960d88b5c2d5543020c6d1585cc303.opus",
+      "contentSha256": "39675f57a741ac212716b611e02f0bc343806f83f5aa7f823f33652844d27476",
+      "inputSha256": "5b9ef85be08d60b886a68de96796abbe74960d88b5c2d5543020c6d1585cc303",
+      "assetSha256": "ee4109fe95862ff05c2d5b4fcebbd9aab81509cec100f616a39e55d7abfd2e6f",
+      "durationSeconds": 2.9837708333333333,
+      "bytes": 8032,
+      "status": "agent-checked",
+      "seed": 712076356,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The position was closed by your choice.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -32.178389656627935,
+          "peak": 0.144744873046875,
+          "silenceRatio": 0.4590299732490272,
+          "generatedSteps": 266,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.9837708333333333,
+          "rmsDbfs": -19.518199298107188,
+          "peak": 0.6116991639137268,
+          "silenceRatio": 0.39339901271461586,
+          "clippedRatio": 0.0,
+          "wavSha256": "ee4109fe95862ff05c2d5b4fcebbd9aab81509cec100f616a39e55d7abfd2e6f"
+        }
+      }
+    },
+    {
+      "id": "EPISODE_END",
+      "language": "en",
+      "spokenText": "The path has reached its end.",
+      "path": "/audio/en/0643d88b31a1d99c32f34c45277f3cbf35f844905509b1af5e7571177ec230fc.opus",
+      "contentSha256": "90f97f27e94e767d8a2f26a943236770b766a5577443b361c3c20dec9995a69d",
+      "inputSha256": "0643d88b31a1d99c32f34c45277f3cbf35f844905509b1af5e7571177ec230fc",
+      "assetSha256": "0153f926508b4085b863686cdef6325fce6b8ba6fefb362c44b98f79ca5ddeb5",
+      "durationSeconds": 2.3800416666666666,
+      "bytes": 6662,
+      "status": "agent-checked",
+      "seed": 1352813043,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "The path has reached its end.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -25.10840638550409,
+          "peak": 0.389617919921875,
+          "silenceRatio": 0.40626905487804876,
+          "generatedSteps": 214,
+          "maxNewTokens": 630
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.3800416666666666,
+          "rmsDbfs": -19.152799929103733,
+          "peak": 0.7710144519805908,
+          "silenceRatio": 0.35242730344356715,
+          "clippedRatio": 0.0,
+          "wavSha256": "0153f926508b4085b863686cdef6325fce6b8ba6fefb362c44b98f79ca5ddeb5"
+        }
+      }
+    },
+    {
+      "id": "UNLEVERAGED_SURVIVED",
+      "language": "en",
+      "spokenText": "Without leverage, the position on this teaching path stayed open.",
+      "path": "/audio/en/1caed2ba1cd159d9e3d6f755d9a039f8166abef81100a590bf837d432320999e.opus",
+      "contentSha256": "5af6d9c73a8788adca50b891abf64ef4c017276423b82b5b321348bc4f486e3f",
+      "inputSha256": "1caed2ba1cd159d9e3d6f755d9a039f8166abef81100a590bf837d432320999e",
+      "assetSha256": "1ecf7163531653972b569f808a3ef12b56bba519e4b652a30c5d608258864c24",
+      "durationSeconds": 4.435020833333334,
+      "bytes": 13131,
+      "status": "agent-checked",
+      "seed": 3597319296,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Without leverage, the position on this teaching path stayed open.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -30.772126876176046,
+          "peak": 0.20068359375,
+          "silenceRatio": 0.4633303337696335,
+          "generatedSteps": 391,
+          "maxNewTokens": 871
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.435020833333334,
+          "rmsDbfs": -18.204391081397553,
+          "peak": 0.8103283047676086,
+          "silenceRatio": 0.34917630037438757,
+          "clippedRatio": 0.0,
+          "wavSha256": "1ecf7163531653972b569f808a3ef12b56bba519e4b652a30c5d608258864c24"
+        }
+      }
+    },
+    {
+      "id": "glossary.leverage",
+      "language": "en",
+      "spokenText": "Leverage uses exposure larger than your own amount. Each price change affects more virtual money.",
+      "path": "/audio/en/4aafd4fcda72b2199584d687f0f7c265e1b8089b787ae9436474ad30bed2c1b6.opus",
+      "contentSha256": "a7dff1082e53bd119d4ea529833ac315bbcc3ce7fe3bf9c5f40d3d4e95e69a44",
+      "inputSha256": "4aafd4fcda72b2199584d687f0f7c265e1b8089b787ae9436474ad30bed2c1b6",
+      "assetSha256": "eac47003cc0d3098f9854d11ccb825dcb41a238466c809f68abfbd89a41c4948",
+      "durationSeconds": 6.791833333333333,
+      "bytes": 20824,
+      "status": "agent-checked",
+      "seed": 1044954274,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Leverage uses exposure larger than your own amount. Each price change affects more virtual money.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.93592003997141,
+          "peak": 0.131805419921875,
+          "silenceRatio": 0.40045072115384617,
+          "generatedSteps": 594,
+          "maxNewTokens": 1172
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.791833333333333,
+          "rmsDbfs": -17.929231857356083,
+          "peak": 0.8134786486625671,
+          "silenceRatio": 0.23369978650830656,
+          "clippedRatio": 0.0,
+          "wavSha256": "eac47003cc0d3098f9854d11ccb825dcb41a238466c809f68abfbd89a41c4948"
+        }
+      }
+    },
+    {
+      "id": "glossary.margin",
+      "language": "en",
+      "spokenText": "Margin is the teaching amount kept aside for a leveraged position.",
+      "path": "/audio/en/3c8b2c4c2f06f96a00339a7f34f901779432a78c7d187a38838019d71eac5413.opus",
+      "contentSha256": "1d8c05c780c5a7afc48544f1f8cca867dbaf5c4dd9c03d862b89f65320583cfc",
+      "inputSha256": "3c8b2c4c2f06f96a00339a7f34f901779432a78c7d187a38838019d71eac5413",
+      "assetSha256": "09c4545243c29ac134545f9b104d9880a5bb00cb47482df5c431db8d4b857b27",
+      "durationSeconds": 5.723729166666667,
+      "bytes": 17011,
+      "status": "agent-checked",
+      "seed": 3982223724,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Margin is the teaching amount kept aside for a leveraged position.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.50010455383191,
+          "peak": 0.13580322265625,
+          "silenceRatio": 0.48772264832657203,
+          "generatedSteps": 502,
+          "maxNewTokens": 931
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.723729166666667,
+          "rmsDbfs": -18.608219703864535,
+          "peak": 0.7793858647346497,
+          "silenceRatio": 0.3668900301740925,
+          "clippedRatio": 0.0,
+          "wavSha256": "09c4545243c29ac134545f9b104d9880a5bb00cb47482df5c431db8d4b857b27"
+        }
+      }
+    },
+    {
+      "id": "glossary.forcedExit",
+      "language": "en",
+      "spokenText": "A forced exit happens when the teaching rule closes the position at a set level.",
+      "path": "/audio/en/8f77e6008a5348f380388707bbe279515f4415ee7f1a0335fc0ac893e0e1b37e.opus",
+      "contentSha256": "a42cb4db74d9540135374d5d98585b4f11baac576e5f917a020795d258e478c1",
+      "inputSha256": "8f77e6008a5348f380388707bbe279515f4415ee7f1a0335fc0ac893e0e1b37e",
+      "assetSha256": "aae2279390a1f7abe9c4708eb454be6ee28d9e497f9121d2bec73eea56e9e032",
+      "durationSeconds": 5.6540625,
+      "bytes": 17092,
+      "status": "agent-checked",
+      "seed": 3175121015,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "A forced exit happens when the teaching rule closes the position at a set level.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.2108878485277,
+          "peak": 0.14996337890625,
+          "silenceRatio": 0.42650314425051333,
+          "generatedSteps": 496,
+          "maxNewTokens": 1172
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.6540625,
+          "rmsDbfs": -18.610345772519754,
+          "peak": 0.7541122436523438,
+          "silenceRatio": 0.26931594170857975,
+          "clippedRatio": 0.0,
+          "wavSha256": "aae2279390a1f7abe9c4708eb454be6ee28d9e497f9121d2bec73eea56e9e032"
+        }
+      }
+    },
+    {
+      "id": "glossary.volatility",
+      "language": "en",
+      "spokenText": "Volatility describes how much and how quickly values move up and down.",
+      "path": "/audio/en/dd142ff77a7df0eee8ed940298b718a6d13e6e665e40e5c8845f52b9ea5e2bd5.opus",
+      "contentSha256": "d9cacc307b4335ca19e55f35cbba6e1eb7b0d963c8587d692e52525107ae41cd",
+      "inputSha256": "dd142ff77a7df0eee8ed940298b718a6d13e6e665e40e5c8845f52b9ea5e2bd5",
+      "assetSha256": "7263caa1bc043a2e900cb0d6465bbd9283559cb705641d3f9de01bdac0b576d8",
+      "durationSeconds": 5.4566875,
+      "bytes": 16484,
+      "status": "agent-checked",
+      "seed": 2177931492,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Volatility describes how much and how quickly values move up and down.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -36.10640308088733,
+          "peak": 0.106170654296875,
+          "silenceRatio": 0.40623753324468087,
+          "generatedSteps": 479,
+          "maxNewTokens": 991
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.4566875,
+          "rmsDbfs": -18.429461149360534,
+          "peak": 0.8022197484970093,
+          "silenceRatio": 0.2364949736752685,
+          "clippedRatio": 0.0,
+          "wavSha256": "7263caa1bc043a2e900cb0d6465bbd9283559cb705641d3f9de01bdac0b576d8"
+        }
+      }
+    },
+    {
+      "id": "glossary.drawdown",
+      "language": "en",
+      "spokenText": "Drawdown is the fall from a previous high to a later value.",
+      "path": "/audio/en/a06cc4c81b303601d3c51dc6f88fd9ae6d4ec4c5abd5f858dd80305841d4e18c.opus",
+      "contentSha256": "b2bfc9e2a8c57ef72a36f719e87e3da8c9ffd558f26b619e7b664cda6dbc324b",
+      "inputSha256": "a06cc4c81b303601d3c51dc6f88fd9ae6d4ec4c5abd5f858dd80305841d4e18c",
+      "assetSha256": "221a591dc3334b327a9c5dda226dbb8d2983552e3a1f8da2f7b2ce975f7aa912",
+      "durationSeconds": 4.922645833333333,
+      "bytes": 15029,
+      "status": "agent-checked",
+      "seed": 1523675333,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Drawdown is the fall from a previous high to a later value.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.29229485471967,
+          "peak": 0.130340576171875,
+          "silenceRatio": 0.39545253537735847,
+          "generatedSteps": 433,
+          "maxNewTokens": 991
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.922645833333333,
+          "rmsDbfs": -17.816286810807988,
+          "peak": 0.7836673855781555,
+          "silenceRatio": 0.22320737069749924,
+          "clippedRatio": 0.0,
+          "wavSha256": "221a591dc3334b327a9c5dda226dbb8d2983552e3a1f8da2f7b2ce975f7aa912"
+        }
+      }
+    },
+    {
+      "id": "glossary.recovery",
+      "language": "en",
+      "spokenText": "After a loss, returning to the start needs a larger percentage gain. Losing everything leaves no base for recovery.",
+      "path": "/audio/en/fcb571147e26b5512d5b11327305f975c4bd61daf63a81faac3594fddbcb90e8.opus",
+      "contentSha256": "9201275eab88b5fc89c2cb725bc816a1c2dd80eb1a1d75ff71ae46f5aef1b435",
+      "inputSha256": "fcb571147e26b5512d5b11327305f975c4bd61daf63a81faac3594fddbcb90e8",
+      "assetSha256": "6cfbd8c1da3766a9f93bef4b45c04da3f58f610727e11d2d879e6df68d1e202f",
+      "durationSeconds": 8.31275,
+      "bytes": 25141,
+      "status": "agent-checked",
+      "seed": 3017510752,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "After a loss, returning to the start needs a larger percentage gain. Losing everything leaves no base for recovery.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.148475597177736,
+          "peak": 0.191650390625,
+          "silenceRatio": 0.3973600078561452,
+          "generatedSteps": 725,
+          "maxNewTokens": 1413
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 8.31275,
+          "rmsDbfs": -18.986653647180997,
+          "peak": 0.812732994556427,
+          "silenceRatio": 0.280981524365182,
+          "clippedRatio": 0.0,
+          "wavSha256": "6cfbd8c1da3766a9f93bef4b45c04da3f58f610727e11d2d879e6df68d1e202f"
+        }
+      }
+    },
+    {
+      "id": "glossary.diversification",
+      "language": "en",
+      "spokenText": "Diversification spreads exposure across different sources of risk. It does not remove all risk. Some can fall together.",
+      "path": "/audio/en/b142c1c96dbd0791892673b7ba52c8b9642cab12ac101d5b90e813438a63733c.opus",
+      "contentSha256": "e75c3f34083004bc1a216fa1cc1dd807ba885c128f889c90236eefc23cd04900",
+      "inputSha256": "b142c1c96dbd0791892673b7ba52c8b9642cab12ac101d5b90e813438a63733c",
+      "assetSha256": "b01d9e2e2f58099d223bc2b4667bf171bb416749f7180be13964affc208fad33",
+      "durationSeconds": 9.195104166666667,
+      "bytes": 26827,
+      "status": "agent-checked",
+      "seed": 723313325,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Diversification spreads exposure across different sources of risk. It does not remove all risk. Some can fall together.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -36.098603203945444,
+          "peak": 0.135589599609375,
+          "silenceRatio": 0.4818793402777778,
+          "generatedSteps": 801,
+          "maxNewTokens": 1353
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 9.195104166666667,
+          "rmsDbfs": -18.669823993397564,
+          "peak": 0.7855093479156494,
+          "silenceRatio": 0.3488224032263546,
+          "clippedRatio": 0.0,
+          "wavSha256": "b01d9e2e2f58099d223bc2b4667bf171bb416749f7180be13964affc208fad33"
+        }
+      }
+    },
+    {
+      "id": "glossary.compounding",
+      "language": "en",
+      "spokenText": "With compounding, each percentage change applies to the amount left by earlier changes. This works for gains and losses.",
+      "path": "/audio/en/6e744bce34841b66a89fd7690918f48bf429a50018b508bfeb1d8e23d3c76691.opus",
+      "contentSha256": "e0a0772fdb814eb4002f1e0ba2420e1121fdaf188df910225e4da0fb4580fc9a",
+      "inputSha256": "6e744bce34841b66a89fd7690918f48bf429a50018b508bfeb1d8e23d3c76691",
+      "assetSha256": "b0df38caf20aa0d2c7747f64e896b73308db055f76f434aba6cbb5f815867db5",
+      "durationSeconds": 8.394020833333334,
+      "bytes": 25510,
+      "status": "agent-checked",
+      "seed": 1123710186,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "With compounding, each percentage change applies to the amount left by earlier changes. This works for gains and losses.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.69247467970033,
+          "peak": 0.15447998046875,
+          "silenceRatio": 0.4231392634854772,
+          "generatedSteps": 732,
+          "maxNewTokens": 1413
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 8.394020833333334,
+          "rmsDbfs": -18.506264855904803,
+          "peak": 0.8095657229423523,
+          "silenceRatio": 0.294100711568006,
+          "clippedRatio": 0.0,
+          "wavSha256": "b0df38caf20aa0d2c7747f64e896b73308db055f76f434aba6cbb5f815867db5"
+        }
+      }
+    },
+    {
+      "id": "glossary.fees",
+      "language": "en",
+      "spokenText": "Fees are charges that reduce the amount left. This simplified teaching model does not include fees.",
+      "path": "/audio/en/b176fe34c9be8082873b622605428ffc6b472dcc05de226c010081a2444d281f.opus",
+      "contentSha256": "a942dcb77bd557947c45de248c18a304c56f0e03ff3b9ce7c21e525518cb176d",
+      "inputSha256": "b176fe34c9be8082873b622605428ffc6b472dcc05de226c010081a2444d281f",
+      "assetSha256": "b0f199bab07ddd6c10b2a623ef6a09d92f4b3fa5bf22317f45b0960b0b9bde92",
+      "durationSeconds": 7.569708333333334,
+      "bytes": 22785,
+      "status": "agent-checked",
+      "seed": 1953461556,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "Fees are charges that reduce the amount left. This simplified teaching model does not include fees.",
+          "cer": 0.0,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.2,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.0,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.0,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.267620332591406,
+          "peak": 0.11614990234375,
+          "silenceRatio": 0.5105954035659509,
+          "generatedSteps": 661,
+          "maxNewTokens": 1233
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 7.569708333333334,
+          "rmsDbfs": -19.703523587171574,
+          "peak": 0.8438740968704224,
+          "silenceRatio": 0.2748702338817546,
+          "clippedRatio": 0.0,
+          "wavSha256": "b0f199bab07ddd6c10b2a623ef6a09d92f4b3fa5bf22317f45b0960b0b9bde92"
+        }
+      }
+    },
+    {
+      "id": "language.greeting",
+      "language": "hi",
+      "spokenText": "स्वागत है। शुरू करने के लिए भाषा चुनें।",
+      "path": "/audio/hi/bbfd331867f4a48ad2d19666bb42eab648fae7dfc5b484c9ca82e89a91f454e0.opus",
+      "contentSha256": "ec077872d211483a6ebaebf26c95200a81897e2f5cc01f28c9224559aa37145a",
+      "inputSha256": "bbfd331867f4a48ad2d19666bb42eab648fae7dfc5b484c9ca82e89a91f454e0",
+      "assetSha256": "8653a919e7cb4d807b0cb6f83a310b1eafa456ab9ae9241a0bc9a683d7232f4b",
+      "durationSeconds": 3.0766458333333335,
+      "bytes": 9671,
+      "status": "agent-checked",
+      "seed": 378012226,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "स्वागत है, शुरूकरने के लिए बाशा चुनी.",
+          "cer": 0.13513513513513514,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.13513513513513514,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.13513513513513514,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.53919274466034,
+          "peak": 0.15966796875,
+          "silenceRatio": 0.3841760023584906,
+          "generatedSteps": 274,
+          "maxNewTokens": 750
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.0766458333333335,
+          "rmsDbfs": -18.13968081534388,
+          "peak": 0.7802688479423523,
+          "silenceRatio": 0.24873543293223815,
+          "clippedRatio": 0.0,
+          "wavSha256": "8653a919e7cb4d807b0cb6f83a310b1eafa456ab9ae9241a0bc9a683d7232f4b"
+        }
+      }
+    },
+    {
+      "id": "intro.main",
+      "language": "hi",
+      "spokenText": "यह आभासी पैसे का अभ्यास है। आपके जवाब इस अभ्यास के दौरान मेमोरी में रहते हैं; वे सहेजे या भेजे नहीं जाते।",
+      "path": "/audio/hi/e3a76d64905bc4b617ef4e3dee11dcca962cdbe487082cabe3b5f79025e288f1.opus",
+      "contentSha256": "e76d417ef9791b8bf3c46cfcd4d93b965b7eaa39b372123783db7460789a1bf0",
+      "inputSha256": "e3a76d64905bc4b617ef4e3dee11dcca962cdbe487082cabe3b5f79025e288f1",
+      "assetSha256": "cbbec18652024eb5575276f71afd8cc98e54b1f32030900ecaf2f0e9277e7353",
+      "durationSeconds": 9.462145833333333,
+      "bytes": 29059,
+      "status": "agent-checked",
+      "seed": 2595700436,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "या आब हासी पेसे का अब्यास है, आपकी जबाब इस अब्यास के दोरान मेमुरी मेरेहते है, वी सहेजे या भेजी नहीं जाती.",
+          "cer": 0.17647058823529413,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.17647058823529413,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.17647058823529413,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.98099388774578,
+          "peak": 0.17913818359375,
+          "silenceRatio": 0.41014187116564416,
+          "generatedSteps": 824,
+          "maxNewTokens": 1594
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 9.462145833333333,
+          "rmsDbfs": -18.649098506133935,
+          "peak": 0.8021912574768066,
+          "silenceRatio": 0.24940827816100558,
+          "clippedRatio": 0.0,
+          "wavSha256": "cbbec18652024eb5575276f71afd8cc98e54b1f32030900ecaf2f0e9277e7353"
+        }
+      }
+    },
+    {
+      "id": "setup.main",
+      "language": "hi",
+      "spokenText": "आगे भेजा गया संदेश उधार की ताकत से पैसा दोगुना करने का वादा करता है। यह सीखने का उदाहरण है, सलाह नहीं।",
+      "path": "/audio/hi/52e68290307bf6aa4d71a26fd8abc301260fac8140833fa0c6401cfee387a07f.opus",
+      "contentSha256": "c7cc6ecedad8c33a093176824b7d49bae5cea7726eb6e7ad28262e7ee63492a7",
+      "inputSha256": "52e68290307bf6aa4d71a26fd8abc301260fac8140833fa0c6401cfee387a07f",
+      "assetSha256": "9421dea8da6ab6b3c6ed249f2ca959463acba57b34a58c6aa8fc1f847b9974a9",
+      "durationSeconds": 9.601458333333333,
+      "bytes": 28678,
+      "status": "agent-checked",
+      "seed": 2805515398,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "आगी भीज़ा गया संदीश उदार की ताकच्सी पैसा दो गुना करनी का वादा करता है यह जीखने का उदारन है सलाहा नहीं",
+          "cer": 0.1414141414141414,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.1414141414141414,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.1414141414141414,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.785423866343336,
+          "peak": 0.18994140625,
+          "silenceRatio": 0.43724493651753327,
+          "generatedSteps": 836,
+          "maxNewTokens": 1594
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 9.601458333333333,
+          "rmsDbfs": -18.458622674667748,
+          "peak": 0.842632532119751,
+          "silenceRatio": 0.33309610085273506,
+          "clippedRatio": 0.0,
+          "wavSha256": "9421dea8da6ab6b3c6ed249f2ca959463acba57b34a58c6aa8fc1f847b9974a9"
+        }
+      }
+    },
+    {
+      "id": "prediction.main",
+      "language": "hi",
+      "spokenText": "आपको क्या लगता है, क्या होगा? कोई सही जवाब नहीं है।",
+      "path": "/audio/hi/a11518effcd68018cb74e3a73ceaf4e13dfef0a320bafe6b5eac5c1095a789a0.opus",
+      "contentSha256": "f7473dbdd5d34a205aa4b861320d655980b6d39b383f744c819c985f9fc1b512",
+      "inputSha256": "a11518effcd68018cb74e3a73ceaf4e13dfef0a320bafe6b5eac5c1095a789a0",
+      "assetSha256": "8e12518e19c245c94271ebe77f38969237b6f4398f639d143c3ac65913689098",
+      "durationSeconds": 4.35375,
+      "bytes": 12660,
+      "status": "agent-checked",
+      "seed": 3972025567,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "अपको क्या लखता है क्या होगा कोई से ही जवाब नहीं है",
+          "cer": 0.08333333333333333,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.08333333333333333,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.08333333333333333,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.6508264640988,
+          "peak": 0.14703369140625,
+          "silenceRatio": 0.4835260416666667,
+          "generatedSteps": 384,
+          "maxNewTokens": 931
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.35375,
+          "rmsDbfs": -17.89161953527457,
+          "peak": 0.8322798609733582,
+          "silenceRatio": 0.3800363671164705,
+          "clippedRatio": 0.0,
+          "wavSha256": "8e12518e19c245c94271ebe77f38969237b6f4398f639d143c3ac65913689098"
+        }
+      }
+    },
+    {
+      "id": "run.main",
+      "language": "hi",
+      "spokenText": "रास्ता देखें। हर विराम पर आप जारी रख सकते हैं या बाहर निकल सकते हैं।",
+      "path": "/audio/hi/fb90efe5bf2d4f7f2254079c1933eb9251eb18d4b13eb79a2fedfa961cfb804a.opus",
+      "contentSha256": "d476381b5d3f9ab94769bacb872ebf68279c2aabca37ba8181b13a6d074ed349",
+      "inputSha256": "fb90efe5bf2d4f7f2254079c1933eb9251eb18d4b13eb79a2fedfa961cfb804a",
+      "assetSha256": "3cc283195537fb0f44662dfd7a50d6ed00561af0193f1bc2150ca30c64a68d0a",
+      "durationSeconds": 5.433479166666666,
+      "bytes": 16331,
+      "status": "agent-checked",
+      "seed": 710044138,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "रास्ता दिखी, हर विराम पर आब जारी रक सकती हैं, या बहार निकल सकती हैं.",
+          "cer": 0.13636363636363635,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.13636363636363635,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.13636363636363635,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.42895745230963,
+          "peak": 0.1591796875,
+          "silenceRatio": 0.440830328525641,
+          "generatedSteps": 477,
+          "maxNewTokens": 1172
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.433479166666666,
+          "rmsDbfs": -19.46305623436045,
+          "peak": 0.7939324378967285,
+          "silenceRatio": 0.31403681649648973,
+          "clippedRatio": 0.0,
+          "wavSha256": "3cc283195537fb0f44662dfd7a50d6ed00561af0193f1bc2150ca30c64a68d0a"
+        }
+      }
+    },
+    {
+      "id": "result.main",
+      "language": "hi",
+      "spokenText": "उधार की ताकत वाली स्थिति इस तरह खत्म हुई।",
+      "path": "/audio/hi/fe9ac0e9a5e84d4aaaf9b003cda96a9b9a6c39e12f667c05f5e72339e081ee43.opus",
+      "contentSha256": "34499d7fb5de6931c1f66d9884576a00f3b8280376171309522a36dc868023f2",
+      "inputSha256": "fe9ac0e9a5e84d4aaaf9b003cda96a9b9a6c39e12f667c05f5e72339e081ee43",
+      "assetSha256": "085325d2b1902fe521cf961102f1fee30d568e26f5eee299b716653e5c950a13",
+      "durationSeconds": 4.5395,
+      "bytes": 12693,
+      "status": "agent-checked",
+      "seed": 745821539,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "उडार की ताकत वाल इस्तिती इस तरह कद्म हुए",
+          "cer": 0.2,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.2,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.2,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -36.29978835805181,
+          "peak": 0.136505126953125,
+          "silenceRatio": 0.5945092710997443,
+          "generatedSteps": 400,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.5395,
+          "rmsDbfs": -19.16240159710364,
+          "peak": 0.8760343194007874,
+          "silenceRatio": 0.4522891654734369,
+          "clippedRatio": 0.0,
+          "wavSha256": "085325d2b1902fe521cf961102f1fee30d568e26f5eee299b716653e5c950a13"
+        }
+      }
+    },
+    {
+      "id": "replay.main",
+      "language": "hi",
+      "spokenText": "उधार के बिना वही रास्ता अंतर साफ़ दिखाता है।",
+      "path": "/audio/hi/f95d81363d4aa87012a4e3dfc05e3c0a05693bb0f54bafc8e79546df9de35ba8.opus",
+      "contentSha256": "42f884ba1aceae20e2d8db91f0351d84287ab3eed13ecf4ceff5e0c9569c6cba",
+      "inputSha256": "f95d81363d4aa87012a4e3dfc05e3c0a05693bb0f54bafc8e79546df9de35ba8",
+      "assetSha256": "c1ca7894d9f1b4f9f19cd0ab299049655179dc65f436209abdb140055ab02c65",
+      "durationSeconds": 4.24925,
+      "bytes": 12463,
+      "status": "agent-checked",
+      "seed": 1570948662,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "उदार की बिना वही रास्ता अंतर साभ दिखाता है",
+          "cer": 0.09302325581395349,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.09302325581395349,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.09302325581395349,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.43975729199682,
+          "peak": 0.178436279296875,
+          "silenceRatio": 0.481109118852459,
+          "generatedSteps": 375,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.24925,
+          "rmsDbfs": -18.78972874504782,
+          "peak": 0.8155109286308289,
+          "silenceRatio": 0.38500421643035043,
+          "clippedRatio": 0.0,
+          "wavSha256": "c1ca7894d9f1b4f9f19cd0ab299049655179dc65f436209abdb140055ab02c65"
+        }
+      }
+    },
+    {
+      "id": "reveal.main",
+      "language": "hi",
+      "spokenText": "यह एपिसोड सीखने का उदाहरण है। एक एपिसोड भविष्य नहीं बताता।",
+      "path": "/audio/hi/560427fc5c079aab0dcaacecc97f1e91d5d0781088862aa803f772edf394e895.opus",
+      "contentSha256": "c58f973860be1cbb924f6b7ae186f06b621a3be7c111a3b8c1379baeb2105260",
+      "inputSha256": "560427fc5c079aab0dcaacecc97f1e91d5d0781088862aa803f772edf394e895",
+      "assetSha256": "dd8295ba3fba3e8d4871fc57291f2f3ccf3400f27ab0b81c7e1ff94d1b1b9f34",
+      "durationSeconds": 5.328979166666667,
+      "bytes": 15910,
+      "status": "agent-checked",
+      "seed": 102444605,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "यह आपसुट सीकने का उदारन है, एक आपसुट भविष्य नहीं बताता.",
+          "cer": 0.19642857142857142,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.19642857142857142,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.19642857142857142,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.35362765559232,
+          "peak": 0.183563232421875,
+          "silenceRatio": 0.4477124183006536,
+          "generatedSteps": 468,
+          "maxNewTokens": 931
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.328979166666667,
+          "rmsDbfs": -19.270219829215662,
+          "peak": 0.800616443157196,
+          "silenceRatio": 0.2930712964881485,
+          "clippedRatio": 0.0,
+          "wavSha256": "dd8295ba3fba3e8d4871fc57291f2f3ccf3400f27ab0b81c7e1ff94d1b1b9f34"
+        }
+      }
+    },
+    {
+      "id": "debrief.main",
+      "language": "hi",
+      "spokenText": "उधार की ताकत से कीमत का हर बदलाव ज़्यादा आभासी पैसे पर असर डालता है।",
+      "path": "/audio/hi/b473f35883f22be2803149c08207ac57d198399b5fc05fff77c6e2962bccf883.opus",
+      "contentSha256": "171d8d9ed13fb1d41d1f098b76f78406f66c3ef79cb9231293e88f50b69992ce",
+      "inputSha256": "b473f35883f22be2803149c08207ac57d198399b5fc05fff77c6e2962bccf883",
+      "assetSha256": "3f5b0feda57be7b3dae023c738b2fff0c50944466ef986190b95161dfddc9bd1",
+      "durationSeconds": 6.072020833333333,
+      "bytes": 18494,
+      "status": "agent-checked",
+      "seed": 1874877735,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "उदार की ताकत से कीमत का, हर बडला स्यादा अबहासी पैसे पर अस़ाडालता है.",
+          "cer": 0.14925373134328357,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.14925373134328357,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.14925373134328357,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.65502436927333,
+          "peak": 0.263519287109375,
+          "silenceRatio": 0.41687455186424477,
+          "generatedSteps": 532,
+          "maxNewTokens": 1172
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.072020833333333,
+          "rmsDbfs": -19.092164029745312,
+          "peak": 0.7748143076896667,
+          "silenceRatio": 0.26354831072851226,
+          "clippedRatio": 0.0,
+          "wavSha256": "3f5b0feda57be7b3dae023c738b2fff0c50944466ef986190b95161dfddc9bd1"
+        }
+      }
+    },
+    {
+      "id": "postcheck.main",
+      "language": "hi",
+      "spokenText": "सवाल का फिर जवाब दें। यह सोचने के लिए है, अंक के लिए नहीं।",
+      "path": "/audio/hi/789d292d67f4929a03858e946333719b44c2ff95dc036e7b856b84b9694314f1.opus",
+      "contentSha256": "7945c0e964af36854b3ebfe2c0cafa82483eae3b289542954143e4e7c1fa39ee",
+      "inputSha256": "789d292d67f4929a03858e946333719b44c2ff95dc036e7b856b84b9694314f1",
+      "assetSha256": "d7ee94a63197d51504b4655eb9895007b2ede6131a73425cbfc173ec593772a0",
+      "durationSeconds": 5.51475,
+      "bytes": 16311,
+      "status": "agent-checked",
+      "seed": 3384143934,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "सवालका फिर जबाब दी, यह सुचनी की लिए है, अंक के लिए नहीं.",
+          "cer": 0.12727272727272726,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.12727272727272726,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.12727272727272726,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.03273859681002,
+          "peak": 0.149444580078125,
+          "silenceRatio": 0.5074342105263158,
+          "generatedSteps": 484,
+          "maxNewTokens": 1112
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.51475,
+          "rmsDbfs": -19.07806885970972,
+          "peak": 0.7823993563652039,
+          "silenceRatio": 0.37122036357042476,
+          "clippedRatio": 0.0,
+          "wavSha256": "d7ee94a63197d51504b4655eb9895007b2ede6131a73425cbfc173ec593772a0"
+        }
+      }
+    },
+    {
+      "id": "nextsteps.main",
+      "language": "hi",
+      "spokenText": "केवल जाँचे गए सुरक्षात्मक संसाधन दिखाए जाते हैं। वे सीखने के लिए हैं, निवेश की सलाह नहीं।",
+      "path": "/audio/hi/777e734f6255488ad71cbddf54125f2b94e41ffa8168a9a22f79737f7c6eeef9.opus",
+      "contentSha256": "8aabcbf824e2c949d04466be8ddf885b30e7088deee13b44a5262933c89afc07",
+      "inputSha256": "777e734f6255488ad71cbddf54125f2b94e41ffa8168a9a22f79737f7c6eeef9",
+      "assetSha256": "867c87914f4c4f295167da18dd1d4abeb3f6518eb7a749a8954377c530ab5156",
+      "durationSeconds": 6.954375,
+      "bytes": 21270,
+      "status": "agent-checked",
+      "seed": 3168766142,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "केवल जाचे गे सुरक्षात्मक संसादन दिखाए जाते हैं वे सीखने किलिए है, निवीष की सलाह नहीं.",
+          "cer": 0.09302325581395349,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.09302325581395349,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.09302325581395349,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.17940062458065,
+          "peak": 0.12738037109375,
+          "silenceRatio": 0.36817873539232054,
+          "generatedSteps": 608,
+          "maxNewTokens": 1293
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.954375,
+          "rmsDbfs": -18.475668967053437,
+          "peak": 0.8100559711456299,
+          "silenceRatio": 0.22139840028758875,
+          "clippedRatio": 0.0,
+          "wavSha256": "867c87914f4c4f295167da18dd1d4abeb3f6518eb7a749a8954377c530ab5156"
+        }
+      }
+    },
+    {
+      "id": "ENTRY",
+      "language": "hi",
+      "spokenText": "अभ्यास पहले मान से शुरू होता है।",
+      "path": "/audio/hi/6eaa9f6261db8b0b30e773b62b8bcf3bce732e2c11b201c3ff1ed6acfdec0f9e.opus",
+      "contentSha256": "f805fc2549edc496837216655f50dbdcb206f8f1335ee5eab124c931511ff517",
+      "inputSha256": "6eaa9f6261db8b0b30e773b62b8bcf3bce732e2c11b201c3ff1ed6acfdec0f9e",
+      "assetSha256": "ac5f0392f12817f36a7c9d2030592cbab43b9f724f1c8b542770538935e6f8cf",
+      "durationSeconds": 2.4265,
+      "bytes": 7389,
+      "status": "agent-checked",
+      "seed": 1639842598,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "अब हैस बहली मान से शिरू हुता है",
+          "cer": 0.25806451612903225,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.25806451612903225,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.25806451612903225,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -36.497783975799415,
+          "peak": 0.13897705078125,
+          "silenceRatio": 0.36126270933014354,
+          "generatedSteps": 218,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.4265,
+          "rmsDbfs": -21.76257771542855,
+          "peak": 0.7021614909172058,
+          "silenceRatio": 0.23318909265746274,
+          "clippedRatio": 0.0,
+          "wavSha256": "ac5f0392f12817f36a7c9d2030592cbab43b9f724f1c8b542770538935e6f8cf"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_10",
+      "language": "hi",
+      "spokenText": "रास्ता शुरुआत से दस प्रतिशत नीचे है।",
+      "path": "/audio/hi/9946c5d31157b51d616a36f91dbcc7a8afdcdedce9006cd6d1b48072c20ce3f4.opus",
+      "contentSha256": "d0216b1ef0cb32ebb23c59d425e3f9d91f3ae7ac3648a15b1f54c97dffd53ba8",
+      "inputSha256": "9946c5d31157b51d616a36f91dbcc7a8afdcdedce9006cd6d1b48072c20ce3f4",
+      "assetSha256": "06795419f1b534de14a492c5b9bc7c6339c198875c09ed5b68987a589572cce1",
+      "durationSeconds": 3.111479166666667,
+      "bytes": 9593,
+      "status": "agent-checked",
+      "seed": 1416706052,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "रास्ता शुर्वाद सी दस पतिषत नीचे है",
+          "cer": 0.22857142857142856,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.22857142857142856,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.22857142857142856,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -32.89683332471773,
+          "peak": 0.17218017578125,
+          "silenceRatio": 0.43041627798507465,
+          "generatedSteps": 277,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.111479166666667,
+          "rmsDbfs": -18.128236184783997,
+          "peak": 0.8233913779258728,
+          "silenceRatio": 0.2981767781936512,
+          "clippedRatio": 0.0,
+          "wavSha256": "06795419f1b534de14a492c5b9bc7c6339c198875c09ed5b68987a589572cce1"
+        }
+      }
+    },
+    {
+      "id": "DRAWDOWN_20",
+      "language": "hi",
+      "spokenText": "रास्ता शुरुआत से बीस प्रतिशत नीचे है।",
+      "path": "/audio/hi/55234806d4fdd90963544c2b7efed1d7ea79ecf5354a19aa5a89052e81e899e3.opus",
+      "contentSha256": "b6fe844d63a9175b2382c14613d420b73aa805dcf8070fac52bac3dfebc1c5a6",
+      "inputSha256": "55234806d4fdd90963544c2b7efed1d7ea79ecf5354a19aa5a89052e81e899e3",
+      "assetSha256": "5c3729b8bbb0098c3925766d58b147c5dc61db30a4b1824a487b840100d8d19a",
+      "durationSeconds": 3.111479166666667,
+      "bytes": 9413,
+      "status": "agent-checked",
+      "seed": 2007334000,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "रास्ता शुर्वाद सी बीस प्रतिषत नीचे हैं",
+          "cer": 0.19444444444444445,
+          "rawCer": 0.19444444444444445,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2,
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "threshold": 0.35,
+          "status": "passed"
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.73325388607845,
+          "peak": 0.230743408203125,
+          "silenceRatio": 0.4274501515858209,
+          "generatedSteps": 277,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.111479166666667,
+          "rmsDbfs": -18.593880405272408,
+          "peak": 0.8183857798576355,
+          "silenceRatio": 0.2660109406699654,
+          "clippedRatio": 0.0,
+          "wavSha256": "5c3729b8bbb0098c3925766d58b147c5dc61db30a4b1824a487b840100d8d19a"
+        }
+      }
+    },
+    {
+      "id": "MARGIN_WARNING",
+      "language": "hi",
+      "spokenText": "आभासी स्थिति अभ्यास की जमा सीमा के पास है।",
+      "path": "/audio/hi/8c767734dd4133f31c4b05b29e2ce5010aed62396c1e911966346a83f64ab2d7.opus",
+      "contentSha256": "8d98e579a3ad38d426fbbdb0db4a7f5fa715283b56078fab824e7a1e44aac800",
+      "inputSha256": "8c767734dd4133f31c4b05b29e2ce5010aed62396c1e911966346a83f64ab2d7",
+      "assetSha256": "28b95edf89afbc9cc9c07bdb18476b16cb1eea9522fdcf44db2998d10679885a",
+      "durationSeconds": 5.189666666666667,
+      "bytes": 14492,
+      "status": "agent-checked",
+      "seed": 2794184832,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "अबासी स्तिति अभ्यास की जिमा सीमा की पास है",
+          "cer": 0.12195121951219512,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.12195121951219512,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.12195121951219512,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.019030176978006,
+          "peak": 0.27874755859375,
+          "silenceRatio": 0.567612206375839,
+          "generatedSteps": 456,
+          "maxNewTokens": 811
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.189666666666667,
+          "rmsDbfs": -20.909447973230066,
+          "peak": 0.8504239916801453,
+          "silenceRatio": 0.48977535487186075,
+          "clippedRatio": 0.0,
+          "wavSha256": "28b95edf89afbc9cc9c07bdb18476b16cb1eea9522fdcf44db2998d10679885a"
+        }
+      }
+    },
+    {
+      "id": "FORCED_EXIT",
+      "language": "hi",
+      "spokenText": "अभ्यास का नियम इस उधार की ताकत वाली स्थिति को बंद करता है।",
+      "path": "/audio/hi/17ef3aa929be6d47cc1984b2eade112d7816177c4458639fd25416aa762b4752.opus",
+      "contentSha256": "8745551316ebfa2139207a9faed522b8bdd55cbf7c29eea7406049284e874713",
+      "inputSha256": "17ef3aa929be6d47cc1984b2eade112d7816177c4458639fd25416aa762b4752",
+      "assetSha256": "5589382d0c09a65af192922a7626de1bef0ac75ef74d1d39608f8dd7c657eef4",
+      "durationSeconds": 5.51475,
+      "bytes": 16341,
+      "status": "agent-checked",
+      "seed": 1948259225,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "अभ्यास्का नियम इस उदार की ताकत भाली स्तिती को बन करता है",
+          "cer": 0.12280701754385964,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.12280701754385964,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.12280701754385964,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.746480605780306,
+          "peak": 0.132598876953125,
+          "silenceRatio": 0.5057401315789474,
+          "generatedSteps": 484,
+          "maxNewTokens": 1052
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.51475,
+          "rmsDbfs": -18.968522926209243,
+          "peak": 0.7953058481216431,
+          "silenceRatio": 0.3645110839113287,
+          "clippedRatio": 0.0,
+          "wavSha256": "5589382d0c09a65af192922a7626de1bef0ac75ef74d1d39608f8dd7c657eef4"
+        }
+      }
+    },
+    {
+      "id": "USER_EXIT",
+      "language": "hi",
+      "spokenText": "स्थिति आपके चुनाव से बंद हुई।",
+      "path": "/audio/hi/b614048f903610a68ca9bbb8c92cf3341d478f06e5514ecd4cb71379923ad92b.opus",
+      "contentSha256": "145f22f07e4af5a5fa2e38175c710bbb859bc8d482f2c82dd1ef81d276dfbbd6",
+      "inputSha256": "b614048f903610a68ca9bbb8c92cf3341d478f06e5514ecd4cb71379923ad92b",
+      "assetSha256": "1766273393cb3c2a8309d0dfb3100df0a3752bdb7e1b7b68913e346ddd85b597",
+      "durationSeconds": 2.786395833333333,
+      "bytes": 8590,
+      "status": "agent-checked",
+      "seed": 1625675453,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "स्तिती आपके चुनाव से बन रही",
+          "cer": 0.25,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.25,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.25,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.15489917791539,
+          "peak": 0.1123046875,
+          "silenceRatio": 0.504150390625,
+          "generatedSteps": 249,
+          "maxNewTokens": 630
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 2.786395833333333,
+          "rmsDbfs": -20.358614333611754,
+          "peak": 0.7292779088020325,
+          "silenceRatio": 0.3545574854015417,
+          "clippedRatio": 0.0,
+          "wavSha256": "1766273393cb3c2a8309d0dfb3100df0a3752bdb7e1b7b68913e346ddd85b597"
+        }
+      }
+    },
+    {
+      "id": "EPISODE_END",
+      "language": "hi",
+      "spokenText": "रास्ता अपने अंत तक पहुँच गया है।",
+      "path": "/audio/hi/a6d30b4d67597e37e9f1fa0416ad070de79b0acf77c32e70427631de88931752.opus",
+      "contentSha256": "12bc341641f37d5670d93216379bdf5ed89abee9c2920578f93c02f1df959f72",
+      "inputSha256": "a6d30b4d67597e37e9f1fa0416ad070de79b0acf77c32e70427631de88931752",
+      "assetSha256": "17f6714e420ca720055c86f653848115cfd080f57ee1f874dd313c6c21e3a158",
+      "durationSeconds": 3.0186041666666665,
+      "bytes": 9127,
+      "status": "agent-checked",
+      "seed": 3242065613,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "रास्ता अपनी अन्तक पहुच गया है",
+          "cer": 0.16129032258064516,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.16129032258064516,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.16129032258064516,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.55708292373131,
+          "peak": 0.254119873046875,
+          "silenceRatio": 0.47513521634615385,
+          "generatedSteps": 269,
+          "maxNewTokens": 690
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 3.0186041666666665,
+          "rmsDbfs": -19.414248101933747,
+          "peak": 0.865088701248169,
+          "silenceRatio": 0.30534946477745645,
+          "clippedRatio": 0.0,
+          "wavSha256": "17f6714e420ca720055c86f653848115cfd080f57ee1f874dd313c6c21e3a158"
+        }
+      }
+    },
+    {
+      "id": "UNLEVERAGED_SURVIVED",
+      "language": "hi",
+      "spokenText": "बिना उधार की ताकत के, इस अभ्यास के रास्ते पर स्थिति खुली रही।",
+      "path": "/audio/hi/e8107547cc625bf8c3921165bc7008d3bb87e12ef050a7e5fe432c0775032ab0.opus",
+      "contentSha256": "d9fc61c281b8bfd094a8ed72ba2f4f0cc1845862e863c1fcbdbbd488d1645b9f",
+      "inputSha256": "e8107547cc625bf8c3921165bc7008d3bb87e12ef050a7e5fe432c0775032ab0",
+      "assetSha256": "61754872510ae197c9ee1651a518a89ae2fdd959843ce07b8c542870c438a97e",
+      "durationSeconds": 4.504666666666667,
+      "bytes": 13906,
+      "status": "agent-checked",
+      "seed": 1561558062,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "बिनाउदार की ताकत के इस अभ्यास की रास्ती पर स्तिती खुली रहीं.",
+          "cer": 0.11864406779661017,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.11864406779661017,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.11864406779661017,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.283724489426305,
+          "peak": 0.160369873046875,
+          "silenceRatio": 0.3837387242268041,
+          "generatedSteps": 397,
+          "maxNewTokens": 1052
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 4.504666666666667,
+          "rmsDbfs": -19.18510097407568,
+          "peak": 0.7433050274848938,
+          "silenceRatio": 0.22854077253218885,
+          "clippedRatio": 0.0,
+          "wavSha256": "61754872510ae197c9ee1651a518a89ae2fdd959843ce07b8c542870c438a97e"
+        }
+      }
+    },
+    {
+      "id": "glossary.leverage",
+      "language": "hi",
+      "spokenText": "उधार की ताकत से अपनी रकम से बड़ी राशि पर असर लिया जाता है। कीमत का हर बदलाव ज़्यादा आभासी पैसे पर असर डालता है।",
+      "path": "/audio/hi/f04691c0e53da894ce4e7643f76f6bf440d3c73aa27aee73fea8f86413a5661f.opus",
+      "contentSha256": "263e53d1a98c99725bb09ad88b5cc4049349d84a63d541450bea259577c5dab1",
+      "inputSha256": "f04691c0e53da894ce4e7643f76f6bf440d3c73aa27aee73fea8f86413a5661f",
+      "assetSha256": "7b3870ac3399a3cf7311351fdf0e8cc474eacc83766e4974b2c9be6b642c171c",
+      "durationSeconds": 10.228395833333334,
+      "bytes": 30765,
+      "status": "agent-checked",
+      "seed": 1119358262,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "उदार की ताकत से अगनी रकम से बड़ी राशी पर आसर लिया जाता है कीमत का, हर बडलाव जाडा अभासी पैसे पर आसर डालता है",
+          "cer": 0.10091743119266056,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.10091743119266056,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.10091743119266056,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.91977240026384,
+          "peak": 0.147705078125,
+          "silenceRatio": 0.4334008761350738,
+          "generatedSteps": 890,
+          "maxNewTokens": 1775
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 10.228395833333334,
+          "rmsDbfs": -18.51020741537299,
+          "peak": 0.8424941301345825,
+          "silenceRatio": 0.2947452252002697,
+          "clippedRatio": 0.0,
+          "wavSha256": "7b3870ac3399a3cf7311351fdf0e8cc474eacc83766e4974b2c9be6b642c171c"
+        }
+      }
+    },
+    {
+      "id": "glossary.margin",
+      "language": "hi",
+      "spokenText": "जमा रकम उधार की ताकत वाली स्थिति के लिए अलग रखी गई अभ्यास की रकम है।",
+      "path": "/audio/hi/c6b2970846b3e385652652442666cde4923211afa174a26fcc8d1376892e4e1c.opus",
+      "contentSha256": "f963c736fe7ee80c771719dc8f58b837fc2f3af62dd89eea63562113c3efd4df",
+      "inputSha256": "c6b2970846b3e385652652442666cde4923211afa174a26fcc8d1376892e4e1c",
+      "assetSha256": "3f22acd7339e567437e94689f4dcf3e8fd5748deb6c1fd46999aee8e5a8410af",
+      "durationSeconds": 5.828208333333333,
+      "bytes": 17637,
+      "status": "agent-checked",
+      "seed": 2529627298,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "जमा रकम उदाग की ताकत्टाली स्थी के लिए रक्छी गे अभ्यास की रकम हैं",
+          "cer": 0.22388059701492538,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.22388059701492538,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.22388059701492538,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.74259912184055,
+          "peak": 0.172119140625,
+          "silenceRatio": 0.39978756847609564,
+          "generatedSteps": 511,
+          "maxNewTokens": 1233
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.828208333333333,
+          "rmsDbfs": -19.14898871703429,
+          "peak": 0.8372804522514343,
+          "silenceRatio": 0.27813364598897605,
+          "clippedRatio": 0.0,
+          "wavSha256": "3f22acd7339e567437e94689f4dcf3e8fd5748deb6c1fd46999aee8e5a8410af"
+        }
+      }
+    },
+    {
+      "id": "glossary.forcedExit",
+      "language": "hi",
+      "spokenText": "ज़बरन बाहर निकलना तब होता है जब अभ्यास का नियम तय सीमा पर स्थिति बंद करता है।",
+      "path": "/audio/hi/4eb3df2882c11ae5dc0cc1702ba4af6d850dd7a57bb853afe83925f1a534d47b.opus",
+      "contentSha256": "5ab7cc3ffa2fb15373b353f29fd9c99654672ea7386ba2bb243802bcb4aaf379",
+      "inputSha256": "4eb3df2882c11ae5dc0cc1702ba4af6d850dd7a57bb853afe83925f1a534d47b",
+      "assetSha256": "d1ee2742269d6205f90bea51c0804b373df312a74beb105764ca8a9cf36e8fe8",
+      "durationSeconds": 6.652520833333333,
+      "bytes": 20344,
+      "status": "agent-checked",
+      "seed": 3957958570,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "जबरन बाहर निकलना तब होता है, जब अभ्यास कानीम तैसीमा पर स्तिती बंद करता है.",
+          "cer": 0.10526315789473684,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.10526315789473684,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.10526315789473684,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.133906910293504,
+          "peak": 0.133941650390625,
+          "silenceRatio": 0.3776178010471204,
+          "generatedSteps": 582,
+          "maxNewTokens": 1293
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.652520833333333,
+          "rmsDbfs": -18.836992214197654,
+          "peak": 0.800613284111023,
+          "silenceRatio": 0.2302260108167017,
+          "clippedRatio": 0.0,
+          "wavSha256": "d1ee2742269d6205f90bea51c0804b373df312a74beb105764ca8a9cf36e8fe8"
+        }
+      }
+    },
+    {
+      "id": "glossary.volatility",
+      "language": "hi",
+      "spokenText": "उतार-चढ़ाव बताता है कि मूल्य कितना और कितनी जल्दी ऊपर या नीचे बदलता है।",
+      "path": "/audio/hi/c0deca862fa3f7639096a81e79144cfbfba56c27025a90698baae6455187047f.opus",
+      "contentSha256": "abae461d73f28df2c89459d9ff453df3c3f82f000ecd66c03f9cb03a87258838",
+      "inputSha256": "c0deca862fa3f7639096a81e79144cfbfba56c27025a90698baae6455187047f",
+      "assetSha256": "3569c4d8724a9bdf3929e52a11ed82f17fbd1b4dcc0734868dab564c67700ce5",
+      "durationSeconds": 6.083625,
+      "bytes": 18352,
+      "status": "agent-checked",
+      "seed": 2928547135,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "उता ज़ाद बताता है कि मुलि कितना और कितनी ज़ग्दी उपर यानीचे बडलता है",
+          "cer": 0.17142857142857143,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.17142857142857143,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.17142857142857143,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -32.02074884910328,
+          "peak": 0.181854248046875,
+          "silenceRatio": 0.40663018845419846,
+          "generatedSteps": 533,
+          "maxNewTokens": 1112
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 6.083625,
+          "rmsDbfs": -18.1973322779006,
+          "peak": 0.8550769686698914,
+          "silenceRatio": 0.2631517666961173,
+          "clippedRatio": 0.0,
+          "wavSha256": "3569c4d8724a9bdf3929e52a11ed82f17fbd1b4dcc0734868dab564c67700ce5"
+        }
+      }
+    },
+    {
+      "id": "glossary.drawdown",
+      "language": "hi",
+      "spokenText": "गिरावट पहले के ऊँचे स्तर से बाद के मूल्य तक की कमी है।",
+      "path": "/audio/hi/88569fc1c47692b248b96429f2ec275ae0c881a6d77c088591324a1389be41df.opus",
+      "contentSha256": "182a7ff703d44e9c2d913ea51d280a5cf472f309937e5f95b29e1b8406feb2a5",
+      "inputSha256": "88569fc1c47692b248b96429f2ec275ae0c881a6d77c088591324a1389be41df",
+      "assetSha256": "7a63db9d5a0f1b05031a7ab1ddcb8300472dbd1d69e3ec85bea1e0b8bf48ab17",
+      "durationSeconds": 5.6540625,
+      "bytes": 16456,
+      "status": "agent-checked",
+      "seed": 623591486,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "गिरावद पहले के उचे स्थर्सी बात के मुझेतक की कमी हैं",
+          "cer": 0.24528301886792453,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.24528301886792453,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.24528301886792453,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -33.38047914870848,
+          "peak": 0.19549560546875,
+          "silenceRatio": 0.503902239476386,
+          "generatedSteps": 496,
+          "maxNewTokens": 1052
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 5.6540625,
+          "rmsDbfs": -19.10565172124921,
+          "peak": 0.807470977306366,
+          "silenceRatio": 0.38982295178614196,
+          "clippedRatio": 0.0,
+          "wavSha256": "7a63db9d5a0f1b05031a7ab1ddcb8300472dbd1d69e3ec85bea1e0b8bf48ab17"
+        }
+      }
+    },
+    {
+      "id": "glossary.recovery",
+      "language": "hi",
+      "spokenText": "नुकसान के बाद शुरुआती रकम तक लौटने के लिए बड़ा प्रतिशत लाभ चाहिए। सब खो जाने पर वापसी का आधार नहीं बचता।",
+      "path": "/audio/hi/30ab1505cc4701f7f0d1ff1e191645717ac5609bb1497ab3e2ad468c87dfe84e.opus",
+      "contentSha256": "37a16d63c4357aab1a1644a3b2d3c289fd101b67c5865f2090a03317cf05dd0c",
+      "inputSha256": "30ab1505cc4701f7f0d1ff1e191645717ac5609bb1497ab3e2ad468c87dfe84e",
+      "assetSha256": "c3f61d08e17630e5b830084d9d31a804948f7de8e127ffde701e7c44d535adb1",
+      "durationSeconds": 8.858416666666667,
+      "bytes": 27125,
+      "status": "agent-checked",
+      "seed": 232616102,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "नुक्सान की बाद शुर्वाती रकम तक लोटनी के लिए बड़ाप्रतिषत लाप्चाही सब खो जाने पर वापसी का आदार नहीं बच्छता",
+          "cer": 0.1568627450980392,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.1568627450980392,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.1568627450980392,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -36.08413118427138,
+          "peak": 0.116455078125,
+          "silenceRatio": 0.3962232757208388,
+          "generatedSteps": 772,
+          "maxNewTokens": 1594
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 8.858416666666667,
+          "rmsDbfs": -18.158182290201474,
+          "peak": 0.7994988560676575,
+          "silenceRatio": 0.23247194287918269,
+          "clippedRatio": 0.0,
+          "wavSha256": "c3f61d08e17630e5b830084d9d31a804948f7de8e127ffde701e7c44d535adb1"
+        }
+      }
+    },
+    {
+      "id": "glossary.diversification",
+      "language": "hi",
+      "spokenText": "विविधीकरण में जोखिम अलग स्रोतों में बाँटा जाता है। इससे सारा जोखिम खत्म नहीं होता। कुछ में एक साथ गिरावट आ सकती है।",
+      "path": "/audio/hi/6a6a0e831c9514f4112f8053580e03b3c39ee17bd70778844ae80938133bd02d.opus",
+      "contentSha256": "1a7f6f963840495504533d15b08686fa4ddece5d287e1c079b9f193e3be4d0dd",
+      "inputSha256": "6a6a0e831c9514f4112f8053580e03b3c39ee17bd70778844ae80938133bd02d",
+      "assetSha256": "f9e534521a20f4345e9d616b2d83241154903053b818e987d1d7644128e60b46",
+      "durationSeconds": 9.067395833333334,
+      "bytes": 27345,
+      "status": "agent-checked",
+      "seed": 840817742,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "विविदिकरन्मी जोक्हिम अलक्स्रुतों में बाटा जाता है इस्सी सारा जोक्हिम कत मैं हुता कुछ में एक सात किरावाता सकती है",
+          "cer": 0.26785714285714285,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.26785714285714285,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.26785714285714285,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -37.5717658276926,
+          "peak": 0.111236572265625,
+          "silenceRatio": 0.4418238836427657,
+          "generatedSteps": 790,
+          "maxNewTokens": 1655
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 9.067395833333334,
+          "rmsDbfs": -18.92220168870923,
+          "peak": 0.8184292316436768,
+          "silenceRatio": 0.26099923030087196,
+          "clippedRatio": 0.0,
+          "wavSha256": "f9e534521a20f4345e9d616b2d83241154903053b818e987d1d7644128e60b46"
+        }
+      }
+    },
+    {
+      "id": "glossary.compounding",
+      "language": "hi",
+      "spokenText": "चक्रवृद्धि में हर प्रतिशत बदलाव पहले के बदलावों के बाद बची रकम पर लागू होता है। ऐसा लाभ और नुकसान, दोनों में होता है।",
+      "path": "/audio/hi/fc267579eba84eb1d73eaf84a5ba071de57f787a365474868f919e206d9926a9.opus",
+      "contentSha256": "19005059ae94f0e734a7796e892a88941bea795a031ea02a773710311a2be485",
+      "inputSha256": "fc267579eba84eb1d73eaf84a5ba071de57f787a365474868f919e206d9926a9",
+      "assetSha256": "f497a7b4cd4ce1aa013abc8e09fbd48d234ae3b3abb7237b3a54e0e3007a1a4e",
+      "durationSeconds": 10.379333333333333,
+      "bytes": 30808,
+      "status": "agent-checked",
+      "seed": 302202626,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "चक्रिव रुद्धिमे, हर प्रतिषद बड्लाव पहले के बड्लामुके बाद बचीरकंपर लागु हुता है, अँजा लाब अर नुक्सान दूनो में हुता है.",
+          "cer": 0.2631578947368421,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.2631578947368421,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.2631578947368421,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -35.06528302543126,
+          "peak": 0.156036376953125,
+          "silenceRatio": 0.4416050580257271,
+          "generatedSteps": 903,
+          "maxNewTokens": 1715
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 10.379333333333333,
+          "rmsDbfs": -18.88941284186908,
+          "peak": 0.8269454836845398,
+          "silenceRatio": 0.26608565097308756,
+          "clippedRatio": 0.0,
+          "wavSha256": "f497a7b4cd4ce1aa013abc8e09fbd48d234ae3b3abb7237b3a54e0e3007a1a4e"
+        }
+      }
+    },
+    {
+      "id": "glossary.fees",
+      "language": "hi",
+      "spokenText": "शुल्क ऐसी लागत है जिससे बची रकम घटती है। अभ्यास के इस सरल मॉडल में शुल्क शामिल नहीं हैं।",
+      "path": "/audio/hi/e414705127819becb6f1aa8f617d081c545a2079ea5551398e759d95b38c3b5e.opus",
+      "contentSha256": "75ca5211ef78f885f08406a6d9d34134cf2eea8aac9990b8664ceb4df2b97791",
+      "inputSha256": "e414705127819becb6f1aa8f617d081c545a2079ea5551398e759d95b38c3b5e",
+      "assetSha256": "168eda995eac342f3179142eab39273663f543020e53d02b84be518d9a7d1413",
+      "durationSeconds": 7.8135208333333335,
+      "bytes": 23351,
+      "status": "agent-checked",
+      "seed": 1212128102,
+      "quality": {
+        "passed": true,
+        "eos": true,
+        "asr": {
+          "transcript": "शुलक एसी लागत है, जिसे बची रकम ख़ती हैं. अभ्यास की इस्सरल मोडल मी शुलक शामिल नहीं है.",
+          "cer": 0.1511627906976744,
+          "modelId": "openai/whisper-small",
+          "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+          "normalization": "NFKC-casefold; explicit number/% spelling; punctuation/space; codepoint CER; marks retained; protected quantities checked",
+          "threshold": 0.35,
+          "status": "passed",
+          "previousAssessment": {
+            "cer": 0.1511627906976744,
+            "status": "passed",
+            "normalization": "NFKC-casefold-punctuation-to-space; codepoint Levenshtein; marks/digits retained"
+          },
+          "rawCer": 0.1511627906976744,
+          "quantitiesMatch": true,
+          "normalizationVersion": 2
+        },
+        "sourceMetrics": {
+          "rmsDbfs": -34.79138866980872,
+          "peak": 0.12847900390625,
+          "silenceRatio": 0.4216370263744428,
+          "generatedSteps": 682,
+          "maxNewTokens": 1413
+        },
+        "encodedMetrics": {
+          "finite": true,
+          "sampleRate": 48000,
+          "channels": 1,
+          "durationSeconds": 7.8135208333333335,
+          "rmsDbfs": -18.621758096109808,
+          "peak": 0.8068675398826599,
+          "silenceRatio": 0.30225117251345823,
+          "clippedRatio": 0.0,
+          "wavSha256": "168eda995eac342f3179142eab39273663f543020e53d02b84be518d9a7d1413"
+        }
+      }
+    }
+  ],
+  "failedTracks": [
+    "hi:DRAWDOWN_5"
+  ]
+}
