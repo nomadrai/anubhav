@@ -1,23 +1,24 @@
 # Investor-protection learning scaffold
 
-This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing and Phase 2 journey integration for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
+This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing, Phase 2 journey integration, and Phase 3 bilingual/audio pipeline work for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
 
-## Current status: Phase 2 real journey integration
+## Current status: Phase 3 bilingual content and offline audio pipeline
 
-Phase 2 connects the bilingual journey to the Phase 1 teaching engine:
+Phase 3 builds on the Phase 2 journey and strengthens the bilingual/audio boundary:
 
 - deterministic playback pauses at decision points and warnings, with a user exit action;
 - accessible price, equity, and teaching-margin views with text labels and reduced-motion CSS;
 - result, same-path replay contrast, reveal-after-prediction, debrief, and post-check screens;
 - verified-resource filtering that keeps unverified resource pointers hidden;
 - synthetic crash/choppy fixtures remain clearly marked `isPlaceholder: true` and are not market data;
-- candidate data acquisition and provenance remain separate from checked-in runtime episodes until source, licence, and safety review are complete.
+- candidate data acquisition and provenance remain separate from checked-in runtime episodes until source, licence, and safety review are complete;
+- optional local-only Indic Parler generation now has deterministic hashes, fail-closed model/dependency checks, Opus conversion, and manifest provenance, but no model or audio is bundled.
 
-The journey now runs the checked-in synthetic teaching path. Production audio playback, PWA/offline behavior, and verified real episodes remain later work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
+The journey runs the checked-in synthetic teaching path. Runtime playback, PWA/offline behavior, and verified real episodes remain later work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
 
 ## Screen contract
 
-A clickable stub may move through these screens in order:
+The journey moves through these screens in order:
 
 `language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`
 
@@ -29,7 +30,7 @@ There are no recommendations, brands, real instruments, monetisation, profit gam
 
 ## Intended stack and checks
 
-The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a bilingual journey, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and preparation/audio CLI stubs. Audio playback, PWA/offline behavior, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
+The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a bilingual journey, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and an optional local-only audio generation CLI. Audio playback, PWA/offline behavior, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
 
 ```sh
 npm install
@@ -54,7 +55,7 @@ npm run release
 - [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md) — bilingual writing, glossary, and analogy drafts.
 - [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) — candidate source register, row/date evidence, and CSV preparation contract.
 - [`docs/RESOURCE_REVIEW.md`](docs/RESOURCE_REVIEW.md) — automated protective-resource checks and human approval boundary.
-- [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md) — silent stub and future audio boundary.
+- [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md) — optional local-only TTS build and audio review boundary.
 - [`docs/ACCESSIBILITY_AND_PERFORMANCE.md`](docs/ACCESSIBILITY_AND_PERFORMANCE.md) — targets and test matrix.
 - [`docs/PRIVACY.md`](docs/PRIVACY.md) — permitted storage and network behavior.
 - [`docs/PILOT.md`](docs/PILOT.md) — consent, manual measures, and sample limits.

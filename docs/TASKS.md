@@ -19,18 +19,19 @@ Priority meanings: **P1 impact** = directly improves learner safety/outcome; **P
 - **P1 / agent:** connect the reducer journey to simulation playback, decision pauses, chart, equity/margin meters, replay contrast, reveal, debrief, post-check, and verified-resource filtering.
 - **P1/P2/P3 / human:** approve safety wording, hidden-period behavior, Hindi meaning, accessibility, and no-advice boundaries before release.
 
-## Phase 3 — Bilingual content and audio (next)
+## Phase 3 — Bilingual content and offline audio pipeline (implemented; review pending)
 
-
-- **P2 / agent:** implement English-first strings, separate spoken-number fields, draft-Hindi labels, and content-limit checks.
-- **P2 / human:** review Hindi meaning, naturalness, cultural clarity, glossary, and analogies.
+- **P2 / agent:** implement English-first strings, separate display/spoken fields, draft-Hindi labels, and content-limit checks.
+- **P2 / agent:** implement the optional local-only Indic Parler audio provider, deterministic hashes, Opus conversion, manifest provenance, and fail-closed dependency/model checks.
+- **P2 / human:** review Hindi meaning, naturalness, cultural clarity, glossary, analogies, pronunciation, and voice quality.
 - **P1 / human:** approve the leverage, margin, forced-exit, and recovery explanations; reject recommendations or brands.
+- **P3 / human:** review the gated model access, checkpoint, optional dependency licences, training/voice provenance, and audio release terms before generating or publishing assets.
 
-## Phase 3 — Deterministic engine plumbing (P1/P4)
+## Earlier Phase 1 carryover — Deterministic engine plumbing (implemented)
 
-- **P4 / agent:** implement and test `mulberry32`, geometric synthetic path, typed engine APIs, units/entry/close/equity math, intrabar low, warning-once, forced-exit simplification, recovery, and summary statistics.
+- **P4 / agent:** implemented and tested `mulberry32`, geometric synthetic path, typed engine APIs, units/entry/close/equity math, intrabar low, warning-once, forced-exit simplification, recovery, and summary statistics.
 - **P1 / human:** review the margin rule and 10×/7% worked example; confirm user-facing caveats.
-- **P5 / agent:** implement the CSV CLI validation contract with crash, choppy, and paired rally/shakeout fixtures.
+- **P5 / agent:** implemented the CSV CLI validation contract with crash, choppy, and paired rally/shakeout fixtures.
 - **P3 / human:** verify every source, licence, date, calendar, and resource pointer before any is visible.
 
 ## Phase 4 — Quality and packaging (P3/P4/P5)

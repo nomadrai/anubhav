@@ -84,14 +84,20 @@ python3 scripts/acquire_eia_candidates.py --offline --output-root data/candidate
 
 The candidate source, row counts, date ranges, licence uncertainty, and resource checks are recorded in `docs/DATA_SOURCES.md` and `docs/RESOURCE_REVIEW.md`. Raw snapshots and normalized price inputs are git-ignored pending human rights review.
 
-## Audio contract (not implemented yet)
+## Audio contract (optional offline build)
 
 `generate_audio.py --provider stub --dry-run --episode EPISODE.json` emits a
 JSON **dry-run plan only**. The plan contains spoken text and SHA-256 content
 hashes and explicitly has `manifestGenerated: false`; it creates no audio and
-no manifest. `indic_parler.py` deliberately raises `NotImplementedError`:
-no model, dependency, or provider has been selected.
+no manifest.
 
-A future provider must normalize output to mono, 24 kbps Opus via `ffmpeg` and
-must document that contract before implementation. This Phase 1 preparation
-path does not produce audio, silent placeholders, or claim manifest coverage.
+The optional `indic_parler` provider targets the documented
+`ai4bharat/indic-parler-tts` candidate. It requires a caller-supplied local
+checkpoint, an explicit model revision, locally installed optional TTS
+packages, and `ffmpeg`; it never downloads a model or makes a runtime request.
+Use `--check` for fail-closed prerequisite checks and see
+[`docs/AUDIO_PIPELINE.md`](../docs/AUDIO_PIPELINE.md) for the manifest hashes,
+safe output rules, and review boundary. Missing dependencies/model access or
+conversion failure produces no approved asset. We do not commit model weights,
+WAV/Opus output, or manifests, and the app keeps audio unavailable until
+human/native-speaker review is complete.

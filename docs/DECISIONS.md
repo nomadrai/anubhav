@@ -32,6 +32,10 @@
 
 **Status:** accepted for Phase 2. **Decision:** resources render only when `verified` is true; automated HTTP success is recorded separately from human approval. **Reason:** a reachable page is not proof of relevance, accessibility, licensing, or suitability.
 
+## ADR-0009 — Optional local-only bilingual TTS candidate
+
+**Status:** accepted for Phase 3 implementation; release approval pending. **Decision:** use `ai4bharat/indic-parler-tts` as an optional build-time candidate for English/Hindi speech, requiring a caller-provided local checkpoint and immutable revision. The provider never downloads weights, makes runtime requests, or falls back to fake audio. **Reason:** the model card declares Apache-2.0 and multilingual English/Hindi support, while gated access, model/data terms, optional dependency licences, and native-speaker quality still require human review.
+
 ## Open decisions
 
 - `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy.

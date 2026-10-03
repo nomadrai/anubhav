@@ -21,12 +21,26 @@ Before release, inspect installed package metadata and lockfiles, including tran
 | Prettier | 3.9.9 | MIT | formatting contract | no | TODO(human): review notice |
 | PostCSS / Autoprefixer | 8.5.28 / 10.6.1 | MIT / MIT | CSS processing | no | TODO(human): review notice |
 | `PyYAML` | >=6.0 (Python environment) | TODO(human) | metadata parsing in `scripts/prepare_episode.py` | no | verify installed version and licence |
-| Indic Parler model/voice | not selected | TODO(human) | future `scripts/providers/indic_parler.py` | no | do not add until terms reviewed |
+| Indic Parler model/voice | candidate only; not bundled | Model card declares Apache-2.0; human review pending | optional offline `scripts/providers/indic_parler.py` | no | gated access, exact checkpoint/revision, voice/data terms, and native-speaker review required |
 | EIA RWTC candidate snapshots | EIA reuse statement; upstream rights pending | TODO(human) | non-runtime `data/candidates/`; see `docs/DATA_SOURCES.md` | no | human redistribution review required |
 
 For every transitive dependency, future models, voices, datasets, icons, and fonts record direct/transitive status, licence source, notice obligations, security status, bundle contribution, runtime request, redistribution, attribution, privacy, and language restrictions.
 
-No runtime model, dataset, external font, remote icon, analytics library, or telemetry provider is approved for Phase 2. The EIA candidates are not imported into `src/data/episodes/`. Future audio-model investigation is described in [`AUDIO_PIPELINE.md`](AUDIO_PIPELINE.md) and is not a selection.
+No runtime model, dataset, external font, remote icon, analytics library, or telemetry provider is approved. The EIA candidates are not imported into `src/data/episodes/`. The Indic Parler entry is a Phase 3 **offline build candidate**, not a bundled model, reviewed voice, or released audio asset.
+
+## Phase 3 offline Indic Parler requirements
+
+**Decision:** keep `ai4bharat/indic-parler-tts` as the optional open-source TTS path for an offline build, while keeping it unavailable to the app until evidence is complete. The model card declares Apache-2.0 and lists English and Hindi support; it also requires gated access and describes a large roughly 0.9B-parameter checkpoint. A model-card licence declaration is evidence for the model repository, not approval of the training data, voice outputs, dependent libraries, or redistribution terms.
+
+**Required before a real build or release:**
+
+- a human-approved gated-access record and a locally stored checkpoint outside git;
+- an immutable model revision, model id, local model path, voice-description configuration, seed/device, and converter settings recorded in the generated manifest;
+- compatible local versions and notices for `torch`, `transformers`, `parler-tts`/`parler_tts`, `soundfile`, and the system `ffmpeg` binary; these remain optional and are not added to the web bundle;
+- review of the model card, code, model dependencies, training-data/voice provenance, Apache-2.0 notice obligations, and any gated terms; and
+- native-speaker Hindi review plus accessibility, pronunciation, safety-copy, and output-quality review for every released asset.
+
+The provider uses `local_files_only=True`, requires a caller-supplied checkpoint and revision, and fails closed when an optional dependency, tokenizer, model file, or `ffmpeg` converter is absent. It performs no runtime request and does not commit weights, WAV files, Opus files, or manifests. `TODO(human)`: record exact dependency versions, platform/native-library evidence, model-access receipt, and final licence/voice decision before release.
 
 ## Release evidence
 

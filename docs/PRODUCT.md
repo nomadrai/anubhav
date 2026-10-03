@@ -24,7 +24,7 @@ The outcome is recognition, not prediction skill or a profitable strategy.
 
 ## Phase boundaries
 
-Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. Phase 2 connects those results to playback, educational charts/meters, replay, reveal, debrief, and post-check. Audio playback, offline behavior, real verified episodes, and a polished pilot flow remain later work.
+Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. Phase 2 connects those results to playback, educational charts/meters, replay, reveal, debrief, and post-check. Phase 3 adds bilingual display/spoken content contracts, content-limit checks, and an optional local-only audio generation path. Reviewed audio playback, offline behavior, real verified episodes, and a polished pilot flow remain later work.
 
 Every screen must have a keyboard-reachable primary action, a clear synthetic or unavailable state where work is not implemented, and a language label. The journey is:
 

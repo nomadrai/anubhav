@@ -3,6 +3,7 @@
  {"pattern":"दोगुना","file":"src/content/hi/ui.json","reason":"Hindi rendering of the required neutral forwarded-message teaching card; not an endorsement."},
  {"pattern":"hold","file":"src/content/en/ui.json","reason":"Required Run-screen decision label; it is a simulation control, not an investment recommendation."},
  {"pattern":"Latin spoken script","file":"src/content/en/narration.json","reason":"English narration is intentionally written in Latin script; Hindi narration is checked for spoken-script hygiene."},
+ {"pattern":"Latin spoken script","file":"src/content/en/glossary.json","reason":"English glossary speech is intentionally written in Latin script; Hindi glossary speech remains script-checked."},
  {"pattern":"TODO(human)","file":"src/content/resources.json","reason":"Required unverified placeholder; release check blocks it from shipping."},
  {"pattern":"/","file":"src/content/resources.json","reason":"Resource URL field is intentionally a TODO placeholder and is unverified."}
 ]

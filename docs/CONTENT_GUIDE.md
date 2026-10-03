@@ -24,12 +24,12 @@ Planned later glossary terms: diversification, NAV, compounding, fees, and nomin
 1. **Intro** — “This is a learning exercise, not financial advice.” / “यह सीखने का अभ्यास है, वित्तीय सलाह नहीं है।”
 2. **Setup** — “Choose a teaching example; it is not a real instrument.” / “एक सीखने वाला उदाहरण चुनें; यह वास्तविक साधन नहीं है।”
 3. **Prediction** — “Before the reveal, record what you expect.” / “दिखाने से पहले लिखें कि आप क्या होने की उम्मीद करते हैं।”
-4. **Run** — “The run is a placeholder; no simulation runs in Phase 0.” / “यह चरण स्थानापन्न है; चरण 0 में कोई सिमुलेशन नहीं चलता।”
+4. **Run** — “Watch the synthetic path. Pause before choosing whether to continue or exit.” / “कृत्रिम रास्ता देखें। जारी रखने या बाहर निकलने का चुनाव करने से पहले रुकें।”
 5. **Reveal** — “The period stays hidden until this reveal.” / “इस खुलासे तक अवधि छिपी रहती है।”
 6. **Debrief** — “A loss and its recovery percentage use different bases.” / “नुकसान और उसकी भरपाई का प्रतिशत अलग आधार लेते हैं।”
 7. **Next steps** — “Write one question for a qualified source.” / “किसी योग्य स्रोत के लिए एक प्रश्न लिखें।”
 
-These are draft strings, not approved claims. Keep visible labels short and explanatory text separate.
+These are draft strings, not approved claims. Keep visible labels short and explanatory text separate. Every narration and glossary entry keeps `displayText` separate from `spokenText`; Hindi remains draft until native-speaker review.
 
 ## Analogy drafts (6–8, all requiring human review)
 
@@ -42,7 +42,7 @@ These are draft strings, not approved claims. Keep visible labels short and expl
 7. **Map and journey:** “A map can explain a route without predicting tomorrow’s traffic.” / “नक्शा रास्ता समझा सकता है, कल का यातायात नहीं बता सकता।”
 8. **Undo button:** “A forced exit is not an undo button; the simplified model stops at its rule.” / “बलपूर्वक समापन पहले जैसा करने का बटन नहीं है; सरल मॉडल अपने नियम पर रुकता है।”
 
-`TODO(human)`: test each analogy for cultural clarity, financial misconception, Hindi naturalness, and the 25-word limit before publication.
+`TODO(human)`: test each analogy for cultural clarity, financial misconception, Hindi naturalness, and the 25-word limit before publication. The content checker enforces structural parity, spoken-text hygiene, and the sentence limit; it does not replace human review.
 
 ## Numbers and claims
 
