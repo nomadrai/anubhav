@@ -1,5 +1,127 @@
 # Accessibility and performance — measured product track
 
+## Current UI redesign evidence
+
+**Implemented and checked locally; not deployed or human-reviewed.** The older
+integration sections below are historical snapshots, not the current audio or
+layout status. Current audio remains complete at **58/58**, and both real
+English/Hindi packaged playback/offline tests pass. No audio was regenerated.
+
+### Layout and browser matrix
+
+Command: `npm run test:browser -- --workers=3`. Final result: **72 passed,
+0 skipped, 0 unexpected, 0 flaky** in approximately **2.2 minutes**. The 60
+independent layout cases may run in parallel; the existing full-journey file
+remains sequential to avoid shared clipboard races. Each case has an isolated
+browser context and its own artifact path.
+
+- **60 complete matrix journeys:** 10 viewports × English/Hindi × standard,
+  medium and largest text, covering **660 required step samples**.
+- **360 extra state samples:** updated setup choices/summary, decision pause,
+  glossary card, additional debrief lessons and local summary.
+- Four extra smallest-desktop standard/medium warning/ten-times exposure cases
+  check changing captions and true warning pauses through forced exit.
+- Eight existing tests cover both languages/episodes, exact replay series,
+  settled forced exit, reflection gating, preference-only storage/reset/reload,
+  keyboard/reflow/axe, warmed shell, readable audio failure and real cached audio.
+- **1,084 raw PNGs and 60 PNG contact boards** generated under gitignored
+  `artifacts/ui/`. The browsable gallery is `artifacts/ui/contact-sheet.html`;
+  boards are `artifacts/ui/contact-sheets/<viewport>-<language>-<size>.png`.
+  Captures are automated viewport views, not physical-device/human reviews.
+
+| Viewports | Standard/medium | Largest | Horizontal overflow / action reachability |
+|---|---|---|---|
+| 1280×650, 1366×657, 1440×800, 1536×730 | All eight short steps fit in both panes; no document scroll on any of the eleven steps | Header/actions pinned; only panes may scroll | Pass in both languages |
+| 1920×890, 2560×1300 | Same result, with scaled type/charts/cards and background structure | Header/actions pinned; only panes may scroll | Pass in both languages |
+| 1024×768 two-pane tablet boundary | All eight short steps fit; no document scroll | Inner scrolling permitted | Pass in both languages |
+| 768×1024, 390×844, 360×640 | Natural single-column scrolling with sticky actions | Same, with larger text | Pass in both languages |
+
+Short steps are LanguageSelect, Intro, Setup, Prediction, Run, Result, Replay and
+PostCheck. Reveal, Debrief, NextSteps, About and deliberately expanded chart data
+may use internal scrolling on desktop. Largest-size tests actually scroll panes
+and recheck the pinned header/actions. Key-text overflow and within-region element
+overlap checks passed; primary-action hit tests ensure it is not covered. About
+fits each viewport, preserves disclosures and returns focus to its opener on
+Escape. Axe reports zero violations in the existing checked states; this does
+not establish WCAG conformance or human reading comfort.
+
+Full-journey request assertions require **same-origin, static, bodyless GETs,
+no query payload**, empty cookies/session storage and preference-only localStorage.
+A same-origin POST is not silently accepted. Production `connect-src 'self'`
+remains intact. No automatic narration requests occur. Explicit outbound resource
+navigation and ordinary host request metadata are outside the local-only answer
+claim and remain disclosed.
+
+Machine summary and exact asset identities: [UI_LAYOUT_EVIDENCE.json](UI_LAYOUT_EVIDENCE.json).
+Raw per-pane bounds and screenshots remain local in `artifacts/ui/matrix/` and
+`artifacts/ui/screenshots/`. No unresolved tested layout failure remains.
+
+### Actual failures and corrections
+
+Earlier passes found compact-height medium-text overflow, cramped mobile progress
+labels, font-descender overflow, a missing action landmark, decorative check marks
+polluting accessible names, and About focus-return timing. These were fixed, not
+hidden by relaxing assertions. Lazy loading also required audio tests to wait for
+the actual Intro rather than activate the visible language-entry fallback clip.
+A later full pass was 71/72: medium English Replay at 1920×890 needed **3 pixels**
+of inner scrolling. Its wide-screen chart was adjusted via clamp/viewport sizing;
+the final **full** 72-case suite then passed. Initial and aborted logs remain in
+`artifacts/ui/provisional/`. The sticky header is opaque so scrolled mobile text
+does not ghost through it.
+
+### Before and after — measured, not assumed
+
+Both use local Chrome 149.0.7827.102 / Lighthouse 13.5.0, cold 360×640 navigation,
+DevTools 400 kbps down/up, 400 ms added request latency and 4× CPU. Before:
+`2026-10-03T20:55:24.386Z`; final after: `2026-10-03T22:19:50.526Z`.
+
+| Metric | Before | Final after |
+|---|---:|---:|
+| Aggregate gzip JavaScript (all chunks + worker scripts) | 109,224 B | 114,340 B |
+| Gzip CSS | 1,974 B | 4,321 B |
+| JS / CSS budgets | 153,600 / 20,480 B | Both pass |
+| Lighthouse performance | 89 | 91 |
+| Automated accessibility / best practices | 100 / 100 | 100 / 100 |
+| FCP / LCP / interactive | 3,014.667 ms | 2,854.072 ms |
+| Speed index | 2,613 ms | 2,610 ms |
+| Total blocking time | 0 ms | 0 ms |
+| Cumulative layout shift | 0 | 0 |
+| Lighthouse-reported network bytes | 108,032 B | 98,106 B |
+| Run warnings | none | none |
+
+The initial unsplit redesign measured **87** performance / **3,211.330 ms**
+FCP/LCP, with a browser suite running concurrently. It is retained as provisional,
+not a fair isolated comparison. Deferring teaching code until a start gesture
+reduced initial navigation payload; the PWA still precaches the public chunks.
+Before and final after were run without parallel browser suites. These remain
+independent one-run laboratory observations on a non-isolated host, not a proved
+statistical speedup, field percentile, physical phone or deployed-host result.
+The 3 ms speed-index difference is not evidence of a meaningful improvement.
+
+Exact settings, asset hashes and all three observations:
+[UI_PERFORMANCE_EVIDENCE.json](UI_PERFORMANCE_EVIDENCE.json). Full raw reports:
+`artifacts/ui/baseline/`, `artifacts/ui/after/` and `e2e/performance-results/`.
+
+### Other checks and reproduction
+
+`npm run release` passed lint, typecheck, **178 tests in 14 files**, content/audio,
+build, bundle and release checks; Python discovery and ECB/resources modules:
+**57 + 10 = 67 passed**. All current copy/audio remains agent-checked, never
+human-reviewed. New chrome copy has explicit bilingual back-translations and
+file/leaf hashes in UI_CONTENT_QA.json and review-status.json. No dependencies,
+engine/reducer/playback-hook/data or narrated text/assets changed.
+
+```sh
+npm run release
+npm run test:browser -- --workers=3
+npm run screenshots:contact
+npm run check:performance
+```
+
+Real assistive technology, physical low-end phones, native browser zoom, Hindi
+native review, listening, pilot outcomes and production hosting remain unmeasured.
+The remaining historical sections retain their original measured evidence.
+
 ## Final integration rerun (2026-10-03)
 
 After the final audio/gate integration at `2390e00`, the production build and

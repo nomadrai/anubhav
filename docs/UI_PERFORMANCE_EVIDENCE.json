@@ -1,0 +1,384 @@
+{
+  "before": {
+    "measuredAt": "2026-10-03T20:55:24.386Z",
+    "requestedUrl": "http://127.0.0.1:4174/",
+    "browser": "149.0.7827.102",
+    "lighthouse": "13.5.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "settings": {
+      "output": [
+        "html",
+        "json"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 5250,
+      "pauseAfterLoadMs": 5250,
+      "networkQuietThresholdMs": 5250,
+      "cpuQuietThresholdMs": 5250,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 400,
+        "throughputKbps": 400,
+        "requestLatencyMs": 400,
+        "downloadThroughputKbps": 400,
+        "uploadThroughputKbps": 400,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "devtools",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 360,
+        "height": 640,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices"
+      ],
+      "skipAudits": null
+    },
+    "scores": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 3014.667,
+        "unit": "millisecond",
+        "display": "3.0 s"
+      },
+      "largest-contentful-paint": {
+        "value": 3014.667,
+        "unit": "millisecond",
+        "display": "3.0 s"
+      },
+      "speed-index": {
+        "value": 2613,
+        "unit": "millisecond",
+        "display": "2.6 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "unit": "millisecond",
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "unit": "unitless",
+        "display": "0"
+      },
+      "interactive": {
+        "value": 3014.667,
+        "unit": "millisecond",
+        "display": "3.0 s"
+      }
+    },
+    "totalNetworkBytes": 108032,
+    "warnings": [],
+    "assets": [
+      {
+        "file": "index-BrO9AhIS.js",
+        "bytes": 333119,
+        "gzipBytes": 97949,
+        "sha256": "48906ce4253f460659d5bf46600035091d83f24faa983ee2a9c0b85be7d1914b"
+      },
+      {
+        "file": "index-exgQwJw-.css",
+        "bytes": 5580,
+        "gzipBytes": 1974,
+        "sha256": "c94425683a5349bfd0b6158d0bd456e5c06982739ffaaa17f6383a3eb28fdcb7"
+      },
+      {
+        "file": "workbox-window.prod.es5-Bd17z0YL.js",
+        "bytes": 5653,
+        "gzipBytes": 2199,
+        "sha256": "17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9"
+      }
+    ],
+    "scope": "One cold-cache local production navigation at 360x640, DevTools 400 kbps down/up, 400 ms added request latency, 4x CPU. Not a field result, listening review, native-speaker review, or screen-reader test. Gzip sizes are computed, not measured transfer compression."
+  },
+  "provisionalInitialRedesign": {
+    "measuredAt": "2026-10-03T21:26:38.071Z",
+    "requestedUrl": "http://127.0.0.1:4174/",
+    "browser": "149.0.7827.102",
+    "lighthouse": "13.5.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "settings": {
+      "output": [
+        "html",
+        "json"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 5250,
+      "pauseAfterLoadMs": 5250,
+      "networkQuietThresholdMs": 5250,
+      "cpuQuietThresholdMs": 5250,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 400,
+        "throughputKbps": 400,
+        "requestLatencyMs": 400,
+        "downloadThroughputKbps": 400,
+        "uploadThroughputKbps": 400,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "devtools",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 360,
+        "height": 640,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices"
+      ],
+      "skipAudits": null
+    },
+    "scores": {
+      "performance": 0.87,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 3211.33,
+        "unit": "millisecond",
+        "display": "3.2 s"
+      },
+      "largest-contentful-paint": {
+        "value": 3211.33,
+        "unit": "millisecond",
+        "display": "3.2 s"
+      },
+      "speed-index": {
+        "value": 2981,
+        "unit": "millisecond",
+        "display": "3.0 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "unit": "millisecond",
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "unit": "unitless",
+        "display": "0"
+      },
+      "interactive": {
+        "value": 3211.33,
+        "unit": "millisecond",
+        "display": "3.2 s"
+      }
+    },
+    "totalNetworkBytes": 114172,
+    "warnings": [],
+    "assets": [
+      {
+        "file": "index-BLrSxDmw.css",
+        "bytes": 15679,
+        "gzipBytes": 4287,
+        "sha256": "af04d0bea9e55a14c82d0a12c22947f6ece59b0dd6048e9b0111869fa3edae27"
+      },
+      {
+        "file": "index-BQQ37GAw.js",
+        "bytes": 346553,
+        "gzipBytes": 101767,
+        "sha256": "e48178e205bdd00bd33da12fb907d1b15a9e470ec53611a8fe76a9c7cabdc8b3"
+      },
+      {
+        "file": "workbox-window.prod.es5-Bd17z0YL.js",
+        "bytes": 5653,
+        "gzipBytes": 2199,
+        "sha256": "17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9"
+      }
+    ],
+    "scope": "One cold-cache local production navigation at 360x640, DevTools 400 kbps down/up, 400 ms added request latency, 4x CPU. Not a field result, listening review, native-speaker review, or screen-reader test. Gzip sizes are computed, not measured transfer compression."
+  },
+  "after": {
+    "measuredAt": "2026-10-03T22:19:50.526Z",
+    "requestedUrl": "http://127.0.0.1:4174/",
+    "browser": "149.0.7827.102",
+    "lighthouse": "13.5.0",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "settings": {
+      "output": [
+        "html",
+        "json"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 5250,
+      "pauseAfterLoadMs": 5250,
+      "networkQuietThresholdMs": 5250,
+      "cpuQuietThresholdMs": 5250,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 400,
+        "throughputKbps": 400,
+        "requestLatencyMs": 400,
+        "downloadThroughputKbps": 400,
+        "uploadThroughputKbps": 400,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "devtools",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 360,
+        "height": 640,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices"
+      ],
+      "skipAudits": null
+    },
+    "scores": {
+      "performance": 0.91,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 2854.072,
+        "unit": "millisecond",
+        "display": "2.9 s"
+      },
+      "largest-contentful-paint": {
+        "value": 2854.072,
+        "unit": "millisecond",
+        "display": "2.9 s"
+      },
+      "speed-index": {
+        "value": 2610,
+        "unit": "millisecond",
+        "display": "2.6 s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "unit": "millisecond",
+        "display": "0 ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "unit": "unitless",
+        "display": "0"
+      },
+      "interactive": {
+        "value": 2854.072,
+        "unit": "millisecond",
+        "display": "2.9 s"
+      }
+    },
+    "totalNetworkBytes": 98106,
+    "warnings": [],
+    "assets": [
+      {
+        "file": "JourneyExperience-CRJlmVKw.js",
+        "bytes": 60969,
+        "gzipBytes": 17359,
+        "sha256": "dc157c2b6019315d3ad64987c88d716fbfde23d910120b2bc0acbdd4c5590680"
+      },
+      {
+        "file": "index-2wrxxVbL.js",
+        "bytes": 286303,
+        "gzipBytes": 85682,
+        "sha256": "1712cca864771bed72e462b3c831ba19d2bd8f243c266c7133a02bf11713dfb4"
+      },
+      {
+        "file": "index-BCskC8f4.css",
+        "bytes": 15880,
+        "gzipBytes": 4321,
+        "sha256": "e736884ad3b466b6067fde9decf9d2a02170736fb2e37f4d70d827214de3b92f"
+      },
+      {
+        "file": "workbox-window.prod.es5-Bd17z0YL.js",
+        "bytes": 5653,
+        "gzipBytes": 2199,
+        "sha256": "17bcc17d60dc78f927834b880c39649b03af46fd1f5cdbb8c42c5ae2b515dce9"
+      }
+    ],
+    "scope": "One cold-cache local production navigation at 360x640, DevTools 400 kbps down/up, 400 ms added request latency, 4x CPU. Not a field result, listening review, native-speaker review, or screen-reader test. Gzip sizes are computed, not measured transfer compression."
+  },
+  "comparisonScope": "Same local Chrome/Lighthouse cold mobile profile. Before and final after run without parallel browser suites; provisional run overlapped browser tests. Independent one-run values, not a statistical speedup, field percentile, physical phone or production-host result."
+}

@@ -12,13 +12,21 @@ export function useNarration(
     audioManager.getSnapshot,
   );
   const key = `${language}:${id}`;
-  useEffect(() => () => audioManager.stop(key), [key]);
+  useEffect(() => audioManager.retain(key), [key]);
+  const isCurrent = snapshot.key === key;
   return {
     ...snapshot,
-    status: snapshot.key === key ? snapshot.status : ('idle' as const),
+    status: isCurrent ? snapshot.status : ('idle' as const),
+    elapsedSeconds: isCurrent ? snapshot.elapsedSeconds : 0,
+    durationSeconds: isCurrent ? snapshot.durationSeconds : 0,
+    progress: isCurrent ? snapshot.progress : 0,
     play: () => void audioManager.play(language, id, spokenText),
-    pause: () => audioManager.pause(),
-    resume: () => void audioManager.resume(),
+    pause: () => {
+      if (audioManager.getSnapshot().key === key) audioManager.pause();
+    },
+    resume: () => {
+      if (audioManager.getSnapshot().key === key) void audioManager.resume();
+    },
     toggleMute: () => audioManager.setMuted(!snapshot.muted),
     setSpeed: (speed: number) => audioManager.setSpeed(speed),
   };

@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:browser": "playwright test",
+    "test:layout": "playwright test e2e/layout.e2e.ts",
+    "screenshots:contact": "node e2e/contact-sheet.mjs",
     "check:performance": "node e2e/performance.mjs",
     "check:content": "node scripts/check-content.mjs",
     "check:bundle": "node scripts/check-bundle-size.mjs",

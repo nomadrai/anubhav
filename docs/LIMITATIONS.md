@@ -43,6 +43,12 @@
 - PWA reload is only available after a successful warm visit/install and can
   be affected by browser eviction/private mode. Only previously requested
   audio is cached. No cold-start-offline or complete audio-pack guarantee.
+- The two-pane/no-document-scroll guarantee is bounded to the recorded CSS
+  viewports/text sizes. Large text and expanded tables/long content use inner
+  scrolling; mobile uses natural scrolling and pinned actions. Automated bounds,
+  screenshots and overflow checks do not prove every glyph is comfortable or
+  establish human/device accessibility conformance. Review/storage/offline/host-
+  log notices are accessible from About rather than repeated in every footer.
 - Browser/keyboard/reflow/Lighthouse results cover the exact recorded local
   Chrome setup, not all devices, screen readers, network conditions, browsers,
   production hosts or WCAG conformance. No human screen-reader audit occurred.

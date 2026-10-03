@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-checked",
+  "method": "Read both exact leaves; independently render Hindi back into English; compare meaning, negation, scope, quantity and interpolation. Then update only changed review hashes. No human/native review or listening.",
+  "fileSha256": {
+    "en": "099eb014cc0dca9120cacbe706f3e272604a540dcff831893e841a45986ee624",
+    "hi": "478fab7750938b5914d9f39ebd2cc5e6b4e13c971e29cd26d51f05d705b15fb9"
+  },
+  "privacyScope": "Footer refers to in-app choices/answers only, never anonymity, host metadata or explicit outbound resource navigation. Capability true uses the alternate disclosure; it implements and authorizes no sending feature.",
+  "calculationScope": "Summary uses STARTING_CAPITAL * stake/100 * exposure, and 0.01 times that exposure. It is sensitivity before a teaching closure, not a forecast or recommendation.",
+  "changes": [
+    {
+      "key": "about",
+      "en": "About this app",
+      "hi": "इस ऐप के बारे में",
+      "hiBackTranslation": "About this app.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "aboutOffline",
+      "en": "Using the app offline",
+      "hi": "बिना इंटरनेट ऐप का इस्तेमाल",
+      "hiBackTranslation": "Using the app without internet.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "aboutPrivacy",
+      "en": "Your choices and privacy",
+      "hi": "आपके चुनाव और गोपनीयता",
+      "hiBackTranslation": "Your choices and privacy.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "aboutReview",
+      "en": "Text and speech review",
+      "hi": "पाठ और आवाज़ की जाँच",
+      "hiBackTranslation": "Text and voice checks.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "actions",
+      "en": "Step actions",
+      "hi": "चरण के बटन",
+      "hiBackTranslation": "Buttons for this step.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "amountChoice",
+      "en": "Virtual amount",
+      "hi": "आभासी रकम",
+      "hiBackTranslation": "Virtual amount.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "audio",
+      "en": "Listen to this text",
+      "hi": "यह पाठ सुनें",
+      "hiBackTranslation": "Listen to this text.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "back",
+      "en": "Back",
+      "hi": "पीछे",
+      "hiBackTranslation": "Back.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "borrowedExposure",
+      "en": "Borrowed exposure",
+      "hi": "उधार की ताकत",
+      "hiBackTranslation": "Borrowed strength.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "close",
+      "en": "Close",
+      "hi": "बंद करें",
+      "hiBackTranslation": "Close.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "dataSentNotice",
+      "en": "Some features send your inputs to a service. Read their disclosure before using them.",
+      "hi": "कुछ सुविधाएँ आपके इनपुट किसी सेवा को भेजती हैं। इस्तेमाल करने से पहले उनका खुलासा पढ़ें।",
+      "hiBackTranslation": "Some features send your inputs to a service. Read their disclosure before using them.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "forwarded",
+      "en": "Forwarded message · teaching example",
+      "hi": "फ़ॉरवर्ड संदेश · समझाने का उदाहरण",
+      "hiBackTranslation": "Forwarded message: teaching example.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "hostLogs",
+      "en": "Like any website, the host may keep ordinary server logs, such as requests, IP addresses and browser details. These do not contain your answers.",
+      "hi": "किसी भी वेबसाइट की तरह, होस्ट सामान्य सर्वर लॉग रख सकता है, जैसे अनुरोध, आईपी पता और ब्राउज़र की जानकारी। इनमें आपके जवाब नहीं होते।",
+      "hiBackTranslation": "Like any website, the host may keep ordinary server logs, such as requests, IP addresses and browser information. These do not contain your answers.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "interactionPane",
+      "en": "Explore and choose",
+      "hi": "देखें और चुनें",
+      "hiBackTranslation": "See and choose.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "lessonProgress",
+      "en": "Lesson {current} of {total}",
+      "hi": "पाठ {current}, कुल {total}",
+      "hiBackTranslation": "Lesson {current}, total {total}.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "lessonVisual",
+      "en": "The same path, shown together",
+      "hi": "वही रास्ता, एक साथ दिखाया गया",
+      "hiBackTranslation": "The same path, shown together.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "localNotice",
+      "en": "Your choices and answers stay on this device. Nothing is sent or tracked.",
+      "hi": "आपके चुनाव और जवाब इसी डिवाइस पर रहते हैं। कुछ भी भेजा या ट्रैक नहीं किया जाता।",
+      "hiBackTranslation": "Your choices and answers remain on this device. Nothing is sent or tracked.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "mediumText",
+      "en": "Medium",
+      "hi": "मध्यम",
+      "hiBackTranslation": "Medium.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "nextLesson",
+      "en": "Next lesson",
+      "hi": "अगला पाठ",
+      "hiBackTranslation": "Next lesson.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previewCompare",
+      "en": "Compare the same path",
+      "hi": "उसी रास्ते की तुलना करें",
+      "hiBackTranslation": "Compare the same path.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previewLearn",
+      "en": "Reflect and learn",
+      "hi": "सोचें और समझें",
+      "hiBackTranslation": "Think and understand.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previewPredict",
+      "en": "Choose an expectation",
+      "hi": "अपना अनुमान चुनें",
+      "hiBackTranslation": "Choose your expectation.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previewTitle",
+      "en": "A small practice, four moments",
+      "hi": "छोटा अभ्यास, चार पड़ाव",
+      "hiBackTranslation": "Small practice, four moments.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previewWatch",
+      "en": "Watch and pause",
+      "hi": "देखें और रुकें",
+      "hiBackTranslation": "Watch and pause.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "previousLesson",
+      "en": "Previous lesson",
+      "hi": "पिछला पाठ",
+      "hiBackTranslation": "Previous lesson.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "progress",
+      "en": "Journey progress",
+      "hi": "अभ्यास की प्रगति",
+      "hiBackTranslation": "Progress through the practice.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "readingPane",
+      "en": "Read and listen",
+      "hi": "पढ़ें और सुनें",
+      "hiBackTranslation": "Read and listen.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "remainingAmount",
+      "en": "Ending virtual money",
+      "hi": "अंत में बची आभासी रकम",
+      "hiBackTranslation": "Virtual amount remaining at the end.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "startingAmount",
+      "en": "Starting virtual money",
+      "hi": "शुरुआती आभासी रकम",
+      "hiBackTranslation": "Starting virtual amount.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Debrief",
+      "en": "Learn",
+      "hi": "समझें",
+      "hiBackTranslation": "Understand.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Intro",
+      "en": "Welcome",
+      "hi": "स्वागत",
+      "hiBackTranslation": "Welcome.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.LanguageSelect",
+      "en": "Language",
+      "hi": "भाषा",
+      "hiBackTranslation": "Language.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.NextSteps",
+      "en": "Resources",
+      "hi": "संसाधन",
+      "hiBackTranslation": "Resources.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.PostCheck",
+      "en": "Reflect",
+      "hi": "सोचें",
+      "hiBackTranslation": "Reflect.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Prediction",
+      "en": "Predict",
+      "hi": "अनुमान",
+      "hiBackTranslation": "Expectation.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Replay",
+      "en": "Compare",
+      "hi": "तुलना",
+      "hiBackTranslation": "Compare.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Result",
+      "en": "Result",
+      "hi": "नतीजा",
+      "hiBackTranslation": "Result.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Reveal",
+      "en": "Reveal",
+      "hi": "खुलासा",
+      "hiBackTranslation": "Reveal.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Run",
+      "en": "Watch",
+      "hi": "देखें",
+      "hiBackTranslation": "Watch.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "steps.Setup",
+      "en": "Set up",
+      "hi": "तैयारी",
+      "hiBackTranslation": "Preparation.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "summaryAmount",
+      "en": "Starting with {amount}",
+      "hi": "शुरुआती रकम {amount}",
+      "hiBackTranslation": "Starting amount {amount}.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "summaryExposure",
+      "en": "At {multiplier} times exposure, {amount} moves with the path.",
+      "hi": "{multiplier} गुना एक्सपोज़र में, {amount} पर रास्ते के बदलाव का असर पड़ता है।",
+      "hiBackTranslation": "At {multiplier} times exposure, changes in the path affect {amount}.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "summaryMove",
+      "en": "A 1% path change changes virtual money by {amount}, before a teaching-rule closure.",
+      "hi": "रास्ते में 1% बदलाव से आभासी रकम {amount} बदलती है, समझाने वाले नियम से स्थिति बंद होने से पहले।",
+      "hiBackTranslation": "A 1% change in the path changes the virtual amount by {amount}, before the teaching rule closes the position.",
+      "status": "agent-checked"
+    },
+    {
+      "key": "summaryTitle",
+      "en": "Your practice at a glance",
+      "hi": "आपका अभ्यास एक नज़र में",
+      "hiBackTranslation": "Your practice at a glance.",
+      "status": "agent-checked"
+    }
+  ],
+  "removed": [
+    {
+      "key": "audioIdle",
+      "disposition": "Idle loading instruction removed from UI; Listen now shows loading on the button."
+    },
+    {
+      "key": "disconnected",
+      "disposition": "Browser connectivity notices removed; actual cache/offline limits remain in About."
+    },
+    {
+      "key": "online",
+      "disposition": "Browser connectivity notices removed; actual cache/offline limits remain in About."
+    }
+  ],
+  "unchangedNarration": "All narration/glossary spokenText and displayText, generated clips and manifest unchanged. No new speech generated."
+}

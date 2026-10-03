@@ -14,7 +14,17 @@ const features = { en: enFeatures, hi: hiFeatures };
 const languages = ['en', 'hi'] as const;
 const origin = 'http://127.0.0.1:4173';
 async function click(page: Page, name: string) {
-  await page.getByRole('button', { name, exact: true }).click();
+  const readingControl = page
+    .locator('.pane-reading')
+    .getByRole('button', { name, exact: true });
+  const audioLabel = Object.values(features).some((f) =>
+    [f.listen, f.pauseAudio, f.resumeAudio].includes(name),
+  );
+  await (
+    audioLabel && (await readingControl.count())
+      ? readingControl
+      : page.getByRole('button', { name, exact: true })
+  ).click();
 }
 async function noOverflow(page: Page) {
   expect(
@@ -89,8 +99,20 @@ for (const language of languages) {
       const t = texts[language];
       const f = features[language];
       const requests: string[] = [];
+      const networkRecords: {
+        url: string;
+        method: string;
+        body: string | null;
+      }[] = [];
       const errors: string[] = [];
-      context.on('request', (request) => requests.push(request.url()));
+      context.on('request', (request) => {
+        requests.push(request.url());
+        networkRecords.push({
+          url: request.url(),
+          method: request.method(),
+          body: request.postData(),
+        });
+      });
       page.on('pageerror', (error) => errors.push(error.message));
       await page.clock.install();
       await page.goto('/');
@@ -142,23 +164,26 @@ for (const language of languages) {
       });
       await click(page, t.reveal.continue);
       await accessible(page);
-      const term = page.locator('.glossary summary').first();
+      const term = page.locator('.term-chips button').first();
       await term.focus();
       await page.keyboard.press('Enter');
-      await expect(page.locator('.glossary details').first()).toHaveAttribute(
-        'open',
-        '',
-      );
+      await expect(
+        page.locator('.pane-interaction .glossary-card'),
+      ).toBeVisible();
       await expect(
         page
-          .locator('.glossary details')
-          .first()
+          .locator('.glossary-card')
           .getByRole('button', { name: f.listen, exact: true }),
       ).toBeVisible();
+      await term.focus();
       await page.keyboard.press('Space');
-      await expect(
-        page.locator('.glossary details').first(),
-      ).not.toHaveAttribute('open', '');
+      await expect(page.locator('.glossary-card')).toHaveCount(0);
+      while (
+        await page
+          .getByRole('button', { name: f.nextLesson, exact: true })
+          .count()
+      )
+        await click(page, f.nextLesson);
       await click(page, t.debrief.continue);
       await accessible(page);
       await expect(
@@ -212,6 +237,17 @@ for (const language of languages) {
         ),
       ).toEqual([]);
       expect(requests.filter((url) => url.includes('/audio/'))).toEqual([]);
+      // A same-origin POST or query could still leak answers. Require static, bodyless GETs.
+      for (const request of networkRecords) {
+        expect(request.method).toBe('GET');
+        expect(request.body).toBeNull();
+        const url = new globalThis.URL(request.url);
+        expect(url.origin).toBe(origin);
+        expect(url.search).toBe('');
+        expect(url.pathname).toMatch(
+          /^\/(?:$|index\.html$|assets\/[^/]+$|icons\/[^/]+$|manifest\.webmanifest$|sw\.js$|cache-cleanup\.js$|workbox-[^/]+\.js$)/,
+        );
+      }
       expect(errors).toEqual([]);
       await click(page, f.restart);
       await choose(page, language, 2);
@@ -270,16 +306,10 @@ test('warmed production shell reloads offline; audio failure stays readable and 
         .catch(() => true),
     ),
   ).toBe(true);
-  const session = await context.newCDPSession(page);
-  await session.send('Network.overrideNetworkState', {
-    offline: true,
-    latency: 0,
-    downloadThroughput: 0,
-    uploadThroughput: 0,
-  });
-  await expect(
-    page.getByText(enFeatures.disconnected, { exact: true }),
-  ).toBeVisible();
+  // Connectivity isn't advertised from navigator.onLine; actual failed requests prove this case.
+  await expect(page.locator('.app-footer')).toContainText(
+    enFeatures.localNotice,
+  );
   expect(requests.filter((url) => url.includes('/audio/'))).toEqual([]);
   await click(page, enFeatures.listen);
   await expect(
@@ -311,10 +341,9 @@ test('keyboard, large text, 200% equivalent reflow, reduced motion and CSP', asy
   await page.locator('.skip-link').focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
-  await page.getByText(enFeatures.preferences, { exact: true }).click();
   await page
-    .getByRole('combobox', { name: enFeatures.textSize, exact: true })
-    .selectOption('large');
+    .getByRole('button', { name: enFeatures.largeText, exact: true })
+    .click();
   await expect(page.locator('html')).toHaveCSS('font-size', '20px');
   await page
     .getByRole('combobox', { name: enFeatures.language, exact: true })
@@ -357,6 +386,10 @@ for (const language of languages) {
     );
     await page.goto('/');
     await click(page, languageLabel);
+    await expect(page.locator('.app-shell')).toHaveAttribute(
+      'data-step',
+      'Intro',
+    );
     await page.evaluate(async () => {
       await navigator.serviceWorker.ready;
       if (!navigator.serviceWorker.controller)
@@ -377,6 +410,10 @@ for (const language of languages) {
     await context.setOffline(true);
     await page.reload();
     await click(page, languageLabel);
+    await expect(page.locator('.app-shell')).toHaveAttribute(
+      'data-step',
+      'Intro',
+    );
     await click(page, f.listen);
     await expect(page.getByText(f.audioPlaying, { exact: true })).toBeVisible();
     await click(page, f.pauseAudio);

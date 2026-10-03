@@ -7,6 +7,10 @@ export interface AudioSnapshot {
   status: AudioStatus;
   muted: boolean;
   speed: number;
+  elapsedSeconds: number;
+  durationSeconds: number;
+  /** Fraction in [0, 1], derived from the media element rather than the manifest. */
+  progress: number;
 }
 interface Track {
   id: string;
@@ -36,11 +40,15 @@ export class AudioManager {
   private controller?: InstanceType<typeof globalThis.AbortController>;
   private sequence = 0;
   private listeners = new Set<() => void>();
+  private consumers = new Map<string, number>();
   private snapshot: AudioSnapshot = {
     key: '',
     status: 'idle',
     muted: false,
     speed: 1,
+    elapsedSeconds: 0,
+    durationSeconds: 0,
+    progress: 0,
   };
   getSnapshot = () => this.snapshot;
   subscribe = (listener: () => void) => {
@@ -49,6 +57,21 @@ export class AudioManager {
       this.listeners.delete(listener);
     };
   };
+  /** Mounting a control never loads audio; the last same-key consumer stops it. */
+  retain(key: string) {
+    this.consumers.set(key, (this.consumers.get(key) ?? 0) + 1);
+    let released = false;
+    return () => {
+      if (released) return;
+      released = true;
+      const remaining = (this.consumers.get(key) ?? 1) - 1;
+      if (remaining > 0) this.consumers.set(key, remaining);
+      else {
+        this.consumers.delete(key);
+        this.stop(key);
+      }
+    };
+  }
   private update(change: Partial<AudioSnapshot>) {
     this.snapshot = { ...this.snapshot, ...change };
     this.listeners.forEach((listener) => listener());
@@ -58,19 +81,61 @@ export class AudioManager {
     this.controller = undefined;
     if (this.objectUrl) globalThis.URL.revokeObjectURL(this.objectUrl);
     this.objectUrl = undefined;
-    if (!this.audio) return;
-    this.audio.pause();
-    this.audio.onended = null;
-    this.audio.onerror = null;
-    this.audio.removeAttribute('src');
-    this.audio.load();
+    const audio = this.audio;
     this.audio = undefined;
+    if (!audio) return;
+    audio.onended = null;
+    audio.onerror = null;
+    audio.onloadedmetadata = null;
+    audio.ondurationchange = null;
+    audio.ontimeupdate = null;
+    audio.onplaying = null;
+    audio.onpause = null;
+    audio.pause();
+    audio.removeAttribute('src');
+    audio.load();
   }
   stop(key?: string) {
     if (key && key !== this.snapshot.key) return;
     this.sequence += 1;
     this.clearAudio();
-    this.update({ key: '', status: 'idle' });
+    this.update({
+      key: '',
+      status: 'idle',
+      elapsedSeconds: 0,
+      durationSeconds: 0,
+      progress: 0,
+    });
+  }
+  private fail(sequence: number) {
+    if (sequence !== this.sequence) return;
+    this.sequence += 1;
+    this.clearAudio();
+    this.update({
+      status: 'unavailable',
+      elapsedSeconds: 0,
+      durationSeconds: 0,
+      progress: 0,
+    });
+  }
+  private mediaProgress(audio: InstanceType<typeof window.Audio>) {
+    const durationSeconds =
+      Number.isFinite(audio.duration) && audio.duration > 0
+        ? audio.duration
+        : 0;
+    const currentTime =
+      Number.isFinite(audio.currentTime) && audio.currentTime > 0
+        ? audio.currentTime
+        : 0;
+    const elapsedSeconds =
+      durationSeconds > 0
+        ? Math.min(currentTime, durationSeconds)
+        : currentTime;
+    return {
+      elapsedSeconds,
+      durationSeconds,
+      progress: durationSeconds > 0 ? elapsedSeconds / durationSeconds : 0,
+    };
   }
   async play(
     language: Language,
@@ -156,34 +221,52 @@ export class AudioManager {
       audio.preload = 'none';
       audio.muted = this.snapshot.muted;
       audio.playbackRate = this.snapshot.speed;
+      const isCurrent = () =>
+        sequence === this.sequence && this.audio === audio;
+      const updateProgress = () => {
+        if (isCurrent()) this.update(this.mediaProgress(audio));
+      };
+      audio.onloadedmetadata = updateProgress;
+      audio.ondurationchange = updateProgress;
+      audio.ontimeupdate = updateProgress;
+      audio.onplaying = () => {
+        if (isCurrent() && !audio.paused)
+          this.update({ ...this.mediaProgress(audio), status: 'playing' });
+      };
+      audio.onpause = () => {
+        if (isCurrent() && audio.paused && !audio.ended)
+          this.update({ ...this.mediaProgress(audio), status: 'paused' });
+      };
       audio.onended = () => {
-        if (sequence === this.sequence) this.update({ status: 'ended' });
+        if (isCurrent())
+          this.update({ ...this.mediaProgress(audio), status: 'ended' });
       };
       audio.onerror = () => {
-        if (sequence === this.sequence) this.update({ status: 'unavailable' });
+        if (isCurrent()) this.fail(sequence);
       };
       audio.src = this.objectUrl;
       await audio.play();
-      if (sequence === this.sequence) this.update({ status: 'playing' });
+      if (isCurrent() && !audio.paused)
+        this.update({ ...this.mediaProgress(audio), status: 'playing' });
     } catch {
-      if (sequence === this.sequence) {
-        this.clearAudio();
-        this.update({ status: 'unavailable' });
-      }
+      this.fail(sequence);
     }
   }
   pause() {
-    this.audio?.pause();
-    if (this.audio) this.update({ status: 'paused' });
+    if (!this.audio || this.snapshot.status !== 'playing') return;
+    this.audio.pause();
+    this.update({ ...this.mediaProgress(this.audio), status: 'paused' });
   }
   async resume() {
-    if (!this.audio) return;
+    const audio = this.audio;
+    if (!audio) return;
     const sequence = this.sequence;
     try {
-      await this.audio.play();
-      if (sequence === this.sequence) this.update({ status: 'playing' });
+      await audio.play();
+      if (sequence === this.sequence && this.audio === audio && !audio.paused)
+        this.update({ ...this.mediaProgress(audio), status: 'playing' });
     } catch {
-      if (sequence === this.sequence) this.update({ status: 'unavailable' });
+      this.fail(sequence);
     }
   }
   setMuted(muted: boolean) {

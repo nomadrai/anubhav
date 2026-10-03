@@ -643,17 +643,9 @@
           "status": "agent-checked",
           "contentSha256": "e0ce1d5357ff98dedeca6b36e3db75e0cc5aa1426c7deb3d1e960434a3231864"
         },
-        "online": {
-          "status": "agent-checked",
-          "contentSha256": "d3a752e8a2fc6ffd7b4c10c826038a5be8a0f38a40f801a6f4ffc1d702c4b83e"
-        },
-        "disconnected": {
-          "status": "agent-checked",
-          "contentSha256": "db06d47be255a5f50b6c1188c0f37c05faa4c81b00d63c73cf16e904a575e2ae"
-        },
         "audio": {
           "status": "agent-checked",
-          "contentSha256": "67ae546a3c8902297f0c13124bd3486f24173e6caa37759271eb25fc26ba2b23"
+          "contentSha256": "24bbff7efd2dc5f56b243c7bdc8492d92537cf6e6866cb3171c0bb59f32a30b3"
         },
         "listen": {
           "status": "agent-checked",
@@ -690,10 +682,6 @@
         "slowSpeed": {
           "status": "agent-checked",
           "contentSha256": "4eda52febad1700211d1bddf31ad4b45bf06727de5198aab945f2e59ecdb10eb"
-        },
-        "audioIdle": {
-          "status": "agent-checked",
-          "contentSha256": "2ad8d7ae85787a6d984465e8f3264a1836bb6b9b81edad5b26bc51d3bdf46809"
         },
         "audioLoading": {
           "status": "agent-checked",
@@ -854,6 +842,178 @@
         "restart": {
           "status": "agent-checked",
           "contentSha256": "2954d846e6c189389688cdf252b04f1c54645ca5f425d09aa7b2f1edc1800cdb"
+        },
+        "mediumText": {
+          "status": "agent-checked",
+          "contentSha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+        },
+        "localNotice": {
+          "status": "agent-checked",
+          "contentSha256": "c5b25b902cda36691983f0411592ca4a33687b7ec3e0a46628e3755b30538c33"
+        },
+        "dataSentNotice": {
+          "status": "agent-checked",
+          "contentSha256": "e10b46289259d820ff27e19279a87b65259e26387d15ee273c308ab3cf90e591"
+        },
+        "about": {
+          "status": "agent-checked",
+          "contentSha256": "147cb28304192ea07bb3760a9e9cb042b2b5eaa4a9fe6cb17cc6ad12a4be6233"
+        },
+        "close": {
+          "status": "agent-checked",
+          "contentSha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+        },
+        "aboutPrivacy": {
+          "status": "agent-checked",
+          "contentSha256": "68ef3ce48fb9eb689e4ee4226d0365715f94930e976a36b9947b5b3c84a5f9d1"
+        },
+        "aboutOffline": {
+          "status": "agent-checked",
+          "contentSha256": "0cc4b5f80ab550aafa53f37dbe672796cd998426a470e6b07bf7ee705979459b"
+        },
+        "aboutReview": {
+          "status": "agent-checked",
+          "contentSha256": "c4f1e915d168009419597b0d4609f63874db58abef33873eae9e10bfb47cb51b"
+        },
+        "hostLogs": {
+          "status": "agent-checked",
+          "contentSha256": "7efebf9c6a92bae6a0f2020b3357802c3c95d967277452552a12f9678ada3b67"
+        },
+        "readingPane": {
+          "status": "agent-checked",
+          "contentSha256": "1e4393f540bde65ff45f0fdfe3a175de416e19a3169f573ee050764192ea4a37"
+        },
+        "interactionPane": {
+          "status": "agent-checked",
+          "contentSha256": "123921cd7e38b4f3de61e78ca31928b15b36f035ea0e7fdd8e763ecd7768f618"
+        },
+        "progress": {
+          "status": "agent-checked",
+          "contentSha256": "48212b1b47096dacede114c71b5bf1821e3eadfc2a262a1ebe42199a6e6a1026"
+        },
+        "actions": {
+          "status": "agent-checked",
+          "contentSha256": "63adffd3e546cec1b459124c71868c1013e17f7e93225eba7852e1c78877ece7"
+        },
+        "back": {
+          "status": "agent-checked",
+          "contentSha256": "76900f1bfd16c8d4dd3d25e6f46638d7165aee23883ccea6bfe071c514421769"
+        },
+        "borrowedExposure": {
+          "status": "agent-checked",
+          "contentSha256": "5fd04d42e1b97446743a9898526683b00bc5410b799a656fd71379e04d099978"
+        },
+        "amountChoice": {
+          "status": "agent-checked",
+          "contentSha256": "002ec55436630c3fa48d6675d2a2ea70961006e344857c52a27356664cf6c4fa"
+        },
+        "summaryTitle": {
+          "status": "agent-checked",
+          "contentSha256": "6f9f02004ce7269aa1f22dc458e77eb5920239a82367ccd533ef0b2950bddf6f"
+        },
+        "summaryAmount": {
+          "status": "agent-checked",
+          "contentSha256": "e7bcc3b017e8662a0bfa64d9f3344f14b2c44dba3224aff8866f33e1224914d5"
+        },
+        "summaryExposure": {
+          "status": "agent-checked",
+          "contentSha256": "ac04dda4a149fbc7c12615268ce0d737027e7bc3f6b32c11f9b97b89956ee28b"
+        },
+        "summaryMove": {
+          "status": "agent-checked",
+          "contentSha256": "e348d923e598e9137d045ba38e6b0a45e6b6d9e3ac84505183861c02fbffd215"
+        },
+        "forwarded": {
+          "status": "agent-checked",
+          "contentSha256": "f4f3e72a4568926c3cf107834f877967bc77d46a14f2b0c78bbafef38b32b807"
+        },
+        "previewTitle": {
+          "status": "agent-checked",
+          "contentSha256": "9d5fcf8ad17ba7bb2b316bbcf684aaf8435528445f9750fe0644b1938cb9482a"
+        },
+        "previewPredict": {
+          "status": "agent-checked",
+          "contentSha256": "7b2a9d73cf0998680908c6db89169b9068a9cc01d1c548840263968b70a022a3"
+        },
+        "previewWatch": {
+          "status": "agent-checked",
+          "contentSha256": "9d500490eb0010adc7e5997a7f83dfbda5312e408fa25021edd24faac26d90ea"
+        },
+        "previewCompare": {
+          "status": "agent-checked",
+          "contentSha256": "ca24ae1f92a585eb4bc501b72dc089bd14d1af70a701351e690581b1f33b0267"
+        },
+        "previewLearn": {
+          "status": "agent-checked",
+          "contentSha256": "f97ae5fdc4b2ce6eb3fab591624d4f132759f082a00d3f12df05055bd87de68c"
+        },
+        "lessonProgress": {
+          "status": "agent-checked",
+          "contentSha256": "48e9eb93e0c792ebc0483b7af386461fe4e3a488a95d094c9089c3ae35213273"
+        },
+        "nextLesson": {
+          "status": "agent-checked",
+          "contentSha256": "d0ae2a13d8665949dd104a2fbdedcc8bca3e647a1e131d1ebaeb31c189a553b4"
+        },
+        "previousLesson": {
+          "status": "agent-checked",
+          "contentSha256": "45dbb9e8870dcc939bda94eae0342f481d2fb72e10f65f56aae1f1ff7d804bdf"
+        },
+        "lessonVisual": {
+          "status": "agent-checked",
+          "contentSha256": "d1d7155463b022e6776609f983aac2f1b50d326e97868a171eac81ac29865f1f"
+        },
+        "remainingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "8e2c261ef75fc616554549080209cbcdba69c11740f83763b957866bee7ce9a7"
+        },
+        "startingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "242d45341981c7ece87421c3e3827a0ae22bed9e61accf2d5c2741a7e24a93a8"
+        },
+        "steps.LanguageSelect": {
+          "status": "agent-checked",
+          "contentSha256": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1"
+        },
+        "steps.Intro": {
+          "status": "agent-checked",
+          "contentSha256": "0e2226b5235f0ff94a276eb4d07a3bfea74b7e3b8b85e9efca6c18430f041bf8"
+        },
+        "steps.Setup": {
+          "status": "agent-checked",
+          "contentSha256": "4da10f1fbb17cac25e9e78536d4104cb4b2fbbc436dbc37dee5450f22c2accda"
+        },
+        "steps.Prediction": {
+          "status": "agent-checked",
+          "contentSha256": "13587f170cc216fb3fa97a628ed4993f5e969beeee3b7d2cb51146fe39d7ff4d"
+        },
+        "steps.Run": {
+          "status": "agent-checked",
+          "contentSha256": "a71e757324467ccfe2ae90f483fd759eff5378e6afcfcce4c620de929b3f2dd8"
+        },
+        "steps.Result": {
+          "status": "agent-checked",
+          "contentSha256": "6e7d50e84f4731ef74187cf8cfa2672184eed8866b0b0074a772f4a64e0f4ba2"
+        },
+        "steps.Replay": {
+          "status": "agent-checked",
+          "contentSha256": "e888155d8c7d2e3c3f9eb1bf57e8d81ba1a3c182b5e94b01e09de2cb2cca81f9"
+        },
+        "steps.Reveal": {
+          "status": "agent-checked",
+          "contentSha256": "36b830bdb447f8c758a9b58f190eed468c4bd53e9c7662ee19bca9c53d3a3e3d"
+        },
+        "steps.Debrief": {
+          "status": "agent-checked",
+          "contentSha256": "ce78afd0e6a225ecac96a6812b9d192e7eb35889cd5237beb38b50375b79d8dd"
+        },
+        "steps.PostCheck": {
+          "status": "agent-checked",
+          "contentSha256": "9bd75a3fb14a6e1d987086c88aa6d8bec3770ddd99f7e368006cc2453c1a0152"
+        },
+        "steps.NextSteps": {
+          "status": "agent-checked",
+          "contentSha256": "e89b30aa1dc30a6ad8c34610689bede83b3ef645a24c3a84a0990826687fb735"
         }
       },
       "narration.json": {
@@ -1861,17 +2021,9 @@
           "status": "agent-checked",
           "contentSha256": "b363ac4d20d2a078b305685c0851f60a35347c4b48d4a200705ed10b8d000750"
         },
-        "online": {
-          "status": "agent-checked",
-          "contentSha256": "a710eff8b88af389fc3090e3be7444366f0c6dafcb1f41d1e33bff1fe027ce42"
-        },
-        "disconnected": {
-          "status": "agent-checked",
-          "contentSha256": "93ee317986f9201aa678ae8fda7ca579f73f4cfc53ae9bfd06108d352a2980ca"
-        },
         "audio": {
           "status": "agent-checked",
-          "contentSha256": "66347f2acd04facb589b014cd824a0ca07ec9a854cf0d30c6a9b774d39fff0ef"
+          "contentSha256": "b7ccedc595d96335179ac785c0a794068292ab284ff4fb849275b10ea359bb8b"
         },
         "listen": {
           "status": "agent-checked",
@@ -1908,10 +2060,6 @@
         "slowSpeed": {
           "status": "agent-checked",
           "contentSha256": "68b63c3a1612c0d7a5860090253882b6856078e91af15d411c7602fe2650108a"
-        },
-        "audioIdle": {
-          "status": "agent-checked",
-          "contentSha256": "61d7712e2a6f49fd6e2cc0d9e0620aba4c88ee10ba6496961a9175ebd459acf8"
         },
         "audioLoading": {
           "status": "agent-checked",
@@ -2072,6 +2220,178 @@
         "restart": {
           "status": "agent-checked",
           "contentSha256": "6ed163e995532a9ce8082185cb7fc7886d2f5271ee4e95c1ea76d1d2ddbec27f"
+        },
+        "mediumText": {
+          "status": "agent-checked",
+          "contentSha256": "64a5d9c0e57612218a143f12737fd531df7e16ad6db541bb5da574b51b2e4e0d"
+        },
+        "localNotice": {
+          "status": "agent-checked",
+          "contentSha256": "0b38ba4b4f31710c47a9c6e90cc246a8418bfda0b8e43e530909e06e2a2407a0"
+        },
+        "dataSentNotice": {
+          "status": "agent-checked",
+          "contentSha256": "3b350ea7a0381e6b4c15417f8e2ea9b5778569c4712f7a97729913632e325225"
+        },
+        "about": {
+          "status": "agent-checked",
+          "contentSha256": "822104366d2cb8cef8480bb013f205b1123fd35b8b3404dab763247031031678"
+        },
+        "close": {
+          "status": "agent-checked",
+          "contentSha256": "ef9cca4a55ee043090d3e9cdd265290e84d656e43f00e9de974299ebe5f85755"
+        },
+        "aboutPrivacy": {
+          "status": "agent-checked",
+          "contentSha256": "c83edab9de9bd4069c427fc70eddf1b3c5e17f21166841fd45f600532e179384"
+        },
+        "aboutOffline": {
+          "status": "agent-checked",
+          "contentSha256": "894aee4872d4b5296cbe2a2e8e47c9634e2abe789eac1860dd1afd9f3a15ad65"
+        },
+        "aboutReview": {
+          "status": "agent-checked",
+          "contentSha256": "31e257041ac2e2561085e5d40092788fa2d2a4bb946e4c2a24d5d31d08fc2e2a"
+        },
+        "hostLogs": {
+          "status": "agent-checked",
+          "contentSha256": "a9087f82eff58fbe981239995447c81378695c61c16008d838f5df16c2fef752"
+        },
+        "readingPane": {
+          "status": "agent-checked",
+          "contentSha256": "9c08fb5b3f6f9608b1daa24477477ca6a74b4d7dfdd99c84834d8542a8df6567"
+        },
+        "interactionPane": {
+          "status": "agent-checked",
+          "contentSha256": "0fb6fc72684682d0e10782e2353221f5a34a8369d1a83ef4e61d166855813120"
+        },
+        "progress": {
+          "status": "agent-checked",
+          "contentSha256": "3abe81088e25fd52388fbb246fcb1fbfcea978ba769c1fc24fade7d99cc77149"
+        },
+        "actions": {
+          "status": "agent-checked",
+          "contentSha256": "4e7d7464767531e1cb7efd3e5c28c0d3c6e724472ba08b75c930f4184489972b"
+        },
+        "back": {
+          "status": "agent-checked",
+          "contentSha256": "3ff223c314f9686959df3ad4d134a05ccadcb6b175b91859d3c99c9fe267777a"
+        },
+        "borrowedExposure": {
+          "status": "agent-checked",
+          "contentSha256": "bcd71f0b7adf21e247f152d501ac56c797c2ca7bac6c97973b4765bc05172bd4"
+        },
+        "amountChoice": {
+          "status": "agent-checked",
+          "contentSha256": "99627aaca98e6236bfa4dcb7fc70d1ff615ae8e35239ac074d1b8add008a83d0"
+        },
+        "summaryTitle": {
+          "status": "agent-checked",
+          "contentSha256": "84c1f5a21e1e56cc44e9080b8b1b993f22520f6a0afbb3aea215f5582e1e090f"
+        },
+        "summaryAmount": {
+          "status": "agent-checked",
+          "contentSha256": "71a3b4b4139645e288c58301d4afb0a0be1a5b03e42e5459d3a157fd50e163bf"
+        },
+        "summaryExposure": {
+          "status": "agent-checked",
+          "contentSha256": "9e5150758c1e2e7539ea22b918ecb997db82c9e405a5b21d2a5f898e0b07ed33"
+        },
+        "summaryMove": {
+          "status": "agent-checked",
+          "contentSha256": "e69f8ea1ed5cebf6708426795f35707499c9e7f2e4c3117ae9bc90dfb1419ff8"
+        },
+        "forwarded": {
+          "status": "agent-checked",
+          "contentSha256": "fad7e41a379bff826450df98d4c2f54f2c67d463b44ae8657da4101f35fa0578"
+        },
+        "previewTitle": {
+          "status": "agent-checked",
+          "contentSha256": "3a6e05b0a7a738235411081a2c23d0e81c9b77c0c118dba47c6e900296a0bb28"
+        },
+        "previewPredict": {
+          "status": "agent-checked",
+          "contentSha256": "0c58add92caaf33ae51a1c69ea01739ac39be92d4b89bfee4893accc0ef0f707"
+        },
+        "previewWatch": {
+          "status": "agent-checked",
+          "contentSha256": "85c509566f546d397475d2e4f41473c7738df1d8b4fd4ea2db967be291eacef4"
+        },
+        "previewCompare": {
+          "status": "agent-checked",
+          "contentSha256": "a7b31c78547e8247302c024ab4ee01a6604ec748567ebcc2eaa507e0eaa0c6e8"
+        },
+        "previewLearn": {
+          "status": "agent-checked",
+          "contentSha256": "ae1bc42a77f00509b64f2257391c00169fceafa6a8cf17672923b573558f269d"
+        },
+        "lessonProgress": {
+          "status": "agent-checked",
+          "contentSha256": "eaab5ecd6b4b6884c426077c5c47c75daf06d470c266655003918f7ef57db9f9"
+        },
+        "nextLesson": {
+          "status": "agent-checked",
+          "contentSha256": "53b2a1aa87a02a69e4275c4ed1b78bbfbc7ac8e1e5fb370f572a6b16013a1b8c"
+        },
+        "previousLesson": {
+          "status": "agent-checked",
+          "contentSha256": "b7473188580b2cca19ce13a3e218d04c23573cdc9a4990d6a3a9145a8641901a"
+        },
+        "lessonVisual": {
+          "status": "agent-checked",
+          "contentSha256": "c05681f8540c2a7b9a84e73a99012a23c31100dacca1237a38d8a59183465641"
+        },
+        "remainingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "3d04b5e5444e344866df08d6572a89da2e58feec6422b2756a99bac4afbcebf6"
+        },
+        "startingAmount": {
+          "status": "agent-checked",
+          "contentSha256": "168a3764cfb5aa0242811ed2a4387dfebbba8764a530fea4e831789f4a5e4c30"
+        },
+        "steps.LanguageSelect": {
+          "status": "agent-checked",
+          "contentSha256": "360090ad87ed9d0db502d4bbbee9428afac7ac938e9b216ab369fb0d00bbaa71"
+        },
+        "steps.Intro": {
+          "status": "agent-checked",
+          "contentSha256": "715e95fe1dc1f08f03d81f3e46f08fea811d1f9433d9f0ea0366f4b5381eb723"
+        },
+        "steps.Setup": {
+          "status": "agent-checked",
+          "contentSha256": "fbe2e2e6e4476e8df89b6004f8f5ba9e963ea658c4ec00ee8c08415760c34883"
+        },
+        "steps.Prediction": {
+          "status": "agent-checked",
+          "contentSha256": "c4a282335521a9414e1c35c2f2076a359ec85a119a3ec56f2f6a4816e389df65"
+        },
+        "steps.Run": {
+          "status": "agent-checked",
+          "contentSha256": "47313428c12e3802a05b7f0cbd27f29359c74ebbcf8cdf1b9041bbb0c33e766a"
+        },
+        "steps.Result": {
+          "status": "agent-checked",
+          "contentSha256": "adca91c6e22dbd7a7fc5bf02e88591a642cc5589b601a1a3f683acd85c793725"
+        },
+        "steps.Replay": {
+          "status": "agent-checked",
+          "contentSha256": "4979ccf41ca113dd17da80864f864a763374f7bcbc85cac4067c27d2b3218d62"
+        },
+        "steps.Reveal": {
+          "status": "agent-checked",
+          "contentSha256": "f72280c6fe81203577e550c04fce1e6a20e0cf3a2660a5012e83c88273eecd9b"
+        },
+        "steps.Debrief": {
+          "status": "agent-checked",
+          "contentSha256": "99ff5f2fd66c0336e4cc35e1d4f6f19e52fa866958f03bb3d47e19df610d78ca"
+        },
+        "steps.PostCheck": {
+          "status": "agent-checked",
+          "contentSha256": "9e4b4ba8e7a6afb037489f9eedcf99e47d1dc40cf8b146064eaec00cd78eb6cc"
+        },
+        "steps.NextSteps": {
+          "status": "agent-checked",
+          "contentSha256": "69ad7cb0f16bff992966e949d97ac4c4ca6c67e59c8a6dd99d91d71f8c782b71"
         }
       },
       "narration.json": {

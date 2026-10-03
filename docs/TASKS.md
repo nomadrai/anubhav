@@ -4,6 +4,24 @@ Priority: protective impact → Bharat usability → guardrails/trust → techni
 execution → feasibility. Status here describes actual work, not a claim of
 human review, legal clearance, deployed release or pilot efficacy.
 
+## UI redesign milestone
+
+- [x] Responsive AppShell/SplitLayout/StepHeader/ActionBar/Pane; desktop viewport grid,
+  independent pane scrolling/fades, mobile sticky actions and safe areas.
+- [x] Config-derived live setup summary, option-card selection marks, run event captions,
+  outcome/comparison tiles, lesson-by-lesson debrief and right-pane glossary.
+- [x] Mirrored gesture-only Listen controls with real media progress; no narration/assets changed.
+- [x] Short capability-driven footer; accessible About preserves storage/offline/review limits
+  and host metadata. Browser connectivity heuristics removed.
+- [x] Full 10-viewport × 2-language × 3-size × 11-step matrix: 660 required + 360 extra
+  state checks; 72 browser tests passed, none skipped; 60 contact boards / 1,084 PNGs.
+- [x] Release pipeline, 178 unit/policy tests, 67 Python tests and budgets passed.
+  Final mobile Lighthouse 91/100/100; exact before/after values and limitations in
+  ACCESSIBILITY_AND_PERFORMANCE.md and UI_PERFORMANCE_EVIDENCE.json.
+- [x] No deployment or push; screenshots in gitignored artifacts/ui/contact-sheet.html.
+
+Historical finish-session scope follows; it is not the current UI/audio gate status.
+
 ## Completed locally
 
 - [x] Record current user authorization in AGENTS.md and ADR-0011. Local

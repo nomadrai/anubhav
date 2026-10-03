@@ -24,6 +24,22 @@ never learner answers. Source maps are not enabled for the production bundle.
 The public audio manifest contains fixed content/voice/build hashes/metrics,
 not local user paths, credentials, participant inputs or generated private text.
 
+## UI disclosure and capability flag
+
+The bilingual one-line footer refers specifically to **in-app choices and answers**.
+`capabilities.userDataLeavesDevice=false` selects it; a true value selects a sending-
+feature warning instead. This flag implements no transport and overrides no
+privacy guardrail. A future sending feature must disclose its exact data and
+purpose on its own screen and undergo a new network/storage review.
+
+About this app remains one click away on every screen. It explains preference-only
+persistence, discarded answers, conditional cached-file/audio availability, missing
+native/listening review and ordinary host logs. No browser online/offline heuristic
+is advertised as evidence of connectivity. Static chunk loading and fixed public
+narration paths carry no virtual-money choices or prediction/reflection payload.
+The full-journey tests check same-origin static GETs with no query/body, not merely
+an origin check that could accidentally allow same-origin answer submission.
+
 ## Network and host scope
 
 All automatic runtime requests are same-origin static JS/CSS/icons/service

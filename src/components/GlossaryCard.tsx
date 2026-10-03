@@ -1,37 +1,34 @@
-import { useId } from 'react';
 import type { Language } from '../config/languages';
-import en from '../content/en/glossary.json';
-import hi from '../content/hi/glossary.json';
+import { glossaryTerms } from '../i18n/glossary';
 import { t } from '../i18n';
 import { AudioControls } from './AudioControls';
-import { audioManager } from '../audio/AudioManager';
 
-export function GlossaryCard({ language }: { language: Language }) {
-  const titleId = useId();
-  const terms = (language === 'hi' ? hi : en).filter(
-    (term) => term.status !== 'planned',
-  );
+export function GlossaryCard({
+  language,
+  termId,
+  onClose,
+}: {
+  language: Language;
+  termId: string;
+  onClose: () => void;
+}) {
+  const term = glossaryTerms(language).find((item) => item.termId === termId);
+  if (!term) return null;
   return (
-    <section className="glossary" aria-labelledby={titleId}>
-      <h2 id={titleId}>{t(language, 'features.glossary')}</h2>
-      {terms.map((term) => (
-        <details
-          key={term.termId}
-          onToggle={(event) => {
-            if (!event.currentTarget.open)
-              audioManager.stop(`${language}:glossary.${term.termId}`);
-          }}
-        >
-          <summary>{term.term}</summary>
-          <p>{term.short}</p>
-          <p className="quiet">{term.analogy}</p>
-          <AudioControls
-            language={language}
-            id={`glossary.${term.termId}`}
-            spokenText={term.spokenText}
-          />
-        </details>
-      ))}
+    <section className="glossary-card" aria-labelledby="glossary-title">
+      <div className="glossary-card-header">
+        <h2 id="glossary-title">{term.term}</h2>
+        <button onClick={onClose}>
+          {t(language, 'features.glossaryClose')}
+        </button>
+      </div>
+      <p>{term.short}</p>
+      <p className="quiet">{term.analogy}</p>
+      <AudioControls
+        language={language}
+        id={`glossary.${term.termId}`}
+        spokenText={term.spokenText}
+      />
     </section>
   );
 }

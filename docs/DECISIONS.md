@@ -136,6 +136,71 @@ recorded as a recogniser disagreement, not proof the audio is correct; the track
 stays `agent-checked` and is never `reviewed`, and actual native listening
 remains an open human action.
 
+## ADR-0014 — Responsive two-pane teaching surface
+
+**Status:** implemented in the UI redesign. **Decision:** use reusable AppShell,
+StepHeader, SplitLayout, Pane and ActionBar components. At >=1024 CSS pixels,
+reading/captions are left and choices/charts are right, using a viewport-height
+CSS grid (`auto minmax(0,1fr) auto`) and independently scrolling panes. Below
+1024 pixels use natural single-column scrolling, a sticky header/action area and
+safe-area padding. The cream/green/neutral palette and system fonts remain;
+wide screens use scaled type/charts/cards and a low-contrast background pattern.
+No new dependencies, external fonts, decorative animation or profit rewards.
+Engine, reducer and playback hook are unchanged. Back revisits earlier UI views,
+never reruns or rewinds the engine; it is disabled at Run/Result boundaries.
+Debrief uses local lesson navigation, retaining every engine-selected lesson.
+
+## ADR-0015 — No document scroll and readable minimum viewport
+
+**Status:** implemented; exact measured matrix is in ACCESSIBILITY_AND_PERFORMANCE.md.
+**Decision:** desktop short steps must fit at >=1280x650 at standard/medium size;
+1024x768 is additionally checked as the two-pane tablet boundary. Use compact
+grouping and viewport/clamp spacing, not clipped text or unreadably reduced body
+type. Largest text, lengthy lessons/reveal/resources and explicitly expanded
+chart tables may scroll in a pane, never in the desktop document. A conditional
+bottom fade signals remaining pane content. Mobile can scroll naturally but its
+primary action stays reachable. Automated bounds/hit-target/overflow checks do
+not substitute for physical-device, native-zoom or human typography review.
+
+## ADR-0016 — Short privacy footer and accessible About disclosure
+
+**Status:** implemented. **Decision:** replace repeated review/storage/cache and
+browser-connectivity paragraphs with the requested bilingual, choices/answers-
+scoped privacy line and one About button. About is a native modal dialog with
+focus containment, Escape/Close and a scrollable body; it preserves storage,
+reload, conditional offline/cached-audio, external-link and absent native/listening
+review limits, plus ordinary host-log metadata. No navigator.onLine message or
+unmeasured offline-ready chip is shown. The recorded-path explanation also lives
+in About rather than duplicating the Run captions. Disclosures are moved, not
+removed, and README/LIMITATIONS/PRIVACY remain accurate.
+
+## ADR-0017 — Capability-driven user-data disclosure
+
+**Status:** implemented and regression-tested. **Decision:**
+`src/config/capabilities.ts` declares `userDataLeavesDevice:false`; the footer
+selects local-only or sending-feature disclosure from that flag. The flag neither
+implements nor authorizes transport. Any future sending feature requires its own
+accurate screen-level disclosure and a renewed guardrail/network review before
+enablement. Full-journey browser checks require same-origin, bodyless static GETs,
+no query/payload carrying learner choices, no response persistence, and production
+`connect-src 'self'`. Host request metadata and explicit outbound destinations
+are not claimed to be anonymous or log-free.
+
+## ADR-0018 — Defer teaching code, not the learner's answers
+
+**Status:** implemented and measured. **Decision:** keep the language-entry shell
+immediately available and lazy-load JourneyExperience only after a start gesture.
+The PWA still precaches all public shell chunks, including that module. No engine,
+data or reducer rules change, and no choices are encoded in module URLs. This
+bounded split addresses the redesign's initial mobile-loading regression without
+new dependencies or reducing readable text. Loading uses the existing entry as
+an honest fallback, not an invented teaching sub-step; audio tests wait for the
+actual Intro before requesting its clip. Native modal close occurs before React
+unmount so About returns focus to its opener. Option-card accessible names are
+explicit translated labels; decorative check marks never pollute their names.
+Exact before/provisional/after build hashes and lab limitations are recorded in
+UI_PERFORMANCE_EVIDENCE.json and ACCESSIBILITY_AND_PERFORMANCE.md.
+
 ## Remaining human publication/pilot decisions
 
 - `TODO(human)`: confirm the working title in `src/config/app.ts` and intended

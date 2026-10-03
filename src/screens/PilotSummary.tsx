@@ -3,17 +3,23 @@ import type { Language } from '../config/languages';
 import type { JourneyState } from '../journey/journeyReducer';
 import { t, formatNumber } from '../i18n';
 import { BigButton } from '../components/BigButton';
+import {
+  JourneyFrame,
+  type JourneyFrameProps,
+} from '../components/JourneyFrame';
 
 export function PilotSummary({
   language,
   state,
   onBack,
   onRestart,
+  frame,
 }: {
   language: Language;
   state: JourneyState;
   onBack: () => void;
   onRestart: () => void;
+  frame: Omit<JourneyFrameProps, 'children'>;
 }) {
   const [copyStatus, setCopyStatus] = useState('');
   const f = (key: string) => t(language, `features.${key}`);
@@ -52,23 +58,29 @@ export function PilotSummary({
     }
   };
   return (
-    <div className="pilot-summary">
-      <dl>
-        {rows.map(([label, value]) => (
-          <div key={label}>
-            <dt>{label}</dt>
-            <dd>{value}</dd>
-          </div>
-        ))}
-      </dl>
-      <BigButton onClick={() => void copy()}>{f('pilotCopy')}</BigButton>
-      {copyStatus && <p role="status">{f(copyStatus)}</p>}
-      <button className="link-button" onClick={onBack}>
-        {f('pilotBack')}
-      </button>
-      <button className="link-button" onClick={onRestart}>
-        {f('restart')}
-      </button>
-    </div>
+    <JourneyFrame
+      {...frame}
+      onBack={onBack}
+      actions={
+        <>
+          <button className="secondary-action" onClick={onRestart}>
+            {f('restart')}
+          </button>
+          <BigButton onClick={() => void copy()}>{f('pilotCopy')}</BigButton>
+        </>
+      }
+    >
+      <div className="pilot-summary">
+        <dl>
+          {rows.map(([label, value]) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+        {copyStatus && <p role="status">{f(copyStatus)}</p>}
+      </div>
+    </JourneyFrame>
   );
 }

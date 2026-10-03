@@ -2,7 +2,7 @@
 import { StrictMode, act } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import App from './App';
+import App from './JourneyExperience';
 import { JourneyProvider } from './journey/JourneyContext';
 import {
   PLAYBACK_MS_PER_BAR,
@@ -12,6 +12,8 @@ import { episodes } from './data/episodes';
 import { decisionIndexes } from './journey/useSimulationRun';
 import { runSimulation } from './engine';
 import { formatRupees } from './i18n';
+import { capabilities } from './config/capabilities';
+import features from './content/en/features.json';
 
 let container: ReturnType<typeof document.createElement>;
 let root: Root;
@@ -92,11 +94,50 @@ beforeEach(() => {
 afterEach(() => {
   act(() => root.unmount());
   container.remove();
+  capabilities.userDataLeavesDevice = false;
   vi.useRealTimers();
   vi.restoreAllMocks();
 });
 
 describe('protective learner journey', () => {
+  it('uses the capability flag for privacy copy and keeps the toolbar directly reachable', () => {
+    expect(container.querySelector('.app-footer')?.textContent).toContain(
+      features.localNotice,
+    );
+    expect(container.textContent).not.toContain(features.reviewNotice);
+    expect(container.querySelector('.text-size-control')).not.toBeNull();
+    expect(container.querySelector('.preferences')).toBeNull();
+    capabilities.userDataLeavesDevice = true;
+    render();
+    expect(container.querySelector('.app-footer')?.textContent).toContain(
+      features.dataSentNotice,
+    );
+    expect(container.querySelector('.app-footer')?.textContent).not.toContain(
+      features.localNotice,
+    );
+  });
+
+  it('revisits setup without advancing playback and updates the live summary from configuration', () => {
+    click('English');
+    click('Continue');
+    click('Continue');
+    click('A small loss');
+    click('Back');
+    expect(container.querySelector('h1')?.textContent).toBe(
+      features.setupTitle,
+    );
+    click('100%');
+    click('10 times');
+    expect(container.querySelector('.summary-tile')?.textContent).toContain(
+      '₹1,00,000',
+    );
+    click('Continue');
+    expect(container.querySelector('h1')?.textContent).toBe(
+      'What do you think will happen?',
+    );
+    expect(button('Continue').disabled).toBe(true);
+    expect(container.querySelector('.run-panel')).toBeNull();
+  });
   it('pauses indefinitely, compares the identical full path, reveals afterwards and clears answers on restart', () => {
     begin();
     hiddenPeriod();
@@ -127,8 +168,19 @@ describe('protective learner journey', () => {
     expect(container.textContent).toContain(episode.sourceLabel?.en);
     expect(container.innerHTML).not.toContain(episode.provenance.sourceUrl);
     click('See the debrief');
+    expect(container.querySelectorAll('.term-chips button')).toHaveLength(9);
+    click('Leverage');
+    expect(
+      container.querySelector('.pane-interaction .glossary-card'),
+    ).not.toBeNull();
+    click('Close explanation');
+    while (
+      [...container.querySelectorAll('button')].some(
+        (item) => item.textContent === 'Next lesson',
+      )
+    )
+      click('Next lesson');
     expect(container.textContent).toContain('Recovery maths');
-    expect(container.querySelectorAll('.glossary details')).toHaveLength(9);
     click('Check your thinking again');
     expect(button('Continue').disabled).toBe(true);
     click('A big gain');
@@ -158,7 +210,9 @@ describe('protective learner journey', () => {
     click('Continue');
     click('Continue');
     expect(button('Continue').disabled).toBe(true);
-    expect(container.querySelector('[aria-pressed="true"]')).toBeNull();
+    expect(
+      container.querySelector('.prediction-grid [aria-pressed="true"]'),
+    ).toBeNull();
   });
 
   it('uses settlement for the forced-exit result and the exact last comparison point', () => {

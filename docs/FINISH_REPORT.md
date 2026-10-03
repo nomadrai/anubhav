@@ -1,5 +1,14 @@
 # Finish-session report — 2026-10-03
 
+> Historical finish-session record. The later UI redesign is complete locally:
+> 72/72 browser tests, 178 unit/policy tests, 67 Python tests and release gates pass.
+> Audio remains 58/58, unchanged. Contact gallery: artifacts/ui/contact-sheet.html.
+> Current measured matrix/budgets/Lighthouse and caveats:
+> [ACCESSIBILITY_AND_PERFORMANCE.md](ACCESSIBILITY_AND_PERFORMANCE.md),
+> [UI_LAYOUT_EVIDENCE.json](UI_LAYOUT_EVIDENCE.json),
+> [UI_PERFORMANCE_EVIDENCE.json](UI_PERFORMANCE_EVIDENCE.json).
+> No deployment or push. The original observations below are preserved, not rewritten.
+
 ## Outcome
 
 **Implementation and evidence work is committed locally. All fail-closed

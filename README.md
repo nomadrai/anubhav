@@ -25,8 +25,11 @@ product. The product name has one source of truth: `src/config/app.ts`.
   mismatch was corroborated by a second pinned recogniser on the same WAV
   without relaxing the CER gate. Actual produced assets and measurements—not an
   assumed full set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
-- Gesture-only audio controls with readable text fallback, glossary/captions,
-  text sizing, same-origin PWA caching and an in-memory pilot summary.
+- Desktop two-pane reading/interaction layout with pinned actions; single-column
+  mobile layout with a sticky action area. Standard, medium and larger text;
+  lesson-by-lesson debrief and glossary explanations in the interaction pane.
+- Gesture-only mirrored audio controls with real playback progress, readable text
+  fallback, glossary/captions, same-origin PWA caching and an in-memory pilot summary.
   Offline audio is **only previously cached audio**, not a promise that every
   clip is preinstalled. No automatic narration or remote TTS service.
 - Four official protective links checked against official pages this session:
@@ -65,6 +68,18 @@ The browser journey is:
 `language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`.
 Pilot mode (`?pilot=1`) offers a local summary, **not a participant database**.
 A refresh/reset discards answers; no account or research submission is created.
+The short footer refers to in-app choices/answers; **About this app** contains the
+full preferences/cache/offline, absent native/listening review and ordinary host-
+log disclosures. No browser-reported connectivity is presented as verified.
+
+```sh
+npm run test:layout       # 10 viewports × 2 languages × 3 text sizes × 11 steps
+npm run screenshots:contact  # artifacts/ui/contact-sheet.html and per-case PNG boards
+```
+
+Screenshots/reports under `artifacts/ui/` are local, gitignored automated evidence.
+The first teaching module is loaded after language choice; the PWA still caches
+all public app-shell chunks. No learner state is serialized for that loading.
 
 The revised gate blocks draft content, runtime placeholders, unverified
 resources, stale/missing audio and unsafe content. It allows `agent-checked`
