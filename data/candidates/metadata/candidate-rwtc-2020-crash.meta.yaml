@@ -1,0 +1,63 @@
+{
+  "expectedDates": [
+    "2020-02-20",
+    "2020-02-21",
+    "2020-02-24",
+    "2020-02-25",
+    "2020-02-26",
+    "2020-02-27",
+    "2020-02-28",
+    "2020-03-02",
+    "2020-03-03",
+    "2020-03-04",
+    "2020-03-05",
+    "2020-03-06",
+    "2020-03-09",
+    "2020-03-10",
+    "2020-03-11",
+    "2020-03-12",
+    "2020-03-13",
+    "2020-03-16",
+    "2020-03-17",
+    "2020-03-18",
+    "2020-03-19",
+    "2020-03-20",
+    "2020-03-23",
+    "2020-03-24",
+    "2020-03-25",
+    "2020-03-26",
+    "2020-03-27",
+    "2020-03-30",
+    "2020-03-31",
+    "2020-04-01",
+    "2020-04-02",
+    "2020-04-03",
+    "2020-04-06",
+    "2020-04-07",
+    "2020-04-08",
+    "2020-04-09",
+    "2020-04-13",
+    "2020-04-14",
+    "2020-04-15",
+    "2020-04-16",
+    "2020-04-17"
+  ],
+  "intradayAvailable": false,
+  "isPlaceholder": false,
+  "provenance": {
+    "sourceName": "U.S. Energy Information Administration; upstream Refinitiv, an LSEG business",
+    "sourceUrl": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2020-02-20&end=2020-04-17&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc",
+    "retrievedOn": "2026-10-03",
+    "licenceNote": "Redistribution unresolved: EIA's general reuse page permits use and distribution of government data, but its spot-price notes identify Refinitiv, an LSEG business, as the upstream source and the reuse page excludes protected third-party material. TODO(human): obtain dataset-specific rights/attribution confirmation. Keep raw snapshots and normalized price inputs out of git; candidate episode JSON remains non-runtime research data with this unresolved note."
+  },
+  "reveal": {
+    "periodText": {
+      "en": "Observed daily values: 2020-02-20 to 2020-04-17. Not a forecast.",
+      "hi": "TODO(human): draft Hindi period text and native-speaker review required."
+    },
+    "whatHappenedText": {
+      "en": "TODO(human): review the historical path, selection bias, and neutral reveal copy before use.",
+      "hi": "TODO(human): draft Hindi explanation and native-speaker review required."
+    }
+  }
+}

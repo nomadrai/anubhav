@@ -1,23 +1,21 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Episode } from '../data/episodes/episode.schema';
 import { compareRuns, replayUnleveraged, runSimulation, type DebriefBlockId, type SimConfig, type SimResult } from '../engine';
 import { selectDebrief } from '../engine/debrief';
 import { PLAYBACK_MS_PER_BAR } from '../config/simulation';
 
-export interface SimulationRunState {
-  playedCount: number;
-  current: SimResult['timeline'][number] | undefined;
-  playing: boolean;
-  finished: boolean;
-  decision: 'none' | 'point' | 'warning';
-  firedEvents: SimResult['events'];
-  hold: () => void;
-  exitNow: () => void;
+export interface SimulationFinish {
+  exitAtIndex?: number;
+  leveragedRun: SimResult;
+  unleveragedRun: SimResult;
+  comparison: ReturnType<typeof compareRuns>;
+  debriefBlocks: DebriefBlockId[];
 }
 
-/** Decision pauses: 25/50/75% of bars, or earlier at the first MARGIN_WARNING. */
+/** Independent of the future forced-exit time, which the learner has not seen. */
 export function decisionIndexes(totalBars: number): number[] {
-  return [0.25, 0.5, 0.75].map((fraction) => Math.round(totalBars * fraction)).filter((index) => index >= 1 && index < totalBars);
+  return [...new Set([0.25, 0.5, 0.75].map((fraction) => Math.round((totalBars - 1) * fraction)))]
+    .filter((index) => index >= 1 && index < totalBars - 1);
 }
 
 interface Options {
@@ -25,77 +23,44 @@ interface Options {
   capital: number;
   leverage: 1 | 2 | 5 | 10;
   config: SimConfig;
-  language: string;
-  onFinish: (result: { exitAtIndex?: number; leveragedRun: SimResult; unleveragedRun: SimResult; comparison: ReturnType<typeof compareRuns>; debriefBlocks: DebriefBlockId[] }) => void;
+  onFinish: (result: SimulationFinish) => void;
 }
 
-export function useSimulationRun({ episode, capital, leverage, config, onFinish }: Options): SimulationRunState {
-  const leveraged = useMemo(() => runSimulation({ series: episode.bars, capital, leverage, config }), [episode, capital, leverage, config]);
+/** Mount a fresh instance (or change the component key) for a new setup. */
+export function useSimulationRun({ episode, capital, leverage, config, onFinish }: Options) {
   const [playedCount, setPlayedCount] = useState(1);
-  const [exited, setExited] = useState(false);
-  const finishedRef = useRef(false);
-  const onFinishRef = useRef(onFinish);
-  useEffect(() => {
-    onFinishRef.current = onFinish;
-  }, [onFinish]);
-
-  const warnings = useMemo(() => new Set(leveraged.events.filter((event) => event.id === 'MARGIN_WARNING').map((event) => event.index)), [leveraged]);
-  const pauses = useMemo(() => new Set(decisionIndexes(leveraged.timeline.length)), [leveraged]);
-
-  const stopIndex = exited
-    ? playedCount - 1
-    : leveraged.final.outcome === 'forced_exit'
-      ? (leveraged.final.forcedExitIndex ?? leveraged.timeline.length - 1)
-      : leveraged.timeline.length - 1;
+  const [exitAtIndex, setExitAtIndex] = useState<number>();
+  const delivered = useRef(false);
+  const run = useMemo(() => runSimulation({ series: episode.bars, capital, leverage, config, exitAtIndex }), [episode, capital, leverage, config, exitAtIndex]);
+  const currentIndex = playedCount - 1;
+  const finished = exitAtIndex !== undefined || playedCount >= run.timeline.length;
+  const warningHere = run.events.some((event) => event.id === 'MARGIN_WARNING' && event.index === currentIndex);
+  const decision = finished ? 'none' : warningHere ? 'warning' : decisionIndexes(episode.bars.length).includes(currentIndex) ? 'point' : 'none';
+  const playing = !finished && decision === 'none';
+  const rawCurrent = run.timeline[currentIndex];
+  // The engine keeps raw close-equity for arithmetic. Display the settlement at closure.
+  const current = rawCurrent && finished
+    ? { ...rawCurrent, equity: run.final.equity, status: run.final.outcome === 'user_exit' ? 'exited' as const : rawCurrent.status }
+    : rawCurrent;
 
   useEffect(() => {
-    // Reset the playback state when a new episode or setup is selected.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setPlayedCount(1);
-    setExited(false);
-    finishedRef.current = false;
-  }, [episode, capital, leverage, config]);
-
-  useEffect(() => {
-    if (exited) return;
-    if (playedCount >= stopIndex + 1) return;
-    const timer = window.setTimeout(() => setPlayedCount((count) => Math.min(count + 1, stopIndex + 1)), PLAYBACK_MS_PER_BAR);
+    if (!playing) return;
+    const timer = window.setTimeout(() => setPlayedCount((count) => count + 1), PLAYBACK_MS_PER_BAR);
     return () => window.clearTimeout(timer);
-  }, [playedCount, stopIndex, exited]);
-
-  const played = leveraged.timeline.slice(0, playedCount);
-  const current = played[played.length - 1];
-  const reachedEnd = playedCount >= stopIndex + 1;
-  const warningHere = warnings.has(playedCount - 1);
-  const decision: SimulationRunState['decision'] = reachedEnd || exited ? 'none' : warningHere ? 'warning' : pauses.has(playedCount - 1) ? 'point' : 'none';
-
-  const finalize = useCallback((exitIndex: number | undefined) => {
-    if (finishedRef.current) return;
-    finishedRef.current = true;
-    const leveragedRun = exitIndex === undefined
-      ? leveraged
-      : runSimulation({ series: episode.bars, capital, leverage, config, exitAtIndex: exitIndex });
-    const unleveragedRun = replayUnleveraged(episode.bars, capital, config);
-    const comparison = compareRuns(leveragedRun, unleveragedRun);
-    const debriefBlocks = selectDebrief(leveragedRun, unleveragedRun, '');
-    onFinishRef.current({ exitAtIndex: exitIndex, leveragedRun, unleveragedRun, comparison, debriefBlocks });
-  }, [leveraged, episode.bars, capital, leverage, config]);
-
-  const hold = useCallback(() => {
-    if (decision === 'none') return;
-    const next = playedCount + 1;
-    setPlayedCount(Math.min(next, stopIndex + 1));
-  }, [decision, playedCount, stopIndex]);
-
-  const exitNow = useCallback(() => {
-    if (decision === 'none' || exited) return;
-    setExited(true);
-    finalize(playedCount - 1);
-  }, [decision, exited, finalize, playedCount]);
+  }, [playing, playedCount]);
 
   useEffect(() => {
-    if (reachedEnd && !exited && !finishedRef.current) finalize(undefined);
-  }, [reachedEnd, exited, finalize]);
+    if (!finished || delivered.current) return;
+    delivered.current = true;
+    // Replay the full identical path at one-times exposure; a leveraged user exit does not shorten the contrast path.
+    const unleveragedRun = replayUnleveraged(episode.bars, capital, config);
+    onFinish({ exitAtIndex, leveragedRun: run, unleveragedRun, comparison: compareRuns(run, unleveragedRun), debriefBlocks: selectDebrief(run, unleveragedRun, '') });
+  }, [finished, run, episode, capital, config, exitAtIndex, onFinish]);
 
-  return { playedCount, current, playing: !reachedEnd && !exited, finished: reachedEnd || exited, decision, firedEvents: leveraged.events.filter((event) => event.index <= playedCount - 1), hold, exitNow };
+  return {
+    playedCount, current, playing, finished, decision,
+    firedEvents: run.events.filter((event) => event.index <= currentIndex),
+    hold: () => { if (decision !== 'none') setPlayedCount((count) => count + 1); },
+    exitNow: () => { if (decision !== 'none') setExitAtIndex(currentIndex); },
+  };
 }

@@ -1,3 +1,48 @@
 [
- {"id":"resource-placeholder","labelKey":"nextSteps.empty","url":"TODO(human): verify protective resource URL","kind":"education","verified":false,"checkedOn":"TODO(human)"}
+  {
+    "id": "sebi-investor-education-material",
+    "labelKey": "nextSteps.empty",
+    "url": "https://investor.sebi.gov.in/iematerial.html",
+    "kind": "investor-education",
+    "verified": false,
+    "checkedOn": "2026-10-03",
+    "title": "Investor Education Reading Material",
+    "publisher": "SEBI Investor",
+    "relevance": "Official reading list about securities-market basics, safe practices, complaints, fraud awareness, and educational modules.",
+    "automatedCheck": {
+      "status": 200,
+      "finalUrl": "https://investor.sebi.gov.in/iematerial.html",
+      "fetchedAt": "2026-10-03T06:19:11Z",
+      "bytes": 145812,
+      "sha256": "091ae2a3af292b764a92d5373a90fc08d1e9bd3a4110dfeb4ff322afac2cb5df",
+      "method": "HTTP GET with curl --fail --location --max-time 30; page text was inspected"
+    },
+    "humanReview": {
+      "humanApproved": false,
+      "requiredBeforePublication": "Confirm exact page relevance, accessibility, language coverage, current terms, and attribution before setting verified true."
+    }
+  },
+  {
+    "id": "sebi-personal-finance-investment",
+    "labelKey": "nextSteps.empty",
+    "url": "https://investor.sebi.gov.in/personalsecurities.html",
+    "kind": "investor-education",
+    "verified": false,
+    "checkedOn": "2026-10-03",
+    "title": "Personal Finance and Investment: Securities Market Investments",
+    "publisher": "SEBI Investor",
+    "relevance": "Official primer covering market basics, product features, do-and-don't guidance, investment review, and grievance pathways.",
+    "automatedCheck": {
+      "status": 200,
+      "finalUrl": "https://investor.sebi.gov.in/personalsecurities.html",
+      "fetchedAt": "2026-10-03T06:19:11Z",
+      "bytes": 9691,
+      "sha256": "604f8436733d04a15186fc98ace13997c305bc7bf467ca07d5c298ff9780135d",
+      "method": "HTTP GET with curl --fail --location --max-time 30; page text was inspected"
+    },
+    "humanReview": {
+      "humanApproved": false,
+      "requiredBeforePublication": "Confirm exact page relevance, accessibility, language coverage, current terms, and attribution before setting verified true."
+    }
+  }
 ]

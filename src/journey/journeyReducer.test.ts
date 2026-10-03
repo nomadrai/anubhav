@@ -42,6 +42,7 @@ describe('journey steps', () => {
       comparison: { leveragedFinalEquity: 7_000, unleveragedFinalEquity: 9_400, difference: -2_400, requiredRecoveryGain: 0.4285714 },
       debriefBlocks: ['userExitedEarly', 'unleveragedSurvived', 'recoveryMaths'],
     });
+    expect(state.step).toBe('Result');
     expect(state.exitAtIndex).toBe(2);
     expect(state.comparison?.difference).toBe(-2_400);
     expect(state.debriefBlocks).toContain('recoveryMaths');

@@ -1,1 +1,3 @@
-export function AudioControls({ label }: { label: string }) { return <div className="audio-control" aria-label={label}>◷ {label}</div>; }
+export function AudioControls({ label }: { label: string }) {
+  return <p className="audio-control" role="status">{label}</p>;
+}

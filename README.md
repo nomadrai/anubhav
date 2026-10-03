@@ -1,18 +1,19 @@
 # Investor-protection learning scaffold
 
-This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
+This repository is documentation-first Phase 0 plus Phase 1 engine/data plumbing and Phase 2 journey integration for a working-title investor-protection web app. The product name is intentionally not repeated here: the only product-name constant is `src/config/app.ts`; documentation and new copy use **the app**.
 
-## Current status: Phase 1 engine and data plumbing
+## Current status: Phase 2 real journey integration
 
-Phase 0’s bilingual clickable scaffold is now joined by Phase 1 deterministic engine plumbing:
+Phase 2 connects the bilingual journey to the Phase 1 teaching engine:
 
-- validated pure TypeScript simulation with long exposure, intrabar-low forced-exit teaching rule, warning/event ordering, user exit, stats, recovery maths, and same-path unleveraged replay;
-- seeded `mulberry32` geometric synthetic path generation;
-- runtime episode schema validation and Python CSV preparation with explicit session calendars, OHLC checks, provenance, SHA-256 input hashes, and computed stats;
-- synthetic crash/choppy fixtures for tests only, clearly marked `isPlaceholder: true`;
-- regression tests for formula identity, leverage ordering, low-based exits, event uniqueness, stats parity, and episode fixtures.
+- deterministic playback pauses at decision points and warnings, with a user exit action;
+- accessible price, equity, and teaching-margin views with text labels and reduced-motion CSS;
+- result, same-path replay contrast, reveal-after-prediction, debrief, and post-check screens;
+- verified-resource filtering that keeps unverified resource pointers hidden;
+- synthetic crash/choppy fixtures remain clearly marked `isPlaceholder: true` and are not market data;
+- candidate data acquisition and provenance remain separate from checked-in runtime episodes until source, licence, and safety review are complete.
 
-The journey UI remains a clickable skeleton. Charts, production audio playback, real supplied market episodes, PWA registration, and polished replay screens remain later-phase work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
+The journey now runs the checked-in synthetic teaching path. Production audio playback, PWA/offline behavior, and verified real episodes remain later work. Synthetic paths are not market data or forecasts. See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md).
 
 ## Screen contract
 
@@ -20,7 +21,7 @@ A clickable stub may move through these screens in order:
 
 `language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`
 
-`pilot=1` is a separate local summary route/state for the small pilot scaffold. “Run”, “reveal”, and result controls must be visibly labeled as placeholders until their underlying behavior is implemented. The period stays hidden until reveal. No screen recommends an instrument, brand, trade, or allocation.
+`pilot=1` is a separate local summary route/state for the small pilot scaffold. The period stays hidden until reveal; the run, replay, and result use synthetic teaching data and do not make market claims. No screen recommends an instrument, brand, trade, or allocation.
 
 ## Safety boundary
 
@@ -28,7 +29,7 @@ There are no recommendations, brands, real instruments, monetisation, profit gam
 
 ## Intended stack and checks
 
-The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a clickable bilingual journey scaffold, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and preparation/audio CLI stubs. Charts, audio playback, PWA registration, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
+The fixed stack is Vite + React + strict TypeScript + Tailwind + Vitest + ESLint + Prettier + `vite-plugin-pwa`, with Python 3.10+ scripts. The repository now has a bilingual journey, a deterministic simulation engine, runtime episode validation, synthetic episode fixtures, content/release/bundle checks, and preparation/audio CLI stubs. Audio playback, PWA/offline behavior, verified real episodes, and polished pilot workflow remain unimplemented. The commands below are the local checks. Python checks use `python3` or `.venv/bin/python` (this checkout has no `python` executable):
 
 ```sh
 npm install
@@ -51,7 +52,8 @@ npm run release
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — layers, routes, data flow, and Mermaid diagram.
 - [`docs/SIMULATION_SPEC.md`](docs/SIMULATION_SPEC.md) — future deterministic math and API contracts.
 - [`docs/CONTENT_GUIDE.md`](docs/CONTENT_GUIDE.md) — bilingual writing, glossary, and analogy drafts.
-- [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) — candidate source register and CSV preparation contract.
+- [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) — candidate source register, row/date evidence, and CSV preparation contract.
+- [`docs/RESOURCE_REVIEW.md`](docs/RESOURCE_REVIEW.md) — automated protective-resource checks and human approval boundary.
 - [`docs/AUDIO_PIPELINE.md`](docs/AUDIO_PIPELINE.md) — silent stub and future audio boundary.
 - [`docs/ACCESSIBILITY_AND_PERFORMANCE.md`](docs/ACCESSIBILITY_AND_PERFORMANCE.md) — targets and test matrix.
 - [`docs/PRIVACY.md`](docs/PRIVACY.md) — permitted storage and network behavior.
@@ -64,4 +66,4 @@ npm run release
 
 ## Truthfulness rule
 
-The Phase 0 and Phase 1 checks are run locally; see the task report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.
+The Phase 2 checks are run locally; see the task report for exact outcomes. Installed package metadata was inspected for the direct dependency table, but human licence/notice review, model/dataset choices, real-episode selection, and performance measurements remain open. Use `TODO(human)` for facts requiring human evidence; never fill a gap with invented data, holidays, results, or citations.

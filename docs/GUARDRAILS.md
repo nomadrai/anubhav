@@ -16,7 +16,7 @@ These are product requirements, not suggestions. A release must fail or hide con
 ## Interaction constraints
 
 - The period remains hidden until the reveal step. A participant first records a prediction or expectation, then sees the synthetic result.
-- All screens are stubs in Phase 0 and must label unavailable behavior. “Run”, “chart”, “listen”, “download”, and “offline” controls must not imply implementation.
+- The Phase 2 run, chart, replay, reveal, and debrief are educational engine views, not market views. “Listen”, “download”, and “offline” controls must not imply implementation; unavailable audio remains explicitly disclosed.
 - English copy appears first. Draft Hindi is labeled draft until human review. Numbers intended for speech have separate spoken text; do not force a screen reader to pronounce symbols ambiguously.
 - The app stores only the selected language and text-size preference locally. It has no accounts, cookies, financial records, or external runtime telemetry.
 - Network requests at runtime are same-origin static asset requests only. Production CSP must use `connect-src 'self'` and an equivalent restrictive policy reviewed by a human.

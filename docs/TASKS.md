@@ -14,10 +14,10 @@ Priority meanings: **P1 impact** = directly improves learner safety/outcome; **P
 - **P5 / agent:** implement explicit-session CSV preparation, provenance/hash output, and synthetic crash/choppy fixtures.
 - **P1/P3 / human:** review the teaching margin rule, worked 10× example, and supply/licence real episodes. Release remains blocked until this is done.
 
-## Phase 2 — Real journey UI (next)
+## Phase 2 — Real journey UI (implemented; review pending)
 
 - **P1 / agent:** connect the reducer journey to simulation playback, decision pauses, chart, equity/margin meters, replay contrast, reveal, debrief, post-check, and verified-resource filtering.
-- **P1/P2/P3 / human:** approve safety wording, hidden-period behavior, Hindi meaning, accessibility, and no-advice boundaries.
+- **P1/P2/P3 / human:** approve safety wording, hidden-period behavior, Hindi meaning, accessibility, and no-advice boundaries before release.
 
 ## Phase 3 — Bilingual content and audio (next)
 

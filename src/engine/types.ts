@@ -1,5 +1,5 @@
 export interface Bar { open?: number; high?: number; low?: number; close: number; date?: string; }
-export interface SimConfig { maintenanceFraction: number; warnBuffer: number; drawdownMarks: number[]; }
+export interface SimConfig { maintenanceFraction: number; warnBuffer: number; drawdownMarks: readonly number[]; }
 export interface SimInput { series: Bar[]; capital: number; leverage: 1 | 2 | 5 | 10; exitAtIndex?: number; config: SimConfig; }
 export type SimEventId = 'ENTRY' | 'DRAWDOWN_5' | 'DRAWDOWN_10' | 'DRAWDOWN_20' | 'MARGIN_WARNING' | 'FORCED_EXIT' | 'USER_EXIT' | 'EPISODE_END' | 'UNLEVERAGED_SURVIVED';
 export interface SimEvent { id: SimEventId; index: number; }

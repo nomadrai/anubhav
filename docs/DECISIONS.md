@@ -24,6 +24,14 @@
 
 **Status:** accepted. **Decision:** provide a schema-valid no-sound CLI contract and defer model/voice selection. **Reason:** licence, quality, GPU, and privacy evidence are not verified. **Consequence:** visible text is the only Phase 0 content route.
 
+## ADR-0007 — Keep acquired candidates outside runtime
+
+**Status:** accepted for Phase 2. **Decision:** downloaded episode candidates remain under `data/candidates/`, with raw/prepared hashes and provenance, until human rights, source, calendar, copy, and safety review is complete. Runtime imports only the checked-in synthetic fixtures. **Reason:** acquisition evidence must not be mistaken for approval or a market claim.
+
+## ADR-0008 — Filter protective resources at render time
+
+**Status:** accepted for Phase 2. **Decision:** resources render only when `verified` is true; automated HTTP success is recorded separately from human approval. **Reason:** a reachable page is not proof of relevance, accessibility, licensing, or suitability.
+
 ## Open decisions
 
 - `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy.

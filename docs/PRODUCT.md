@@ -24,9 +24,9 @@ The outcome is recognition, not prediction skill or a profitable strategy.
 
 ## Phase boundaries
 
-Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 now implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. The current app still does not connect these engine results to production charts, audio playback, offline behavior, or a polished pilot flow; those remain later phases.
+Phase 0 implemented the bilingual clickable skeleton, content/release/bundle contracts, deterministic-path contract, and CLI scaffolds. Phase 1 implements the pure deterministic simulation engine, runtime episode validation, Python CSV preparation, synthetic crash/choppy fixtures, and regression tests. Phase 2 connects those results to playback, educational charts/meters, replay, reveal, debrief, and post-check. Audio playback, offline behavior, real verified episodes, and a polished pilot flow remain later work.
 
-Every screen must have a keyboard-reachable primary action, a visible placeholder state where work is not implemented, and a language label. The journey is:
+Every screen must have a keyboard-reachable primary action, a clear synthetic or unavailable state where work is not implemented, and a language label. The journey is:
 
 `language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`
 

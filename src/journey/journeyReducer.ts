@@ -40,6 +40,7 @@ export function journeyReducer(state: JourneyState, action: JourneyAction): Jour
     case 'recordRun':
       return {
         ...state,
+        step: 'Result',
         exitAtIndex: action.exitAtIndex,
         leveragedRun: action.leveragedRun,
         unleveragedRun: action.unleveragedRun,

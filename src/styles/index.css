@@ -23,6 +23,26 @@ p { font-size: 1.08rem; max-width: 48ch; }
 .notice { background: #f9edcf; padding: 14px; border-radius: 10px; }
 .lesson-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; }
 .tag { border: 1px solid #a88b61; border-radius: 999px; padding: 8px 12px; }
+.run-panel { display: grid; gap: 14px; }
+.synthetic-label { color: #665c50; border: 1px solid #ded4c6; border-radius: 8px; padding: 8px 10px; font-size: .92rem; }
+.run-status { background: #f5eee4; border-radius: 10px; padding: 10px 12px; }
+.decision-card { border: 2px solid #a88b61; border-radius: 14px; padding: 14px; background: #fffaf0; }
+.decision-card p { margin: 8px 0; }
+.meter, .equity-gauge { display: grid; gap: 7px; }
+.meter-heading { display: flex; justify-content: space-between; gap: 12px; }
+.meter-track { position: relative; height: 16px; overflow: visible; border-radius: 999px; background: #eadfd0; }
+.meter-fill { height: 100%; border-radius: inherit; background: #386b57; transition: width .2s ease; }
+.meter-mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #29251f; transform: translateX(-1px); }
+.result-grid, .stats-grid, .reveal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+.result-grid > div, .stats-grid > div, .reveal-grid > div { display: grid; gap: 4px; border: 1px solid #ded4c6; border-radius: 10px; padding: 12px; }
+.result-grid strong, .stats-grid strong, .reveal-grid strong { font-size: 1.2rem; }
+.reveal-grid code { color: #665c50; overflow-wrap: anywhere; }
+.comparison-list, .debrief-list, .resource-list { display: grid; gap: 10px; margin: 18px 0; }
+.comparison-list p, .debrief-block p { margin: 0; }
+.debrief-block { border-left: 4px solid #a88b61; background: #f5eee4; padding: 12px 14px; }
+.debrief-block h2 { font-size: 1.05rem; margin: 0 0 4px; }
+.resource-list a { color: #386b57; font-weight: 700; }
 .summary { overflow-x: auto; background: #f5eee4; padding: 14px; border-radius: 10px; }
 .link-button { display: block; margin: 18px auto 0; color: #386b57; background: none; border: 0; text-decoration: underline; font: inherit; cursor: pointer; }
+@media (max-width: 480px) { .result-grid, .stats-grid, .reveal-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

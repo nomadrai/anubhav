@@ -74,6 +74,16 @@ python scripts/prepare_episode.py \
   --output /tmp/crash-synthetic.episode.json
 ```
 
+## Optional historical candidate acquisition (not runtime)
+
+`scripts/acquire_eia_candidates.py` is the only explicitly network-capable data script. It fetches two EIA candidate windows into `data/candidates/`, preserves raw-response hashes and retrieval receipts, and invokes the offline preparation CLI. It does not import data into `src/data/episodes/`, set human approval, or infer a calendar. Reproduction of the checked-in receipts is network-free:
+
+```sh
+python3 scripts/acquire_eia_candidates.py --offline --output-root data/candidates
+```
+
+The candidate source, row counts, date ranges, licence uncertainty, and resource checks are recorded in `docs/DATA_SOURCES.md` and `docs/RESOURCE_REVIEW.md`. Raw snapshots and normalized price inputs are git-ignored pending human rights review.
+
 ## Audio contract (not implemented yet)
 
 `generate_audio.py --provider stub --dry-run --episode EPISODE.json` emits a

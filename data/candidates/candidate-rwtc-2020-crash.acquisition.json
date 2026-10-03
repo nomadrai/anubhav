@@ -1,0 +1,49 @@
+{
+  "candidateId": "candidate-rwtc-2020-crash",
+  "scenario": "crash",
+  "requestUrl": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2020-02-20&end=2020-04-17&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc",
+  "httpStatus": 200,
+  "finalUrl": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2020-02-20&end=2020-04-17&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc",
+  "retrievedAt": "2026-10-03T06:11:11Z",
+  "contentType": null,
+  "rawInputSha256": "3f3504fd9b0420c9b46b5042dd9f9a20b80608e801c824165bc06958ae50e773",
+  "rawInputBytes": 11871,
+  "preparedInputSha256": "7d03d12147b53fc2a6939be270f7d1c23e76aaf714860ddeec3a507784812a2b",
+  "rowCount": 41,
+  "requestedDateRange": {
+    "start": "2020-02-20",
+    "end": "2020-04-17"
+  },
+  "observedDateRange": {
+    "start": "2020-02-20",
+    "end": "2020-04-17"
+  },
+  "sourceIdentifier": {
+    "publisher": "U.S. Energy Information Administration",
+    "upstreamSource": "Refinitiv, an LSEG business (per EIA definitions page)",
+    "apiDataset": "petroleum/pri/spt",
+    "series": "RWTC",
+    "seriesDescription": "Cushing, OK WTI Spot Price FOB (Dollars per Barrel)",
+    "frequency": "daily",
+    "units": "$/BBL",
+    "product": "EPCWTI",
+    "process": "PF4",
+    "location": "YCUOK"
+  },
+  "licenceNote": "Redistribution unresolved: EIA's general reuse page permits use and distribution of government data, but its spot-price notes identify Refinitiv, an LSEG business, as the upstream source and the reuse page excludes protected third-party material. TODO(human): obtain dataset-specific rights/attribution confirmation. Keep raw snapshots and normalized price inputs out of git; candidate episode JSON remains non-runtime research data with this unresolved note.",
+  "termsUrl": "https://www.eia.gov/about/copyrights_reuse.php",
+  "definitionsUrl": "https://www.eia.gov/dnav/pet/TblDefs/pet_pri_spt_tbldef2.asp",
+  "transformations": [
+    "period -> date and value -> close; retain original observation order and values",
+    "No scaling, imputation, resampling, adjustment, calendar inference, or OHLC fabrication",
+    "expectedDates lists returned observations only; not an independently verified session calendar"
+  ],
+  "timeZone": "TODO(human): exact observation time/timezone not established",
+  "adjustment": "No adjustment applied; spot-price observations, not a total-return security series",
+  "candidateStatus": "candidate-not-approved",
+  "humanApproved": false,
+  "hindiStatus": "draft",
+  "distribution": "raw snapshots and normalized price inputs are git-ignored; candidate JSON is non-runtime research data and remains unapproved",
+  "rawInputPath": "data/candidates/raw/candidate-rwtc-2020-crash.source.json",
+  "preparedInputPath": "data/candidates/inputs/candidate-rwtc-2020-crash.csv"
+}

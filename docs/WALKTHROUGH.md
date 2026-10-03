@@ -1,6 +1,6 @@
 # Honest 3–5 minute walkthrough
 
-This walkthrough describes the Phase 0 scaffold as it exists by contract. It must not be narrated as a completed simulator.
+This walkthrough describes the Phase 2 teaching journey. It must not be narrated as a market simulator, forecast, or advice tool.
 
 ## 0:00–0:30 — Language and intro
 
@@ -8,19 +8,19 @@ Open the local development build, choose English or draft Hindi, and confirm the
 
 ## 0:30–1:15 — Setup
 
-Proceed through setup. Show generic capital, leverage, entry, and close labels only if the stub exposes them. Explain that no real instrument, brand, account, or recommendation is selected. Use the text-size control and show its accessible name.
+Proceed through setup. Show generic virtual capital and exposure choices. Explain that no real instrument, brand, account, or recommendation is selected. Use the keyboard controls and show their visible focus.
 
 ## 1:15–1:45 — Prediction before reveal
 
-Record a prediction or expectation in the temporary flow if the stub offers that control. Explain that the period is hidden until reveal. Do not show a chart or claim a prediction was scored.
+Record an expectation before the path is shown. Confirm that no date or source is visible. The answer is not scored and the period remains hidden.
 
-## 1:45–2:30 — Run/result placeholders
+## 1:45–2:30 — Run and result
 
-Activate Run and Result. The honest state says that Phase 0 has no actual simulation or chart. If a seeded-path fixture is visible to a developer, label it synthetic, deterministic, and not market data. Do not call a fixture an outcome or forecast.
+Watch the synthetic path advance. At a decision pause, choose to continue or exit. Point out the path chart, virtual-equity amount, teaching-margin meter, and explicit synthetic label. The result is an engine outcome on a teaching fixture, not a forecast.
 
-## 2:30–3:20 — Reveal and debrief
+## 2:30–3:20 — Replay, reveal, and debrief
 
-Use Reveal to show the teaching explanation. Discuss the generic equation `capital + units × (price − entry)` and the 10×/7% arithmetic only as an example. Explain that the period was hidden before this step, and that the forced-exit rule is a simplification.
+Compare the leveraged and one-times replay on the identical path. Then use Reveal to show the period, provenance, and path statistics only after the comparison. Read the debrief blocks, including recovery maths and the simplified forced-exit boundary.
 
 ## 3:20–4:00 — Postcheck and next steps
 
@@ -28,4 +28,4 @@ Complete the postcheck and show a prompt to write one question for a qualified s
 
 ## 4:00–5:00 — Boundaries
 
-Point out the unavailable audio/offline controls and the no-runtime-telemetry boundary. If release is attempted with draft content or unverified resources, show that the release gate deliberately fails. Record any accessibility issue rather than claiming the walkthrough proves compliance.
+Point out that audio is unavailable and offline behavior is not implemented. Verified-resource filtering shows no resource while the resource entry is unverified. If release is attempted with draft content, placeholders, or unverified resources, show that the release gate deliberately fails. Record any accessibility issue rather than claiming the walkthrough proves compliance.

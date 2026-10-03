@@ -1,35 +1,15 @@
-import { interpolate } from '../i18n';
+import { formatRupees, interpolate, t } from '../i18n';
+import type { Language } from '../config/languages';
+import type { TimelinePoint } from '../engine/types';
 
-export interface MarginMeterProps {
-  status: 'open' | 'warning' | 'forced_exit' | 'exited';
-  equity: number;
-  warnLevel: number;
-  maintenanceLevel: number;
-  labels: { open: string; warning: string; forced: string; exited: string; level: string };
-}
-
-/** Simple margin indicator: state is carried by words and position, never colour alone. */
-export function MarginMeter({ status, equity, warnLevel, maintenanceLevel, labels }: MarginMeterProps) {
-  const text =
-    status === 'forced_exit' ? labels.forced
-    : status === 'exited' ? labels.exited
-    : status === 'warning' ? labels.warning
-    : labels.open;
-  const percent = Math.max(0, Math.min(100, (equity / (warnLevel || 1)) * 100));
-  return (
-    <div className="meter" role="status">
-      <div className="quiet">
-        {interpolate(labels.level, { level: `${Math.round(maintenanceLevel)}` })}{' '}
-        <strong>{text}</strong>
-      </div>
-      <div
-        className="meter-track"
-        role="img"
-        aria-label={`${text}: ${Math.round(percent)} percent of the warning level`}
-      >
-        <div className="meter-fill" style={{ width: `${percent}%` }} />
-        <div className="meter-mark" style={{ left: `${(maintenanceLevel / (warnLevel || 1)) * 100}%` }} />
-      </div>
-    </div>
-  );
+export function MarginMeter({ status, equity, capital, warnLevel, maintenanceLevel, language }: {
+  status: TimelinePoint['status']; equity: number; capital: number; warnLevel: number; maintenanceLevel: number; language: Language;
+}) {
+  const statusKey = { open: 'statusOpen', warning: 'statusWarning', forced_exit: 'statusForced', exited: 'statusExited' }[status];
+  return <div className="meter">
+    <strong>{t(language, `run.${statusKey}`)}</strong>
+    <meter min="0" max={Math.max(capital, equity)} low={warnLevel} value={Math.max(0, equity)} aria-label={t(language, 'run.marginLabel')} />
+    <p className="quiet">{interpolate(t(language, 'run.maintenanceLevel'), { level: formatRupees(maintenanceLevel, language) })}</p>
+    <p className="quiet">{interpolate(t(language, 'run.warningLevel'), { level: formatRupees(warnLevel, language) })}</p>
+  </div>;
 }

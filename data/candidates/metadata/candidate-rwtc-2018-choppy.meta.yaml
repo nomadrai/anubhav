@@ -1,0 +1,62 @@
+{
+  "expectedDates": [
+    "2018-01-02",
+    "2018-01-03",
+    "2018-01-04",
+    "2018-01-05",
+    "2018-01-08",
+    "2018-01-09",
+    "2018-01-10",
+    "2018-01-11",
+    "2018-01-12",
+    "2018-01-16",
+    "2018-01-17",
+    "2018-01-18",
+    "2018-01-19",
+    "2018-01-22",
+    "2018-01-23",
+    "2018-01-24",
+    "2018-01-25",
+    "2018-01-26",
+    "2018-01-29",
+    "2018-01-30",
+    "2018-01-31",
+    "2018-02-01",
+    "2018-02-02",
+    "2018-02-05",
+    "2018-02-06",
+    "2018-02-07",
+    "2018-02-08",
+    "2018-02-09",
+    "2018-02-12",
+    "2018-02-13",
+    "2018-02-14",
+    "2018-02-15",
+    "2018-02-16",
+    "2018-02-20",
+    "2018-02-21",
+    "2018-02-22",
+    "2018-02-23",
+    "2018-02-26",
+    "2018-02-27",
+    "2018-02-28"
+  ],
+  "intradayAvailable": false,
+  "isPlaceholder": false,
+  "provenance": {
+    "sourceName": "U.S. Energy Information Administration; upstream Refinitiv, an LSEG business",
+    "sourceUrl": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2018-01-02&end=2018-02-28&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc",
+    "retrievedOn": "2026-10-03",
+    "licenceNote": "Redistribution unresolved: EIA's general reuse page permits use and distribution of government data, but its spot-price notes identify Refinitiv, an LSEG business, as the upstream source and the reuse page excludes protected third-party material. TODO(human): obtain dataset-specific rights/attribution confirmation. Keep raw snapshots and normalized price inputs out of git; candidate episode JSON remains non-runtime research data with this unresolved note."
+  },
+  "reveal": {
+    "periodText": {
+      "en": "Observed daily values: 2018-01-02 to 2018-02-28. Not a forecast.",
+      "hi": "TODO(human): draft Hindi period text and native-speaker review required."
+    },
+    "whatHappenedText": {
+      "en": "TODO(human): review the historical path, selection bias, and neutral reveal copy before use.",
+      "hi": "TODO(human): draft Hindi explanation and native-speaker review required."
+    }
+  }
+}

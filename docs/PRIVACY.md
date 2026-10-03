@@ -1,6 +1,6 @@
 # Privacy
 
-## Phase 0 data boundary
+## Phase 2 data boundary
 
 The app may store only:
 
@@ -15,7 +15,7 @@ Runtime requests are same-origin static asset requests only. There are no extern
 
 ## Pilot boundary
 
-Phase 0 has no pilot UI or remote collection. A future pilot must use consent, a local or separately approved collection process, data minimisation, retention/deletion rules, access control, and an approved information sheet. See [`PILOT.md`](PILOT.md). Never describe local browser state as anonymous research evidence without checking the threat model.
+Phase 2 has no remote collection or pilot data store. A future pilot must use consent, a local or separately approved collection process, data minimisation, retention/deletion rules, access control, and an approved information sheet. See [`PILOT.md`](PILOT.md). Never describe local browser state as anonymous research evidence without checking the threat model.
 
 ## Privacy review checklist
 

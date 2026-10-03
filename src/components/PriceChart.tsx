@@ -1,32 +1,24 @@
-interface PriceChartProps {
-  prices: number[];
-  width?: number;
-  height?: number;
-  lineLabel: string;
-}
+import { formatNumber, t } from '../i18n';
+import type { Language } from '../config/languages';
 
-/** Plain SVG price line. Visuals are deliberately unpolished in Phase 1. */
-export function PriceChart({ prices, width = 320, height = 120, lineLabel }: PriceChartProps) {
-  if (prices.length < 2) return <svg role="img" aria-label={lineLabel} width={width} height={height} />;
-  const min = Math.min(...prices);
-  const max = Math.max(...prices);
+interface PriceChartProps { prices: number[]; lineLabel: string; language: Language; }
+
+/** Step-only axis: dates and source metadata never enter chart props. */
+export function PriceChart({ prices, lineLabel, language }: PriceChartProps) {
+  const normalized = prices.map((price) => price / prices[0] * 100);
+  const min = Math.min(...normalized);
+  const max = Math.max(...normalized);
   const span = max - min || 1;
-  const points = prices
-    .map((price, index) => {
-      const x = (index / (prices.length - 1)) * (width - 8) + 4;
-      const y = height - 6 - ((price - min) / span) * (height - 12);
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    })
-    .join(' ');
-  const first = prices[0];
-  const last = prices[prices.length - 1];
-  const direction = last >= first ? 'rising' : 'falling';
-  return (
-    <figure className="chart" style={{ margin: 0 }}>
-      <svg role="img" aria-label={`${lineLabel}: ${direction} line over ${prices.length} steps`} width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
-        <polyline points={points} fill="none" stroke="#386b57" strokeWidth={2} strokeDasharray="0" />
-      </svg>
-      <figcaption className="quiet">{lineLabel}</figcaption>
-    </figure>
-  );
+  const points = normalized.map((price, index) => `${8 + index / Math.max(1, prices.length - 1) * 304},${114 - (price - min) / span * 108}`).join(' ');
+  return <figure className="chart">
+    <svg role="img" aria-label={lineLabel} viewBox="0 0 320 120">
+      {prices.length === 1 ? <circle cx="8" cy="114" r="3" fill="#386b57" /> : <polyline points={points} fill="none" stroke="#386b57" strokeWidth="2" />}
+    </svg>
+    <figcaption>{lineLabel} · {t(language, 'run.indexBase')}</figcaption>
+    <details><summary>{t(language, 'common.chartData')}</summary>
+      <table><thead><tr><th scope="col">{t(language, 'common.step')}</th><th scope="col">{lineLabel}</th></tr></thead>
+        <tbody>{normalized.map((price, index) => <tr key={index}><th scope="row">{formatNumber(index + 1, language)}</th><td>{formatNumber(Math.round(price * 100) / 100, language)}</td></tr>)}</tbody>
+      </table>
+    </details>
+  </figure>;
 }

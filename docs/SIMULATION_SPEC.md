@@ -1,6 +1,6 @@
 # Simulation specification
 
-This document defines the Phase 1 educational engine contract and current implementation. The pure TypeScript engine executes deterministic runs for tests and future UI integration; Phase 1 does not yet display production charts or audio. The current journey may still show placeholder text until Phase 2 connects these APIs.
+This document defines the Phase 1 educational engine contract and current implementation. The pure TypeScript engine executes deterministic runs for tests and Phase 2 journey playback. The UI displays plain educational charts and meters; it does not claim production market analysis, audio playback, or offline behavior.
 
 ## Model and units
 
