@@ -34,6 +34,7 @@ Selected: **Divya**. This is not a naturalness/pronunciation/listening endorseme
 - Highest sampled process RSS across production attempts: **7029870592 bytes**.
 - Final Opus assets: **948137 bytes**, **317.06877s** audio. Manifest: 134198 bytes. No model, raw data or WAV is shipped.
 - Mono, target 24kbps variable-bitrate Opus; loudnorm targets −18 LUFS/−2dB true peak/LRA7. Targets are not asserted achieved per-clip measurements. Final byte/duration/finite/clipping evidence is in each manifest entry.
+- Re-running the resumable build re-encoded unchanged-input tracks from their retained cached WAVs, so most Opus files differ in container bytes while their decoded PCM is bit-identical; only the two Hindi `DRAWDOWN` tracks changed synthesis. No WAV was regenerated and no audio content changed for those re-encoded files.
 
 ## Per-track gate and timing record
 

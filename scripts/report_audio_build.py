@@ -38,7 +38,8 @@ def main():
         f"- All production attempts max synthesis **{max(r['ttsWallSeconds'] for r in attempts):.2f}s**; attempts above 90s: **{sum(r['ttsWallSeconds']>90 for r in attempts)}**. No free GPU job was needed/run; optional exact instructions are in GPU_AUDIO.md.",
         f"- Highest sampled process RSS across production attempts: **{max(r['peakRssBytes'] for r in attempts)} bytes**.",
         f"- Final Opus assets: **{sum(t['bytes'] for t in manifest['tracks'])} bytes**, **{sum(t['durationSeconds'] for t in manifest['tracks']):.5f}s** audio. Manifest: {(ROOT/'public/audio/manifest.json').stat().st_size} bytes. No model, raw data or WAV is shipped.",
-        '- Mono, target 24kbps variable-bitrate Opus; loudnorm targets −18 LUFS/−2dB true peak/LRA7. Targets are not asserted achieved per-clip measurements. Final byte/duration/finite/clipping evidence is in each manifest entry.', '',
+        '- Mono, target 24kbps variable-bitrate Opus; loudnorm targets −18 LUFS/−2dB true peak/LRA7. Targets are not asserted achieved per-clip measurements. Final byte/duration/finite/clipping evidence is in each manifest entry.',
+        '- Re-running the resumable build re-encoded unchanged-input tracks from their retained cached WAVs, so most Opus files differ in container bytes while their decoded PCM is bit-identical; only the two Hindi `DRAWDOWN` tracks changed synthesis. No WAV was regenerated and no audio content changed for those re-encoded files.', '',
         '## Per-track gate and timing record', '',
         '| Language / ID | Seed attempt | TTS wall s | Audio s | Steps / cap | RMS dBFS | CER normalized (raw) |',
         '|---|---:|---:|---:|---|---:|---|']
