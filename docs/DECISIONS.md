@@ -36,6 +36,22 @@
 
 **Status:** accepted for Phase 3 implementation; release approval pending. **Decision:** use `ai4bharat/indic-parler-tts` as an optional build-time candidate for English/Hindi speech, requiring a caller-provided local checkpoint and immutable revision. The provider never downloads weights, makes runtime requests, or falls back to fake audio. **Reason:** the model card declares Apache-2.0 and multilingual English/Hindi support, while gated access, model/data terms, optional dependency licences, and native-speaker quality still require human review.
 
+## ADR-0010 — Pinned offline tokenizers and limited voice audition
+
+**Status:** accepted for local auditions, not release voice approval. **Decision:**
+use the user-supplied Indic Parler checkpoint at
+`7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca` and separately pin the FLAN-T5
+**description tokenizer** to `0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a`.
+One explicit online command may cache only tokenizer files; generation/checks
+stay offline. Compare six Hindi WAVs with one shared named-speaker template,
+Rohit then Divya, greedy decoding and seed zero. The user selects the voice;
+fixed-seed sampling is an explicit later config change. **Reason:** model and
+tokenizer commits are different, discoverable packages can have broken native
+imports, and a declared licence or valid WAV does not prove intelligible audio.
+Only the supplied venv's CUDA `torchaudio` wheel was replaced by the same
+version's CPU build; no web dependencies or model weights are deployed.
+See `THIRD_PARTY.md` for the exact build-tool evidence and shipping boundary.
+
 ## Open decisions
 
 - `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy.

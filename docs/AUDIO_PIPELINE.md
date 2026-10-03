@@ -51,8 +51,10 @@ python3 scripts/generate_audio.py \
   --output-dir public/audio
 ```
 
-`--check` validates the local directory and optional dependencies without
-loading or generating tracks:
+`--check` validates the local directory, imports the real optional stack, and
+loads **both tokenizers at their recorded revisions**, without loading model
+weights or generating tracks. Missing tokenizer caches or broken native wheels
+now fail the check; `ready: true` means prerequisites pass, not voice approval:
 
 ```sh
 python3 scripts/generate_audio.py \
@@ -62,11 +64,11 @@ python3 scripts/generate_audio.py \
 ```
 
 No model or dependency is added to `package.json` or the default Python
-requirements. A generation environment needs compatible local installations
-of `torch`, `transformers`, `parler-tts` (imported as `parler_tts`),
-`soundfile`, and the `ffmpeg` executable. Exact versions, platform support,
-notices, and licences remain `TODO(human)`; the CLI fails closed when any
-optional dependency is absent. `from_pretrained` is always called with
+requirements. The supplied external venv and exact source pins are recorded in
+`THIRD_PARTY.md`, including the correction from CUDA to CPU `torchaudio`.
+The generation environment uses `torch`, `transformers`, `parler-tts`
+(imported as `parler_tts`), `soundfile`, and the `ffmpeg` executable for Opus
+encoding. Native notices and final output review remain open. `from_pretrained` is always called with
 `local_files_only=True`, and a missing/incomplete gated checkpoint is an
 error rather than a fallback to a network request or fake audio.
 
@@ -78,8 +80,9 @@ prepared episode. `contentSha256` hashes the exact stripped spoken text.
 
 - the content hash and language;
 - provider name; and
-- generation configuration: model id, model revision, voice-description
-  prompt, device, seed, and greedy-generation setting.
+- generation configuration: model id/revision, separately pinned description
+  tokenizer id/revision, tokenizer file hashes once checked, voice-description
+  prompt, device, seed, `doSample`, and `maxNewTokens`.
 
 It does not contain participant responses or other private data. A successful
 build writes `public/audio/manifest.json` (or the selected output directory)
@@ -99,6 +102,68 @@ WAV intermediates are created in a temporary directory and removed after the
 build. Existing assets and manifests are not overwritten unless
 `--overwrite` is explicit. The manifest is written atomically after conversion
 succeeds.
+
+## Six-clip Hindi auditions (not the full audio set)
+
+Configuration lives in `scripts/config/tts.json`. It pins:
+
+- Indic Parler: `7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca`;
+- `google/flan-t5-large` description tokenizer:
+  `0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a`;
+- speaker order: Rohit, then Divya;
+- one shared description template, changing only `{speaker}`;
+- CPU threads: four; inter-op threads: one; seed zero; `doSample: false`;
+- `maxNewTokens: 2048`, a generation safety cap, not a target length.
+
+The exact Hindi `spokenText` is read from `src/content/hi/narration.json`:
+`USER_EXIT` (short), `run.main` (medium), and the concatenation of `DRAWDOWN_10`
+with `reveal.main` (number in words plus the transliterated term “एपिसोड”). The
+third clip combines existing entries rather than inventing an extra lesson.
+All remain draft, and the listener chooses the voice; no approval is inferred.
+
+First cache only the public description-tokenizer files online (no FLAN weights,
+no gated-account token needed). This is separate from generation:
+
+```sh
+/home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py --cache-tokenizer
+```
+
+Then check and generate entirely offline:
+
+```sh
+HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
+  --check --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts
+
+HF_HUB_OFFLINE=1 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 \
+  /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
+  --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts
+```
+
+The output is six PCM16 mono WAVs and `run.json` under the gitignored
+`artifacts/tts-auditions/greedy-seed0/`, **not** `src/`, `public/`, or a deployment
+manifest. The runner refuses to overwrite a nonempty output folder. A single
+model instance is reused for both speakers. `modelLoadSeconds` is separate;
+each `generationSeconds` measures text tokenization, inference, and WAV writing
+using `perf_counter` wall time, excluding loading and post-generation metrics.
+There is no warmup; the first clip can include first-inference overhead.
+`durationSeconds`, real-time factor, WAV hash, RMS, peak, clipping fraction,
+package versions, transcripts, and effective configuration are recorded per run.
+These numerical checks cannot assess pronunciation or naturalness.
+
+To try sampling **later**, copy the config, set `generation.doSample` to `true`,
+keep an explicit fixed seed, and choose a new output directory:
+
+```sh
+HF_HUB_OFFLINE=1 /home/nomad_aadi/venvs/tts/bin/python scripts/audition_audio.py \
+  --config /path/to/your/sampling-config.json \
+  --model-dir /home/nomad_aadi/Documents/Projects/models/indic-parler-tts \
+  --output-dir artifacts/tts-auditions/sampling-seed0
+```
+
+The seed resets before every clip. The existing episode CLI also accepts
+`--do-sample`/`--no-do-sample`; both default greedy. Neither a fixed seed nor
+greedy decoding promises byte-identical output across devices/package versions.
+No full-set generation or runtime playback is part of this audition task.
 
 ## Conversion and review boundary
 

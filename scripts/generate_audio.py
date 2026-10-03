@@ -21,16 +21,16 @@ from typing import Any, Callable, Iterable
 try:  # Works both as `python scripts/generate_audio.py` and as a module.
     from .providers.base import AudioProvider, AudioProviderError
     from .providers.indic_parler import (
-        DEFAULT_DESCRIPTION,
-        DEFAULT_MODEL_ID,
+        DEFAULT_DESCRIPTION, DEFAULT_MODEL_ID,
+        DEFAULT_TOKENIZER_ID, DEFAULT_TOKENIZER_REVISION,
         IndicParlerProvider,
     )
     from .providers.stub import StubProvider
 except ImportError:  # pragma: no cover - direct script execution path
     from providers.base import AudioProvider, AudioProviderError
     from providers.indic_parler import (
-        DEFAULT_DESCRIPTION,
-        DEFAULT_MODEL_ID,
+        DEFAULT_DESCRIPTION, DEFAULT_MODEL_ID,
+        DEFAULT_TOKENIZER_ID, DEFAULT_TOKENIZER_REVISION,
         IndicParlerProvider,
     )
     from providers.stub import StubProvider
@@ -404,7 +404,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model-id", default=DEFAULT_MODEL_ID, help="model provenance id")
     parser.add_argument("--model-revision", help="required model revision or immutable commit used locally")
     parser.add_argument("--description", default=DEFAULT_DESCRIPTION, help="local voice description prompt")
-    parser.add_argument("--description-tokenizer-dir", type=Path, help="optional local description tokenizer")
+    parser.add_argument("--description-tokenizer-dir", type=Path, help="optional local description tokenizer (otherwise use pinned HF cache)")
+    parser.add_argument("--description-tokenizer-id", default=DEFAULT_TOKENIZER_ID)
+    parser.add_argument("--description-tokenizer-revision", default=DEFAULT_TOKENIZER_REVISION)
+    parser.add_argument("--do-sample", action=argparse.BooleanOptionalAction, default=False, help="sampling instead of greedy decoding; keep an explicit seed")
+    parser.add_argument("--max-new-tokens", type=int, default=2048)
     parser.add_argument("--device", default="cpu", help="cpu, cuda[:N], or auto (default: cpu)")
     parser.add_argument("--seed", type=int, default=0, help="deterministic generation seed")
     parser.add_argument("--ffmpeg", default="ffmpeg", help="ffmpeg executable for Opus conversion")
@@ -443,6 +447,10 @@ def main(argv: Iterable[str] | None = None) -> int:
             device=args.device,
             seed=args.seed,
             description_tokenizer_dir=args.description_tokenizer_dir,
+            description_tokenizer_id=args.description_tokenizer_id,
+            description_tokenizer_revision=args.description_tokenizer_revision,
+            do_sample=args.do_sample,
+            max_new_tokens=args.max_new_tokens,
         )
         if args.dry_run:
             _write_or_print(build_dry_run_plan(episode, provider), args.output)

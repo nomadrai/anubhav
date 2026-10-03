@@ -1,0 +1,22 @@
+{
+  "modelId": "ai4bharat/indic-parler-tts",
+  "modelRevision": "7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca",
+  "descriptionTokenizerId": "google/flan-t5-large",
+  "descriptionTokenizerRevision": "0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a",
+  "voiceDescriptionTemplate": "{speaker} speaks in a clear, calm voice at a moderate pace with a neutral tone. The recording is close, clean, and free of background noise.",
+  "generation": {
+    "doSample": false,
+    "seed": 0,
+    "maxNewTokens": 2048
+  },
+  "audition": {
+    "language": "hi",
+    "speakers": ["Rohit", "Divya"],
+    "cpuThreads": 4,
+    "clips": [
+      {"id": "short", "narrationIds": ["USER_EXIT"]},
+      {"id": "medium", "narrationIds": ["run.main"]},
+      {"id": "number-term", "narrationIds": ["DRAWDOWN_10", "reveal.main"]}
+    ]
+  }
+}

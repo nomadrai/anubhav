@@ -10,13 +10,21 @@ from __future__ import annotations
 
 import importlib
 import importlib.util
-from dataclasses import dataclass
+import hashlib
+import json
+import re
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Callable
 
 from .base import AudioProvider, AudioProviderError, GeneratedAudio
 
-DEFAULT_MODEL_ID = "ai4bharat/indic-parler-tts"
+TTS_CONFIG_PATH = Path(__file__).resolve().parents[1] / "config" / "tts.json"
+TTS_CONFIG = json.loads(TTS_CONFIG_PATH.read_text(encoding="utf-8"))
+DEFAULT_MODEL_ID = TTS_CONFIG["modelId"]
+DEFAULT_MODEL_REVISION = TTS_CONFIG["modelRevision"]
+DEFAULT_TOKENIZER_ID = TTS_CONFIG["descriptionTokenizerId"]
+DEFAULT_TOKENIZER_REVISION = TTS_CONFIG["descriptionTokenizerRevision"]
 DEFAULT_DESCRIPTION = (
     "A clear, calm narrator speaks at a moderate pace with a neutral tone. "
     "The recording is close, clean, and free of background noise."
@@ -38,6 +46,10 @@ class IndicParlerConfig:
     device: str = "cpu"
     seed: int = 0
     description_tokenizer_dir: Path | None = None
+    description_tokenizer_id: str = DEFAULT_TOKENIZER_ID
+    description_tokenizer_revision: str = DEFAULT_TOKENIZER_REVISION
+    do_sample: bool = False
+    max_new_tokens: int = 2048
 
     def validate(self) -> None:
         if not isinstance(self.model_id, str) or not self.model_id.strip():
@@ -49,8 +61,16 @@ class IndicParlerConfig:
             )
         if not isinstance(self.description, str) or not self.description.strip():
             raise IndicParlerError("voice description must be a non-empty string")
-        if not isinstance(self.seed, int):
-            raise IndicParlerError("generation seed must be an integer")
+        if type(self.seed) is not int or not 0 <= self.seed < 2**32:
+            raise IndicParlerError("generation seed must be an integer from zero through 2**32-1")
+        if not re.fullmatch(r"[0-9a-f]{40}", self.description_tokenizer_revision):
+            raise IndicParlerError("description tokenizer revision must be an immutable 40-character commit")
+        if not self.description_tokenizer_id.strip():
+            raise IndicParlerError("description tokenizer id is required")
+        if type(self.do_sample) is not bool:
+            raise IndicParlerError("do_sample must be a boolean")
+        if type(self.max_new_tokens) is not int or not 1 <= self.max_new_tokens <= 4096:
+            raise IndicParlerError("max_new_tokens must be an integer from one through 4096")
 
     def generation_dict(self, *, resolved_device: str | None = None) -> dict[str, Any]:
         """Return only stable, non-machine-path generation inputs."""
@@ -61,7 +81,11 @@ class IndicParlerConfig:
             "voiceDescription": self.description,
             "device": resolved_device or self.device,
             "seed": self.seed,
-            "generation": {"doSample": False},
+            "descriptionTokenizer": {
+                "id": self.description_tokenizer_id,
+                "revision": self.description_tokenizer_revision,
+            },
+            "generation": {"doSample": self.do_sample, "maxNewTokens": self.max_new_tokens},
         }
 
 
@@ -78,6 +102,8 @@ class _TransformersBackend:
         description: str,
         device: str,
         seed: int,
+        do_sample: bool,
+        max_new_tokens: int,
     ) -> None:
         self.torch = torch_module
         self.model = model
@@ -86,6 +112,8 @@ class _TransformersBackend:
         self.description = description
         self.device = device
         self.seed = seed
+        self.do_sample = do_sample
+        self.max_new_tokens = max_new_tokens
 
     def synthesize(self, spoken_text: str, *, language: str) -> tuple[Any, int]:
         # Greedy generation plus a fixed seed makes the requested build path
@@ -108,7 +136,8 @@ class _TransformersBackend:
                 attention_mask=description_inputs.attention_mask,
                 prompt_input_ids=prompt_inputs.input_ids,
                 prompt_attention_mask=prompt_inputs.attention_mask,
-                do_sample=False,
+                do_sample=self.do_sample,
+                max_new_tokens=self.max_new_tokens,
             )
         audio = generation.detach().cpu().numpy().squeeze()
         sample_rate = getattr(getattr(self.model, "config", None), "sampling_rate", None)
@@ -134,6 +163,10 @@ class IndicParlerProvider(AudioProvider):
         device: str = "cpu",
         seed: int = 0,
         description_tokenizer_dir: Path | str | None = None,
+        description_tokenizer_id: str = DEFAULT_TOKENIZER_ID,
+        description_tokenizer_revision: str = DEFAULT_TOKENIZER_REVISION,
+        do_sample: bool = False,
+        max_new_tokens: int = 2048,
         backend_factory: Callable[[], Any] | None = None,
         wav_writer: Callable[[Path, Any, int], None] | None = None,
         dependency_finder: Callable[[str], Any] | None = None,
@@ -145,6 +178,10 @@ class IndicParlerProvider(AudioProvider):
             description=description,
             device=device,
             seed=seed,
+            description_tokenizer_id=description_tokenizer_id,
+            description_tokenizer_revision=description_tokenizer_revision,
+            do_sample=do_sample,
+            max_new_tokens=max_new_tokens,
             description_tokenizer_dir=(
                 Path(description_tokenizer_dir).expanduser()
                 if description_tokenizer_dir is not None
@@ -156,6 +193,8 @@ class IndicParlerProvider(AudioProvider):
         self._dependency_finder = dependency_finder or importlib.util.find_spec
         self._backend: Any | None = None
         self._resolved_device: str | None = None
+        self._tokenizers: tuple[Any, Any] | None = None
+        self._tokenizer_hashes: dict[str, str] = {}
 
     def _resolved_model_dir(self) -> Path:
         if self.config.model_dir is None:
@@ -212,6 +251,18 @@ class IndicParlerProvider(AudioProvider):
                     "description tokenizer directory does not exist: "
                     f"{tokenizer_dir}"
                 )
+        if self._backend_factory is None:
+            # find_spec alone misses broken native wheels, e.g. CUDA torchaudio on CPU.
+            try:
+                for name in REQUIRED_DEPENDENCIES:
+                    importlib.import_module(name)
+                torch = importlib.import_module("torch")
+                self._resolved_device = _resolve_device(torch, self.config.device)
+                self._load_tokenizers()
+            except IndicParlerError:
+                raise
+            except Exception as exc:
+                raise IndicParlerError(f"offline TTS prerequisite import failed ({type(exc).__name__}): {exc}") from exc
         return {
             "provider": self.name,
             "ready": True,
@@ -222,8 +273,63 @@ class IndicParlerProvider(AudioProvider):
             "generationConfig": self.generation_config(),
         }
 
+    def _load_tokenizers(self) -> tuple[Any, Any]:
+        if self._tokenizers is not None:
+            return self._tokenizers
+        model_dir = self._resolved_model_dir()
+        try:
+            model_config = json.loads((model_dir / "config.json").read_text(encoding="utf-8"))
+            configured_id = model_config.get("text_encoder", {}).get("_name_or_path")
+            if configured_id != self.config.description_tokenizer_id:
+                raise IndicParlerError(f"model text_encoder identifies {configured_id!r}, not pinned tokenizer {self.config.description_tokenizer_id!r}")
+            tokenizer_class = importlib.import_module("transformers").AutoTokenizer
+            tokenizer_dir = self.config.description_tokenizer_dir
+            if tokenizer_dir is None:
+                hub = importlib.import_module("huggingface_hub")
+                tokenizer_dir = Path(hub.snapshot_download(
+                    repo_id=self.config.description_tokenizer_id,
+                    revision=self.config.description_tokenizer_revision,
+                    local_files_only=True,
+                ))
+            description = tokenizer_class.from_pretrained(
+                str(tokenizer_dir), revision=self.config.description_tokenizer_revision,
+                local_files_only=True, trust_remote_code=False,
+            )
+            prompt = tokenizer_class.from_pretrained(
+                str(model_dir), revision=self.config.model_revision,
+                local_files_only=True, trust_remote_code=False,
+            )
+            for directory, prefix in ((model_dir, "prompt"), (tokenizer_dir, "description")):
+                for name in ("tokenizer.json", "tokenizer.model", "spiece.model", "tokenizer_config.json", "special_tokens_map.json"):
+                    file = directory / name
+                    if file.is_file():
+                        self._tokenizer_hashes[f"{prefix}/{name}"] = hashlib.sha256(file.read_bytes()).hexdigest()
+            self._tokenizers = (prompt, description)
+            return self._tokenizers
+        except IndicParlerError:
+            raise
+        except Exception as exc:
+            raise IndicParlerError(
+                "pinned tokenizer unavailable offline; run scripts/audition_audio.py --cache-tokenizer once online "
+                f"or supply --description-tokenizer-dir ({type(exc).__name__}: {exc})"
+            ) from exc
+
     def generation_config(self) -> dict[str, Any]:
-        return self.config.generation_dict(resolved_device=self._resolved_device)
+        config = self.config.generation_dict(resolved_device=self._resolved_device)
+        if self._tokenizer_hashes:
+            config["tokenizerFileSha256"] = dict(self._tokenizer_hashes)
+        return config
+
+    def prepare(self) -> None:
+        """Load once outside per-clip timing; no speech or network request."""
+        self._get_backend()
+
+    def set_voice_description(self, description: str) -> None:
+        config = replace(self.config, description=description)
+        config.validate()
+        self.config = config
+        if self._backend is not None:
+            self._backend.description = description
 
     def provenance(self) -> dict[str, Any]:
         model_dir = (
@@ -265,7 +371,7 @@ class IndicParlerProvider(AudioProvider):
         try:
             torch = importlib.import_module("torch")
             parler_tts = importlib.import_module("parler_tts")
-            transformers = importlib.import_module("transformers")
+            importlib.import_module("transformers")
         except (ImportError, OSError) as exc:
             raise IndicParlerError(
                 "offline TTS dependencies could not be imported; no audio was generated"
@@ -273,7 +379,6 @@ class IndicParlerProvider(AudioProvider):
 
         try:
             model_class = parler_tts.ParlerTTSForConditionalGeneration
-            tokenizer_class = transformers.AutoTokenizer
             model_dir = self._resolved_model_dir()
             model = model_class.from_pretrained(
                 str(model_dir),
@@ -285,30 +390,7 @@ class IndicParlerProvider(AudioProvider):
             model = model.to(resolved_device)
             if hasattr(model, "eval"):
                 model.eval()
-            prompt_tokenizer = tokenizer_class.from_pretrained(
-                str(model_dir),
-                revision=self.config.model_revision,
-                local_files_only=True,
-            )
-
-            tokenizer_dir = self.config.description_tokenizer_dir
-            if tokenizer_dir is None:
-                text_encoder = getattr(getattr(model, "config", None), "text_encoder", None)
-                text_encoder_name = getattr(text_encoder, "_name_or_path", None)
-                if not text_encoder_name:
-                    raise IndicParlerError(
-                        "local model config does not identify a description tokenizer; "
-                        "pass --description-tokenizer-dir"
-                    )
-                tokenizer_source = text_encoder_name
-            else:
-                tokenizer_source = str(tokenizer_dir.resolve())
-            # The text encoder can be a separate cached repository, so the
-            # model checkpoint revision must not be passed as its revision.
-            description_tokenizer = tokenizer_class.from_pretrained(
-                tokenizer_source,
-                local_files_only=True,
-            )
+            prompt_tokenizer, description_tokenizer = self._load_tokenizers()
         except IndicParlerError:
             raise
         except Exception as exc:  # transformers uses several exception types
@@ -324,6 +406,8 @@ class IndicParlerProvider(AudioProvider):
             description=self.config.description,
             device=self._resolved_device or self.config.device,
             seed=self.config.seed,
+            do_sample=self.config.do_sample,
+            max_new_tokens=self.config.max_new_tokens,
         )
 
     def _get_backend(self) -> Any:
@@ -347,7 +431,7 @@ class IndicParlerProvider(AudioProvider):
         if language not in SUPPORTED_LANGUAGES:
             raise IndicParlerError(
                 f"Indic Parler audio is not enabled for language {language!r}; "
-                "only en and hi are in this app's reviewed track contract"
+                "only en and hi are enabled in this app's track contract"
             )
         if not spoken_text.strip():
             raise IndicParlerError("cannot synthesize empty spoken text")
@@ -380,7 +464,9 @@ class IndicParlerProvider(AudioProvider):
 def _resolve_device(torch: Any, requested: str) -> str:
     if requested == "auto":
         return "cuda:0" if torch.cuda.is_available() else "cpu"
-    if requested == "cpu" or requested.startswith("cuda"):
+    if requested == "cpu":
+        return requested
+    if re.fullmatch(r"cuda(?::\d+)?", requested) and torch.cuda.is_available():
         return requested
     raise IndicParlerError(
         f"unsupported device {requested!r}; use cpu, cuda[:N], or auto"

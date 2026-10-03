@@ -11,6 +11,8 @@ coverage/
 .env*
 public/audio/manifest.json
 public/audio/**/*.opus
+# Local auditions and timing reports, never deployed with the app
+/artifacts/tts-auditions/
 !.gitkeep
 
 # Python virtual environments

@@ -101,3 +101,15 @@ safe output rules, and review boundary. Missing dependencies/model access or
 conversion failure produces no approved asset. We do not commit model weights,
 WAV/Opus output, or manifests, and the app keeps audio unavailable until
 human/native-speaker review is complete.
+
+### Small Hindi voice audition
+
+`scripts/audition_audio.py` uses `scripts/config/tts.json` to compare Rohit and
+Divya on three exact Hindi `spokenText` selections each. It produces six WAVs
+and a timing/provenance report under ignored `artifacts/tts-auditions/`, never a
+release manifest or a full audio set. `--dry-run` needs no TTS environment.
+`--cache-tokenizer` explicitly downloads only pinned FLAN-T5 tokenizer files
+once; `--check` and generation then use `HF_HUB_OFFLINE=1` and local-only loads.
+See `docs/AUDIO_PIPELINE.md` for exact commands, CPU timing methodology, and the
+fixed-seed sampling config switch. Output directories must be empty to prevent
+accidental overwrites.

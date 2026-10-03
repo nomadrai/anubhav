@@ -89,7 +89,7 @@ non-runtime research artifact, not permission to redistribute or ship it.
 The acquisition step may fetch only when explicitly run:
 
 ```sh
-python3 scripts/acquire_eia_candidates.py --output-root data/candidates --api-key DEMO_KEY
+python3 scripts/acquire_eia_candidates.py --output-root data/candidates
 ```
 
 For the preserved snapshots, reproduction is offline and uses the raw
