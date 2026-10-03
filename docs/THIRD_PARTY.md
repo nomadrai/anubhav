@@ -1,124 +1,164 @@
-# Third-party dependencies and licences
+# Third-party components, notices and remaining uncertainty
 
-## Current status
+## Shipping boundary and evidence (2026-10-03)
 
-The fixed stack is installed for local checks. Package metadata below was read from the installed lockfile/package manifests, but human licence/notice review is still pending. Two EIA candidate snapshots exist as non-runtime research artifacts under `data/candidates/`; no model, dataset, font, audio asset, or runtime external service has been approved. A package SPDX field is recorded as evidence, not as a substitute for legal review.
+The web app ships React/UI code, service-worker code, two ECB-derived episode
+JSONs, original local icons, local content, and only quality-gated compact Opus
+assets listed in `public/audio/manifest.json`. It does **not** ship Python,
+FFmpeg, model weights, tokenizers, ASR weights, raw datasets, audition WAVs,
+third-party fonts, analytics, or an external runtime service. Build-time
+components and training sources remain part of the provenance of generated
+audio; exclusion of weights does not automatically resolve output/voice rights.
 
-Before release, inspect installed package metadata and lockfiles, including transitive dependencies, and record exact versions and licence evidence. Mark every unknown as **pending**; do not infer a licence from a package name or a registry summary. `TODO(human): complete package metadata review after installation.`
+This inventory is **agent-checked evidence, not legal clearance**. The user
+reports accepting the Indic Parler gated conditions and reading its terms.
+No token, credential, acceptance receipt, or private report is committed.
+Unresolved training-subset/voice/output questions remain in the final human
+handoff; no publisher approval is invented.
 
-## Direct dependency inventory (human review pending)
+## Node/runtime inventory
 
-| Package | Installed version | Declared licence | Purpose / location | Runtime request? | Review |
-|---|---:|---|---|---|---|
-| React / React DOM | 19.3.0 | MIT | UI runtime, `src/` | no | TODO(human): review notice |
-| Vite | 8.3.2 | MIT | dev server/build | no | TODO(human): review notice |
-| `@vitejs/plugin-react` | 6.1.1 | MIT | Vite JSX transform | no | TODO(human): review notice |
-| `vite-plugin-pwa` | 1.3.0 | MIT | disabled PWA stub, `vite.config.ts` | no in Phase 2 | TODO(human): review notice |
-| Tailwind CSS / `@tailwindcss/postcss` | 4.3.3 | MIT | CSS build | no | TODO(human): review notice |
-| TypeScript | 6.0.3 | Apache-2.0 | type checking | no | TODO(human): review notice |
-| Vitest | 5.0.3 | MIT | tests | no | TODO(human): review notice |
-| ESLint | 10.11.0 | MIT | lint | no | TODO(human): review notice |
-| Prettier | 3.9.9 | MIT | formatting contract | no | TODO(human): review notice |
-| PostCSS / Autoprefixer | 8.5.28 / 10.6.1 | MIT / MIT | CSS processing | no | TODO(human): review notice |
-| `PyYAML` | >=6.0 (Python environment) | TODO(human) | metadata parsing in `scripts/prepare_episode.py` | no | verify installed version and licence |
-| Indic Parler model/voice | local audition checkpoint; pinned below; not bundled | Model card declares Apache-2.0; human review pending | optional offline `scripts/providers/indic_parler.py` | no | user reports gated conditions accepted; output/voice/data terms and native-speaker review remain pending |
-| EIA RWTC candidate snapshots | EIA reuse statement; upstream rights pending | TODO(human) | non-runtime `data/candidates/`; see `docs/DATA_SOURCES.md` | no | human redistribution review required |
+`node scripts/inventory_licences.mjs` inspects installed package manifests and
+notice paths, recording direct/transitive evidence in
+[`NODE_DEPENDENCIES.json`](NODE_DEPENDENCIES.json). The session inventory found
+**612 installed packages, no UNKNOWN licence declarations**. Declarations are
+not an audit of every source file. Runtime React/scheduler and all installed
+Workbox notice groups are copied verbatim into
+[`public/THIRD_PARTY_NOTICES.txt`](../public/THIRD_PARTY_NOTICES.txt), together
+with ECB attribution and modification disclosure. No third-party logo/font is
+used; the app icon is original simple geometry.
 
-For every transitive dependency, future models, voices, datasets, icons, and fonts record direct/transitive status, licence source, notice obligations, security status, bundle contribution, runtime request, redistribution, attribution, privacy, and language restrictions.
-
-No runtime model, dataset, external font, remote icon, analytics library, or telemetry provider is approved. The EIA candidates are not imported into `src/data/episodes/`. The Indic Parler entry is a Phase 3 **offline build candidate**, not a bundled model, reviewed voice, or released audio asset.
-
-## Phase 3 offline Indic Parler provenance
-
-**Decision and shipping boundary:** use `ai4bharat/indic-parler-tts` for optional local, build-time TTS auditions. Python packages, native converters, tokenizers, and model weights are **build-time tools, not shipped with the web app**. Models/tokenizers and upstream training sources are third-party components in the provenance of eventual shipped audio, not deployed weights or datasets. This distinction does not settle output rights or remove applicable notice obligations. Audio generated now is **audition material, not release-approved audio**; no listening, native-speaker, accessibility, safety, or legal approval is claimed.
-
-### Local evidence and immutable model/tokenizer pins
-
-The user reports accepting the gated model conditions and downloading the checkpoint below. The local public `README.md` and `config.json` were read; this is not an independent verification of the download's weight hashes or a retained access receipt. No credentials are part of this record.
-
-| Component | Recorded identity / location | Evidence and scope |
-|---|---|---|
-| Indic Parler checkpoint and prompt tokenizer | `ai4bharat/indic-parler-tts` at `7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca`; local directory `/home/nomad_aadi/Documents/Projects/models/indic-parler-tts` | Local model card declares Apache-2.0 and English/Hindi support; [pinned upstream card](https://huggingface.co/ai4bharat/indic-parler-tts/blob/7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca/README.md). Revision/download and gated acceptance are user-reported, not release sign-off. |
-| Separate description tokenizer | `google/flan-t5-large` at `0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a` | Official [Hugging Face API](https://huggingface.co/api/models/google/flan-t5-large) returned this current immutable SHA and `license: apache-2.0`; its [pinned card](https://huggingface.co/google/flan-t5-large/blob/0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a/README.md) also declares Apache-2.0. This pin is for the description tokenizer, not a request to download separate FLAN-T5 weights. |
-| Local Python environment | `/home/nomad_aadi/venvs/tts`, Python `3.12.3` | Supplied package versions and VCS pins below were read in full. Actual imports exposed a CUDA `torchaudio` wheel on this CPU-only machine; the same release's CPU wheel was substituted as recorded below. |
-
-The checkpoint's `config.json` names `google/flan-t5-large` at `text_encoder._name_or_path`; the model card explicitly uses different prompt and description tokenizers. The description tokenizer therefore has its own provenance pin rather than inheriting the Indic Parler revision. The same config names `ylacombe/dac_44khz` as audio-encoder provenance; no separate codec checkpoint download or deployment is approved by this record.
-
-### Supplied build-environment package evidence
-
-The complete user-authorized reports were read: `/home/nomad_aadi/anubhav-tts-requirements.txt` (103 entries) and `/home/nomad_aadi/anubhav-tts-licences.md` (101 package rows). This focused TTS inventory records their actual supplied versions, not suggested versions or proof that the environment runs successfully. Licence strings below are package-report declarations unless explicitly identified as source evidence. The full transitive notice/security audit remains pending; these local report paths are evidence references, not app dependencies.
-
-| Build-time package | Supplied version / source pin | Licence evidence | Purpose |
+| Component | Installed version | Declared licence | Role |
 |---|---|---|---|
-| `torch` | `2.14.1+cpu` | Report: `Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT` | CPU tensor/model inference |
-| `transformers` | `4.46.1` | Report: Apache Software License | Model/tokenizer loading |
-| `parler_tts` / `parler-tts` | `0.2.2`; `git+https://github.com/huggingface/parler-tts.git@d108732cd57788ec86bc857d99a6cabd66663d68` | Report: **UNKNOWN**; independently read [LICENSE at this exact commit](https://github.com/huggingface/parler-tts/blob/d108732cd57788ec86bc857d99a6cabd66663d68/LICENSE): **Apache-2.0**, copyright 2024 The HuggingFace Inc. team | Parler synthesis implementation |
-| `descript-audiotools` | `0.7.4`; `git+https://github.com/descriptinc/audiotools@348ebf2034ce24e2a91a553e3171cb00c0c71678` | Report: MIT | Audio tooling dependency |
-| `descript-audio-codec` | `1.0.0` | Report: MIT | Audio codec implementation |
-| `torchaudio` | Supplied: `2.11.0`; audition environment: **`2.11.0+cpu`** | Report: BSD License; CPU wheel from the official PyTorch CPU index | Replaced the CUDA wheel with the same release's CPU wheel using `--no-deps`; Torch was not changed. Imports now succeed. Real audition results remain separate compatibility evidence. |
-| `soundfile` | `0.14.0` | Report: BSD License | Temporary WAV writing; native libsndfile evidence is separate |
-| `huggingface_hub` | `0.36.2` | Report: Apache Software License | Build-time artifact/cache tooling; no runtime service |
-| `tokenizers` | `0.20.3` | Report: Apache Software License | Text tokenization |
-| `sentencepiece` | `0.2.2` | Report: Apache-2.0 | SentencePiece tokenizer support |
-| `safetensors` | `0.8.0` | Report: Apache Software License | Checkpoint serialization |
-| `numpy` | `2.5.3` | Report: `BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0` | Audio/tensor array conversion |
-| `scipy` | `1.18.1` | Report: BSD License | Numerical/audio dependency |
-| `librosa` | `1.0.0` | Report: ISC License (ISCL) | Audio-analysis dependency |
-| `soxr` | `1.1.0` | Report: LGPL-2.1-or-later | Resampling dependency; native-library/notice review remains pending |
-| `einops` | `0.8.2` | Report: MIT License | Tensor rearrangement dependency |
-| `protobuf` | `4.25.9` | Report: 3-Clause BSD License | Serialization/tokenizer support |
-| `PyYAML` | `6.0.3` in this TTS environment | Report: MIT License | Metadata support; does not establish the separate episode-preparation environment's version |
-| `ffmpy` | `1.0.0` | Report: MIT | Python FFmpeg wrapper dependency; not evidence for the actual FFmpeg binary |
-| `setuptools` | `78.1.0` | **pending**: requirements entry, absent from supplied licence report | Python packaging tooling |
-| `wcwidth` | `0.9.1` | **pending**: requirements entry, absent from supplied licence report | Terminal-width dependency |
-| System `ffmpeg` | User reported `6.1.1`; observed `6.1.1-3ubuntu5`, built with `--enable-gpl` and `--enable-libopus` | Build flags are evidence, not a complete native notice review | Future WAV/Opus conversion; the six auditions are WAV-only, with no FFmpeg encoding |
-| `libopus`, `libsndfile`, other native libraries | `TODO(human)`: full native inventory | Terms/notices must be inventoried separately from Python wrappers | Native audio I/O/conversion |
+| React / React DOM | 19.3.0 | MIT | UI runtime, no external requests |
+| Vite / React plugin | 8.3.2 / 6.1.1 | MIT | build/dev only |
+| vite-plugin-pwa | 1.3.0 | MIT | build-time Workbox generation; generated SW ships |
+| Tailwind CSS / PostCSS plugin | 4.3.3 | MIT | CSS build only |
+| TypeScript | 6.0.3 | Apache-2.0 | type checking only |
+| Vitest | 5.0.3 | MIT | tests only |
+| ESLint | 10.11.0 | MIT | lint only |
+| Prettier | 3.9.9 | MIT | formatting only |
+| PostCSS / Autoprefixer | 8.5.28 / 10.6.1 | MIT | CSS processing only |
+| @playwright/test | 1.63.0 | Apache-2.0 | new browser/e2e tests; uses installed Chrome, not shipped |
+| @axe-core/playwright | 4.13.0 | MPL-2.0 | new automated accessibility rules in browser tests, not shipped; not WCAG certification |
+| lighthouse | 13.5.0 | Apache-2.0 | new local mobile/performance audits, not shipped |
 
-Supplied-report SHA-256 anchors (original files were not modified):
+`npm audit --json` on 2026-10-03 reported **zero** advisories at every severity.
+This is a package-advisory snapshot, not proof of absence of vulnerabilities.
+No automatic dependency upgrades or paid services were used.
 
-- `anubhav-tts-requirements.txt`: `cd7beafe91865323cacf15206f9e524cc048e7d5da883844ba62876d1d970a99`
-- `anubhav-tts-licences.md`: `b735e475536272a30a8e26ec6423daa886d4da34c83634a8c40619a027ea0816`
+## Data and direct links
 
-The pinned `parler-tts` source LICENSE resolves the repository's licence evidence; it does **not** change what `pip-licenses` reported or approve every transitive component. Keep applicable licence copies, copyright/attribution notices, and any upstream NOTICE obligations in the human-reviewed release evidence. Do not infer FFmpeg's licence from `ffmpy`, or native-library terms solely from Python wrappers.
+- Runtime ECB observations: exact source, receipt/hashes, conditions and quotes
+  in [DATA_SOURCES.md](DATA_SOURCES.md), numeric review in
+  [DATA_REVIEW.md](DATA_REVIEW.md). ECB permits accurate reuse with attribution
+  and explicit notice of calculated modifications. This is **not** a claim of
+  CC licensing/public domain. UI attribution and shipped notices retain it.
+- EIA RWTC/Refinitiv candidates: remain unapproved research outside runtime;
+  upstream redistribution terms are still unresolved. Their existing candidate
+  `humanApproved: false` flags and source audit are preserved. No licence was
+  inferred from EIA's general government-data policy.
+- Official SEBI/government resources: direct pointers only; no official PDF,
+  page copy, logo or script is embedded. Current official-page fetch evidence
+  and bilingual label QA: [RESOURCE_CHECKS.md](RESOURCE_CHECKS.md). Link
+  verification does not approve the destination's privacy or accessibility.
 
-### Local environment correction and offline tokenizer preparation
+## Immutable TTS and ASR components
 
-The original `--check` tested package discoverability rather than successful imports.
-A real `import parler_tts` failed through `torchaudio` on missing `libcudart.so.13`.
-Only `torchaudio==2.11.0` was replaced with `torchaudio==2.11.0+cpu`, from
-`https://download.pytorch.org/whl/cpu`, using `--no-deps --no-cache-dir` in the supplied
-venv. PyTorch `2.14.1+cpu`, Parler and Transformers were left unchanged. The supplied
-freeze/licence reports remain the original evidence, not silently overwritten inventories.
-
-`google/flan-t5-large` tokenizer files were cached at the immutable pin above using
-`scripts/audition_audio.py --cache-tokenizer`. Only `config.json`, `tokenizer.json`,
-`tokenizer_config.json`, `special_tokens_map.json`, and `spiece.model` were requested;
-no separate FLAN model weights were downloaded. The strengthened `--check` passed
-with `HF_HUB_OFFLINE=1`, after importing the actual optional stack and loading both
-tokenizers offline. Tokenizer hashes and both pins enter generation provenance.
-
-### Training-data and upstream attribution
-
-The local Indic Parler model card credits the **AI4Bharat and Hugging Face audio teams**, describes this checkpoint as a fine-tune of `ai4bharat/indic-parler-tts-pretrained`, and identifies the Parler-TTS Mini lineage. Its training-data table names the following upstream sources. These are **model-card claims**, not independently audited dataset licences or a blanket licence for generated speech:
-
-| Training source named by the model card | Card's licence text | Attribution/review status |
+| Component | Exact identity | Evidence / purpose |
 |---|---|---|
-| GLOBE (front matter points to `ai4b-hf/GLOBE-annotated`) | `CC V1` | Ambiguous label; do not silently interpret it as CC0 or another specific licence. `TODO(human)`: resolve original licence and attribution evidence. |
-| IndicTTS | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |
-| LIMMITS | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |
-| Rasa | `CC BY 4.0` | `TODO(human)`: retain original source, author and attribution evidence and review applicability to outputs. |
+| Indic Parler model + prompt tokenizer | `ai4bharat/indic-parler-tts@7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca` | [Pinned card](https://huggingface.co/ai4bharat/indic-parler-tts/blob/7b527af5ee8ed1f9a28d80b19703ed9bb8ba10ca/README.md) declares Apache-2.0; user-supplied local checkpoint, offline TTS only. No independent weight-download receipt claimed. |
+| Description tokenizer | `google/flan-t5-large@0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a` | [Pinned card](https://huggingface.co/google/flan-t5-large/blob/0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a/README.md) and official API declare Apache-2.0. Tokenizer/config only cached, **no separate FLAN weights**. Model config identifies this encoder. |
+| Audio-codec lineage | `ylacombe/dac_44khz` | Identity is in the Indic Parler config; no separate codec checkpoint downloaded. Not an independent historical weight audit. |
+| Hindi/English ASR | `openai/whisper-small@973afd24965f72e36ca33b3055d56a652f456b4d` | [Pinned card](https://huggingface.co/openai/whisper-small/blob/973afd24965f72e36ca33b3055d56a652f456b4d/README.md), official API fetched 2026-10-03: Apache-2.0, Hindi supported. Used only for build-time transcription/CER; cached weights are not deployed. |
 
-The card requests citation of Sankar et al., *Rasmalai: Resources for Adaptive Speech Modeling in IndiAn Languages with Accents and Intonations* (Interspeech 2025, DOI `10.21437/Interspeech.2025-2758`); Lacombe, Srivastav and Gandhi, *Parler-TTS* (2024); and Lyth and King, *Natural language guidance of high-fidelity text-to-speech with synthetic annotations* (2024, arXiv `2402.01912`). These attribution pointers come from the local card; bibliography and final required notices still need human review. No training dataset has been downloaded or approved for redistribution through this documentation update.
+Whisper's card attributes the model to OpenAI / Radford et al., *Robust Speech
+Recognition via Large-Scale Weak Supervision* (2022), arXiv:2212.04356. It reports
+680,000 hours of weakly supervised internet speech and warns about hallucination
+and uneven language accuracy. Its Hindi Common Voice 11 WER entry is **87.3,
+unverified**: this is a warning about limitations, not this app's measured WER.
+ASR errors may reflect recognizer spelling/accent errors, TTS errors, or both.
+CER is a bounded diagnostic, never native-speaker or semantic approval.
 
-### Remaining build and release requirements
+## Local build environment and licence evidence
 
-The provider must remain local-only (`local_files_only=True`) and fail closed on missing dependencies, either tokenizer, model files, or the converter. Acquiring public build artifacts separately is not permission for app/runtime external requests. Weights and generated audition artifacts remain outside committed release assets.
+The supplied reports were read and preserved unchanged:
 
-- Record both tokenizer identities/revisions, the model revision, voice description, spoken-text hashes, seed/device, package versions, converter settings, and output hashes in build provenance; inventory alone is not proof of deterministic output or successful generation.
-- `TODO(human)`: retain the gated-access acceptance record without credentials; confirm applicable terms, model/codec/training-source provenance, voice/output rights, and Apache-2.0/other licence and notice obligations.
-- `TODO(human)`: finish the transitive and platform/native-library inventory and compatibility checks. The supplied reports are not a security or redistribution clearance.
-- `TODO(human)`: obtain English listening review, native-speaker Hindi review, pronunciation/number/symbol checks, safety-copy review, accessibility/transcript checks, and output-quality approval for every released asset. Hindi remains draft until that review; a successful audition command must not mark audio release-ready.
+- `/home/nomad_aadi/anubhav-tts-requirements.txt`, 103 entries,
+  SHA-256 `cd7beafe91865323cacf15206f9e524cc048e7d5da883844ba62876d1d970a99`.
+- `/home/nomad_aadi/anubhav-tts-licences.md`, 101 package rows,
+  SHA-256 `b735e475536272a30a8e26ec6423daa886d4da34c83634a8c40619a027ea0816`.
 
-## Release evidence
+Python environment: `/home/nomad_aadi/venvs/tts`, Python 3.12.3. Report licence
+strings below are declarations, not retrospective amendments to those reports.
 
-Store a human-reviewed inventory with the release artifacts, not private credentials or downloaded assets. The release gate must fail for missing notices, incompatible terms, unknown provenance, or an unreviewed external request. A passing typecheck or bundle build does not prove licence compliance.
+| Build-only component | Observed version / pin | Licence evidence / role |
+|---|---|---|
+| torch | 2.14.1+cpu | report: Apache-2.0, Apache-2.0 WITH LLVM-exception, BSD-2-Clause, BSD-3-Clause, BSL-1.0, MIT; tensor inference |
+| transformers | 4.46.1 | Apache Software License; unchanged pinned loader |
+| parler-tts | 0.2.2; `d108732cd57788ec86bc857d99a6cabd66663d68` | report UNKNOWN; [exact source LICENSE](https://github.com/huggingface/parler-tts/blob/d108732cd57788ec86bc857d99a6cabd66663d68/LICENSE) resolves Apache-2.0, copyright HuggingFace 2024 |
+| descript-audiotools | 0.7.4; `348ebf2034ce24e2a91a553e3171cb00c0c71678` | MIT, supplied VCS pin |
+| descript-audio-codec | 1.0.0 | MIT, report |
+| torchaudio | 2.11.0+cpu | BSD, CPU wheel from official PyTorch index; see correction below |
+| soundfile | 0.14.0 | BSD, WAV/Opus inspection |
+| huggingface_hub | 0.36.2 | Apache, explicit build-time caching only |
+| tokenizers / sentencepiece / safetensors | 0.20.3 / 0.2.2 / 0.8.0 | Apache; tokenization/checkpoint tools |
+| numpy | 2.5.3 | BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0, report |
+| scipy | 1.18.1 | BSD, report; ASR resample_poly |
+| librosa / soxr / einops | 1.0.0 / 1.1.0 / 0.8.2 | ISC / LGPL-2.1-or-later / MIT, report |
+| protobuf | 4.25.9 | BSD-3-Clause, report |
+| PyYAML | 6.0.3 TTS; **6.0.1 system episode CLI** | MIT, both actual installed metadata inspected |
+| ffmpy | 1.0.0 | MIT; wrapper licence does not describe FFmpeg |
+| psutil | 7.2.2 | BSD-3-Clause, actual metadata; peak RSS polling |
+| setuptools | 78.1.0 | previously missing report entry; actual `setuptools-78.1.0.dist-info/licenses/LICENSE` inspected: MIT permission text |
+| wcwidth | 0.9.1 | previously missing report entry; actual `wcwidth-0.9.1.dist-info/licenses/LICENSE`: MIT (Jeff Quast) plus Markus Kuhn permissive notice |
+| system ffmpeg | 6.1.1-3ubuntu5 | observed GPL-enabled distribution build with libopus; build-time converter only |
+| native libopus0 | 1.4-1build1 | `/usr/share/doc/libopus0/copyright`: BSD-2/BSD-3 clauses and contributor-specific sections |
+| native libsndfile1 | 1.2.2-1ubuntu5.24.04.1 | installed distribution copyright record; LGPL and per-file terms, not inferred from Python wrapper |
+| native libsoxr0 | 0.1.3-4build3 | distribution copyright: LGPL-2.1+, Spherepack/permissive FFT portions |
+
+The native inventory above is focused on the conversion path, **not a complete
+redistribution audit of the OS or every dynamically linked codec**. Those
+binaries are not redistributed with the web app. If packaging a TTS executable,
+container, notebook image or weights later, perform a separate complete audit.
+
+The earlier prerequisite check only discovered packages; actual import failed
+on CUDA `torchaudio` missing `libcudart.so.13`. Replaced only `torchaudio==2.11.0`
+with `2.11.0+cpu` using `--no-deps --no-cache-dir` from the official CPU index.
+Torch/Transformers/Parler were not upgraded. Imports and pip checks passed.
+Both tokenizers then passed offline checks. The later TTS silence failure was
+isolated to greedy decoding in controlled local experiments, not fixed by a GPU
+or another unrecorded dependency change; see [TTS_DIAGNOSTICS.md](TTS_DIAGNOSTICS.md).
+
+## Training attribution and uncertainty
+
+Indic Parler's card credits **AI4Bharat and the Hugging Face audio team**, the
+`ai4bharat/indic-parler-tts-pretrained` lineage, and Parler-TTS Mini. Model-card
+training claims are not an audit of every training item or a blanket output
+rights grant. No training dataset was downloaded or republished.
+
+| Named upstream source | Evidence fetched/read this session | Remaining uncertainty |
+|---|---|---|
+| GLOBE | Model card's ambiguous `CC V1` remains verbatim historical evidence. [Original publisher card](https://huggingface.co/datasets/MushanW/GLOBE/raw/main/README.md) declares **CC0-1.0**, Common Voice 14 lineage; authors Wenbin Wang, Yang Song, Sanjay Jha, arXiv:2406.14875. | Annotated training fork `ai4b-hf/GLOBE-annotated@fc987baba5624d7b90bcf7e44593c861059325c0` API has **no licence field**. Original licence is now identified, but exact fork/subset mapping is not independently established. |
+| IndicTTS | Model card says CC BY 4.0. Official AI4Bharat IndicTTS page fetched but returned navigation, not dataset terms. | Original dataset/version/attribution linkage and output applicability need confirmation; do not call this independently verified CC BY. |
+| LIMMITS | Model card says CC BY 4.0. Official `https://ee.iisc.ac.in/limmitsdataset/` identifies IISc LIMMITS'25 and a terms link; no form submitted. Direct follow-up fetch returned 403. | Exact historical training version and original terms not established; third-party mirrors are not proof. |
+| Rasa | Official API `https://huggingface.co/api/datasets/ai4bharat/Rasa` at `632f55c7ac590219d41cd7adffce5b440e4604f5` declares **CC BY 4.0**, AI4Bharat; description credits Bhashini/MeitY funding and EkStep/Nilekani support. | README file fetch returned 401 (gated). No new gated conditions accepted; exact historical subset/voice consent/output applicability not independently verified. |
+
+Model-card citation requests retained: Sankar, Lacombe, Thomas, Srinivasa
+Varadhan, Gandhi and Khapra, *Rasmalai* (Interspeech 2025), DOI
+`10.21437/Interspeech.2025-2758`; Lacombe, Srivastav and Gandhi, *Parler-TTS*
+(2024); Lyth and King, *Natural language guidance of high-fidelity text-to-speech
+with synthetic annotations* (2024), arXiv:2402.01912.
+
+## Publication actions that remain human decisions
+
+- Confirm the working title and intended publication context.
+- Resolve the exact IndicTTS/LIMMITS/annotated-GLOBE training/voice/output
+  attribution ambiguity with model/dataset publishers if required for that
+  context. Keep the user's gated acceptance record privately, without tokens.
+- English listening and native Hindi pronunciation/meaning review remain
+  **not performed**. Agent-checked text/audio may pass the revised technical
+  gate with loud per-string warnings, never with a fabricated `reviewed` flag.
+- Review host logging/privacy, real-device assistive technology and actual
+  pilot consent before recruiting people. These are not settled by npm audit,
+  model metadata, a successful bundle build, or an automated speech gate.

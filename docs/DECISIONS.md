@@ -79,8 +79,57 @@ See `THIRD_PARTY.md` for the exact build-tool evidence and shipping boundary.
   Same-origin runtime-only requests, no advice/real instrument UI, no telemetry,
   and all remaining guardrails are unchanged.
 
-## Open decisions
+## ADR-0012 — Evidence-led production paths and automated speech (2026-10-03)
 
-- `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy.
-- `TODO(human)`: review the implemented teaching rule and wording: for leverage greater than one, warning on close equity `≤ 1.5 × (0.25 × capital)` once; forced settlement uses intrabar low `≤ 0.25 × capital`, with warning before forced exit.
-- `TODO(human)`: approve Hindi copy, analogies, accessibility evidence, source pointers, calendar policy, dependency licences, CSP, and pilot consent.
+**Status:** implemented; technical gates and remaining publication decisions
+remain separate. Supersedes the synthetic-runtime-only and silent-stub scope of
+ADR-0002/0006/0007, not their fixture/no-fabrication guarantees.
+
+- Select two directly published ECB reference-observation windows under exact
+  reuse/attribution conditions, not stock-index rights inferred from a website.
+  Keep source observations unchanged, disclose app-calculated relative changes,
+  preserve institution attribution and reveal only neutral episode copy. Leave
+  EIA/Refinitiv candidates blocked outside runtime. Raw inputs remain ignored.
+- Controlled model-card calls isolated the local cap-length near-silence to
+  the greedy override. Retain pinned Transformers/model/tokenizers, CPU float32,
+  four Torch threads, and fixed-seed **sampling**; no GPU or weight replacement
+  was used as an assumed cure. Original failed evidence is preserved.
+- Use per-ID/text/attempt seeds, full-input hash caches, explicit codec EOS,
+  signal/duration/duplicate gates and max-three retries. Pinned Whisper-small
+  is a build-time Apache-2.0 ASR/CER check, not a native or listening reviewer.
+  Divya is selected by all-three-pass then lowest mean CER, not by taste.
+  Complete schema-2 manifest requires all 58 current bilingual narration and
+  glossary tracks; partial/error output remains a blocking content failure.
+- Store only compact passed Opus + manifest in public assets; never commit
+  model weights, raw downloaded data, audition/rejected WAVs or credentials.
+- Add @playwright/test 1.63.0 and lighthouse 13.5.0 (Apache-2.0), plus
+  @axe-core/playwright 4.13.0 (MPL-2.0), all **dev-only**, for repeatable
+  browser/PWA/network/a11y/performance evidence using local Chrome.
+  Installed Node licence metadata and runtime notices are recorded separately.
+- App answers stay in reducer memory; only language/text-size preferences may
+  persist. Service worker stores public static assets and requested same-origin
+  audio, not answers. Full offline-audio availability is never implied.
+- Content QA hashes every user-facing leaf; release enumerates agent-checked
+  content/audio and every production reveal/source-label string. Editing a
+  reviewed leaf invalidates its hash. No agent assigns human-reviewed status.
+
+## Remaining human publication/pilot decisions
+
+- `TODO(human)`: confirm the working title in `src/config/app.ts` and intended
+  publication context; no trademark/legal clearance is inferred.
+- `TODO(human)`: English listening and native Hindi pronunciation/meaning review
+  remain unperformed. The user permits agent-checked previews, not a claim of
+  human review. Never upgrade status without actual evidence.
+- `TODO(human)`: resolve exact historical training-subset/voice/output terms
+  where publisher evidence remains incomplete (THIRD_PARTY.md). Build-tool
+  inventory is not a blanket redistribution clearance.
+- `TODO(human)`: approve consent, contact route, recruitment and any facilitator
+  notes/retention policy before an actual pilot. No participant work occurred.
+- `TODO(human)`: choose/authenticate a preview host and review its access logging,
+  applied CSP headers and assistive-technology behavior before publication.
+
+Teaching maths/order, copy, source/calendar scope, direct resource pointers,
+package metadata and local CSP/storage checks are now agent-checkable evidence,
+not unverifiable human-only placeholders. Their exact disposition, remaining
+limits and measured check results are in TODO_DISPOSITION.md and the linked
+QA/browser/data records.

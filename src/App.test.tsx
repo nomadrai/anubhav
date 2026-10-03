@@ -4,91 +4,218 @@ import { createRoot, type Root } from 'react-dom/client';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 import { JourneyProvider } from './journey/JourneyContext';
-import { PLAYBACK_MS_PER_BAR } from './config/simulation';
+import {
+  PLAYBACK_MS_PER_BAR,
+  DEFAULT_SIMULATION_CONFIG,
+} from './config/simulation';
+import { episodes } from './data/episodes';
+import { decisionIndexes } from './journey/useSimulationRun';
+import { runSimulation } from './engine';
+import { formatRupees } from './i18n';
 
-// eslint-disable-next-line no-undef
-let container: HTMLDivElement;
+let container: ReturnType<typeof document.createElement>;
 let root: Root;
-
+const episode = episodes[0];
 function button(label: string): HTMLButtonElement {
-  const found = [...container.querySelectorAll('button')].find((item) => item.textContent === label);
+  const found = [...container.querySelectorAll('button')].find(
+    (item) => item.textContent === label,
+  );
   if (!found) throw new Error(`Missing button: ${label}`);
   return found;
 }
-function click(label: string) { act(() => button(label).click()); }
-function tick() { act(() => vi.advanceTimersByTime(PLAYBACK_MS_PER_BAR)); }
+function click(label: string) {
+  act(() => button(label).click());
+}
+function tick() {
+  act(() => vi.advanceTimersByTime(PLAYBACK_MS_PER_BAR));
+}
 function begin(leverage = '2 times') {
-  click('English'); click('Continue'); click(leverage); click('Continue');
+  click('English');
+  click('Continue');
+  click(leverage);
+  click('Continue');
   expect(button('Continue').disabled).toBe(true);
-  click('A small loss'); click('Continue');
+  click('A small loss');
+  click('Continue');
+}
+function firstDecision() {
+  for (
+    let index = 0;
+    index < decisionIndexes(episode.bars.length)[0];
+    index += 1
+  )
+    tick();
 }
 function finish() {
-  for (let step = 0; step < 40; step += 1) {
-    const result = [...container.querySelectorAll('button')].find((item) => item.textContent === 'Compare without leverage' && !item.disabled);
-    if (result) return;
-    const resume = [...container.querySelectorAll('button')].find((item) => item.textContent === 'Continue watching');
-    if (resume) click('Continue watching'); else tick();
+  for (let step = 0; step <= episode.bars.length + 8; step += 1) {
+    if (
+      [...container.querySelectorAll('button')].some(
+        (item) => item.textContent === 'Compare without leverage',
+      )
+    )
+      return;
+    const resume = [...container.querySelectorAll('button')].find(
+      (item) => item.textContent === 'Continue watching',
+    );
+    if (resume) click('Continue watching');
+    else tick();
   }
   throw new Error('Run never completed');
 }
 function hiddenPeriod() {
-  expect(container.innerHTML).not.toContain('2024-01');
-  expect(container.innerHTML).not.toContain('synthetic://');
+  expect(container.innerHTML).not.toContain(episode.bars[0].date);
+  expect(container.innerHTML).not.toContain(episode.provenance.sourceUrl);
+  expect(container.innerHTML).not.toContain(episode.sourceLabel?.en);
 }
-
+function render() {
+  act(() =>
+    root.render(
+      <StrictMode>
+        <JourneyProvider>
+          <App />
+        </JourneyProvider>
+      </StrictMode>,
+    ),
+  );
+}
 beforeEach(() => {
   vi.useFakeTimers();
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
   Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });
+  window.localStorage.clear();
+  window.sessionStorage.clear();
   container = document.createElement('div');
   document.body.append(container);
   root = createRoot(container);
-  act(() => root.render(<StrictMode><JourneyProvider><App /></JourneyProvider></StrictMode>));
+  render();
 });
-afterEach(() => { act(() => root.unmount()); container.remove(); vi.useRealTimers(); vi.restoreAllMocks(); });
+afterEach(() => {
+  act(() => root.unmount());
+  container.remove();
+  vi.useRealTimers();
+  vi.restoreAllMocks();
+});
 
-describe('Phase 2 learner journey', () => {
-  it('pauses indefinitely, finishes, compares, reveals only afterwards, and clears answers on restart', () => {
-    begin(); hiddenPeriod();
-    for (let step = 0; step < 3; step += 1) tick();
+describe('protective learner journey', () => {
+  it('pauses indefinitely, compares the identical full path, reveals afterwards and clears answers on restart', () => {
+    begin();
+    hiddenPeriod();
+    firstDecision();
     expect(container.textContent).toContain('Decision point');
     const paused = container.innerHTML;
     act(() => vi.advanceTimersByTime(60_000));
     expect(container.innerHTML).toBe(paused);
-    finish(); hiddenPeriod();
-    expect(container.textContent).toContain('This position stayed open to the end.');
-    hiddenPeriod(); click('Compare without leverage'); hiddenPeriod();
-    expect(container.querySelectorAll('polyline').length).toBe(2);
+    finish();
+    hiddenPeriod();
+    expect(container.textContent).toContain(
+      'This position stayed open to the end.',
+    );
+    click('Compare without leverage');
+    hiddenPeriod();
+    const expected = runSimulation({
+      series: episode.bars,
+      capital: 2500,
+      leverage: 1,
+      config: DEFAULT_SIMULATION_CONFIG,
+    });
+    expect(container.textContent).toContain(
+      formatRupees(expected.final.equity, 'en'),
+    );
+    expect(container.querySelectorAll('polyline')).toHaveLength(2);
     click('Reveal the episode');
-    expect(container.textContent).toContain('2024-01-02');
-    expect(container.textContent).toContain('synthetic://');
+    expect(container.textContent).toContain(episode.bars[0].date);
+    expect(container.textContent).toContain(episode.sourceLabel?.en);
+    expect(container.innerHTML).not.toContain(episode.provenance.sourceUrl);
     click('See the debrief');
     expect(container.textContent).toContain('Recovery maths');
+    expect(container.querySelectorAll('.glossary details')).toHaveLength(9);
     click('Check your thinking again');
     expect(button('Continue').disabled).toBe(true);
-    click('A small loss'); click('Not sure'); click('Continue');
-    expect(container.querySelectorAll('a').length).toBe(0);
-    click('Start again'); click('English'); click('Continue'); click('Continue');
+    click('A big gain');
+    expect(button('Continue').disabled).toBe(true);
+    click('Not sure');
+    click('Continue');
+    const links = [...container.querySelectorAll('.resource-list a')];
+    expect(links).toHaveLength(4);
+    expect(
+      links.every(
+        (link) =>
+          link.textContent &&
+          link.getAttribute('rel') === 'noopener noreferrer',
+      ),
+    ).toBe(true);
+    click("View this session's local summary");
+    expect(container.querySelector('.pilot-summary')?.textContent).toContain(
+      'A small loss',
+    );
+    expect(container.querySelector('.pilot-summary')?.textContent).toContain(
+      'A big gain',
+    );
+    expect(Object.keys(window.localStorage)).toEqual(['learning.language']);
+    expect(window.sessionStorage.length).toBe(0);
+    click('Start again and clear answers');
+    click('English');
+    click('Continue');
+    click('Continue');
     expect(button('Continue').disabled).toBe(true);
     expect(container.querySelector('[aria-pressed="true"]')).toBeNull();
   });
 
-  it('uses the teaching settlement for forced-exit amounts and the comparison line', () => {
-    begin('10 times'); finish();
-    expect(container.textContent).toContain('₹625');
+  it('uses settlement for the forced-exit result and the exact last comparison point', () => {
+    begin('10 times');
+    finish();
     expect(container.textContent).toContain('₹625');
     expect(container.textContent).toContain('-75%');
     click('Compare without leverage');
     expect(container.textContent).toContain('₹625');
     expect(container.textContent).toContain('300%');
+    const rows = [...container.querySelectorAll('tbody tr')];
+    const leveraged = runSimulation({
+      series: episode.bars,
+      capital: 2500,
+      leverage: 10,
+      config: DEFAULT_SIMULATION_CONFIG,
+    });
+    expect(
+      rows[leveraged.timeline.length - 1].querySelector('td')?.textContent,
+    ).toBe('₹625');
+    expect(rows.at(-1)?.querySelector('td')?.textContent).not.toBe('₹625');
+    expect(rows).toHaveLength(episode.bars.length);
   });
 
-  it('lets the learner exit at a pause and does not advance a stopped run', () => {
+  it('has a true manual pause and allows an early exit without truncating the one-times replay', () => {
     begin();
-    for (let step = 0; step < 3; step += 1) tick();
+    click('Pause the path');
+    const paused = container.innerHTML;
+    act(() => vi.advanceTimersByTime(60_000));
+    expect(container.innerHTML).toBe(paused);
+    click('Resume the path');
+    firstDecision();
     click('Exit now');
     const stopped = container.innerHTML;
     act(() => vi.advanceTimersByTime(60_000));
     expect(container.innerHTML).toBe(stopped);
-    expect(container.textContent).toContain('This position was closed by your choice.');
+    expect(container.textContent).toContain(
+      'This position was closed by your choice.',
+    );
+    click('Compare without leverage');
+    expect(container.querySelectorAll('tbody tr')).toHaveLength(
+      episode.bars.length,
+    );
+  });
+
+  it('does not restore a prediction after an application remount', () => {
+    begin();
+    act(() => root.unmount());
+    root = createRoot(container);
+    render();
+    expect(container.querySelector('h1')?.textContent).toContain(
+      'Learn with virtual money',
+    );
+    click('English');
+    click('Continue');
+    click('Continue');
+    expect(button('Continue').disabled).toBe(true);
+    expect(Object.keys(window.localStorage)).toEqual(['learning.language']);
   });
 });

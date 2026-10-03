@@ -10,6 +10,7 @@ export interface JourneyState {
   wouldTake?: string;
   stake?: number;
   leverage?: 1 | 2 | 5 | 10;
+  episodeId?: string;
   exitAtIndex?: number;
   leveragedRun?: SimResult;
   unleveragedRun?: SimResult;
@@ -19,24 +20,72 @@ export interface JourneyState {
 
 export type JourneyAction =
   | { type: 'chooseLanguage'; language: Language }
+  | { type: 'changeLanguage'; language: Language }
   | { type: 'next' }
   | { type: 'restart' }
-  | { type: 'answer'; field: 'prediction' | 'postPrediction' | 'wouldTake'; value: string }
-  | { type: 'setup'; stake: number; leverage: 1 | 2 | 5 | 10 }
-  | { type: 'recordRun'; exitAtIndex?: number; leveragedRun: SimResult; unleveragedRun: SimResult; comparison: RunComparison; debriefBlocks: DebriefBlockId[] };
+  | {
+      type: 'answer';
+      field: 'prediction' | 'postPrediction' | 'wouldTake';
+      value: string;
+    }
+  | {
+      type: 'setup';
+      stake: number;
+      leverage: 1 | 2 | 5 | 10;
+      episodeId?: string;
+    }
+  | {
+      type: 'recordRun';
+      exitAtIndex?: number;
+      leveragedRun: SimResult;
+      unleveragedRun: SimResult;
+      comparison: RunComparison;
+      debriefBlocks: DebriefBlockId[];
+    };
 
 export const initialJourneyState: JourneyState = { step: 'LanguageSelect' };
 
-export function journeyReducer(state: JourneyState, action: JourneyAction): JourneyState {
+export function journeyReducer(
+  state: JourneyState,
+  action: JourneyAction,
+): JourneyState {
   switch (action.type) {
-    case 'chooseLanguage': return { ...state, language: action.language, step: 'Intro' };
+    case 'chooseLanguage':
+      return { ...state, language: action.language, step: 'Intro' };
+    case 'changeLanguage':
+      return { ...state, language: action.language };
     case 'next': {
+      if (state.step === 'Prediction' && !state.prediction) return state;
+      if (
+        state.step === 'PostCheck' &&
+        (!state.postPrediction || !state.wouldTake)
+      )
+        return state;
+      if (state.step === 'Run') return state; // Only an actual simulation result may advance playback.
       const index = JOURNEY_STEPS.indexOf(state.step);
-      return index < JOURNEY_STEPS.length - 1 ? { ...state, step: JOURNEY_STEPS[index + 1] } : state;
+      return index < JOURNEY_STEPS.length - 1
+        ? { ...state, step: JOURNEY_STEPS[index + 1] }
+        : state;
     }
-    case 'restart': return initialJourneyState;
-    case 'answer': return { ...state, [action.field]: action.value };
-    case 'setup': return { ...state, stake: action.stake, leverage: action.leverage, exitAtIndex: undefined, leveragedRun: undefined, unleveragedRun: undefined, comparison: undefined, debriefBlocks: undefined };
+    case 'restart':
+      return initialJourneyState;
+    case 'answer':
+      return { ...state, [action.field]: action.value };
+    case 'setup':
+      return {
+        ...state,
+        stake: action.stake,
+        leverage: action.leverage,
+        episodeId: action.episodeId,
+        prediction: undefined,
+        postPrediction: undefined,
+        wouldTake: undefined,
+        exitAtIndex: undefined,
+        leveragedRun: undefined,
+        unleveragedRun: undefined,
+        comparison: undefined,
+        debriefBlocks: undefined,
+      };
     case 'recordRun':
       return {
         ...state,
