@@ -1,156 +1,185 @@
-# Data sources and preparation
+# Real data sources and offline preparation
 
-## Status
+## Current decision — 2026-10-03
 
-Phase 1 preparation remains an offline validator and is exercised by the
-synthetic fixtures in `scripts/fixtures/`. It does not fetch, infer a calendar,
-backfill a missing observation, or transform a source into a prediction.
+Two **real, single-source daily windows** are now the only runtime exports in
+`src/data/episodes/index.ts`: `historical-crash` and `historical-choppy`.
+The default is `historical-crash`. Both use the **European Central Bank (ECB)**
+reference-rate XML, not the earlier EIA/Refinitiv candidates. Source observations
+are unchanged. The app computes relative changes and virtual-money outcomes.
+Neither observation prices nor episode choice constitute investment advice.
 
-Two historical **candidate** snapshots have now been acquired by the separate
-network-capable `scripts/acquire_eia_candidates.py` script. They are kept under
-`data/candidates/`, are not imported by `src/data/episodes/` or runtime config,
-and have `humanApproved: false`. The scenario words below are teaching labels
-for review, not market classifications or forecasts.
+**Deliberate source deviation:** these are ECB-authored reference observations,
+not a stock index, equity closes, an Indian-market sample, or executable trading
+prices. Clear, explicitly stated reuse terms take priority over an unsupported
+stock-index licence. The internal schema calls the numeric field `close`; for
+this source it is only the daily reference observation carrier, **not a claim of
+market closing price**. `intradayAvailable` is false. No highs/lows are invented.
 
-Candidate resources are false/hidden by default. The UI may show a resource only when its exact pointer has been verified by a human, its relevance is recorded, and its licence and attribution requirements are known. Do not invent a holiday calendar, trading session, observation, or date range.
+`status: agent-checked` records numeric/provenance checks and the bilingual
+QA/back-translation in [DATA_REVIEW.md](DATA_REVIEW.md), not legal advice,
+publisher approval, human review, or native-speaker approval. The current user
+authorization permits this evidenced agent check; historical human-only rules
+in earlier audits are not retroactively claimed to have been satisfied.
 
-## Acquired candidate snapshots
+## Exact reuse evidence
 
-Both candidates use the U.S. Energy Information Administration (EIA)
-Petroleum Spot Prices API, dataset `petroleum/pri/spt`, series `RWTC`. The EIA
-response identifies the series as `Cushing, OK WTI Spot Price FOB (Dollars per
-Barrel)` and its definitions page names Refinitiv, an LSEG business, as the
-upstream source. The candidate normalization keeps only `period` as `date` and
-`value` as `close`; it does not create open/high/low fields. Dates are exactly
-the rows returned by EIA, not an inferred weekday or holiday calendar. Because
-this upstream attribution creates a redistribution question, raw and derived
-downloaded raw snapshots and normalized price inputs are local-only and git-ignored. The candidate episode JSON is retained as a non-runtime research artifact with the unresolved rights note below; it is not imported into the app.
+Fetched this session on **2026-10-03**, at `2026-10-03T13:06:43Z`:
 
-The API request is HTTPS and includes `DEMO_KEY` only as the public EIA demo
-credential used for acquisition; no private credential is stored. The raw JSON
-response is preserved so the downloaded evidence can be checked independently
-of the derived CSV and episode JSON.
+- Requested official URL:
+  <https://www.ecb.europa.eu/services/disclaimer/html/index.en.html>
+- Final official URL after redirect (HTTP 200):
+  <https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html>
+- Page title: **Disclaimer & copyright**, section **Copyright**.
+- Preserved local body: `data-raw/resources/ecb-terms.html`, 107588 bytes,
+  SHA-256 `3785b75bd536340a5cb45bf8afeb525c7c38c9c5406fd3525e3851af090a916c`.
 
-### Choppy teaching candidate
+Exact publisher sentences:
 
-- Candidate: `candidate-rwtc-2018-choppy` (`scenario: choppy`).
-- Request URL:
-  `https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2018-01-02&end=2018-02-28&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc`.
-- Retrieved: `2026-10-03T06:11:09Z` (date `2026-10-03`); HTTP `200`, final URL unchanged.
-- Evidence: 40 source rows; observed date range `2018-01-02` to
-  `2018-02-28`; raw JSON `data/candidates/raw/candidate-rwtc-2018-choppy.source.json`, SHA-256
-  `2df91d3d6fcdc5e0e79de95ba8909b861945289669da6ba2d1041747e3ad554b`;
-  normalized CSV `data/candidates/inputs/candidate-rwtc-2018-choppy.csv`, SHA-256
-  `22e4e67d35ca84e76946a8221272c7284f3bacb6df4b28c7ee4c3528ba1dfa91`.
-- Prepared candidate: `data/candidates/episodes/candidate-rwtc-2018-choppy.episode.json`;
-  `stats.barCount` is `40`, `totalChange` is `0.017558389928772566`, and
-  `maxDrawdown` is `-0.10668477440772584`.
+> Subject to the exception below, users of this website may make free use of the information obtained directly from it subject to the following conditions:
 
-### Crash teaching candidate
+> When such information is distributed or reproduced, it must appear accurately and the ECB must be cited as the source.
 
-- Candidate: `candidate-rwtc-2020-crash` (`scenario: crash`).
-- Request URL:
-  `https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=DEMO_KEY&frequency=daily&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2020-02-20&end=2020-04-17&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc`.
-- Retrieved: `2026-10-03T06:11:11Z` (date `2026-10-03`); HTTP `200`, final URL unchanged.
-- Evidence: 41 source rows; observed date range `2020-02-20` to
-  `2020-04-17`; raw JSON `data/candidates/raw/candidate-rwtc-2020-crash.source.json`, SHA-256
-  `3f3504fd9b0420c9b46b5042dd9f9a20b80608e801c824165bc06958ae50e773`;
-  normalized CSV `data/candidates/inputs/candidate-rwtc-2020-crash.csv`, SHA-256
-  `7d03d12147b53fc2a6939be270f7d1c23e76aaf714860ddeec3a507784812a2b`.
-- Prepared candidate: `data/candidates/episodes/candidate-rwtc-2020-crash.episode.json`;
-  `stats.barCount` is `41`, `totalChange` is `-0.6594755439836341`, and
-  `maxDrawdown` is `-0.7377719918169984`.
+> If the information is modified by the user (e.g. by seasonal adjustment of statistical data or calculation of growth rates) this must be stated explicitly.
 
-### Licence and redistribution status
+The same section also requires free-source disclosure for information incorporated
+in sold documents, and full-window (not framed) loading when linking from
+business sites or for promotional purposes. Its stated exception concerns
+republication of **documents bearing named authors**, such as working and
+occasional papers. This app uses the directly published ECB statistical XML,
+not such a paper, logo, photo, or third-party market-price feed. This is the ECB's
+own copyright/reuse policy, **not a CC licence or public-domain assertion**.
+The observations remain accurate, ECB attribution is retained in every episode
+and in neutral bilingual `sourceLabel`, and app-calculated relative changes are
+explicitly disclosed. No endorsement is implied. The app is not sold; if that
+changes the additional disclosure requirement must be re-evaluated.
 
-EIA's [copyright and reuse page](https://www.eia.gov/about/copyrights_reuse.php)
-and [spot-price definitions page](https://www.eia.gov/dnav/pet/TblDefs/pet_pri_spt_tbldef2.asp)
-were fetched during this task. The general reuse page says U.S. government
-data files and databases may be used or distributed and asks for an
-acknowledgment. It also warns that contributed materials may be protected. The
-spot-price definitions page identifies Refinitiv, an LSEG business, under
-Sources. Therefore redistribution is unresolved even though the EIA government
-data statement is permissive: dataset-specific upstream rights, attribution,
-and any restrictions on derived redistribution still need human confirmation.
+The source-definition page fetched at `2026-10-03T13:06:44Z` (HTTP 200,
+unchanged final URL) is:
+<https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html>.
+It says:
 
-Each episode preserves `provenance.acquisition.licenceNote`, the terms and
-definitions URLs, upstream identifier, raw and prepared hashes, and
-`humanApproved: false`. Before import into the runtime app, a human must
-confirm current rights, attribution wording, source definitions/units,
-observation time zone, whether the close-only series fits the lesson, and the
-intended transformation. No candidate sets human approval true. Raw snapshots
-and normalized CSV inputs are local-only under the candidate `.gitignore`;
-metadata, candidate episode JSON, and non-price acquisition receipts keep
-hashes and provenance available for review. The episode JSON is still a
-non-runtime research artifact, not permission to redistribute or ship it.
+> They are based on the daily concertation procedure between central banks across Europe, which normally takes place around 14:10 CET.
 
-## Acquisition and reproduction
+> The reference rates are published for information purposes only. Using the rates for transaction purposes is strongly discouraged.
 
-The acquisition step may fetch only when explicitly run:
+It also describes publication around 16:00 CET and TARGET closing days. These
+are the **current publisher descriptions**; the historical XML has dates and
+values, not per-row timestamps. We do not assert a historical daily publication
+time, infer closing days, or assign reasons to absent dates. Definition body:
+119322 bytes, SHA-256
+`a022db7a19c93523d7b2eafb79d8367e7f35b1f1a6fd0c9fc941dd389a9926c9`.
+
+## Source snapshot and production windows
+
+- Official time-series XML:
+  <https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml>.
+- XML publisher: `European Central Bank`; selected currency attribute `USD`,
+  base EUR, units USD per EUR; series identity `EXR.D.USD.EUR.SP00.A`.
+- Retrieved: `2026-10-03T13:06:45Z`, HTTP 200, unchanged final URL,
+  `Content-Type: text/xml`, 8191474 bytes.
+- Local original: `data-raw/ecb/eurofxref-hist.xml`; receipt:
+  `data-raw/ecb/acquisition.json`.
+- Raw SHA-256:
+  `807ad53568c849e894f9ea496c91684f530f23f60afc564d96f46702be494ceb`.
+- The full historical snapshot contains other dates/currencies; only the exact
+  two requested windows and one currency are selected. No mixing, inversion,
+  normalization of observations, imputation, or synthetic extension occurs.
+
+| Production ID | Inclusive observed bounds | Rows | First → last | Total change | Max drawdown | Worst observed step |
+|---|---|---:|---|---:|---:|---:|
+| `historical-crash` | 2008-07-15 → 2008-10-28 | 76 | 1.599 → 1.2526 | -21.6635397123% | -22.0762976861% | -2.5864684466% |
+| `historical-choppy` | 2019-01-02 → 2019-02-28 | 42 | 1.1397 → 1.1416 | +0.1667105379% | -2.3840485479% | -0.5722708749% |
+
+Percentages above are measured, not forecasts. Machine values in `stats` are
+fractions. The second path has 21 upward and 20 downward steps with a small
+endpoint change; this supports its internal **choppy teaching label**, not a
+claim that it is representative of an ordinary market. The first has 23 upward
+and 52 downward steps. Both labels were assigned retrospectively by the app,
+not by the publisher. No causal event story is supplied.
+
+Normalized CSV hashes (the exact `inputSha256` used by the offline CLI):
+
+- `historical-crash.csv`:
+  `05e30c8bee116ef67cdf136dacf45cabddd1a65c90ca422ac05d005667743633`.
+- `historical-choppy.csv`:
+  `e9c5ebc2423bd5f31783930f62170f3f05f2f3539fae84b1f9b5003bde0a0195`.
+
+Both windows have zero missing/nonfinite/nonpositive selected values, zero
+duplicate dates, and exact requested boundary observations. There are 30 and
+16 calendar dates, respectively, without source observations. Those date lists
+are retained in each episode's `provenance.validation.absentCalendarDates`.
+They are **not classified as holidays/weekends/missing trading sessions**; no
+calendar was guessed. Complete checks and limitations: [DATA_REVIEW.md](DATA_REVIEW.md).
+
+## Reproduce with a preserved snapshot (no network)
 
 ```sh
-python3 scripts/acquire_eia_candidates.py --output-root data/candidates
+python3 scripts/data_ecb.py --output-root /tmp/ecb-rebuilt
+cmp src/data/episodes/historical-crash.json /tmp/ecb-rebuilt/historical-crash.json
+cmp src/data/episodes/historical-choppy.json /tmp/ecb-rebuilt/historical-choppy.json
 ```
 
-For the preserved snapshots, reproduction is offline and uses the raw
-responses plus their acquisition receipts; the original retrieval timestamp is
-read from each receipt rather than guessed:
+To **explicitly** fetch a fresh source snapshot before preparing (source may
+revise; do not casually overwrite evidence while investigating a difference):
 
 ```sh
-python3 scripts/acquire_eia_candidates.py \
-  --offline --output-root data/candidates
+python3 scripts/data_ecb.py --fetch --raw-root /tmp/ecb-fresh --output-root /tmp/ecb-fresh/episodes
 ```
 
-The acquisition script then invokes the existing preparation CLI. That CLI
-itself remains network-free:
+`scripts/data_ecb.py` verifies publisher, bounds, unique dates, currency presence,
+positive finite values, response identity, raw hash/length and independent
+statistics. It writes original observation strings as `date,close`, supplies
+exact observed `expectedDates`, then invokes the existing network-free
+`scripts/prepare_episode.py`. The CLI output is compared to every source row
+and statistic; additional provenance, neutral labels and review evidence are
+then attached. No new dependency was added (existing PyYAML plus standard
+library). Original XML/receipts/CSV/YAML are local under `data-raw/`; production
+JSON preserves full receipt, source/terms, original date keys, stats and hashes.
+
+Example direct offline preparation of a preserved window:
 
 ```sh
 python3 scripts/prepare_episode.py \
-  --csv data/candidates/inputs/candidate-rwtc-2018-choppy.csv \
-  --id candidate-rwtc-2018-choppy --start 2018-01-02 --end 2018-02-28 \
-  --meta data/candidates/metadata/candidate-rwtc-2018-choppy.meta.yaml
+  --csv data-raw/ecb/historical-crash.csv --id historical-crash \
+  --start 2008-07-15 --end 2008-10-28 \
+  --meta data-raw/ecb/historical-crash.meta.yaml \
+  --output /tmp/historical-crash.base.json
 ```
 
-The same command shape applies to the crash candidate. The raw snapshots and
-candidate documents are evidence for review only; they must not be copied into
-`src/data/episodes/` without a separate human decision.
+This direct command emits the base schema; `data_ecb.py` adds the documented
+provenance/review fields. CLI contract and synthetic fixtures remain in
+[scripts/README.md](../scripts/README.md). Synthetic JSON stays at its existing
+fixture paths to preserve regression tests but is **not imported or exported
+by the production episode entry point**.
 
-## Source licence checklist
+## Alternatives and retained blocked research
 
-For each future source, record:
+1. **EIA WTI/Refinitiv: still not approved.** The previous RWTC candidates have
+   unresolved third-party redistribution rights. EIA's general public-data
+   statement does not erase its third-party exception or the Refinitiv/LSEG
+   attribution on the exact definitions page. They remain outside runtime with
+   `humanApproved: false`; no import or rights flag was changed. Existing
+   `data/candidates/` artifacts and [SOURCE_AUDIT.md](SOURCE_AUDIT.md) preserve
+   exact prior URLs, hashes, counts and audit findings. 2018 candidate: 40
+   rows, 2018-01-02..2018-02-28; 2020 candidate: 41 rows,
+   2020-02-20..2020-04-17. Resolve dataset-specific rights with its holders
+   before any later use; it is unnecessary for this ECB-based preview.
+2. **Federal Reserve Board:** fetched
+   <https://www.federalreserve.gov/disclaimer.htm> this session, 2026-10-03.
+   It states: “Unless otherwise indicated, information on Board's website is
+   in the public domain and may be copied and distributed without permission.”
+   It also requires attribution and excludes identified non-Board materials.
+   This was a plausible alternative, not a dataset-specific approval; no
+   Federal Reserve data was shipped because directly available ECB-authored
+   observations and explicit ECB terms met the current need.
+3. **ECB API:** a bounded request for
+   `EXR/D.USD.EUR.SP00.A?startPeriod=2008-07-15&endPeriod=2008-10-28&format=csvdata`
+   at `https://data-api.ecb.europa.eu/service/data/` timed out after 30 seconds.
+   No API response is claimed. The official ECB XML download succeeded and is
+   the actual production source; its bytes, not an API assumption, were checked.
 
-- exact publisher and official URL;
-- dataset/document title, version, retrieval date, and date coverage;
-- licence or terms, commercial/redistribution status, attribution text, and restrictions;
-- schema, units, timezone, adjustment/corporate-action treatment, and missing-value rules;
-- whether dates are observed dates or an explicit calendar, and who verified holidays;
-- reviewer name, review date, evidence link, and expiry/recheck date.
-
-A missing answer blocks release. Use `TODO(human)` rather than a plausible-looking value.
-
-## Mandatory scenario coverage
-
-Any future prepared fixture must include a crash and a choppy scenario. A rally must be paired with a shakeout so the lesson does not imply that upward movement is a safe or universal outcome. Scenario labels are teaching labels, not market classifications. Human review must check that ordering, dates, and semantics are not fabricated.
-
-## CSV preparation CLI contract
-
-The available Python 3.10+ preparation CLI accepts:
-
-```sh
-python scripts/prepare_episode.py \
-  --csv scripts/fixtures/crash-synthetic.csv --id crash-synthetic \
-  --start 2024-01-02 --end 2024-01-11 \
-  --meta scripts/fixtures/crash-synthetic.meta.yaml \
-  --output /tmp/crash-synthetic.episode.json
-```
-
-The command and metadata shape are documented in `scripts/README.md`. Required flags are `--csv`, `--id`, `--start`, `--end`, and `--meta` (YAML); `--output` is optional and otherwise JSON is written to stdout. The Phase 1 CLI must:
-
-1. reject missing, reversed, or impossible dates;
-2. require `expectedDates` or an explicit `calendar.dates` list rather than inventing holidays;
-3. validate a stable identifier, numeric fields (including NaN, infinity, and non-positive values), OHLC coherence, duplicates, units, and missing values;
-4. keep complete source provenance, licence note, `isPlaceholder`, and `intradayAvailable` in YAML metadata, with English and Hindi text for every reveal field;
-5. require at least two bars, require `intradayAvailable` to match low-column presence, and emit deterministic episode JSON with an input SHA-256 and summary stats;
-6. fail closed if the source metadata is incomplete or the requested dates are absent. The output label is neutral (`Episode A`); no metadata label or source claim is invented. The current script validates one episode; mandatory crash/choppy/rally-shakeout scenario coverage remains a release/content responsibility.
-
-The CLI must not fetch the web, backfill missing observations with guesses, or transform real data into a claim of prediction. Its output is test input, not investment information. The fixture regression tests write regenerated JSON only to temporary directories; they do not overwrite committed app data. Real-data preparation and licence review remain blocked on `TODO(human)` evidence.
+Protective links are independently documented in
+[RESOURCE_CHECKS.md](RESOURCE_CHECKS.md). Data rights do not establish link
+endorsement or native-speaker approval, and a green numeric check does not
+establish user-learning efficacy or representative financial outcomes.

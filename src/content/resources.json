@@ -1,48 +1,114 @@
 [
   {
-    "id": "sebi-investor-education-material",
-    "labelKey": "nextSteps.empty",
-    "url": "https://investor.sebi.gov.in/iematerial.html",
-    "kind": "investor-education",
-    "verified": false,
+    "id": "sebi-scores",
+    "labelKey": "nextSteps.title",
+    "label": { "en": "SEBI SCORES — complaint portal", "hi": "सेबी स्कोर्स — शिकायत पोर्टल" },
+    "url": "https://scores.sebi.gov.in/",
+    "kind": "grievance-redressal",
+    "verified": true,
     "checkedOn": "2026-10-03",
-    "title": "Investor Education Reading Material",
-    "publisher": "SEBI Investor",
-    "relevance": "Official reading list about securities-market basics, safe practices, complaints, fraud awareness, and educational modules.",
+    "status": "agent-checked",
+    "title": "SEBI Complaint Redressal System",
+    "publisher": "Securities and Exchange Board of India",
+    "relevance": "Official securities-market grievance portal. Direct pointer only; no procedure, deadline, eligibility, or outcome is promised by this app.",
     "automatedCheck": {
       "status": 200,
-      "finalUrl": "https://investor.sebi.gov.in/iematerial.html",
-      "fetchedAt": "2026-10-03T06:19:11Z",
-      "bytes": 145812,
-      "sha256": "091ae2a3af292b764a92d5373a90fc08d1e9bd3a4110dfeb4ff322afac2cb5df",
-      "method": "HTTP GET with curl --fail --location --max-time 30; page text was inspected"
+      "finalUrl": "https://scores.sebi.gov.in/",
+      "fetchedAt": "2026-10-03T13:06:41Z",
+      "contentType": "text/html;charset=UTF-8",
+      "bytes": 120689,
+      "sha256": "8b6814764defb9a2d772ab2d0bbe845093835bfdb0347fc68feb4d4f12a362f2",
+      "method": "Exact HTTPS GET with curl --http1.1 --fail --location --max-time 45; official page text separately fetched and inspected this session"
     },
-    "humanReview": {
-      "humanApproved": false,
-      "requiredBeforePublication": "Confirm exact page relevance, accessibility, language coverage, current terms, and attribution before setting verified true."
-    }
+    "evidence": {
+      "record": "docs/RESOURCE_CHECKS.md#sebi-scores",
+      "observed": "The page identifies itself as SEBI Complaint Redressal System and describes an online grievance redressal facilitation platform provided by SEBI.",
+      "scope": "Official destination identity, neutral label, and protective relevance checked by an agent; not publisher endorsement, native review, or a completed complaint test."
+    },
+    "humanReview": { "humanApproved": false, "nativeSpeakerReviewed": false }
   },
   {
-    "id": "sebi-personal-finance-investment",
-    "labelKey": "nextSteps.empty",
-    "url": "https://investor.sebi.gov.in/personalsecurities.html",
-    "kind": "investor-education",
-    "verified": false,
+    "id": "sebi-investor-support",
+    "labelKey": "nextSteps.title",
+    "label": { "en": "SEBI — investor support", "hi": "सेबी — निवेशक सहायता" },
+    "url": "https://investor.sebi.gov.in/Investor-support.html",
+    "kind": "investor-support",
+    "verified": true,
     "checkedOn": "2026-10-03",
-    "title": "Personal Finance and Investment: Securities Market Investments",
+    "status": "agent-checked",
+    "title": "Investor Support",
     "publisher": "SEBI Investor",
-    "relevance": "Official primer covering market basics, product features, do-and-don't guidance, investment review, and grievance pathways.",
+    "relevance": "Official support gateway containing Ask SEBI, helpline information, and complaint-support material. The app does not reproduce contact numbers or recommend any linked provider.",
     "automatedCheck": {
       "status": 200,
-      "finalUrl": "https://investor.sebi.gov.in/personalsecurities.html",
-      "fetchedAt": "2026-10-03T06:19:11Z",
-      "bytes": 9691,
-      "sha256": "604f8436733d04a15186fc98ace13997c305bc7bf467ca07d5c298ff9780135d",
-      "method": "HTTP GET with curl --fail --location --max-time 30; page text was inspected"
+      "finalUrl": "https://investor.sebi.gov.in/Investor-support.html",
+      "fetchedAt": "2026-10-03T13:06:41Z",
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 36786,
+      "sha256": "c87186bae92789915971958755913bcf09f25a7ffdd99c82034343e176a3cc6e",
+      "method": "Exact HTTPS GET with curl --http1.1 --fail --location --max-time 45; official page text separately fetched and inspected this session"
     },
-    "humanReview": {
-      "humanApproved": false,
-      "requiredBeforePublication": "Confirm exact page relevance, accessibility, language coverage, current terms, and attribution before setting verified true."
-    }
+    "evidence": {
+      "record": "docs/RESOURCE_CHECKS.md#sebi-investor-support",
+      "observed": "The page is titled Investor Support, describes Ask SEBI and investor helpline support, and says the helpline does not offer legal opinion or investment advice.",
+      "scope": "Official destination identity, neutral label, and protective relevance checked by an agent; not publisher endorsement, native review, or tested contact availability."
+    },
+    "humanReview": { "humanApproved": false, "nativeSpeakerReviewed": false }
+  },
+  {
+    "id": "sebi-scam-warning-signs",
+    "labelKey": "nextSteps.title",
+    "label": { "en": "SEBI — spotting scams and pressure tactics", "hi": "सेबी — ठगी और दबाव की चालें पहचानना" },
+    "url": "https://investor.sebi.gov.in/spot-any-scam.html",
+    "kind": "scam-awareness",
+    "verified": true,
+    "checkedOn": "2026-10-03",
+    "status": "agent-checked",
+    "title": "How to Spot a Scam",
+    "publisher": "SEBI Investor",
+    "relevance": "Official protective guidance about scam warning signs, guaranteed-return claims, and pressure to act immediately. No page text, questionnaire, or result is embedded.",
+    "automatedCheck": {
+      "status": 200,
+      "finalUrl": "https://investor.sebi.gov.in/spot-any-scam.html",
+      "fetchedAt": "2026-10-03T13:06:41Z",
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 34373,
+      "sha256": "0ca9f7166eddf7ff1ba3b70556c7c879de9ed20b4f86cdf20e49f5d47f760352",
+      "method": "Exact HTTPS GET with curl --http1.1 --fail --location --max-time 45; official page text separately fetched and inspected this session"
+    },
+    "evidence": {
+      "record": "docs/RESOURCE_CHECKS.md#sebi-scam-warning-signs",
+      "observed": "Guidelines for Spotting a Scam includes a Pushy Salesperson section warning about act-now and high-pressure tactics.",
+      "scope": "Official destination identity, neutral label, and protective relevance checked by an agent; not publisher endorsement, native review, or an automated scam diagnosis."
+    },
+    "humanReview": { "humanApproved": false, "nativeSpeakerReviewed": false }
+  },
+  {
+    "id": "government-cybercrime-reporting",
+    "labelKey": "nextSteps.title",
+    "label": { "en": "Government of India — cybercrime reporting portal", "hi": "भारत सरकार — साइबर अपराध रिपोर्टिंग पोर्टल" },
+    "url": "https://cybercrime.gov.in/",
+    "kind": "cybercrime-reporting",
+    "verified": true,
+    "checkedOn": "2026-10-03",
+    "status": "agent-checked",
+    "title": "National Cyber Crime Reporting Portal",
+    "publisher": "Ministry of Home Affairs, Government of India",
+    "relevance": "Official cybercrime reporting gateway with financial-fraud and cyber-safety sections. The app neither accepts reports nor promises money recovery.",
+    "automatedCheck": {
+      "status": 200,
+      "finalUrl": "https://cybercrime.gov.in/",
+      "fetchedAt": "2026-10-03T13:06:41Z",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 79313,
+      "sha256": "9fb8cd264fd1413bc5f3b5abd9730d28e5e3704ab380e1d8f266adb8878b2d89",
+      "method": "Exact HTTPS GET with curl --http1.1 --fail --location --max-time 45; official page text separately fetched and inspected this session"
+    },
+    "evidence": {
+      "record": "docs/RESOURCE_CHECKS.md#government-cybercrime-reporting",
+      "observed": "The page identifies the Ministry of Home Affairs, Government of India, displays National Cyber Crime Reporting Portal, and links Financial Fraud reporting and Cyber Safety Tips.",
+      "scope": "Official destination identity, neutral label, and protective relevance checked by an agent; not publisher endorsement, native review, or a submitted/tested report."
+    },
+    "humanReview": { "humanApproved": false, "nativeSpeakerReviewed": false }
   }
 ]

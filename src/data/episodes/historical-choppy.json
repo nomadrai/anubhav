@@ -1,0 +1,315 @@
+{
+  "id": "historical-choppy",
+  "label": "Episode B",
+  "bars": [
+    {
+      "date": "2019-01-02",
+      "close": 1.1397
+    },
+    {
+      "date": "2019-01-03",
+      "close": 1.1348
+    },
+    {
+      "date": "2019-01-04",
+      "close": 1.1403
+    },
+    {
+      "date": "2019-01-07",
+      "close": 1.1445
+    },
+    {
+      "date": "2019-01-08",
+      "close": 1.144
+    },
+    {
+      "date": "2019-01-09",
+      "close": 1.1455
+    },
+    {
+      "date": "2019-01-10",
+      "close": 1.1535
+    },
+    {
+      "date": "2019-01-11",
+      "close": 1.1533
+    },
+    {
+      "date": "2019-01-14",
+      "close": 1.1467
+    },
+    {
+      "date": "2019-01-15",
+      "close": 1.1424
+    },
+    {
+      "date": "2019-01-16",
+      "close": 1.1389
+    },
+    {
+      "date": "2019-01-17",
+      "close": 1.1396
+    },
+    {
+      "date": "2019-01-18",
+      "close": 1.1402
+    },
+    {
+      "date": "2019-01-21",
+      "close": 1.1362
+    },
+    {
+      "date": "2019-01-22",
+      "close": 1.1354
+    },
+    {
+      "date": "2019-01-23",
+      "close": 1.1367
+    },
+    {
+      "date": "2019-01-24",
+      "close": 1.1341
+    },
+    {
+      "date": "2019-01-25",
+      "close": 1.1346
+    },
+    {
+      "date": "2019-01-28",
+      "close": 1.1418
+    },
+    {
+      "date": "2019-01-29",
+      "close": 1.1422
+    },
+    {
+      "date": "2019-01-30",
+      "close": 1.1429
+    },
+    {
+      "date": "2019-01-31",
+      "close": 1.1488
+    },
+    {
+      "date": "2019-02-01",
+      "close": 1.1471
+    },
+    {
+      "date": "2019-02-04",
+      "close": 1.1445
+    },
+    {
+      "date": "2019-02-05",
+      "close": 1.1423
+    },
+    {
+      "date": "2019-02-06",
+      "close": 1.1394
+    },
+    {
+      "date": "2019-02-07",
+      "close": 1.1345
+    },
+    {
+      "date": "2019-02-08",
+      "close": 1.1346
+    },
+    {
+      "date": "2019-02-11",
+      "close": 1.1309
+    },
+    {
+      "date": "2019-02-12",
+      "close": 1.1296
+    },
+    {
+      "date": "2019-02-13",
+      "close": 1.1305
+    },
+    {
+      "date": "2019-02-14",
+      "close": 1.1268
+    },
+    {
+      "date": "2019-02-15",
+      "close": 1.126
+    },
+    {
+      "date": "2019-02-18",
+      "close": 1.1328
+    },
+    {
+      "date": "2019-02-19",
+      "close": 1.1294
+    },
+    {
+      "date": "2019-02-20",
+      "close": 1.1342
+    },
+    {
+      "date": "2019-02-21",
+      "close": 1.1354
+    },
+    {
+      "date": "2019-02-22",
+      "close": 1.1325
+    },
+    {
+      "date": "2019-02-25",
+      "close": 1.1355
+    },
+    {
+      "date": "2019-02-26",
+      "close": 1.1361
+    },
+    {
+      "date": "2019-02-27",
+      "close": 1.1386
+    },
+    {
+      "date": "2019-02-28",
+      "close": 1.1416
+    }
+  ],
+  "intradayAvailable": false,
+  "reveal": {
+    "periodText": {
+      "en": "2019-01-02 to 2019-02-28: 42 daily observations.",
+      "hi": "2019-01-02 से 2019-02-28: 42 दैनिक दर्ज मान।"
+    },
+    "whatHappenedText": {
+      "en": "The last observation was 0.17% above the first. The largest fall from an earlier high was 2.38%. This selected past path is not a forecast.",
+      "hi": "अंतिम दर्ज मान पहले मान से 0.17% ऊपर था। पहले के किसी ऊँचे मान से सबसे बड़ी गिरावट 2.38% थी। चुना गया यह पुराना रास्ता भविष्य का अनुमान नहीं है।"
+    }
+  },
+  "stats": {
+    "maxDrawdown": -0.023840485478977103,
+    "barCount": 42,
+    "totalChange": 0.001667105378608369,
+    "worstSingleDayFall": -0.005722708748807759
+  },
+  "provenance": {
+    "sourceName": "European Central Bank — euro foreign exchange reference rates, USD per EUR",
+    "sourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml",
+    "retrievedOn": "2026-10-03",
+    "licenceNote": "ECB copyright/reuse conditions (https://www.ecb.europa.eu/services/disclaimer/html/index.en.html), checked 2026-10-03. When such information is distributed or reproduced, it must appear accurately and the ECB must be cited as the source. If the information is modified by the user (e.g. by seasonal adjustment of statistical data or calculation of growth rates) this must be stated explicitly. Source observations are unchanged; relative changes and teaching simulation are app calculations, not ECB outputs. No endorsement.",
+    "inputSha256": "e9c5ebc2423bd5f31783930f62170f3f05f2f3539fae84b1f9b5003bde0a0195",
+    "seriesId": "EXR.D.USD.EUR.SP00.A",
+    "units": "USD per EUR",
+    "sourceDefinitionsUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+    "termsUrl": "https://www.ecb.europa.eu/services/disclaimer/html/index.en.html",
+    "termsCheckedOn": "2026-10-03",
+    "termsQuote": "When such information is distributed or reproduced, it must appear accurately and the ECB must be cited as the source.",
+    "modificationQuote": "If the information is modified by the user (e.g. by seasonal adjustment of statistical data or calculation of growth rates) this must be stated explicitly.",
+    "acquisition": {
+      "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml",
+      "finalUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml",
+      "status": 200,
+      "fetchedAt": "2026-10-03T13:06:45Z",
+      "contentType": "text/xml",
+      "bytes": 8191474,
+      "sha256": "807ad53568c849e894f9ea496c91684f530f23f60afc564d96f46702be494ceb"
+    },
+    "transformation": "TIME->date, source USD rate->internal close field, unchanged numeric observations. close is not a market closing price. Ratios/stats and virtual-money outcomes are app calculations.",
+    "observationTiming": "Publisher currently describes daily central-bank concertation normally around 14:10 CET and publication around 16:00 CET. XML supplies dates, not timestamps; historical per-row time is not asserted.",
+    "calendar": {
+      "basis": "Exactly the observed XML date keys; not an independently verified session calendar",
+      "dates": [
+        "2019-01-02",
+        "2019-01-03",
+        "2019-01-04",
+        "2019-01-07",
+        "2019-01-08",
+        "2019-01-09",
+        "2019-01-10",
+        "2019-01-11",
+        "2019-01-14",
+        "2019-01-15",
+        "2019-01-16",
+        "2019-01-17",
+        "2019-01-18",
+        "2019-01-21",
+        "2019-01-22",
+        "2019-01-23",
+        "2019-01-24",
+        "2019-01-25",
+        "2019-01-28",
+        "2019-01-29",
+        "2019-01-30",
+        "2019-01-31",
+        "2019-02-01",
+        "2019-02-04",
+        "2019-02-05",
+        "2019-02-06",
+        "2019-02-07",
+        "2019-02-08",
+        "2019-02-11",
+        "2019-02-12",
+        "2019-02-13",
+        "2019-02-14",
+        "2019-02-15",
+        "2019-02-18",
+        "2019-02-19",
+        "2019-02-20",
+        "2019-02-21",
+        "2019-02-22",
+        "2019-02-25",
+        "2019-02-26",
+        "2019-02-27",
+        "2019-02-28"
+      ]
+    },
+    "selection": "Retrospectively selected contrasting teaching windows, not representative/random samples. crash/choppy are internal teaching labels, not publisher classifications. Not equity prices or an Indian market sample.",
+    "review": {
+      "status": "agent-checked",
+      "checkedOn": "2026-10-03",
+      "evidence": "docs/DATA_REVIEW.md",
+      "humanApproved": false,
+      "nativeSpeakerReviewed": false
+    },
+    "validation": {
+      "barCount": 42,
+      "firstDate": "2019-01-02",
+      "lastDate": "2019-02-28",
+      "firstValue": 1.1397,
+      "lastValue": 1.1416,
+      "minimum": 1.126,
+      "maximum": 1.1535,
+      "totalChange": 0.001667105378608369,
+      "maxDrawdown": -0.023840485478977103,
+      "worstSingleDayFall": -0.005722708748807759,
+      "upSteps": 21,
+      "downSteps": 20,
+      "unchangedSteps": 0,
+      "missingValueCount": 0,
+      "duplicateDateCount": 0,
+      "nonpositiveValueCount": 0,
+      "absentCalendarDates": [
+        "2019-01-05",
+        "2019-01-06",
+        "2019-01-12",
+        "2019-01-13",
+        "2019-01-19",
+        "2019-01-20",
+        "2019-01-26",
+        "2019-01-27",
+        "2019-02-02",
+        "2019-02-03",
+        "2019-02-09",
+        "2019-02-10",
+        "2019-02-16",
+        "2019-02-17",
+        "2019-02-23",
+        "2019-02-24"
+      ],
+      "calendarNote": "Absent dates are only dates not returned by the source. No holiday/weekend/missing-session classification or fill is performed."
+    }
+  },
+  "isPlaceholder": false,
+  "scenario": "choppy",
+  "status": "agent-checked",
+  "sourceLabel": {
+    "en": "Source: European Central Bank. Relative changes calculated for this lesson.",
+    "hi": "स्रोत: यूरोपीय केंद्रीय बैंक। इस पाठ के लिए सापेक्ष बदलाव की गणना की गई है।"
+  }
+}

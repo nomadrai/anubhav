@@ -1,8 +1,7 @@
 import type { Episode } from './episode.schema';
 import { validateEpisode } from './episode.schema';
-import crash from './crash-synthetic.json';
-import choppy from './choppy-synthetic.json';
-import placeholder from './placeholder-synthetic.json';
+import crash from './historical-crash.json';
+import choppy from './historical-choppy.json';
 
 function load(id: string, value: unknown): Episode {
   try {
@@ -14,9 +13,8 @@ function load(id: string, value: unknown): Episode {
 }
 
 export const episodes: Episode[] = [
-  load('crash-synthetic', crash),
-  load('choppy-synthetic', choppy),
-  load('placeholder-synthetic', placeholder),
+  load('historical-crash', crash),
+  load('historical-choppy', choppy),
 ];
 
 export const episodeById = new Map(episodes.map((episode) => [episode.id, episode]));

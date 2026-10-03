@@ -4,6 +4,8 @@ export interface EpisodeStats { maxDrawdown: number; barCount: number; totalChan
 export interface Episode {
   id: string;
   label: string;
+  /** Neutral publisher attribution; never display the instrument-bearing provenance. */
+  sourceLabel?: { en: string; hi: string };
   bars: Bar[];
   intradayAvailable: boolean;
   reveal: { periodText: Record<string, string>; whatHappenedText: Record<string, string> };
@@ -119,9 +121,18 @@ export function validateEpisode(value: unknown): Episode {
     provenance.inputSha256 = value.provenance.inputSha256;
   }
 
+  let sourceLabel: Episode['sourceLabel'];
+  if (value.sourceLabel !== undefined) {
+    if (!isObject(value.sourceLabel) || !isNonEmptyString(value.sourceLabel.en) || !isNonEmptyString(value.sourceLabel.hi)) {
+      fail(id, 'sourceLabel must contain non-empty en and hi strings');
+    }
+    sourceLabel = { en: value.sourceLabel.en as string, hi: value.sourceLabel.hi as string };
+  }
+
   return {
     id,
     label: value.label as string,
+    ...(sourceLabel ? { sourceLabel } : {}),
     bars,
     intradayAvailable: value.intradayAvailable as boolean,
     reveal,

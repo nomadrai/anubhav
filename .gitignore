@@ -7,11 +7,11 @@ coverage/
 .eslintcache
 *.tsbuildinfo
 
-# Local configuration and generated audio
+# Local configuration. Only gated, compact Opus + manifest assets are committed.
 .env*
-public/audio/manifest.json
-public/audio/**/*.opus
-# Local auditions and timing reports, never deployed with the app
+# Build-time raw data, WAVs, rejected candidates and timing reports never ship.
+/data-raw/
+/artifacts/audio-build/
 /artifacts/tts-auditions/
 !.gitkeep
 

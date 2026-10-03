@@ -106,7 +106,7 @@ class AcquireCandidateTest(unittest.TestCase):
                 acquisition.main(["--offline", "--output-root", str(ROOT / "src/candidates")])
         self.assertEqual(caught.exception.code, 2)
 
-    def test_price_files_are_git_ignored_and_resources_remain_unverified(self) -> None:
+    def test_price_files_are_git_ignored_and_resources_have_evidence_not_human_approval(self) -> None:
         for directory in ("raw", "inputs"):
             path = f"data/candidates/{directory}/example.json"
             result = subprocess.run(["git", "check-ignore", path], cwd=ROOT, capture_output=True)
@@ -117,9 +117,14 @@ class AcquireCandidateTest(unittest.TestCase):
             self.assertNotEqual(result.returncode, 0, path)
         resources = json.loads((ROOT / "src/content/resources.json").read_text())
         for resource in resources:
-            self.assertIs(resource["verified"], False)
             self.assertIs(resource["humanReview"]["humanApproved"], False)
+            self.assertIs(resource["humanReview"]["nativeSpeakerReviewed"], False)
             self.assertEqual(resource["automatedCheck"]["status"], 200)
+            if resource["verified"]:
+                self.assertEqual(resource["status"], "agent-checked")
+                self.assertTrue(resource["evidence"]["record"].startswith("docs/RESOURCE_CHECKS.md#"))
+                self.assertEqual(resource["automatedCheck"]["finalUrl"], resource["url"])
+                self.assertEqual(resource["checkedOn"], "2026-10-03")
 
 
 if __name__ == "__main__":
