@@ -52,6 +52,33 @@ Only the supplied venv's CUDA `torchaudio` wheel was replaced by the same
 version's CPU build; no web dependencies or model weights are deployed.
 See `THIRD_PARTY.md` for the exact build-tool evidence and shipping boundary.
 
+## ADR-0011 — User-authorized finish-session evidence rules (2026-10-03)
+
+**Status:** accepted, supersedes the human-only advancement parts of ADR-0004,
+0007, 0008 and 0010, not their truthfulness/privacy protections.
+
+- Add `agent-checked` between `draft` and `reviewed`; agents may not assign
+  `reviewed`. Release blocks draft, loudly lists every agent-checked string,
+  and accepts reviewed content without that warning. Automated Hindi and
+  back-translation checks are not native-speaker review and must be disclosed.
+- Agents may resolve human TODOs using verifiable evidence. Unverifiable rights,
+  listening, consent, and pilot outcomes remain open and are reported, not invented.
+- Resources may be verified by the agent after an exact official-page fetch in
+  this session with label/URL/date/evidence in `RESOURCE_CHECKS.md`. No unsupported
+  helplines or procedures. Dataset redistribution terms must be explicit.
+- Model defaults/sampling may replace failed greedy synthesis when experiments
+  justify it. Objective quality/ASR gates may select a voice; disclose that no
+  human has listened. No silent replacement assets or fake timing claims.
+- Public downloads, dev/TTS package installation, and read-only use of existing
+  Hugging Face auth are authorized; tokens never enter logs/files/commits.
+- Local milestone commits are authorized; no pushes. Only an already-authenticated
+  static-host CLI may create a preview, never a production-domain deployment,
+  account, or payment without further user action.
+- Continue independent work past blockers and batch final questions. Predictions
+  and pilot answers remain in memory, not persistent financial/personal storage.
+  Same-origin runtime-only requests, no advice/real instrument UI, no telemetry,
+  and all remaining guardrails are unchanged.
+
 ## Open decisions
 
 - `TODO(human)`: review the working title in `src/config/app.ts` before participant-facing release; do not duplicate it in docs or copy.
