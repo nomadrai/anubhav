@@ -19,6 +19,7 @@
   --paper: #fffdf9;
   --gap: clamp(0.75rem, 1.5vw, 1.5rem);
   --pad: clamp(1rem, 2vw, 2rem);
+  --chrome-inline-inset: clamp(0.2rem, 0.6vw, 0.6rem);
 }
 * {
   box-sizing: border-box;
@@ -146,14 +147,15 @@ p {
   transform: none;
 }
 .app-header {
-  padding-top: max(0.25rem, env(safe-area-inset-top));
-  padding-bottom: 0.25rem;
+  padding-top: max(0.4rem, env(safe-area-inset-top));
+  padding-bottom: 0.4rem;
   background: #f7f1e8;
   position: sticky;
   top: 0;
   z-index: 5;
 }
 .topbar {
+  padding-inline: var(--chrome-inline-inset);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -206,7 +208,7 @@ p {
 .chat-panel {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  right: var(--chrome-inline-inset);
   width: min(400px, calc(100vw - 1.5rem));
   height: min(560px, 75dvh, var(--chat-available-height, 75dvh));
   display: flex;
@@ -464,10 +466,12 @@ p {
   z-index: 4;
   background: #f7f1e8;
   border-top: 1px solid var(--line);
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: 0.2rem;
+  padding-inline: var(--chrome-inline-inset);
+  padding-bottom: max(0.2rem, env(safe-area-inset-bottom));
 }
 .action-bar {
-  padding: 0.15rem 0;
+  padding: 0;
 }
 .action-inner {
   display: flex;
@@ -517,7 +521,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  padding: 0 0 0.1rem;
+  padding: 0;
 }
 .app-footer p {
   font-size: 0.75rem;
@@ -1209,11 +1213,15 @@ meter {
 }
 @media (max-width: 480px) {
   .chat-panel {
-    width: 100%;
+    width: calc(100% - 2 * var(--chrome-inline-inset));
   }
   .toolbar {
     width: 100%;
+    flex-wrap: nowrap;
     justify-content: space-between;
+  }
+  .toolbar select {
+    flex: 0 1 5.3rem;
   }
   .chart svg {
     height: clamp(8rem, 26dvh, 13rem);
@@ -1224,6 +1232,18 @@ meter {
   }
   .comparison-tiles {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 340px) {
+  .toolbar {
+    gap: 0.25rem;
+  }
+  .toolbar select {
+    padding-inline: 0.2rem;
+  }
+  .auto-speak-switch {
+    gap: 0.2rem;
+    padding-inline: 0.3rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {

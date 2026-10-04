@@ -1,5 +1,33 @@
 # Accessibility and performance — measured product track
 
+## Compact header/footer edge spacing (2026-10-04)
+
+Header and footer controls now share a responsive 4–12px inner side inset.
+Header block padding is 8px; the bottom section uses 4px block padding with
+duplicate action/footer padding removed. Safe-area insets still apply. On narrow
+phones the three header controls stay grouped on one row, with the language
+select allowed to shrink and the auto-speak label allowed to wrap. The chat
+panel's right edge follows the inset Chat button.
+
+Bounded local Chrome measurements of Intro, with the current sending-feature
+footer and fixed large text (before → after, pixels):
+
+| Viewport | Language | Header height | Entire bottom-section height |
+|---|---|---|---|
+| 1280×650 | English | 61 → 67 | 66 → 72 |
+| 1280×650 | Hindi | 61 → 67 | 55 → 57 |
+| 360×640 | Both | 102.5 → 108.5 | 120 → 120 |
+| 320×640 | English | 157.5 → 121.5 | 139.5 → 139.5 |
+| 320×640 | Hindi | 157.5 → 121.5 | 120 → 120 |
+
+All six cases retained their outer bar widths, no horizontal overflow, >=48px
+header-control heights, visible/hit-testable primary actions and a viewport-contained
+chat panel aligned with its opener. Screenshots were inspected in one desktop/mobile
+batch; the layout detector returned no findings. Build, lint and typecheck passed.
+Evidence is local under `/tmp/omnirush/chrome-spacing-*`; no broad browser, native
+accessibility or performance audit is claimed. Earlier measurements below are
+historical snapshots, including their then-inert Chat descriptions.
+
 ## Bottom-section correction and Chat icon
 
 The footer means the **entire** bottom section, including Back/primary actions.
