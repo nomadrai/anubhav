@@ -7,6 +7,7 @@ import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
 import {
   adviceSeeking,
   personalDetails,
+  conversationIntent,
   retrieve,
   relatedEntries,
   entryText,
@@ -143,19 +144,21 @@ export default function ChatPanel({
       reply({ mode: 'private', answer: copy.private, entries: [] });
       return;
     }
+    const intent = conversationIntent(text);
+    if (intent) {
+      reply({ mode: intent, answer: copy[intent], entries: [] });
+      return;
+    }
     const matches = retrieve(text, entries).map((item) => item.entry);
-    const fallback = (): ChatResult =>
-      matches.length
-        ? {
-            mode: 'entry',
-            answer: entryText(matches[0], language),
-            entries: [matches[0]],
-          }
-        : {
-            mode: 'unknown',
-            answer: copy.unknown,
-            entries: relatedEntries(entries),
-          };
+    if (matches.length) {
+      showEntry(matches[0]);
+      return;
+    }
+    const fallback = (): ChatResult => ({
+      mode: 'unavailable',
+      answer: copy.unavailable,
+      entries: [],
+    });
     const controller = new globalThis.AbortController();
     pending.current = controller;
     const timer = globalThis.setTimeout(() => controller.abort(), 11000);
@@ -195,14 +198,36 @@ export default function ChatPanel({
           answer: value.answer,
           entries: trusted,
         });
-      else if (value.mode === 'entry' && trusted.length) showEntry(trusted[0]);
+      else if (['entry', 'generated'].includes(value.mode) && trusted.length)
+        showEntry(trusted[0]);
       else if (
-        ['refusal', 'unknown', 'private', 'disabled'].includes(value.mode)
+        [
+          'refusal',
+          'unknown',
+          'private',
+          'disabled',
+          'unavailable',
+          'greeting',
+          'thanks',
+          'goodbye',
+          'help',
+        ].includes(value.mode)
       )
         reply({
           mode: value.mode,
           answer:
-            copy[value.mode as 'refusal' | 'unknown' | 'private' | 'disabled'],
+            copy[
+              value.mode as
+                | 'refusal'
+                | 'unknown'
+                | 'private'
+                | 'disabled'
+                | 'unavailable'
+                | 'greeting'
+                | 'thanks'
+                | 'goodbye'
+                | 'help'
+            ],
           entries: trusted,
         });
       else reply(fallback());

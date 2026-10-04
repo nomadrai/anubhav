@@ -1,5 +1,68 @@
 # Chat UI and KB integration — agent-checked
 
+## Keyword-first answers and live semantic RAG (2026-10-04)
+
+The user's later request supersedes the routing described in the historical
+sections below. Greetings and qualifying keyword questions return original local
+content. A keyword miss now calls Groq to select relevant known entry IDs from a
+compact public catalog, then explain their original selected-language text.
+The browser still sends only question/language, not steps or conversation history.
+No KB text, advice/private guard, output check or rate-limit threshold changed.
+Unknown and service-unavailability replies are now distinct, friendly messages;
+keyword misses alone no longer produce the old “These entries…” response.
+
+Four changed bilingual pairs retain `agent-checked`, with current registry hashes:
+
+| Key | Hindi → English back-translation | Disposition |
+|---|---|---|
+| disclosure | If word matching fails, the question and chosen language go through the app server to Groq, where related information is found and explained. | Same fallback-only transport and grounded retrieval scope. |
+| unknown | No learning topic connected to this question was found. Which word or part of the practice are you asking about? | Same tentative topic match and clarification; no immediate keyword rejection. |
+| unavailable | The explanation could not be completed now. Ask again shortly or ask about a term in this practice. | Same temporary service failure; no claim the KB lacks the answer. |
+| about | Greetings and word-matched questions are answered on this device. Other questions and language go through the server to Groq. Practice answers stay here. | Same local-first/network distinction and private journey boundary. |
+
+Explicitly authorized live verification via `scripts/check-chat-live.mjs` used
+the actual server-loaded key without printing, copying or persisting it. One fixed
+learning paraphrase with zero keyword matches made two Groq requests, both HTTP 200.
+The final mode was `entry`: semantic selection succeeded and the original selected
+entry was returned through the guarded generation fallback. A keyword question
+made zero provider calls. No claim of a shipped generated answer or broad live
+model coverage is made. Earlier stub-only evidence below remains historical.
+No native-speaker or human listening review occurred.
+Final bounded checks passed: 33 conversational/routing/failure cases, all 66
+suggested-question retrievals, the 16 greeting/disclosure/status content hashes,
+ten advice refusals with zero provider calls, build, lint and typecheck.
+
+## Friendly conversational replies and local key loading (2026-10-04)
+
+Exact greeting, thanks, goodbye and help/unclear prompts now have short bilingual
+local replies, after the existing advice/private-information checks. Mixed inputs
+such as “Hi, what is leverage?” still use retrieval and grounded generation.
+Retrieval excludes greeting prefixes, trailing thanks and definition filler
+words (`mean`, `means`, `meaning`, `here`); its score/coverage thresholds and
+output guardrails are unchanged. The original unknown wording remains reserved
+for questions without a qualifying KB match. No knowledge entries were changed.
+The model prompt requests a warm tone without pretending to be human.
+
+Agent-only semantic QA for the four new bilingual pairs:
+
+| Key | Hindi → English back-translation | Disposition |
+|---|---|---|
+| greeting | Greetings! What would you like to understand? Ask about this practice, borrowed power, recovery maths or signs of fraud. | Same welcome, invitation and supported topic scope. |
+| thanks | No problem! Ask if a word or part of the practice is unclear. We can understand it. | Same acknowledgement and offer to explain; no claim of human feelings. |
+| goodbye | Goodbye! You can reopen chat to learn further. | Same farewell and return invitation; no promise of saved history. |
+| help | You can ask about this practice and learning topics. What should be explained: borrowed power, recovery maths, risk or fraud signs? | Same clarification and supported topic scope. |
+
+All eight new strings are hash-pinned as `agent-checked`. No native review,
+human listening, live model result or provider-account configuration is claimed.
+The Vite dev/preview adapter reads the server-only key from root `.env.local`
+without browser exposure or key logging; existing environment keys take precedence.
+Bounded verification passed: 25 conversational/API cases in
+`scripts/check-chat-conversation.mjs`, all 66 suggested-question retrievals,
+eight new content hashes, the existing ten advice refusals with zero provider
+calls, synthetic dev/preview `.env.local` loading and environment precedence,
+build, lint and typecheck. Only synthetic provider calls were used.
+No real key or user question is printed, copied into fixtures or persisted.
+
 ## Compact popup and step questions (2026-10-04)
 
 The chat-only redesign uses a 400px, header-anchored non-modal panel, near

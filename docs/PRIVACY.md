@@ -27,7 +27,8 @@ The compact, non-modal chat panel opens below the header Chat button. Its Send
 button, Enter key, and question chips explicitly submit a general learning question;
 there is no acknowledgement checkbox. Server/provider policies remain disclosed
 in About this app and the footer distinguishes chat from local practice. Do not enter
-personal or financial details. The browser sends **only** `{question, language}`
+personal or financial details. Greetings and qualifying keyword matches are answered
+on-device. On a keyword miss, the browser sends **only** `{question, language}`
 as a JSON POST to same-origin `/api/chat`, with cookies omitted and no referrer.
 No step, prediction, amount, pilot result, profile or conversation history is sent.
 Questions never appear in URLs. Advice/tip/prediction requests receive a fixed
@@ -35,15 +36,20 @@ local refusal without transmission; the server repeats this guard for direct API
 clients. A limited personal-detail detector blocks common identifiers/secrets,
 but is not a comprehensive privacy filter.
 
-Eligible questions are retrieved against public original KB entries. Only the
-question, selected language instruction and the top three matching texts reach
-**Groq**, using **openai/gpt-oss-120b**. There are no live market feeds, tools,
+On a keyword miss, **Groq**, using **openai/gpt-oss-120b**, first receives the
+question and a compact public catalog of the 212 entry IDs and English titles
+for semantic retrieval. Only returned IDs that exist in the KB are accepted,
+with at most three distinct entries. A second call receives the same question,
+selected-language instruction and those entries' original text to explain them.
+No matching semantic topic yields a friendly clarification; missing keys or
+provider failures are distinguished from unsupported topics. Once entries are
+selected, failed or blocked generation uses their original text. There are no live market feeds, tools,
 external searches or vector services. The secret `GROQ_API_KEY` is read only by
 server code, never from a `VITE_*` variable, public asset or browser storage.
 No app code logs or stores questions or provider responses. The panel keeps only
 its input and displayed messages in memory; closing it clears them. Requests abort on
-close; provider calls have an approximate ten-second timeout. Failures/blocked
-answers use original local KB text, not invented success or a second provider.
+close; the two-call provider sequence shares an approximate ten-second timeout.
+There is no invented success or second provider.
 
 The server keeps bounded transient **IP/counter/expiry** records for rate limiting,
 not analytics. Expired records are pruned on subsequent requests or discarded
@@ -78,8 +84,11 @@ review is claimed. See `knowledge/` QA notes for agent-only content evidence.
 
 ## Current bounded verification
 
-At the user's request, this change checks only build, lint/typecheck, ten
-English/Hindi/Hinglish advice questions with a stub proving zero provider calls,
-and official-source facts. Earlier full-journey static-only network assertions
-are historical and do not constitute new chat network/provider verification.
-No live Groq call, production deployment, native review or broad audit is claimed.
+The user explicitly requested real key-backed RAG verification after the earlier
+stub-only checks. A fixed general learning paraphrase with zero keyword matches
+made two live Groq calls, both HTTP 200; the final answer used the selected
+original KB entry fallback. A keyword question made zero provider calls.
+No key, question body, provider text, reasoning or headers were logged by app code.
+Bounded checks cover synthetic routing/failures/refusals, bilingual copy hashes,
+build, lint and typecheck. Earlier broad browser evidence remains historical.
+No production deployment, native review or broad audit is claimed.

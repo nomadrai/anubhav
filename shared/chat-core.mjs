@@ -9,7 +9,7 @@ export function normalise(text) {
     .trim();
 }
 const stop = new Set(
-  'a an the is are was were am i me my you your we our do does did what why how can could would please tell explain about of in on to for and or with this that it hai hain kya ka ki ke ko se mein mujhe batao samjhao है हैं क्या का की के को से में मुझे बताओ समझाओ यह ये वह और या तो'.split(
+  'a an the is are was were am i me my you your we our do does did what why how can could would please tell explain about mean means meaning here of in on to for and or with this that it hai hain kya ka ki ke ko se mein mujhe batao samjhao है हैं क्या का की के को से में मुझे बताओ समझाओ यह ये वह और या तो'.split(
     ' ',
   ),
 );
@@ -17,6 +17,47 @@ export function tokens(text) {
   return normalise(text)
     .split(' ')
     .filter((t) => t.length > 1 && !stop.has(t));
+}
+const GREETING_PREFIX =
+  /^(?:hi+|hello+|hey+|namaste|namaskar|नमस्ते|नमस्कार|सुप्रभात|good morning|good afternoon|good evening)(?:\s+(?:there|chatbot|bot))?(?:\s+|$)/u;
+function learningQuestion(question) {
+  let text = normalise(question);
+  while (GREETING_PREFIX.test(text))
+    text = text.replace(GREETING_PREFIX, '').trim();
+  return text.replace(
+    /\s+(?:thanks(?: a lot)?|thank you(?: very much)?|धन्यवाद|शुक्रिया|shukriya|dhanyavaad)$/u,
+    '',
+  );
+}
+// Exact social intents only: a greeting followed by a question still uses retrieval.
+export function conversationIntent(question) {
+  const text = learningQuestion(question);
+  if (
+    !text ||
+    /^(?:how are you|how s it going|कैसे हो|कैसे हैं|आप कैसे हैं|kaise ho|kaise hain)$/u.test(
+      text,
+    )
+  )
+    return 'greeting';
+  if (
+    /^(?:thanks(?: a lot)?|thank you(?: very much)?|धन्यवाद|शुक्रिया|shukriya|dhanyavaad)$/u.test(
+      text,
+    )
+  )
+    return 'thanks';
+  if (
+    /^(?:bye|goodbye|good bye|see you|अलविदा|फिर मिलेंगे|फिर बात करेंगे)$/u.test(
+      text,
+    )
+  )
+    return 'goodbye';
+  if (
+    /^(?:help(?: me)?|can you help(?: me)?|what can i ask|what can you (?:do|explain|answer)|who are you|i need help|i don t understand|what does this mean|explain(?: please)?|meaning|मदद|मदद करें|मदद चाहिए|क्या पूछ सकते हैं|मैं क्या पूछ सकता हूँ|आप क्या कर सकते हैं|आप कौन हैं|समझ नहीं आया|मुझे समझ नहीं आया|इसका क्या मतलब है|मतलब|समझाएँ|समझाओ|madad|samajh nahi aaya)$/u.test(
+      text,
+    )
+  )
+    return 'help';
+  return null;
 }
 export function adviceSeeking(question) {
   const q = normalise(question);
@@ -77,7 +118,8 @@ export function personalDetails(question) {
 }
 export const MIN_RETRIEVAL_SCORE = 2;
 export function retrieve(question, entries, limit = 3) {
-  const query = [...new Set(tokens(question))];
+  const search = learningQuestion(question);
+  const query = [...new Set(tokens(search))];
   if (!query.length) return [];
   const documents = entries
     .filter((e) => e.status === 'agent-checked' || e.status === 'reviewed')
@@ -107,7 +149,7 @@ export function retrieve(question, entries, limit = 3) {
               (tf + 1.2 * (0.35 + (0.65 * d.body.length) / (avg || 1)))) +
           (d.title.includes(term) ? 4 * idf : 0);
       }
-      const nq = normalise(question);
+      const nq = search;
       if (
         [d.entry.title_en, d.entry.title_hi, ...d.entry.aliases].some(
           (a) => normalise(a) === nq,

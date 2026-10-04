@@ -12,13 +12,16 @@ export interface KnowledgeEntry {
   status: string;
   lintAllow?: { pattern: string; reason: string }[];
 }
+export type ConversationIntent = 'greeting' | 'thanks' | 'goodbye' | 'help';
 export type ChatMode =
+  | ConversationIntent
   | 'generated'
   | 'entry'
   | 'refusal'
   | 'unknown'
   | 'private'
   | 'limited'
+  | 'unavailable'
   | 'disabled';
 export interface ChatResult {
   mode: ChatMode;
@@ -27,6 +30,7 @@ export interface ChatResult {
 }
 export function normalise(text: string): string;
 export function tokens(text: string): string[];
+export function conversationIntent(question: string): ConversationIntent | null;
 export function adviceSeeking(question: string): boolean;
 export function personalDetails(question: string): boolean;
 export function retrieve(

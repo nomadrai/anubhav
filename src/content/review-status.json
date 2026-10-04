@@ -1429,7 +1429,7 @@
         },
         "disclosure": {
           "status": "agent-checked",
-          "contentSha256": "973b824e8a6b65e0e0c027b2e595284f4c636725ea38cd38083e03b726c44ebe"
+          "contentSha256": "563ea42b00bfd421465ba86132c967dad8b83f67c6cfdaed4a4b4df1dd5b85cc"
         },
         "retention": {
           "status": "agent-checked",
@@ -1465,7 +1465,23 @@
         },
         "unknown": {
           "status": "agent-checked",
-          "contentSha256": "1350ab3e4ba302a1814a14922624f05f52f38db72db60720487c28a880c8baf3"
+          "contentSha256": "621d5aa977a92728e7158ade8928a23b585cd66fd815068ae3d1f34646e0f9d6"
+        },
+        "greeting": {
+          "status": "agent-checked",
+          "contentSha256": "eeb9f2674eb9a64d84a930cfa31362dc7d1cd946aba9ef185a96eb1d6edaeaaf"
+        },
+        "thanks": {
+          "status": "agent-checked",
+          "contentSha256": "d43da5cf6611394ab0f15abcc671bcf6c2ffa5396ee64a2c99bd77880c46d4cd"
+        },
+        "goodbye": {
+          "status": "agent-checked",
+          "contentSha256": "9688e98af4e9363336bb397d31df2ad935ee62e3fc169a071ae9aeef4ab6fd3a"
+        },
+        "help": {
+          "status": "agent-checked",
+          "contentSha256": "6341dc273d6940809644e00e9ca7d74969206a92952c54dd2f37ba39bd0cfbee"
         },
         "private": {
           "status": "agent-checked",
@@ -1481,7 +1497,7 @@
         },
         "unavailable": {
           "status": "agent-checked",
-          "contentSha256": "216c4c7f47bc04c6aa8d15baaf8894304bc32c6e601f72ad1d5bdcb7200c3f62"
+          "contentSha256": "d2109113e1a47667569e4340f8eec1aaeec30aba4044f72b9ac14fcd8d1b8b6b"
         },
         "loadError": {
           "status": "agent-checked",
@@ -1621,7 +1637,7 @@
         },
         "about": {
           "status": "agent-checked",
-          "contentSha256": "e515467ffdab30f2e60f15089b5bb1439f552f33738e9e7fa1b2bcb8fbef842a"
+          "contentSha256": "27beb73ddedbc5035bc0b81f7d22ed6d61abd81f8209015720c32fcf00ccd33e"
         },
         "vendor": {
           "status": "agent-checked",
@@ -3057,7 +3073,7 @@
         },
         "disclosure": {
           "status": "agent-checked",
-          "contentSha256": "31c676e4d5ec65dfc96372176e8223acc71cdb0801574aea1d718e2313b6ec8f"
+          "contentSha256": "69f4df642e0f390ebb7897f4f7d9b0d48096d2163de17be1f8f538ca02fd7504"
         },
         "retention": {
           "status": "agent-checked",
@@ -3093,7 +3109,23 @@
         },
         "unknown": {
           "status": "agent-checked",
-          "contentSha256": "5e6b96d8b479ba10688b066ac69842651c24c2c146580ae119bca5ea6ec9697a"
+          "contentSha256": "2eccbbd3d3f91f23644896a8212e062ee56a4e0394f7ab4f2e6a1c9cacc409e4"
+        },
+        "greeting": {
+          "status": "agent-checked",
+          "contentSha256": "c0b06f67142d9b5b1df1744ea0275902248f9c507943e85ee27a6b28637dc0ba"
+        },
+        "thanks": {
+          "status": "agent-checked",
+          "contentSha256": "c2cabd48ca9338ce2d522f0517ab65c4fbb1df76c4fc803d0f8c8cb1a1da553a"
+        },
+        "goodbye": {
+          "status": "agent-checked",
+          "contentSha256": "c00cad4fe49aed76e74b45498dc2336c54a7e9a34d6101b9436be18e1b032e04"
+        },
+        "help": {
+          "status": "agent-checked",
+          "contentSha256": "6bb87a3f9b3b1bdb4aadf91fdfacb6b093b507b50b3660c8747f5b2e2537cc24"
         },
         "private": {
           "status": "agent-checked",
@@ -3109,7 +3141,7 @@
         },
         "unavailable": {
           "status": "agent-checked",
-          "contentSha256": "ef38b460838934d8be736959ee8f26bd7f060974dfed0c0456d12ca62d807319"
+          "contentSha256": "342f3f6cf708f51b64d0d7dc655d4f83428ee8d729641a0ac230fea0fcf38446"
         },
         "loadError": {
           "status": "agent-checked",
@@ -3249,7 +3281,7 @@
         },
         "about": {
           "status": "agent-checked",
-          "contentSha256": "68899f04e2930ada183af52e2e8d3accc483626e2cd553eda1c1599a8df1d622"
+          "contentSha256": "766e2ae5cb45fc9d5977ebb7309d0887c34cd83ec7dcfc98dfbdf597d8af7c74"
         },
         "vendor": {
           "status": "agent-checked",

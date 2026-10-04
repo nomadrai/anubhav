@@ -1,9 +1,14 @@
 import fs from 'node:fs';
+import { loadEnv } from 'vite';
 import { handleChat } from './chat.mjs';
 import { KB_CATEGORIES } from '../shared/chat-config.mjs';
 
 export function chatPlugin() {
   const install = (server) => {
+    // Vite's browser env handling does not populate server-only process.env keys.
+    const env = loadEnv(server.config.mode, server.config.envDir, 'GROQ_API_KEY');
+    if (!process.env.GROQ_API_KEY && env.GROQ_API_KEY)
+      process.env.GROQ_API_KEY = env.GROQ_API_KEY;
     server.middlewares.use(async (req, res, next) => {
       const path = req.url?.split('?')[0];
       if (path?.startsWith('/knowledge/')) {

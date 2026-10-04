@@ -98,7 +98,12 @@ language and auto-speak preferences may persist. The retired text-size key is re
 The Chat icon toggles a compact, non-modal panel below the header, with three
 bilingual question chips for each of the eleven steps and in-memory messages.
 It is backed by 212 original bilingual KB entries; provider policies are in About this app.
-Submitted general questions and language go through `/api/chat` to Groq; advice requests
+Greetings, thanks and simple help prompts have friendly bilingual local replies.
+Keyword matches return original KB text locally. A keyword miss uses Groq for
+semantic entry selection, then a grounded explanation from up to three selected
+entries; it does not immediately return an unknown message. Local dev/preview loads the
+server-only `GROQ_API_KEY` from a gitignored root `.env.local` on startup.
+Unmatched general questions and language go through `/api/chat` to Groq; advice requests
 are refused locally and again on the server. The model never receives journey answers.
 Missing/failed model calls use library text. See [PRIVACY](docs/PRIVACY.md) and
 [DEPLOYMENT](docs/DEPLOYMENT.md); set `GROQ_API_KEY` only in the server environment.

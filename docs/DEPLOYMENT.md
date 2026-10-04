@@ -11,7 +11,14 @@ edge/per-IP limiting. Do not trust client-supplied forwarding headers.
 
 Set **GROQ_API_KEY as a server/function environment variable**, never `VITE_*`,
 a committed `.env`, frontend setting or build-injected browser secret. Without a
-key, the server returns the best library entry; it does not claim an AI call.
+key, keyword questions still return library text; semantic RAG is unavailable
+and does not claim an AI call. Keyword misses use two server-side calls: semantic
+selection from the public title catalog, then a grounded explanation from the
+selected KB entries. Both calls share the request's ten-second timeout.
+For local development, put `GROQ_API_KEY=...` in the gitignored root `.env.local`
+and start `npm run dev` normally. The Vite dev/preview adapter loads only this
+server key into `process.env`; existing environment values take precedence.
+Restart the server after changing the file. The key is not browser-injected or logged.
 `CHAT_ENABLED` in `shared/chat-config.mjs` is the single on/off flag; rebuild and
 redeploy both client and server to change it. The shipped setting is ON.
 
@@ -21,6 +28,10 @@ host rate limiting depends on host/plan support; application counters are also
 per-IP but warm-instance only. Review Groq data controls and disable host/body/APM
 question logging. No host account, key setup, paid plan or deployment is performed.
 Final integration verification is limited to requested build/lint/typecheck/refusal/fact checks.
+The later explicit live-key request was verified with `node scripts/check-chat-live.mjs`:
+two HTTP-200 Groq calls answered a keyword miss using selected original entry text;
+a keyword match made zero provider calls. This script performs a real request only
+when explicitly invoked and never prints keys or provider text.
 
 ## Earlier static deployment notes
 

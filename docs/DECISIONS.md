@@ -230,6 +230,46 @@ handler plus optional Netlify adapter; no host account/key/deploy provisioned.
 The user limits final checks to build/lint/typecheck, ten refusals and facts.
 No new packages, copied content, investment calls or engine changes.
 
+## ADR-0021 — Friendly local conversation and server-only development key loading
+
+**Status:** implemented at the user's request. Exact English/Hindi greetings,
+thanks, goodbyes and help prompts receive content-file replies locally and on
+the server, after advice/private-information checks. A greeting plus a learning
+question still uses RAG; conversational wrappers do not count against retrieval
+coverage. Scores/coverage thresholds, unknown wording, output validation and
+original-entry fallbacks remain intact. The model prompt asks for warmth without
+a human-persona claim. Knowledge-base files and question/history transport are unchanged.
+
+The Vite dev/preview installer loads only `GROQ_API_KEY` from its environment
+directory (including gitignored `.env.local`) into the server process, preserving
+an existing environment value. No key enters the browser, logs or test fixtures.
+Verification uses synthetic keys/model responses, bounded conversation/refusal
+checks and build/lint/typecheck; no live model or native review is implied.
+
+## ADR-0022 — Keyword-first local answers with Groq semantic RAG fallback
+
+**Status:** implemented at the user's explicit request, superseding immediate
+unknown replies on keyword misses and model calls for ordinary keyword matches.
+Browser and server answer qualifying keyword matches with original KB text.
+Other eligible questions use the server key for semantic selection across a
+compact catalog of all 212 English titles and IDs. The model's structured output
+is checked for known, distinct IDs (maximum three); only then are the original
+selected-language entry texts supplied for grounded generation. The catalog is
+public content, not learner state. Both calls use the same model and shared
+ten-second timeout. No vector service, new dependency or KB mutation is introduced.
+
+The old unknown wording is replaced with friendly clarification only after a
+successful semantic search selects no topic. Missing-key/network/malformed-ID
+failures use separate temporary-unavailability copy. After semantic selection,
+failed/unsafe generation still returns original entry text. Advice/private gates,
+output validation, rate limits, no history/journey transport and server-only key
+remain intact. User authorization includes a bounded real-key live check.
+
+Groq's exact official Structured Outputs page was fetched 2026-10-04:
+https://console.groq.com/docs/structured-outputs . It lists `openai/gpt-oss-120b`
+as supporting strict JSON-schema output, with required fields and
+`additionalProperties: false`. Runtime validates the selected IDs independently.
+
 ## Remaining human publication/pilot decisions
 
 - `TODO(human)`: confirm the working title in `src/config/app.ts` and intended

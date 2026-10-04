@@ -8,7 +8,7 @@
   "messages": "Messages",
   "busy": "Finding an explanation…",
   "warning": "Do not type personal or financial details. Do not include account numbers, balances, passwords or identity documents.",
-  "disclosure": "Your submitted question and selected language go to this app's server. Eligible questions then go to Groq for an AI answer.",
+  "disclosure": "Questions without a keyword match go through this app's server to Groq, with your selected language, to find and explain relevant learning entries.",
   "retention": "The app does not log or save questions. The host and Groq have their own data policies. Conversation history is not sent.",
   "consent": "I understand this disclosure and want to send a general learning question.",
   "aiLabel": "AI-generated, may be wrong.",
@@ -17,11 +17,15 @@
   "related": "Related topics",
   "official": "Official information",
   "refusal": "I do not give investment advice or judge market calls. Outcomes depend on uncertain prices and personal needs. I can explain risk, leverage and fraud checks.",
-  "unknown": "These entries do not answer your question. Try a related learning topic or describe the term in different words.",
+  "unknown": "I couldn’t connect that question to a learning topic yet. Could you tell me which term or part of the practice you mean?",
+  "greeting": "Hi! What would you like to understand? Ask me about this practice, leverage, recovery maths or spotting scams.",
+  "thanks": "No problem! If a term or part of the practice feels unclear, ask me and we can go through it.",
+  "goodbye": "Take care! You can reopen chat whenever you want to keep learning.",
+  "help": "I can explain this practice and general learning topics. What would you like to understand—leverage, recovery maths, risk or scam warning signs?",
   "private": "Do not send personal or financial details. Please ask a general question without private information.",
   "limited": "Chat is busy or the request limit is reached. Wait before asking again. You can read related learning entries.",
   "disabled": "Chat is switched off. The practice journey still works.",
-  "unavailable": "A generated answer is unavailable. The closest learning entry appears instead when the library is available.",
+  "unavailable": "I couldn’t complete that explanation just now. Please try again shortly, or ask about a specific term in this practice.",
   "loadError": "The learning library is unavailable. Reconnect and reopen chat. The practice journey can still continue.",
   "stepQuestions": {
     "LanguageSelect": {
@@ -80,6 +84,6 @@
       "app-pilot-summary": "What is the local summary?"
     }
   },
-  "about": "When chat is on, questions and language go to the app server; eligible questions go to Groq. Practice answers are not sent.",
+  "about": "Greetings and keyword matches are answered on this device. Other questions and language go through the app server to Groq; practice answers stay local.",
   "vendor": "Groq may retain data under its service policy. Do not assume that provider retention is disabled. The AI can be wrong."
 }
