@@ -1,5 +1,77 @@
 # Chat UI and KB integration — agent-checked
 
+## Compact popup and step questions (2026-10-04)
+
+The chat-only redesign uses a 400px, header-anchored non-modal panel, near
+full-width on phones. X, Escape and the Chat toggle close it; messages scroll
+above three step-specific chips and an Enter/Send composer. Chips appear only
+before the first submitted question, disappear immediately on Send/Enter or a
+chip tap, and return when the panel is reopened. Answers render as
+text only. Phone height reserves room for the journey's sticky action area.
+The existing About/footer retain provider and missing-native-review
+disclosures. Messages exist only while the panel is open; only the explicitly
+submitted question and language are sent. Retrieval, server code, safety gates,
+knowledge entries, and original-entry fallbacks are unchanged.
+
+`src/content/{en,hi}/chat.json` stores exactly three `stepQuestions` for each of
+the eleven steps. Each object's key is its existing KB entry ID. The following
+agent-only QA pass compares the question to that entry in both languages and
+independently restates its Hindi meaning in English. All retain learning-question
+scope, with no advice request, future claim, period disclosure or new fact.
+Hindi remains `agent-checked`, never human/native-reviewed.
+
+| Step | KB entry ID | Hindi → English back-translation | Coverage / disposition |
+|---|---|---|---|
+| LanguageSelect | app-step-language | Why choose a language? | Language-choice purpose; equivalent |
+| LanguageSelect | app-language | Can the language be changed later? | Header language switch; equivalent |
+| LanguageSelect | app-manual-audio | How does the Listen button work? | Stored playback controls; equivalent |
+| Intro | app-virtual-money | Is this real money? | Practice numbers, no real funds; equivalent |
+| Intro | app-step-intro | What is there to do here? | Predict, watch, compare, reflect; equivalent |
+| Intro | app-privacy | Are practice answers saved? | Journey memory versus preferences; equivalent |
+| Setup | app-stake | What is the virtual-amount choice? | Selected share of base amount; equivalent |
+| Setup | app-leverage | What is borrowed power? | Established plain-language leverage term; equivalent |
+| Setup | app-exposure | What is exposure? | Amount affected by path changes; equivalent |
+| Prediction | app-step-prediction | Why choose an expectation before watching? | Before/after reflection; equivalent |
+| Prediction | app-hidden-period | Why is the period hidden? | Reveal boundary, no actual date; equivalent |
+| Prediction | app-uncertainty | What does uncertainty mean here? | Limits of this exercise; equivalent |
+| Run | app-warning | What is a warning point? | Teaching signal near maintenance; equivalent |
+| Run | app-forced-exit | What is forced exit? | Model closure, not a real procedure; equivalent |
+| Run | app-equity | What is the remaining virtual amount? | Equity within this exercise; equivalent |
+| Result | app-step-result | What does the result show? | Ending amount, change and closure reason; equivalent |
+| Result | app-gains-losses | What does total change mean? | Starting-to-ending percentage; equivalent |
+| Result | app-position-status | Is there no loss in an open position? | Questions the misconception, no promise; equivalent |
+| Replay | app-same-path | Why is the same path used? | Identical observations for contrast; equivalent |
+| Replay | app-comparison-chart | What do both lines mean? | Dashed versus unbroken lines; equivalent |
+| Replay | app-comparison-limit | Why can the practice durations differ? | Early closure versus full replay; equivalent |
+| Reveal | app-data-source | What is the source of the data? | Attribution, not endorsement; equivalent |
+| Reveal | app-path-statistics | What do these measurements mean? | Path measurements, not a decision score; equivalent |
+| Reveal | app-uncertainty | Why is one example not a forecast? | Episode cannot establish future outcomes; equivalent |
+| Debrief | app-recovery | How does recovery maths work? | Smaller base and asymmetric percentages; equivalent |
+| Debrief | app-drawdown | What is a fall from a high? | Established plain-language drawdown meaning; equivalent |
+| Debrief | app-volatility | What are ups and downs? | Established plain-language volatility term; equivalent |
+| PostCheck | app-step-postcheck | Why answer again? | Reflection after comparison; equivalent |
+| PostCheck | app-step-prediction | Are points awarded for the expectation? | No prediction score; equivalent |
+| PostCheck | app-privacy | Are the later answers saved? | Reflection remains in memory; equivalent |
+| NextSteps | app-step-nextsteps | What are resources for? | Further protective learning; equivalent |
+| NextSteps | app-restart | What is erased by starting again? | Journey answers versus preferences/cache; equivalent |
+| NextSteps | app-pilot-summary | What is the local summary? | In-page summary, no collected research; equivalent |
+
+Changed controls: Ask/पूछें = ask; Send/भेजें = send; Messages/संदेश = messages;
+Ask a question…/सवाल लिखें… = write a question (appropriate input instruction).
+Exact current question/control strings are pinned by the review registry hashes.
+The earlier chat-copy pass and integrated file hashes below are historical.
+
+The reported development/preview startup crash was a Vite adapter registration
+bug: its installer returned Connect's middleware function, which Vite treated as
+a post-install callback. The installer now returns void; request handling is unchanged.
+
+Verification: build, lint and typecheck passed. A bounded Chrome popup check at
+1440×900 English and 360×640 Hindi verified anchoring, internal message scrolling,
+three chips, live step changes, Enter/Send, usable journey actions and all three
+close controls, using a local API stub. Dev and preview both started successfully.
+All 66 questions map to existing KB entries and their review hashes match.
+No live model call, broad test suite or native-speaker review was performed.
+
 The 212 entries are original bilingual content: app 70, basics 33, products 40,
 behaviour 16, fraud 22, doubts 31. App coverage, official fact receipts and semantic
 checks are in `knowledge/APP_COVERAGE.md`, `BASICS_PRODUCTS_QA.md` and

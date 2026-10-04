@@ -1,10 +1,11 @@
 {
   "_meta": { "status": "agent-checked" },
-  "title": "Learning chat",
+  "title": "Ask",
   "close": "Close",
   "question": "Your learning question",
-  "placeholder": "Ask about a term, the practice lesson or protection",
-  "send": "Ask",
+  "placeholder": "Ask a question…",
+  "send": "Send",
+  "messages": "Messages",
   "busy": "Finding an explanation…",
   "warning": "Do not type personal or financial details. Do not include account numbers, balances, passwords or identity documents.",
   "disclosure": "Your submitted question and selected language go to this app's server. Eligible questions then go to Groq for an AI answer.",
@@ -22,7 +23,63 @@
   "disabled": "Chat is switched off. The practice journey still works.",
   "unavailable": "A generated answer is unavailable. The closest learning entry appears instead when the library is available.",
   "loadError": "The learning library is unavailable. Reconnect and reopen chat. The practice journey can still continue.",
-  "chips": ["What is leverage?", "Why replay the same path?", "How can I recognise a scam?", "Is this real money?"],
+  "stepQuestions": {
+    "LanguageSelect": {
+      "app-step-language": "Why choose a language?",
+      "app-language": "Can I change language later?",
+      "app-manual-audio": "How does Listen work?"
+    },
+    "Intro": {
+      "app-virtual-money": "Is this real money?",
+      "app-step-intro": "What will I do here?",
+      "app-privacy": "Are my practice answers saved?"
+    },
+    "Setup": {
+      "app-stake": "What is the virtual amount choice?",
+      "app-leverage": "What is leverage?",
+      "app-exposure": "What is exposure?"
+    },
+    "Prediction": {
+      "app-step-prediction": "Why predict before watching?",
+      "app-hidden-period": "Why is the period hidden?",
+      "app-uncertainty": "What does uncertainty mean here?"
+    },
+    "Run": {
+      "app-warning": "What is a warning point?",
+      "app-forced-exit": "What is a forced exit?",
+      "app-equity": "What is remaining virtual money?"
+    },
+    "Result": {
+      "app-step-result": "What does the result show?",
+      "app-gains-losses": "What does total change mean?",
+      "app-position-status": "Does staying open mean no loss?"
+    },
+    "Replay": {
+      "app-same-path": "Why use the same path?",
+      "app-comparison-chart": "What do the two lines mean?",
+      "app-comparison-limit": "Why can the run lengths differ?"
+    },
+    "Reveal": {
+      "app-data-source": "What is the data source?",
+      "app-path-statistics": "What do these measurements mean?",
+      "app-uncertainty": "Why isn't one episode a forecast?"
+    },
+    "Debrief": {
+      "app-recovery": "How does recovery maths work?",
+      "app-drawdown": "What is drawdown?",
+      "app-volatility": "What is volatility?"
+    },
+    "PostCheck": {
+      "app-step-postcheck": "Why answer a second time?",
+      "app-step-prediction": "Is my prediction scored?",
+      "app-privacy": "Are my reflection answers saved?"
+    },
+    "NextSteps": {
+      "app-step-nextsteps": "What are the resources for?",
+      "app-restart": "What does Start again clear?",
+      "app-pilot-summary": "What is the local summary?"
+    }
+  },
   "about": "When chat is on, questions and language go to the app server; eligible questions go to Groq. Practice answers are not sent.",
   "vendor": "Groq may retain data under its service policy. Do not assume that provider retention is disabled. The AI can be wrong."
 }

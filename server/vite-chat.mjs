@@ -3,7 +3,7 @@ import { handleChat } from './chat.mjs';
 import { KB_CATEGORIES } from '../shared/chat-config.mjs';
 
 export function chatPlugin() {
-  const install = (server) =>
+  const install = (server) => {
     server.middlewares.use(async (req, res, next) => {
       const path = req.url?.split('?')[0];
       if (path?.startsWith('/knowledge/')) {
@@ -62,6 +62,7 @@ export function chatPlugin() {
         res.end();
       }
     });
+  };
   return {
     name: 'same-origin-learning-chat',
     configureServer: install,

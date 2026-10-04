@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { Language } from '../config/languages';
-import { dictionaries, t } from '../i18n';
+import type { JourneyStep } from '../journey/steps';
+import { dictionaries } from '../i18n';
 import { loadKnowledge } from '../chat/knowledge';
 import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
 import {
@@ -9,7 +10,6 @@ import {
   retrieve,
   relatedEntries,
   entryText,
-  entryTitle,
   safeAnswer,
   type KnowledgeEntry,
   type ChatResult,
@@ -17,23 +17,66 @@ import {
 
 export default function ChatPanel({
   language,
+  step,
   onClose,
 }: {
   language: Language;
+  step: JourneyStep;
   onClose: () => void;
 }) {
-  const ref = useRef<globalThis.HTMLDialogElement>(null);
+  const ref = useRef<globalThis.HTMLElement>(null);
+  const input = useRef<globalThis.HTMLTextAreaElement>(null);
+  const messageList = useRef<globalThis.HTMLDivElement>(null);
+  const active = useRef(true);
   const pending = useRef<globalThis.AbortController | null>(null);
   const [entries, setEntries] = useState<KnowledgeEntry[]>([]);
   const [loadError, setLoadError] = useState(false);
   const [question, setQuestion] = useState('');
-  const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<ChatResult | null>(null);
+  const [messages, setMessages] = useState<
+    { role: 'user' | 'assistant'; text: string }[]
+  >([]);
   const copy = dictionaries[language].chat;
+  const suggestions = copy.stepQuestions[step];
+  useLayoutEffect(() => {
+    const panel = ref.current;
+    const header = panel?.parentElement;
+    if (!panel || !header) return;
+    const actions = header.parentElement?.querySelector('.shell-bottom');
+    const viewport = window.visualViewport;
+    const resize = () => {
+      const bottom =
+        (viewport?.height ?? window.innerHeight) + (viewport?.offsetTop ?? 0);
+      const actionSpace =
+        window.innerWidth < 1024
+          ? (actions?.getBoundingClientRect().height ?? 0)
+          : 0;
+      panel.style.setProperty(
+        '--chat-available-height',
+        `${Math.max(0, bottom - header.getBoundingClientRect().bottom - actionSpace - 16)}px`,
+      );
+    };
+    resize();
+    const observer = globalThis.ResizeObserver
+      ? new globalThis.ResizeObserver(resize)
+      : null;
+    observer?.observe(header);
+    if (actions) observer?.observe(actions);
+    window.addEventListener('resize', resize);
+    viewport?.addEventListener('resize', resize);
+    viewport?.addEventListener('scroll', resize);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', resize);
+      viewport?.removeEventListener('resize', resize);
+      viewport?.removeEventListener('scroll', resize);
+    };
+  }, []);
   useEffect(() => {
-    const dialog = ref.current;
-    dialog?.showModal();
+    active.current = true;
+    // Avoid opening the phone keyboard until the learner taps the text box.
+    if (window.matchMedia?.('(min-width: 768px)').matches)
+      input.current?.focus({ preventScroll: true });
     let cancelled = false;
     loadKnowledge()
       .then((value) => {
@@ -44,28 +87,52 @@ export default function ChatPanel({
       });
     return () => {
       cancelled = true;
+      active.current = false;
       pending.current?.abort();
-      dialog?.close();
     };
   }, []);
+  useEffect(() => {
+    const escape = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape' || document.querySelector('dialog[open]'))
+        return;
+      event.preventDefault();
+      active.current = false;
+      pending.current?.abort();
+      onClose();
+    };
+    document.addEventListener('keydown', escape);
+    return () => document.removeEventListener('keydown', escape);
+  }, [onClose]);
+  useEffect(() => {
+    const list = messageList.current;
+    if (list) list.scrollTop = list.scrollHeight;
+  }, [messages, busy, loadError]);
   const close = () => {
+    active.current = false;
     pending.current?.abort();
-    ref.current?.close();
     onClose();
   };
+  const reply = (result: ChatResult) => {
+    if (active.current)
+      setMessages((previous) => [
+        ...previous,
+        { role: 'assistant', text: result.answer },
+      ]);
+  };
   const showEntry = (entry: KnowledgeEntry) =>
-    setResult({
+    reply({
       mode: 'entry',
       answer: entryText(entry, language),
       entries: [entry],
     });
-  const ask = async () => {
-    const text = question.trim();
-    if (!CHAT_ENABLED || busy || !text || !entries.length || !consent) return;
+  const ask = async (submitted = question) => {
+    const text = submitted.trim();
+    if (!CHAT_ENABLED || busy || !text || !entries.length) return;
     setQuestion('');
+    setMessages((previous) => [...previous, { role: 'user', text }]);
     // Local early gates: prohibited/private questions never even reach the app server.
     if (adviceSeeking(text)) {
-      setResult({
+      reply({
         mode: 'refusal',
         answer: copy.refusal,
         entries: relatedEntries(entries),
@@ -73,7 +140,7 @@ export default function ChatPanel({
       return;
     }
     if (personalDetails(text)) {
-      setResult({ mode: 'private', answer: copy.private, entries: [] });
+      reply({ mode: 'private', answer: copy.private, entries: [] });
       return;
     }
     const matches = retrieve(text, entries).map((item) => item.entry);
@@ -103,7 +170,7 @@ export default function ChatPanel({
         body: JSON.stringify({ question: text, language }),
       });
       if (response.status === 429) {
-        setResult({
+        reply({
           mode: 'limited',
           answer: copy.limited,
           entries: relatedEntries(entries),
@@ -123,7 +190,7 @@ export default function ChatPanel({
         trusted.length &&
         safeAnswer(value.answer, language, trusted)
       )
-        setResult({
+        reply({
           mode: 'generated',
           answer: value.answer,
           entries: trusted,
@@ -132,161 +199,134 @@ export default function ChatPanel({
       else if (
         ['refusal', 'unknown', 'private', 'disabled'].includes(value.mode)
       )
-        setResult({
+        reply({
           mode: value.mode,
           answer:
             copy[value.mode as 'refusal' | 'unknown' | 'private' | 'disabled'],
           entries: trusted,
         });
-      else setResult(fallback());
+      else reply(fallback());
     } catch {
-      if (ref.current?.open) setResult(fallback());
+      if (active.current) reply(fallback());
     } finally {
       globalThis.clearTimeout(timer);
       pending.current = null;
-      if (ref.current?.open) setBusy(false);
+      if (active.current) setBusy(false);
     }
   };
-  const related = result
-    ? relatedEntries(
-        entries,
-        result.entries.flatMap((entry) => entry.related),
-      )
-    : [];
   return (
-    <dialog
+    <section
+      id="chat-panel"
       ref={ref}
-      className="about-dialog chat-dialog"
+      className="chat-panel"
+      role="dialog"
+      aria-modal="false"
       aria-labelledby="chat-title"
-      onCancel={(event) => {
-        event.preventDefault();
-        close();
-      }}
     >
-      <div className="about-header">
+      <div className="chat-header">
         <h2 id="chat-title">{copy.title}</h2>
-        <button autoFocus onClick={close}>
-          {copy.close}
+        <button
+          className="chat-close"
+          aria-label={copy.close}
+          onClick={close}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
         </button>
       </div>
-      <div className="chat-content">
-        <p className="notice" id="chat-warning">
-          {copy.warning}
-        </p>
-        <p>{copy.disclosure}</p>
-        <p className="quiet">{copy.retention}</p>
-        <label className="chat-consent">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(event) => setConsent(event.target.checked)}
-          />
-          {copy.consent}
-        </label>
+      <div
+        ref={messageList}
+        className="chat-messages"
+        role="log"
+        aria-label={copy.messages}
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-busy={busy}
+        tabIndex={0}
+      >
+        {messages.map((message, index) => (
+          <p
+            key={index}
+            className={`chat-message chat-message-${message.role}`}
+          >
+            {message.text}
+          </p>
+        ))}
+        {loadError && (
+          <p className="chat-message" role="status">
+            {copy.loadError}
+          </p>
+        )}
+        {busy && (
+          <p className="chat-pending" role="status">
+            {copy.busy}
+          </p>
+        )}
+      </div>
+      {messages.length === 0 && (
         <div className="chat-chips">
-          {copy.chips.map((chip) => (
+          {Object.entries(suggestions).map(([entryId, text]) => (
             <button
-              key={chip}
-              disabled={busy}
-              onClick={() => {
-                setQuestion(chip);
-                document.getElementById('chat-question')?.focus();
-              }}
+              key={entryId}
+              data-entry-id={entryId}
+              disabled={busy || !entries.length}
+              onClick={() => void ask(text)}
             >
-              {chip}
+              {text}
             </button>
           ))}
         </div>
-        {loadError && <p role="status">{copy.loadError}</p>}
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            void ask();
-          }}
-        >
-          <label htmlFor="chat-question">{copy.question}</label>
-          <textarea
-            id="chat-question"
-            value={question}
-            onChange={(event) => setQuestion(event.target.value)}
-            maxLength={600}
-            rows={3}
-            aria-describedby="chat-warning"
-            placeholder={copy.placeholder}
-            autoComplete="off"
-            spellCheck={false}
-            disabled={busy}
-          />
-          <button
-            className="big-button"
-            type="submit"
-            disabled={
-              !CHAT_ENABLED ||
-              !consent ||
-              !entries.length ||
-              !question.trim() ||
-              busy
+      )}
+      <form
+        className="chat-composer"
+        onSubmit={(event) => {
+          event.preventDefault();
+          void ask();
+        }}
+      >
+        <textarea
+          ref={input}
+          id="chat-question"
+          aria-label={copy.question}
+          value={question}
+          onChange={(event) => setQuestion(event.target.value)}
+          maxLength={600}
+          rows={1}
+          placeholder={copy.placeholder}
+          autoComplete="off"
+          spellCheck={false}
+          onKeyDown={(event) => {
+            if (
+              event.key === 'Enter' &&
+              !event.shiftKey &&
+              !event.nativeEvent.isComposing
+            ) {
+              event.preventDefault();
+              void ask();
             }
-          >
-            {busy ? copy.busy : copy.send}
-          </button>
-        </form>
-        <section className="chat-answer" aria-live="polite" aria-busy={busy}>
-          {result && (
-            <>
-              <small>
-                {result.mode === 'generated' ? copy.aiLabel : copy.entryLabel}
-              </small>
-              <p>{result.answer}</p>
-              {result.entries.length > 0 && (
-                <>
-                  <h3>{copy.sources}</h3>
-                  <ul>
-                    {result.entries.map((entry) => (
-                      <li key={entry.id}>
-                        <button onClick={() => showEntry(entry)}>
-                          {entryTitle(entry, language)}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-              {related.length > 0 && (
-                <>
-                  <h3>{copy.related}</h3>
-                  <div className="chat-chips">
-                    {related.map((entry) => (
-                      <button key={entry.id} onClick={() => showEntry(entry)}>
-                        {entryTitle(entry, language)}
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
-              {result.entries.some((entry) => entry.sources.length) && (
-                <>
-                  <h3>{copy.official}</h3>
-                  <ul>
-                    {[
-                      ...new Set(
-                        result.entries.flatMap((entry) => entry.sources),
-                      ),
-                    ].map((url) => (
-                      <li key={url}>
-                        <a href={url} target="_blank" rel="noopener noreferrer">
-                          {new globalThis.URL(url).hostname}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </>
-          )}
-        </section>
-        <p className="quiet">{t(language, 'features.reviewNotice')}</p>
-      </div>
-    </dialog>
+          }}
+        />
+        <button
+          className="chat-send"
+          type="submit"
+          disabled={
+            !CHAT_ENABLED || !entries.length || !question.trim() || busy
+          }
+        >
+          {copy.send}
+        </button>
+      </form>
+    </section>
   );
 }

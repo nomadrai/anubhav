@@ -1397,7 +1397,7 @@
       "chat.json": {
         "title": {
           "status": "agent-checked",
-          "contentSha256": "b2b641f67829395f15bc22f1a1e8d5d3cda5afce6a2059c596c12c9d74396a99"
+          "contentSha256": "b8c209cdead61a095ec097b7a13c4fc9264c04b3e3bd0fca42ec8dbaeebeeafe"
         },
         "close": {
           "status": "agent-checked",
@@ -1409,11 +1409,15 @@
         },
         "placeholder": {
           "status": "agent-checked",
-          "contentSha256": "f601722db8a528473c7e6cd04fabe6d2e0d82a30e9052857ecc428c365275ced"
+          "contentSha256": "d6a2035c730086cfff0c89f1c06ec283fdba94f193818853f350c017ff68b735"
         },
         "send": {
           "status": "agent-checked",
-          "contentSha256": "b8c209cdead61a095ec097b7a13c4fc9264c04b3e3bd0fca42ec8dbaeebeeafe"
+          "contentSha256": "f6f4688ff23d50c67053963c251fa0ce64a925cf283537cf066b1f362cb9b778"
+        },
+        "messages": {
+          "status": "agent-checked",
+          "contentSha256": "04d7b48339271ea67d3c8493e07e90bc68dc565485eebe5e0b67c21c1586e3c0"
         },
         "busy": {
           "status": "agent-checked",
@@ -1483,21 +1487,137 @@
           "status": "agent-checked",
           "contentSha256": "ac581509b8c28e0397104d353f44e66ea141016cfa69e180fbfd5855785fe4b1"
         },
-        "chips.0": {
+        "stepQuestions.LanguageSelect.app-step-language": {
+          "status": "agent-checked",
+          "contentSha256": "8eb58e03c3445e1978ef158ec1d651036aaf97732f9a5086939db277232f13f8"
+        },
+        "stepQuestions.LanguageSelect.app-language": {
+          "status": "agent-checked",
+          "contentSha256": "7da55bf39d360ecf1bd10b8a181e3761ba5a7cbf309ddad65e03c081018f3c7e"
+        },
+        "stepQuestions.LanguageSelect.app-manual-audio": {
+          "status": "agent-checked",
+          "contentSha256": "f3cc5baae13ab15d338d321a3cb08a1dc8bb25566a13bea03b876f468e1b8040"
+        },
+        "stepQuestions.Intro.app-virtual-money": {
+          "status": "agent-checked",
+          "contentSha256": "b1d32a56ee1a14c6ac17311b92c6e20994024c3871c461f7ee65538a85ea0e49"
+        },
+        "stepQuestions.Intro.app-step-intro": {
+          "status": "agent-checked",
+          "contentSha256": "4e30a72764abc2777b49e71a25ba99338cbf9531e2e5f55922e8839e539835cb"
+        },
+        "stepQuestions.Intro.app-privacy": {
+          "status": "agent-checked",
+          "contentSha256": "2428fd4b3ccb959b84334a1889a452cc55283d0acf9baf7e064daec77a512e77"
+        },
+        "stepQuestions.Setup.app-stake": {
+          "status": "agent-checked",
+          "contentSha256": "5baa67186ca4af11a01e0cf8a50761931092efdaa3e0daf8da723bfb6917341b"
+        },
+        "stepQuestions.Setup.app-leverage": {
           "status": "agent-checked",
           "contentSha256": "00e6c727a66edc0168405d1beccaa951fa40ff950136c0314ac716ab78f4502a"
         },
-        "chips.1": {
+        "stepQuestions.Setup.app-exposure": {
           "status": "agent-checked",
-          "contentSha256": "0f1edc4918e4a3ee2f304dcdb1ba482ee0e678267cfeb051966c09fe93b6a31a"
+          "contentSha256": "4b9e43fe2f3d969aa61f05707f2732abddecc60c9e020e6dd503740e50019865"
         },
-        "chips.2": {
+        "stepQuestions.Prediction.app-step-prediction": {
           "status": "agent-checked",
-          "contentSha256": "041e7e34ce3f3c41aade7d76235b49e0bcd49fa36125a75a290e120addfce3eb"
+          "contentSha256": "2280d3c4cfe440be3b694b2d3d0b13d9ea1e8063cd3b6caacc290d6a45261d79"
         },
-        "chips.3": {
+        "stepQuestions.Prediction.app-hidden-period": {
           "status": "agent-checked",
-          "contentSha256": "b1d32a56ee1a14c6ac17311b92c6e20994024c3871c461f7ee65538a85ea0e49"
+          "contentSha256": "41e47252d6ed33f63d4bd1d93b398f6172808d12e221b0ae4992d01c70e2ca05"
+        },
+        "stepQuestions.Prediction.app-uncertainty": {
+          "status": "agent-checked",
+          "contentSha256": "31a77d4163a1e46186aeec1893c0ee44683d6bc9f9d85ce7d0b291dcc6246366"
+        },
+        "stepQuestions.Run.app-warning": {
+          "status": "agent-checked",
+          "contentSha256": "95b966944d71361a52075efd7b5bdf3b932ca3c7c07a980f6b26c63565d8339b"
+        },
+        "stepQuestions.Run.app-forced-exit": {
+          "status": "agent-checked",
+          "contentSha256": "91a69bf699fa6bbf57dbbbd613450882500be6f9a50294e5f43e240d59cd2725"
+        },
+        "stepQuestions.Run.app-equity": {
+          "status": "agent-checked",
+          "contentSha256": "8ba4abb8eda93d867c87ecb7a4c0f659170009b88e77f83297096ebebeb878c3"
+        },
+        "stepQuestions.Result.app-step-result": {
+          "status": "agent-checked",
+          "contentSha256": "940fe5b8d27a2e420da024b134a49ce82d24e98510723dde46c9e543cfee9b0d"
+        },
+        "stepQuestions.Result.app-gains-losses": {
+          "status": "agent-checked",
+          "contentSha256": "c062450ce50c84c9020a0569858fee419482be642fd387c69747c07958c0a4a0"
+        },
+        "stepQuestions.Result.app-position-status": {
+          "status": "agent-checked",
+          "contentSha256": "7720a4f7a6296a6d8ea8b7681eeeed88a8128c531d3724d0d4e1a64c9bec8845"
+        },
+        "stepQuestions.Replay.app-same-path": {
+          "status": "agent-checked",
+          "contentSha256": "3a91acf1de98f0db796b899c6e193bbb96bdadf5d1e71e9393c685aa9d1ecdea"
+        },
+        "stepQuestions.Replay.app-comparison-chart": {
+          "status": "agent-checked",
+          "contentSha256": "cdbef67b3ce6cb14ae643400dc109c039f2d7bf2eec038fdbae3f976f926a494"
+        },
+        "stepQuestions.Replay.app-comparison-limit": {
+          "status": "agent-checked",
+          "contentSha256": "1cf8783449d5ad2954b61802e3aa8127040801d4bb1950f963d5851e206b007c"
+        },
+        "stepQuestions.Reveal.app-data-source": {
+          "status": "agent-checked",
+          "contentSha256": "96b21ec6864d66b3d4d4fa58719ac33b9df75e9f25049cb2ccc4d38335d7ba9e"
+        },
+        "stepQuestions.Reveal.app-path-statistics": {
+          "status": "agent-checked",
+          "contentSha256": "d629ff21c67cbb9175ca86f16798676c7b0cd7e93c3ff4142984189968b93ae3"
+        },
+        "stepQuestions.Reveal.app-uncertainty": {
+          "status": "agent-checked",
+          "contentSha256": "8ab857f346369f3da9816598e19e01e7444855297f8431e05d9e0a89230de556"
+        },
+        "stepQuestions.Debrief.app-recovery": {
+          "status": "agent-checked",
+          "contentSha256": "79dbb461529cb7683d5993c168e9e7548f2a7d2a523ae856b1e1bbc30277065d"
+        },
+        "stepQuestions.Debrief.app-drawdown": {
+          "status": "agent-checked",
+          "contentSha256": "bb173e11f1c8423947061f7ac20fd8395574d8bb44a40a4f0facab907e5ce04b"
+        },
+        "stepQuestions.Debrief.app-volatility": {
+          "status": "agent-checked",
+          "contentSha256": "119f68d7e011725b5fdb0e4e0c93a403a1c10cc2fb52bd2b277d5c7e0a308d0c"
+        },
+        "stepQuestions.PostCheck.app-step-postcheck": {
+          "status": "agent-checked",
+          "contentSha256": "cd2281f17ac7e8180590ea9e387c1eb8fe0ec8d927855197c9a706d3d4db25a7"
+        },
+        "stepQuestions.PostCheck.app-step-prediction": {
+          "status": "agent-checked",
+          "contentSha256": "123eec3398c364096c552f20f738a0cc2ab53e752400e694706e3b5ffa801b1b"
+        },
+        "stepQuestions.PostCheck.app-privacy": {
+          "status": "agent-checked",
+          "contentSha256": "cc452fe3984fc36f5c54a4754c7520577cb2248164ee122304ff42b0bf98960c"
+        },
+        "stepQuestions.NextSteps.app-step-nextsteps": {
+          "status": "agent-checked",
+          "contentSha256": "f5dd509ab09ab543579b777a9675aa43fae43f534aeb16cbd059060af4b7e193"
+        },
+        "stepQuestions.NextSteps.app-restart": {
+          "status": "agent-checked",
+          "contentSha256": "466a188afb5ff9b0b94317e163b4a0c0f306b46d932cdd62bf7e4631f64a9cd0"
+        },
+        "stepQuestions.NextSteps.app-pilot-summary": {
+          "status": "agent-checked",
+          "contentSha256": "e0018b8af6125308c85e93a59d8b17e653c28ecd759630e3c60934070d8ac0f0"
         },
         "about": {
           "status": "agent-checked",
@@ -2905,7 +3025,7 @@
       "chat.json": {
         "title": {
           "status": "agent-checked",
-          "contentSha256": "459b5da9b1f5d678643d777571e577e8be2c6765a88352f912eea495579ed871"
+          "contentSha256": "9f1dfe6ba91c8b3c90857e0eadeada82faedb89195d2dc1177857f70d44187c4"
         },
         "close": {
           "status": "agent-checked",
@@ -2917,11 +3037,15 @@
         },
         "placeholder": {
           "status": "agent-checked",
-          "contentSha256": "afa8a6cc12f91a03dc2c5a6665a56c4ff736bb0347d7d035f6cd0f6f0c0a08ef"
+          "contentSha256": "540ab1cb68845bd0904be0658e03b93dbd189eccbec04c8ea1977c858ec9f94c"
         },
         "send": {
           "status": "agent-checked",
-          "contentSha256": "9f1dfe6ba91c8b3c90857e0eadeada82faedb89195d2dc1177857f70d44187c4"
+          "contentSha256": "58daf8951aaf42dd015837f1616bffcb53557cac8c3b6b9e33535fee83b72a93"
+        },
+        "messages": {
+          "status": "agent-checked",
+          "contentSha256": "f254f72bec8a25a1841d9d1a27beb8b9de3bea844ff6715a9d7802a8bc02d1ae"
         },
         "busy": {
           "status": "agent-checked",
@@ -2991,21 +3115,137 @@
           "status": "agent-checked",
           "contentSha256": "3acabc78a6f4caee7da528b19bef32e261b85fe001b533175452552fddc6bbdd"
         },
-        "chips.0": {
+        "stepQuestions.LanguageSelect.app-step-language": {
           "status": "agent-checked",
-          "contentSha256": "8ebb3b02e517dd076537c923903b1065d4b61c4153e2667fc1dfaa631786dc91"
+          "contentSha256": "13334b78704ec0f9749481e125fc7c5f62cc1bd75e04b0a18f0007fbce01bab3"
         },
-        "chips.1": {
+        "stepQuestions.LanguageSelect.app-language": {
           "status": "agent-checked",
-          "contentSha256": "d888c10972694f159e9ec2d4722401141f66336c3d92938c0ffce613bcdd8a09"
+          "contentSha256": "1fc6722e657f87b4d874e1405a842b2dd42a25c6f72b9835fed2592382f0de07"
         },
-        "chips.2": {
+        "stepQuestions.LanguageSelect.app-manual-audio": {
           "status": "agent-checked",
-          "contentSha256": "4fe2fb169bb1467c72b382cb7ad798a4c5f828044ebeeff3b5877e4f5ea57736"
+          "contentSha256": "933087e079d404e43d11f727af9947bb6d224b514db0e1c562798b16f1637c72"
         },
-        "chips.3": {
+        "stepQuestions.Intro.app-virtual-money": {
           "status": "agent-checked",
           "contentSha256": "76345a394df56edcd5d61b133a637b568855fccce2cdb88d1781e4338f06d820"
+        },
+        "stepQuestions.Intro.app-step-intro": {
+          "status": "agent-checked",
+          "contentSha256": "522b94d3cd7f8779c0ac3bd1f41f0f12381159adca2100036f0c16e9bffbd7e2"
+        },
+        "stepQuestions.Intro.app-privacy": {
+          "status": "agent-checked",
+          "contentSha256": "b09ccbd5e7dd5c8751800ea937164e346b2e1b51096b2e21d68205142848d7ad"
+        },
+        "stepQuestions.Setup.app-stake": {
+          "status": "agent-checked",
+          "contentSha256": "072c6c6f3dcda47e468f7b605a69c2a4d43d5a9cf5eef1539cc6cab583d3b93b"
+        },
+        "stepQuestions.Setup.app-leverage": {
+          "status": "agent-checked",
+          "contentSha256": "ea6e597e57f89006df39648cbe4bde772a57d03b37316d871c6d9bac2d0e55fd"
+        },
+        "stepQuestions.Setup.app-exposure": {
+          "status": "agent-checked",
+          "contentSha256": "81f0353c15fc3eeea780867473b3324fd01aefd2ae9350726d171bf1755486ca"
+        },
+        "stepQuestions.Prediction.app-step-prediction": {
+          "status": "agent-checked",
+          "contentSha256": "6bcc08213ad4d036862d78223bdca09e7f4b8a46259aea2ac0d5ea91ff469ee8"
+        },
+        "stepQuestions.Prediction.app-hidden-period": {
+          "status": "agent-checked",
+          "contentSha256": "fe75a8d3229c5aa6cce588e81c579acc545329285e0f358ab47ba6ae8f1e5fa5"
+        },
+        "stepQuestions.Prediction.app-uncertainty": {
+          "status": "agent-checked",
+          "contentSha256": "c17cf5e22bdd0731d57f5655c6aeb2d5d04a8907d80a496e662ee7eb125a6534"
+        },
+        "stepQuestions.Run.app-warning": {
+          "status": "agent-checked",
+          "contentSha256": "c014bc06e9e6dd32eca022b8cfc905ec69d8ddb9f2d51aef5e0b462eb218bb2e"
+        },
+        "stepQuestions.Run.app-forced-exit": {
+          "status": "agent-checked",
+          "contentSha256": "3ed6e996849b1d89e9387c96257649f2bbe842ca6e6751c028c982b5ef59971f"
+        },
+        "stepQuestions.Run.app-equity": {
+          "status": "agent-checked",
+          "contentSha256": "6b1e84962c694d8cccc91474f9595d2fb5198534211280410dc1e88518a54d51"
+        },
+        "stepQuestions.Result.app-step-result": {
+          "status": "agent-checked",
+          "contentSha256": "821504bb6bdf7d68b1a241202933b83f69fc69cba12feb8ab2323bd714ba8fad"
+        },
+        "stepQuestions.Result.app-gains-losses": {
+          "status": "agent-checked",
+          "contentSha256": "d6609d92716a30636ff38c5e9c8426c68a3cadb8d18192c115dd06ce03de5e6d"
+        },
+        "stepQuestions.Result.app-position-status": {
+          "status": "agent-checked",
+          "contentSha256": "3b1d14ddea475bc1445f576e0544cbb868b5870c280b15cd12b5fe2df0bbe3c9"
+        },
+        "stepQuestions.Replay.app-same-path": {
+          "status": "agent-checked",
+          "contentSha256": "226c1c45c3fe515c4b779c64db9bfb9b27dcafadfc60af011de7daa3767bfcd5"
+        },
+        "stepQuestions.Replay.app-comparison-chart": {
+          "status": "agent-checked",
+          "contentSha256": "dd602191c161d762e844d7e61f5943f54d8e8750062b1cb1154ab6a4e7da5f63"
+        },
+        "stepQuestions.Replay.app-comparison-limit": {
+          "status": "agent-checked",
+          "contentSha256": "c66b3dea3cb155dce69a667dc055d436dd141376dd540db5e6a16aa846d659fa"
+        },
+        "stepQuestions.Reveal.app-data-source": {
+          "status": "agent-checked",
+          "contentSha256": "8b918eeee1a8fac2522a3797bac3df4f53b6fb157368bc478770e9e360808600"
+        },
+        "stepQuestions.Reveal.app-path-statistics": {
+          "status": "agent-checked",
+          "contentSha256": "9d29bee1b25307260ab1a0c4d473bff1326b1041a489e9b890c8665b176f0c0b"
+        },
+        "stepQuestions.Reveal.app-uncertainty": {
+          "status": "agent-checked",
+          "contentSha256": "a64c260596658b06faabd36e5831ff7246d324543fe1096a3bcdfeede298cd5a"
+        },
+        "stepQuestions.Debrief.app-recovery": {
+          "status": "agent-checked",
+          "contentSha256": "07da23930d09d136e378868354bcf46af191e3716c6fb763b0249726cf35a473"
+        },
+        "stepQuestions.Debrief.app-drawdown": {
+          "status": "agent-checked",
+          "contentSha256": "dfe3a94d5fd6a4410f76af1ca7e680a17afa7622a652836174b006d6a018ead8"
+        },
+        "stepQuestions.Debrief.app-volatility": {
+          "status": "agent-checked",
+          "contentSha256": "8e04e49fa221aafbe13e42da17fffdf0fea8eb94bc18a777ac2449f116a2d1c7"
+        },
+        "stepQuestions.PostCheck.app-step-postcheck": {
+          "status": "agent-checked",
+          "contentSha256": "db030dba84d608c8791878efa5d6ed6144a35bc3a96cde2b43dd720bf8e229dc"
+        },
+        "stepQuestions.PostCheck.app-step-prediction": {
+          "status": "agent-checked",
+          "contentSha256": "1afc1b2c1bd40138e6f7b1e8978118f68b5e519991e8c2043fac3e48e750a821"
+        },
+        "stepQuestions.PostCheck.app-privacy": {
+          "status": "agent-checked",
+          "contentSha256": "d0bc8fc1665fd63dbe16f6d024047b562fdee93ffc4f3e74b7fcd84449841202"
+        },
+        "stepQuestions.NextSteps.app-step-nextsteps": {
+          "status": "agent-checked",
+          "contentSha256": "503ca65a81a99755cc4b798672c1b0888de2a3f2449b9f5016aaa4b1049c4597"
+        },
+        "stepQuestions.NextSteps.app-restart": {
+          "status": "agent-checked",
+          "contentSha256": "02cc1f7ee544ac1eeff125b029e8a89f1fa0f40b9c851c9af228b40a0592fac4"
+        },
+        "stepQuestions.NextSteps.app-pilot-summary": {
+          "status": "agent-checked",
+          "contentSha256": "aaef32ad099923b4089577c92dd749b9bc491e5ae46e095c0041db1c72c32144"
         },
         "about": {
           "status": "agent-checked",

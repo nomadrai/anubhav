@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { APP_NAME } from '../config/app';
 import type { Language } from '../config/languages';
 import { t } from '../i18n';
@@ -10,12 +11,16 @@ export function StepHeader({
   autoSpeak,
   onAutoSpeak,
   onChat,
+  chatOpen,
+  chatPanel,
 }: {
   language: Language;
   onLanguage?: (language: Language) => void;
   autoSpeak: boolean;
   onAutoSpeak: (enabled: boolean) => void;
   onChat: () => void;
+  chatOpen: boolean;
+  chatPanel?: ReactNode;
 }) {
   return (
     <header className="app-header">
@@ -57,7 +62,11 @@ export function StepHeader({
           </button>
           {CHAT_ENABLED && (
             <button
+              id="chat-toggle"
               className="chat-button"
+              aria-expanded={chatOpen}
+              aria-controls={chatOpen ? 'chat-panel' : undefined}
+              aria-haspopup="dialog"
               aria-label={t(language, 'features.chat')}
               title={t(language, 'features.chat')}
               onClick={onChat}
@@ -81,6 +90,7 @@ export function StepHeader({
           )}
         </div>
       </div>
+      {chatPanel}
     </header>
   );
 }

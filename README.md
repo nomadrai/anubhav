@@ -95,7 +95,9 @@ No buy/sell/hold calls, real instrument names in UI/audio, promotion, brands of
 financial providers, monetisation, profit gamification, accounts, cookies,
 analytics, personal/financial persistence or external runtime APIs. Only
 language and auto-speak preferences may persist. The retired text-size key is removed.
-The Chat icon opens a disclosed learning chat backed by 212 original bilingual KB entries.
+The Chat icon toggles a compact, non-modal panel below the header, with three
+bilingual question chips for each of the eleven steps and in-memory messages.
+It is backed by 212 original bilingual KB entries; provider policies are in About this app.
 Submitted general questions and language go through `/api/chat` to Groq; advice requests
 are refused locally and again on the server. The model never receives journey answers.
 Missing/failed model calls use library text. See [PRIVACY](docs/PRIVACY.md) and

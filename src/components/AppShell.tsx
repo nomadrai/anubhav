@@ -1,4 +1,11 @@
-import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useState,
+  type ReactNode,
+} from 'react';
 import type { Language } from '../config/languages';
 import { APP_NAME } from '../config/app';
 import { capabilities } from '../config/capabilities';
@@ -45,6 +52,10 @@ export function AppShell({
   });
   const [about, setAbout] = useState(false);
   const [chat, setChat] = useState(false);
+  const closeChat = useCallback(() => {
+    setChat(false);
+    document.getElementById('chat-toggle')?.focus({ preventScroll: true });
+  }, []);
   const tracks =
     autoNarrations ??
     (narration
@@ -79,7 +90,20 @@ export function AppShell({
         language={language}
         onLanguage={onLanguage}
         autoSpeak={autoSpeak}
-        onChat={() => setChat(true)}
+        chatOpen={chat}
+        onChat={() => setChat((open) => !open)}
+        chatPanel={
+          CHAT_ENABLED && chat && (
+            <Suspense fallback={null}>
+              <ChatPanel
+                key={language}
+                language={language}
+                step={step}
+                onClose={closeChat}
+              />
+            </Suspense>
+          )
+        }
         onAutoSpeak={(value) => {
           setAutoSpeak(value);
           savePreference('auto-speak', String(value));
@@ -104,15 +128,6 @@ export function AppShell({
           </button>
         </footer>
       </div>
-      {CHAT_ENABLED && chat && (
-        <Suspense fallback={<p role="status">{t(language, 'chat.busy')}</p>}>
-          <ChatPanel
-            key={language}
-            language={language}
-            onClose={() => setChat(false)}
-          />
-        </Suspense>
-      )}
       {about && (
         <AboutDialog language={language} onClose={() => setAbout(false)} />
       )}
