@@ -1,4 +1,4 @@
-# Anubhav — interactive investor education with virtual money
+# Anubhav: interactive investor education with virtual money
 
 Free, plain-language, choose-your-path financial education in **Hindi and English**,
 for people with no finance background. Users make choices with virtual money on real
