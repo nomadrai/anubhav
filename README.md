@@ -271,3 +271,11 @@ This app uses virtual money and simplified teaching rules only. It is not financ
 advice, a trading platform, a brokerage, or an investment product. It is not
 endorsed by SEBI, RBI, any exchange, or any regulator. One recorded episode does not
 predict future market behaviour. No claim of learning efficacy is made.
+
+---
+
+## License
+
+This project is released under the **[Apache License 2.0](LICENSE)**.
+
+You are free to use, copy, modify, and distribute this software under the terms of that license. Any distribution must preserve copyright and license notices. The license does not grant trademark rights, imply endorsement, or permit use of the project's name in a way that could mislead others.
