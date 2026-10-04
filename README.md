@@ -1,58 +1,213 @@
-# Investor-protection learning app
+# Anubhav — interactive investor education with virtual money
 
-An English/Hindi, virtual-money lesson about leverage, loss, forced exit and
-recovery—not an investment simulator, recommendation, forecast or trading
-product. The product name has one source of truth: `src/config/app.ts`.
+Free, plain-language, choose-your-path financial education in **Hindi and English**,
+for people with no finance background. Users make choices with virtual money on real
+past market history and see where each choice leads — before they face it for real.
 
-## Current implementation
+This is a first step in understanding risk before investing. It does not tell you what
+to buy or sell. Jargon is explained in plain words when it appears: term cards with
+analogies, short sentences, captions, and audio narration.
 
-- Prediction **before** the path; pause/continue/exit at teaching events;
-  deterministic virtual-money engine and plain charts/meters.
-- Result → **same-input-path** unleveraged comparison → hidden-period reveal
-  → plain-language debrief/recovery maths → post-check → protective resources.
-- Two real, single-source historical windows, replacing shipped synthetic
-  placeholders. ECB reference observations were chosen for explicit reuse
-  terms; they are **not stock prices, executable quotes or an Indian-market
-  sample**. Exact terms, counts, gaps, hashes and selection limitations:
-  [DATA_SOURCES](docs/DATA_SOURCES.md), [DATA_REVIEW](docs/DATA_REVIEW.md).
-- Every shipped Hindi string has an agent QA/back-translation record. **No
-  native Hindi speaker reviewed it.** `agent-checked` is not `reviewed`.
-  [CONTENT_QA](docs/CONTENT_QA.md) records corrections and remaining limits.
-- Local-only, fixed-seed sampled TTS with cached inputs, natural-EOS/signal/
-  duration/duplicate/ASR-CER gates and bounded retries. Original greedy silence
-  was reproduced and isolated: [TTS_DIAGNOSTICS](docs/TTS_DIAGNOSTICS.md).
-  The complete 58/58 bilingual set now passes; the last Hindi quantity-only ASR
-  mismatch was corroborated by a second pinned recogniser on the same WAV
-  without relaxing the CER gate. Actual produced assets and measurements—not an
-  assumed full set—are recorded in [AUDIO_BUILD](docs/AUDIO_BUILD.md).
-- Desktop two-pane reading/interaction layout with pinned actions; single-column
-  mobile layout with a sticky action area. The former A+ text size is always used;
-  lesson-by-lesson debrief and glossary explanations in the interaction pane.
-- Left-pane Listen controls with real playback progress, readable text fallback,
-  glossary/captions, same-origin PWA caching and an in-memory pilot summary.
-  Optional auto-speak defaults OFF; its local setting enables queued stored narration.
-  Offline audio is **only previously cached audio**, not a promise that every
-  clip is preinstalled. Auto-speak is opt-in; there is no remote TTS service.
-- Four official protective links checked against official pages this session:
-  [RESOURCE_CHECKS](docs/RESOURCE_CHECKS.md). Links leave this app; destination
-  privacy rules apply. Unverified pointers remain hidden.
+There is no scoreboard. There is no reward for making money in the practice.
 
-**No human listened to the generated voices.** Automated Divya selection and
-CER checks do not prove natural pronunciation, comfort, or every word's
-semantic fidelity. Text is authoritative. No pilot was conducted, no participant
-results exist, and no efficacy claim is made. See [LIMITATIONS](docs/LIMITATIONS.md)
-and the exact unresolved actions in [TODO_DISPOSITION](docs/TODO_DISPOSITION.md).
+---
 
-## Run and check
+## Who it is for
 
-Use the Node/npm versions recorded in [DEPLOYMENT](docs/DEPLOYMENT.md) and the
-committed lockfile. Python 3.10+ and PyYAML are needed for data preparation/tests,
-not to use or deploy the already-built web app. TTS has a separate external venv.
+Anyone who has seen a forwarded message promising quick gains from borrowed exposure
+and wants to understand what that actually means before risking real money —
+in particular, first-time or retail learners in India with no finance background.
+
+---
+
+## The 11-step journey
+
+Every session goes through these steps in order. Steps 1–3 set up the context.
+Step 5 (Run) is where the path branches depending on what happens and what you choose.
+All paths rejoin at Step 6 and continue to the end.
+
+```mermaid
+flowchart TD
+    S1[1 · Language\nChoose Hindi or English]
+    S2[2 · Intro\nVirtual money, answers stay in memory]
+    S3[3 · Setup\nPick amount and borrowed exposure]
+    S4[4 · Prediction\nRecord expectation before the path]
+    S5[5 · Run\nWatch the path unfold step by step]
+
+    S5 --> DEC{Decision point\nor forced exit?}
+
+    DEC -->|Teaching margin rule triggers| FE[Forced exit path\nPosition closed by the rule]
+    DEC -->|You choose Exit at a pause| UE[User exit path\nPosition closed by your choice]
+    DEC -->|Hold through all pauses| SB[Survived path\nPosition stays open to the end]
+
+    FE --> S6
+    UE --> S6
+    SB --> S6
+
+    FE -.->|Lesson| L1["Borrowed exposure can be closed\nbefore you decide to close it"]
+    UE -.->|Lesson| L2["Your exit point is recorded —\nthe model does not score it"]
+    SB -.->|Lesson| L3["Staying open did not remove\nthe larger swings from borrowed exposure"]
+
+    S6[6 · Result\nSee the leveraged outcome]
+    S7[7 · Replay\nSame path replayed without borrowed exposure]
+    S8[8 · Reveal\nHidden period and source are shown]
+    S9[9 · Debrief\nPlain-language lessons and recovery maths]
+    S10[10 · Post-check\nRecord your thinking after seeing the contrast]
+    S11[11 · Next steps\nVerified official protective resources]
+
+    S6 --> S7 --> S8 --> S9 --> S10 --> S11
+```
+
+*Each path leads to a different lesson in the debrief; all paths then replay the
+same unleveraged comparison, reveal the hidden period, and end at the same resources.*
+
+---
+
+## How the app explains jargon
+
+Jargon is never assumed — it is explained in plain words when it appears:
+
+- **Term cards** appear at the debrief step. Tap a term (leverage, margin, forced exit,
+  volatility, drawdown, recovery maths, diversification, compounding, fees) for a
+  one-sentence plain explanation and a real-world analogy.
+- **Short sentences** throughout the journey — no paragraph walls.
+- **Captions** are complete text equivalents of every narration clip.
+- **Audio narration** (Hindi and English) plays on request at each step, or
+  automatically if you opt in to auto-speak. Auto-speak is off by default.
+
+---
+
+## What it is not
+
+- **Not investment advice.** No buy/sell/hold recommendation is given at any point.
+- **Not a trading app.** No real money, no real accounts, no real instruments.
+- **Not a forecast.** One episode from the past does not predict the future.
+- **Not endorsed by any regulator or exchange.** Protective resource links point to
+  official bodies (SEBI, RBI) as factual pointers only. No endorsement is implied.
+- **Not a game with rewards.** There are no points, levels, badges, streaks,
+  leaderboards, or rewards for any outcome.
+
+---
+
+## Features
+
+| Feature | Status |
+|---|---|
+| Hindi + English, bilingual throughout | ✓ |
+| 11-step choose-your-path journey | ✓ |
+| Virtual-money simulation with borrowed exposure (2×, 5×, 10×) | ✓ |
+| Decision points: hold or exit during the run | ✓ |
+| Same-path unleveraged comparison | ✓ |
+| Hidden period revealed only at step 8 | ✓ |
+| Plain-language debrief with recovery maths | ✓ |
+| Term cards with analogies (9 terms) | ✓ |
+| Audio narration (Hindi and English, 58 clips) | ✓ |
+| Auto-speak (opt-in, off by default) | ✓ |
+| Captions for every narration clip | ✓ |
+| In-app learning chat (backed by a 212-entry knowledge base + Groq) | ✓ |
+| Verified official protective resource links | ✓ (4 links checked) |
+| Two real historical data windows (ECB reference observations) | ✓ |
+| Offline-capable (PWA, previously cached content only) | ✓ |
+| Large accessible controls, two-pane + mobile layout | ✓ |
+| No accounts, no analytics, no tracking | ✓ |
+
+---
+
+## Privacy
+
+**Core journey:** prediction, virtual amounts, choices, and reflection answers stay
+in React reducer memory only. They are discarded on reload or restart. Nothing from
+the practice is sent anywhere.
+
+**Chat:** when you submit a question through the Chat panel, your question and
+selected language are sent via same-origin HTTPS to a server function, which calls
+**Groq** (model: `openai/gpt-oss-120b`) to answer general learning questions from the
+knowledge base. No journey answers, amounts, or step state are ever included.
+Groq's usage-metadata retention policy applies; see **About this app** in the
+running app for the full disclosure.
+
+**Storage:** only language and auto-speak preferences persist (localStorage).
+No cookies, no analytics, no financial or personal data storage.
+
+See [`docs/PRIVACY.md`](docs/PRIVACY.md) for full details.
+
+---
+
+## Limits
+
+- **Language:** Hindi and English strings were checked by an automated agent
+  (back-translation QA). They have had a human listening review but have not had
+  a native-speaker pronunciation or cultural-clarity review.
+- **Simulation model:** a simplified teaching model. Real slippage, spread, fees,
+  financing, taxes, liquidity, and execution details are omitted.
+- **Data:** two real historical windows use ECB daily reference observations —
+  not equity prices, not Indian market data, not executable quotes. They are
+  retrospectively selected, not a representative or random sample.
+- **One episode:** one recorded path is a teaching example. It does not predict
+  any future outcome.
+- **Chat:** the learning chat can be wrong. It refuses investment-advice questions
+  locally and on the server, but it is not a regulated financial service.
+- **Offline audio:** only previously cached clips play offline. Not every clip is
+  pre-installed.
+
+See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md) for the full list.
+
+---
+
+## Tech
+
+- **Frontend:** Vite + React 19 + TypeScript (strict) + Tailwind CSS v4
+- **PWA:** vite-plugin-pwa / Workbox
+- **Server (chat):** Netlify Functions (portable Vite middleware in dev)
+- **AI provider:** GroqCloud — `openai/gpt-oss-120b` (server-side only)
+- **Data:** two ECB-derived episode JSONs; pure deterministic engine (no I/O)
+- **Audio:** Indic Parler TTS (build-time only, offline), Whisper ASR gates,
+  compact Opus assets
+- **Tests:** Vitest (unit), Playwright (browser/layout), axe-core (accessibility rules)
+
+---
+
+## Third-party components
+
+| Component | Version | Licence |
+|---|---|---|
+| React / React DOM | 19.3.0 | MIT |
+| Vite + React plugin | 8.3.2 / 6.1.1 | MIT |
+| vite-plugin-pwa | 1.3.0 | MIT |
+| Tailwind CSS | 4.3.3 | MIT |
+| TypeScript | 6.0.3 | Apache-2.0 |
+| Vitest | 5.0.3 | MIT |
+| Playwright | 1.63.0 | Apache-2.0 |
+| axe-core/playwright | 4.13.0 | MPL-2.0 |
+| GroqCloud (runtime) | service | proprietary terms |
+| Indic Parler TTS (build) | ai4bharat/indic-parler-tts | Apache-2.0 (weight licence: TODO — upstream training attribution unresolved) |
+| Whisper ASR (build) | openai/whisper-small | Apache-2.0 |
+| ECB reference data | — | ECB reuse terms (attribution + modification notice) |
+
+Full inventory, licence evidence, and unresolved upstream questions:
+[`docs/THIRD_PARTY.md`](docs/THIRD_PARTY.md) and
+[`public/THIRD_PARTY_NOTICES.txt`](public/THIRD_PARTY_NOTICES.txt).
+
+---
+
+## Run locally
+
+Requires Node.js and npm (see [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for exact versions).
 
 ```sh
 npm ci
 npm run dev
-# Production checks:
+```
+
+For the learning chat, add a server-side Groq key to a gitignored `.env.local`:
+
+```sh
+GROQ_API_KEY=your_key_here
+```
+
+**Production checks** (run before any commit):
+
+```sh
 npm run lint
 npm run typecheck
 npm run test
@@ -60,71 +215,59 @@ npm run check:content
 npm run build
 npm run check:bundle
 npm run release
-# Build-time Python regression tests:
-python3 -m unittest discover -s scripts/tests
-python3 -m unittest scripts.data_ecb_test scripts.data_resources_test
 ```
 
-The browser journey is:
-`language → intro → setup → prediction → run → result → replay → reveal → debrief → postcheck → nextsteps`.
-Pilot mode (`?pilot=1`) offers a local summary, **not a participant database**.
-A refresh/reset discards answers; no account or research submission is created.
-The short footer refers to in-app choices/answers; **About this app** contains the
-full preferences/cache/offline, absent native/listening review and ordinary host-
-log disclosures. No browser-reported connectivity is presented as verified.
+**Layout screenshots** (local only, gitignored):
 
 ```sh
-npm run test:layout       # 10 viewports × 2 languages × fixed A+ size × 11 steps
-npm run screenshots:contact  # artifacts/ui/contact-sheet.html and per-case PNG boards
+npm run test:layout
+npm run screenshots:contact
 ```
 
-Screenshots/reports under `artifacts/ui/` are local, gitignored automated evidence.
-The first teaching module is loaded after language choice; the PWA still caches
-all public app-shell chunks. No learner state is serialized for that loading.
+---
 
-The revised gate blocks draft content, runtime placeholders, unverified
-resources, stale/missing audio and unsafe content. It allows `agent-checked`
-with **loud warnings listing every such string**, and accepts genuinely
-human-`reviewed` content without that warning. Agents never assign `reviewed`.
-Do not bypass an audio/content failure to obtain a green release. A passing
-technical gate is not legal advice, human listening approval or pilot consent.
+## Project layout
 
-## Privacy and safety
+```
+src/
+  config/       App name, episode list, simulation config, language list
+  engine/       Pure deterministic simulation, debrief selector, stats
+  journey/      React reducer, steps list, simulation hook
+  screens/      One component per step (LanguageSelect → … → NextSteps)
+  components/   Shared UI: charts, gauges, glossary card, audio controls
+  content/      en/ and hi/ JSON strings, review-status registry
+  audio/        Audio manager and manifest loader
+  chat/         Chat panel, KB lookup, local refusals
+  i18n/         String resolver, number/currency formatters
+data/           Validated episode JSONs (ECB-derived)
+server/         Chat API handler (Netlify Function / Vite middleware)
+shared/         Chat config flag (CHAT_ENABLED)
+scripts/        Content checker, bundle checker, release gate, audio pipeline
+docs/           Architecture, privacy, limitations, data sources, third-party notices
+public/         Static assets, audio manifest, service worker, notices
+```
 
-No buy/sell/hold calls, real instrument names in UI/audio, promotion, brands of
-financial providers, monetisation, profit gamification, accounts, cookies,
-analytics, personal/financial persistence or external runtime APIs. Only
-language and auto-speak preferences may persist. The retired text-size key is removed.
-The Chat icon toggles a compact, non-modal panel below the header, with three
-bilingual question chips for each of the eleven steps and in-memory messages.
-It is backed by 212 original bilingual KB entries; provider policies are in About this app.
-Greetings, thanks and simple help prompts have friendly bilingual local replies.
-Keyword matches return original KB text locally. A keyword miss uses Groq for
-semantic entry selection, then a grounded explanation from up to three selected
-entries; it does not immediately return an unknown message. Local dev/preview loads the
-server-only `GROQ_API_KEY` from a gitignored root `.env.local` on startup.
-Unmatched general questions and language go through `/api/chat` to Groq; advice requests
-are refused locally and again on the server. The model never receives journey answers.
-Missing/failed model calls use library text. See [PRIVACY](docs/PRIVACY.md) and
-[DEPLOYMENT](docs/DEPLOYMENT.md); set `GROQ_API_KEY` only in the server environment.
-The one on/off flag is `CHAT_ENABLED` in `shared/chat-config.mjs`. Static assets/audio are
-same-origin; source/model downloads happen **only during explicit build-time
-preparation**, never in the participant app. See [PRIVACY](docs/PRIVACY.md) and
-[GUARDRAILS](docs/GUARDRAILS.md). Real provenance is in the client bundle for
-transparency, not encrypted against deliberate developer-tool inspection.
+---
 
-## Evidence and operations
+## Guardrails
 
-- [WALKTHROUGH](docs/WALKTHROUGH.md): actual learner flow.
-- [ACCESSIBILITY_AND_PERFORMANCE](docs/ACCESSIBILITY_AND_PERFORMANCE.md): measured
-  browser/mobile/Lighthouse evidence and explicitly untested assistive technology.
-- [DEPLOYMENT](docs/DEPLOYMENT.md): clean-checkout build, static hosting, CSP,
-  preview-deployment disposition. No push or production deployment is implied.
-- [AUDIO_PIPELINE](docs/AUDIO_PIPELINE.md), [scripts README](scripts/README.md):
-  offline reproducible speech/data tools; weights/raw WAVs never ship.
-- [THIRD_PARTY](docs/THIRD_PARTY.md), [runtime notices](public/THIRD_PARTY_NOTICES.txt):
-  exact packages, model pins, data terms, attribution and upstream uncertainty.
-- [TASKS](docs/TASKS.md), [DECISIONS](docs/DECISIONS.md),
-  [TODO_DISPOSITION](docs/TODO_DISPOSITION.md): completed scope, deviations and
-  human-only decisions. Historical audits remain preserved, not rewritten as
-  evidence of checks they did not perform.
+- No buy/sell/hold recommendations, price targets, real instrument names, brokers,
+  or promotions — in UI, audio, or chat responses.
+- No accounts, cookies, analytics, personal/financial storage, or external runtime
+  APIs (except the single disclosed Groq chat call).
+- Chat advice/tip/prediction requests are refused locally before any network call,
+  and refused again on the server.
+- Release gate blocks draft copy, unverified resources, stale audio, and unsafe
+  content. `agent-checked` content passes with a loud warning listing every string;
+  only human-`reviewed` content passes silently. Agents never assign `reviewed`.
+
+See [`docs/GUARDRAILS.md`](docs/GUARDRAILS.md).
+
+---
+
+## Disclaimer
+
+This app uses virtual money and simplified teaching rules only. It is not financial
+advice, a trading platform, a brokerage, or an investment product. It is not
+endorsed by SEBI, RBI, any exchange, or any regulator. One recorded episode does not
+predict future market behaviour. No claim of learning efficacy is made.

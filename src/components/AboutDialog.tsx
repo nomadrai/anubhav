@@ -53,11 +53,7 @@ export function AboutDialog({
           <h3>{t(language, 'features.aboutOffline')}</h3>
           <p>{t(language, 'features.offline')}</p>
         </section>
-        <section>
-          <h3>{t(language, 'features.aboutReview')}</h3>
-          <p>{t(language, 'features.reviewNotice')}</p>
-          <p>{t(language, 'features.historical')}</p>
-        </section>
+
       </div>
     </dialog>
   );

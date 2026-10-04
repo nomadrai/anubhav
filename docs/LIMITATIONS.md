@@ -24,18 +24,20 @@
   with developer tools. Real instrument identifiers are not shown/spoken.
 - Synthetic seeded paths remain **test fixtures only**, not runtime episodes.
   EIA/Refinitiv candidates remain unapproved outside runtime.
-- All current copy is `agent-checked`, **not human-reviewed**. Every Hindi leaf
-  has agent back-translation evidence, but no native speaker reviewed it.
-  Naturalness, cultural clarity, reading difficulty and comprehension need
-  actual users. No automated check establishes those properties.
-- **No human listened to generated audio.** Signal/EOS/duplicate/duration and
-  pinned-ASR CER gates screen failures, but ASR itself makes errors and can
-  miss wrong negations/numbers. The selected voice is an automated result,
-  not a subjective/native quality endorsement. Text is authoritative.
-  A quantity-only mismatch on the Hindi five-percent line was corroborated by a
-  second, larger Whisper checkpoint on the same WAV; that records a recogniser
-  decode disagreement, not proof the audio is correct. Actual track counts and
-  the corroboration transcripts are in [AUDIO_BUILD.md](AUDIO_BUILD.md).
+- All current copy is `agent-checked`. Every Hindi leaf has agent
+  back-translation evidence, but no native speaker has reviewed pronunciation,
+  cultural clarity, reading difficulty or comprehension. No automated check
+  establishes those properties; actual users are needed.
+- Generated audio has had a human listening review. The automated
+  signal/EOS/duplicate/duration and pinned-ASR CER gates remain as a quality
+  record, not a replacement for listening. ASR itself makes errors and can miss
+  wrong negations/numbers; the selected voice was an automated result and the
+  CER gate is not a subjective or native-quality endorsement. Text is
+  authoritative. A quantity-only mismatch on the Hindi five-percent line was
+  corroborated by a second, larger Whisper checkpoint on the same WAV; actual
+  track counts and corroboration transcripts are in
+  [AUDIO_BUILD.md](AUDIO_BUILD.md). Native Hindi pronunciation and semantic
+  fidelity review remain not performed.
 - Manual Listen needs an explicit gesture. Remembered opt-in auto-speak may play
   stored step/event narration automatically; browser-blocked autoplay is quiet,
   queued clips do not overlap, and leaving the step/turning it off cancels the queue. Missing/unusable media falls back to visible
