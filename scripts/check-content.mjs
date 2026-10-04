@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { checkAudio, sha256 } from './check-audio.mjs';
+import { checkKnowledge } from './check-knowledge.mjs';
 
 const CONTENT_FILES = ['ui.json', 'debrief.json', 'glossary.json', 'narration.json'];
 const CONTENT_STATUSES = new Set(['draft', 'agent-checked', 'reviewed', 'planned']);
@@ -303,6 +304,9 @@ export function checkContent(root = process.cwd()) {
   const audio = checkAudio(root);
   failures.push(...audio.failures);
   warnings.push(...audio.warnings);
+  const knowledge = checkKnowledge(root);
+  failures.push(...knowledge.failures);
+  warnings.push(...knowledge.warnings);
   return { failures: [...new Set(failures)], warnings: [...new Set(warnings)], languages, narrationCount: ids.length };
 }
 

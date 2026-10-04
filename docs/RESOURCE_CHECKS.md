@@ -1,6 +1,16 @@
 # Protective resource checks — 2026-10-03
 
-## Decision and scope
+## KB source extension (2026-10-04)
+
+Current chat's official links have exact-page fetch receipts and scoped evidence
+in `knowledge/BASICS_PRODUCTS_QA.md` (18 cited SEBI/RBI URLs) and
+`knowledge/PROTECTION_QA.md` (SEBI/SCORES, Indian cybercrime, archived CISA general
+security and Groq policy). Each used URL is in its entry's sources. Title-only
+landings do not substantiate procedures/numbers; no unseen video prose, helpline
+numbers, loss rates or legal deadlines were adopted. These are agent receipts,
+not endorsement, publisher identity or destination-privacy approval.
+
+## Earlier direct-resource decision and scope
 
 The current user authorization in `AGENTS.md` permits **agent verification of
 exact official pages with session evidence**. Four direct pointers in

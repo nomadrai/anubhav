@@ -1,0 +1,718 @@
+[
+  {
+    "id": "doubts-real-money",
+    "category": "doubts",
+    "title_en": "Is this real money?",
+    "title_hi": "क्या यह असली पैसा है?",
+    "aliases": [
+      "real money",
+      "असली पैसे",
+      "asli paisa"
+    ],
+    "text_en": "No. The journey uses virtual money, which is a number for practice. You do not deposit money or own a real market position through this app. A displayed gain or loss changes the lesson, not your bank balance. The app has no trading connection, payment collection or conversion of its balance into cash.",
+    "text_hi": "नहीं। अभ्यास में आभासी पैसा इस्तेमाल होता है। यह सीखने के लिए संख्या है। आप यहाँ पैसा जमा नहीं करते और असली बाज़ार की स्थिति नहीं बनाते। दिखता फायदा या नुकसान सीखने का अनुभव बदलता है, बैंक का बैलेंस नहीं। ऐप सौदे के खाते से नहीं जुड़ता, भुगतान नहीं लेता और बैलेंस को नकद नहीं बनाता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-earn",
+    "category": "doubts",
+    "title_en": "Can I earn money here?",
+    "title_hi": "क्या यहाँ पैसे कमा सकता हूँ?",
+    "aliases": [
+      "earn here",
+      "यहाँ कमाई",
+      "yahan kamai",
+      "paisa milega"
+    ],
+    "text_en": "No. This is a learning journey, not an earning service. A positive practice result has no cash value and cannot be withdrawn. There is no reward for choosing more exposure or finishing with a gain. The purpose is to understand uncertain outcomes and borrowed exposure. Practice success does not establish an ability to earn outside the app.",
+    "text_hi": "नहीं। यह सीखने का अनुभव है, कमाई की सेवा नहीं। अभ्यास का अच्छा परिणाम नकद नहीं है और निकाला नहीं जा सकता। ज़्यादा जोखिम चुनने या फायदे पर खत्म करने का इनाम नहीं है। उद्देश्य अनिश्चित परिणाम और उधार का असर समझना है। अभ्यास में सफलता ऐप के बाहर कमाई करने की क्षमता साबित नहीं करती।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-advice",
+    "category": "doubts",
+    "title_en": "Are you giving investment advice?",
+    "title_hi": "क्या आप निवेश की सलाह देते हैं?",
+    "aliases": [
+      "advice",
+      "निवेश सलाह",
+      "salah doge",
+      "what buy"
+    ],
+    "text_en": "No. The app explains ideas and a limited practice model. It does not choose an investment, assess a personal portfolio or predict prices. General education can describe a risk without deciding what suits a particular person. Chat follows the same boundary. It refuses requests for market decisions and offers related learning entries instead.",
+    "text_hi": "नहीं। ऐप विचार और सीमित अभ्यास का मॉडल समझाता है। यह निवेश नहीं चुनता, निजी पोर्टफोलियो नहीं जाँचता या दाम का अनुमान नहीं देता। सामान्य शिक्षा जोखिम बता सकती है। वह किसी व्यक्ति के लिए सही चुनाव तय नहीं करती। चैट की भी यही सीमा है। बाज़ार का निर्णय माँगने पर वह मना करती है और सीखने की संबंधित जानकारी देती है।",
+    "related": [
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "buy",
+        "reason": "In doubts-advice (Are you giving investment advice?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-broker",
+    "category": "doubts",
+    "title_en": "Are you a broker?",
+    "title_hi": "क्या आप ब्रोकर हैं?",
+    "aliases": [
+      "are you broker",
+      "ब्रोकर हो",
+      "broker ho"
+    ],
+    "text_en": "No. A broker is an intermediary in real market transactions. This app does not place orders, open financial accounts, collect trading funds or introduce a preferred intermediary. The buttons change only the practice journey. Chat explains what a broker means but does not connect you to one or verify a person who offers a service.",
+    "text_hi": "नहीं। ब्रोकर असली बाज़ार के लेनदेन में मध्यस्थ होता है। ऐप आदेश नहीं भेजता, वित्तीय खाते नहीं खोलता, सौदे का पैसा नहीं लेता और किसी मध्यस्थ की पसंद नहीं बताता। बटन केवल अभ्यास बदलते हैं। चैट ब्रोकर का अर्थ समझाती है। यह किसी से जोड़ती नहीं या सेवा देने वाले व्यक्ति को सत्यापित नहीं करती।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In doubts-broker (Are you a broker?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-creator",
+    "category": "doubts",
+    "title_en": "Who made this app?",
+    "title_hi": "यह ऐप किसने बनाया?",
+    "aliases": [
+      "who made",
+      "किसने बनाया",
+      "kisne banaya",
+      "owner"
+    ],
+    "text_en": "This is a virtual-money learning app. The available product configuration does not establish a verified publisher identity or public support contact. The chat cannot invent a person, institution or regulatory endorsement. A source link for learning material is not proof that the source organisation made or approved this app. Publisher details need an explicit disclosure.",
+    "text_hi": "यह आभासी पैसे से सीखने का ऐप है। उपलब्ध उत्पाद जानकारी सत्यापित प्रकाशक की पहचान या सार्वजनिक सहायता संपर्क तय नहीं करती। चैट किसी व्यक्ति, संस्था या नियामक की मंज़ूरी की कहानी नहीं बना सकती। सीखने के स्रोत का लिंक यह साबित नहीं करता कि उस संस्था ने ऐप बनाया या मंज़ूर किया है। प्रकाशक की पहचान के लिए साफ खुलासा चाहिए।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-free",
+    "category": "doubts",
+    "title_en": "Is it free?",
+    "title_hi": "क्या यह मुफ़्त है?",
+    "aliases": [
+      "free",
+      "मुफ्त",
+      "muft",
+      "charge lagega"
+    ],
+    "text_en": "This build has no payment collection, subscription or account purchase flow. That describes the implemented app, not a promise about every future version or hosting arrangement. Your network provider may charge for data under your own plan. External resource sites have their own terms. The app does not require a deposit to start the virtual-money lesson.",
+    "text_hi": "इस संस्करण में भुगतान लेने, सदस्यता खरीदने या खाता खरीदने की प्रक्रिया नहीं है। यह मौजूदा ऐप की जानकारी है। भविष्य के हर संस्करण या होस्टिंग व्यवस्था का वादा नहीं। आपके डेटा प्लान के अनुसार इंटरनेट का खर्च हो सकता है। बाहरी स्रोतों की अपनी शर्तें हैं। आभासी पैसे का अभ्यास शुरू करने के लिए जमा रकम नहीं चाहिए।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-privacy",
+    "category": "doubts",
+    "title_en": "Is my data safe?",
+    "title_hi": "क्या मेरी जानकारी सुरक्षित है?",
+    "aliases": [
+      "data safe",
+      "जानकारी सुरक्षित",
+      "data surakshit",
+      "privacy"
+    ],
+    "text_en": "Practice answers remain in page memory. Language and auto-speak preferences can remain on the device. Chat is different: submitted questions and the selected language reach the app server, and eligible questions reach Groq for an answer. The app does not log questions. Hosts and providers have their own policies. Do not enter personal, account or financial details in chat.",
+    "text_hi": "अभ्यास के जवाब खुले पन्ने की याद में रहते हैं। भाषा और अपने-आप सुनने की पसंद डिवाइस में रह सकती है। चैट अलग है। भेजा सवाल और चुनी भाषा ऐप के सर्वर तक जाते हैं। उपयुक्त सवाल जवाब के लिए Groq तक जाते हैं। ऐप सवालों का लॉग नहीं बनाता। होस्ट और सेवा की अपनी नीतियाँ हैं। चैट में निजी, खाते या वित्तीय जानकारी न लिखें।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://console.groq.com/docs/your-data"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-gambling",
+    "category": "doubts",
+    "title_en": "Is the market just gambling?",
+    "title_hi": "क्या बाज़ार केवल जुआ है?",
+    "aliases": [
+      "gambling",
+      "जुआ",
+      "jua",
+      "market gambling"
+    ],
+    "text_en": "Markets can connect ownership, funding and risk transfer. That is not the same purpose as a game of chance. Prices still remain uncertain. A person can behave like a gambler by treating speculation as a certain prize or ignoring costs and obligations. This app neither dismisses every market activity as gambling nor promises that market participation creates wealth.",
+    "text_hi": "बाज़ार मालिकाना हिस्सा, पूँजी और जोखिम के लेनदेन को जोड़ सकते हैं। उनका उद्देश्य संयोग के खेल जैसा नहीं है। फिर भी दाम अनिश्चित रहते हैं। अनुमान को पक्का इनाम मानना या खर्च और ज़िम्मेदारी भूलना जुए जैसी सोच हो सकती है। ऐप हर बाज़ार की गतिविधि को जुआ नहीं कहता और पैसा बढ़ने का वादा भी नहीं करता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-trader-losses",
+    "category": "doubts",
+    "title_en": "Do most traders lose money?",
+    "title_hi": "क्या ज़्यादातर ट्रेडर नुकसान करते हैं?",
+    "aliases": [
+      "most traders lose",
+      "ज्यादातर नुकसान",
+      "zyadatar trader loss"
+    ],
+    "text_en": "A statement about most traders needs a defined group, period, product and treatment of costs. Results for one group cannot describe every investor or every future period. This library does not give an unverified loss percentage. Trading can lead to gains or losses, and repeated costs matter. The practice lesson explains mechanisms rather than a population success rate.",
+    "text_hi": "ज़्यादातर ट्रेडर के बारे में दावे के लिए समूह, समय, साधन और खर्च की जानकारी चाहिए। एक समूह के परिणाम हर निवेशक या भविष्य के हर समय पर लागू नहीं होते। यह जानकारी बिना जाँचे नुकसान का प्रतिशत नहीं बताती। सौदों में फायदा और नुकसान दोनों हो सकते हैं। बार-बार खर्च का असर भी होता है। अभ्यास तरीका समझाता है, पूरी आबादी की सफलता दर नहीं।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-friend",
+    "category": "doubts",
+    "title_en": "My friend made money. Why not me?",
+    "title_hi": "दोस्त को फायदा हुआ। मुझे क्यों नहीं?",
+    "aliases": [
+      "friend profit",
+      "दोस्त कमाता है",
+      "dost ka profit"
+    ],
+    "text_en": "Your friend's gain may be real. It does not show your own future result. Timing, exposure, costs, starting resources and chance can differ. A reported gain may also omit other losses. The balanced conclusion is not that success is impossible. It is that another person's outcome cannot establish a reliable result for you.",
+    "text_hi": "दोस्त का फायदा असली हो सकता है। उससे आपका आगे का परिणाम पता नहीं चलता। समय, जोखिम, खर्च, शुरुआती साधन और संयोग अलग हो सकते हैं। बताए गए फायदे में दूसरे नुकसान छूट सकते हैं। संतुलित बात यह नहीं कि सफलता असंभव है। बात यह है कि दूसरे का परिणाम आपके भरोसेमंद परिणाम का सबूत नहीं है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-what-buy",
+    "category": "doubts",
+    "title_en": "Why will you not tell me what to buy?",
+    "title_hi": "आप खरीदने का चुनाव क्यों नहीं बताते?",
+    "aliases": [
+      "what should buy",
+      "क्या खरीदूं",
+      "kya kharidu",
+      "which stock"
+    ],
+    "text_en": "A learning explanation is different from a personal market decision. The app does not know your obligations or have reliable knowledge of future prices. A confident answer could hide that uncertainty. Its purpose is to make risks understandable, not to substitute a chat response for a considered decision. Related entries explain products, leverage and protection without selecting an investment.",
+    "text_hi": "सीखने की जानकारी और निजी बाज़ार का निर्णय अलग हैं। ऐप आपकी ज़िम्मेदारियाँ नहीं जानता और आगे के दाम की भरोसेमंद जानकारी नहीं रखता। आत्मविश्वास वाला जवाब यह अनिश्चितता छिपा सकता है। उद्देश्य जोखिम समझाना है, सोचे हुए निर्णय की जगह चैट का जवाब देना नहीं। संबंधित जानकारी साधन, लीवरेज और बचाव समझाती है। वह निवेश नहीं चुनती।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "buy",
+        "reason": "In doubts-what-buy (Why will you not tell me what to buy?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-history",
+    "category": "doubts",
+    "title_en": "Is the history real?",
+    "title_hi": "क्या यह इतिहास असली है?",
+    "aliases": [
+      "real history",
+      "असली इतिहास",
+      "asli history",
+      "data asli"
+    ],
+    "text_en": "The shipped episodes use prepared historical observations with a deliberately neutral display. The learning account and borrowed exposure are calculated examples, not historical trades by a participant. The reveal identifies the source and period. A historical path does not explain every cause of a movement. It also does not make the simplified account rules the rules of a real product.",
+    "text_hi": "इस संस्करण की घटनाएँ तैयार किए गए पुराने आँकड़े इस्तेमाल करती हैं। उनका प्रदर्शन जानबूझकर तटस्थ है। सीखने का खाता और उधार का असर गणना के उदाहरण हैं। वे किसी व्यक्ति के पुराने असली सौदे नहीं हैं। खुलासा स्रोत और समय बताता है। पुराना रास्ता हर बदलाव का कारण नहीं बताता। अभ्यास के खाते के नियम असली साधन के नियम भी नहीं बन जाते।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-future",
+    "category": "doubts",
+    "title_en": "Can the past predict the future?",
+    "title_hi": "क्या अतीत से भविष्य पता चलता है?",
+    "aliases": [
+      "past future",
+      "अतीत भविष्य",
+      "past predict",
+      "kal kya hoga"
+    ],
+    "text_en": "Past observations describe what happened under earlier conditions. They can help explain a mechanism or test an assumption. Future conditions, participants and information can change. A repeated historical path is useful for a fair learning comparison, not a prediction. The app does not infer the next direction from the shape or ending of an episode.",
+    "text_hi": "पुराने आँकड़े पहले के हालात में हुई घटना बताते हैं। वे तरीका समझने या मान्यता जाँचने में मदद कर सकते हैं। आगे के हालात, लोग और जानकारी बदल सकते हैं। पुराना रास्ता दोहराना निष्पक्ष सीखने की तुलना के लिए उपयोगी है। वह भविष्य का अनुमान नहीं है। ऐप घटना की आकृति या अंत से अगली दिशा नहीं निकालता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-leverage-good",
+    "category": "doubts",
+    "title_en": "Why can leverage look good?",
+    "title_hi": "लीवरेज कभी अच्छा क्यों दिखता है?",
+    "aliases": [
+      "leverage good",
+      "लीवरेज अच्छा",
+      "leverage fayda"
+    ],
+    "text_en": "Leverage increases exposure relative to the money supporting it. A favourable price change can therefore produce a larger gain in the simplified model. An unfavourable change can also produce a larger loss or forced exit. Showing both directions is important. A good-looking result does not identify leverage as suitable or prove that the next path will be favourable.",
+    "text_hi": "लीवरेज सहारा देने वाले पैसे के मुकाबले जोखिम का आकार बढ़ाता है। अनुकूल दाम से सरल मॉडल में बड़ा फायदा दिख सकता है। उलटा दाम बड़ा नुकसान या मजबूरी का निकास भी ला सकता है। दोनों दिशाएँ दिखाना ज़रूरी है। अच्छा दिखता परिणाम लीवरेज को उपयुक्त नहीं बनाता और यह साबित नहीं करता कि अगला रास्ता अनुकूल होगा।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-small-investor",
+    "category": "doubts",
+    "title_en": "Can a small investor do well?",
+    "title_hi": "क्या कम पैसे वाला निवेशक सफल हो सकता है?",
+    "aliases": [
+      "small investor",
+      "छोटा निवेशक",
+      "chhota niveshak",
+      "kam paisa"
+    ],
+    "text_en": "Starting with less money does not by itself determine every outcome. Costs, access, knowledge, obligations and uncertainty still matter. Some people achieve their goals; others face losses or unsuitable risks. This app cannot forecast an individual result or choose a plan. Its lesson is about understanding exposure, not excluding a learner because of income or town size.",
+    "text_hi": "कम पैसे से शुरू करना अकेले हर परिणाम तय नहीं करता। खर्च, पहुँच, जानकारी, ज़िम्मेदारियाँ और अनिश्चितता फिर भी मायने रखते हैं। कुछ लोग लक्ष्य पूरा करते हैं। कुछ नुकसान या अनुपयुक्त जोखिम झेलते हैं। ऐप किसी व्यक्ति का परिणाम नहीं बताता या योजना नहीं चुनता। सीख जोखिम का आकार समझना है। आय या कस्बे के आकार से किसी को बाहर करना नहीं।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-ai",
+    "category": "doubts",
+    "title_en": "Is the AI always right?",
+    "title_hi": "क्या एआई हमेशा सही है?",
+    "aliases": [
+      "AI right",
+      "एआई सही",
+      "ai galat",
+      "chat wrong"
+    ],
+    "text_en": "No. AI means software that generates an answer from patterns in information. This chat uses a small retrieved set of library entries. It can misunderstand a question or describe the entries poorly. Source titles show the entries used, not an independent guarantee of accuracy. Official facts can change. The local entry fallback is educational text, not expert approval.",
+    "text_hi": "नहीं। एआई जानकारी के पैटर्न से जवाब बनाने वाला सॉफ्टवेयर है। यह चैट जानकारी के कुछ चुने पन्ने इस्तेमाल करती है। वह सवाल गलत समझ सकती है या जानकारी ठीक से नहीं बता सकती। स्रोत के नाम इस्तेमाल हुए पन्ने दिखाते हैं। वे सही होने की अलग गारंटी नहीं हैं। आधिकारिक तथ्य बदल सकते हैं। स्थानीय पन्ने का जवाब शिक्षा है, विशेषज्ञ की मंज़ूरी नहीं।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In doubts-ai (Is the AI always right?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In doubts-ai (Is the AI always right?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-limits",
+    "category": "doubts",
+    "title_en": "What can this app not do?",
+    "title_hi": "यह ऐप क्या नहीं कर सकता?",
+    "aliases": [
+      "app limitations",
+      "सीमा",
+      "kya nahi kar sakta",
+      "limits"
+    ],
+    "text_en": "The app cannot execute real orders, choose products, predict prices or assess personal suitability. Its account model simplifies real contracts, costs and execution. Chat cannot investigate fraud, verify a person from a claim or give legal or tax advice. A completed lesson is not certification or proof of trading skill. Native-language and human listening review are not established.",
+    "text_hi": "ऐप असली आदेश नहीं भेजता, साधन नहीं चुनता, दाम का अनुमान नहीं देता और निजी उपयुक्तता नहीं जाँचता। उसका खाता असली समझौते, खर्च और सौदे की प्रक्रिया को सरल करता है। चैट धोखाधड़ी की जाँच, दावे से किसी की पहचान की पुष्टि या कानूनी और टैक्स सलाह नहीं देती। अभ्यास पूरा करना प्रमाणपत्र या कौशल का सबूत नहीं है। मातृभाषी और मानव सुनने की समीक्षा स्थापित नहीं है।",
+    "related": [
+      "doubts-advice",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-english",
+    "category": "doubts",
+    "title_en": "Can I use this without English?",
+    "title_hi": "क्या अंग्रेज़ी के बिना इस्तेमाल कर सकता हूँ?",
+    "aliases": [
+      "no english",
+      "अंग्रेजी नहीं",
+      "english nahi aati"
+    ],
+    "text_en": "The interface and library offer Hindi and English. Hindi entries aim to explain the same idea in common words. Search also recognises many Roman-script Hindi spellings. Some short market terms remain useful as shared labels and are defined. Translation can still be imperfect. The app does not claim that a native Hindi speaker has reviewed every entry.",
+    "text_hi": "इंटरफेस और जानकारी हिंदी तथा अंग्रेज़ी में हैं। हिंदी में वही बात सामान्य शब्दों से समझाने की कोशिश है। खोज हिंदी के कई रोमन अक्षरों वाले रूप भी पहचानती है। कुछ छोटे बाज़ार के शब्द साझा नाम की तरह काम आते हैं। उनका अर्थ बताया जाता है। अनुवाद में कमी हो सकती है। ऐप हर जानकारी की मातृभाषी हिंदी समीक्षा का दावा नहीं करता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-internet",
+    "category": "doubts",
+    "title_en": "What if the network is weak?",
+    "title_hi": "नेटवर्क कमज़ोर हो तो क्या होगा?",
+    "aliases": [
+      "weak internet",
+      "कम नेटवर्क",
+      "net nahi",
+      "offline"
+    ],
+    "text_en": "A previously cached app can offer parts of the lesson without a current network connection. Only available cached audio can play offline. Chat needs a server connection for a generated answer. If the local knowledge files are available, the panel can show an entry instead. No cache is permanent. The app does not promise that an unvisited page or all audio works offline.",
+    "text_hi": "पहले से सहेजा ऐप बिना मौजूदा नेटवर्क के अभ्यास के कुछ हिस्से दिखा सकता है। ऑफलाइन केवल उपलब्ध सहेजी आवाज़ चल सकती है। बना हुआ चैट जवाब सर्वर का कनेक्शन माँगता है। स्थानीय जानकारी के पन्ने उपलब्ध हों तो उनकी जानकारी दिख सकती है। कैश हमेशा नहीं रहता। ऐप बिना खोला पन्ना या सारी आवाज़ ऑफलाइन चलने का वादा नहीं करता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-account",
+    "category": "doubts",
+    "title_en": "Do I need an account or KYC here?",
+    "title_hi": "क्या यहाँ खाता या केवाईसी चाहिए?",
+    "aliases": [
+      "account needed",
+      "केवाईसी चाहिए",
+      "kyc chahiye",
+      "login"
+    ],
+    "text_en": "No account or identity verification is implemented for the practice journey. KYC is a real-service identity-check concept, not an app requirement. You do not provide a financial account, identity document or OTP to start. Chat asks only for a general learning question. It is not a form for opening an account or submitting a complaint.",
+    "text_hi": "अभ्यास के लिए खाता या पहचान की जाँच नहीं है। केवाईसी असली सेवा की पहचान जाँच का विषय है, ऐप की माँग नहीं। शुरू करने के लिए वित्तीय खाता, पहचान के दस्तावेज़ या ओटीपी नहीं देना होता। चैट केवल सामान्य सीखने का सवाल पूछती है। यह खाता खोलने या शिकायत भेजने का फॉर्म नहीं है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-small-town",
+    "category": "doubts",
+    "title_en": "Does living in a small town change the lesson?",
+    "title_hi": "क्या छोटे कस्बे में रहने से सीख बदलती है?",
+    "aliases": [
+      "small town",
+      "छोटा कस्बा",
+      "chhote shehar",
+      "gaon"
+    ],
+    "text_en": "The ideas of uncertain prices, exposure and account recovery do not depend on town size. Access to reliable information, language support and network connections can differ. This app offers bilingual explanations and virtual practice without assuming wealth or experience. It cannot assess local service quality or a particular person's opportunities. Asking a basic question is appropriate.",
+    "text_hi": "अनिश्चित दाम, जोखिम के आकार और खाते के सुधार की बातें कस्बे के आकार पर निर्भर नहीं हैं। भरोसेमंद जानकारी, भाषा की मदद और नेटवर्क की पहुँच अलग हो सकती है। ऐप धन या अनुभव मानकर नहीं चलता। वह दो भाषाओं में जानकारी और आभासी अभ्यास देता है। यह स्थानीय सेवा की गुणवत्ता या किसी व्यक्ति के मौके नहीं जाँचता। सामान्य सवाल पूछना उचित है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-maths",
+    "category": "doubts",
+    "title_en": "Do I need strong maths?",
+    "title_hi": "क्या अच्छी गणित आना ज़रूरी है?",
+    "aliases": [
+      "maths hard",
+      "गणित नहीं",
+      "ganit mushkil"
+    ],
+    "text_en": "The lesson focuses on relationships: greater exposure changes outcomes more, and a loss leaves a smaller recovery base. You can read the plain-language explanation before looking at a chart or formula. A wrong prediction is not a maths failure. The app does not grade intelligence. It also does not replace a full explanation of real contract calculations.",
+    "text_hi": "अभ्यास रिश्तों को समझाता है। बड़ा जोखिम परिणाम को ज़्यादा बदलता है। नुकसान के बाद सुधार का आधार छोटा रह जाता है। चार्ट या गणना से पहले सामान्य भाषा की बात पढ़ सकते हैं। गलत अनुमान गणित में असफलता नहीं है। ऐप बुद्धि के अंक नहीं देता। यह असली समझौते की पूरी गणना की व्याख्या का विकल्प भी नहीं है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-practice-loss",
+    "category": "doubts",
+    "title_en": "Did I fail if the practice balance falls?",
+    "title_hi": "अभ्यास में नुकसान हो तो क्या मैं असफल हूँ?",
+    "aliases": [
+      "practice loss",
+      "असफल",
+      "fail ho gaya"
+    ],
+    "text_en": "A lower virtual balance is a model outcome, not a judgement about you. The same price path can create different account effects at different exposure. Understanding why that happens is the lesson. There is no prize for the highest practice balance. The app does not use one result to diagnose your ability, character or future financial success.",
+    "text_hi": "कम आभासी बैलेंस मॉडल का परिणाम है, आपका फैसला नहीं। एक ही दाम का रास्ता अलग जोखिम पर खाते को अलग तरह प्रभावित कर सकता है। उसका कारण समझना ही सीख है। सबसे बड़े अभ्यास बैलेंस का इनाम नहीं है। ऐप एक परिणाम से क्षमता, चरित्र या आगे की वित्तीय सफलता का निदान नहीं करता।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-hold",
+    "category": "doubts",
+    "title_en": "Does Hold mean I should keep a real investment?",
+    "title_hi": "क्या होल्ड असली निवेश रखने की सलाह है?",
+    "aliases": [
+      "hold meaning",
+      "होल्ड",
+      "hold karu",
+      "continue matlab"
+    ],
+    "text_en": "No. Hold is a practice control that continues the existing simulated position. It does not forecast the next price or judge a real holding. Exit is also a simulation control, not a real-sale instruction. The lesson compares account effects under stated assumptions. Chat can explain these controls but refuses requests to choose a real market action.",
+    "text_hi": "नहीं। होल्ड अभ्यास का बटन है। वह मौजूदा नकली स्थिति को आगे चलाता है। यह अगले दाम का अनुमान या असली निवेश का फैसला नहीं है। निकास भी अभ्यास का चुनाव है, असली बिक्री का निर्देश नहीं। सीख साफ मान्यताओं पर खाते के असर की तुलना करती है। चैट बटन समझा सकती है। असली बाज़ार का कदम चुनने से मना करती है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "hold",
+        "reason": "In doubts-hold (Does Hold mean I should keep a real investment?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-hidden",
+    "category": "doubts",
+    "title_en": "Why hide the period? Are you hiding something?",
+    "title_hi": "समय क्यों छिपता है? क्या कुछ छिपा रहे हैं?",
+    "aliases": [
+      "hidden period",
+      "समय छिपा",
+      "time chhupa",
+      "biased app"
+    ],
+    "text_en": "The period remains hidden until reveal so recognition of a famous episode does not replace your initial expectation. The reveal supplies the source and period later. This is a learning choice, not a claim that context is unimportant. The episode selection and simplified rules limit the lesson. You can question those limits without accepting a market recommendation.",
+    "text_hi": "समय खुलासे तक छिपता है ताकि मशहूर घटना की पहचान आपकी शुरुआती उम्मीद की जगह न ले। बाद में खुलासा स्रोत और समय देता है। यह सीखने का चुनाव है। संदर्भ बेकार होने का दावा नहीं। चुनी गई घटना और सरल नियम सीख को सीमित करते हैं। बाज़ार की कोई सलाह माने बिना भी आप इन सीमाओं पर सवाल पूछ सकते हैं।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "recommendation",
+        "reason": "In doubts-hidden (Why hide the period? Are you hiding something?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "doubts-scaring",
+    "category": "doubts",
+    "title_en": "Is this trying to frighten me away from markets?",
+    "title_hi": "क्या ऐप मुझे बाज़ार से डराता है?",
+    "aliases": [
+      "scary app",
+      "डराना",
+      "darana",
+      "anti market"
+    ],
+    "text_en": "The aim is to explain risk, not to label all market activity as harmful. Leverage can enlarge favourable outcomes as well as unfavourable ones. The app highlights obligations and loss mechanisms because a gain alone can hide them. A short lesson is not a balanced catalogue of every product. It neither promotes participation nor instructs everyone to avoid markets.",
+    "text_hi": "उद्देश्य जोखिम समझाना है, बाज़ार की हर गतिविधि को नुकसानदायक कहना नहीं। लीवरेज अनुकूल और उलटे दोनों परिणाम बढ़ा सकता है। ऐप ज़िम्मेदारियाँ और नुकसान का तरीका दिखाता है क्योंकि केवल फायदा उन्हें छिपा सकता है। छोटा अभ्यास हर साधन की पूरी तुलना नहीं है। यह न बाज़ार में भाग लेने का प्रचार करता है, न सभी को दूर रहने का निर्देश देता है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-approval",
+    "category": "doubts",
+    "title_en": "Is this approved by a regulator?",
+    "title_hi": "क्या नियामक ने इस ऐप को मंज़ूर किया है?",
+    "aliases": [
+      "SEBI approved",
+      "सेबी मंजूरी",
+      "sebi approved app"
+    ],
+    "text_en": "An official resource link does not establish regulatory approval of this app. This build does not provide evidence of a regulator's endorsement. The practice journey is not a regulated trading service, registration check or official examination. Chat cannot create an approval claim. The source list identifies information used for an explanation, not the identity of the publisher.",
+    "text_hi": "आधिकारिक स्रोत का लिंक इस ऐप की नियामक मंज़ूरी साबित नहीं करता। इस संस्करण में नियामक के समर्थन का सबूत नहीं है। अभ्यास कोई विनियमित सौदे की सेवा, पंजीकरण जाँच या सरकारी परीक्षा नहीं है। चैट मंज़ूरी का दावा नहीं बना सकती। स्रोत की सूची जानकारी का आधार बताती है। वह प्रकाशक की पहचान नहीं बताती।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-certificate",
+    "category": "doubts",
+    "title_en": "Does finishing prove trading skill?",
+    "title_hi": "क्या पूरा करने से सौदे का कौशल साबित होता है?",
+    "aliases": [
+      "certificate",
+      "प्रमाणपत्र",
+      "skill test",
+      "course complete"
+    ],
+    "text_en": "Finishing shows that you reached the end of this learning journey. It is not a trading qualification or certification. A correct prediction can occur by chance, and a wrong prediction can still lead to useful learning. The app has no profit leaderboard or verified pilot efficacy claim. Its result describes the chosen practice path and assumptions only.",
+    "text_hi": "पूरा करना केवल इस अभ्यास के अंत तक पहुँचने को दिखाता है। यह सौदे की योग्यता या प्रमाणपत्र नहीं है। सही अनुमान संयोग से हो सकता है। गलत अनुमान से भी उपयोगी सीख मिल सकती है। ऐप में फायदे की रैंकिंग या सत्यापित पायलट प्रभाव का दावा नहीं है। परिणाम केवल चुने अभ्यास के रास्ते और मान्यताओं का है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-refund",
+    "category": "doubts",
+    "title_en": "Can chat recover money lost in a scam?",
+    "title_hi": "क्या चैट धोखे में गया पैसा वापस दिलाती है?",
+    "aliases": [
+      "refund",
+      "पैसा वापस",
+      "paisa wapas",
+      "scam recovery"
+    ],
+    "text_en": "No. Chat can explain general warning signs and point to official reporting information. It cannot inspect an account, contact an accused person, freeze funds or recover money. A complaint route has its own scope and requirements. Do not give this app private evidence or account credentials. A recovery promise from an unknown person can itself be another deception.",
+    "text_hi": "नहीं। चैट सामान्य खतरे के संकेत समझा सकती है और आधिकारिक रिपोर्टिंग की जानकारी दिखा सकती है। यह खाता नहीं देखती, आरोपी से संपर्क नहीं करती, पैसा नहीं रोकती और वापस नहीं दिलाती। शिकायत के रास्ते का अपना दायरा और माँगें हैं। ऐप को निजी सबूत या खाते की गुप्त जानकारी न दें। अनजान व्यक्ति का पैसा लौटाने का वादा भी नया धोखा हो सकता है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://scores.sebi.gov.in/",
+      "https://cybercrime.gov.in/"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-missing-answer",
+    "category": "doubts",
+    "title_en": "Why can chat say it does not know?",
+    "title_hi": "चैट क्यों कहती है कि जानकारी नहीं है?",
+    "aliases": [
+      "does not know",
+      "नहीं पता",
+      "nahi pata",
+      "answer missing"
+    ],
+    "text_en": "The chat uses a fixed learning library, not the whole internet or live market data. Search can miss a spelling or retrieve a related idea that does not answer the question. Saying that information is missing is more honest than inventing a fact. Related topics remain available. A local entry can appear when the model or connection fails.",
+    "text_hi": "चैट तय सीखने की जानकारी इस्तेमाल करती है। वह पूरे इंटरनेट या मौजूदा बाज़ार के आँकड़े नहीं पढ़ती। खोज कोई वर्तनी छोड़ सकती है या संबंधित बात ला सकती है जो सवाल का जवाब नहीं है। तथ्य बनाने से बेहतर है जानकारी न होने की बात कहना। संबंधित विषय उपलब्ध रहते हैं। मॉडल या कनेक्शन न चले तो स्थानीय पन्ने की जानकारी दिख सकती है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "doubts-data-entry",
+    "category": "doubts",
+    "title_en": "Should I type my account or income here?",
+    "title_hi": "क्या यहाँ खाता या आय लिखनी चाहिए?",
+    "aliases": [
+      "personal details",
+      "निजी जानकारी",
+      "account number",
+      "salary"
+    ],
+    "text_en": "No. Chat is for general learning questions. Do not type identity documents, account numbers, balances, passwords, OTPs or private financial plans. The server needs only the question and selected language. It does not need your practice choices or profile. A warning cannot prevent every accidental disclosure, so the safest question describes a concept without describing your private situation.",
+    "text_hi": "नहीं। चैट सामान्य सीखने के सवालों के लिए है। पहचान के दस्तावेज़, खाता नंबर, बैलेंस, पासवर्ड, ओटीपी या निजी वित्तीय योजना न लिखें। सर्वर को केवल सवाल और चुनी भाषा चाहिए। उसे अभ्यास के चुनाव या आपकी पहचान नहीं चाहिए। चेतावनी हर अनजाने खुलासे को रोक नहीं सकती। बेहतर सवाल निजी स्थिति बताए बिना विचार का अर्थ पूछता है।",
+    "related": [
+      "doubts-advice",
+      "doubts-limits",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  }
+]

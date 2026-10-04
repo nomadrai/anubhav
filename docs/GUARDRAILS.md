@@ -1,5 +1,17 @@
 # Guardrails
 
+## Current user-authorized chat exception
+
+KB covers generic terms and protection in original bilingual agent-checked text.
+Entry-specific lintAllow reasons permit explained/warned terms, not advice or
+promotion. No named stock, intermediary, investment app or influencer suggestions.
+Chat sends only a disclosed, expressly submitted question and language via the
+same-origin server to Groq. It never sends practice/pilot state. Server-only key;
+no question logs/storage; IP counters only for limiting. Advice/prediction/tip
+assessment bypasses the model; unsafe/failed answers use original entry text.
+No provider-zero-retention claim. Footer capability follows CHAT_ENABLED.
+This explicitly supersedes earlier static-only/stub wording, not other guardrails.
+
 These are product requirements, not suggestions. A release must fail or hide content when a guardrail cannot be demonstrated.
 
 ## Prohibited behavior and claims

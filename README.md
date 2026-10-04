@@ -95,7 +95,12 @@ No buy/sell/hold calls, real instrument names in UI/audio, promotion, brands of
 financial providers, monetisation, profit gamification, accounts, cookies,
 analytics, personal/financial persistence or external runtime APIs. Only
 language and auto-speak preferences may persist. The retired text-size key is removed.
-The Chat button is an empty no-network stub, not an implemented chat feature. Static assets/audio are
+The Chat icon opens a disclosed learning chat backed by 212 original bilingual KB entries.
+Submitted general questions and language go through `/api/chat` to Groq; advice requests
+are refused locally and again on the server. The model never receives journey answers.
+Missing/failed model calls use library text. See [PRIVACY](docs/PRIVACY.md) and
+[DEPLOYMENT](docs/DEPLOYMENT.md); set `GROQ_API_KEY` only in the server environment.
+The one on/off flag is `CHAT_ENABLED` in `shared/chat-config.mjs`. Static assets/audio are
 same-origin; source/model downloads happen **only during explicit build-time
 preparation**, never in the participant app. See [PRIVACY](docs/PRIVACY.md) and
 [GUARDRAILS](docs/GUARDRAILS.md). Real provenance is in the client bundle for

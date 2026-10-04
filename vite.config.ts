@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { APP_NAME } from './src/config/app';
+import { chatPlugin } from './server/vite-chat.mjs';
 
 const csp =
   "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'";
@@ -10,6 +11,7 @@ const csp =
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
+    chatPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: null,
@@ -55,8 +57,22 @@ export default defineConfig(({ mode }) => ({
         globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
         globIgnores: ['audio/**'],
         navigateFallback: '/index.html',
-        navigateFallbackDenylist: [/^\/audio\//],
+        navigateFallbackDenylist: [/^\/audio\//, /^\/api\//, /^\/knowledge\//],
         runtimeCaching: [
+          {
+            urlPattern: ({ url }) =>
+              url.origin === self.location.origin &&
+              /^\/knowledge\/(?:app|basics|products|behaviour|fraud|doubts)\.json$/.test(
+                url.pathname,
+              ),
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'learning-knowledge-v1',
+              networkTimeoutSeconds: 3,
+              cacheableResponse: { statuses: [200] },
+              expiration: { maxEntries: 6 },
+            },
+          },
           {
             urlPattern: ({ url }) =>
               url.origin === self.location.origin &&

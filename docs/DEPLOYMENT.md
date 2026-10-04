@@ -1,4 +1,28 @@
-# Reproducible static build and deployment
+# Reproducible build and deployment
+
+## New chat deployment boundary
+
+The practice app remains static; **generated chat requires a server function**.
+`netlify.toml` and `netlify/functions/chat.mjs` provide a same-origin `/api/chat`
+route. Use a Node runtime supporting ESM import attributes (Node 22+); the local
+Vite dev/preview plugin invokes the same portable handler. On another host, mount
+`server/chat.mjs` at that route, supply trusted client-IP metadata and equivalent
+edge/per-IP limiting. Do not trust client-supplied forwarding headers.
+
+Set **GROQ_API_KEY as a server/function environment variable**, never `VITE_*`,
+a committed `.env`, frontend setting or build-injected browser secret. Without a
+key, the server returns the best library entry; it does not claim an AI call.
+`CHAT_ENABLED` in `shared/chat-config.mjs` is the single on/off flag; rebuild and
+redeploy both client and server to change it. The shipped setting is ON.
+
+Do not deploy only `dist/` and expect model calls. Keep `/api/` out of SPA/PWA
+fallback/cache, preserve `no-store` responses and same-origin browser CSP. Native
+host rate limiting depends on host/plan support; application counters are also
+per-IP but warm-instance only. Review Groq data controls and disable host/body/APM
+question logging. No host account, key setup, paid plan or deployment is performed.
+Final integration verification is limited to requested build/lint/typecheck/refusal/fact checks.
+
+## Earlier static deployment notes
 
 ## Toolchain and committed inputs
 

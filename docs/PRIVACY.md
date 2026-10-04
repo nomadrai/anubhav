@@ -1,99 +1,83 @@
-# Privacy boundary and agent review
+# Privacy boundary: practice versus learning chat
 
-## What is retained
+## Practice and local preferences
 
-- `localStorage.learning.language`: `en` or `hi`.
-- `localStorage.learning.auto-speak`: explicit `true` or `false` narration preference.
-- Text is always the former A+ size. The retired `learning.text-size` key is removed
-  on app-shell initialization; no text-size preference is read or written.
-- Public app assets and requested public audio may be held by the service
-  worker in Cache Storage. Workbox may keep public-cache expiry metadata in
-  IndexedDB. These are **not participant responses**.
-- Prediction, virtual amount/exposure, choices, post-check and pilot summary
-  live only in React reducer memory. They are not written to localStorage,
-  sessionStorage, IndexedDB, a URL, a cookie, an export file, or a server.
-  Explicit optional summary copying puts chosen responses on the device
-  clipboard; the app neither sends nor retains that copy. Clipboard history
-  outside the app can persist it, so it is never automatic.
-  Restart/refresh/closing the tab discards in-app answers. Restart preserves preferences;
-  clearing this origin's browser site data removes preferences and caches.
-- No microphone, contacts, SMS, account, cookie, personal identifier, portfolio,
-  payment, analytics, remote logger or telemetry is requested/implemented.
+Prediction, virtual amount/exposure, choices, reflection and pilot answers remain
+in React reducer memory. They are never included in chat requests or persisted.
+Reload/restart discards these answers. Explicit optional summary copying uses the
+local clipboard; clipboard history is outside this app's control.
 
-The preference helper is `src/journey/preferences.ts`; storage-denied browsers
-can still use the current page, but preferences may not survive remount/reload. `AudioManager` reads only build-time public narration,
-never learner answers. Source maps are not enabled for the production bundle.
-The public audio manifest contains fixed content/voice/build hashes/metrics,
-not local user paths, credentials, participant inputs or generated private text.
+Only `learning.language` and `learning.auto-speak` preferences use localStorage.
+The retired `learning.text-size` key is removed. Public app/audio/knowledge files
+may be cached by the service worker; no chat requests or answers are cached.
+Auto-speak plays only stored public narration, not questions or answers.
+No accounts, cookies, analytics, contact/SMS/microphone access, portfolio import,
+financial account connection or payment collection is implemented.
 
-## UI disclosure and capability flag
+## Authorized chat transport
 
-The bilingual one-line footer refers specifically to **in-app choices and answers**.
-`capabilities.userDataLeavesDevice=false` selects it; a true value selects a sending-
-feature warning instead. This flag implements no transport and overrides no
-privacy guardrail. A future sending feature must disclose its exact data and
-purpose on its own screen and undergo a new network/storage review.
+The user explicitly authorizes a server-backed learning chat. The single flag is
+`CHAT_ENABLED` in `shared/chat-config.mjs`. When true,
+`capabilities.userDataLeavesDevice` is true and the footer uses its existing,
+accurate sending-feature disclosure. When false, the button/panel are hidden,
+the server rejects chat and the local-only footer returns. Rebuild/redeploy both
+browser and function when changing the flag.
 
-About this app remains one click away on every screen. It explains preference-only
-persistence, discarded answers, conditional cached-file/audio availability, missing
-native/listening review and ordinary host logs. No browser online/offline heuristic
-is advertised as evidence of connectivity. Static chunk loading and fixed public
-narration paths carry no virtual-money choices or prediction/reflection payload.
-The full-journey tests check same-origin static GETs with no query/body, not merely
-an origin check that could accidentally allow same-origin answer submission.
+Before sending, the panel shows a warning, server/provider disclosure and an
+unchecked acknowledgement. Enter only general learning questions; do not enter
+personal or financial details. The browser sends **only** `{question, language}`
+as a JSON POST to same-origin `/api/chat`, with cookies omitted and no referrer.
+No step, prediction, amount, pilot result, profile or conversation history is sent.
+Questions never appear in URLs. Advice/tip/prediction requests receive a fixed
+local refusal without transmission; the server repeats this guard for direct API
+clients. A limited personal-detail detector blocks common identifiers/secrets,
+but is not a comprehensive privacy filter. The warning remains necessary.
 
-## Auto-speak and Chat
+Eligible questions are retrieved against public original KB entries. Only the
+question, selected language instruction and the top three matching texts reach
+**Groq**, using **openai/gpt-oss-120b**. There are no live market feeds, tools,
+external searches or vector services. The secret `GROQ_API_KEY` is read only by
+server code, never from a `VITE_*` variable, public asset or browser storage.
+No app code logs or stores questions or provider responses. The panel keeps only
+its current input/answer in memory; closing it clears them. Requests abort on
+close; provider calls have an approximate ten-second timeout. Failures/blocked
+answers use original local KB text, not invented success or a second provider.
 
-Auto-speak defaults OFF via `src/config/audio.ts`. The locally remembered choice
-may enable stored step narration without a new Listen gesture. Run events use an
-in-memory, ordered queue through the same validated audio manager: no overlapping
-clips, no synthesized inputs and no uploaded choices. Leaving a step or opting out
-cancels automatic audio and queued work. Browser-blocked autoplay is silent, with
-captions still readable. Manual Listen remains available and takes priority.
+The server keeps bounded transient **IP/counter/expiry** records for rate limiting,
+not analytics. Expired records are pruned on subsequent requests or discarded
+when the instance ends. The function also configures Netlify's native per-IP
+limiting. Host-native protection depends on deployment support; warm-instance
+counters are not a distributed global quota. No IP is forwarded by app code to
+Groq as a user identifier. The provider still sees the server connection metadata.
 
-The Chat button is only a labelled, empty `TODO(chat)` handler. It opens no feature,
-collects nothing, changes no answers and makes no network calls. The local-only
-footer and `userDataLeavesDevice=false` remain accurate; future Chat implementation
-would require a separate privacy/guardrail review and disclosure.
+## Provider and host limits
 
-## Network and host scope
+Official Groq data policy fetched 2026-10-04:
+https://console.groq.com/docs/your-data . It says usage metadata is retained and
+inference content can be retained for reliability/abuse circumstances. Data
+Controls offer retention choices. **No zero-retention setting is assumed or
+claimed for this account.** Before publication, review provider terms/data
+controls and host request-body/APM logging. Do not enable question/body tracing.
+The operator must supply its own privacy/contact/retention information as needed;
+this code cannot control an external host or provider's storage practices.
 
-All automatic runtime requests are same-origin static JS/CSS/icons/service
-worker/manifest/audio. No live market feed, model inference, source acquisition,
-third-party font or external API runs in the browser. CSP restricts `connect-src`
-and media to the app's origin (media blob also allowed); form submission is
-blocked. Production header instructions: [DEPLOYMENT.md](DEPLOYMENT.md).
+CSP remains `connect-src 'self'`: the browser contacts only its own origin.
+The server's explicit Groq HTTPS request is the authorized exception to the
+previous static-only runtime boundary. Responses have `Cache-Control: no-store`.
+The PWA excludes `/api/` from navigation fallback and has no POST caching rule.
+Public KB files cache separately; availability is conditional, not permanent.
 
-Verified resources are explicit outbound links, not embedded or prefetched
-content. A learner deliberately following one leaves the app; that service may
-use accounts, forms, cookies, analytics and its own retention policy. The app
-claims neither anonymity nor tracking-free destination behavior. Links use
-`noopener noreferrer`; the preview also sets `Referrer-Policy: no-referrer`.
+Official learning resources are explicit `noopener noreferrer` outbound links,
+not embedded requests. Their own accounts, tracking and policies can apply.
+The host receives normal IP/browser/request metadata. App code neither claims
+anonymity nor controls host/provider logging. Practice/pilot answers stay local
+regardless of whether chat is enabled. No pilot, human listening or native-Hindi
+review is claimed. See `knowledge/` QA notes for agent-only content evidence.
 
-The static **host** necessarily receives ordinary request metadata such as IP
-and user agent. No authenticated preview host has been assumed or provisioned.
-Host logging/retention is a publication decision, not something browser code or
-our same-origin assertion can eliminate. Review it before participant use.
+## Current bounded verification
 
-## Offline cache scope
-
-Root-scope app on a dedicated origin. Workbox clears obsolete precaches; the
-small app-owned cleanup script removes superseded `learning-audio-*` cache
-versions without clearing unrelated caches. Manifest uses NetworkFirst with a
-three-second fallback; requested hashed Opus uses CacheFirst. Runtime audio
-cache is bounded to 80 entries/30 days, may be evicted, and does not promise a
-full language pack. Never persist answers for an offline resume feature.
-
-## Evidence and remaining human action
-
-Agent source/storage/CSP audit: source search found application persistence only
-in the preference helper; reducer answers are not serialized. Regression tests
-assert memory-only answers and cleared state on reload. Actual browser/offline/
-request checks and limitations are in
-[ACCESSIBILITY_AND_PERFORMANCE.md](ACCESSIBILITY_AND_PERFORMANCE.md).
-
-The previous implementation-retention TODO is resolved for app behavior:
-**no participant-answer retention**. Human action remains for the chosen host
-and any facilitator's separately collected notes: disclose purpose, access,
-retention/deletion/contact route and obtain appropriate consent. No pilot was
-run and no external notes were read or imported. See [PILOT.md](PILOT.md).
+At the user's request, this change checks only build, lint/typecheck, ten
+English/Hindi/Hinglish advice questions with a stub proving zero provider calls,
+and official-source facts. Earlier full-journey static-only network assertions
+are historical and do not constitute new chat network/provider verification.
+No live Groq call, production deployment, native review or broad audit is claimed.

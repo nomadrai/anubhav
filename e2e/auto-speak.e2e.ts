@@ -4,6 +4,8 @@ import en from '../src/content/en/ui.json' with { type: 'json' };
 import hi from '../src/content/hi/ui.json' with { type: 'json' };
 import enFeatures from '../src/content/en/features.json' with { type: 'json' };
 import hiFeatures from '../src/content/hi/features.json' with { type: 'json' };
+import enChat from '../src/content/en/chat.json' with { type: 'json' };
+import hiChat from '../src/content/hi/chat.json' with { type: 'json' };
 
 type ObservedWindow = typeof window & {
   observedAudio: globalThis.HTMLAudioElement[];
@@ -68,12 +70,13 @@ async function endRealClip(page: Page) {
   });
 }
 for (const language of ['en', 'hi'] as const) {
-  test(`${language} auto-speak defaults off, remembers opt-in, stops on leaving/off; Chat is inert`, async ({
+  test(`${language} auto-speak defaults off, remembers opt-in, stops on leaving/off; Chat requires disclosure`, async ({
     page,
     context,
   }) => {
     const ui = language === 'en' ? en : hi;
     const f = language === 'en' ? enFeatures : hiFeatures;
+    const chat = language === 'en' ? enChat : hiChat;
     const requests: { url: string; method: string; body: string | null }[] = [];
     context.on('request', (request) =>
       requests.push({
@@ -102,6 +105,12 @@ for (const language of ['en', 'hi'] as const) {
     const before = await page.locator('main').innerHTML();
     await page.getByRole('button', { name: f.chat, exact: true }).click();
     expect(await page.locator('main').innerHTML()).toBe(before);
+    const panel = page.locator('.chat-dialog');
+    await expect(panel).toBeVisible();
+    await expect(
+      panel.getByRole('button', { name: chat.send, exact: true }),
+    ).toBeDisabled();
+    await panel.getByRole('button', { name: chat.close, exact: true }).click();
     expect(
       requests.filter((request) => request.url.includes('/audio/')),
     ).toEqual([]);
@@ -184,10 +193,10 @@ for (const language of ['en', 'hi'] as const) {
         continue;
       }
       expect(url.pathname).toMatch(
-        /^\/(?:$|index\.html$|assets\/[^/]+$|icons\/[^/]+$|audio\/(?:manifest\.json|(?:en|hi)\/[a-f0-9]{64}\.opus)$|manifest\.webmanifest$|sw\.js$|cache-cleanup\.js$|workbox-[^/]+\.js$)/,
+        /^\/(?:$|index\.html$|assets\/[^/]+$|icons\/[^/]+$|knowledge\/(?:app|basics|products|behaviour|fraud|doubts)\.json$|audio\/(?:manifest\.json|(?:en|hi)\/[a-f0-9]{64}\.opus)$|manifest\.webmanifest$|sw\.js$|cache-cleanup\.js$|workbox-[^/]+\.js$)/,
       );
     }
-    await expect(page.locator('.app-footer')).toContainText(f.localNotice);
+    await expect(page.locator('.app-footer')).toContainText(f.dataSentNotice);
   });
 }
 test('browser-blocked automatic playback is quiet and leaves readable captions', async ({

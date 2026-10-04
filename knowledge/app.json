@@ -1,0 +1,2297 @@
+[
+  {
+    "id": "app-step-language",
+    "category": "app",
+    "title_en": "Why choose a language first?",
+    "title_hi": "पहले भाषा क्यों चुनें?",
+    "aliases": [
+      "choose language",
+      "LanguageSelect",
+      "Hindi English",
+      "भाषा चुनें",
+      "bhasha",
+      "hindi mein"
+    ],
+    "text_en": "Language choice sets the words used throughout the practice. English and Hindi describe the same exercise, not different outcomes. Choose the version that is easier to read. You can change language later from the header. This preference may be saved on this browser. The language step does not ask for your identity or money.",
+    "text_hi": "भाषा चुनने से पूरे अभ्यास के शब्द तय होते हैं। अंग्रेज़ी और हिन्दी में अभ्यास एक ही है, नतीजे अलग नहीं हैं। जो भाषा पढ़ना आसान हो, उसे चुनें। बाद में ऊपर से भाषा बदल सकते हैं। ब्राउज़र यह पसंद सहेज सकता है। इस चरण में पहचान या पैसा नहीं माँगा जाता।",
+    "related": [
+      "app-language",
+      "app-preferences"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-intro",
+    "category": "app",
+    "title_en": "Why is there a welcome step?",
+    "title_hi": "स्वागत का चरण क्यों है?",
+    "aliases": [
+      "Intro",
+      "welcome",
+      "start practice",
+      "स्वागत",
+      "अभ्यास शुरू",
+      "shuru kaise"
+    ],
+    "text_en": "The welcome explains the learning sequence before you make choices. You predict, watch, compare, and reflect using virtual money. Virtual money means numbers for practice, not spendable money. The app does not open a real position. This introduction separates the lesson from a trading service and prepares you to notice how exposure changes an outcome.",
+    "text_hi": "स्वागत में चुनाव करने से पहले सीखने का क्रम समझाया जाता है। आभासी पैसे से अनुमान चुनते हैं, देखते हैं, तुलना करते हैं और सोचते हैं। आभासी पैसा अभ्यास के अंक हैं, खर्च करने वाला पैसा नहीं। ऐप असली स्थिति नहीं खोलता। शुरुआत बताती है कि कीमत के बदलाव का असर बदलने से नतीजा कैसे बदलता है।",
+    "related": [
+      "app-virtual-money",
+      "app-step-prediction",
+      "app-step-replay"
+    ],
+    "appears_in_steps": [
+      "Intro"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-setup",
+    "category": "app",
+    "title_en": "What do I choose in Setup?",
+    "title_hi": "तैयारी में क्या चुनना है?",
+    "aliases": [
+      "Setup",
+      "set up",
+      "practice choices",
+      "तैयारी",
+      "रकम चुनें",
+      "setup kya hai"
+    ],
+    "text_en": "Setup chooses a hidden episode, a share of the base virtual amount, and an exposure multiplier. Exposure means the amount affected by the path's changes. The summary shows your starting amount and how strongly a move affects it. These choices create a teaching example. They are not suggested amounts or a recommendation about borrowing.",
+    "text_hi": "तैयारी में छिपा उदाहरण, मूल आभासी रकम का हिस्सा और असर का गुणक चुनते हैं। एक्सपोज़र यानी वह रकम जिस पर रास्ते के बदलाव का असर पड़ता है। सार में शुरुआती रकम और बदलाव का असर दिखता है। ये चुनाव सीखने का उदाहरण बनाते हैं। ये सुझाई गई रकम या उधार लेने की सलाह नहीं हैं।",
+    "related": [
+      "app-stake",
+      "app-exposure",
+      "app-leverage",
+      "app-hidden-period"
+    ],
+    "appears_in_steps": [
+      "Setup"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "recommendation",
+        "reason": "In app-step-setup (What do I choose in Setup?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-step-prediction",
+    "category": "app",
+    "title_en": "Why predict before watching?",
+    "title_hi": "देखने से पहले अनुमान क्यों चुनें?",
+    "aliases": [
+      "Prediction",
+      "predict first",
+      "big gain",
+      "small loss",
+      "almost everything",
+      "पहले अनुमान",
+      "बहुत लाभ",
+      "लगभग सब खोना",
+      "pehle andaza"
+    ],
+    "text_en": "Prediction records your expectation before the hidden path unfolds. The choices describe a large gain, a small gain, a small loss, or losing almost everything. Choose one to continue. There is no correct-answer score. Keeping this first answer allows a later comparison with your own thinking, rather than judging your ability to predict markets.",
+    "text_hi": "अनुमान में छिपा रास्ता देखने से पहले अपनी उम्मीद चुनते हैं। विकल्प हैं बहुत लाभ, थोड़ा लाभ, थोड़ा नुकसान या लगभग सब खोना। आगे बढ़ने के लिए एक चुनें। सही जवाब के अंक नहीं मिलते। पहला जवाब बाद की सोच से तुलना करने के लिए रहता है, बाज़ार की भविष्यवाणी करने की क्षमता जाँचने के लिए नहीं।",
+    "related": [
+      "app-step-postcheck",
+      "app-uncertainty",
+      "app-privacy"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "PostCheck"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-run",
+    "category": "app",
+    "title_en": "What happens during Watch?",
+    "title_hi": "देखने के चरण में क्या होता है?",
+    "aliases": [
+      "Run",
+      "Watch",
+      "path begins",
+      "देखें",
+      "रास्ता शुरू",
+      "run kaise",
+      "chart chal raha"
+    ],
+    "text_en": "Watch reveals the path one observation at a time. The chart and meters show its effect on your virtual amount. There are planned decision pauses and possible teaching warnings. You can pause the animation, continue at a decision, or exit there. The exercise ends at your exit, a teaching-rule closure, or the path's end.",
+    "text_hi": "देखने में रास्ते के दर्ज मूल्य एक-एक करके सामने आते हैं। चार्ट और पैमाने आभासी रकम पर असर दिखाते हैं। सोचने के लिए तय विराम और अभ्यास की चेतावनियाँ हो सकती हैं। चलते रास्ते को रोक सकते हैं। निर्णय बिंदु पर जारी रखें या बाहर निकलें। चुनाव, अभ्यास का नियम या रास्ते का अंत अभ्यास खत्म करता है।",
+    "related": [
+      "app-pause-stop",
+      "app-continue-hold",
+      "app-exit",
+      "app-warning"
+    ],
+    "appears_in_steps": [
+      "Run"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-result",
+    "category": "app",
+    "title_en": "What does Result tell me?",
+    "title_hi": "नतीजा क्या बताता है?",
+    "aliases": [
+      "Result",
+      "ending amount",
+      "total change",
+      "नतीजा",
+      "अंतिम रकम",
+      "कुल बदलाव",
+      "result kya"
+    ],
+    "text_en": "Result shows the ending virtual amount and its total percentage change from the selected starting amount. It also explains whether you exited, the teaching rule closed the position, or the position reached the end. This is the first view of one practice run. It is not a performance grade or evidence about a future outcome.",
+    "text_hi": "नतीजे में अंत की आभासी रकम और चुनी शुरुआती रकम से कुल प्रतिशत बदलाव दिखता है। यह भी बताता है कि आपने बाहर निकलना चुना, अभ्यास के नियम ने बंद किया या स्थिति अंत तक चली। यह एक अभ्यास का पहला नतीजा है। इससे प्रदर्शन के अंक नहीं मिलते और भविष्य का नतीजा तय नहीं होता।",
+    "related": [
+      "app-gains-losses",
+      "app-settlement",
+      "app-position-status",
+      "app-step-replay"
+    ],
+    "appears_in_steps": [
+      "Result"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-replay",
+    "category": "app",
+    "title_en": "Why compare after the result?",
+    "title_hi": "नतीजे के बाद तुलना क्यों?",
+    "aliases": [
+      "Replay",
+      "Compare",
+      "without leverage",
+      "तुलना",
+      "बिना उधार",
+      "replay kya",
+      "same path compare"
+    ],
+    "text_en": "Compare puts your run beside a one-times-exposure replay. One-times exposure means the path affects an amount equal to the starting virtual amount, without extra borrowed exposure. Both use the identical observations and starting amount. This makes the effect easier to see. If your run ended early, the replay's longer duration is also part of the difference.",
+    "text_hi": "तुलना में आपके अभ्यास के साथ एक गुना असर वाला अभ्यास दिखता है। एक गुना में रास्ता शुरुआती आभासी रकम जितनी राशि पर असर डालता है, अतिरिक्त उधार वाला असर नहीं होता। दर्ज मूल्य और शुरुआती रकम वही हैं। अंतर आसानी से दिखता है। आपका अभ्यास पहले खत्म हुआ हो तो अवधि का अंतर भी नतीजे में शामिल है।",
+    "related": [
+      "app-same-path",
+      "app-comparison-limit",
+      "app-comparison-chart",
+      "app-recovery"
+    ],
+    "appears_in_steps": [
+      "Replay"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-reveal",
+    "category": "app",
+    "title_en": "Why reveal the period later?",
+    "title_hi": "अवधि बाद में क्यों दिखती है?",
+    "aliases": [
+      "Reveal",
+      "period",
+      "what happened",
+      "खुलासा",
+      "अवधि",
+      "क्या हुआ",
+      "kab ka data"
+    ],
+    "text_en": "Reveal shows the recorded period, a neutral explanation, source attribution, and measurements of the path. The period stays hidden earlier so that your expectation comes before that historical context. Revealing it does not explain every cause of the changes. It also does not make this episode representative of other periods or a forecast of another path.",
+    "text_hi": "खुलासे में दर्ज अवधि, निष्पक्ष व्याख्या, स्रोत और रास्ते के माप दिखते हैं। पहले अवधि छिपी रहती है ताकि उस ऐतिहासिक संदर्भ से पहले अपना अनुमान चुनें। अवधि जानने से बदलाव के सारे कारण नहीं मिलते। यह उदाहरण दूसरी अवधियों का प्रतिनिधि नहीं बनता और अगले रास्ते की भविष्यवाणी भी नहीं करता।",
+    "related": [
+      "app-hidden-period",
+      "app-data-source",
+      "app-path-statistics",
+      "app-uncertainty"
+    ],
+    "appears_in_steps": [
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-debrief",
+    "category": "app",
+    "title_en": "Why learn through a debrief?",
+    "title_hi": "नतीजा समझने के पाठ क्यों हैं?",
+    "aliases": [
+      "Debrief",
+      "Learn",
+      "what practice explains",
+      "समझें",
+      "पाठ",
+      "debrief matlab"
+    ],
+    "text_en": "A debrief is an explanation after an experience. Here, short lessons connect your result to closure, lower exposure, and recovery arithmetic. The lesson selection follows the run's outcome. You can move between lessons and open plain glossary explanations. The aim is to understand the numbers you saw, not to rank your decisions or suggest a real position.",
+    "text_hi": "नतीजा समझने का चरण अनुभव के बाद उसकी व्याख्या करता है। छोटे पाठ आपके नतीजे को स्थिति बंद होने, कम असर और वापसी के गणित से जोड़ते हैं। पाठ अभ्यास के अंत के अनुसार चुने जाते हैं। पाठ बदल सकते हैं और शब्दों का आसान मतलब खोल सकते हैं। उद्देश्य समझना है, चुनाव को अंक देना या असली स्थिति सुझाना नहीं।",
+    "related": [
+      "app-lessons-glossary",
+      "app-forced-exit",
+      "app-recovery"
+    ],
+    "appears_in_steps": [
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-postcheck",
+    "category": "app",
+    "title_en": "Why answer a second time?",
+    "title_hi": "दोबारा जवाब क्यों दें?",
+    "aliases": [
+      "PostCheck",
+      "Reflect",
+      "second prediction",
+      "changed answer",
+      "सोचें",
+      "दूसरा जवाब",
+      "dobara andaza",
+      "would take"
+    ],
+    "text_en": "Reflect asks for the same expectation again after the comparison. It also asks whether you want a clearer explanation of borrowed exposure. Answer both questions to continue; 'Not sure' is available for the explanation question. The app notices whether your expectation changed. Neither changed nor unchanged answers earn a score. This is reflection, not a suitability assessment.",
+    "text_hi": "सोचने के चरण में तुलना के बाद वही अनुमान फिर चुनते हैं। यह भी पूछता है कि उधार वाले असर की और साफ़ व्याख्या चाहिए या नहीं। आगे बढ़ने के लिए दोनों जवाब दें। व्याख्या वाले सवाल में 'पक्का नहीं' भी है। बदला या वही रहा अनुमान दोनों पर कोई अंक नहीं मिलते। यह निजी उपयुक्तता की जाँच नहीं है।",
+    "related": [
+      "app-step-prediction",
+      "app-pilot-summary",
+      "app-privacy"
+    ],
+    "appears_in_steps": [
+      "PostCheck"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-step-nextsteps",
+    "category": "app",
+    "title_en": "What are the final resources for?",
+    "title_hi": "अंत के संसाधन किसलिए हैं?",
+    "aliases": [
+      "NextSteps",
+      "Resources",
+      "keep learning",
+      "संसाधन",
+      "आगे क्या",
+      "next steps"
+    ],
+    "text_en": "Resources finishes the journey with checked official protective links. They support further learning, not a recommendation about an investment. Opening a link leaves the app and needs a connection. You can also view this session's local summary or restart and clear answers. Reaching this step does not certify financial knowledge or prove that the lesson changed behaviour.",
+    "text_hi": "अंत में जाँचे गए आधिकारिक सुरक्षा संसाधनों के लिंक मिलते हैं। वे आगे सीखने के लिए हैं, निवेश की सलाह के लिए नहीं। लिंक खोलने पर ऐप से बाहर जाते हैं और इंटरनेट चाहिए। इसी सत्र का स्थानीय सार देख सकते हैं या फिर शुरू करके जवाब मिटा सकते हैं। यहाँ पहुँचने से वित्तीय ज्ञान या व्यवहार में बदलाव प्रमाणित नहीं होता।",
+    "related": [
+      "app-resources",
+      "app-pilot-summary",
+      "app-restart"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "recommendation",
+        "reason": "In app-step-nextsteps (What are the final resources for?), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-virtual-money",
+    "category": "app",
+    "title_en": "Virtual money is practice money",
+    "title_hi": "आभासी पैसा अभ्यास का पैसा है",
+    "aliases": [
+      "virtual money",
+      "fake money",
+      "real money",
+      "rupees",
+      "आभासी पैसा",
+      "असली पैसा",
+      "nakli paisa",
+      "virtual paisa"
+    ],
+    "text_en": "Virtual money is a number used inside this exercise. The rupee symbol makes amounts readable; it does not represent a deposit, payment, or withdrawable balance. Gains and losses change these practice numbers only. You do not connect an account or fund a position. Losing virtual money here is not a bill, and gaining it is not an award.",
+    "text_hi": "आभासी पैसा इस अभ्यास के भीतर इस्तेमाल होने वाला अंक है। रुपये का निशान रकम समझने के लिए है। यह जमा, भुगतान या निकालने लायक रकम नहीं है। लाभ और नुकसान सिर्फ़ अभ्यास के अंक बदलते हैं। खाता जोड़ना या पैसा देना नहीं होता। आभासी नुकसान कोई बिल नहीं है और आभासी लाभ कोई इनाम नहीं है।",
+    "related": [
+      "app-capital",
+      "app-gains-losses",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Run",
+      "Result"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-capital",
+    "category": "app",
+    "title_en": "Capital and starting amount",
+    "title_hi": "पूँजी और शुरुआती रकम",
+    "aliases": [
+      "capital",
+      "base money",
+      "starting amount",
+      "पूँजी",
+      "शुरुआती रकम",
+      "capital matlab",
+      "shuru ki rakam"
+    ],
+    "text_en": "Capital means the selected starting virtual amount in this exercise. It is the base used for exposure and percentage-change calculations. Setup selects a share of the app's base amount. Result and recovery compare against that selected share, not against the whole base amount. Money outside the selected share is not added to the ending position shown here.",
+    "text_hi": "यहाँ पूँजी का मतलब चुनी हुई शुरुआती आभासी रकम है। असर की राशि और प्रतिशत बदलाव इसी आधार से निकलते हैं। तैयारी में ऐप की मूल रकम का हिस्सा चुनते हैं। नतीजा और वापसी का गणित उसी चुने हिस्से से तुलना करते हैं, पूरी मूल रकम से नहीं। बाकी हिस्सा दिखाई गई अंतिम स्थिति में नहीं जोड़ा जाता।",
+    "related": [
+      "app-stake",
+      "app-exposure",
+      "app-equity",
+      "app-recovery"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Run",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-stake",
+    "category": "app",
+    "title_en": "Choosing the virtual amount",
+    "title_hi": "आभासी रकम का हिस्सा चुनना",
+    "aliases": [
+      "stake",
+      "amount choice",
+      "25%",
+      "50%",
+      "100%",
+      "रकम का हिस्सा",
+      "आभासी रकम",
+      "kitna paisa"
+    ],
+    "text_en": "The virtual amount choice selects a percentage of the app's base practice money. It sets the starting amount for this run. It is separate from the exposure multiplier. Changing the share changes the rupee amounts shown, while the multiplier changes sensitivity to the path. None of the available shares is labelled a suitable amount for a real person.",
+    "text_hi": "आभासी रकम का चुनाव ऐप के मूल अभ्यास पैसे का प्रतिशत चुनता है। इससे इस अभ्यास की शुरुआती रकम तय होती है। यह असर के गुणक से अलग चुनाव है। हिस्सा बदलने से रुपये में दिखती रकम बदलती है। गुणक रास्ते के बदलाव का असर बदलता है। कोई हिस्सा किसी व्यक्ति के लिए सही असली रकम नहीं बताया गया है।",
+    "related": [
+      "app-step-setup",
+      "app-capital",
+      "app-leverage"
+    ],
+    "appears_in_steps": [
+      "Setup"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-exposure",
+    "category": "app",
+    "title_en": "Exposure: the amount affected",
+    "title_hi": "एक्सपोज़र: बदलाव से प्रभावित रकम",
+    "aliases": [
+      "exposure",
+      "position size",
+      "amount moving",
+      "एक्सपोज़र",
+      "असर की रकम",
+      "exposure matlab",
+      "kitni rakam par asar"
+    ],
+    "text_en": "Exposure means the amount whose value changes with the path in this model. It equals starting capital multiplied by the exposure multiplier. Exposure is not the same as money remaining. A larger exposure makes a given path move affect more virtual money, in either direction. The Setup summary separates the starting amount from this larger amount affected by the path.",
+    "text_hi": "इस मॉडल में एक्सपोज़र वह राशि है जिस पर रास्ते के बदलाव का असर पड़ता है। यह शुरुआती पूँजी और असर के गुणक का गुणनफल है। यह बची रकम नहीं है। बड़ी असर की राशि से वही बदलाव अधिक आभासी पैसे को प्रभावित करता है, दोनों दिशाओं में। तैयारी का सार शुरुआती रकम और प्रभावित राशि अलग दिखाता है।",
+    "related": [
+      "app-capital",
+      "app-borrowed-amount",
+      "app-equity",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Run",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-borrowed-amount",
+    "category": "app",
+    "title_en": "Does borrowed exposure mean an actual loan?",
+    "title_hi": "क्या उधार वाला असर असली कर्ज़ है?",
+    "aliases": [
+      "borrowed amount",
+      "borrowed exposure",
+      "loan",
+      "debt",
+      "उधार की रकम",
+      "कर्ज़",
+      "udhar kitna",
+      "loan lena"
+    ],
+    "text_en": "Borrowed exposure means the model gives the path influence over more than your selected starting amount. The extra exposure is the total exposure minus that starting amount. No loan is issued, and no lender receives a payment. This app does not simulate a real loan agreement, repayment schedule, or interest charge. It isolates the arithmetic effect of a larger exposure.",
+    "text_hi": "उधार वाला असर मतलब मॉडल में रास्ते का असर चुनी शुरुआती रकम से बड़ी राशि पर पड़ता है। अतिरिक्त राशि कुल प्रभावित राशि में से शुरुआती रकम घटाने पर मिलती है। असली कर्ज़ नहीं दिया जाता और किसी को भुगतान नहीं होता। ऐप कर्ज़ का समझौता, किस्त या ब्याज नहीं दिखाता। यह केवल बड़ी राशि पर असर का गणित समझाता है।",
+    "related": [
+      "app-exposure",
+      "app-leverage",
+      "app-fees",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-equity",
+    "category": "app",
+    "title_en": "Equity means remaining virtual money",
+    "title_hi": "इक्विटी यानी बची आभासी रकम",
+    "aliases": [
+      "equity",
+      "remaining money",
+      "your virtual money",
+      "इक्विटी",
+      "बची आभासी रकम",
+      "bacha paisa",
+      "equity matlab"
+    ],
+    "text_en": "Equity means the virtual amount remaining in the position at a point in this exercise. It starts at selected capital and changes with the path's effect. It is not a shareholding or ownership label here. The teaching rule checks equity against its maintenance level. When the rule closes the position, the displayed ending equity is the settled amount.",
+    "text_hi": "यहाँ इक्विटी का मतलब किसी कदम पर स्थिति में बची आभासी रकम है। शुरुआत चुनी पूँजी से होती है और रास्ते के असर से रकम बदलती है। यहाँ यह हिस्सेदारी या मालिकाना हक का नाम नहीं है। अभ्यास का नियम इसे अपनी तय सीमा से जाँचता है। नियम बंद करे तो अंत में निपटान की रकम दिखती है।",
+    "related": [
+      "app-capital",
+      "app-exposure",
+      "app-maintenance",
+      "app-settlement"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-leverage",
+    "category": "app",
+    "title_en": "Leverage and the exposure multiplier",
+    "title_hi": "उधार की ताकत और असर का गुणक",
+    "aliases": [
+      "leverage",
+      "multiplier",
+      "2x",
+      "5x",
+      "10x",
+      "उधार की ताकत",
+      "गुणक",
+      "दस गुना",
+      "leverage kya",
+      "udhar ki taqat"
+    ],
+    "text_en": "Leverage is exposure larger than the starting amount. The multiplier tells you how many times that amount is affected by the path. Before closure, a given percentage move produces a larger percentage change in virtual equity at a larger multiplier. This applies to falls as well as rises. A multiplier is not a promised return or an ability score.",
+    "text_hi": "उधार की ताकत का मतलब शुरुआती रकम से बड़ी राशि पर असर लेना है। गुणक बताता है कि कितने गुना राशि प्रभावित है। स्थिति बंद होने से पहले वही प्रतिशत बदलाव बड़े गुणक पर बची आभासी रकम में बड़ा प्रतिशत बदलाव लाता है। गिरावट और बढ़त दोनों में ऐसा होता है। गुणक लाभ का वादा या क्षमता का अंक नहीं है।",
+    "related": [
+      "app-exposure",
+      "app-borrowed-amount",
+      "app-same-path",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Run",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-margin",
+    "category": "app",
+    "title_en": "Margin in this teaching exercise",
+    "title_hi": "इस अभ्यास में जमा रकम",
+    "aliases": [
+      "margin",
+      "deposit",
+      "teaching margin",
+      "जमा रकम",
+      "मार्जिन",
+      "margin matlab",
+      "jama rakam"
+    ],
+    "text_en": "Margin is the teaching amount supporting the larger exposure in this exercise. The glossary calls it an amount kept aside for the position. The margin meter shows remaining equity alongside warning and maintenance levels. It does not ask for another deposit. These labels describe the app's simplified model, not the requirements or procedures of any real financial provider.",
+    "text_hi": "यहाँ जमा रकम बड़ी प्रभावित राशि को आधार देने वाली अभ्यास की रकम है। शब्दार्थ इसे स्थिति के लिए अलग रखी रकम कहता है। जमा का पैमाना बची रकम, चेतावनी और तय सीमा दिखाता है। यह और पैसा जमा करने को नहीं कहता। ये नाम ऐप का सरल मॉडल समझाते हैं, किसी असली वित्तीय संस्था के नियम या प्रक्रिया नहीं।",
+    "related": [
+      "app-equity",
+      "app-maintenance",
+      "app-warning",
+      "products-margin"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-maintenance",
+    "category": "app",
+    "title_en": "The teaching maintenance level",
+    "title_hi": "अभ्यास की तय जमा सीमा",
+    "aliases": [
+      "maintenance",
+      "maintenance level",
+      "teaching level",
+      "threshold",
+      "शिक्षण सीमा",
+      "तय जमा सीमा",
+      "maintenance kya",
+      "limit"
+    ],
+    "text_en": "Maintenance level means the virtual-equity boundary used by this app's closure rule. It is calculated from the selected starting amount and applies to the leveraged run. Reaching or crossing it closes the position in the model. The app settles at that boundary as a deliberate simplification. It is not a universal minimum balance or a real liquidation procedure.",
+    "text_hi": "तय जमा सीमा बची आभासी रकम की वह सीमा है जिस पर ऐप का नियम स्थिति बंद करता है। यह चुनी शुरुआती रकम से निकलती है और उधार की ताकत वाले अभ्यास पर लागू होती है। सीमा तक या उससे नीचे पहुँचने पर स्थिति बंद होती है। सरल मॉडल वहीं निपटान करता है। यह असली दुनिया की सार्वभौमिक सीमा या प्रक्रिया नहीं है।",
+    "related": [
+      "app-margin",
+      "app-forced-exit",
+      "app-settlement",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-warning",
+    "category": "app",
+    "title_en": "Warning points are teaching signals",
+    "title_hi": "चेतावनी बिंदु अभ्यास का संकेत है",
+    "aliases": [
+      "warning point",
+      "margin warning",
+      "warning level",
+      "near margin",
+      "चेतावनी बिंदु",
+      "चेतावनी सीमा",
+      "warning aayi"
+    ],
+    "text_en": "A warning point indicates that the leveraged run has reached the app's warning condition near its maintenance boundary. It can create a decision pause while the position remains open. A sharp move can cross warning and closure conditions together. The warning is not guaranteed time to act. It is an explanation inside this lesson, not an alert about a real account.",
+    "text_hi": "चेतावनी बिंदु बताता है कि उधार की ताकत वाला अभ्यास अपनी तय सीमा के पास ऐप की चेतावनी शर्त तक पहुँचा है। स्थिति खुली हो तो निर्णय का विराम मिल सकता है। तेज़ बदलाव चेतावनी और बंद होने की शर्त साथ पार कर सकता है। कार्रवाई का समय मिलना तय नहीं है। यह असली खाते की सूचना नहीं, पाठ का संकेत है।",
+    "related": [
+      "app-maintenance",
+      "app-forced-exit",
+      "app-step-run"
+    ],
+    "appears_in_steps": [
+      "Run"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-warning (Warning points are teaching signals), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-forced-exit",
+    "category": "app",
+    "title_en": "Forced exit is a model closure",
+    "title_hi": "ज़बरन बाहर निकलना मॉडल में बंद होना है",
+    "aliases": [
+      "forced exit",
+      "liquidation",
+      "closed by rule",
+      "ज़बरन बाहर निकलना",
+      "नियम से बंद",
+      "force exit",
+      "apne aap band"
+    ],
+    "text_en": "Forced exit means the teaching rule closes the position after its equity reaches the maintenance boundary. It differs from choosing Exit yourself. The engine stops that position and records the settled amount. Later observations do not reopen it. This rule helps explain why a later rebound cannot repair an already closed run; it does not reproduce real-world liquidation mechanics.",
+    "text_hi": "ज़बरन बाहर निकलना मतलब बची रकम तय जमा सीमा तक पहुँचने पर अभ्यास का नियम स्थिति बंद कर देता है। यह खुद बाहर निकलने के चुनाव से अलग है। इंजन स्थिति रोककर निपटान की रकम दर्ज करता है। बाद के मूल्य उसे नहीं खोलते। इससे समझते हैं कि बाद की बढ़त बंद अभ्यास नहीं सुधारती। यह असली निपटान की पूरी प्रक्रिया नहीं है।",
+    "related": [
+      "app-maintenance",
+      "app-settlement",
+      "app-exit",
+      "products-margin"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-settlement",
+    "category": "app",
+    "title_en": "Settlement and a line that ends",
+    "title_hi": "निपटान और खत्म होती रेखा",
+    "aliases": [
+      "settlement",
+      "settled amount",
+      "closed line",
+      "rebound after exit",
+      "निपटान",
+      "बंद रेखा",
+      "paisa wapas kyun nahi",
+      "line ended"
+    ],
+    "text_en": "Settlement means the final virtual amount assigned when the teaching rule closes a run. The engine uses its maintenance level for this simplified settlement. A manual exit instead uses equity at the selected observation. The chart ends the closed line there. Later path values remain context only. An ended line is not missing money or a promise that the position can recover.",
+    "text_hi": "निपटान मतलब अभ्यास का नियम बंद करे तो तय की गई अंतिम आभासी रकम। सरल इंजन इसके लिए अपनी जमा सीमा इस्तेमाल करता है। खुद बाहर निकलने पर उस चुने कदम की बची रकम मिलती है। बंद रेखा वहीं खत्म होती है। बाद के मूल्य केवल संदर्भ हैं। रेखा खत्म होना गायब पैसा या स्थिति की वापसी का वादा नहीं है।",
+    "related": [
+      "app-forced-exit",
+      "app-exit",
+      "app-comparison-chart",
+      "app-recovery"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-position-status",
+    "category": "app",
+    "title_en": "Open, warning, and closed statuses",
+    "title_hi": "खुली, चेतावनी और बंद स्थिति",
+    "aliases": [
+      "position",
+      "position open",
+      "survived",
+      "closed",
+      "स्थिति",
+      "खुली रही",
+      "बंद",
+      "status kya",
+      "position matlab"
+    ],
+    "text_en": "A position is the model's virtual exposure being followed through the path. Open means later observations can still affect it. Warning means the teaching warning condition is active. Closed means your choice or the rule has ended it. Reaching the episode's end without closure does not mean there was no loss. Status explains what happened, not whether a choice was good.",
+    "text_hi": "स्थिति यहाँ रास्ते पर चल रहा आभासी असर है। खुली होने पर बाद के मूल्य उसे बदल सकते हैं। चेतावनी में अभ्यास की चेतावनी शर्त सक्रिय है। बंद होने पर आपका चुनाव या नियम उसे खत्म कर चुका है। बिना बंद हुए अंत तक पहुँचना नुकसान न होने का मतलब नहीं है। स्थिति बताती है क्या हुआ, चुनाव अच्छा था या नहीं यह नहीं।",
+    "related": [
+      "app-equity",
+      "app-warning",
+      "app-forced-exit",
+      "app-step-result"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-gains-losses",
+    "category": "app",
+    "title_en": "Gain, loss, and total change",
+    "title_hi": "लाभ, नुकसान और कुल बदलाव",
+    "aliases": [
+      "gain",
+      "loss",
+      "profit",
+      "pnl",
+      "total change",
+      "लाभ",
+      "नुकसान",
+      "कुल बदलाव",
+      "kitna loss"
+    ],
+    "text_en": "A gain means ending virtual equity is above the selected starting amount. A loss means it is below. Total change expresses that difference as a percentage of the starting amount. It is not the same as the largest fall along the way. A run can end above its start after earlier falls, or end below it without a forced exit.",
+    "text_hi": "लाभ मतलब अंत में बची आभासी रकम चुनी शुरुआती रकम से अधिक है। नुकसान मतलब कम है। कुल बदलाव इस अंतर को शुरुआती रकम के प्रतिशत में दिखाता है। यह रास्ते की सबसे बड़ी गिरावट नहीं है। पहले गिरकर भी अभ्यास शुरुआत से ऊपर खत्म हो सकता है। ज़बरन बंद हुए बिना भी अंत में नुकसान हो सकता है।",
+    "related": [
+      "app-step-result",
+      "app-drawdown",
+      "app-recovery"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Result",
+      "Replay",
+      "PostCheck"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-recovery",
+    "category": "app",
+    "title_en": "Recovery maths is not a recovery promise",
+    "title_hi": "वापसी का गणित वापसी का वादा नहीं है",
+    "aliases": [
+      "recovery",
+      "recovery maths",
+      "back to start",
+      "required gain",
+      "वापसी का गणित",
+      "नुकसान भरना",
+      "recovery kaise",
+      "wapas kitna"
+    ],
+    "text_en": "Recovery maths calculates the percentage gain needed to return from a smaller remaining amount to the starting amount. The gain uses the remaining amount as its base, so equal loss and gain percentages do not cancel. No percentage is shown when the run ends at or above its start. Zero leaves no positive base. This arithmetic does not reopen a closed position.",
+    "text_hi": "वापसी का गणित बताता है कि कम बची रकम से शुरुआती रकम तक लौटने के लिए कितना प्रतिशत लाभ चाहिए। लाभ का आधार बची रकम है, इसलिए बराबर नुकसान और लाभ के प्रतिशत एक-दूसरे को नहीं मिटाते। शुरुआत जितनी या अधिक रकम पर यह प्रतिशत नहीं दिखता। शून्य पर सकारात्मक आधार नहीं बचता। यह गणित बंद स्थिति को दोबारा नहीं खोलता।",
+    "related": [
+      "app-gains-losses",
+      "app-settlement",
+      "products-recovery"
+    ],
+    "appears_in_steps": [
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-drawdown",
+    "category": "app",
+    "title_en": "Drawdown: a fall from a previous high",
+    "title_hi": "गिरावट: पहले की ऊँचाई से कमी",
+    "aliases": [
+      "drawdown",
+      "max drawdown",
+      "largest fall from high",
+      "गिरावट",
+      "ऊँचाई से गिरावट",
+      "drawdown matlab",
+      "sabse badi girawat"
+    ],
+    "text_en": "Drawdown is a fall from an earlier high to a later lower value. Maximum drawdown is the largest such percentage fall on the measured series. Reveal measures the recorded path, not your ending-money percentage. The glossary explains the broader idea. A peak-to-later fall can differ from a start-to-end change, so read the label before comparing numbers.",
+    "text_hi": "गिरावट पहले के ऊँचे मूल्य से बाद के कम मूल्य तक की कमी है। सबसे बड़ी गिरावट मापे गए क्रम में ऐसी सबसे बड़ी प्रतिशत कमी है। खुलासे में दर्ज रास्ता मापा जाता है, आपके अंतिम पैसे का प्रतिशत नहीं। शब्दार्थ विचार समझाता है। ऊँचाई से गिरावट और शुरुआत से अंत का बदलाव अलग हो सकते हैं। तुलना से पहले नाम पढ़ें।",
+    "related": [
+      "app-path-statistics",
+      "app-gains-losses",
+      "products-drawdown"
+    ],
+    "appears_in_steps": [
+      "Reveal",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-volatility",
+    "category": "app",
+    "title_en": "Volatility: movement, not direction",
+    "title_hi": "उतार-चढ़ाव: बदलाव, दिशा नहीं",
+    "aliases": [
+      "volatility",
+      "swings",
+      "choppy",
+      "उतार-चढ़ाव",
+      "हिलता रास्ता",
+      "volatility kya",
+      "upar neeche"
+    ],
+    "text_en": "Volatility describes how much and how quickly values move up and down. It does not by itself say where the path will end. An episode can move repeatedly and finish near its start. Larger exposure changes how strongly these moves affect virtual equity. The glossary's bumpy-ride analogy describes movement; it does not measure or predict a real journey.",
+    "text_hi": "उतार-चढ़ाव बताता है कि मूल्य कितना और कितनी जल्दी ऊपर-नीचे बदलता है। इससे अकेले अंतिम दिशा पता नहीं चलती। उदाहरण कई बार बदलकर शुरुआत के पास खत्म हो सकता है। बड़ी प्रभावित राशि इन बदलावों का बची आभासी रकम पर असर बढ़ाती है। ऊबड़-खाबड़ सवारी की मिसाल केवल बदलाव समझाती है, असली सफ़र का माप या भविष्यवाणी नहीं करती।",
+    "related": [
+      "app-leverage",
+      "app-historical-synthetic",
+      "app-uncertainty"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Reveal",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-diversification",
+    "category": "app",
+    "title_en": "Diversification in the glossary",
+    "title_hi": "शब्दार्थ में विविधीकरण",
+    "aliases": [
+      "diversification",
+      "baskets",
+      "spread risk",
+      "विविधीकरण",
+      "जोखिम बाँटना",
+      "alag tokri",
+      "diversification kya"
+    ],
+    "text_en": "Diversification means spreading exposure across different sources of risk. The glossary explains that some sources can still fall together. This app's run follows one recorded path; it does not build or compare a diversified portfolio. The term broadens your vocabulary, not your available setup choices. It is not a claim that spreading exposure removes risk or guarantees a better result.",
+    "text_hi": "विविधीकरण मतलब जोखिम के अलग स्रोतों में असर बाँटना। शब्दार्थ बताता है कि कुछ स्रोत साथ गिर सकते हैं। ऐप का अभ्यास एक दर्ज रास्ता देखता है। यह विविध हिस्सों वाला पोर्टफोलियो बनाता या तुलना नहीं करता। शब्द समझ बढ़ाता है, तैयारी के नए विकल्प नहीं देता। जोखिम बाँटने से जोखिम खत्म होने या बेहतर नतीजे की गारंटी नहीं है।",
+    "related": [
+      "app-lessons-glossary",
+      "app-exposure",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-diversification (Diversification in the glossary), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In app-diversification (Diversification in the glossary), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-compounding",
+    "category": "app",
+    "title_en": "Compounding and a changing base",
+    "title_hi": "चक्रवृद्धि और बदलता आधार",
+    "aliases": [
+      "compounding",
+      "compound",
+      "changing base",
+      "चक्रवृद्धि",
+      "बदलता आधार",
+      "compound matlab",
+      "chakravridhi"
+    ],
+    "text_en": "Compounding means successive percentage changes apply to the amount left after earlier changes. The glossary includes gains and losses, not only growth. This is different from adding percentages to the original base every time. The leveraged engine uses fixed entry exposure rather than continuously resetting leverage. The glossary is not a claim that the engine automatically reinvests gains or models a savings product.",
+    "text_hi": "चक्रवृद्धि में अगला प्रतिशत बदलाव पहले बदलावों के बाद बची रकम पर लगता है। शब्दार्थ लाभ और नुकसान दोनों समझाता है, केवल बढ़त नहीं। यह हर बार मूल आधार पर प्रतिशत जोड़ना नहीं है। उधार वाला इंजन शुरू की प्रभावित राशि तय रखता है, हर कदम गुणक नहीं बदलता। शब्दार्थ अपने-आप लाभ दोबारा लगाने या बचत उत्पाद का मॉडल होने का दावा नहीं है।",
+    "related": [
+      "app-recovery",
+      "app-simulation-assumptions",
+      "app-lessons-glossary"
+    ],
+    "appears_in_steps": [
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-fees",
+    "category": "app",
+    "title_en": "Fees and costs omitted from the model",
+    "title_hi": "मॉडल में शामिल नहीं किए गए शुल्क और खर्च",
+    "aliases": [
+      "fees",
+      "charges",
+      "costs",
+      "interest",
+      "tax",
+      "शुल्क",
+      "खर्च",
+      "ब्याज",
+      "fees nahi",
+      "cost kya"
+    ],
+    "text_en": "Fees are charges that reduce the amount remaining. The glossary introduces this idea, but the teaching engine does not deduct fees, interest, or taxes. It also does not model transaction delays or an executable price. Its ending amount is therefore a simplified arithmetic result, not an estimate of a real after-cost balance. No fee schedule is provided here.",
+    "text_hi": "शुल्क ऐसे खर्च हैं जिनसे बची रकम घटती है। शब्दार्थ यह बात समझाता है, लेकिन अभ्यास का इंजन शुल्क, ब्याज या कर नहीं काटता। इसमें लेनदेन की देरी या वास्तव में मिलने वाली कीमत भी नहीं है। इसलिए अंतिम रकम सरल गणित का नतीजा है, असली खर्चों के बाद बचने वाली रकम का अनुमान नहीं। यहाँ शुल्क की सूची नहीं दी गई है।",
+    "related": [
+      "app-borrowed-amount",
+      "app-simulation-assumptions",
+      "app-lessons-glossary"
+    ],
+    "appears_in_steps": [
+      "Result",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-same-path",
+    "category": "app",
+    "title_en": "Same path means identical observations",
+    "title_hi": "वही रास्ता यानी वही दर्ज मूल्य",
+    "aliases": [
+      "same path",
+      "identical path",
+      "contrast",
+      "one times",
+      "वही रास्ता",
+      "एक गुना",
+      "same data",
+      "bina udhar"
+    ],
+    "text_en": "Same-path contrast uses the exact same recorded observations and selected starting amount for both runs. The replay uses one-times exposure instead of your chosen larger multiplier. It does not generate a friendlier replacement path. This keeps the comparison grounded in the episode you saw. Closure can still produce different line lengths, because the one-times replay continues through the whole episode.",
+    "text_hi": "उसी रास्ते की तुलना में दोनों अभ्यासों के दर्ज मूल्य और चुनी शुरुआती रकम बिल्कुल वही हैं। दोहराया अभ्यास बड़े गुणक की जगह एक गुना असर इस्तेमाल करता है। बेहतर दिखने वाला नया रास्ता नहीं बनता। तुलना उसी देखे उदाहरण पर रहती है। बंद होने से रेखाओं की लंबाई अलग हो सकती है, क्योंकि एक गुना अभ्यास पूरा उदाहरण चलता है।",
+    "related": [
+      "app-step-replay",
+      "app-comparison-limit",
+      "app-settlement"
+    ],
+    "appears_in_steps": [
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-comparison-limit",
+    "category": "app",
+    "title_en": "Why the comparison is not a decision score",
+    "title_hi": "तुलना चुनाव का अंक क्यों नहीं है?",
+    "aliases": [
+      "comparison limit",
+      "holding time",
+      "better choice",
+      "difference",
+      "अवधि का अंतर",
+      "बेहतर चुनाव",
+      "antar kyun",
+      "exit compare"
+    ],
+    "text_en": "The comparison changes exposure, but an early end also changes how long the position remains affected. The one-times replay always continues to the episode's end. The displayed difference is your ending equity minus the replay's ending equity. It cannot isolate the quality of an exit decision. One path and unequal durations do not establish which real-world choice would be better.",
+    "text_hi": "तुलना में असर की राशि बदलती है, लेकिन जल्दी खत्म होने से प्रभावित रहने की अवधि भी बदलती है। एक गुना अभ्यास हमेशा उदाहरण के अंत तक चलता है। दिखा अंतर आपकी अंतिम रकम में से दोहराए अभ्यास की अंतिम रकम घटाता है। इससे बाहर निकलने के चुनाव की गुणवत्ता अलग नहीं मापी जाती। एक रास्ता बेहतर असली चुनाव तय नहीं करता।",
+    "related": [
+      "app-same-path",
+      "app-exit",
+      "app-step-replay",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-hidden-period",
+    "category": "app",
+    "title_en": "Hidden episode and hidden period",
+    "title_hi": "छिपा उदाहरण और छिपी अवधि",
+    "aliases": [
+      "hidden episode",
+      "hidden period",
+      "Episode 1",
+      "Episode 2",
+      "छिपा उदाहरण",
+      "छिपी अवधि",
+      "date hidden",
+      "kaunsa episode"
+    ],
+    "text_en": "A hidden episode is a recorded path offered under a neutral episode number. Its period is withheld until Reveal. Charts use observation steps rather than dates before that point. The exercise also avoids showing real instrument names. This is a learning presentation, not encryption: the project's bundled data can still be inspected by someone using developer tools.",
+    "text_hi": "छिपा उदाहरण दर्ज मूल्यों का रास्ता है जिसे सामान्य उदाहरण संख्या से दिखाते हैं। अवधि खुलासे तक नहीं दिखाई जाती। उससे पहले चार्ट तारीखों की जगह दर्ज कदम दिखाता है। अभ्यास असली वित्तीय साधनों के नाम भी नहीं दिखाता। यह सीखने का तरीका है, गुप्त रखने की तकनीक नहीं। डेवलपर औज़ारों से पैकेज के आँकड़े देखे जा सकते हैं।",
+    "related": [
+      "app-step-setup",
+      "app-step-reveal",
+      "app-observation-steps"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-data-source",
+    "category": "app",
+    "title_en": "Source attribution is not endorsement",
+    "title_hi": "स्रोत का नाम समर्थन नहीं है",
+    "aliases": [
+      "data source",
+      "source",
+      "attribution",
+      "reuse",
+      "आँकड़ों का स्रोत",
+      "स्रोत",
+      "data kahan se",
+      "permission"
+    ],
+    "text_en": "A source is where the recorded observations came from. The current app attributes its reference observations on Reveal. Project documentation records the exact source, preparation, and reuse evidence. The app calculates relative changes and virtual outcomes from those observations. Attribution does not mean the source endorses this lesson. It also does not turn reference observations into executable transaction prices.",
+    "text_hi": "स्रोत वह जगह है जहाँ से दर्ज मूल्य आए हैं। मौजूदा ऐप खुलासे में संदर्भ मूल्यों का स्रोत बताता है। परियोजना के दस्तावेज़ों में असली स्रोत, तैयारी और दोबारा उपयोग का प्रमाण है। ऐप उनसे सापेक्ष बदलाव और आभासी नतीजे निकालता है। स्रोत का नाम पाठ का समर्थन नहीं है। संदर्भ मूल्य वास्तव में लेनदेन की कीमत भी नहीं बन जाते।",
+    "related": [
+      "app-historical-synthetic",
+      "app-step-reveal",
+      "app-uncertainty"
+    ],
+    "appears_in_steps": [
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-historical-synthetic",
+    "category": "app",
+    "title_en": "Recorded history and synthetic fixtures",
+    "title_hi": "दर्ज इतिहास और बनाए गए जाँच उदाहरण",
+    "aliases": [
+      "historical",
+      "real history",
+      "synthetic",
+      "random data",
+      "ऐतिहासिक",
+      "दर्ज रास्ता",
+      "कृत्रिम",
+      "asli data",
+      "banaya hua"
+    ],
+    "text_en": "The shipped episodes use two recorded daily reference-observation windows. They are not stock prices, executable quotes, or an Indian-market sample. Separate synthetic paths are generated teaching fixtures retained for tests, not the current episode choices. Synthetic means deliberately produced data rather than observed history. Recorded inputs still feed simplified virtual-money rules; real observations do not make the resulting position real.",
+    "text_hi": "मौजूदा उदाहरण रोज़ के दर्ज संदर्भ मूल्यों की दो अवधियाँ इस्तेमाल करते हैं। ये शेयर कीमतें, लेनदेन में मिलने वाली कीमतें या भारतीय बाज़ार का नमूना नहीं हैं। अलग कृत्रिम रास्ते जाँच के बनाए उदाहरण हैं, मौजूदा चुनाव नहीं। कृत्रिम मतलब दर्ज इतिहास नहीं, जानबूझकर बनाया आँकड़ा। असली दर्ज मूल्य भी सरल आभासी नियमों में लगते हैं; स्थिति असली नहीं बनती।",
+    "related": [
+      "app-data-source",
+      "app-hidden-period",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-uncertainty",
+    "category": "app",
+    "title_en": "One episode cannot predict another",
+    "title_hi": "एक उदाहरण अगले की भविष्यवाणी नहीं करता",
+    "aliases": [
+      "uncertainty",
+      "forecast",
+      "future",
+      "why prices changed",
+      "अनिश्चितता",
+      "भविष्यवाणी",
+      "कारण",
+      "aage kya hoga",
+      "pakka hai"
+    ],
+    "text_en": "Uncertainty means the exercise does not establish what will happen next. The path shows observed changes, not every cause behind them. Two chosen periods are not a representative sample of all outcomes. Your prediction answers are personal expectations, not model forecasts. The comparison explains an arithmetic mechanism on these inputs. It cannot promise a loss, gain, safe multiplier, or recovery time.",
+    "text_hi": "अनिश्चितता मतलब अभ्यास यह तय नहीं करता कि आगे क्या होगा। रास्ता दर्ज बदलाव दिखाता है, उनके सारे कारण नहीं। चुनी दो अवधियाँ सभी नतीजों का प्रतिनिधि नमूना नहीं हैं। आपके अनुमान निजी उम्मीद हैं, मॉडल की भविष्यवाणी नहीं। तुलना इन्हीं आँकड़ों पर गणित समझाती है। इससे नुकसान, लाभ, सुरक्षित गुणक या वापसी के समय का वादा नहीं मिलता।",
+    "related": [
+      "app-step-prediction",
+      "app-step-reveal",
+      "app-chat-limits",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-simulation-assumptions",
+    "category": "app",
+    "title_en": "What the teaching engine assumes",
+    "title_hi": "अभ्यास के इंजन की धारणाएँ",
+    "aliases": [
+      "simulation assumptions",
+      "engine",
+      "model",
+      "rules",
+      "simplified",
+      "मॉडल",
+      "धारणाएँ",
+      "सरल नियम",
+      "engine kaise"
+    ],
+    "text_en": "The engine is a calculator with explicit teaching assumptions. It fixes exposure at entry, applies recorded path changes, and checks a simplified closure boundary for leveraged runs. It does not simulate orders, market depth, borrowing contracts, or all costs. Identical inputs produce identical outputs. This reproducibility helps explain the mechanism; it is not evidence that real positions would settle at these amounts.",
+    "text_hi": "इंजन साफ़ बताई धारणाओं वाला गणक है। शुरुआत में प्रभावित राशि तय करता है, दर्ज बदलाव लगाता है और उधार वाले अभ्यास की सरल बंद सीमा जाँचता है। इसमें आदेश, बाज़ार में उपलब्ध मात्रा, कर्ज़ का समझौता या सभी खर्च नहीं हैं। वही इनपुट वही नतीजा देते हैं। इससे तरीका समझते हैं, असली स्थिति का यही निपटान होने का प्रमाण नहीं मिलता।",
+    "related": [
+      "app-fees",
+      "app-maintenance",
+      "app-compounding",
+      "app-observation-steps"
+    ],
+    "appears_in_steps": [
+      "Intro",
+      "Setup",
+      "Run",
+      "Result",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-path-chart",
+    "category": "app",
+    "title_en": "Reading the indexed path chart",
+    "title_hi": "आधार बनाकर दिखाए रास्ते का चार्ट",
+    "aliases": [
+      "path chart",
+      "price chart",
+      "index base",
+      "indexed values",
+      "रास्ते का चार्ट",
+      "पहला मान",
+      "chart ka matlab",
+      "100 base"
+    ],
+    "text_en": "The path chart shows relative observations, with the first value indexed to a common starting base. Indexed means rescaled for comparison, not the original quoted price or a rupee balance. Horizontal steps show observation order. The line connects the values shown; it does not reveal intraday movements between them. Open its data table when a picture is harder to read.",
+    "text_hi": "रास्ते का चार्ट पहले मूल्य को साझा आधार बनाकर सापेक्ष मूल्य दिखाता है। आधार बनाना मतलब तुलना के लिए पैमाना बदलना, मूल कीमत या रुपये की रकम दिखाना नहीं। आड़े कदम दर्ज मूल्यों का क्रम हैं। रेखा दिखे मूल्यों को जोड़ती है; बीच के दिनभर के बदलाव नहीं बताती। तस्वीर पढ़ना कठिन लगे तो आँकड़ों की तालिका खोलें।",
+    "related": [
+      "app-observation-steps",
+      "app-data-table",
+      "app-data-source"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-comparison-chart",
+    "category": "app",
+    "title_en": "Dashed and solid comparison lines",
+    "title_hi": "तुलना की टूटी और बिना टूटी रेखाएँ",
+    "aliases": [
+      "dashed line",
+      "solid line",
+      "compare chart",
+      "closed line",
+      "टूटी रेखा",
+      "बिना टूटी रेखा",
+      "do lines",
+      "line kyun ruki"
+    ],
+    "text_en": "The dashed comparison line shows virtual equity with borrowed exposure. The solid, unbroken line shows the one-times replay. Solid does not mean straight or always rising. Both use a shared scale for amounts and steps. A closed run's line ends at its final amount. The table marks later cells as Closed instead of inventing a continuing balance.",
+    "text_hi": "तुलना की टूटी रेखा उधार की ताकत के साथ बची आभासी रकम दिखाती है। बिना टूटी रेखा एक गुना अभ्यास दिखाती है। बिना टूटी का मतलब सीधी या हमेशा बढ़ती नहीं है। रकम और कदमों का पैमाना साझा है। बंद अभ्यास की रेखा अंतिम रकम पर खत्म होती है। तालिका बाद के खाने में 'बंद' दिखाती है, नई रकम नहीं बनाती।",
+    "related": [
+      "app-same-path",
+      "app-settlement",
+      "app-data-table"
+    ],
+    "appears_in_steps": [
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-data-table",
+    "category": "app",
+    "title_en": "Show data table",
+    "title_hi": "आँकड़ों की तालिका दिखाएँ",
+    "aliases": [
+      "show data table",
+      "table",
+      "chart numbers",
+      "आँकड़ों की तालिका",
+      "तालिका",
+      "numbers dikhao",
+      "chart nahi samajh"
+    ],
+    "text_en": "Show data table opens a text alternative to the chart. Each row has a step and its displayed value. The path table uses indexed observations; the comparison table uses virtual-money amounts. These are different units. Closed means that run has no later position value, not zero. The table supports reading without relying on colour or interpreting a plotted shape.",
+    "text_hi": "आँकड़ों की तालिका चार्ट का पाठ वाला विकल्प खोलती है। हर पंक्ति में कदम और उसका दिखाया मूल्य है। रास्ते की तालिका आधार वाले मूल्य दिखाती है; तुलना की तालिका आभासी पैसे की रकम। दोनों की इकाइयाँ अलग हैं। 'बंद' का मतलब बाद में स्थिति की रकम नहीं है, शून्य नहीं। रंग या रेखा का आकार समझे बिना पढ़ सकते हैं।",
+    "related": [
+      "app-path-chart",
+      "app-comparison-chart",
+      "app-reading-accessibility"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-path-statistics",
+    "category": "app",
+    "title_en": "Measurements shown on Reveal",
+    "title_hi": "खुलासे में दिखने वाले माप",
+    "aliases": [
+      "statistics",
+      "worst single step",
+      "downward steps",
+      "steps shown",
+      "मापा गया",
+      "सबसे खराब कदम",
+      "नीचे जाने वाले कदम",
+      "stats kya"
+    ],
+    "text_en": "Reveal reports the largest peak-to-later fall, the worst single observed percentage step, the number of downward steps, and observations shown. A downward step is lower than the previous observation; equal values do not count. The starting observation counts among observations shown but has no previous step. These describe this path only. They are not risk ratings or your decision score.",
+    "text_hi": "खुलासा ऊँचाई से सबसे बड़ी गिरावट, एक दर्ज कदम की सबसे खराब प्रतिशत कमी, नीचे जाने वाले कदम और कुल दर्ज मूल्य बताता है। नीचे का कदम पिछले मूल्य से कम है; बराबर मूल्य नहीं गिना जाता। शुरुआती मूल्य कुल में है, पर उसका पिछला कदम नहीं। ये इसी रास्ते के माप हैं, जोखिम की रेटिंग या चुनाव के अंक नहीं।",
+    "related": [
+      "app-drawdown",
+      "app-observation-steps",
+      "app-step-reveal"
+    ],
+    "appears_in_steps": [
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-observation-steps",
+    "category": "app",
+    "title_en": "Steps, bars, and unavailable intraday lows",
+    "title_hi": "कदम, दर्ज मूल्य और दिनभर की कमी का अभाव",
+    "aliases": [
+      "bar",
+      "step",
+      "observation",
+      "intrabar low",
+      "intraday",
+      "कदम",
+      "दर्ज मूल्य",
+      "दिन की सबसे कम कीमत",
+      "bar kya",
+      "low data"
+    ],
+    "text_en": "A path step or bar means one supplied observation, not one journey screen. Current episodes contain daily reference observations without intraday highs or lows. The engine uses the observation itself when a low is unavailable. It does not invent unseen movements. Animation speed is a teaching pace, not historical elapsed time. Missing calendar dates are not filled with made-up observations.",
+    "text_hi": "रास्ते का कदम या बार एक दिया दर्ज मूल्य है, अभ्यास का पूरा चरण नहीं। मौजूदा उदाहरणों में रोज़ के संदर्भ मूल्य हैं, दिनभर के ऊँचे या कम मूल्य नहीं। कम मूल्य न मिले तो इंजन दर्ज मूल्य ही लेता है। अनदेखा बदलाव नहीं बनाता। चलने की गति समझाने के लिए है, ऐतिहासिक समय नहीं। खाली तारीखों में बनाए मूल्य नहीं भरे जाते।",
+    "related": [
+      "app-path-chart",
+      "app-simulation-assumptions",
+      "app-path-statistics"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-pause-stop",
+    "category": "app",
+    "title_en": "Stop or pause is not Exit",
+    "title_hi": "रोकना या विराम बाहर निकलना नहीं है",
+    "aliases": [
+      "Stop",
+      "pause path",
+      "resume path",
+      "stop simulation",
+      "रास्ता रोकें",
+      "विराम",
+      "रोको",
+      "rukna",
+      "pause karo"
+    ],
+    "text_en": "Pause the path stops the lesson's animation so you can read. Resume the path lets it move again. Pausing does not close the virtual position or change the supplied observations. Exit is a separate choice at decision pauses. Audio has its own pause control. A stopped animation and paused narration are interface states, not actions on a real financial position.",
+    "text_hi": "रास्ता रोकना पाठ की चाल रोकता है ताकि पढ़ सकें। रास्ता जारी करना उसे फिर चलाता है। विराम आभासी स्थिति बंद नहीं करता और दिए मूल्य नहीं बदलता। बाहर निकलना निर्णय विराम पर अलग चुनाव है। आवाज़ रोकने का अपना बटन है। रुका रास्ता और रुकी आवाज़ ऐप की अवस्थाएँ हैं, असली वित्तीय स्थिति पर कार्रवाई नहीं।",
+    "related": [
+      "app-continue-hold",
+      "app-exit",
+      "app-manual-audio"
+    ],
+    "appears_in_steps": [
+      "Run"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-continue-hold",
+    "category": "app",
+    "title_en": "Continue or Hold means continue this practice",
+    "title_hi": "जारी रखें का मतलब यही अभ्यास चलाना है",
+    "aliases": [
+      "Hold",
+      "continue this run",
+      "continue watching",
+      "resume",
+      "जारी रखें",
+      "देखना जारी रखें",
+      "hold karo",
+      "aage dekho"
+    ],
+    "text_en": "Continue watching at a decision pause advances this teaching run. It leaves the virtual position open for later path observations, unless the rule closes it. The code's Hold action has this limited meaning. It is not a recommendation to hold a real investment. Continuing also does not undo earlier losses, reset the starting amount, or guarantee another chance to exit.",
+    "text_hi": "निर्णय विराम पर देखना जारी रखना इसी अभ्यास को आगे चलाता है। बाद के मूल्य खुली आभासी स्थिति को प्रभावित करते हैं, जब तक नियम बंद न करे। कोड में होल्ड का यही सीमित मतलब है। यह असली निवेश रखने की सलाह नहीं। जारी रखने से पुराने नुकसान नहीं मिटते, शुरुआती रकम नहीं बदलती और अगला निकास मिलना तय नहीं होता।",
+    "related": [
+      "app-step-run",
+      "app-warning",
+      "app-exit",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "Run"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "hold",
+        "reason": "In app-continue-hold (Continue or Hold means continue this practice), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "recommendation",
+        "reason": "In app-continue-hold (Continue or Hold means continue this practice), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-continue-hold (Continue or Hold means continue this practice), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-exit",
+    "category": "app",
+    "title_en": "Exit now closes only the virtual run",
+    "title_hi": "अभी बाहर निकलें केवल आभासी अभ्यास बंद करता है",
+    "aliases": [
+      "Exit",
+      "exit now",
+      "manual exit",
+      "user exit",
+      "अभी बाहर निकलें",
+      "आपका बाहर निकलना",
+      "exit karu",
+      "bahar niklo"
+    ],
+    "text_en": "Exit now is available at a decision pause. It closes this virtual run at the current observation's equity and leads to the result. Later changes no longer affect that closed position. If the teaching rule has already closed it, there is no open position to exit. The app does not award points for exiting or label it a better real-world decision.",
+    "text_hi": "अभी बाहर निकलें निर्णय विराम पर मिलता है। यह मौजूदा दर्ज कदम की बची रकम पर आभासी अभ्यास बंद करके नतीजे तक ले जाता है। बाद के बदलाव बंद स्थिति को प्रभावित नहीं करते। नियम पहले बंद कर चुका हो तो निकलने के लिए खुली स्थिति नहीं है। ऐप बाहर निकलने के अंक नहीं देता और इसे बेहतर असली चुनाव नहीं कहता।",
+    "related": [
+      "app-settlement",
+      "app-comparison-limit",
+      "app-forced-exit"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Result",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-back",
+    "category": "app",
+    "title_en": "Back is reading navigation",
+    "title_hi": "पीछे जाना पढ़ने का रास्ता है",
+    "aliases": [
+      "Back",
+      "previous step",
+      "undo",
+      "पीछे",
+      "पिछला चरण",
+      "wapas",
+      "undo choice"
+    ],
+    "text_en": "Back lets you reread an earlier screen where that control is offered. It does not rewind the recorded engine result or rerun the path. Back is not offered on every screen, including live Watch and Result. Moving forward after rereading returns you toward the recorded journey position. For a fresh run with new choices, use Start again rather than treating Back as undo.",
+    "text_hi": "पीछे का बटन जहाँ मिलता है, वहाँ पिछला पन्ना फिर पढ़ सकते हैं। यह इंजन का दर्ज नतीजा वापस नहीं करता या रास्ता दोबारा नहीं चलाता। चलते अभ्यास और नतीजे सहित हर पन्ने पर बटन नहीं मिलता। फिर आगे जाने से दर्ज यात्रा की ओर लौटते हैं। नए चुनाव के साथ नया अभ्यास चाहिए तो फिर शुरू करें; पीछे जाना चुनाव मिटाना नहीं है।",
+    "related": [
+      "app-restart",
+      "app-step-run",
+      "app-privacy"
+    ],
+    "appears_in_steps": [
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-restart",
+    "category": "app",
+    "title_en": "Start again clears journey answers",
+    "title_hi": "फिर शुरू करने से अभ्यास के जवाब मिटते हैं",
+    "aliases": [
+      "restart",
+      "start again",
+      "reset",
+      "clear answers",
+      "फिर शुरू करें",
+      "जवाब मिटाएँ",
+      "dobara shuru",
+      "reset karo"
+    ],
+    "text_en": "Start again discards the current journey's choices, predictions, run results, and reflection answers. It returns to the language step and resets setup choices. Reload also loses in-memory journey answers. These actions do not promise to erase saved language or auto-speak settings, cached files, or text you copied to your clipboard. A fresh run is a new practice, not recovered virtual money.",
+    "text_hi": "फिर शुरू करने से मौजूदा अभ्यास के चुनाव, अनुमान, नतीजे और बाद के जवाब मिट जाते हैं। भाषा वाले चरण पर लौटते हैं और तैयारी के चुनाव नए होते हैं। पन्ना दोबारा खोलने पर भी मेमोरी के जवाब खोते हैं। इससे सहेजी भाषा, अपने-आप सुनने की सेटिंग, कैश या कॉपी किया पाठ मिटना तय नहीं। नया अभ्यास पैसे की वापसी नहीं है।",
+    "related": [
+      "app-privacy",
+      "app-preferences",
+      "app-pilot-summary",
+      "app-offline"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-lessons-glossary",
+    "category": "app",
+    "title_en": "Lessons and plain glossary explanations",
+    "title_hi": "पाठ और शब्दों के आसान मतलब",
+    "aliases": [
+      "glossary",
+      "tap a term",
+      "next lesson",
+      "previous lesson",
+      "close explanation",
+      "शब्दार्थ",
+      "मतलब",
+      "अगला पाठ",
+      "shabd ka matlab"
+    ],
+    "text_en": "The glossary gives a short definition and an analogy for each listed term. In Learn, tap a term to open its explanation in the interaction pane. Tap it again or close the explanation to return to the lesson visual. Lesson dots and previous or next controls move between debrief points. These lesson pages are inside Learn, not extra journey steps.",
+    "text_hi": "शब्दार्थ में हर दिए शब्द की छोटी परिभाषा और मिसाल है। समझने के चरण में शब्द दबाने पर दूसरे हिस्से में मतलब खुलता है। फिर वही शब्द दबाएँ या मतलब बंद करें तो पाठ का चित्र लौटता है। बिंदु और पिछले या अगले पाठ के बटन व्याख्याएँ बदलते हैं। ये समझने के भीतर के पाठ हैं, यात्रा के अतिरिक्त चरण नहीं।",
+    "related": [
+      "app-step-debrief",
+      "app-diversification",
+      "app-compounding",
+      "app-fees",
+      "app-manual-audio"
+    ],
+    "appears_in_steps": [
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-manual-audio",
+    "category": "app",
+    "title_en": "Listen, pause, resume, and replay narration",
+    "title_hi": "सुनें, आवाज़ रोकें, जारी करें और फिर सुनें",
+    "aliases": [
+      "Listen",
+      "audio narration",
+      "pause narration",
+      "resume narration",
+      "replay narration",
+      "सुनें",
+      "आवाज़ रोकें",
+      "फिर सुनें",
+      "audio chalao"
+    ],
+    "text_en": "Listen plays the stored narration associated with the displayed text. The main audio button changes to pause, resume, or replay as playback progresses. A progress indicator shows how much has played. Narration replay repeats sound; it does not repeat the simulation. If a clip cannot play, the readable text remains available and you can continue without sound.",
+    "text_hi": "सुनें बटन दिखे पाठ से जुड़ी तैयार आवाज़ चलाता है। आवाज़ चलने के अनुसार मुख्य बटन रोकने, जारी करने या फिर सुनने में बदलता है। प्रगति का निशान बताता है कितना सुन लिया। फिर सुनना आवाज़ दोहराता है, अभ्यास का रास्ता नहीं। आवाज़ न चले तो पाठ उपलब्ध रहता है और बिना आवाज़ आगे बढ़ सकते हैं।",
+    "related": [
+      "app-audio-tools",
+      "app-auto-speak",
+      "app-captions",
+      "app-audio-review"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-audio-tools",
+    "category": "app",
+    "title_en": "Narration mute, speed, and playback states",
+    "title_hi": "आवाज़ मूक करना, गति और चलने की अवस्था",
+    "aliases": [
+      "mute",
+      "unmute",
+      "narration speed",
+      "slower",
+      "normal",
+      "audio loading",
+      "मूक",
+      "आवाज़ की गति",
+      "धीमी",
+      "sound band",
+      "dheere sunao"
+    ],
+    "text_en": "Manual narration offers replay, mute or unmute, and normal or slower speed while active. Mute controls sound, not the virtual path. Loading, playing, paused, ended, and unavailable describe the clip's playback state. Some compact or automatic playback views show fewer tools. Audio speed changes listening pace only; it does not change the engine's observations, exposure, or outcome.",
+    "text_hi": "खुद चलाई आवाज़ सक्रिय हो तो फिर सुनने, मूक करने या हटाने और सामान्य या धीमी गति के विकल्प मिलते हैं। मूक करना आवाज़ बदलता है, आभासी रास्ता नहीं। लोड होना, चलना, रुकना, पूरा होना और न चल पाना आवाज़ की अवस्थाएँ हैं। छोटे या अपने-आप चलने वाले दृश्य में कम औज़ार हो सकते हैं। गति नतीजा नहीं बदलती।",
+    "related": [
+      "app-manual-audio",
+      "app-pause-stop",
+      "app-auto-speak"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-auto-speak",
+    "category": "app",
+    "title_en": "Auto-speak is optional and starts off",
+    "title_hi": "अपने-आप सुनना वैकल्पिक है और शुरू में बंद है",
+    "aliases": [
+      "auto speak",
+      "auto-speak",
+      "automatic narration",
+      "on off",
+      "अपने-आप सुनें",
+      "चालू बंद",
+      "khud bole",
+      "auto audio"
+    ],
+    "text_en": "Auto-speak means eligible stored step and event narration can play automatically when you enable it. It defaults off, and your explicit setting may be saved. Clips queue through the audio manager rather than overlap. Leaving a step stops its automatic narration. A browser can block autoplay; text stays usable and the app does not repeatedly demand sound permission. Manual Listen remains available.",
+    "text_hi": "अपने-आप सुनना चालू करने पर उपलब्ध तैयार चरण और घटना की आवाज़ अपने-आप चल सकती है। शुरुआत में यह बंद है; आपका चुनाव सहेजा जा सकता है। आवाज़ें कतार में चलती हैं, साथ नहीं बोलतीं। चरण छोड़ने पर उसकी स्वचालित आवाज़ रुकती है। ब्राउज़र रोक दे तो पाठ काम करता रहता है। खुद सुनने का बटन भी रहता है।",
+    "related": [
+      "app-manual-audio",
+      "app-preferences",
+      "app-captions",
+      "app-offline"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-captions",
+    "category": "app",
+    "title_en": "Captions are the readable narration text",
+    "title_hi": "कैप्शन आवाज़ का पढ़ने वाला पाठ है",
+    "aliases": [
+      "caption",
+      "captions",
+      "text fallback",
+      "no sound",
+      "कैप्शन",
+      "पाठ",
+      "बिना आवाज़",
+      "sirf padhna",
+      "audio text"
+    ],
+    "text_en": "A caption is the readable text supplied alongside narration. You do not need to hear the clip to make choices or finish the journey. Captions are not a claim of word-by-word timed subtitles. The written explanation is authoritative if speech is unclear or unavailable. Read the relevant step and glossary text rather than treating an uncertain pronunciation as a new rule.",
+    "text_hi": "कैप्शन आवाज़ के साथ दिया पढ़ने वाला पाठ है। चुनाव करने या यात्रा पूरी करने के लिए आवाज़ सुनना ज़रूरी नहीं। इसका मतलब हर बोले शब्द के समय से जुड़े उपशीर्षक नहीं है। आवाज़ अस्पष्ट हो या न चले तो लिखी व्याख्या मुख्य आधार है। अनिश्चित उच्चारण को नया नियम न मानें; संबंधित चरण और शब्दार्थ का पाठ पढ़ें।",
+    "related": [
+      "app-manual-audio",
+      "app-audio-review",
+      "app-reading-accessibility"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-language",
+    "category": "app",
+    "title_en": "Changing language during the journey",
+    "title_hi": "अभ्यास के दौरान भाषा बदलना",
+    "aliases": [
+      "language switch",
+      "Hindi",
+      "English",
+      "translation",
+      "हिन्दी",
+      "अंग्रेज़ी",
+      "भाषा बदलें",
+      "bhasha badlo",
+      "hinglish"
+    ],
+    "text_en": "The header language control changes the lesson's words between English and Hindi. It does not select a different episode or clear the current prediction and result. Stored narration is also language-specific. The app may remember this preference for another visit. Both language versions are agent-checked, not native-speaker approved. If a term feels unclear, use its glossary explanation or ask a concept question.",
+    "text_hi": "ऊपर भाषा का विकल्प पाठ को अंग्रेज़ी और हिन्दी में बदलता है। इससे दूसरा उदाहरण नहीं चुना जाता और मौजूदा अनुमान या नतीजा नहीं मिटता। तैयार आवाज़ भी भाषा के अनुसार है। ऐप अगली बार के लिए पसंद याद रख सकता है। दोनों भाषाएँ एजेंट ने जाँची हैं, मातृभाषी ने नहीं। अस्पष्ट शब्द का मतलब खोलें या उसके बारे में सवाल पूछें।",
+    "related": [
+      "app-step-language",
+      "app-preferences",
+      "app-audio-review",
+      "app-chat"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-reading-accessibility",
+    "category": "app",
+    "title_en": "Reading panes, fixed text, and accessible alternatives",
+    "title_hi": "पढ़ने के हिस्से, तय बड़े अक्षर और आसान विकल्प",
+    "aliases": [
+      "reading pane",
+      "interaction pane",
+      "text size",
+      "A+",
+      "large text",
+      "accessibility",
+      "पढ़ें और सुनें",
+      "देखें और चुनें",
+      "बड़े अक्षर",
+      "font bada"
+    ],
+    "text_en": "The app uses a fixed larger text style; there is no text-size selector. On wider screens, reading and listening sit beside exploration and choices. Smaller screens use a single column. Longer content or expanded tables may need scrolling. Large controls, captions, and data tables offer different ways to follow the lesson. These features do not establish universal accessibility or tested comfort for every learner.",
+    "text_hi": "ऐप में बड़े अक्षरों की तय शैली है; आकार चुनने का बटन नहीं है। चौड़ी स्क्रीन पर पढ़ने-सुनने और देखने-चुनने के हिस्से साथ हैं। छोटी स्क्रीन पर एक के नीचे दूसरा है। लंबे पाठ या खुली तालिका में स्क्रॉल करना पड़ सकता है। बड़े बटन, कैप्शन और तालिका विकल्प देते हैं। इससे हर व्यक्ति की सुविधा या पूरी सुलभता प्रमाणित नहीं होती।",
+    "related": [
+      "app-keyboard",
+      "app-captions",
+      "app-data-table",
+      "app-preferences"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-keyboard",
+    "category": "app",
+    "title_en": "Keyboard navigation and focus",
+    "title_hi": "कीबोर्ड से चलना और चुना हुआ नियंत्रण",
+    "aliases": [
+      "keyboard",
+      "Tab",
+      "Enter",
+      "Space",
+      "Escape",
+      "skip link",
+      "focus",
+      "कीबोर्ड",
+      "मौजूदा चरण पर जाएँ",
+      "bina mouse"
+    ],
+    "text_en": "Keyboard navigation uses the page's buttons, selects, links, and table disclosure controls. Tab moves focus; Enter or Space activates buttons as appropriate. The skip link goes to the current step heading. Step changes focus that heading. About can close with Escape and returns focus to its opener. No special trading shortcuts are provided, and assistive-technology support has not been human-certified.",
+    "text_hi": "कीबोर्ड से पन्ने के बटन, विकल्प, लिंक और तालिका खोलने वाले नियंत्रण चला सकते हैं। टैब अगला नियंत्रण चुनता है; बटन पर एंटर या स्पेस काम करता है। सीधे जाने वाला लिंक मौजूदा चरण के शीर्षक तक ले जाता है। नया चरण शीर्षक चुनता है। जानकारी वाला संवाद एस्केप से बंद होता है। मानवीय सहायक-तकनीक प्रमाणन नहीं हुआ है।",
+    "related": [
+      "app-reading-accessibility",
+      "app-about-publisher",
+      "app-data-table"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-privacy",
+    "category": "app",
+    "title_en": "Journey answers stay in memory",
+    "title_hi": "अभ्यास के जवाब मेमोरी में रहते हैं",
+    "aliases": [
+      "privacy",
+      "answers stored",
+      "tracking",
+      "account",
+      "cookies",
+      "गोपनीयता",
+      "जवाब सहेजे",
+      "खाता",
+      "mera data",
+      "answers save"
+    ],
+    "text_en": "Journey choices, predictions, results, and reflection answers stay in the open page's memory. They are not automatically saved or submitted. Reload or restart discards them. Language and auto-speak settings are separate saved preferences; static files can be cached. Chat is a separate network feature with its own disclosure. The learning journey does not require accounts, cookies, analytics, or personal financial information.",
+    "text_hi": "अभ्यास के चुनाव, अनुमान, नतीजे और बाद के जवाब खुले पन्ने की मेमोरी में रहते हैं। वे अपने-आप सहेजे या भेजे नहीं जाते। पन्ना दोबारा खोलना या फिर शुरू करना उन्हें मिटाता है। भाषा और अपने-आप सुनना अलग सहेजी पसंद हैं; फ़ाइलें कैश हो सकती हैं। चैट की अलग नेटवर्क जानकारी है। अभ्यास को खाता, कुकी, ट्रैकिंग या निजी वित्तीय जानकारी नहीं चाहिए।",
+    "related": [
+      "app-preferences",
+      "app-restart",
+      "app-chat-privacy",
+      "app-pilot-summary"
+    ],
+    "appears_in_steps": [
+      "Intro",
+      "Prediction",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-preferences",
+    "category": "app",
+    "title_en": "Only language and auto-speak preferences persist",
+    "title_hi": "केवल भाषा और अपने-आप सुनने की पसंद सहेजते हैं",
+    "aliases": [
+      "preferences",
+      "local storage",
+      "saved settings",
+      "text size storage",
+      "पसंद",
+      "सेटिंग",
+      "सहेजी भाषा",
+      "setting save",
+      "browser yaad"
+    ],
+    "text_en": "A preference is a reading setting, not a journey answer. The app may save language and your explicit auto-speak choice in this browser's local storage. The old text-size setting is removed because text is fixed larger. Storage can be disabled without preventing reading. Saved preferences do not preserve a run, prediction, or conversation, and clearing site data may remove them.",
+    "text_hi": "पसंद पढ़ने की सेटिंग है, अभ्यास का जवाब नहीं। ऐप इस ब्राउज़र में भाषा और अपने-आप सुनने का आपका स्पष्ट चुनाव सहेज सकता है। अक्षर अब तय बड़े हैं, इसलिए पुरानी आकार सेटिंग हटती है। संग्रह बंद हो तो भी पढ़ना चलता है। सहेजी पसंद अभ्यास, अनुमान या बातचीत नहीं बचाती। साइट के आँकड़े मिटाने से पसंद हट सकती है।",
+    "related": [
+      "app-language",
+      "app-auto-speak",
+      "app-reading-accessibility",
+      "app-privacy"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-offline",
+    "category": "app",
+    "title_en": "Offline depends on cached files",
+    "title_hi": "बिना इंटरनेट चलना कैश की फ़ाइलों पर निर्भर है",
+    "aliases": [
+      "offline",
+      "PWA",
+      "cache",
+      "low bandwidth",
+      "no internet",
+      "बिना इंटरनेट",
+      "कैश",
+      "नेट नहीं",
+      "offline chalega"
+    ],
+    "text_en": "A cache is a local copy of previously downloaded app files. Once this browser caches the app shell, the lesson can reopen offline. Audio works offline only for clips already cached on that device. A first visit, missing files, official links, and Chat need a connection. Clearing browser data can remove cached files. Offline use is not a promise that every clip is preinstalled.",
+    "text_hi": "कैश पहले डाउनलोड की गई ऐप फ़ाइलों की स्थानीय प्रति है। ब्राउज़र में ऐप की फ़ाइलें कैश हों तो पाठ बिना इंटरनेट फिर खुल सकता है। आवाज़ के केवल पहले कैश हुए हिस्से चलेंगे। पहली बार, गायब फ़ाइलों, आधिकारिक लिंक और चैट के लिए इंटरनेट चाहिए। ब्राउज़र का संग्रह मिटाने से कैश हट सकता है। हर आवाज़ पहले से लगी होने का वादा नहीं है।",
+    "related": [
+      "app-manual-audio",
+      "app-resources",
+      "app-chat",
+      "app-preferences"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-audio-review",
+    "category": "app",
+    "title_en": "Agent checks are not human listening or native review",
+    "title_hi": "एजेंट की जाँच सुनकर या मातृभाषी की समीक्षा नहीं है",
+    "aliases": [
+      "agent checked",
+      "reviewed",
+      "Hindi review",
+      "voice quality",
+      "TTS",
+      "एजेंट की जाँच",
+      "मातृभाषी समीक्षा",
+      "आवाज़ की जाँच",
+      "hindi sahi hai"
+    ],
+    "text_en": "Agent-checked means automated content and bilingual meaning checks have been recorded. It is not the human-reviewed status. Generated stored speech has automated integrity and quality evidence, but no human listening review. Hindi has not been reviewed by a native speaker. Automated checks cannot establish natural pronunciation or comprehension. Written text remains the reference, and unclear wording should not be treated as financial authority.",
+    "text_hi": "एजेंट की जाँच का मतलब पाठ और दोनों भाषाओं के अर्थ की स्वचालित जाँच दर्ज है। यह मानवीय समीक्षा का दर्जा नहीं। तैयार आवाज़ की स्वचालित गुणवत्ता और फ़ाइल जाँच है, लेकिन किसी व्यक्ति ने सुनकर नहीं जाँचा। हिन्दी मातृभाषी की समीक्षा नहीं हुई। इससे स्वाभाविक उच्चारण या समझ प्रमाणित नहीं होती। लिखे पाठ को आधार रखें, वित्तीय अधिकार नहीं।",
+    "related": [
+      "app-captions",
+      "app-language",
+      "app-about-publisher",
+      "app-chat-limits"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Debrief",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-pilot-summary",
+    "category": "app",
+    "title_en": "The local summary is not collected research",
+    "title_hi": "स्थानीय सार इकट्ठा किया गया शोध नहीं है",
+    "aliases": [
+      "pilot",
+      "pilot summary",
+      "local summary",
+      "copy summary",
+      "clipboard",
+      "पायलट",
+      "स्थानीय सार",
+      "कॉपी",
+      "summary kahan",
+      "research"
+    ],
+    "text_en": "The local summary lists your before and after expectations, explanation answer, multiplier, and how the run ended. It is a view inside Resources, not a twelfth journey step or participant database. Copying is optional and writes text to your device clipboard. A failed copy leaves it readable. Reload or restart clears the in-page answers. No pilot efficacy or participant evidence is claimed.",
+    "text_hi": "स्थानीय सार पहले और बाद के अनुमान, व्याख्या का जवाब, गुणक और अभ्यास का अंत दिखाता है। यह संसाधनों के भीतर का दृश्य है, बारहवाँ चरण या प्रतिभागियों का संग्रह नहीं। कॉपी करना वैकल्पिक है और पाठ डिवाइस के क्लिपबोर्ड पर जाता है। कॉपी न हो तो पढ़ सकते हैं। दोबारा खोलने या शुरू करने से जवाब मिटते हैं। प्रभाव का दावा नहीं है।",
+    "related": [
+      "app-step-postcheck",
+      "app-privacy",
+      "app-restart"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-resources",
+    "category": "app",
+    "title_en": "Checked official links and external privacy",
+    "title_hi": "जाँचे आधिकारिक लिंक और बाहरी गोपनीयता",
+    "aliases": [
+      "official resources",
+      "verified links",
+      "protective links",
+      "external website",
+      "आधिकारिक संसाधन",
+      "जाँचे लिंक",
+      "बाहरी वेबसाइट",
+      "link khule nahi"
+    ],
+    "text_en": "Checked resources are official protective pages whose links were verified for this app. Only verified entries render. Checking a link does not guarantee that its page will stay unchanged or available. Links open another website in a new tab; that site's privacy rules apply. If one fails, reconnect and use the official organisation's site. The app does not endorse unverified contacts or collect complaints.",
+    "text_hi": "जाँचे संसाधन आधिकारिक सुरक्षा पन्ने हैं जिनके लिंक ऐप के लिए जाँचे गए हैं। केवल सत्यापित लिंक दिखते हैं। जाँच से पन्ने का हमेशा वैसा ही या उपलब्ध रहना तय नहीं। लिंक नई टैब में दूसरी वेबसाइट खोलता है; उसके गोपनीयता नियम लागू हैं। न खुले तो इंटरनेट जोड़कर आधिकारिक साइट देखें। ऐप अनजाँचे संपर्क का समर्थन या शिकायत इकट्ठा नहीं करता।",
+    "related": [
+      "app-step-nextsteps",
+      "app-offline",
+      "fraud-registration"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-resources (Checked official links and external privacy), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-about-publisher",
+    "category": "app",
+    "title_en": "About the app is not a publisher credential",
+    "title_hi": "ऐप की जानकारी प्रकाशक का प्रमाण नहीं है",
+    "aliases": [
+      "About this app",
+      "publisher",
+      "who made this",
+      "host logs",
+      "app name",
+      "इस ऐप के बारे में",
+      "प्रकाशक",
+      "किसने बनाया",
+      "kaun banaya"
+    ],
+    "text_en": "About this app explains preferences, journey privacy, caching, and review limits. It is not proof of a publisher's identity, qualifications, or official endorsement. The app name identifies the product, not a verified organisation. Ordinary hosting may create request metadata logs. Do not assume these disclosures identify every host policy or establish personal financial expertise. This knowledge base does not invent a publisher credential.",
+    "text_hi": "ऐप की जानकारी में पसंद, जवाबों की गोपनीयता, कैश और समीक्षा की सीमाएँ हैं। यह प्रकाशक की पहचान, योग्यता या आधिकारिक समर्थन का प्रमाण नहीं। ऐप का नाम उत्पाद बताता है, सत्यापित संस्था नहीं। सामान्य होस्टिंग में अनुरोध की जानकारी के लॉग बन सकते हैं। इससे हर होस्ट की नीति या निजी वित्तीय विशेषज्ञता तय नहीं होती। यहाँ प्रकाशक की योग्यता नहीं गढ़ी गई है।",
+    "related": [
+      "app-privacy",
+      "app-audio-review",
+      "app-chat-privacy"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-chat",
+    "category": "app",
+    "title_en": "Chat explains concepts, not personal investments",
+    "title_hi": "चैट बातें समझाती है, निजी निवेश नहीं सुझाती",
+    "aliases": [
+      "Chat",
+      "ask question",
+      "help",
+      "chatbot",
+      "चैट",
+      "सवाल पूछें",
+      "मदद",
+      "chat se pucho",
+      "samjhao"
+    ],
+    "text_en": "Chat is for questions about the app and general learning concepts. A question goes through this app's same-origin server to a Groq model service. Same-origin means your browser contacts the app's own address first; the server still forwards the question externally. Chat needs a connection. It does not control the virtual run or provide personal investment decisions, and its answer may be wrong.",
+    "text_hi": "चैट ऐप और सामान्य सीखने की बातों के सवालों के लिए है। सवाल ऐप के अपने पते वाले सर्वर से ग्रोक की मॉडल सेवा तक जाता है। अपने पते का मतलब ब्राउज़र पहले ऐप के सर्वर से बात करता है; सर्वर फिर सवाल बाहर भेजता है। इंटरनेट चाहिए। चैट आभासी अभ्यास नहीं चलाती, निजी निवेश नहीं सुझाती और जवाब गलत हो सकता है।",
+    "related": [
+      "app-chat-privacy",
+      "app-chat-limits",
+      "app-offline",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-chat-privacy",
+    "category": "app",
+    "title_en": "Chat questions leave the device",
+    "title_hi": "चैट के सवाल डिवाइस से बाहर जाते हैं",
+    "aliases": [
+      "chat privacy",
+      "question storage",
+      "Groq",
+      "same origin",
+      "conversation memory",
+      "चैट की गोपनीयता",
+      "सवाल भेजना",
+      "chat data",
+      "chat save hoti"
+    ],
+    "text_en": "Chat questions and the conversation context needed for a reply leave your device through the app's server. The app must not log or store question text; the visible conversation is memory-only, not saved history. This is different from local journey answers. Do not enter names, contact details, account numbers, passwords, or personal finances. No guarantee about every external service's retention policy is asserted here.",
+    "text_hi": "चैट के सवाल और जवाब के लिए ज़रूरी बातचीत का संदर्भ ऐप के सर्वर से डिवाइस के बाहर जाते हैं। ऐप सवाल का पाठ लॉग या संग्रह नहीं करता; दिखाई बातचीत केवल मेमोरी में है, सहेजा इतिहास नहीं। यह स्थानीय अभ्यास के जवाबों से अलग है। नाम, संपर्क, खाता संख्या, पासवर्ड या निजी वित्तीय जानकारी न दें। बाहरी सेवा की हर नीति की गारंटी नहीं है।",
+    "related": [
+      "app-chat",
+      "app-privacy",
+      "app-preferences",
+      "app-about-publisher"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-chat-privacy (Chat questions leave the device), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In app-chat-privacy (Chat questions leave the device), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-chat-limits",
+    "category": "app",
+    "title_en": "A model answer can be wrong",
+    "title_hi": "मॉडल का जवाब गलत हो सकता है",
+    "aliases": [
+      "AI wrong",
+      "chat limits",
+      "advice",
+      "buy sell hold",
+      "prediction",
+      "गलत जवाब",
+      "निवेश सलाह",
+      "भविष्यवाणी",
+      "chat pe bharosa",
+      "kya karu"
+    ],
+    "text_en": "A model generates text; it can misunderstand a question or give an inaccurate explanation. Chat does not know what is suitable for your circumstances. It cannot turn this episode into a forecast, promise returns, or choose a real position for you. Ask for definitions or an explanation of the displayed exercise. Use the written lesson and checked resources to investigate uncertainty, not a model's confident tone.",
+    "text_hi": "मॉडल पाठ बनाता है; सवाल गलत समझ सकता है या गलत व्याख्या दे सकता है। चैट आपकी परिस्थिति के लिए सही चुनाव नहीं जानती। यह उदाहरण को भविष्यवाणी नहीं बना सकती, लाभ का वादा या असली स्थिति का चुनाव नहीं करती। परिभाषा या दिखे अभ्यास की व्याख्या पूछें। संदेह समझने के लिए लिखे पाठ और जाँचे संसाधन देखें, आत्मविश्वास भरी आवाज़ को प्रमाण न मानें।",
+    "related": [
+      "app-chat",
+      "app-uncertainty",
+      "app-resources",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "LanguageSelect",
+      "Intro",
+      "Setup",
+      "Prediction",
+      "Run",
+      "Result",
+      "Replay",
+      "Reveal",
+      "Debrief",
+      "PostCheck",
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "buy",
+        "reason": "In app-chat-limits (A model answer can be wrong), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "sell",
+        "reason": "In app-chat-limits (A model answer can be wrong), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "hold",
+        "reason": "In app-chat-limits (A model answer can be wrong), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "app-forwarded-message",
+    "category": "app",
+    "title_en": "The forwarded-message teaching example",
+    "title_hi": "आगे भेजे संदेश का सीखने वाला उदाहरण",
+    "aliases": [
+      "forwarded message",
+      "promise",
+      "double money",
+      "आगे भेजा संदेश",
+      "पैसा दोगुना",
+      "forward message",
+      "pakka munafa"
+    ],
+    "text_en": "A forwarded message means a message passed on from someone else. The lesson's message example contains an attractive promise about borrowed exposure. That promise is fictional teaching material, not a fact or an offer from this app. The current Setup focuses on your virtual choices. A confident claim in a message does not remove uncertainty, and the app does not send such messages.",
+    "text_hi": "आगे भेजा संदेश किसी और से मिला और फिर भेजा गया संदेश है। पाठ की मिसाल में उधार वाले असर का आकर्षक वादा है। वह सीखने के लिए बनाई बात है, तथ्य या ऐप का प्रस्ताव नहीं। मौजूदा तैयारी में आभासी चुनाव मुख्य हैं। संदेश का आत्मविश्वास भरा दावा अनिश्चितता नहीं मिटाता। ऐप ऐसे संदेश नहीं भेजता।",
+    "related": [
+      "app-step-setup",
+      "app-uncertainty",
+      "behaviour-fomo"
+    ],
+    "appears_in_steps": [
+      "Setup"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-percentage-change",
+    "category": "app",
+    "title_en": "Percentages need a named base",
+    "title_hi": "प्रतिशत का आधार जानना ज़रूरी है",
+    "aliases": [
+      "percent",
+      "percentage",
+      "1% move",
+      "percentage base",
+      "प्रतिशत",
+      "एक प्रतिशत बदलाव",
+      "percent ka matlab",
+      "base kya"
+    ],
+    "text_en": "A percentage expresses an amount relative to a named base. The Setup move example applies a small path percentage to the total exposure before closure. Result's percentage change instead uses the starting capital as its base. Recovery uses the smaller remaining amount. These percentages answer different questions. Comparing them without their bases can confuse a path move with a virtual-money change.",
+    "text_hi": "प्रतिशत किसी रकम को बताए गए आधार के हिस्से के रूप में दिखाता है। तैयारी में रास्ते का छोटा प्रतिशत बदलाव बंद होने से पहले कुल प्रभावित राशि पर लगता है। नतीजे का प्रतिशत शुरुआती पूँजी को आधार बनाता है। वापसी का आधार कम बची रकम है। ये अलग सवालों के जवाब हैं। आधार बिना तुलना करने से रास्ते और पैसे का बदलाव मिल सकता है।",
+    "related": [
+      "app-exposure",
+      "app-gains-losses",
+      "app-recovery",
+      "app-path-chart"
+    ],
+    "appears_in_steps": [
+      "Setup",
+      "Result",
+      "Replay",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-entry-units",
+    "category": "app",
+    "title_en": "Entry value and model units",
+    "title_hi": "शुरुआती मूल्य और मॉडल की इकाइयाँ",
+    "aliases": [
+      "entry",
+      "entry value",
+      "units",
+      "position units",
+      "शुरुआती मूल्य",
+      "इकाइयाँ",
+      "entry price",
+      "units kitne"
+    ],
+    "text_en": "Entry value is the first supplied path observation used as the model's starting reference. Model units equal exposure divided by that value. While open, equity changes by those units multiplied by the difference from entry. Units are arithmetic carriers here, not a count of real assets purchased. The engine keeps them fixed for the run rather than recalculating exposure after every move.",
+    "text_hi": "शुरुआती मूल्य रास्ते का पहला दिया दर्ज मूल्य है, जिससे मॉडल तुलना शुरू करता है। मॉडल की इकाइयाँ प्रभावित राशि को उस मूल्य से भाग देने पर मिलती हैं। खुली स्थिति में इकाइयों और शुरुआती मूल्य से अंतर का गुणनफल रकम बदलता है। ये गणित की इकाइयाँ हैं, खरीदी असली संपत्ति नहीं। इंजन इन्हें तय रखता है, हर बदलाव पर नहीं बदलता।",
+    "related": [
+      "app-exposure",
+      "app-equity",
+      "app-compounding",
+      "app-simulation-assumptions"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "app-teaching-events",
+    "category": "app",
+    "title_en": "Decision pauses and teaching events",
+    "title_hi": "निर्णय के विराम और समझाने की घटनाएँ",
+    "aliases": [
+      "decision point",
+      "teaching event",
+      "drawdown event",
+      "entry event",
+      "episode end",
+      "निर्णय बिंदु",
+      "घटना",
+      "विराम",
+      "pause kab",
+      "event kya"
+    ],
+    "text_en": "A teaching event marks a condition inside the recorded run, such as entry, a fall marker, warning, or closure. Stored narration can explain these events. Planned decision pauses are separate points along the episode, not predictions about a later closure. Fall markers compare with the entry observation; Reveal's maximum drawdown uses earlier peaks. Not every narrated event creates a choice or guarantees time to exit.",
+    "text_hi": "समझाने की घटना दर्ज अभ्यास की कोई शर्त है, जैसे शुरुआत, कमी का निशान, चेतावनी या बंद होना। तैयार आवाज़ घटना समझा सकती है। तय निर्णय विराम उदाहरण के अलग पड़ाव हैं, बाद में बंद होने की भविष्यवाणी नहीं। कमी के निशान शुरुआती मूल्य से तुलना करते हैं; खुलासे की गिरावट पहले की ऊँचाई से। हर घटना चुनाव या निकास का समय नहीं देती।",
+    "related": [
+      "app-warning",
+      "app-forced-exit",
+      "app-drawdown",
+      "app-auto-speak"
+    ],
+    "appears_in_steps": [
+      "Run",
+      "Reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In app-teaching-events (Decision pauses and teaching events), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  }
+]

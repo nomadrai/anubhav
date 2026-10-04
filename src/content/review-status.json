@@ -637,7 +637,7 @@
         },
         "privacy": {
           "status": "agent-checked",
-          "contentSha256": "b23a1e8d7c9cff3fd8ee44c939bd6f6cb811567cdafeb336b6c67adbeac139c2"
+          "contentSha256": "aab73ac6376e946760a4d54cca7a463596970d90b29a6ed775c8be58be631bc9"
         },
         "offline": {
           "status": "agent-checked",
@@ -877,7 +877,7 @@
         },
         "hostLogs": {
           "status": "agent-checked",
-          "contentSha256": "7efebf9c6a92bae6a0f2020b3357802c3c95d967277452552a12f9678ada3b67"
+          "contentSha256": "6786efa072b4a62af4e70a1c469fae9c81dfbc06d750c3e5296d18c1b3a1af1e"
         },
         "readingPane": {
           "status": "agent-checked",
@@ -1392,6 +1392,120 @@
         "government-cybercrime-reporting.label": {
           "status": "agent-checked",
           "contentSha256": "765b693fef20707ff6b8b6248b4b32dc7feeb20b42d67e47f9294058e929fb44"
+        }
+      },
+      "chat.json": {
+        "title": {
+          "status": "agent-checked",
+          "contentSha256": "b2b641f67829395f15bc22f1a1e8d5d3cda5afce6a2059c596c12c9d74396a99"
+        },
+        "close": {
+          "status": "agent-checked",
+          "contentSha256": "7d9eb7acb13e24625c404401d8e88b2350e32162455885f18276cf802f7701ed"
+        },
+        "question": {
+          "status": "agent-checked",
+          "contentSha256": "6a741582b7bdfd025d3151bc76dc8c635639a5b1e67953a96a8bc7267629fab3"
+        },
+        "placeholder": {
+          "status": "agent-checked",
+          "contentSha256": "f601722db8a528473c7e6cd04fabe6d2e0d82a30e9052857ecc428c365275ced"
+        },
+        "send": {
+          "status": "agent-checked",
+          "contentSha256": "b8c209cdead61a095ec097b7a13c4fc9264c04b3e3bd0fca42ec8dbaeebeeafe"
+        },
+        "busy": {
+          "status": "agent-checked",
+          "contentSha256": "fd9f90f376f991730a9b7d6cb28547515d3a1e7f42de05a8589a90856ed1780b"
+        },
+        "warning": {
+          "status": "agent-checked",
+          "contentSha256": "18715cad8ee0ee0502f379d42b2eb3f4df98a92694638ae616626e2d943bcbd8"
+        },
+        "disclosure": {
+          "status": "agent-checked",
+          "contentSha256": "973b824e8a6b65e0e0c027b2e595284f4c636725ea38cd38083e03b726c44ebe"
+        },
+        "retention": {
+          "status": "agent-checked",
+          "contentSha256": "a6efa1f71a75b9887d72caa90a95925c23836cd6901310871230c0dde69c676d"
+        },
+        "consent": {
+          "status": "agent-checked",
+          "contentSha256": "ef8dfea124b1544a981217060f2bd8069e9be452dfe2db8dfb41a10a973dbf9f"
+        },
+        "aiLabel": {
+          "status": "agent-checked",
+          "contentSha256": "7e43b050448564a289b3972605481ab477c88a563e0501f743470a6e76f65524"
+        },
+        "entryLabel": {
+          "status": "agent-checked",
+          "contentSha256": "762eaf44488a97a5635bb0d1b50cda6000c0f7325e6e243a585794f8c1e4a185"
+        },
+        "sources": {
+          "status": "agent-checked",
+          "contentSha256": "fe091e2f3b8d9870e488c0946bf9e9c96c50dcb8dae0f86402e2d73a64a19a9e"
+        },
+        "related": {
+          "status": "agent-checked",
+          "contentSha256": "5a38da0df0abc9a5862209e71617b7493ab82e4a2d0a9cf5d1433d5b9bcc5daa"
+        },
+        "official": {
+          "status": "agent-checked",
+          "contentSha256": "86257af9e370f6ee696aea7d2b870fb1d4306c20fc6b2af2853ab7db9d7d545e"
+        },
+        "refusal": {
+          "status": "agent-checked",
+          "contentSha256": "37f0564b8ea551028f03889654e9aa8f999befea9ee21e2882f5884e0149315f"
+        },
+        "unknown": {
+          "status": "agent-checked",
+          "contentSha256": "1350ab3e4ba302a1814a14922624f05f52f38db72db60720487c28a880c8baf3"
+        },
+        "private": {
+          "status": "agent-checked",
+          "contentSha256": "2fa8e2427503628c0bda49301c67259bc518345a4318bf6a536ad0e77b6ad025"
+        },
+        "limited": {
+          "status": "agent-checked",
+          "contentSha256": "b6690a8d97b84782aaabd0625d7777d15b320ce582ac53610c55ce17324ad711"
+        },
+        "disabled": {
+          "status": "agent-checked",
+          "contentSha256": "67f82a9f7633b3136f82cc81723ed4416b1b25a8890e10c0928a8681ddef8c13"
+        },
+        "unavailable": {
+          "status": "agent-checked",
+          "contentSha256": "216c4c7f47bc04c6aa8d15baaf8894304bc32c6e601f72ad1d5bdcb7200c3f62"
+        },
+        "loadError": {
+          "status": "agent-checked",
+          "contentSha256": "ac581509b8c28e0397104d353f44e66ea141016cfa69e180fbfd5855785fe4b1"
+        },
+        "chips.0": {
+          "status": "agent-checked",
+          "contentSha256": "00e6c727a66edc0168405d1beccaa951fa40ff950136c0314ac716ab78f4502a"
+        },
+        "chips.1": {
+          "status": "agent-checked",
+          "contentSha256": "0f1edc4918e4a3ee2f304dcdb1ba482ee0e678267cfeb051966c09fe93b6a31a"
+        },
+        "chips.2": {
+          "status": "agent-checked",
+          "contentSha256": "041e7e34ce3f3c41aade7d76235b49e0bcd49fa36125a75a290e120addfce3eb"
+        },
+        "chips.3": {
+          "status": "agent-checked",
+          "contentSha256": "b1d32a56ee1a14c6ac17311b92c6e20994024c3871c461f7ee65538a85ea0e49"
+        },
+        "about": {
+          "status": "agent-checked",
+          "contentSha256": "e515467ffdab30f2e60f15089b5bb1439f552f33738e9e7fa1b2bcb8fbef842a"
+        },
+        "vendor": {
+          "status": "agent-checked",
+          "contentSha256": "0eaa17eb437cee3f59f330d79e7065e74818bb91163ccf7908df17ee63c79690"
         }
       }
     },
@@ -2031,7 +2145,7 @@
         },
         "privacy": {
           "status": "agent-checked",
-          "contentSha256": "7c0bbb4df75ca5fa1c0b2764dd2ae0b682eb1311ab5f3aa9d7f739d4de9e75d7"
+          "contentSha256": "cb72e89db73ffe01dc61a4161f027b18fda061c21fcf34fcb1e3f3d5126a0611"
         },
         "offline": {
           "status": "agent-checked",
@@ -2271,7 +2385,7 @@
         },
         "hostLogs": {
           "status": "agent-checked",
-          "contentSha256": "a9087f82eff58fbe981239995447c81378695c61c16008d838f5df16c2fef752"
+          "contentSha256": "ba159b6d2697399e0db0d3076fbc7a9f44ed1db9cf6cf59b8f235c72ddc76656"
         },
         "readingPane": {
           "status": "agent-checked",
@@ -2786,6 +2900,120 @@
         "government-cybercrime-reporting.label": {
           "status": "agent-checked",
           "contentSha256": "aca3c531350591a214c6f8d9281ca95ab67267a44ff4f07debfd8e38ee1fba90"
+        }
+      },
+      "chat.json": {
+        "title": {
+          "status": "agent-checked",
+          "contentSha256": "459b5da9b1f5d678643d777571e577e8be2c6765a88352f912eea495579ed871"
+        },
+        "close": {
+          "status": "agent-checked",
+          "contentSha256": "ef9cca4a55ee043090d3e9cdd265290e84d656e43f00e9de974299ebe5f85755"
+        },
+        "question": {
+          "status": "agent-checked",
+          "contentSha256": "0dae1d661f31226ddc7b9aee656b4d015af3c167563d056aba2a5b39008a4a6d"
+        },
+        "placeholder": {
+          "status": "agent-checked",
+          "contentSha256": "afa8a6cc12f91a03dc2c5a6665a56c4ff736bb0347d7d035f6cd0f6f0c0a08ef"
+        },
+        "send": {
+          "status": "agent-checked",
+          "contentSha256": "9f1dfe6ba91c8b3c90857e0eadeada82faedb89195d2dc1177857f70d44187c4"
+        },
+        "busy": {
+          "status": "agent-checked",
+          "contentSha256": "2437899f910a52d5b85030dc8d8291b4291de844f1729d2b0c357e0328b0fd43"
+        },
+        "warning": {
+          "status": "agent-checked",
+          "contentSha256": "a42c72490158df263b97546ac902389df5761dfb87f0ee77ed180a49bde3850f"
+        },
+        "disclosure": {
+          "status": "agent-checked",
+          "contentSha256": "31c676e4d5ec65dfc96372176e8223acc71cdb0801574aea1d718e2313b6ec8f"
+        },
+        "retention": {
+          "status": "agent-checked",
+          "contentSha256": "22d2e82dcce7aafad2f9f05d8ff905dcb6bd459a01b49aa58088fd78bf065135"
+        },
+        "consent": {
+          "status": "agent-checked",
+          "contentSha256": "b1404d7b877fb3aa5f33b44a220acc1e91d52cc39b310aec385860f92ec64fda"
+        },
+        "aiLabel": {
+          "status": "agent-checked",
+          "contentSha256": "31b549a537f21f61323a4fc89565efc68d06c8ec022b2cc70364ad39cd03dc56"
+        },
+        "entryLabel": {
+          "status": "agent-checked",
+          "contentSha256": "825224ee3f401a9600002b70f4935c0e873f016ef5e92892a194f97391511761"
+        },
+        "sources": {
+          "status": "agent-checked",
+          "contentSha256": "dc74e109182ade48b1013a2e4e10d871cefb0ce11720dd7c07e32608a662e2c9"
+        },
+        "related": {
+          "status": "agent-checked",
+          "contentSha256": "c3e32bdc79256c9d0024ed831f324851a1aad7725f254cbfcc79f341632773e0"
+        },
+        "official": {
+          "status": "agent-checked",
+          "contentSha256": "c4f5da9611ad87fa98be6ec04c029c7f16c7f3427335c5a90b6b64a5afcd2bfb"
+        },
+        "refusal": {
+          "status": "agent-checked",
+          "contentSha256": "07549d838a1475e5651531b9fceefe57bce5340e2842c018abd8542a49a4cbb8"
+        },
+        "unknown": {
+          "status": "agent-checked",
+          "contentSha256": "5e6b96d8b479ba10688b066ac69842651c24c2c146580ae119bca5ea6ec9697a"
+        },
+        "private": {
+          "status": "agent-checked",
+          "contentSha256": "44922c786cc1f596ad568e6070cf48022313b54b39e6692c3fb0ebd1951b1266"
+        },
+        "limited": {
+          "status": "agent-checked",
+          "contentSha256": "aa5c46fdd4225fac839899430337c0742015dfdbd8fc629b9e96e0bb16bcd8bb"
+        },
+        "disabled": {
+          "status": "agent-checked",
+          "contentSha256": "019870489367d8dacc0825467426a3aa00d8c36d73ee4ecaa3d27f9b0e850eeb"
+        },
+        "unavailable": {
+          "status": "agent-checked",
+          "contentSha256": "ef38b460838934d8be736959ee8f26bd7f060974dfed0c0456d12ca62d807319"
+        },
+        "loadError": {
+          "status": "agent-checked",
+          "contentSha256": "3acabc78a6f4caee7da528b19bef32e261b85fe001b533175452552fddc6bbdd"
+        },
+        "chips.0": {
+          "status": "agent-checked",
+          "contentSha256": "8ebb3b02e517dd076537c923903b1065d4b61c4153e2667fc1dfaa631786dc91"
+        },
+        "chips.1": {
+          "status": "agent-checked",
+          "contentSha256": "d888c10972694f159e9ec2d4722401141f66336c3d92938c0ffce613bcdd8a09"
+        },
+        "chips.2": {
+          "status": "agent-checked",
+          "contentSha256": "4fe2fb169bb1467c72b382cb7ad798a4c5f828044ebeeff3b5877e4f5ea57736"
+        },
+        "chips.3": {
+          "status": "agent-checked",
+          "contentSha256": "76345a394df56edcd5d61b133a637b568855fccce2cdb88d1781e4338f06d820"
+        },
+        "about": {
+          "status": "agent-checked",
+          "contentSha256": "68899f04e2930ada183af52e2e8d3accc483626e2cd553eda1c1599a8df1d622"
+        },
+        "vendor": {
+          "status": "agent-checked",
+          "contentSha256": "13295f2973e047a464ce015e366d512e22743659e1ea1efff2815e2e5f252d16"
         }
       }
     }

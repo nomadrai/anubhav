@@ -1,6 +1,7 @@
 import { APP_NAME } from '../config/app';
 import type { Language } from '../config/languages';
 import { t } from '../i18n';
+import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
 
 export type Narration = { id: string; displayText: string; spokenText: string };
 export function StepHeader({
@@ -8,11 +9,13 @@ export function StepHeader({
   onLanguage,
   autoSpeak,
   onAutoSpeak,
+  onChat,
 }: {
   language: Language;
   onLanguage?: (language: Language) => void;
   autoSpeak: boolean;
   onAutoSpeak: (enabled: boolean) => void;
+  onChat: () => void;
 }) {
   return (
     <header className="app-header">
@@ -52,30 +55,30 @@ export function StepHeader({
               {t(language, autoSpeak ? 'features.on' : 'features.off')}
             </span>
           </button>
-          <button
-            className="chat-button"
-            aria-label={t(language, 'features.chat')}
-            title={t(language, 'features.chat')}
-            onClick={() => {
-              /* TODO(chat): no feature, state change or network call yet. */
-            }}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              aria-hidden="true"
-              focusable="false"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {CHAT_ENABLED && (
+            <button
+              className="chat-button"
+              aria-label={t(language, 'features.chat')}
+              title={t(language, 'features.chat')}
+              onClick={onChat}
             >
-              <path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6 4V6a2 2 0 0 1 2-2Z" />
-              <path d="M7 9h10M7 13h7" />
-            </svg>
-          </button>
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                aria-hidden="true"
+                focusable="false"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6 4V6a2 2 0 0 1 2-2Z" />
+                <path d="M7 9h10M7 13h7" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </header>

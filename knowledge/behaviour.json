@@ -1,0 +1,413 @@
+[
+  {
+    "id": "behaviour-fomo",
+    "category": "behaviour",
+    "title_en": "Fear of missing out",
+    "title_hi": "मौका छूटने का डर",
+    "aliases": [
+      "fomo",
+      "miss out",
+      "छूटने का डर",
+      "mauka chhoot raha hai"
+    ],
+    "text_en": "FOMO means fear of missing out. Someone sees another person report a gain and feels pressure to act. The feeling does not show the chance of a future gain. Social posts can hide losses. In this app, naming the feeling helps separate a prediction from an emotional reaction.",
+    "text_hi": "FOMO का मतलब है मौका छूटने का डर। किसी और का फायदा देखकर जल्दी निर्णय लेने का दबाव महसूस हो सकता है। यह भावना आगे फायदा होने की संभावना नहीं बताती। सोशल पोस्ट नुकसान छिपा सकती हैं। इस ऐप में भावना पहचानने से अनुमान और भावनात्मक प्रतिक्रिया का अंतर समझ आता है।",
+    "related": [
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-herd",
+    "category": "behaviour",
+    "title_en": "Herd behaviour",
+    "title_hi": "भीड़ के पीछे चलना",
+    "aliases": [
+      "herd",
+      "सब कर रहे हैं",
+      "sab kar rahe hain",
+      "bheed"
+    ],
+    "text_en": "Herd behaviour means following a group mainly because many people act alike. A crowded queue can suggest popularity, not quality. People in the group may repeat the same unchecked message. Agreement does not remove uncertainty. This app asks for an independent prediction before showing a path, not a popular answer.",
+    "text_hi": "भीड़ के पीछे चलने का मतलब है केवल इसलिए वही करना क्योंकि कई लोग कर रहे हैं। लंबी कतार लोकप्रियता दिखा सकती है, गुणवत्ता नहीं। समूह के लोग एक ही बिना जाँचे संदेश को दोहरा सकते हैं। सहमति अनिश्चितता नहीं मिटाती। यह ऐप रास्ता दिखाने से पहले आपका अपना अनुमान पूछता है, लोकप्रिय जवाब नहीं।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-panic",
+    "category": "behaviour",
+    "title_en": "Panic selling",
+    "title_hi": "घबराहट में बेचना",
+    "aliases": [
+      "panic selling",
+      "घबराकर बेचना",
+      "ghabra ke bechna"
+    ],
+    "text_en": "Panic selling means making a sale mainly because fear feels urgent. Fear can narrow attention to the latest loss. It can hide costs, goals and uncertainty. Not every exit is panic; an exit can follow a considered plan. The app illustrates emotions but does not judge a real sale or tell you to remain invested.",
+    "text_hi": "घबराहट में बेचना वह निर्णय है जिसमें मुख्य कारण तुरंत महसूस होने वाला डर होता है। डर ध्यान को हाल के नुकसान तक सीमित कर सकता है। खर्च, लक्ष्य और अनिश्चितता पीछे रह सकते हैं। हर निकास घबराहट नहीं होता। निकास सोच-समझकर बनी योजना का हिस्सा भी हो सकता है। ऐप किसी असली बिक्री का निर्णय नहीं देता।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-revenge",
+    "category": "behaviour",
+    "title_en": "Revenge trading",
+    "title_hi": "नुकसान वापस पाने की जल्दबाज़ी",
+    "aliases": [
+      "revenge trading",
+      "loss recover jaldi",
+      "badla trade",
+      "नुकसान वसूल"
+    ],
+    "text_en": "Revenge trading means taking another trade mainly to erase the feeling of an earlier loss. The next price does not owe anyone a recovery. Larger exposure can enlarge a new loss instead. A loss is information about one outcome, not a command to act again. The practice journey has no reward for recovering a loss quickly.",
+    "text_hi": "नुकसान की भावना मिटाने के लिए तुरंत नया सौदा करना रिवेंज ट्रेडिंग कहलाता है। अगला दाम किसी का नुकसान पूरा करने का वादा नहीं करता। बड़ा जोखिम नया नुकसान भी बढ़ा सकता है। नुकसान एक परिणाम की जानकारी है। यह तुरंत नया कदम उठाने का आदेश नहीं है। अभ्यास में जल्दी नुकसान पूरा करने पर कोई इनाम नहीं मिलता।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-overconfidence",
+    "category": "behaviour",
+    "title_en": "Overconfidence",
+    "title_hi": "अपनी समझ पर ज़रूरत से ज़्यादा भरोसा",
+    "aliases": [
+      "overconfidence",
+      "मैं हमेशा सही",
+      "main sahi hoon"
+    ],
+    "text_en": "Overconfidence means trusting your judgement more than the evidence supports. A gain may reflect skill, chance or favourable conditions. One outcome cannot separate these causes. Confidence can also make a person ignore uncertainty. The app compares a prediction with an outcome to encourage reflection, not to rank intelligence or identify a talented trader.",
+    "text_hi": "अपनी समझ पर सबूत से ज़्यादा भरोसा करना अति-आत्मविश्वास है। फायदा समझ, संयोग या अनुकूल हालात से हो सकता है। केवल एक परिणाम इन कारणों को अलग नहीं करता। ज़्यादा भरोसा अनिश्चितता को नज़रअंदाज़ भी कर सकता है। ऐप अनुमान और परिणाम की तुलना सोचने के लिए करता है, बुद्धि या व्यापार की प्रतिभा जाँचने के लिए नहीं।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-hindsight",
+    "category": "behaviour",
+    "title_en": "Hindsight bias",
+    "title_hi": "बाद में सब आसान लगना",
+    "aliases": [
+      "hindsight",
+      "पहले से पता था",
+      "pehle se pata tha"
+    ],
+    "text_en": "Hindsight bias means feeling that an outcome was obvious after seeing it. Knowing the ending changes how the earlier uncertainty feels. The app hides the period and asks for a prediction before the path appears. A later correct explanation is not proof that someone could predict the outcome before it happened.",
+    "text_hi": "परिणाम देखने के बाद यह लगना कि बात पहले से साफ थी, बाद की जानकारी का असर है। अंत पता होने से पहले की अनिश्चितता कम लग सकती है। ऐप समय छिपाता है और रास्ता दिखाने से पहले अनुमान पूछता है। बाद की सही व्याख्या यह साबित नहीं करती कि पहले भी परिणाम का अनुमान लगाया जा सकता था।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-borrowed-money",
+    "category": "behaviour",
+    "title_en": "Trading with borrowed money",
+    "title_hi": "उधार के पैसे से सौदे करना",
+    "aliases": [
+      "borrowed money",
+      "उधार से ट्रेड",
+      "udhar ke paise",
+      "loan trading"
+    ],
+    "text_en": "Borrowed money is money that must be repaid under an agreement. A market loss does not remove that obligation. Interest and repayment pressure can affect decisions. Borrowing is not the same as increasing a practice slider. This app models borrowed exposure with virtual money; it does not arrange loans or assess whether borrowing suits someone.",
+    "text_hi": "उधार वह पैसा है जिसे समझौते के अनुसार लौटाना होता है। बाज़ार में नुकसान होने से यह ज़िम्मेदारी खत्म नहीं होती। ब्याज और पैसा लौटाने का दबाव निर्णय को प्रभावित कर सकता है। उधार लेना अभ्यास का स्लाइडर बढ़ाने जैसा नहीं है। ऐप आभासी पैसे से उधार के असर का उदाहरण दिखाता है। यह कर्ज नहीं दिलाता या उसकी उपयुक्तता नहीं जाँचता।",
+    "related": [
+      "behaviour-fomo",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-instant-loans",
+    "category": "behaviour",
+    "title_en": "Instant loans and market pressure",
+    "title_hi": "तुरंत कर्ज और बाज़ार का दबाव",
+    "aliases": [
+      "instant loan",
+      "तुरंत लोन",
+      "turant loan",
+      "loan app"
+    ],
+    "text_en": "An instant loan is credit offered through a quick process. Speed does not explain the total cost or remove repayment duties. Combining urgent credit with uncertain prices can create pressure from different directions. A claim that gains will repay the loan is not evidence. The app does not endorse a lender or turn practice results into a loan plan.",
+    "text_hi": "तुरंत लोन जल्दी मिलने वाला कर्ज है। जल्दी प्रक्रिया होने से पूरा खर्च समझ नहीं आता और लौटाने की ज़िम्मेदारी नहीं मिटती। तुरंत कर्ज और अनिश्चित दाम साथ हों तो अलग-अलग तरफ से दबाव बन सकता है। फायदे से कर्ज चुक जाने का दावा सबूत नहीं है। ऐप किसी कर्ज देने वाले का समर्थन नहीं करता या अभ्यास के परिणाम से कर्ज की योजना नहीं बनाता।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-emergency-savings",
+    "category": "behaviour",
+    "title_en": "Emergency savings",
+    "title_hi": "आपात ज़रूरत के लिए बचत",
+    "aliases": [
+      "emergency fund",
+      "आपात बचत",
+      "emergency bachat",
+      "zarurat ke paise"
+    ],
+    "text_en": "Emergency savings are money reserved for unexpected needs. A medical expense or interrupted income can need money before a market position recovers. Market risk and access to cash are different questions. This entry explains the purpose of a reserve. It does not set a required amount, recommend a product or judge a household budget.",
+    "text_hi": "आपात बचत अचानक आने वाली ज़रूरतों के लिए अलग रखा पैसा है। बीमारी का खर्च या आय रुकने पर बाज़ार के सुधार से पहले पैसा चाहिए हो सकता है। बाज़ार का जोखिम और नकद मिलने का समय अलग बातें हैं। यह जानकारी ऐसी बचत का उद्देश्य समझाती है। यह रकम तय नहीं करती, कोई साधन नहीं चुनती या घर के बजट का निर्णय नहीं देती।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "recommendation",
+        "reason": "In behaviour-emergency-savings (Emergency savings), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "behaviour-loss-aversion",
+    "category": "behaviour",
+    "title_en": "Loss aversion",
+    "title_hi": "नुकसान का ज़्यादा असर",
+    "aliases": [
+      "loss aversion",
+      "loss dard",
+      "नुकसान का डर"
+    ],
+    "text_en": "Loss aversion means a loss can feel more important than a similar gain. That feeling can lead to avoiding information or treating an old purchase price as a promise. People differ in their reactions. This app asks about expectations and later understanding. It does not diagnose a person or claim that a strong feeling is irrational.",
+    "text_hi": "नुकसान का असर कभी उतने ही फायदे से ज़्यादा महसूस होता है। इस भावना के कारण जानकारी से बचना या पुराने खरीद दाम को वादा समझना हो सकता है। हर व्यक्ति की प्रतिक्रिया अलग होती है। ऐप पहले उम्मीद और बाद में समझ पूछता है। यह किसी का मानसिक निदान नहीं करता या तेज़ भावना को अपने-आप गलत नहीं मानता।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-confirmation",
+    "category": "behaviour",
+    "title_en": "Confirmation bias",
+    "title_hi": "अपनी बात के पक्ष की जानकारी चुनना",
+    "aliases": [
+      "confirmation bias",
+      "मेरी बात सही",
+      "meri baat sahi"
+    ],
+    "text_en": "Confirmation bias means giving more attention to information that agrees with an existing belief. A person may remember favourable news and ignore conflicting news. A supportive message is not automatically stronger evidence. Comparing different explanations can reveal missing facts. The app records an initial expectation so a later result does not silently replace it.",
+    "text_hi": "पहले से बनी राय के पक्ष की जानकारी को ज़्यादा महत्व देना पुष्टि का पक्षपात है। व्यक्ति अच्छी खबर याद रख सकता है और उलटी खबर भूल सकता है। सहमत संदेश अपने-आप मज़बूत सबूत नहीं होता। अलग व्याख्याओं की तुलना छूटी बातों को दिखा सकती है। ऐप शुरुआती उम्मीद दर्ज करता है ताकि बाद का परिणाम चुपचाप उसकी जगह न ले।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-recency",
+    "category": "behaviour",
+    "title_en": "Recency bias",
+    "title_hi": "हाल की घटना का ज़्यादा असर",
+    "aliases": [
+      "recency bias",
+      "कल जैसा होगा",
+      "kal jaisa hoga"
+    ],
+    "text_en": "Recency bias means letting recent events dominate an expectation. A rising path can make another rise feel normal. A falling path can make further losses feel certain. Neither feeling proves the next direction. The app shows one episode and a replay, not a complete history or a forecast for the next period.",
+    "text_hi": "हाल की घटनाओं को उम्मीद में सबसे ज़्यादा महत्व देना हाल का असर है। बढ़ता रास्ता आगे भी बढ़ना सामान्य लगा सकता है। गिरता रास्ता और नुकसान निश्चित लगा सकता है। कोई भी भावना अगली दिशा साबित नहीं करती। ऐप एक घटना और उसका दोहराव दिखाता है। यह पूरा इतिहास या अगले समय का अनुमान नहीं है।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-anchoring",
+    "category": "behaviour",
+    "title_en": "Anchoring to a price",
+    "title_hi": "एक दाम से सोच बाँध लेना",
+    "aliases": [
+      "anchoring",
+      "पुराना दाम",
+      "purana daam",
+      "mera entry price"
+    ],
+    "text_en": "Anchoring means relying too much on an initial reference. A purchase price or past high can become that reference. The market does not need to return to it. An old price can help describe a change without determining future value. In the app, the starting level is a comparison point, not a target or a promised recovery.",
+    "text_hi": "किसी शुरुआती संदर्भ पर बहुत निर्भर होना सोच का बँध जाना है। खरीद का दाम या पुराना ऊँचा दाम ऐसा संदर्भ बन सकता है। बाज़ार का वहाँ लौटना ज़रूरी नहीं है। पुराना दाम बदलाव समझा सकता है, आगे की कीमत तय नहीं करता। ऐप में शुरुआती स्तर तुलना का आधार है। यह लक्ष्य या सुधार का वादा नहीं है।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-control",
+    "category": "behaviour",
+    "title_en": "Illusion of control",
+    "title_hi": "हर परिणाम अपने काबू में लगना",
+    "aliases": [
+      "illusion of control",
+      "मेरे काबू में",
+      "mere control mein"
+    ],
+    "text_en": "Illusion of control means feeling that personal actions control more of an outcome than they really do. Choosing a button does not choose the market path. Timing can affect exposure, but uncertainty remains. The practice app makes this distinction visible. It does not show a button sequence that reliably creates a gain.",
+    "text_hi": "अपनी कार्रवाई से परिणाम पर असल से ज़्यादा नियंत्रण महसूस करना नियंत्रण का भ्रम है। बटन चुनने से बाज़ार का रास्ता नहीं चुना जाता। समय जोखिम के असर को बदल सकता है, लेकिन अनिश्चितता रहती है। अभ्यास ऐप यह अंतर दिखाता है। यह ऐसे बटनों का क्रम नहीं बताता जो भरोसे से फायदा बनाता हो।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-social-proof",
+    "category": "behaviour",
+    "title_en": "Screenshots and social proof",
+    "title_hi": "दूसरों के फायदे को सबूत मानना",
+    "aliases": [
+      "social proof",
+      "profit screenshot",
+      "फायदे का फोटो"
+    ],
+    "text_en": "Social proof means treating other people's apparent success as evidence for your own decision. A screenshot can omit the starting amount, earlier losses, costs and whether the result is real. Even a genuine gain describes someone else's outcome. Popularity and proof are different. This app uses explicit assumptions rather than personal success stories.",
+    "text_hi": "दूसरों की दिखती सफलता को अपने निर्णय का सबूत मानना सामाजिक असर है। तस्वीर में शुरुआती रकम, पुराने नुकसान, खर्च और परिणाम असली होने की जानकारी गायब हो सकती है। असली फायदा भी दूसरे व्यक्ति का परिणाम बताता है। लोकप्रियता और सबूत अलग बातें हैं। यह ऐप व्यक्तिगत सफलता की कहानियों के बजाय साफ मान्यताओं का इस्तेमाल करता है।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "behaviour-pause",
+    "category": "behaviour",
+    "title_en": "A pause is not a market forecast",
+    "title_hi": "रुकना दाम का अनुमान नहीं है",
+    "aliases": [
+      "pause",
+      "सोचने का समय",
+      "sochne ka samay"
+    ],
+    "text_en": "A pause gives time to read information and notice feelings. It does not change the uncertainty of the next price. In this app, a warning can pause playback so the learner can understand a choice. This is a teaching pause, not evidence that a market will improve or that a real decision is suitable.",
+    "text_hi": "रुकने से जानकारी पढ़ने और भावना समझने का समय मिलता है। इससे अगले दाम की अनिश्चितता नहीं बदलती। इस ऐप में चेतावनी अभ्यास रोक सकती है ताकि चुनाव समझ आए। यह सीखने के लिए रुकना है। यह बाज़ार के सुधरने का सबूत या किसी असली निर्णय के ठीक होने का संकेत नहीं है।",
+    "related": [
+      "behaviour-fomo",
+      "behaviour-borrowed-money",
+      "products-leverage"
+    ],
+    "appears_in_steps": [
+      "Prediction",
+      "Run",
+      "Debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  }
+]

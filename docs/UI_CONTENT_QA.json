@@ -3,10 +3,10 @@
   "status": "agent-checked",
   "method": "Read both exact leaves; independently render Hindi back into English; compare meaning, negation, scope, quantity and interpolation. Then update only changed review hashes. No human/native review or listening.",
   "fileSha256": {
-    "en": "b1303d650c38483f28850ec34be6654ea3028864309d92d5e9a6a3101ee96941",
-    "hi": "695ef6909a85cd06de1c805dffe88947c4c2285eb27806f840f48e6ccd4a07bd"
+    "en": "2d5d2263abdebf52d039b63996aeab23198d3d9c08928d7a5818e23c93faba30",
+    "hi": "fdfc641763e8bfab51349ca57f5dab3dcbca2b75b7edcc9cbfddfdfe41717e59"
   },
-  "privacyScope": "Footer refers to in-app choices/answers only, never anonymity, host metadata or explicit outbound resource navigation. Capability true uses the alternate disclosure; it implements and authorizes no sending feature.",
+  "privacyScope": "Practice and pilot answers remain local. CHAT_ENABLED selects the accurate sending footer; chat has prior explicit disclosure/consent and sends only the question and language via the same-origin server to Groq. Vendor/host policies are distinct. No anonymity or provider-zero-retention claim.",
   "calculationScope": "Summary uses STARTING_CAPITAL * stake/100 * exposure, and 0.01 times that exposure. It is sensitivity before a teaching closure, not a forecast or recommendation.",
   "changes": [
     {
@@ -95,9 +95,9 @@
     },
     {
       "key": "hostLogs",
-      "en": "Like any website, the host may keep ordinary server logs, such as requests, IP addresses and browser details. These do not contain your answers.",
-      "hi": "किसी भी वेबसाइट की तरह, होस्ट सामान्य सर्वर लॉग रख सकता है, जैसे अनुरोध, आईपी पता और ब्राउज़र की जानकारी। इनमें आपके जवाब नहीं होते।",
-      "hiBackTranslation": "Like any website, the host may keep ordinary server logs, such as requests, IP addresses and browser information. These do not contain your answers.",
+      "en": "Like any website, the host may keep ordinary server logs, such as requests, IP addresses and browser details. Practice answers are not sent to the host. Chat has a separate sending disclosure.",
+      "hi": "किसी भी वेबसाइट की तरह, होस्ट सामान्य सर्वर लॉग रख सकता है, जैसे अनुरोध, आईपी पता और ब्राउज़र की जानकारी। अभ्यास के जवाब होस्ट को नहीं भेजे जाते। चैट में जानकारी भेजने का अलग खुलासा है।",
+      "hiBackTranslation": "Like a website, the host can keep request, IP and browser metadata. Practice answers are not sent to it. Chat has its own sending disclosure.",
       "status": "agent-checked"
     },
     {
@@ -347,9 +347,9 @@
     },
     {
       "key": "privacy",
-      "en": "Answers stay only in this open page and clear on reload or restart. Only language and auto-speak are saved. No accounts or tracking.",
-      "hi": "जवाब सिर्फ़ इस खुले पन्ने में रहते हैं। पन्ना दोबारा खोलने या अभ्यास फिर शुरू करने पर मिट जाते हैं। केवल भाषा और अपने-आप सुनने की सेटिंग सहेजी जाती है। कोई खाता या ट्रैकिंग नहीं।",
-      "hiBackTranslation": "Answers remain only in this open page. Reloading or restarting clears them. Only language and the automatic-listening setting are saved. No account or tracking.",
+      "en": "Practice answers stay only in this open page and clear on reload or restart. Only language and auto-speak are saved locally. No app accounts or analytics. Chat has a separate sending disclosure.",
+      "hi": "अभ्यास के जवाब सिर्फ़ इस खुले पन्ने में रहते हैं। पन्ना दोबारा खोलने या अभ्यास फिर शुरू करने पर मिट जाते हैं। केवल भाषा और अपने-आप सुनने की सेटिंग डिवाइस पर सहेजी जाती है। ऐप में खाता या विश्लेषण नहीं। चैट में जानकारी भेजने का अलग खुलासा है।",
+      "hiBackTranslation": "Practice answers remain only in the open page and disappear on reload or restart. Only language and auto-speak are saved on the device. No app account or analytics. Chat has a separate sending disclosure.",
       "status": "agent-checked"
     }
   ],

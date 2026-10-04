@@ -126,7 +126,8 @@ describe('protective learner journey', () => {
     );
   });
 
-  it('removes the legacy text-size key and leaves Chat inert', () => {
+  it('removes the legacy text-size key and opens disclosed Chat without changing the journey', async () => {
+    await import('./components/ChatPanel');
     window.localStorage.setItem('learning.text-size', 'standard');
     act(() => root.unmount());
     root = createRoot(container);
@@ -136,9 +137,17 @@ describe('protective learner journey', () => {
     const chat = button(features.chat);
     expect(chat.querySelector('svg')).not.toBeNull();
     expect(chat.textContent).toBe('');
-    const before = container.innerHTML;
-    click(features.chat);
-    expect(container.innerHTML).toBe(before);
+    const before = container.querySelector('main')?.innerHTML;
+    await act(async () => {
+      click(features.chat);
+    });
+    expect(container.querySelector('main')?.innerHTML).toBe(before);
+    expect(container.querySelector('.chat-dialog textarea')).not.toBeNull();
+    expect(
+      container
+        .querySelector('.chat-dialog input[type="checkbox"]')
+        ?.getAttribute('checked'),
+    ).toBeNull();
     expect(Object.keys(window.localStorage)).toEqual([]);
   });
 

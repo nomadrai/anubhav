@@ -1,0 +1,1205 @@
+[
+  {
+    "id": "products-mutual-fund",
+    "category": "products",
+    "title_en": "Mutual fund",
+    "title_hi": "म्यूचुअल फ़ंड",
+    "aliases": [
+      "mutual fund",
+      "MF",
+      "म्यूचुअल फ़ंड",
+      "म्यूचुअल फंड",
+      "saajha fund"
+    ],
+    "text_en": "A mutual fund pools money from investors and invests it according to a scheme's stated objective. Investors hold fund units rather than directly choosing every holding themselves. A manager handles the portfolio, but management does not guarantee a gain. The scheme's holdings, costs and risks matter; different mutual funds can behave very differently.",
+    "text_hi": "म्यूचुअल फ़ंड निवेशकों का पैसा एक साथ जुटाता है। वह योजना के बताए उद्देश्य के अनुसार निवेश करता है। निवेशक फ़ंड की यूनिट रखते हैं, हर निवेश खुद सीधे नहीं चुनते। यूनिट फ़ंड में हिस्से को कहते हैं। प्रबंधक निवेशों का समूह संभालता है, लेकिन इससे लाभ पक्का नहीं होता। योजना के निवेश, खर्च और जोखिम मायने रखते हैं। अलग म्यूचुअल फ़ंड के नतीजे बहुत अलग हो सकते हैं।",
+    "related": [
+      "products-nav",
+      "products-portfolio",
+      "products-sip",
+      "products-expense-ratio"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_mf.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "hold",
+        "reason": "In products-mutual-fund (Mutual fund), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-mutual-fund (Mutual fund), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-nav",
+    "category": "products",
+    "title_en": "Net asset value",
+    "title_hi": "शुद्ध संपत्ति मूल्य: एनएवी",
+    "aliases": [
+      "NAV",
+      "net asset value",
+      "एनएवी",
+      "एन ए वी",
+      "unit ka mulya"
+    ],
+    "text_en": "Net asset value, or NAV, is a fund's net asset value per unit. It comes from the value of fund assets after liabilities, divided across its units. NAV can change as those values change. A lower NAV does not by itself mean a fund is cheaper, less risky, or likely to deliver better returns.",
+    "text_hi": "एनएवी फ़ंड की हर यूनिट का शुद्ध संपत्ति मूल्य है। फ़ंड की संपत्तियों के मूल्य से देनदारियाँ घटाई जाती हैं। बचा मूल्य उसकी यूनिटों में बाँटने से यह मिलता है। संपत्तियों और देनदारियों का मूल्य बदलने पर एनएवी बदल सकता है। कम एनएवी का मतलब अपने आप यह नहीं है कि फ़ंड सस्ता है, कम जोखिम वाला है या बेहतर प्रतिफल देगा।",
+    "related": [
+      "products-mutual-fund",
+      "products-etf",
+      "products-expense-ratio",
+      "basics-return"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-mf-investments.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-sip",
+    "category": "products",
+    "title_en": "Systematic investment plan",
+    "title_hi": "नियमित निवेश योजना: एसआईपी",
+    "aliases": [
+      "SIP",
+      "systematic investment plan",
+      "एसआईपी",
+      "एस आई पी",
+      "regular nivesh",
+      "sip kya hai"
+    ],
+    "text_en": "A systematic investment plan, or SIP, is a way of making repeated investments into a mutual fund scheme. It is a payment pattern, not a separate asset or a guaranteed-return product. Different payments may receive units at different values. Regular payments do not remove the fund's risks, guarantee a profit, or prevent a loss.",
+    "text_hi": "एसआईपी म्यूचुअल फ़ंड योजना में बार-बार निवेश करने का तरीका है। इसका नाम नियमित निवेश योजना है। यह भुगतान का तरीका है, अलग संपत्ति या पक्का प्रतिफल देने वाला उत्पाद नहीं। अलग भुगतान से अलग मूल्य पर यूनिट मिल सकती हैं। नियमित पैसा लगाने से फ़ंड के जोखिम खत्म नहीं होते। इससे लाभ की गारंटी नहीं मिलती और नुकसान रुकना तय नहीं होता।",
+    "related": [
+      "products-mutual-fund",
+      "products-nav",
+      "products-compounding",
+      "basics-risk"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_mf.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-sip (Systematic investment plan), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-sip (Systematic investment plan), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-etf",
+    "category": "products",
+    "title_en": "Exchange-traded fund",
+    "title_hi": "एक्सचेंज पर कारोबार वाला फ़ंड",
+    "aliases": [
+      "ETF",
+      "exchange traded fund",
+      "ईटीएफ",
+      "ई टी एफ",
+      "exchange wala fund"
+    ],
+    "text_en": "An exchange-traded fund, or ETF, is a fund whose units trade on an exchange. Many ETFs aim to track an index rather than choose holdings freely. Its traded price can differ from its net asset value. Holding a basket does not guarantee diversification across all risks, and market liquidity and transaction costs still matter.",
+    "text_hi": "ईटीएफ ऐसा फ़ंड है जिसकी यूनिटों के सौदे एक्सचेंज पर होते हैं। कई ईटीएफ अपने मन से निवेश चुनने के बजाय सूचकांक की चाल के करीब रहने का लक्ष्य रखते हैं। सौदे का भाव उसके शुद्ध संपत्ति मूल्य से अलग हो सकता है। निवेशों का समूह रखने से हर तरह के जोखिम में फैलाव पक्का नहीं होता। बाज़ार की तरलता और सौदे के खर्च भी मायने रखते हैं।",
+    "related": [
+      "basics-exchange",
+      "basics-index",
+      "products-nav",
+      "products-tracking-difference"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/exchange_traded_fund.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-etf (Exchange-traded fund), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-index-fund",
+    "category": "products",
+    "title_en": "Index fund",
+    "title_hi": "सूचकांक आधारित फ़ंड",
+    "aliases": [
+      "index fund",
+      "passive fund",
+      "इंडेक्स फ़ंड",
+      "सूचकांक फ़ंड",
+      "index wala fund"
+    ],
+    "text_en": "An index fund aims to follow a selected index by using a related portfolio. It does not promise to avoid falls in that index or match it exactly. Costs and differences in holdings or timing can create a gap. Its risks depend on what the index includes, not simply on the label 'index fund'.",
+    "text_hi": "इंडेक्स फ़ंड चुने हुए सूचकांक से जुड़े निवेशों का समूह बनाता है। उसका लक्ष्य उस सूचकांक की चाल के करीब रहना है। यह सूचकांक की गिरावट से बचने या उसे बिल्कुल बराबर दोहराने का वादा नहीं है। खर्च, निवेशों या समय में अंतर से नतीजों में फर्क हो सकता है। जोखिम सूचकांक में शामिल चीज़ों पर निर्भर है, सिर्फ इंडेक्स फ़ंड नाम पर नहीं।",
+    "related": [
+      "basics-index",
+      "products-mutual-fund",
+      "products-etf",
+      "products-tracking-difference"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/index_mutual_fund.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-portfolio",
+    "category": "products",
+    "title_en": "Portfolio",
+    "title_hi": "निवेशों का समूह",
+    "aliases": [
+      "portfolio",
+      "holdings",
+      "पोर्टफ़ोलियो",
+      "निवेशों का समूह",
+      "nivesh ka samuh"
+    ],
+    "text_en": "A portfolio is a collection of financial holdings considered together. Its outcome depends on the size and behaviour of each holding, not just the count. Several holdings can share the same source of risk. A portfolio may contain ownership assets, debt claims or contracts, and its value can rise or fall as these change.",
+    "text_hi": "पोर्टफ़ोलियो वित्तीय निवेशों का समूह है, जिसे एक साथ देखा जाता है। उसका नतीजा हर निवेश की मात्रा और उसके व्यवहार पर निर्भर करता है, सिर्फ गिनती पर नहीं। कई निवेशों में जोखिम का एक ही कारण हो सकता है। समूह में मालिकाना संपत्तियाँ, कर्ज़ के दावे या अनुबंध हो सकते हैं। इनमें बदलाव से समूह का मूल्य बढ़ या घट सकता है।",
+    "related": [
+      "products-diversification",
+      "basics-equity",
+      "basics-debt",
+      "products-derivatives"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-diversification",
+    "category": "products",
+    "title_en": "Diversification",
+    "title_hi": "अलग-अलग जगह जोखिम बाँटना",
+    "aliases": [
+      "diversification",
+      "diversify",
+      "विविधीकरण",
+      "जोखिम बाँटना",
+      "alag jagah nivesh"
+    ],
+    "text_en": "Diversification means spreading exposure across different holdings or sources of risk. It can reduce how much one holding's trouble affects the whole portfolio. Many holdings are not enough if they all respond to the same problem. Diversification cannot remove every risk, stop every loss, or guarantee that the whole portfolio will recover.",
+    "text_hi": "विविधीकरण का मतलब अलग-अलग निवेशों या जोखिम के कारणों में असर बाँटना है। इससे एक निवेश की परेशानी का पूरे समूह पर असर कम हो सकता है। सिर्फ कई निवेश रखना काफी नहीं है, अगर सब एक ही समस्या से प्रभावित हों। विविधीकरण हर जोखिम खत्म नहीं करता। यह हर नुकसान रोकने या पूरे समूह का मूल्य वापस आने की गारंटी भी नहीं देता।",
+    "related": [
+      "products-portfolio",
+      "products-mutual-fund",
+      "basics-risk",
+      "products-volatility"
+    ],
+    "appears_in_steps": [
+      "debrief"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-risks_trade_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-diversification (Diversification), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-diversification (Diversification), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-compounding",
+    "category": "products",
+    "title_en": "Compounding",
+    "title_hi": "बदली हुई रकम पर अगला बदलाव",
+    "aliases": [
+      "compounding",
+      "compound growth",
+      "चक्रवृद्धि",
+      "कंपाउंडिंग",
+      "badli rakam par badlav"
+    ],
+    "text_en": "Compounding means later percentage changes apply to the amount left after earlier changes, including retained gains or losses. The starting base changes each time. It is not a promise that money grows steadily. Repeated losses can shrink the base, and a later gain of the same percentage does not cancel an earlier loss.",
+    "text_hi": "चक्रवृद्धि में अगला प्रतिशत बदलाव पहले के बदलावों के बाद बची रकम पर लागू होता है। उसमें जुड़ा लाभ या हुआ नुकसान भी शामिल रहता है। हर बार आधार रकम बदल जाती है। इसका मतलब पैसा लगातार बढ़ने का वादा नहीं है। बार-बार नुकसान से आधार घट सकता है। बाद में उतने ही प्रतिशत का लाभ पहले के नुकसान को पूरा नहीं मिटाता।",
+    "related": [
+      "products-recovery",
+      "basics-return",
+      "basics-interest",
+      "products-fees"
+    ],
+    "appears_in_steps": [
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-fees",
+    "category": "products",
+    "title_en": "Fees and charges",
+    "title_hi": "शुल्क और खर्च",
+    "aliases": [
+      "fees",
+      "charges",
+      "costs",
+      "शुल्क",
+      "खर्च",
+      "fees aur charges"
+    ],
+    "text_en": "Fees are amounts charged for services or transactions. Some are paid directly, while others reduce a fund's value or the amount received. Costs can apply even when an investment loses money. A result before costs differs from the amount left afterwards. This app's simplified exercise omits real fees and does not quote any provider's charges.",
+    "text_hi": "शुल्क सेवा या लेनदेन के लिए ली जाने वाली रकम है। कुछ खर्च सीधे दिए जाते हैं। दूसरे खर्च फ़ंड का मूल्य या मिलने वाली रकम घटाते हैं। निवेश में नुकसान होने पर भी खर्च लग सकते हैं। खर्च से पहले का नतीजा और उसके बाद बची रकम अलग हैं। ऐप का सरल अभ्यास असली शुल्क नहीं जोड़ता और किसी सेवा देने वाले के शुल्क नहीं बताता।",
+    "related": [
+      "products-brokerage",
+      "products-expense-ratio",
+      "products-exit-load",
+      "basics-return"
+    ],
+    "appears_in_steps": [
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-brokerage",
+    "category": "products",
+    "title_en": "Brokerage",
+    "title_hi": "ब्रोकरेज शुल्क",
+    "aliases": [
+      "brokerage",
+      "broker fee",
+      "ब्रोकरेज",
+      "ब्रोकर का शुल्क",
+      "broker ka charge"
+    ],
+    "text_en": "Brokerage is a charge for a broker's trading services. It is only one possible part of transaction costs; other charges may be separate. A low or absent brokerage charge does not mean a transaction has no cost or risk. The basis and amount depend on the service terms, which this entry does not specify.",
+    "text_hi": "ब्रोकरेज ब्रोकर की सौदों से जुड़ी सेवाओं का शुल्क है। यह लेनदेन के खर्च का सिर्फ एक हिस्सा हो सकता है। दूसरे शुल्क अलग हो सकते हैं। कम या बिना ब्रोकरेज का मतलब यह नहीं कि सौदे का कोई खर्च या जोखिम नहीं है। शुल्क का आधार और रकम सेवा की शर्तों पर निर्भर हैं। यह जानकारी किसी सेवा की खास शर्तें नहीं बताती।",
+    "related": [
+      "basics-broker",
+      "products-fees",
+      "basics-bid-ask",
+      "products-taxes"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In products-brokerage (Brokerage), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-expense-ratio",
+    "category": "products",
+    "title_en": "Expense ratio",
+    "title_hi": "फ़ंड का खर्च अनुपात",
+    "aliases": [
+      "expense ratio",
+      "TER",
+      "total expense ratio",
+      "खर्च अनुपात",
+      "एक्सपेंस रेशियो",
+      "fund ka kharcha"
+    ],
+    "text_en": "An expense ratio expresses a fund's ongoing expenses relative to its assets, usually on an annual basis. Those expenses reduce the value available to unit holders. It is different from brokerage for a separate transaction and may not describe every cost. A lower expense ratio alone does not prove a better fund or guarantee a return.",
+    "text_hi": "खर्च अनुपात फ़ंड के चलने वाले खर्च को उसकी संपत्ति के मुकाबले बताता है। इसे आम तौर पर सालाना आधार पर दिखाया जाता है। ये खर्च यूनिट रखने वालों के लिए बचा मूल्य घटाते हैं। यह किसी अलग सौदे की ब्रोकरेज से अलग है। इसमें हर खर्च शामिल हो, यह ज़रूरी नहीं। सिर्फ कम खर्च अनुपात बेहतर फ़ंड या पक्का प्रतिफल साबित नहीं करता।",
+    "related": [
+      "products-mutual-fund",
+      "products-nav",
+      "products-fees",
+      "products-brokerage"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_mf.html",
+      "https://investor.sebi.gov.in/securities-mf-investments.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-expense-ratio (Expense ratio), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-exit-load",
+    "category": "products",
+    "title_en": "Exit load",
+    "title_hi": "फ़ंड से निकलने का शुल्क",
+    "aliases": [
+      "exit load",
+      "redemption charge",
+      "एग्ज़िट लोड",
+      "निकासी शुल्क",
+      "fund se nikalne ka charge"
+    ],
+    "text_en": "An exit load is a charge that may apply when mutual fund units are redeemed under particular conditions. It reduces the redemption amount received and is separate from the fund's ongoing expenses. Its applicability depends on the scheme's terms. This entry gives no period, rate or exemption, and a redemption can also involve a market loss.",
+    "text_hi": "एग्ज़िट लोड वह शुल्क है जो खास शर्तों में म्यूचुअल फ़ंड की यूनिट वापस देने पर लग सकता है। इससे निकासी में मिलने वाली रकम घटती है। यह फ़ंड के चलने वाले खर्च से अलग है। शुल्क लगेगा या नहीं, यह योजना की शर्तों पर निर्भर है। यह जानकारी कोई अवधि, दर या छूट नहीं बताती। निकासी के समय बाज़ार का नुकसान भी हो सकता है।",
+    "related": [
+      "products-mutual-fund",
+      "products-fees",
+      "products-expense-ratio",
+      "products-realised-loss"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/exit_load.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-taxes",
+    "category": "products",
+    "title_en": "Taxes: the general idea",
+    "title_hi": "कर का सामान्य मतलब",
+    "aliases": [
+      "tax",
+      "taxes",
+      "capital gains tax",
+      "कर",
+      "टैक्स",
+      "nivesh par tax"
+    ],
+    "text_en": "Taxes are amounts due to government under applicable law. Investment income or transactions can have tax consequences, which differ by product, circumstances and current rules. A displayed gain before tax may not equal the amount left afterwards. This entry gives no tax rate, exemption, filing procedure or personal assessment of whether tax is payable.",
+    "text_hi": "कर लागू कानून के तहत सरकार को देय रकम है। निवेश की आमदनी या लेनदेन से कर का संबंध हो सकता है। यह उत्पाद, परिस्थिति और मौजूदा नियमों के अनुसार अलग होता है। कर से पहले दिखा लाभ और उसके बाद बची रकम बराबर नहीं भी हो सकते। यह जानकारी कर की दर, छूट, विवरण भरने का तरीका या किसी व्यक्ति पर कर लगने का फैसला नहीं बताती।",
+    "related": [
+      "basics-return",
+      "basics-dividend",
+      "products-realised-loss",
+      "products-fees"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-derivatives",
+    "category": "products",
+    "title_en": "Derivatives",
+    "title_hi": "दूसरी चीज़ से मूल्य लेने वाले अनुबंध",
+    "aliases": [
+      "derivatives",
+      "F&O",
+      "F and O",
+      "डेरिवेटिव",
+      "एफ एंड ओ",
+      "fno",
+      "derivative kya hai"
+    ],
+    "text_en": "A derivative is a financial contract whose value depends on another asset, price or measure, called the underlying. Futures and options are different kinds of derivatives. Holding a contract does not necessarily grant ownership of the underlying. Contract conditions, leverage and liquidity can create risks that differ from simply owning an asset. This app offers no derivatives trading.",
+    "text_hi": "डेरिवेटिव ऐसा वित्तीय अनुबंध है जिसका मूल्य किसी दूसरी संपत्ति, भाव या माप पर निर्भर करता है। उस आधार को मूल संपत्ति या अंडरलाइंग कहते हैं। फ्यूचर्स और ऑप्शन अलग प्रकार के डेरिवेटिव हैं। अनुबंध रखने से मूल संपत्ति का मालिक बनना ज़रूरी नहीं है। अनुबंध की शर्तें, उधार की ताकत और तरलता अलग जोखिम ला सकती हैं। यह ऐप डेरिवेटिव के सौदे नहीं कराता।",
+    "related": [
+      "products-futures",
+      "products-options",
+      "products-leverage",
+      "basics-ownership-exposure"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-futures",
+    "category": "products",
+    "title_en": "Futures contract",
+    "title_hi": "फ्यूचर्स अनुबंध",
+    "aliases": [
+      "futures",
+      "future contract",
+      "फ्यूचर्स",
+      "वायदा",
+      "futures kya hai"
+    ],
+    "text_en": "A futures contract creates obligations linked to an agreed future transaction and price. Exchange-traded futures use standard contract terms. Unlike an option buyer's right, the futures obligation is not simply optional. Price changes can create losses and margin demands before the contract ends. This is a general definition, not an order guide or a description of this app's exact model.",
+    "text_hi": "फ्यूचर्स अनुबंध में तय भविष्य के लेनदेन और भाव से जुड़ी ज़िम्मेदारियाँ बनती हैं। एक्सचेंज पर होने वाले फ्यूचर्स की मानक शर्तें होती हैं। ऑप्शन खरीदार के अधिकार की तरह फ्यूचर्स की ज़िम्मेदारी सिर्फ इच्छा पर नहीं टाली जा सकती। अनुबंध खत्म होने से पहले भाव बदलाव से नुकसान और मार्जिन की माँग हो सकती है। यह सामान्य परिभाषा है, सौदे का तरीका या ऐप के मॉडल का पूरा विवरण नहीं।",
+    "related": [
+      "products-derivatives",
+      "products-options",
+      "products-margin",
+      "products-simplified-model"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-options",
+    "category": "products",
+    "title_en": "Option contract",
+    "title_hi": "ऑप्शन अनुबंध",
+    "aliases": [
+      "option",
+      "options",
+      "ऑप्शन",
+      "विकल्प अनुबंध",
+      "options kya hai"
+    ],
+    "text_en": "An option gives its buyer a right, not an obligation, under the contract's conditions. The buyer pays a premium for that right. The seller takes on a corresponding obligation if the right is exercised. Buyer and seller risks are not the same. An option can lose value, and this app neither prices options nor models their full risks.",
+    "text_hi": "ऑप्शन अपने खरीदार को अनुबंध की शर्तों के तहत अधिकार देता है, उसे इस्तेमाल करने की ज़िम्मेदारी नहीं। इस अधिकार के लिए खरीदार प्रीमियम देता है। अधिकार इस्तेमाल होने पर बेचने वाले की उससे जुड़ी ज़िम्मेदारी बनती है। खरीदार और बेचने वाले के जोखिम एक जैसे नहीं हैं। ऑप्शन का मूल्य घट सकता है। ऐप ऑप्शन के भाव या उनके पूरे जोखिमों का हिसाब नहीं करता।",
+    "related": [
+      "products-call-option",
+      "products-put-option",
+      "products-premium",
+      "products-expiry"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In products-options (Option contract), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-call-option",
+    "category": "products",
+    "title_en": "Call option",
+    "title_hi": "कॉल ऑप्शन",
+    "aliases": [
+      "call",
+      "call option",
+      "कॉल",
+      "कॉल ऑप्शन",
+      "call ka matlab"
+    ],
+    "text_en": "A call option gives its buyer a right to purchase the underlying at the contract's stated price under its conditions. The contract price is often called the strike price. A call is not the underlying asset itself. A rise in the underlying does not automatically mean a gain after premium, timing and other contract effects.",
+    "text_hi": "कॉल ऑप्शन खरीदार को अनुबंध की शर्तों के अनुसार मूल संपत्ति खरीदने का अधिकार देता है। खरीद का भाव अनुबंध में तय होता है। उसे अक्सर स्ट्राइक भाव कहते हैं। कॉल खुद मूल संपत्ति नहीं है। मूल संपत्ति का भाव बढ़ने से अपने आप लाभ नहीं होता। प्रीमियम, समय और अनुबंध के दूसरे असर के बाद नतीजा अलग हो सकता है।",
+    "related": [
+      "products-options",
+      "products-put-option",
+      "products-premium",
+      "products-expiry"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In products-call-option (Call option), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-put-option",
+    "category": "products",
+    "title_en": "Put option",
+    "title_hi": "पुट ऑप्शन",
+    "aliases": [
+      "put",
+      "put option",
+      "पुट",
+      "पुट ऑप्शन",
+      "put ka matlab"
+    ],
+    "text_en": "A put option gives its buyer a right to sell the underlying at the contract's stated price under its conditions. It differs from selling the underlying directly or entering a short position. A falling underlying price does not automatically produce a gain after premium and other effects. The option seller faces a different set of obligations and risks.",
+    "text_hi": "पुट ऑप्शन खरीदार को अनुबंध की शर्तों के अनुसार मूल संपत्ति बेचने का अधिकार देता है। बेचने का भाव अनुबंध में तय होता है। यह मूल संपत्ति सीधे बेचने या शॉर्ट सौदा करने से अलग है। मूल संपत्ति का भाव गिरने से प्रीमियम और दूसरे असर के बाद लाभ अपने आप नहीं होता। ऑप्शन बेचने वाले की ज़िम्मेदारियाँ और जोखिम अलग होते हैं।",
+    "related": [
+      "products-options",
+      "products-call-option",
+      "products-premium",
+      "products-short-selling"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "sell",
+        "reason": "In products-put-option (Put option), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In products-put-option (Put option), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-premium",
+    "category": "products",
+    "title_en": "Option premium",
+    "title_hi": "ऑप्शन का प्रीमियम",
+    "aliases": [
+      "premium",
+      "option premium",
+      "प्रीमियम",
+      "ऑप्शन की कीमत",
+      "option ka premium"
+    ],
+    "text_en": "An option premium is the price paid for an option's right. It is different from the strike price and from margin set aside for obligations. The option's market value can change with the underlying, remaining time and expectations. A buyer can lose the entire premium if the right expires without value; selling options has different risks.",
+    "text_hi": "ऑप्शन का प्रीमियम उसके अधिकार के लिए दी जाने वाली कीमत है। यह स्ट्राइक भाव और ज़िम्मेदारियों के लिए रखे गए मार्जिन से अलग है। ऑप्शन का बाज़ार मूल्य मूल संपत्ति, बाकी समय और उम्मीदों से बदल सकता है। अधिकार बिना मूल्य के खत्म हो जाए तो खरीदार पूरा प्रीमियम खो सकता है। ऑप्शन बेचने के जोखिम अलग होते हैं।",
+    "related": [
+      "products-options",
+      "products-expiry",
+      "products-margin",
+      "products-call-option"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In products-premium (Option premium), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-expiry",
+    "category": "products",
+    "title_en": "Expiry and exercise",
+    "title_hi": "समाप्ति और अधिकार का इस्तेमाल",
+    "aliases": [
+      "expiry",
+      "expiration",
+      "exercise",
+      "एक्सपायरी",
+      "समाप्ति",
+      "अधिकार का इस्तेमाल",
+      "expiry kya hai"
+    ],
+    "text_en": "Expiry is the end of a contract's stated life. Exercise means using an option's contractual right under its conditions. What happens at or before expiry depends on the contract, including how obligations are settled. An option may end without value. This entry gives no expiry schedule or exercise procedure, and the app does not implement these processes.",
+    "text_hi": "एक्सपायरी अनुबंध की तय अवधि का अंत है। एक्सरसाइज़ का मतलब ऑप्शन की शर्तों के अनुसार उसके अधिकार का इस्तेमाल है। समाप्ति पर या उससे पहले क्या होगा, यह अनुबंध पर निर्भर है। इसमें ज़िम्मेदारियों का निपटान कैसे होगा, वह भी शामिल है। ऑप्शन बिना मूल्य के खत्म हो सकता है। यह जानकारी कोई समय-सारणी या अधिकार इस्तेमाल करने की प्रक्रिया नहीं बताती। ऐप ये प्रक्रियाएँ लागू नहीं करता।",
+    "related": [
+      "products-options",
+      "products-futures",
+      "products-premium",
+      "basics-settlement"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-simplified-model",
+    "category": "products",
+    "title_en": "The app's futures-style lesson",
+    "title_hi": "ऐप का फ्यूचर्स जैसा सरल पाठ",
+    "aliases": [
+      "simplified model",
+      "futures style",
+      "simulation model",
+      "सरल मॉडल",
+      "आभासी अभ्यास",
+      "app ka model"
+    ],
+    "text_en": "The app uses a simplified futures-style calculation: a price-path change affects a virtual position sized at the start. It includes a teaching warning and forced-exit rule. It is not an actual futures contract, executable quote or live trading service. It omits real costs and many contract rules, so its result cannot describe a real trader's outcome.",
+    "text_hi": "ऐप फ्यूचर्स जैसा सरल हिसाब इस्तेमाल करता है। भाव के रास्ते में बदलाव शुरुआत में तय किए गए आभासी सौदे पर असर डालता है। इसमें सीखने के लिए चेतावनी और ज़बरन बाहर निकलने का नियम है। यह असली फ्यूचर्स अनुबंध, सौदे के लिए उपलब्ध भाव या लाइव ट्रेडिंग सेवा नहीं है। इसमें असली खर्च और अनुबंध के कई नियम नहीं हैं। इसका नतीजा असली कारोबारी का नतीजा नहीं बता सकता।",
+    "related": [
+      "products-futures",
+      "products-leverage",
+      "products-forced-exit",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [
+      "intro",
+      "run",
+      "replay"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-leverage",
+    "category": "products",
+    "title_en": "Leverage",
+    "title_hi": "उधार की ताकत",
+    "aliases": [
+      "leverage",
+      "leveraged",
+      "लेवरेज",
+      "उधार की ताकत",
+      "udhaar ki taqat",
+      "borrowed exposure"
+    ],
+    "text_en": "Leverage creates exposure larger than the money committed to a position. Borrowing or contract arrangements can produce this effect; it is not always a cash loan. The same price change then creates a larger gain or loss relative to that money. Losses can develop quickly, and real obligations can exceed the initial amount in some arrangements.",
+    "text_hi": "उधार की ताकत से किसी सौदे का एक्सपोज़र उसमें लगाई रकम से बड़ा होता है। यह उधार या अनुबंध की व्यवस्था से हो सकता है। हर बार नकद कर्ज़ लेना ज़रूरी नहीं है। तब भाव का वही बदलाव लगाई रकम के मुकाबले बड़ा लाभ या नुकसान देता है। नुकसान तेज़ी से बढ़ सकता है। कुछ असली व्यवस्थाओं में देनदारी शुरुआत में लगाई रकम से अधिक हो सकती है।",
+    "related": [
+      "products-margin",
+      "products-forced-exit",
+      "basics-ownership-exposure",
+      "products-simplified-model"
+    ],
+    "appears_in_steps": [
+      "setup",
+      "run",
+      "replay",
+      "debrief"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_derivatives.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-margin",
+    "category": "products",
+    "title_en": "Margin",
+    "title_hi": "जमा रकम: मार्जिन",
+    "aliases": [
+      "margin",
+      "initial margin",
+      "मार्जिन",
+      "जमा रकम",
+      "jama rakam",
+      "margin money"
+    ],
+    "text_en": "Margin is money or eligible collateral set aside to support a position's obligations. It is not a fee and is not necessarily the position's total exposure. Setting it aside does not prevent losses or guarantee that losses stay within it. The app uses a teaching deposit; real margin conditions depend on the arrangement and can change.",
+    "text_hi": "मार्जिन वह रकम या स्वीकार्य गिरवी संपत्ति है जो सौदे की ज़िम्मेदारियों के लिए अलग रखी जाती है। यह शुल्क नहीं है। यह सौदे का पूरा एक्सपोज़र भी हो, यह ज़रूरी नहीं। इसे रखने से नुकसान रुकता नहीं और नुकसान इसी तक सीमित रहने की गारंटी नहीं मिलती। ऐप सीखने वाली जमा रकम इस्तेमाल करता है। असली मार्जिन की शर्तें व्यवस्था पर निर्भर हैं और बदल सकती हैं।",
+    "related": [
+      "products-leverage",
+      "products-maintenance-margin",
+      "products-margin-call",
+      "products-premium"
+    ],
+    "appears_in_steps": [
+      "setup",
+      "run",
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-margin (Margin), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-margin (Margin), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-maintenance-margin",
+    "category": "products",
+    "title_en": "Maintenance margin",
+    "title_hi": "सौदा जारी रखने की आवश्यक जमा",
+    "aliases": [
+      "maintenance margin",
+      "minimum equity",
+      "मेंटेनेंस मार्जिन",
+      "ज़रूरी जमा",
+      "banaye rakhne ka margin"
+    ],
+    "text_en": "Maintenance margin describes an ongoing minimum requirement for supporting an open position. Losses or changed conditions can leave the position below that requirement. The real requirement and response depend on the applicable arrangement. The app has its own simplified teaching threshold, not an exchange rule, and it does not reproduce a real margin calculation.",
+    "text_hi": "मेंटेनेंस मार्जिन खुले सौदे को जारी रखने के लिए आवश्यक न्यूनतम जमा की शर्त बताता है। नुकसान या बदले हालात से सौदा उस शर्त से नीचे पहुँच सकता है। असली आवश्यकता और आगे की कार्रवाई संबंधित व्यवस्था पर निर्भर हैं। ऐप में अपना सरल शिक्षण स्तर है, एक्सचेंज का नियम नहीं। यह असली मार्जिन के पूरे हिसाब को नहीं दोहराता।",
+    "related": [
+      "products-margin",
+      "products-margin-call",
+      "products-forced-exit",
+      "products-simplified-model"
+    ],
+    "appears_in_steps": [
+      "run"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-margin-call",
+    "category": "products",
+    "title_en": "Margin call",
+    "title_hi": "मार्जिन की कमी की माँग",
+    "aliases": [
+      "margin call",
+      "margin shortfall",
+      "मार्जिन कॉल",
+      "जमा की कमी",
+      "margin ki kami"
+    ],
+    "text_en": "A margin call is a demand to address a shortfall in the support required for a position. It may involve additional collateral or changes to the position, depending on the terms. A warning is not a guaranteed opportunity to act before closure. The app's warning is a teaching event, not a real demand or a promise of extra time.",
+    "text_hi": "मार्जिन कॉल सौदे के लिए आवश्यक जमा में कमी दूर करने की माँग है। शर्तों के अनुसार इसमें और गिरवी जमा देना या सौदे में बदलाव करना शामिल हो सकता है। चेतावनी मिलने का मतलब बंद होने से पहले कार्रवाई का मौका पक्का मिलना नहीं है। ऐप की चेतावनी सीखने की घटना है। यह असली माँग या अतिरिक्त समय मिलने का वादा नहीं है।",
+    "related": [
+      "products-margin",
+      "products-maintenance-margin",
+      "products-forced-exit",
+      "products-simplified-model"
+    ],
+    "appears_in_steps": [
+      "run"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-margin-call (Margin call), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-forced-exit",
+    "category": "products",
+    "title_en": "Forced exit or liquidation",
+    "title_hi": "ज़बरन बाहर निकलना",
+    "aliases": [
+      "forced exit",
+      "liquidation",
+      "forced closure",
+      "ज़बरन बाहर निकलना",
+      "लिक्विडेशन",
+      "zabran exit"
+    ],
+    "text_en": "Forced exit means a position is closed under the applicable rules rather than the participant freely choosing the time. Real closure prices and losses depend on market conditions and the arrangement. The app settles at a simplified teaching level. Once its exposure is closed, later path movements do not repair that closed run's loss or recreate its position.",
+    "text_hi": "ज़बरन बाहर निकलने में संबंधित नियमों के तहत सौदा बंद हो जाता है। समय व्यक्ति अपनी इच्छा से नहीं चुनता। असली बंद होने का भाव और नुकसान बाज़ार के हालात और व्यवस्था पर निर्भर हैं। ऐप एक सरल शिक्षण स्तर पर हिसाब बंद करता है। एक्सपोज़र बंद होने के बाद रास्ते का अगला बदलाव उस बंद अभ्यास का नुकसान नहीं मिटाता और सौदा वापस नहीं खोलता।",
+    "related": [
+      "products-maintenance-margin",
+      "products-margin-call",
+      "products-recovery",
+      "products-simplified-model"
+    ],
+    "appears_in_steps": [
+      "run",
+      "result",
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-volatility",
+    "category": "products",
+    "title_en": "Volatility",
+    "title_hi": "उतार-चढ़ाव",
+    "aliases": [
+      "volatility",
+      "volatile",
+      "उतार-चढ़ाव",
+      "अस्थिरता",
+      "utar chadhav",
+      "bhav hilna"
+    ],
+    "text_en": "Volatility describes how much values move over time, including rises and falls. It does not by itself state the final direction or the size of every possible loss. A path can end near its start after large swings. With leverage, those swings can severely affect remaining money or trigger closure before a later movement arrives.",
+    "text_hi": "उतार-चढ़ाव बताता है कि समय के साथ मूल्य कितना बदलता है। इसमें बढ़ना और गिरना दोनों शामिल हैं। यह अकेले अंतिम दिशा या हर संभावित नुकसान की मात्रा नहीं बताता। बड़ी हलचल के बाद भी रास्ता शुरुआत के पास खत्म हो सकता है। उधार की ताकत होने पर वही हलचल बची रकम पर बड़ा असर डाल सकती है या बाद के बदलाव से पहले सौदा बंद करा सकती है।",
+    "related": [
+      "products-leverage",
+      "products-drawdown",
+      "products-forced-exit",
+      "basics-risk"
+    ],
+    "appears_in_steps": [
+      "run",
+      "result",
+      "debrief"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-risks_trade_derivatives.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-drawdown",
+    "category": "products",
+    "title_en": "Drawdown",
+    "title_hi": "पिछली ऊँचाई से गिरावट",
+    "aliases": [
+      "drawdown",
+      "maximum drawdown",
+      "ड्रॉडाउन",
+      "गिरावट",
+      "oonchai se girawat"
+    ],
+    "text_en": "Drawdown is a fall from an earlier high to a later value. Maximum drawdown is the largest such fall in the measured path. It differs from comparing only the starting and final amounts: a path can recover partly after a deep fall. A past drawdown does not set a ceiling on future losses or prove recovery will happen.",
+    "text_hi": "ड्रॉडाउन पहले की ऊँचाई से बाद के मूल्य तक की गिरावट है। मापे गए रास्ते में ऐसी सबसे बड़ी गिरावट अधिकतम ड्रॉडाउन है। यह सिर्फ शुरुआती और अंतिम रकम की तुलना से अलग है। रास्ता गहरी गिरावट के बाद कुछ ऊपर आ सकता है। पिछली गिरावट आगे के नुकसान की सबसे बड़ी सीमा तय नहीं करती। वह वापसी होने का प्रमाण भी नहीं है।",
+    "related": [
+      "products-volatility",
+      "products-recovery",
+      "basics-return",
+      "products-unrealised-loss"
+    ],
+    "appears_in_steps": [
+      "result",
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-recovery",
+    "category": "products",
+    "title_en": "Recovery maths",
+    "title_hi": "वापसी का गणित",
+    "aliases": [
+      "recovery",
+      "recovery maths",
+      "break even after loss",
+      "वापसी का गणित",
+      "नुकसान की भरपाई",
+      "wapasi ka ganit"
+    ],
+    "text_en": "A loss leaves a smaller base of money. Returning to the earlier amount therefore requires a larger percentage rise than the percentage lost, if some money remains. Equal loss and gain percentages do not cancel. This is arithmetic, not a promise that prices or money will recover. A zero base cannot recover through a percentage increase alone.",
+    "text_hi": "नुकसान के बाद पैसे का आधार छोटा रह जाता है। अगर कुछ रकम बची हो, तो पुरानी रकम तक लौटने के लिए नुकसान से अधिक प्रतिशत की बढ़ोतरी चाहिए। बराबर प्रतिशत का नुकसान और लाभ एक-दूसरे को पूरा नहीं मिटाते। यह गणित है, भाव या पैसे की वापसी का वादा नहीं। आधार शून्य हो तो सिर्फ प्रतिशत बढ़ोतरी से रकम वापस नहीं आती।",
+    "related": [
+      "products-compounding",
+      "products-drawdown",
+      "products-forced-exit",
+      "basics-uncertainty"
+    ],
+    "appears_in_steps": [
+      "result",
+      "debrief"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-stop-loss",
+    "category": "products",
+    "title_en": "Stop-loss and its limits",
+    "title_hi": "स्टॉप-लॉस और उसकी सीमाएँ",
+    "aliases": [
+      "stop loss",
+      "stop-loss",
+      "SL",
+      "स्टॉप-लॉस",
+      "नुकसान रोकने का आदेश",
+      "stoploss",
+      "nuksan rokne ka order"
+    ],
+    "text_en": "A stop-loss instruction is designed to trigger an exit order when a stated price condition occurs. Triggering is not the same as successful execution at that price. Sudden gaps, weak liquidity or system problems can worsen the outcome. A triggered limit order may remain unfilled. This app has no real stop-loss order and cannot guarantee a loss limit.",
+    "text_hi": "स्टॉप-लॉस निर्देश में तय भाव की शर्त पूरी होने पर बाहर निकलने का आदेश शुरू करने का उद्देश्य होता है। आदेश शुरू होना और उसी भाव पर पूरा होना अलग हैं। अचानक भाव का अंतर, कम तरलता या सिस्टम की समस्या नतीजा खराब कर सकती है। शुरू हुआ लिमिट ऑर्डर अधूरा रह सकता है। ऐप में असली स्टॉप-लॉस आदेश नहीं है। यह नुकसान की सीमा की गारंटी नहीं देता।",
+    "related": [
+      "basics-market-order",
+      "basics-limit-order",
+      "products-slippage",
+      "products-forced-exit"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-stop-loss (Stop-loss and its limits), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-stop-loss (Stop-loss and its limits), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-short-selling",
+    "category": "products",
+    "title_en": "Short-selling and risks",
+    "title_hi": "शॉर्ट-सेलिंग और जोखिम",
+    "aliases": [
+      "short selling",
+      "short-selling",
+      "short position",
+      "शॉर्ट सेलिंग",
+      "शॉर्ट सौदा",
+      "short karna"
+    ],
+    "text_en": "Short-selling broadly means selling something not owned, with an obligation to obtain or return it under the applicable arrangement. A price rise can create losses, and costs or closure demands can add pressure. Unlike a fall towards zero, a price rise has no fixed upper ceiling. Rules vary, and this app does not implement short-selling or teach its procedure.",
+    "text_hi": "शॉर्ट-सेलिंग का सामान्य मतलब ऐसी चीज़ बेचना है जो अपनी नहीं है। संबंधित व्यवस्था के अनुसार उसे हासिल करने या लौटाने की ज़िम्मेदारी होती है। भाव बढ़ने से नुकसान हो सकता है। खर्च या सौदा बंद करने की माँग दबाव बढ़ा सकती है। शून्य की ओर गिरावट के उलट भाव बढ़ने की कोई तय ऊपरी सीमा नहीं है। नियम अलग होते हैं। ऐप यह सौदा या उसकी प्रक्रिया नहीं सिखाता।",
+    "related": [
+      "products-put-option",
+      "products-leverage",
+      "products-margin",
+      "basics-risk"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-unrealised-loss",
+    "category": "products",
+    "title_en": "Unrealised loss",
+    "title_hi": "अभी बंद न हुए सौदे का नुकसान",
+    "aliases": [
+      "unrealised loss",
+      "unrealized loss",
+      "paper loss",
+      "अनरियलाइज़्ड नुकसान",
+      "कागज़ी नुकसान",
+      "abhi ka nuksan"
+    ],
+    "text_en": "An unrealised loss is a decline in the current value of a holding compared with its cost while it remains held. It is not a completed sale result, but it still reduces current financial value. Calling it a paper loss does not make it harmless. Recovery is uncertain, and some contracts can require payments while a position remains open.",
+    "text_hi": "अभी निवेश रखे होने पर उसका मौजूदा मूल्य लागत से घट जाए तो उसे अनरियलाइज़्ड नुकसान कहते हैं। यह पूरा हो चुका बिक्री नतीजा नहीं है, लेकिन मौजूदा वित्तीय मूल्य फिर भी घटता है। उसे कागज़ी नुकसान कहने से वह हानिरहित नहीं हो जाता। वापसी तय नहीं है। कुछ अनुबंधों में सौदा खुला रहते हुए भी भुगतान की ज़रूरत हो सकती है।",
+    "related": [
+      "products-realised-loss",
+      "products-margin-call",
+      "products-recovery",
+      "products-drawdown"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-realised-loss",
+    "category": "products",
+    "title_en": "Realised loss",
+    "title_hi": "बंद हुए सौदे का दर्ज नुकसान",
+    "aliases": [
+      "realised loss",
+      "realized loss",
+      "booked loss",
+      "दर्ज नुकसान",
+      "बुक किया नुकसान",
+      "sauda band ka nuksan"
+    ],
+    "text_en": "A realised loss is a loss established when a holding is disposed of or a position is settled. Costs can change the final amount. It differs from a changing valuation while something remains held. Later market recovery does not undo that completed transaction. Tax treatment is a separate question, and a future transaction may have a different outcome.",
+    "text_hi": "निवेश बेचने या सौदे का हिसाब बंद करने पर तय हुआ नुकसान रियलाइज़्ड नुकसान है। खर्च अंतिम रकम बदल सकते हैं। यह निवेश रखे होने के दौरान बदलते मूल्य से अलग है। बाद में बाज़ार ऊपर आने से पूरा हो चुका लेनदेन वापस नहीं होता। कर का व्यवहार अलग सवाल है। आगे के किसी दूसरे लेनदेन का नतीजा अलग हो सकता है।",
+    "related": [
+      "products-unrealised-loss",
+      "products-forced-exit",
+      "products-fees",
+      "products-taxes"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-nomination",
+    "category": "products",
+    "title_en": "Nomination",
+    "title_hi": "नामांकन",
+    "aliases": [
+      "nomination",
+      "नामांकन",
+      "नॉमिनेशन",
+      "naamankan",
+      "nominee jodna"
+    ],
+    "text_en": "Nomination records a person who can claim specified holdings or proceeds after the investor's death under the relevant arrangement. It helps with a later claim but is not a promise of immediate payment. Requirements differ across accounts and products. This entry gives no deadline, form or process, and the app neither records nominations nor handles claims.",
+    "text_hi": "नामांकन में ऐसे व्यक्ति का नाम दर्ज होता है जो निवेशक की मृत्यु के बाद संबंधित व्यवस्था के तहत निवेश या मिलने वाली रकम का दावा कर सकता है। यह आगे के दावे में मदद करता है, तुरंत भुगतान का वादा नहीं है। अलग खातों और उत्पादों की आवश्यकताएँ अलग होती हैं। यह जानकारी कोई समय सीमा, फॉर्म या प्रक्रिया नहीं बताती। ऐप नामांकन दर्ज नहीं करता और दावे नहीं संभालता।",
+    "related": [
+      "products-nominee",
+      "basics-demat",
+      "products-mutual-fund",
+      "products-unclaimed-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/market-nomination.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-nominee",
+    "category": "products",
+    "title_en": "Nominee",
+    "title_hi": "नामित व्यक्ति",
+    "aliases": [
+      "nominee",
+      "नामित व्यक्ति",
+      "नॉमिनी",
+      "नामांकित व्यक्ति",
+      "nominee ka matlab"
+    ],
+    "text_en": "A nominee is the person named in a nomination arrangement. This role relates to a claim after the holder's death, not permission to trade freely during the holder's life. Nominee and legal heir are different terms; their legal relationship depends on the applicable law and product. This entry makes no decision about inheritance or anyone's entitlement.",
+    "text_hi": "नॉमिनी नामांकन व्यवस्था में नामित व्यक्ति है। उसकी भूमिका खाताधारक की मृत्यु के बाद के दावे से जुड़ी है। यह खाताधारक के जीवित रहते अपनी इच्छा से सौदे करने की अनुमति नहीं है। नॉमिनी और कानूनी वारिस अलग शब्द हैं। उनका कानूनी संबंध लागू कानून और उत्पाद पर निर्भर करता है। यह जानकारी विरासत या किसी व्यक्ति के अधिकार का फैसला नहीं करती।",
+    "related": [
+      "products-nomination",
+      "products-unclaimed-money",
+      "basics-demat"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/market-nomination.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "products-unclaimed-money",
+    "category": "products",
+    "title_en": "Unclaimed money",
+    "title_hi": "जिस रकम का दावा बाकी है",
+    "aliases": [
+      "unclaimed money",
+      "unclaimed deposits",
+      "unclaimed assets",
+      "दावा न की गई रकम",
+      "बिना दावा जमा",
+      "unclaimed paisa"
+    ],
+    "text_en": "Unclaimed money refers to amounts that have not been claimed under the relevant account or product rules. Different types of money have different official routes. RBI's UDGAM information concerns searching unclaimed bank deposits; it is not a universal investment-claims service. A search result does not complete a claim or guarantee payment, and this app accepts no claimant details.",
+    "text_hi": "बिना दावे की रकम वह है जिसका संबंधित खाते या उत्पाद के नियमों के तहत दावा नहीं किया गया है। अलग रकम के लिए अलग आधिकारिक रास्ते होते हैं। आरबीआई की उद्गम जानकारी बिना दावे वाली बैंक जमा खोजने से जुड़ी है। यह हर निवेश के दावे की सेवा नहीं है। खोज का नतीजा दावा पूरा नहीं करता और भुगतान की गारंटी नहीं देता। ऐप दावेदार की जानकारी नहीं लेता।",
+    "related": [
+      "products-nomination",
+      "products-nominee",
+      "basics-rbi",
+      "basics-demat"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://www.rbi.org.in/Commonman/English/Scripts/FAQs.aspx?Id=3579"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-unclaimed-money (Unclaimed money), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-unclaimed-money (Unclaimed money), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-bond",
+    "category": "products",
+    "title_en": "Bond",
+    "title_hi": "बॉन्ड या ऋणपत्र",
+    "aliases": [
+      "bond",
+      "bonds",
+      "बॉन्ड",
+      "ऋणपत्र",
+      "bond kya hai",
+      "rinpatra"
+    ],
+    "text_en": "A bond is a debt instrument representing a borrowing arrangement with stated payment terms. Holding it generally creates a claim on the issuer, not company ownership. Payment promises depend on the issuer meeting its obligations. A bond's market value can change before repayment, so a stated interest payment does not make every bond risk-free.",
+    "text_hi": "बॉन्ड एक ऋण साधन है। इसमें उधार और भुगतान की तय शर्तें होती हैं। इसे रखने से आम तौर पर जारी करने वाले से भुगतान का दावा मिलता है, कंपनी में मालिकाना हिस्सा नहीं। भुगतान का वादा जारी करने वाले की ज़िम्मेदारियाँ पूरी करने पर निर्भर है। चुकौती से पहले बॉन्ड का बाज़ार मूल्य बदल सकता है। तय ब्याज होने से हर बॉन्ड जोखिम रहित नहीं हो जाता।",
+    "related": [
+      "basics-debt",
+      "basics-interest",
+      "products-credit-risk",
+      "basics-equity"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_bonds.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "risk-free",
+        "reason": "In products-bond (Bond), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-credit-risk",
+    "category": "products",
+    "title_en": "Credit risk",
+    "title_hi": "भुगतान न होने का जोखिम",
+    "aliases": [
+      "credit risk",
+      "default risk",
+      "ऋण जोखिम",
+      "भुगतान का जोखिम",
+      "default",
+      "paisa na lautna"
+    ],
+    "text_en": "Credit risk is the possibility that someone owing money fails to meet payment obligations. That can involve delay, partial payment or a larger loss. It differs from a price moving up and down on a market. A stated repayment amount, interest rate or rating is not a guarantee that every payment arrives as expected.",
+    "text_hi": "क्रेडिट जोखिम का मतलब है कि पैसा देने की ज़िम्मेदारी वाला व्यक्ति या संस्था भुगतान पूरा न कर सके। इससे देरी, अधूरा भुगतान या बड़ा नुकसान हो सकता है। यह बाज़ार भाव के ऊपर-नीचे होने से अलग जोखिम है। बताई गई चुकौती रकम, ब्याज दर या रेटिंग हर भुगतान उम्मीद के अनुसार मिलने की गारंटी नहीं है।",
+    "related": [
+      "products-bond",
+      "basics-debt",
+      "basics-risk",
+      "basics-interest"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_bonds.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-credit-risk (Credit risk), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-credit-risk (Credit risk), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-slippage",
+    "category": "products",
+    "title_en": "Slippage and price gaps",
+    "title_hi": "सोचे और मिले भाव का अंतर",
+    "aliases": [
+      "slippage",
+      "price gap",
+      "स्लिपेज",
+      "भाव का फासला",
+      "alag bhav milna",
+      "gap risk"
+    ],
+    "text_en": "Slippage is a difference between an expected transaction price and the price actually obtained. Fast price changes or limited available quantity can create it. A price gap means the next available prices may be far from earlier ones. These effects can worsen a planned exit, and an earlier displayed quote does not guarantee a later execution price.",
+    "text_hi": "स्लिपेज में सौदे का उम्मीद वाला भाव और असल में मिला भाव अलग होता है। तेज़ भाव बदलाव या कम उपलब्ध मात्रा से ऐसा हो सकता है। भाव के गैप में अगले उपलब्ध भाव पहले के भाव से काफी दूर हो सकते हैं। इससे तय किया हुआ बाहर निकलने का नतीजा खराब हो सकता है। पहले दिखा भाव आगे उसी भाव पर सौदा पूरा होने की गारंटी नहीं है।",
+    "related": [
+      "basics-market-order",
+      "basics-liquidity",
+      "products-stop-loss",
+      "products-forced-exit"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In products-slippage (Slippage and price gaps), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In products-slippage (Slippage and price gaps), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "products-tracking-difference",
+    "category": "products",
+    "title_en": "Tracking difference",
+    "title_hi": "सूचकांक और फ़ंड के नतीजे का अंतर",
+    "aliases": [
+      "tracking difference",
+      "tracking error",
+      "ट्रैकिंग अंतर",
+      "ट्रैकिंग एरर",
+      "index fund ka farq"
+    ],
+    "text_en": "Tracking difference is the gap between a fund's return and the return of the index it aims to follow. Costs, holdings and transaction timing can contribute. Tracking error describes how variable such differences are, rather than the same thing as one return gap. Following an index is therefore an objective, not a promise of identical results.",
+    "text_hi": "ट्रैकिंग डिफरेंस फ़ंड के प्रतिफल और उसके चुने हुए सूचकांक के प्रतिफल का अंतर है। खर्च, निवेशों और सौदे के समय से यह फर्क आ सकता है। ट्रैकिंग एरर बताता है कि ऐसे अंतर कितने बदलते रहते हैं। वह एक बार के प्रतिफल अंतर के बराबर नहीं है। इसलिए सूचकांक का अनुसरण करना लक्ष्य है, बिल्कुल वही नतीजा मिलने का वादा नहीं।",
+    "related": [
+      "products-index-fund",
+      "products-etf",
+      "products-expense-ratio",
+      "basics-index"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understanding_Tracking_error.html",
+      "https://investor.sebi.gov.in/index_mutual_fund.html"
+    ],
+    "status": "agent-checked"
+  }
+]

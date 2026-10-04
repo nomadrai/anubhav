@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import type { Language } from '../config/languages';
 import { APP_NAME } from '../config/app';
 import { capabilities } from '../config/capabilities';
@@ -15,6 +15,8 @@ import type { AutoTrack } from '../audio/AutoSpeakController';
 import { StepHeader, type Narration } from './StepHeader';
 import { ActionBar } from './ActionBar';
 import { AboutDialog } from './AboutDialog';
+import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
+const ChatPanel = lazy(() => import('./ChatPanel'));
 
 export function AppShell({
   language,
@@ -42,13 +44,14 @@ export function AppShell({
     return value === null ? DEFAULT_AUTO_SPEAK : value === 'true';
   });
   const [about, setAbout] = useState(false);
+  const [chat, setChat] = useState(false);
   const tracks =
     autoNarrations ??
     (narration
       ? [{ language, id: narration.id, spokenText: narration.spokenText }]
       : []);
   useAutoSpeak(
-    autoSpeak && !about,
+    autoSpeak && !about && !chat,
     `${language}:${step}:${tracks.length ? 'narrated' : 'quiet'}`,
     tracks,
   );
@@ -76,6 +79,7 @@ export function AppShell({
         language={language}
         onLanguage={onLanguage}
         autoSpeak={autoSpeak}
+        onChat={() => setChat(true)}
         onAutoSpeak={(value) => {
           setAutoSpeak(value);
           savePreference('auto-speak', String(value));
@@ -100,6 +104,15 @@ export function AppShell({
           </button>
         </footer>
       </div>
+      {CHAT_ENABLED && chat && (
+        <Suspense fallback={<p role="status">{t(language, 'chat.busy')}</p>}>
+          <ChatPanel
+            key={language}
+            language={language}
+            onClose={() => setChat(false)}
+          />
+        </Suspense>
+      )}
       {about && (
         <AboutDialog language={language} onClose={() => setAbout(false)} />
       )}

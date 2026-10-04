@@ -12,7 +12,7 @@ This repository implements an offline-capable, investor-protection learning app.
 ## Guardrail checklist
 - [ ] No buy/sell/hold recommendations, predictions, targets, brands, brokers, monetisation or profit gamification.
 - [ ] No real instrument names in UI/audio; period stays hidden until reveal; one episode is not a forecast.
-- [ ] No accounts, cookies, financial/personal storage, analytics, telemetry, SMS/contacts or runtime external requests.
+- [ ] No accounts, cookies, financial/personal storage, analytics, telemetry or SMS/contacts. Runtime external traffic is limited to the later user-authorized, disclosed server-side Groq learning-chat call; never serialize journey/pilot inputs.
 - [ ] Only verified resources render; unverified resources remain `TODO(human)` and blocked by release.
 - [ ] Content status progresses `draft` → `agent-checked` → `reviewed`. Agents may set `agent-checked` only after an evidenced QA/back-translation pass, never `reviewed`. Every user string comes from content files.
 - [ ] Do not claim simulation, charts, audio playback, offline behavior or pilot UI before implemented.
@@ -47,6 +47,16 @@ The user explicitly revised the earlier human-only workflow:
   narration automatically, queued through the existing manager, with no overlap.
   Stop on leaving a step; blocked autoplay is quiet and text remains available.
 - Manual left-pane Listen and all audio integrity/quality checks remain intact.
-- Chat is only an empty `TODO(chat)` click handler, with no network/state feature.
+- Superseded by the later KB/RAG request: Chat may send an expressly submitted
+  general question and selected language through the same-origin server to Groq
+  `openai/gpt-oss-120b`. No question logging/persistence; no journey answers sent.
+  Keep server-only `GROQ_API_KEY`, disclosed provider policies, per-IP limiting,
+  one on/off flag, deterministic advice refusals and original-entry fallbacks.
+  KB may define generic market/products/fraud terms, never recommend or name stocks,
+  brokers, investment apps or influencers; regulators/exchanges may be factual.
+  Per-entry lintAllow explains critical/educational words, never exempts model text.
+- For this request the user explicitly limits checks to build, lint/typecheck,
+  about ten English/Hindi advice refusals and quick exact-official-source facts.
+  Do not run extra browser, release, bundle, performance or broad test suites.
 
 All other guardrails above remain unchanged. These permissions do not establish publisher rights, actual listening, native fluency, participant consent, or pilot efficacy.

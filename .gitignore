@@ -1,4 +1,7 @@
 # Node and build output
+.env
+.env.*
+.netlify/
 node_modules/
 dist/
 .vite/

@@ -203,6 +203,71 @@ p {
   border-radius: 0.4rem;
   padding: 0.1rem 0.3rem;
 }
+.chat-dialog {
+  width: min(40rem, calc(100vw - 1.5rem));
+  max-height: 90dvh;
+}
+.chat-content {
+  overflow-y: auto;
+  padding: 1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+.chat-content p {
+  margin: 0;
+}
+.chat-consent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+}
+.chat-consent input {
+  flex-shrink: 0;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.15rem;
+}
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.chat-chips button {
+  font-size: 0.8rem;
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+}
+.chat-content form {
+  display: grid;
+  gap: 0.4rem;
+}
+.chat-content textarea {
+  width: 100%;
+  min-height: 5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.5rem;
+  resize: vertical;
+}
+.chat-answer {
+  display: grid;
+  gap: 0.6rem;
+  overflow-wrap: anywhere;
+}
+.chat-answer small {
+  color: var(--muted);
+}
+.chat-answer ul {
+  padding-left: 1rem;
+}
+.chat-answer li button {
+  text-align: left;
+  font-size: 0.85rem;
+}
 .chat-button {
   display: inline-grid;
   place-items: center;

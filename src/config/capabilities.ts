@@ -1,7 +1,7 @@
-/** Privacy-copy capability, not a transport implementation. Never serialize journey inputs.
- * Enabling a sending feature also requires its own explicit disclosure, guardrail review,
- * and new network tests; flipping this flag does not authorize external requests.
+import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
+/** Chat sends only the expressly submitted question and selected language.
+ * Journey/pilot answers are never serialized. The panel discloses the server/Groq path.
  */
 export const capabilities: { userDataLeavesDevice: boolean } = {
-  userDataLeavesDevice: false,
+  userDataLeavesDevice: CHAT_ENABLED,
 };

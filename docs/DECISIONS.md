@@ -216,6 +216,20 @@ its width and unchanged privacy line, with About directly below at bottom-left.
 Fixed-size fit required compact caption/control grouping, not smaller body text.
 No new dependencies, chat/network feature, engine or journey-rule change.
 
+## ADR-0020 — Original KB and narrowly grounded learning chat
+
+User-authorized: 212 short bilingual entries, aliases/step links/sourced official
+facts and agent-only QA. Weighted keyword/BM25 retrieval selects at most three
+entries above a minimum score; no vector store/dependency. One CHAT_ENABLED flag
+controls panel, server and accurate footer. Same-origin POST sends question/lang
+only; optional Groq gpt-oss-120b uses low reasoning, hidden reasoning field and a
+short timeout. Local/server advice gates bypass the model. Unsafe/failed output
+falls back to full original entry text. No question logs/persistence/history;
+transient IP limiting and explicit prior disclosure/acknowledgement. Portable Web
+handler plus optional Netlify adapter; no host account/key/deploy provisioned.
+The user limits final checks to build/lint/typecheck, ten refusals and facts.
+No new packages, copied content, investment calls or engine changes.
+
 ## Remaining human publication/pilot decisions
 
 - `TODO(human)`: confirm the working title in `src/config/app.ts` and intended

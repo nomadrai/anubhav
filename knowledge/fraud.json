@@ -1,0 +1,609 @@
+[
+  {
+    "id": "fraud-tips",
+    "category": "fraud",
+    "title_en": "Message-group tips",
+    "title_hi": "मैसेज समूहों की टिप्स",
+    "aliases": [
+      "whatsapp tips",
+      "telegram tips",
+      "टिप्स",
+      "tip sahi hai",
+      "group calls"
+    ],
+    "text_en": "A market tip is a claim about a trading decision. Message groups can repeat a claim without checking it. A friendly voice, large group or forwarded message does not establish expertise. Some groups mix ordinary discussion with pressure to pay or act. This app explains warning signs; it does not approve a tip or identify a suitable trade.",
+    "text_hi": "बाज़ार की टिप किसी सौदे के निर्णय के बारे में दावा है। मैसेज समूह बिना जाँच उसे दोहरा सकते हैं। दोस्ताना आवाज़, बड़ा समूह या आगे भेजा संदेश विशेषज्ञता साबित नहीं करता। कुछ समूह सामान्य चर्चा के साथ भुगतान या तुरंत कदम उठाने का दबाव जोड़ते हैं। ऐप खतरे के संकेत समझाता है। यह टिप या उपयुक्त सौदे की मंज़ूरी नहीं देता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/spot-any-scam.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "tip",
+        "reason": "In fraud-tips (Message-group tips), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "fraud-guaranteed",
+    "category": "fraud",
+    "title_en": "Guaranteed-return claims",
+    "title_hi": "गारंटी वाले फायदे के दावे",
+    "aliases": [
+      "guaranteed returns",
+      "पक्का मुनाफा",
+      "pakka munafa",
+      "sure shot"
+    ],
+    "text_en": "A guaranteed market-return claim asks you to treat an uncertain outcome as certain. A confident claim does not explain who must pay, under what terms or what can fail. Market-linked outcomes carry risk. SEBI's scam guidance flags assured-return claims. This warning is not a claim that every financial contract or fixed payment is fraudulent.",
+    "text_hi": "बाज़ार के फायदे की गारंटी अनिश्चित परिणाम को निश्चित मानने के लिए कहती है। भरोसे वाला दावा यह नहीं बताता कि कौन भुगतान करेगा, किन शर्तों पर या क्या गलत हो सकता है। बाज़ार से जुड़े परिणामों में जोखिम है। सेबी की धोखाधड़ी संबंधी जानकारी ऐसे दावों पर सावधानी बताती है। इसका मतलब हर निश्चित भुगतान वाला समझौता धोखाधड़ी नहीं है।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/spot-any-scam.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "sure-shot",
+        "reason": "In fraud-guaranteed (Guaranteed-return claims), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "guaranteed",
+        "reason": "In fraud-guaranteed (Guaranteed-return claims), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "profit promotion",
+        "reason": "In fraud-guaranteed (Guaranteed-return claims), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In fraud-guaranteed (Guaranteed-return claims), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "fraud-fixed-returns",
+    "category": "fraud",
+    "title_en": "Fixed payments are not the same as safety",
+    "title_hi": "निश्चित भुगतान और सुरक्षा अलग हैं",
+    "aliases": [
+      "fixed returns",
+      "निश्चित रिटर्न",
+      "fixed munafa"
+    ],
+    "text_en": "A fixed payment describes an agreed amount or method. It does not by itself prove that the payer can meet the agreement. A scheme may use the word fixed to distract from missing documents or an unclear business. Do not treat a label as proof. This entry distinguishes the meaning of a promise from its reliability.",
+    "text_hi": "निश्चित भुगतान समझौते की रकम या तरीका बताता है। यह अकेले साबित नहीं करता कि भुगतान करने वाला वादा पूरा कर सकता है। योजना तय भुगतान का नाम लेकर गायब कागज़ों या अस्पष्ट काम से ध्यान हटा सकती है। नाम को सबूत न मानें। यह जानकारी वादे का अर्थ और उसके भरोसेमंद होने का अंतर समझाती है।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/spot-any-scam.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-registration",
+    "category": "fraud",
+    "title_en": "Checking registration",
+    "title_hi": "पंजीकरण की जाँच",
+    "aliases": [
+      "SEBI registration",
+      "registered hai",
+      "पंजीकरण",
+      "registration number check"
+    ],
+    "text_en": "SEBI provides official information about market intermediaries and their registration. A number in a message can be copied from another entity. Compare the identity and service category with official records, not only a screenshot. Registration does not guarantee gains or approve every message from that person. This app cannot verify a person from a chat claim alone.",
+    "text_hi": "सेबी बाज़ार के मध्यस्थों और उनके पंजीकरण की आधिकारिक जानकारी देता है। संदेश में लिखा नंबर किसी दूसरी संस्था से लिया जा सकता है। पहचान और सेवा का प्रकार आधिकारिक रिकॉर्ड से मिलाएँ, केवल तस्वीर से नहीं। पंजीकरण फायदा सुनिश्चित नहीं करता या हर संदेश को मंज़ूरी नहीं देता। ऐप केवल चैट के दावे से किसी व्यक्ति की जाँच नहीं कर सकता।",
+    "related": [
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://www.sebi.gov.in/intermediaries.html",
+      "https://investor.sebi.gov.in/Investor-support.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In fraud-registration (Checking registration), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "fraud-fake-numbers",
+    "category": "fraud",
+    "title_en": "Fake or borrowed registration numbers",
+    "title_hi": "नकली या दूसरे का पंजीकरण नंबर",
+    "aliases": [
+      "fake registration",
+      "नकली सेबी नंबर",
+      "nakli number"
+    ],
+    "text_en": "A displayed registration number is a claim, not independent evidence. A fraudster can use an unrelated entity's number or an expired identity. SEBI's intermediary pages include registration and cancelled or suspended categories. The important question is whether the actual sender matches the official identity and service. Do not assume that a professional-looking badge proves this match.",
+    "text_hi": "दिखाया गया पंजीकरण नंबर दावा है, स्वतंत्र सबूत नहीं। धोखा देने वाला दूसरी संस्था का नंबर या पुरानी पहचान इस्तेमाल कर सकता है। सेबी के मध्यस्थ पन्नों में पंजीकरण और रद्द या निलंबित श्रेणियाँ हैं। ज़रूरी बात है कि असली संदेश भेजने वाला आधिकारिक पहचान और सेवा से मेल खाता है या नहीं। चमकदार निशान को इस मेल का सबूत न मानें।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://www.sebi.gov.in/intermediaries.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-clones",
+    "category": "fraud",
+    "title_en": "Cloned financial websites",
+    "title_hi": "असली जैसी नकली वेबसाइट",
+    "aliases": [
+      "cloned broker site",
+      "नकली वेबसाइट",
+      "nakli website",
+      "duplicate site"
+    ],
+    "text_en": "A cloned website copies the appearance of another service. Similar colours, names and screens can create false trust. A secure connection alone does not prove the identity of the operator. SEBI's investor support page points to official information on authorised trading applications. This app does not list a preferred service or validate a link sent by a stranger.",
+    "text_hi": "नकली वेबसाइट दूसरी सेवा जैसी दिखती है। मिलते रंग, नाम और स्क्रीन झूठा भरोसा बना सकते हैं। सुरक्षित कनेक्शन अकेले संचालक की पहचान साबित नहीं करता। सेबी की निवेशक सहायता में अधिकृत ट्रेडिंग साधनों की आधिकारिक जानकारी के रास्ते हैं। यह ऐप कोई पसंदीदा सेवा नहीं बताता या अनजान व्यक्ति के भेजे लिंक को सही नहीं ठहराता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/Investor-support.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In fraud-clones (Cloned financial websites), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "fraud-finfluencers",
+    "category": "fraud",
+    "title_en": "Fake financial experts online",
+    "title_hi": "ऑनलाइन नकली वित्तीय विशेषज्ञ",
+    "aliases": [
+      "fake finfluencer",
+      "नकली गुरु",
+      "nakli guru",
+      "market expert"
+    ],
+    "text_en": "A financial influencer shares opinions or information with an audience. A large audience is not proof of qualifications, registration or honest incentives. An impostor can copy a real person's profile. SEBI's investor pages discuss market-guru scams. This app explains the difference between popularity and evidence. It does not judge a named person or promote an expert.",
+    "text_hi": "वित्तीय प्रभावक लोगों तक राय या जानकारी पहुँचाता है। बड़ी संख्या में दर्शक योग्यता, पंजीकरण या ईमानदार उद्देश्य साबित नहीं करते। नकली व्यक्ति किसी असली व्यक्ति की पहचान की नकल कर सकता है। सेबी के निवेशक पन्नों में बाज़ार के नकली गुरु की धोखाधड़ी का विषय है। ऐप लोकप्रियता और सबूत का अंतर समझाता है। यह किसी व्यक्ति का निर्णय या प्रचार नहीं करता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/stock-market-guru-scams.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-pump-dump",
+    "category": "fraud",
+    "title_en": "Pump and dump",
+    "title_hi": "झूठी चर्चा से दाम बढ़ाकर निकलना",
+    "aliases": [
+      "pump dump",
+      "पंप डंप",
+      "pump and dump",
+      "daam badha ke nikalna"
+    ],
+    "text_en": "Pump and dump means promoting an asset with misleading claims, then selling into the demand that the promotion creates. Later participants can face losses when the claims stop attracting demand. A sudden rise alone does not prove this scheme. SEBI includes this scam in investor education. The app does not accuse a particular company or message group.",
+    "text_hi": "पंप और डंप में भ्रामक दावों से किसी चीज़ की माँग बढ़ाई जाती है। प्रचार करने वाले उस माँग का फायदा लेकर अपना हिस्सा बेच देते हैं। बाद में जुड़ने वालों को माँग घटने पर नुकसान हो सकता है। अचानक बढ़ता दाम अकेले ऐसी योजना साबित नहीं करता। सेबी इस धोखाधड़ी पर शिक्षा देता है। ऐप किसी कंपनी या समूह पर आरोप नहीं लगाता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/pump-and-dump-scam.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-ponzi",
+    "category": "fraud",
+    "title_en": "Ponzi schemes",
+    "title_hi": "नए लोगों के पैसे से पुराने को भुगतान",
+    "aliases": [
+      "ponzi",
+      "पोंजी",
+      "ponji",
+      "naye paison se return"
+    ],
+    "text_en": "A Ponzi scheme uses money from new participants to pay earlier participants while claiming genuine earnings. Early payments can create trust even when the business explanation is false. The arrangement depends on continued new money. A payment receipt does not prove where the money came from. This entry explains the mechanism without labelling a specific scheme or promising recovery.",
+    "text_hi": "पोंजी योजना नए लोगों के पैसे से पुराने लोगों को भुगतान करती है और उसे असली कमाई बताती है। शुरुआती भुगतान भरोसा बना सकता है, जबकि काम की कहानी गलत होती है। यह व्यवस्था नए पैसे के लगातार आने पर निर्भर करती है। रसीद पैसा कहाँ से आया, यह साबित नहीं करती। यह जानकारी तरीका समझाती है। किसी योजना पर आरोप या पैसा वापस मिलने का वादा नहीं करती।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-remote-access",
+    "category": "fraud",
+    "title_en": "Remote-access requests",
+    "title_hi": "फोन का नियंत्रण देने के अनुरोध",
+    "aliases": [
+      "remote access",
+      "screen sharing",
+      "फोन कंट्रोल",
+      "phone control"
+    ],
+    "text_en": "Remote access lets another person see or control a device. It can expose messages, account screens and private information. A support claim does not establish that access is needed or safe. Do not give a stranger control of financial accounts through your device. The app never asks for screen control, a download for support or account credentials.",
+    "text_hi": "रिमोट एक्सेस से दूसरा व्यक्ति डिवाइस देख या चला सकता है। इससे संदेश, खाते की स्क्रीन और निजी जानकारी खुल सकती है। सहायता का दावा यह साबित नहीं करता कि नियंत्रण देना ज़रूरी या सुरक्षित है। डिवाइस के जरिए अनजान व्यक्ति को वित्तीय खाते का नियंत्रण न दें। ऐप कभी स्क्रीन का नियंत्रण, सहायता के लिए डाउनलोड या खाते की गुप्त जानकारी नहीं माँगता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/secure_ur_inv_account.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-otp",
+    "category": "fraud",
+    "title_en": "OTP and approval codes",
+    "title_hi": "ओटीपी और मंज़ूरी के कोड",
+    "aliases": [
+      "otp",
+      "ओटीपी",
+      "verification code",
+      "code share"
+    ],
+    "text_en": "An OTP is a one-time password used in an authentication or approval process. A code can authorise an action, not merely confirm that someone is helpful. Do not disclose login or transaction codes to another person. This app does not need an OTP. Official security guidance describes extra authentication as protection of access, not a reason to share access.",
+    "text_hi": "ओटीपी एक बार इस्तेमाल होने वाला पासवर्ड है। यह पहचान या मंज़ूरी की प्रक्रिया में काम आता है। कोड किसी कार्रवाई की मंज़ूरी दे सकता है। यह केवल सहायता देने वाले की पहचान जाँचना नहीं है। प्रवेश या लेनदेन का कोड दूसरे को न बताएँ। ऐप को ओटीपी नहीं चाहिए। सुरक्षा की अतिरिक्त जाँच खाते का प्रवेश बचाती है, उसे साझा करने का कारण नहीं बनती।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://www.cisa.gov/secure-our-world/turn-mfa",
+      "https://investor.sebi.gov.in/secure_ur_inv_account.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-passwords",
+    "category": "fraud",
+    "title_en": "Password safety",
+    "title_hi": "पासवर्ड की सुरक्षा",
+    "aliases": [
+      "password safety",
+      "पासवर्ड",
+      "password mat do"
+    ],
+    "text_en": "A password protects access to an account. Sharing it can give someone power to view information or make unauthorised changes. SEBI's account-security guidance warns against sharing trading passwords. A reused password can also connect the risk of different accounts. This learning app creates no financial account and never asks for a password to explain a term.",
+    "text_hi": "पासवर्ड खाते में प्रवेश की रक्षा करता है। इसे साझा करने से कोई जानकारी देख या बिना मंज़ूरी बदलाव कर सकता है। सेबी की खाते की सुरक्षा संबंधी जानकारी ट्रेडिंग पासवर्ड साझा न करने को कहती है। एक ही पासवर्ड कई जगह इस्तेमाल करने से अलग खातों का जोखिम जुड़ सकता है। यह ऐप वित्तीय खाता नहीं बनाता और शब्द समझाने के लिए पासवर्ड नहीं माँगता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/secure_ur_inv_account.html",
+      "https://www.cisa.gov/secure-our-world/use-strong-passwords"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-phishing",
+    "category": "fraud",
+    "title_en": "Phishing messages and links",
+    "title_hi": "जानकारी चुराने वाले संदेश और लिंक",
+    "aliases": [
+      "phishing",
+      "फिशिंग",
+      "suspicious link",
+      "sandigdh link"
+    ],
+    "text_en": "Phishing means using a deceptive message or page to obtain private information or access. A familiar logo can hide an unfamiliar destination. Fear and urgency can make the message feel genuine. Do not enter private account details through an unsolicited message. Official contact routes are different from links supplied by a claimant. The app does not inspect or open suspicious links for you.",
+    "text_hi": "फिशिंग में धोखे वाले संदेश या पन्ने से निजी जानकारी या प्रवेश लिया जाता है। परिचित चिन्ह के पीछे अपरिचित वेबसाइट हो सकती है। डर और जल्दबाज़ी संदेश को असली दिखा सकते हैं। बिना माँगे आए संदेश के जरिए खाते की निजी जानकारी न भरें। आधिकारिक संपर्क रास्ता और दावेदार का भेजा लिंक अलग हैं। ऐप संदिग्ध लिंक खोलकर आपकी ओर से जाँच नहीं करता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://www.cisa.gov/secure-our-world/use-strong-passwords"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-urgency",
+    "category": "fraud",
+    "title_en": "Pressure to decide immediately",
+    "title_hi": "तुरंत निर्णय का दबाव",
+    "aliases": [
+      "act now",
+      "अभी करो",
+      "abhi karo",
+      "last chance"
+    ],
+    "text_en": "Urgency pressure makes a decision feel impossible to delay. A person may claim that access closes soon or a special opportunity exists only for selected members. SEBI's scam guidance identifies pushy sales tactics as a warning sign. A deadline does not prove quality or safety. Understanding a claim is different from agreeing because someone is impatient.",
+    "text_hi": "जल्दबाज़ी का दबाव निर्णय टालना असंभव जैसा दिखाता है। कोई कह सकता है कि मौका तुरंत खत्म होगा या कुछ खास लोगों को ही मिलेगा। सेबी की धोखाधड़ी संबंधी जानकारी ऐसे दबाव को चेतावनी का संकेत बताती है। समय सीमा गुणवत्ता या सुरक्षा साबित नहीं करती। दावा समझना और किसी की अधीरता में सहमत होना अलग बातें हैं।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/spot-any-scam.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-screenshots",
+    "category": "fraud",
+    "title_en": "Fake balances and profit screenshots",
+    "title_hi": "नकली बैलेंस और फायदे की तस्वीरें",
+    "aliases": [
+      "fake balance",
+      "profit photo",
+      "नकली बैलेंस",
+      "fake dashboard"
+    ],
+    "text_en": "A displayed balance can be edited or created without real funds. A screen that grows smoothly is not proof that money exists or can be withdrawn. Screenshots can also omit losses and costs. Documentation and independent identity checks matter more than appearance. This app labels every displayed amount as practice money and provides no withdrawal feature.",
+    "text_hi": "दिखाया गया बैलेंस बदला जा सकता है या बिना असली पैसे के बनाया जा सकता है। लगातार बढ़ती स्क्रीन यह साबित नहीं करती कि पैसा है या निकाला जा सकता है। तस्वीर में नुकसान और खर्च भी छूट सकते हैं। दिखावट से ज़्यादा महत्व दस्तावेज़ और स्वतंत्र पहचान जाँच का है। ऐप की रकम अभ्यास का पैसा है। इसे निकालने की सुविधा नहीं है।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-withdrawal-fees",
+    "category": "fraud",
+    "title_en": "Pay-more-to-withdraw demands",
+    "title_hi": "पैसा निकालने के लिए और पैसे की माँग",
+    "aliases": [
+      "withdrawal blocked",
+      "release fee",
+      "निकासी शुल्क",
+      "aur paisa do"
+    ],
+    "text_en": "A demand for another payment to release supposed gains can be a warning sign. A claimant may call it a tax, verification charge or unlocking fee without credible documentation. A label does not establish a real obligation. This app cannot determine whether an individual demand is legitimate. Its practice balance has no cash value and never needs a release payment.",
+    "text_hi": "कथित फायदा निकालने के लिए नया भुगतान माँगना खतरे का संकेत हो सकता है। बिना भरोसेमंद कागज़ों के उसे टैक्स, जाँच शुल्क या रोक हटाने का खर्च कहा जा सकता है। नाम से असली ज़िम्मेदारी साबित नहीं होती। ऐप किसी खास माँग की वैधता तय नहीं करता। अभ्यास के बैलेंस की नकद कीमत नहीं है और उसे खोलने के लिए भुगतान नहीं चाहिए।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-impersonation",
+    "category": "fraud",
+    "title_en": "Impersonating an authority",
+    "title_hi": "अधिकारी बनकर संदेश देना",
+    "aliases": [
+      "fake officer",
+      "सेबी अधिकारी",
+      "authority scam",
+      "nakli adhikari"
+    ],
+    "text_en": "Impersonation means pretending to be another person or authority. A seal, uniform photograph or official-sounding message can be copied. India's cybercrime portal warns about messages impersonating officials. A claim of authority does not make a payment request genuine. Use independently obtained official contact information rather than the identity supplied in the suspicious message.",
+    "text_hi": "दूसरे व्यक्ति या अधिकारी की पहचान का झूठा दावा पहचान की नकल है। मुहर, वर्दी की तस्वीर या सरकारी भाषा वाला संदेश कॉपी किया जा सकता है। भारत का साइबर अपराध पोर्टल नकली अधिकारियों के संदेशों पर चेतावनी देता है। अधिकारी होने का दावा भुगतान की माँग को असली नहीं बनाता। संदिग्ध संदेश की पहचान के बजाय स्वतंत्र रूप से मिली आधिकारिक संपर्क जानकारी का इस्तेमाल करें।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://cybercrime.gov.in/"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-complaints",
+    "category": "fraud",
+    "title_en": "Where to raise a securities complaint",
+    "title_hi": "प्रतिभूति बाज़ार की शिकायत कहाँ करें",
+    "aliases": [
+      "complaint",
+      "शिकायत",
+      "scores",
+      "shikayat kahan"
+    ],
+    "text_en": "SCORES is SEBI's complaint facilitation platform for grievances involving SEBI-regulated entities. Its official page says to first raise the grievance with the entity concerned. The current portal explains its complaint process and scope. Not every dispute belongs there. The app links official information but does not file a complaint, provide legal advice or promise compensation.",
+    "text_hi": "SCORES सेबी के दायरे की संस्थाओं से जुड़ी शिकायतों की सहायता का पोर्टल है। उसका आधिकारिक पन्ना पहले संबंधित संस्था के सामने शिकायत रखने को कहता है। मौजूदा पोर्टल अपनी प्रक्रिया और दायरा बताता है। हर विवाद वहीं का विषय नहीं होता। ऐप आधिकारिक जानकारी का रास्ता देता है। यह शिकायत दर्ज नहीं करता, कानूनी सलाह नहीं देता या मुआवज़े का वादा नहीं करता।",
+    "related": [
+      "fraud-registration",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://scores.sebi.gov.in/"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-cyber-report",
+    "category": "fraud",
+    "title_en": "Reporting suspected online financial fraud",
+    "title_hi": "संदिग्ध ऑनलाइन वित्तीय धोखाधड़ी की सूचना",
+    "aliases": [
+      "cybercrime",
+      "साइबर शिकायत",
+      "cyber shikayat",
+      "fraud report"
+    ],
+    "text_en": "India's National Cyber Crime Reporting Portal provides routes for financial fraud and other cybercrime complaints. It also provides facilities to report suspect identifiers. The official portal gives current instructions. This app does not collect evidence or submit a report for you. Reporting and recovering money are different processes; neither this app nor a chat answer can guarantee recovery.",
+    "text_hi": "भारत के राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल पर वित्तीय धोखाधड़ी और दूसरे साइबर अपराध की शिकायत के रास्ते हैं। संदिग्ध पहचान की सूचना देने की सुविधा भी है। मौजूदा निर्देश आधिकारिक पोर्टल देता है। ऐप सबूत नहीं जमा करता या आपकी ओर से सूचना नहीं भेजता। रिपोर्ट करना और पैसा वापस पाना अलग प्रक्रियाएँ हैं। ऐप या चैट पैसा वापस मिलने की गारंटी नहीं दे सकते।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://cybercrime.gov.in/"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In fraud-cyber-report (Reporting suspected online financial fraud), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In fraud-cyber-report (Reporting suspected online financial fraud), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "fraud-recovery-scams",
+    "category": "fraud",
+    "title_en": "Recovery scams after a loss",
+    "title_hi": "नुकसान के बाद पैसा लौटाने की धोखाधड़ी",
+    "aliases": [
+      "recovery agent",
+      "पैसा वापस दिलाना",
+      "paisa wapas scam"
+    ],
+    "text_en": "A recovery scam targets someone who already faces a loss. A person claims special access to recover money, then asks for another payment or private account access. Distress can make the promise feel convincing. A confident recovery promise is not evidence. Official complaint routes explain their scope; this app does not appoint agents or endorse paid recovery services.",
+    "text_hi": "पैसा वापस दिलाने की धोखाधड़ी पहले से नुकसान झेल रहे व्यक्ति को निशाना बनाती है। कोई खास पहुँच का दावा करके नया भुगतान या खाते का नियंत्रण माँग सकता है। परेशानी में वादा भरोसेमंद लग सकता है। आत्मविश्वास से किया वादा सबूत नहीं है। आधिकारिक शिकायत रास्ते अपना दायरा बताते हैं। ऐप एजेंट नहीं नियुक्त करता या भुगतान वाली वसूली सेवा का समर्थन नहीं करता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/spot-any-scam.html",
+      "https://scores.sebi.gov.in/"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-victim-blame",
+    "category": "fraud",
+    "title_en": "Fraud can affect careful people",
+    "title_hi": "सावधान लोगों से भी धोखा हो सकता है",
+    "aliases": [
+      "victim blame",
+      "मेरी गलती",
+      "meri galti",
+      "fraud shame"
+    ],
+    "text_en": "Fraud can use trust, impersonation and pressure rather than an obvious falsehood. Being deceived does not establish that someone lacks intelligence. Shame can make it harder to seek help or describe what happened. Official support routes address complaints within their scope. The app explains warning signs without blaming a victim or claiming that every loss is fraud.",
+    "text_hi": "धोखाधड़ी साफ झूठ के बजाय भरोसा, नकली पहचान और दबाव का इस्तेमाल कर सकती है। धोखा खाना कम बुद्धि होने का सबूत नहीं है। शर्म से मदद माँगना या घटना बताना कठिन हो सकता है। आधिकारिक सहायता अपने दायरे की शिकायतों पर काम करती है। ऐप पीड़ित को दोष दिए बिना संकेत समझाता है। यह हर नुकसान को धोखाधड़ी नहीं कहता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [
+      "https://investor.sebi.gov.in/Investor-support.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "fraud-loss-vs-fraud",
+    "category": "fraud",
+    "title_en": "Market loss and fraud are different",
+    "title_hi": "बाज़ार का नुकसान और धोखाधड़ी अलग हैं",
+    "aliases": [
+      "loss fraud difference",
+      "नुकसान या धोखा",
+      "nuksan dhokha"
+    ],
+    "text_en": "A market loss can occur when an uncertain price changes against an exposure. Fraud involves deception or other wrongdoing. A loss alone does not prove fraud; a gain does not prove that a service is honest. These questions need different evidence. This app illustrates market risk and explains protection concepts without deciding a real dispute.",
+    "text_hi": "अनिश्चित दाम जोखिम की उलटी दिशा में बदलने से बाज़ार का नुकसान हो सकता है। धोखाधड़ी में छल या दूसरी गलत कार्रवाई होती है। नुकसान अकेले धोखाधड़ी साबित नहीं करता। फायदा सेवा की ईमानदारी साबित नहीं करता। इन सवालों के लिए अलग सबूत चाहिए। ऐप जोखिम दिखाता है और बचाव की बातें समझाता है। किसी असली विवाद का फैसला नहीं करता।",
+    "related": [
+      "fraud-registration",
+      "fraud-complaints",
+      "fraud-cyber-report"
+    ],
+    "appears_in_steps": [
+      "NextSteps"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  }
+]

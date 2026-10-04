@@ -2,6 +2,15 @@
 
 Date: 2026-10-03. Reviewer: coding agent. Method: read each English/Hindi leaf, independently restate the Hindi meaning in English, compare safety, direction, scope, grammar, glossary and placeholders, then run structural/script/length checks. **No human listened; no native-speaker review occurred.** This is an automated/agent evidence pass, not a claim of natural pronunciation, native fluency, accessibility compliance or participant comprehension. No entry was assigned `reviewed`; inherited English `reviewed` labels were conservatively replaced with `agent-checked` because this pass cannot establish human review.
 
+## Current chat/KB addendum
+
+212 original bilingual entries and exact official facts are evidenced in the
+`knowledge/` QA files. New `src/content/{en,hi}/chat.json` copy has an agent-only
+semantic back-translation pass in CHAT_CONTENT_QA.md and exact leaf hashes in the
+registry. Feature privacy/host-log pairs now distinguish practice from chat;
+UI_CONTENT_QA.json pins those current strings and hashes. No native/listening
+review, regenerated narration or copied official-source prose is claimed.
+
 ## UI redesign addendum
 
 The feature-copy table and feature-file hashes below preserve the earlier audit snapshot.

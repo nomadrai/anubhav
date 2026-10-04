@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { Language } from '../config/languages';
 import { t } from '../i18n';
+import { CHAT_ENABLED } from '../../shared/chat-config.mjs';
 
 export function AboutDialog({
   language,
@@ -41,6 +42,12 @@ export function AboutDialog({
           <h3>{t(language, 'features.aboutPrivacy')}</h3>
           <p>{t(language, 'features.privacy')}</p>
           <p>{t(language, 'features.hostLogs')}</p>
+          {CHAT_ENABLED && (
+            <>
+              <p>{t(language, 'chat.about')}</p>
+              <p>{t(language, 'chat.vendor')}</p>
+            </>
+          )}
         </section>
         <section>
           <h3>{t(language, 'features.aboutOffline')}</h3>

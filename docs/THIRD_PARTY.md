@@ -1,5 +1,29 @@
 # Third-party components, notices and remaining uncertainty
 
+## Authorized runtime chat (current scope)
+
+- **GroqCloud**: hosted inference service, used only through server-side HTTPS fetch.
+  Proprietary service terms/data controls apply; no SDK or new npm dependency is
+  installed. Endpoint: https://api.groq.com/openai/v1/chat/completions . Official
+  docs fetched 2026-10-04: https://console.groq.com/docs/reasoning and
+  https://console.groq.com/docs/your-data . GPT-OSS supports low reasoning effort
+  and `include_reasoning:false` (not `reasoning_format`). Vendor usage metadata and
+  possible reliability/abuse retention remain disclosed; zero retention is not assumed.
+- **openai/gpt-oss-120b**: selected hosted model; weights are not downloaded/shipped.
+  Publisher card https://huggingface.co/openai/gpt-oss-120b fetched 2026-10-04
+  declares Apache-2.0 and configurable reasoning. Hosted-service terms remain
+  separate from model-weight licensing. No output accuracy/rights warranty is implied.
+- **Netlify Functions**: optional supplied deployment adapter, no SDK installation.
+  Portable handler also works in the existing local Vite dev/preview middleware.
+  Signature, trusted `context.ip` and native `rateLimit` config verified in
+  https://docs.netlify.com/build/functions/api/ (fetched 2026-10-04).
+- **Knowledge text and chat icon**: original local content/geometry. Official URLs
+  are factual pointers, not copied source prose, logos or product endorsement.
+  Sources and bilingual agent-only QA: `knowledge/*QA.md`, `APP_COVERAGE.md`.
+
+The older static-only inventory below is historical; the explicit chat exception
+is documented in PRIVACY.md. No other runtime external service is added.
+
 ## Shipping boundary and evidence (2026-10-03)
 
 The web app ships React/UI code, service-worker code, two ECB-derived episode

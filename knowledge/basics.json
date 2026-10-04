@@ -1,0 +1,963 @@
+[
+  {
+    "id": "basics-trading",
+    "category": "basics",
+    "title_en": "Trading and investing",
+    "title_hi": "ट्रेडिंग और निवेश",
+    "aliases": [
+      "trading",
+      "investing vs trading",
+      "ट्रेडिंग",
+      "व्यापार और निवेश",
+      "trading aur nivesh"
+    ],
+    "text_en": "Trading usually focuses on price changes over shorter periods, while investing usually focuses on an asset over a longer period. The boundary is not exact, and either approach can lose money. Frequent transactions can add costs. This app teaches loss with virtual money; it does not carry out trades or recommend either approach.",
+    "text_hi": "ट्रेडिंग में आम तौर पर कम समय के भाव बदलाव पर ध्यान होता है। निवेश में आम तौर पर किसी संपत्ति को लंबे समय तक रखने पर ध्यान होता है। दोनों के बीच सीमा बिल्कुल तय नहीं है। दोनों में पैसा घट सकता है। बार-बार सौदे करने से खर्च बढ़ सकता है। यह ऐप आभासी रकम से नुकसान समझाता है। यह असली सौदे नहीं करता और किसी तरीके की सलाह नहीं देता।",
+    "related": [
+      "basics-investing",
+      "basics-price",
+      "products-fees",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "recommendation",
+        "reason": "In basics-trading (Trading and investing), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-investing",
+    "category": "basics",
+    "title_en": "What investing means",
+    "title_hi": "निवेश का मतलब",
+    "aliases": [
+      "investment",
+      "investing",
+      "निवेश",
+      "nivesh",
+      "invest karna"
+    ],
+    "text_en": "Investing means putting money into an asset with an expectation of future income or an increase in value. That expectation can be wrong. Time alone does not guarantee a gain, and money may be difficult to withdraw when needed. An investment is different from a promised payment or a certain future result.",
+    "text_hi": "निवेश का मतलब किसी संपत्ति में पैसा लगाना है। उम्मीद होती है कि आगे उससे आमदनी मिलेगी या उसका मूल्य बढ़ेगा। यह उम्मीद गलत भी हो सकती है। सिर्फ समय बीतने से लाभ पक्का नहीं होता। ज़रूरत पड़ने पर पैसा निकालना मुश्किल भी हो सकता है। निवेश को पक्के भुगतान या तय भविष्य के नतीजे के बराबर नहीं समझना चाहिए।",
+    "related": [
+      "basics-trading",
+      "basics-risk",
+      "basics-return",
+      "basics-liquidity"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-investing (What investing means), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-share",
+    "category": "basics",
+    "title_en": "Stock or share",
+    "title_hi": "स्टॉक या शेयर",
+    "aliases": [
+      "stock",
+      "share",
+      "shares",
+      "शेयर",
+      "स्टॉक",
+      "hissedari",
+      "company ka hissa"
+    ],
+    "text_en": "A share represents a small ownership part of a company. Stock is often used as another word for shares or share ownership. A shareholder is not simply lending money to the company. The share's market price can fall, and any dividend is uncertain. Owning a share does not mean managing the company directly.",
+    "text_hi": "शेयर किसी कंपनी में मालिकाना हिस्से का छोटा भाग होता है। स्टॉक शब्द भी अक्सर शेयर या शेयरों की हिस्सेदारी के लिए इस्तेमाल होता है। शेयर रखने वाला सिर्फ कंपनी को उधार नहीं देता। शेयर का बाज़ार भाव गिर सकता है और लाभांश मिलना तय नहीं है। शेयर रखने का मतलब कंपनी का रोज़ का काम खुद चलाना नहीं होता।",
+    "related": [
+      "basics-equity",
+      "basics-debt",
+      "basics-dividend",
+      "basics-price"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understandings_shares.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-exchange",
+    "category": "basics",
+    "title_en": "Stock exchange",
+    "title_hi": "शेयर बाज़ार का एक्सचेंज",
+    "aliases": [
+      "exchange",
+      "stock exchange",
+      "एक्सचेंज",
+      "शेयर बाज़ार",
+      "share bazaar",
+      "stock market"
+    ],
+    "text_en": "A stock exchange is an organised place where orders for securities can meet under market rules. It is different from a broker, which connects a customer to trading services. Exchanges also monitor trading activity within their role. An organised market does not remove price risk or guarantee that every order finds a match.",
+    "text_hi": "स्टॉक एक्सचेंज एक व्यवस्थित बाज़ार है। वहाँ प्रतिभूतियों के सौदों के आदेश बाज़ार के नियमों के तहत मिल सकते हैं। प्रतिभूति शेयर जैसे वित्तीय साधन को कहते हैं। एक्सचेंज ब्रोकर से अलग है। ब्रोकर ग्राहक को सौदों की सेवाओं से जोड़ता है। एक्सचेंज अपनी भूमिका में सौदों की निगरानी भी करता है। व्यवस्थित बाज़ार होने से भाव का जोखिम खत्म नहीं होता। हर आदेश का मिलान होना भी तय नहीं है।",
+    "related": [
+      "basics-broker",
+      "basics-order",
+      "basics-sebi",
+      "basics-settlement"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/miis.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-exchange (Stock exchange), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In basics-exchange (Stock exchange), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-index",
+    "category": "basics",
+    "title_en": "Market index",
+    "title_hi": "बाज़ार सूचकांक",
+    "aliases": [
+      "index",
+      "market index",
+      "सूचकांक",
+      "इंडेक्स",
+      "suchkank",
+      "market ka index"
+    ],
+    "text_en": "An index summarises the movement of a selected group of securities using a defined method. It is a measuring tool, not the whole economy or every investor's result. Different groups and methods can produce different movements. An index rising does not mean every share rose, and its past movement does not predict its future.",
+    "text_hi": "सूचकांक चुनी हुई प्रतिभूतियों के समूह की चाल को एक तय तरीके से दिखाता है। यह मापने का साधन है। यह पूरी अर्थव्यवस्था या हर निवेशक का नतीजा नहीं है। अलग समूह और तरीके से अलग चाल दिख सकती है। सूचकांक बढ़ने का मतलब हर शेयर बढ़ना नहीं है। उसकी पिछली चाल से अगली चाल तय नहीं होती।",
+    "related": [
+      "basics-exchange",
+      "basics-economy",
+      "products-index-fund",
+      "products-etf"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/marketindex.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-broker",
+    "category": "basics",
+    "title_en": "Broker",
+    "title_hi": "ब्रोकर",
+    "aliases": [
+      "broker",
+      "stockbroker",
+      "ब्रोकर",
+      "दलाल",
+      "share broker"
+    ],
+    "text_en": "A stockbroker is an intermediary that provides access to securities trading through an exchange. This role is different from running the exchange or holding all ownership records. Brokerage and other charges may apply to services. Registration relates to regulatory oversight; it is not a promise of investment returns or protection from all losses.",
+    "text_hi": "स्टॉकब्रोकर एक बीच की संस्था है। वह एक्सचेंज के ज़रिए प्रतिभूतियों के सौदों की सुविधा देता है। एक्सचेंज चलाना या मालिकाना हक के सारे रिकॉर्ड रखना अलग काम हैं। सेवाओं पर ब्रोकरेज और दूसरे शुल्क लग सकते हैं। पंजीकरण का संबंध नियामक की निगरानी से है। यह निवेश पर लाभ या हर नुकसान से बचाव का वादा नहीं है।",
+    "related": [
+      "basics-exchange",
+      "basics-demat",
+      "products-brokerage",
+      "fraud-registration"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-trading.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In basics-broker (Broker), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-demat",
+    "category": "basics",
+    "title_en": "Demat account",
+    "title_hi": "डीमैट खाता",
+    "aliases": [
+      "demat",
+      "dematerialised account",
+      "डीमैट",
+      "डीमैट खाता",
+      "demat khata"
+    ],
+    "text_en": "A demat account holds securities in electronic form rather than as paper certificates. It is accessed through a depository participant. A trading account is used for trading instructions, while a bank account handles money. These are different roles, even when services appear together. This app does not open, connect to, or manage these accounts.",
+    "text_hi": "डीमैट खाते में प्रतिभूतियाँ कागज़ के प्रमाणपत्र की जगह इलेक्ट्रॉनिक रूप में रखी जाती हैं। खाते की सेवा डिपॉज़िटरी के प्रतिनिधि के ज़रिए मिलती है। ट्रेडिंग खाते का काम सौदे के निर्देश देना है। बैंक खाते का काम पैसे का लेनदेन है। सेवाएँ साथ दिखाई दें, तब भी ये भूमिकाएँ अलग हैं। यह ऐप ऐसे खाते खोलता, जोड़ता या संभालता नहीं है।",
+    "related": [
+      "basics-depository",
+      "basics-broker",
+      "basics-settlement",
+      "products-nomination"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-trading.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-depository",
+    "category": "basics",
+    "title_en": "Depository and participant",
+    "title_hi": "डिपॉज़िटरी और उसका प्रतिनिधि",
+    "aliases": [
+      "depository",
+      "depository participant",
+      "DP",
+      "डिपॉज़िटरी",
+      "डीपी",
+      "depository ka kaam"
+    ],
+    "text_en": "A depository maintains electronic records of securities holdings and supports transfers. A depository participant connects an account holder with these services. This record-keeping role differs from matching orders on an exchange. Electronic holding reduces dependence on paper certificates, but it does not prevent the market value of the held securities from falling.",
+    "text_hi": "डिपॉज़िटरी प्रतिभूतियों की हिस्सेदारी के इलेक्ट्रॉनिक रिकॉर्ड रखती है और उनके हस्तांतरण में मदद करती है। डिपॉज़िटरी का प्रतिनिधि खाताधारक को इन सेवाओं से जोड़ता है। रिकॉर्ड रखने का यह काम एक्सचेंज में आदेश मिलाने से अलग है। इलेक्ट्रॉनिक रूप में रखने से कागज़ी प्रमाणपत्र पर निर्भरता घटती है। इससे रखी हुई प्रतिभूतियों के बाज़ार मूल्य की गिरावट नहीं रुकती।",
+    "related": [
+      "basics-demat",
+      "basics-exchange",
+      "basics-settlement"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/miis.html",
+      "https://investor.sebi.gov.in/securities-trading.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-kyc",
+    "category": "basics",
+    "title_en": "Know Your Customer",
+    "title_hi": "ग्राहक की पहचान: केवाईसी",
+    "aliases": [
+      "KYC",
+      "know your customer",
+      "केवाईसी",
+      "के वाई सी",
+      "pehchan jaanch"
+    ],
+    "text_en": "Know Your Customer, or KYC, is a financial institution's process for checking customer identity and address. It supports compliance and helps reduce misuse of financial services. It does not make an investment risk-free or prove a return claim. This learning app asks for no KYC documents and does not perform identity verification.",
+    "text_hi": "केवाईसी में वित्तीय संस्था ग्राहक की पहचान और पते की जाँच करती है। इसका पूरा नाम नो योर कस्टमर है, यानी अपने ग्राहक को जानना। यह नियमों का पालन करने और वित्तीय सेवाओं के गलत इस्तेमाल को कम करने में मदद करता है। इससे निवेश जोखिम रहित नहीं हो जाता। लाभ का दावा भी सही साबित नहीं होता। यह सीखने वाला ऐप केवाईसी के दस्तावेज़ नहीं माँगता और पहचान की जाँच नहीं करता।",
+    "related": [
+      "basics-broker",
+      "basics-demat",
+      "fraud-registration"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/kyc.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "risk-free",
+        "reason": "In basics-kyc (Know Your Customer), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-order",
+    "category": "basics",
+    "title_en": "Order and trade",
+    "title_hi": "आदेश और पूरा हुआ सौदा",
+    "aliases": [
+      "order",
+      "trade",
+      "ऑर्डर",
+      "आदेश",
+      "sauda",
+      "order lagana"
+    ],
+    "text_en": "An order is an instruction requesting a transaction with stated conditions. A trade happens only when an order is executed against a matching opportunity. Placing an order is therefore different from completing a trade. An order may remain unmatched or fill only partly. The app's learning choices are not orders sent to any market.",
+    "text_hi": "ऑर्डर तय शर्तों के साथ लेनदेन का अनुरोध करने वाला निर्देश है। सौदा तभी होता है जब आदेश का मिलान हो और वह पूरा किया जाए। इसलिए आदेश देना और सौदा पूरा होना अलग बातें हैं। आदेश का मिलान न हो सकता है या वह कुछ हिस्से में ही पूरा हो सकता है। ऐप में सीखने के लिए किए गए चुनाव किसी बाज़ार में भेजे जाने वाले आदेश नहीं हैं।",
+    "related": [
+      "basics-market-order",
+      "basics-limit-order",
+      "basics-exchange",
+      "basics-settlement"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-market-order",
+    "category": "basics",
+    "title_en": "Market order",
+    "title_hi": "बाज़ार भाव पर आदेश",
+    "aliases": [
+      "market order",
+      "मार्केट ऑर्डर",
+      "बाज़ार आदेश",
+      "market bhav order"
+    ],
+    "text_en": "A market order requests execution at available market prices rather than setting a personal price boundary. The final price can differ from a recently displayed quote. A large order may fill at several prices as available quantities run out. This order type does not guarantee execution, a particular price, or a limited loss.",
+    "text_hi": "मार्केट ऑर्डर में अपनी भाव सीमा तय करने के बजाय उपलब्ध बाज़ार भाव पर सौदा पूरा करने का अनुरोध होता है। अंतिम भाव हाल में दिखाए गए भाव से अलग हो सकता है। उपलब्ध मात्रा खत्म होने पर बड़ा आदेश कई भावों पर पूरा हो सकता है। इस तरह का आदेश सौदा पूरा होने, किसी खास भाव मिलने या नुकसान सीमित रहने की गारंटी नहीं है।",
+    "related": [
+      "basics-order",
+      "basics-limit-order",
+      "basics-liquidity",
+      "products-slippage"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-market-order (Market order), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In basics-market-order (Market order), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-limit-order",
+    "category": "basics",
+    "title_en": "Limit order",
+    "title_hi": "भाव सीमा वाला आदेश",
+    "aliases": [
+      "limit order",
+      "लिमिट ऑर्डर",
+      "सीमा आदेश",
+      "limit wala order"
+    ],
+    "text_en": "A limit order sets a price boundary for a requested transaction. For a purchase, it states a maximum price; for a sale, a minimum price. That controls the acceptable price, not whether the trade happens. The market may never offer a matching opportunity, and the order may stay unfilled or fill only partly.",
+    "text_hi": "लिमिट ऑर्डर में माँगे गए सौदे के लिए भाव की सीमा तय होती है। खरीद के लिए यह सबसे अधिक स्वीकार्य भाव बताता है। बिक्री के लिए यह सबसे कम स्वीकार्य भाव बताता है। इससे स्वीकार्य भाव सीमित होता है, सौदा होना तय नहीं होता। बाज़ार में मिलान का मौका न मिले तो आदेश अधूरा रह सकता है या कुछ हिस्से में ही पूरा हो सकता है।",
+    "related": [
+      "basics-order",
+      "basics-market-order",
+      "basics-liquidity",
+      "products-stop-loss"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-price",
+    "category": "basics",
+    "title_en": "Price is not a promise",
+    "title_hi": "भाव कोई वादा नहीं है",
+    "aliases": [
+      "price",
+      "quote",
+      "भाव",
+      "कीमत",
+      "bhav",
+      "keemat",
+      "market price"
+    ],
+    "text_en": "A market price reflects transactions or available quotes at a particular moment. It can change when new orders or information arrive. The last traded price is not necessarily a price available for the next trade. A displayed price also does not reveal a company's true worth with certainty or promise a future direction.",
+    "text_hi": "बाज़ार भाव किसी खास समय के सौदों या उपलब्ध भावों को दिखाता है। नए आदेश या जानकारी आने पर यह बदल सकता है। पिछले सौदे का भाव अगले सौदे के लिए उपलब्ध हो, यह ज़रूरी नहीं है। दिखता हुआ भाव कंपनी का सही मूल्य पूरी निश्चितता से नहीं बताता। वह आगे भाव किस दिशा में जाएगा, इसका वादा भी नहीं करता।",
+    "related": [
+      "basics-supply-demand",
+      "basics-news",
+      "basics-uncertainty",
+      "basics-bid-ask"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-supply-demand",
+    "category": "basics",
+    "title_en": "Supply and demand",
+    "title_hi": "माँग और आपूर्ति",
+    "aliases": [
+      "supply",
+      "demand",
+      "supply and demand",
+      "माँग",
+      "आपूर्ति",
+      "maang aur supply"
+    ],
+    "text_en": "Demand is willingness to purchase at different prices, while supply is willingness to offer something at different prices. Orders bring these intentions together. A change in either side can change the price where transactions happen. Counting people alone is not enough: the quantities they want and the prices they accept also matter.",
+    "text_hi": "माँग का मतलब अलग-अलग भावों पर खरीदने की इच्छा है। आपूर्ति का मतलब अलग-अलग भावों पर कुछ बेचने के लिए देने की इच्छा है। आदेश इन इच्छाओं को मिलाते हैं। किसी भी तरफ बदलाव होने से सौदे का भाव बदल सकता है। सिर्फ लोगों की गिनती काफी नहीं है। वे कितनी मात्रा चाहते हैं और कौन-सा भाव स्वीकार करते हैं, यह भी मायने रखता है।",
+    "related": [
+      "basics-price",
+      "basics-order",
+      "basics-bid-ask",
+      "basics-volume"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-company",
+    "category": "basics",
+    "title_en": "Company changes and prices",
+    "title_hi": "कंपनी में बदलाव और भाव",
+    "aliases": [
+      "company performance",
+      "profits",
+      "earnings",
+      "कंपनी का कामकाज",
+      "मुनाफ़ा",
+      "company ki kamai"
+    ],
+    "text_en": "A company's sales, costs, debts, management and future prospects can affect how people value its shares. Price can react to expectations as well as reported results. Good reported results do not automatically cause a rise if people expected something better. A chart alone cannot identify which company change caused a particular price movement.",
+    "text_hi": "कंपनी की बिक्री, खर्च, कर्ज़, प्रबंधन और आगे की संभावनाएँ लोगों के शेयर मूल्य के आकलन को प्रभावित कर सकती हैं। भाव घोषित नतीजों के साथ उम्मीदों से भी बदल सकता है। अच्छे नतीजे आने पर भाव अपने आप नहीं बढ़ता। लोगों की उम्मीद इससे बेहतर भी हो सकती थी। अकेला चार्ट यह नहीं बताता कि कंपनी के किस बदलाव से भाव बदला।",
+    "related": [
+      "basics-share",
+      "basics-news",
+      "basics-uncertainty",
+      "basics-price"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-economy",
+    "category": "basics",
+    "title_en": "Economy and market prices",
+    "title_hi": "अर्थव्यवस्था और बाज़ार भाव",
+    "aliases": [
+      "economy",
+      "economic news",
+      "अर्थव्यवस्था",
+      "अर्थव्यवस्था की खबर",
+      "arthvyavastha"
+    ],
+    "text_en": "Changes in borrowing costs, spending, employment or production can affect businesses and market expectations. Different businesses may respond differently to the same economic change. Markets can also react before published figures arrive because people form expectations. An economic headline does not give a certain direction for any particular price or explain every movement.",
+    "text_hi": "उधार के खर्च, लोगों के खर्च, रोज़गार या उत्पादन में बदलाव कारोबार और बाज़ार की उम्मीदों पर असर डाल सकता है। एक ही आर्थिक बदलाव का अलग कारोबार पर अलग असर हो सकता है। आँकड़े आने से पहले भी बाज़ार प्रतिक्रिया दे सकता है, क्योंकि लोग उम्मीद बनाते हैं। आर्थिक खबर किसी खास भाव की दिशा तय नहीं करती और हर बदलाव का कारण नहीं बताती।",
+    "related": [
+      "basics-interest",
+      "basics-inflation",
+      "basics-company",
+      "basics-news"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-news",
+    "category": "basics",
+    "title_en": "News, expectations and rumours",
+    "title_hi": "खबर, उम्मीद और अफ़वाह",
+    "aliases": [
+      "news",
+      "rumour",
+      "rumor",
+      "खबर",
+      "अफ़वाह",
+      "khabar",
+      "afwah"
+    ],
+    "text_en": "News may change what people expect about a company or the economy. Some information may already be reflected in prices before a headline appears. Rumours and incomplete reports can also move expectations without being correct. A price change after a news item does not by itself prove that the item caused that change.",
+    "text_hi": "खबर कंपनी या अर्थव्यवस्था के बारे में लोगों की उम्मीद बदल सकती है। कुछ जानकारी खबर आने से पहले ही भाव में शामिल हो सकती है। अफ़वाह और अधूरी रिपोर्ट भी उम्मीद बदल सकती हैं, भले वे सही न हों। किसी खबर के बाद भाव बदलने से अकेले यह साबित नहीं होता कि बदलाव उसी खबर के कारण हुआ।",
+    "related": [
+      "basics-company",
+      "basics-economy",
+      "basics-uncertainty",
+      "behaviour-fomo"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-uncertainty",
+    "category": "basics",
+    "title_en": "Uncertainty",
+    "title_hi": "अनिश्चितता",
+    "aliases": [
+      "uncertainty",
+      "unknown future",
+      "अनिश्चितता",
+      "पता नहीं",
+      "anishchitata",
+      "future uncertain"
+    ],
+    "text_en": "Uncertainty means the future outcome is not known with confidence. Prices reflect many changing decisions, and some important information is missing or unexpected. A model or past episode can illustrate possibilities without proving what happens next. One observed path cannot establish a reliable forecast, a complete explanation, or a guarantee that losses will recover.",
+    "text_hi": "अनिश्चितता का मतलब है कि आगे का नतीजा भरोसे के साथ पता नहीं है। भाव बहुत से बदलते फैसलों से बनते हैं। कुछ ज़रूरी जानकारी अधूरी या अचानक सामने आने वाली होती है। कोई मॉडल या पिछला घटनाक्रम संभावनाएँ समझा सकता है, अगला नतीजा साबित नहीं करता। एक देखा हुआ रास्ता पक्की भविष्यवाणी, पूरा कारण या नुकसान की वापसी की गारंटी नहीं देता।",
+    "related": [
+      "basics-risk",
+      "basics-news",
+      "products-recovery",
+      "doubts-advice"
+    ],
+    "appears_in_steps": [
+      "reveal"
+    ],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-uncertainty (Uncertainty), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In basics-uncertainty (Uncertainty), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-ipo",
+    "category": "basics",
+    "title_en": "Initial public offering",
+    "title_hi": "पहली सार्वजनिक शेयर पेशकश",
+    "aliases": [
+      "IPO",
+      "initial public offering",
+      "आईपीओ",
+      "पहली शेयर पेशकश",
+      "ipo kya hai"
+    ],
+    "text_en": "An initial public offering, or IPO, is a company's first public offering of its shares. It can involve newly issued shares, shares offered by existing owners, or both. An offer price is not a promise of the later market price. Public attention and demand do not guarantee an allocation, a gain, or a sound business.",
+    "text_hi": "आईपीओ कंपनी के शेयरों की पहली सार्वजनिक पेशकश होती है। इसमें नए जारी किए गए शेयर, मौजूदा मालिकों के शेयर या दोनों हो सकते हैं। पेशकश का भाव आगे के बाज़ार भाव का वादा नहीं है। लोगों का ध्यान और माँग होने से शेयर मिलना तय नहीं होता। इससे लाभ होना या कारोबार अच्छा होना भी पक्का नहीं होता।",
+    "related": [
+      "basics-share",
+      "basics-price",
+      "basics-supply-demand",
+      "basics-company"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-ipo (Initial public offering), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-dividend",
+    "category": "basics",
+    "title_en": "Dividend",
+    "title_hi": "लाभांश",
+    "aliases": [
+      "dividend",
+      "लाभांश",
+      "डिविडेंड",
+      "labhansh",
+      "company ka dividend"
+    ],
+    "text_en": "A dividend is a distribution a company may make to its shareholders. It is different from a share price increase and is not a guaranteed regular payment. The amount and timing can change, or there may be no dividend. A dividend alone does not show the overall return, because the share's value can also fall.",
+    "text_hi": "लाभांश वह रकम है जो कंपनी अपने शेयरधारकों को बाँट सकती है। यह शेयर के भाव की बढ़ोतरी से अलग है। यह पक्का नियमित भुगतान नहीं है। रकम और समय बदल सकते हैं या लाभांश मिल ही नहीं सकता। अकेला लाभांश कुल प्रतिफल नहीं बताता, क्योंकि उसी दौरान शेयर का मूल्य भी गिर सकता है।",
+    "related": [
+      "basics-share",
+      "basics-return",
+      "basics-company",
+      "products-taxes"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/understandings_shares.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-dividend (Dividend), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-risk",
+    "category": "basics",
+    "title_en": "Risk",
+    "title_hi": "जोखिम",
+    "aliases": [
+      "risk",
+      "जोखिम",
+      "खतरा",
+      "jokhim",
+      "nuksan ka risk"
+    ],
+    "text_en": "Risk is the possibility that an outcome differs from what was hoped for, including losing money or not accessing it when needed. Price movement is only one kind of risk. Payment failure, costs and operational problems can matter too. A higher possible return is not a guaranteed reward for accepting a higher risk.",
+    "text_hi": "जोखिम का मतलब है कि नतीजा उम्मीद से अलग हो सकता है। इसमें पैसा घटना या ज़रूरत के समय पैसा न मिलना शामिल है। भाव बदलना जोखिम का सिर्फ एक प्रकार है। भुगतान न होना, खर्च और कामकाज की गड़बड़ी भी मायने रख सकते हैं। अधिक लाभ की संभावना, अधिक जोखिम लेने का पक्का इनाम नहीं है।",
+    "related": [
+      "basics-return",
+      "basics-liquidity",
+      "products-volatility",
+      "products-credit-risk"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-risks_trade_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-risk (Risk), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-return",
+    "category": "basics",
+    "title_en": "Return",
+    "title_hi": "प्रतिफल या कुल नतीजा",
+    "aliases": [
+      "return",
+      "returns",
+      "प्रतिफल",
+      "रिटर्न",
+      "kul natija",
+      "labh nuksan"
+    ],
+    "text_en": "Return describes an investment's gain or loss over a period, including relevant income and changes in value. It can be positive or negative. Costs and taxes can reduce the amount left with the investor. Comparing returns needs a comparable period and basis; a past return does not promise the same result again.",
+    "text_hi": "प्रतिफल किसी अवधि में निवेश का लाभ या नुकसान बताता है। इसमें संबंधित आमदनी और मूल्य में बदलाव शामिल होते हैं। यह सकारात्मक या नकारात्मक हो सकता है। खर्च और कर निवेशक के पास बची रकम घटा सकते हैं। प्रतिफल की तुलना के लिए अवधि और आधार एक जैसे होने चाहिए। पिछला प्रतिफल वैसा ही अगला नतीजा मिलने का वादा नहीं है।",
+    "related": [
+      "basics-risk",
+      "basics-dividend",
+      "products-fees",
+      "products-taxes"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-liquidity",
+    "category": "basics",
+    "title_en": "Liquidity",
+    "title_hi": "नकदी में बदलने की आसानी",
+    "aliases": [
+      "liquidity",
+      "तरलता",
+      "लिक्विडिटी",
+      "paise nikalna",
+      "bechne ki aasani"
+    ],
+    "text_en": "Liquidity means how readily an asset can be exchanged for money without a large price change or delay. A displayed price does not prove enough buyers or sellers are available. Liquidity can become weaker during stressful conditions. It differs from profitability: something can be easy to trade while still losing value.",
+    "text_hi": "तरलता का मतलब है कि किसी संपत्ति को बड़ी भाव गिरावट या देरी के बिना कितनी आसानी से पैसे में बदला जा सकता है। दिखाया गया भाव यह साबित नहीं करता कि पर्याप्त खरीदार या बेचने वाले मौजूद हैं। दबाव वाले हालात में यह आसानी घट सकती है। यह लाभ से अलग बात है। किसी चीज़ का सौदा आसान हो सकता है, फिर भी उसका मूल्य घट सकता है।",
+    "related": [
+      "basics-market-order",
+      "basics-limit-order",
+      "basics-bid-ask",
+      "products-slippage"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-risks_trade_derivatives.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-interest",
+    "category": "basics",
+    "title_en": "Interest",
+    "title_hi": "ब्याज",
+    "aliases": [
+      "interest",
+      "interest rate",
+      "ब्याज",
+      "ब्याज दर",
+      "byaj",
+      "sood"
+    ],
+    "text_en": "Interest is an amount paid for the use of borrowed money. For a borrower it is a cost; for a lender it may be income. The rate, timing and conditions depend on the agreement. Promised interest does not remove the possibility of payment failure, and borrowing costs can increase the burden of a loss.",
+    "text_hi": "ब्याज उधार लिए गए पैसे के इस्तेमाल के बदले दी जाने वाली रकम है। उधार लेने वाले के लिए यह खर्च है। उधार देने वाले के लिए यह आमदनी हो सकती है। दर, समय और शर्तें समझौते पर निर्भर करते हैं। ब्याज का वादा होने से भुगतान न होने की संभावना खत्म नहीं होती। उधार का खर्च नुकसान का बोझ बढ़ा सकता है।",
+    "related": [
+      "basics-debt",
+      "products-bond",
+      "products-credit-risk",
+      "products-leverage"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-debt",
+    "category": "basics",
+    "title_en": "Debt",
+    "title_hi": "कर्ज़ या ऋण",
+    "aliases": [
+      "debt",
+      "loan",
+      "ऋण",
+      "कर्ज़",
+      "karz",
+      "udhaar"
+    ],
+    "text_en": "Debt is money owed under an agreement. The borrower has repayment obligations, which may include interest and other costs. Lending money creates a claim for payment, not an ownership share in a company. Terms differ, and a borrower may fail to pay. Debt should not be confused with a risk-free or automatically fixed outcome.",
+    "text_hi": "कर्ज़ वह पैसा है जो किसी समझौते के तहत वापस देना होता है। उधार लेने वाले पर चुकाने की ज़िम्मेदारी होती है। इसमें ब्याज और दूसरे खर्च शामिल हो सकते हैं। उधार देने से भुगतान का दावा बनता है, कंपनी में मालिकाना हिस्सा नहीं। शर्तें अलग हो सकती हैं और उधार लेने वाला भुगतान करने में असफल हो सकता है। कर्ज़ को जोखिम रहित या अपने आप तय नतीजा नहीं समझना चाहिए।",
+    "related": [
+      "basics-interest",
+      "basics-equity",
+      "products-bond",
+      "products-credit-risk"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "risk-free",
+        "reason": "In basics-debt (Debt), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-equity",
+    "category": "basics",
+    "title_en": "Equity: ownership or remaining value",
+    "title_hi": "इक्विटी: हिस्सेदारी या बची रकम",
+    "aliases": [
+      "equity",
+      "इक्विटी",
+      "हिस्सेदारी",
+      "bacha hua paisa",
+      "equity meaning"
+    ],
+    "text_en": "In company finance, equity refers to ownership rather than a loan claim. In a position or account, equity can mean the remaining value after relevant obligations. The context matters. This app uses equity for remaining virtual money in the exercise; it does not mean the learner owns company shares or holds a real account.",
+    "text_hi": "कंपनी के संदर्भ में इक्विटी का मतलब उधार के दावे के बजाय मालिकाना हिस्सेदारी है। किसी सौदे या खाते में इक्विटी का मतलब संबंधित देनदारियाँ हटाने के बाद बचा मूल्य भी हो सकता है। संदर्भ समझना ज़रूरी है। इस ऐप में इक्विटी अभ्यास की बची आभासी रकम है। इसका मतलब सीखने वाले के पास कंपनी के शेयर या असली खाता होना नहीं है।",
+    "related": [
+      "basics-share",
+      "basics-debt",
+      "products-margin",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [
+      "run",
+      "result"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-inflation",
+    "category": "basics",
+    "title_en": "Inflation and purchasing power",
+    "title_hi": "महँगाई और खरीदने की ताकत",
+    "aliases": [
+      "inflation",
+      "purchasing power",
+      "महँगाई",
+      "मुद्रास्फीति",
+      "mehngai",
+      "kharidne ki taqat"
+    ],
+    "text_en": "Inflation is a rise in the general level of prices over time, not merely one item's price increase. If money grows more slowly than those prices, its purchasing power can fall. A positive money return may therefore still buy fewer things. Different households experience price changes differently because their spending patterns are not identical.",
+    "text_hi": "महँगाई समय के साथ सामान्य कीमतों के स्तर का बढ़ना है। सिर्फ एक चीज़ की कीमत बढ़ना इसका पूरा मतलब नहीं है। पैसा उन कीमतों से धीमे बढ़े तो उसकी खरीदने की ताकत घट सकती है। इसलिए रकम बढ़ने पर भी उससे कम चीज़ें खरीदी जा सकती हैं। परिवारों का खर्च अलग होता है, इसलिए उन्हें कीमतों के बदलाव का असर भी अलग महसूस हो सकता है।",
+    "related": [
+      "basics-return",
+      "basics-economy",
+      "basics-interest",
+      "basics-rbi"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/securities-risks_trade_derivatives.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "buy",
+        "reason": "In basics-inflation (Inflation and purchasing power), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-settlement",
+    "category": "basics",
+    "title_en": "Settlement",
+    "title_hi": "सौदे का निपटान",
+    "aliases": [
+      "settlement",
+      "clearing",
+      "निपटान",
+      "सेटलमेंट",
+      "saude ka niptaan"
+    ],
+    "text_en": "Settlement is the completion of the money and securities transfers arising from a trade. Clearing helps work out the obligations before completion. A matched order and a settled transfer are therefore different stages. Timing and arrangements depend on the market and product. This entry gives no settlement deadline, and the app performs no real transfers.",
+    "text_hi": "निपटान में सौदे से जुड़े पैसे और प्रतिभूतियों का हस्तांतरण पूरा होता है। उससे पहले क्लियरिंग में देनदारियों का हिसाब किया जाता है। इसलिए आदेश का मिलान होना और हस्तांतरण पूरा होना अलग चरण हैं। समय और व्यवस्था बाज़ार और उत्पाद पर निर्भर करते हैं। यह जानकारी निपटान की कोई समय सीमा नहीं बताती। ऐप कोई असली हस्तांतरण नहीं करता।",
+    "related": [
+      "basics-order",
+      "basics-depository",
+      "basics-exchange",
+      "basics-demat"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://investor.sebi.gov.in/miis.html"
+    ],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-bid-ask",
+    "category": "basics",
+    "title_en": "Bid, ask and spread",
+    "title_hi": "खरीद भाव, बिक्री भाव और अंतर",
+    "aliases": [
+      "bid",
+      "ask",
+      "spread",
+      "bid ask spread",
+      "बिड",
+      "आस्क",
+      "भाव का अंतर",
+      "bhav ka antar"
+    ],
+    "text_en": "A bid is a price a buyer offers, while an ask is a price a seller requests. The difference between the best available bid and ask is called the spread. It is not necessarily a service fee, but it affects transaction prices. A wide spread can make entering and leaving a position more costly.",
+    "text_hi": "बिड वह भाव है जो खरीदार देने को तैयार है। आस्क वह भाव है जो बेचने वाला माँगता है। उपलब्ध सबसे अच्छे खरीद और बिक्री भाव का अंतर स्प्रेड कहलाता है। यह ज़रूरी नहीं कि सेवा का शुल्क हो, लेकिन सौदे के भाव पर इसका असर होता है। बड़ा अंतर होने से सौदे में प्रवेश करना और उससे बाहर निकलना अधिक खर्चीला हो सकता है।",
+    "related": [
+      "basics-price",
+      "basics-liquidity",
+      "products-slippage",
+      "products-fees"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-volume",
+    "category": "basics",
+    "title_en": "Trading volume",
+    "title_hi": "सौदों की मात्रा",
+    "aliases": [
+      "volume",
+      "trading volume",
+      "वॉल्यूम",
+      "मात्रा",
+      "saudon ki matra"
+    ],
+    "text_en": "Trading volume describes how much was traded during a stated period. It is different from the number of people interested or the orders still waiting. High volume does not prove a price will rise or that a transaction will be easy later. Its meaning depends on the measurement and period used.",
+    "text_hi": "ट्रेडिंग वॉल्यूम बताता है कि तय अवधि में कितनी मात्रा के सौदे हुए। यह रुचि रखने वाले लोगों की गिनती या बाकी पड़े आदेशों से अलग है। अधिक मात्रा के सौदे होना यह साबित नहीं करता कि भाव बढ़ेगा। इससे आगे सौदा आसानी से होने की गारंटी भी नहीं मिलती। इसका मतलब इस्तेमाल किए गए माप और अवधि पर निर्भर करता है।",
+    "related": [
+      "basics-order",
+      "basics-supply-demand",
+      "basics-liquidity",
+      "basics-uncertainty"
+    ],
+    "appears_in_steps": [],
+    "sources": [],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "will rise/fall",
+        "reason": "In basics-volume (Trading volume), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In basics-volume (Trading volume), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-ownership-exposure",
+    "category": "basics",
+    "title_en": "Ownership and exposure differ",
+    "title_hi": "मालिकाना हक और भाव का असर अलग हैं",
+    "aliases": [
+      "ownership",
+      "exposure",
+      "मालिकाना हक",
+      "एक्सपोज़र",
+      "bhav ka asar",
+      "ownership vs exposure"
+    ],
+    "text_en": "Ownership means holding rights in an asset. Exposure means how strongly changes in something affect a financial position. A contract can create exposure without granting ownership of the underlying asset. Leverage can make exposure larger than the money set aside. This app changes virtual exposure; it grants no ownership rights in any real asset.",
+    "text_hi": "मालिकाना हक का मतलब किसी संपत्ति में अधिकार रखना है। एक्सपोज़र का मतलब किसी चीज़ के बदलाव का आपकी वित्तीय स्थिति पर कितना असर पड़ता है। अनुबंध मूल संपत्ति का मालिक बनाए बिना भी उसके भाव का असर दे सकता है। उधार की ताकत से यह असर अलग रखी रकम से बड़ा हो सकता है। ऐप में सिर्फ आभासी असर बदलता है। कोई असली मालिकाना अधिकार नहीं मिलता।",
+    "related": [
+      "basics-share",
+      "products-derivatives",
+      "products-leverage",
+      "app-virtual-money"
+    ],
+    "appears_in_steps": [
+      "setup",
+      "run"
+    ],
+    "sources": [],
+    "status": "agent-checked"
+  },
+  {
+    "id": "basics-sebi",
+    "category": "basics",
+    "title_en": "SEBI's general role",
+    "title_hi": "सेबी की सामान्य भूमिका",
+    "aliases": [
+      "SEBI",
+      "securities regulator",
+      "सेबी",
+      "भारतीय प्रतिभूति और विनिमय बोर्ड",
+      "sebi ka kaam"
+    ],
+    "text_en": "The Securities and Exchange Board of India, or SEBI, regulates the securities market, supports its development and protects investors' interests. Its role differs from running a broker's business or choosing investments for a learner. Regulation does not guarantee returns or remove market losses. This app is educational and does not claim regulatory approval.",
+    "text_hi": "भारतीय प्रतिभूति और विनिमय बोर्ड, यानी सेबी, प्रतिभूति बाज़ार का नियमन करता है। वह उसके विकास और निवेशकों के हितों की रक्षा के लिए काम करता है। उसकी भूमिका ब्रोकर का कारोबार चलाने या सीखने वाले के लिए निवेश चुनने से अलग है। नियमन लाभ की गारंटी नहीं देता और बाज़ार का नुकसान नहीं मिटाता। यह ऐप शिक्षा के लिए है। यह नियामक की मंज़ूरी का दावा नहीं करता।",
+    "related": [
+      "basics-exchange",
+      "basics-broker",
+      "basics-rbi",
+      "fraud-registration"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://www.sebi.gov.in/about-sebi.html"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-sebi (SEBI's general role), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "broker/app promotion",
+        "reason": "In basics-sebi (SEBI's general role), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      },
+      {
+        "pattern": "Hindi advice",
+        "reason": "In basics-sebi (SEBI's general role), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  },
+  {
+    "id": "basics-rbi",
+    "category": "basics",
+    "title_en": "RBI's general role",
+    "title_hi": "आरबीआई की सामान्य भूमिका",
+    "aliases": [
+      "RBI",
+      "central bank",
+      "आरबीआई",
+      "भारतीय रिज़र्व बैंक",
+      "reserve bank",
+      "rbi ka kaam"
+    ],
+    "text_en": "The Reserve Bank of India, or RBI, is India's central bank. Its functions include monetary policy, currency-related work, banking supervision and payment-system oversight. These roles differ from SEBI's securities-market role, though financial activities can connect across areas. A central bank's policies influence conditions; they do not guarantee an individual's investment result or future market price.",
+    "text_hi": "भारतीय रिज़र्व बैंक, यानी आरबीआई, भारत का केंद्रीय बैंक है। उसके काम में मौद्रिक नीति, मुद्रा से जुड़े काम, बैंकिंग की निगरानी और भुगतान प्रणालियों की देखरेख शामिल हैं। ये भूमिकाएँ सेबी की प्रतिभूति बाज़ार वाली भूमिका से अलग हैं। वित्तीय गतिविधियाँ अलग क्षेत्रों को जोड़ सकती हैं। केंद्रीय बैंक की नीतियाँ हालात पर असर डालती हैं। वे किसी व्यक्ति का निवेश नतीजा या अगला बाज़ार भाव तय नहीं करतीं।",
+    "related": [
+      "basics-sebi",
+      "basics-interest",
+      "basics-inflation",
+      "products-unclaimed-money"
+    ],
+    "appears_in_steps": [],
+    "sources": [
+      "https://www.rbi.org.in/commonperson/English/Scripts/Organisation.aspx"
+    ],
+    "status": "agent-checked",
+    "lintAllow": [
+      {
+        "pattern": "guaranteed",
+        "reason": "In basics-rbi (RBI's general role), this term is explained or questioned critically, not used as a personal recommendation, outcome promise or service promotion. Read the definition and limits in this entry; this exception never applies to generated chat answers."
+      }
+    ]
+  }
+]
